@@ -50,6 +50,7 @@ extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
     'sphinx.ext.coverage',
+    'sphinx_material'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -180,7 +181,11 @@ html_last_updated_fmt = '%d %b %Y'
 #html_use_smartypants = True
 
 # Custom sidebar templates, maps document names to template names.
-#html_sidebars = {}
+html_sidebars = {
+    "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
+}
+
+html_show_sourcelink = False
 
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
