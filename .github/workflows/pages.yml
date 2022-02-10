@@ -11,15 +11,18 @@ jobs:
     runs-on: Ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     # Standard drop-in approach that should work for most people.
     - uses: ammaraskar/sphinx-action@master
       with:
         pre-build-command: "pip3 install sphinx-material"
         docs-folder: "docs/"
+    - uses: actions/checkout@v2
+      with:
+        ref: gh-pages
+        path: gh-pages
     - name: Commit documentation changes
       run: |
-        git clone https://github.com/seasonyuu/MicroPythonDocCN.git --branch gh-pages --single-branch gh-pages
         cp -r docs/_build/html/* gh-pages/
         cd gh-pages
         touch .nojekyll
