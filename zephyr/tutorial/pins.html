@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>4. GPIO Pins &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>4. GPIO Pins &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
     <link rel="prev" title="3. Filesystems and Storage" href="storage.html" />
   
    
@@ -81,7 +83,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="MicroPython 1.18 documentation"
+        <a href="../../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -93,7 +95,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 4. GPIO Pins </span>
         </div>
       </div>
@@ -150,7 +152,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the Zephyr port</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for the Zephyr port</a></li>
       </ul>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -289,8 +291,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="pins-zephyr"></span><h1 id="zephyr-tutorial-pins--page-root"><span class="section-number">4. </span>GPIO Pins<a class="headerlink" href="#zephyr-tutorial-pins--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="gpio-pins">
+<span id="pins-zephyr"></span><h1 id="zephyr-tutorial-pins--page-root"><span class="section-number">4. </span>GPIO Pins<a class="headerlink" href="#zephyr-tutorial-pins--page-root" title="永久链接至标题">¶</a></h1>
 <p>Use <a class="reference internal" href="../../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> to control I/O pins.</p>
 <p>For Zephyr, pins are initialized using a tuple of port and pin number <code class="docutils literal notranslate"><span class="pre">(\"GPIO_x\",</span> <span class="pre">pin#)</span></code>
 for the <code class="docutils literal notranslate"><span class="pre">id</span></code> value. For example to initialize a pin for the red LED on a FRDM-k64 board:</p>
@@ -299,7 +301,7 @@ for the <code class="docutils literal notranslate"><span class="pre">id</span></
 </div>
 <p>Reference your board’s datasheet or Zephyr documentation for pin numbers, see below for more examples.</p>
 <table id="id1">
-<caption><span class="caption-text">Pin Formatting</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<caption><span class="caption-text">Pin Formatting</span><a class="headerlink" href="#id1" title="永久链接至表格">¶</a></caption>
 <colgroup>
 <col style="width: 33%"/>
 <col style="width: 33%"/>
@@ -326,11 +328,11 @@ for the <code class="docutils literal notranslate"><span class="pre">id</span></
 </tr>
 </tbody>
 </table>
-
-<h2 id="interrupts"><span class="section-number">4.1. </span>Interrupts<a class="headerlink" href="#interrupts" title="Permalink to this headline">¶</a></h2>
+<section id="interrupts">
+<h2 id="interrupts"><span class="section-number">4.1. </span>Interrupts<a class="headerlink" href="#interrupts" title="永久链接至标题">¶</a></h2>
 <p>The Zephyr port also supports interrupt handling for Pins using <a class="reference internal" href="../../library/machine.Pin.html#machine.Pin.irq" title="machine.Pin.irq"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">machine.Pin.irq()</span></code></a>.
 To respond to Pin change IRQs run:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
 <span class="n">SW2</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">((</span><span class="s2">"GPIO_2"</span><span class="p">,</span> <span class="mi">6</span><span class="p">),</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>            <span class="c1"># create Pin object for switch 2</span>
 <span class="n">SW3</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">((</span><span class="s2">"GPIO_0"</span><span class="p">,</span> <span class="mi">4</span><span class="p">),</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">)</span>            <span class="c1"># create Pin object for switch 3</span>
@@ -342,8 +344,8 @@ To respond to Pin change IRQs run:</p>
     <span class="k">pass</span>
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -381,10 +383,10 @@ To respond to Pin change IRQs run:</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>Porting MicroPython &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>Porting MicroPython &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython license information" href="../license.html" />
     <link rel="prev" title="Native machine code in .mpy files" href="natmod.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> Porting MicroPython </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython Internals</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -297,8 +299,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="porting-to-a-board"></span><h1 id="develop-porting--page-root">Porting MicroPython<a class="headerlink" href="#develop-porting--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="porting-micropython">
+<span id="porting-to-a-board"></span><h1 id="develop-porting--page-root">Porting MicroPython<a class="headerlink" href="#develop-porting--page-root" title="永久链接至标题">¶</a></h1>
 <p>The MicroPython project contains several ports to different microcontroller families and
 architectures. The project repository has a <a class="reference external" href="https://github.com/micropython/micropython/tree/master/ports">ports</a>
 directory containing a subdirectory for each supported port.</p>
@@ -315,8 +317,8 @@ host system and an STM32F4xx MCU.</p>
 <li><p>Performing the board-specific configurations.</p></li>
 <li><p>Implementing the port-specific modules.</p></li>
 </ul>
-
-<h2 id="minimal-micropython-firmware">Minimal MicroPython firmware<a class="headerlink" href="#minimal-micropython-firmware" title="Permalink to this headline">¶</a></h2>
+<section id="minimal-micropython-firmware">
+<h2 id="minimal-micropython-firmware">Minimal MicroPython firmware<a class="headerlink" href="#minimal-micropython-firmware" title="永久链接至标题">¶</a></h2>
 <p>The best way to start porting MicroPython to a new board is by integrating a minimal
 MicroPython interpreter.  For this walkthrough, create a subdirectory for the new
 port in the <code class="docutils literal notranslate"><span class="pre">ports</span></code> directory:</p>
@@ -411,9 +413,9 @@ $ mkdir example_port
 </pre></div>
 </div>
 <p>Remember to use proper tabs to indent the Makefile.</p>
-
-
-<h2 id="micropython-configurations">MicroPython Configurations<a class="headerlink" href="#micropython-configurations" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="micropython-configurations">
+<h2 id="micropython-configurations">MicroPython Configurations<a class="headerlink" href="#micropython-configurations" title="永久链接至标题">¶</a></h2>
 <p>After integrating the minimal code above, the next step is to create the MicroPython
 configuration files for the port. The compile-time configurations are specified in
 <code class="docutils literal notranslate"><span class="pre">mpconfigport.h</span></code> and additional hardware-abstraction functions, such as time keeping,
@@ -464,9 +466,9 @@ etc.</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">static</span> <span class="kr">inline</span> <span class="kt">void</span> <span class="nf">mp_hal_set_interrupt_char</span><span class="p">(</span><span class="kt">char</span> <span class="n">c</span><span class="p">)</span> <span class="p">{}</span>
 </pre></div>
 </div>
-
-
-<h2 id="support-for-standard-input-output">Support for standard input/output<a class="headerlink" href="#support-for-standard-input-output" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="support-for-standard-input-output">
+<h2 id="support-for-standard-input-output">Support for standard input/output<a class="headerlink" href="#support-for-standard-input-output" title="永久链接至标题">¶</a></h2>
 <p>MicroPython requires at least a way to output characters, and to have a REPL it also
 requires a way to input characters. Functions for this can be implemented in the file
 <code class="docutils literal notranslate"><span class="pre">mphalport.c</span></code>, for example:</p>
@@ -490,9 +492,9 @@ requires a way to input characters. Functions for this can be implemented in the
 </div>
 <p>These input and output functions have to be modified depending on the
 specific board API. This example uses the standard input/output stream.</p>
-
-
-<h2 id="building-and-running">Building and running<a class="headerlink" href="#building-and-running" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="building-and-running">
+<h2 id="building-and-running">Building and running<a class="headerlink" href="#building-and-running" title="永久链接至标题">¶</a></h2>
 <p>At this stage the directory of the new port should contain:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ports/example_port/
 ├── main.c
@@ -519,9 +521,9 @@ $ ./build/firmware.elf
 </pre></div>
 </div>
 <p>Use Ctrl-D to exit, and then run <code class="docutils literal notranslate"><span class="pre">reset</span></code> to reset the terminal.</p>
-
-
-<h2 id="adding-a-module-to-the-port">Adding a module to the port<a class="headerlink" href="#adding-a-module-to-the-port" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="adding-a-module-to-the-port">
+<h2 id="adding-a-module-to-the-port">Adding a module to the port<a class="headerlink" href="#adding-a-module-to-the-port" title="永久链接至标题">¶</a></h2>
 <p>To add a custom module like <code class="docutils literal notranslate"><span class="pre">myport</span></code>, first add the module definition in a file
 <code class="docutils literal notranslate"><span class="pre">modmyport.c</span></code>:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">"py/runtime.h"</span><span class="cp"></span>
@@ -569,8 +571,8 @@ info about my port
 &gt;&gt;&gt;
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -619,10 +621,10 @@ info about my port
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

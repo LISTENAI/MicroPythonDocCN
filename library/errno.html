@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>errno – system error codes &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>errno – system error codes &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="gc – control the garbage collector" href="gc.html" />
     <link rel="prev" title="collections – collection and container types" href="collections.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> errno – system error codes </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -289,21 +291,21 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="errno-system-error-codes"></span><h1 id="library-errno--page-root"><a class="reference internal" href="#library-errno--page-root" title="errno: system error codes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">errno</span></code></a> – system error codes<a class="headerlink" href="#library-errno--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-errno">
+<span id="errno-system-error-codes"></span><h1 id="library-errno--page-root"><a class="reference internal" href="#library-errno--page-root" title="errno: system error codes"><code class="xref py py-mod docutils literal notranslate"><span class="pre">errno</span></code></a> – system error codes<a class="headerlink" href="#library-errno--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/errno.html#module-errno" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">errno</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/errno.html#module-errno" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">errno</span></code></a>.</p>
 <p>This module provides access to symbolic error codes for <a class="reference internal" href="builtins.html#OSError" title="OSError"><code class="xref any py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a> exception.
-A particular inventory of codes depends on <a class="reference internal" href="../reference/glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a>.</p>
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt>
-<code class="sig-name descname">EEXIST, EAGAIN, etc.</code></dt>
+A particular inventory of codes depends on <a class="reference internal" href="../reference/glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a>.</p>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py">
+<span class="sig-name descname"><span class="pre">EEXIST,</span> <span class="pre">EAGAIN,</span> <span class="pre">etc.</span></span></dt>
 <dd><p>Error codes, based on ANSI C/POSIX standard. All error codes start with
 “E”. As mentioned above, inventory of the codes depends on
-<a class="reference internal" href="../reference/glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a>. Errors are usually accessible as <code class="docutils literal notranslate"><span class="pre">exc.errno</span></code>
+<a class="reference internal" href="../reference/glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a>. Errors are usually accessible as <code class="docutils literal notranslate"><span class="pre">exc.errno</span></code>
 where <code class="docutils literal notranslate"><span class="pre">exc</span></code> is an instance of <a class="reference internal" href="builtins.html#OSError" title="OSError"><code class="xref any py py-exc docutils literal notranslate"><span class="pre">OSError</span></code></a>. Usage example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">os</span><span class="o">.</span><span class="n">mkdir</span><span class="p">(</span><span class="s2">"my_dir"</span><span class="p">)</span>
@@ -313,9 +315,9 @@ where <code class="docutils literal notranslate"><span class="pre">exc</span></c
 </pre></div>
 </div>
 </dd></dl>
-<dl class="data">
-<dt id="errno.errorcode">
-<code class="sig-prename descclassname">errno.</code><code class="sig-name descname">errorcode</code><a class="headerlink" href="#errno.errorcode" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="errno.errorcode">
+<span class="sig-prename descclassname"><span class="pre">errno.</span></span><span class="sig-name descname"><span class="pre">errorcode</span></span><a class="headerlink" href="#errno.errorcode" title="永久链接至目标">¶</a></dt>
 <dd><p>Dictionary mapping numeric error codes to strings with symbolic error
 code (see above):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">errno</span><span class="o">.</span><span class="n">errorcode</span><span class="p">[</span><span class="n">errno</span><span class="o">.</span><span class="n">EEXIST</span><span class="p">])</span>
@@ -323,8 +325,8 @@ code (see above):</p>
 </pre></div>
 </div>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -373,10 +375,10 @@ code (see above):</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

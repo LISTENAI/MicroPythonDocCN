@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class SD – secure digital memory card (cc3200 port only) &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class SD – secure digital memory card (cc3200 port only) &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class SDCard – secure digital memory card" href="machine.SDCard.html" />
     <link rel="prev" title="class WDT – watchdog timer" href="machine.WDT.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class SD – secure digital memory card (cc3200 port only) </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -292,10 +294,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-sd"></span><h1 id="library-machine-sd--page-root">class SD – secure digital memory card (cc3200 port only)<a class="headerlink" href="#library-machine-sd--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-sd-secure-digital-memory-card-cc3200-port-only">
+<span id="machine-sd"></span><h1 id="library-machine-sd--page-root">class SD – secure digital memory card (cc3200 port only)<a class="headerlink" href="#library-machine-sd--page-root" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">警告</p>
 <p>This is a non-standard class and is only available on the cc3200 port.</p>
 </div>
 <p>The SD card class allows to configure and enable the memory card
@@ -306,7 +308,7 @@ be specified in the constructor. Please check the <a class="reference external" 
 table.</a> for
 more info regarding the pins which can be remapped to be used with a SD card.</p>
 <p>Example usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">SD</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">SD</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="c1"># clk cmd and dat0 pins must be passed along with</span>
 <span class="c1"># their respective alternate functions</span>
@@ -315,29 +317,29 @@ more info regarding the pins which can be remapped to be used with a SD card.</p
 <span class="c1"># do normal file operations</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="machine.SD">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SD</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.SD">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a SD card object. See <code class="docutils literal notranslate"><span class="pre">init()</span></code> for parameters if initialization.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="machine.SD.init">
-<code class="sig-prename descclassname">SD.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">id=0</em>, <em class="sig-param">pins=('GP10'</em>, <em class="sig-param">'GP11'</em>, <em class="sig-param">'GP15')</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SD.init">
+<span class="sig-prename descclassname"><span class="pre">SD.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('GP10',</span> <span class="pre">'GP11',</span> <span class="pre">'GP15')</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Enable the SD card. In order to initialize the card, give it a 3-tuple:
 <code class="docutils literal notranslate"><span class="pre">(clk_pin,</span> <span class="pre">cmd_pin,</span> <span class="pre">dat0_pin)</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.SD.deinit">
-<code class="sig-prename descclassname">SD.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD.deinit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SD.deinit">
+<span class="sig-prename descclassname"><span class="pre">SD.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.SD.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Disable the SD card.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -386,10 +388,10 @@ more info regarding the pins which can be remapped to be used with a SD card.</p
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>5. Hardware timers &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>5. Hardware timers &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="6. Reset and boot modes" href="reset.html" />
     <link rel="prev" title="4. WLAN step by step" href="wlan.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="MicroPython 1.18 documentation"
+        <a href="../../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 5. Hardware timers </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the WiPy</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">WiPy tutorials and examples</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -290,8 +292,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="wipy-tutorial-timer--page-root"><span class="section-number">5. </span>Hardware timers<a class="headerlink" href="#wipy-tutorial-timer--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="hardware-timers">
+<h1 id="wipy-tutorial-timer--page-root"><span class="section-number">5. </span>Hardware timers<a class="headerlink" href="#wipy-tutorial-timer--page-root" title="永久链接至标题">¶</a></h1>
 <p>Timers can be used for a great variety of tasks, calling a function periodically,
 counting events, and generating a PWM signal are among the most common use cases.
 Each timer consists of two 16-bit channels and this channels can be tied together to
@@ -299,8 +301,8 @@ form one 32-bit timer. The operating mode needs to be configured per timer, but 
 the period (or the frequency) can be independently configured on each channel.
 By using the callback method, the timer event can call a Python function.</p>
 <p>Example usage to toggle an LED at a fixed frequency:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Timer</span>
-<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Timer</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'GP16'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>                  <span class="c1"># enable GP16 as output to drive the LED</span>
 <span class="n">tim</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                                   <span class="c1"># create a timer object using timer 3</span>
 <span class="n">tim</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">PERIODIC</span><span class="p">)</span>                    <span class="c1"># initialize it in periodic mode</span>
@@ -309,8 +311,8 @@ By using the callback method, the timer event can call a Python function.</p>
 </pre></div>
 </div>
 <p>Example using named function for the callback:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Timer</span>
-<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Timer</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="n">tim</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">PERIODIC</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">32</span><span class="p">)</span>
 <span class="n">tim_a</span> <span class="o">=</span> <span class="n">tim</span><span class="o">.</span><span class="n">channel</span><span class="p">(</span><span class="n">Timer</span><span class="o">.</span><span class="n">A</span> <span class="o">|</span> <span class="n">Timer</span><span class="o">.</span><span class="n">B</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>   <span class="c1"># 1 Hz frequency requires a 32 bit timer</span>
 
@@ -324,7 +326,7 @@ By using the callback method, the timer event can call a Python function.</p>
 </pre></div>
 </div>
 <p>Further examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Timer</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Timer</span>
 <span class="n">tim1</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">ONE_SHOT</span><span class="p">)</span>                               <span class="c1"># initialize it in one shot mode</span>
 <span class="n">tim2</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">PWM</span><span class="p">)</span>                                    <span class="c1"># initialize it in PWM mode</span>
 <span class="n">tim1_ch</span> <span class="o">=</span> <span class="n">tim1</span><span class="o">.</span><span class="n">channel</span><span class="p">(</span><span class="n">Timer</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">POSITIVE</span><span class="p">)</span>  <span class="c1"># start the event counter with a frequency of 10Hz and triggered by positive edges</span>
@@ -335,43 +337,43 @@ By using the callback method, the timer event can call a Python function.</p>
 <span class="n">tim2_ch</span><span class="o">.</span><span class="n">period</span><span class="p">(</span><span class="mi">2000000</span><span class="p">)</span>                                            <span class="c1"># change the period to 2 seconds</span>
 </pre></div>
 </div>
-
-<h2 id="additional-constants-for-timer-class"><span class="section-number">5.1. </span>Additional constants for Timer class<a class="headerlink" href="#additional-constants-for-timer-class" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="Timer.PWM">
-<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">PWM</code><a class="headerlink" href="#Timer.PWM" title="Permalink to this definition">¶</a></dt>
+<section id="additional-constants-for-timer-class">
+<h2 id="additional-constants-for-timer-class"><span class="section-number">5.1. </span>Additional constants for Timer class<a class="headerlink" href="#additional-constants-for-timer-class" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="Timer.PWM">
+<span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">PWM</span></span><a class="headerlink" href="#Timer.PWM" title="永久链接至目标">¶</a></dt>
 <dd><p>PWM timer operating mode.</p>
 </dd></dl>
-<dl class="data">
-<dt id="Timer.A">
-<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">A</code><a class="headerlink" href="#Timer.A" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="Timer.A">
+<span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">A</span></span><a class="headerlink" href="#Timer.A" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="Timer.B">
-<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">B</code><a class="headerlink" href="#Timer.B" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="Timer.B">
+<span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">B</span></span><a class="headerlink" href="#Timer.B" title="永久链接至目标">¶</a></dt>
 <dd><p>Selects the timer channel. Must be ORed (<code class="docutils literal notranslate"><span class="pre">Timer.A</span></code> | <code class="docutils literal notranslate"><span class="pre">Timer.B</span></code>) when
 using a 32-bit timer.</p>
 </dd></dl>
-<dl class="data">
-<dt id="Timer.POSITIVE">
-<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">POSITIVE</code><a class="headerlink" href="#Timer.POSITIVE" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="Timer.POSITIVE">
+<span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">POSITIVE</span></span><a class="headerlink" href="#Timer.POSITIVE" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="Timer.NEGATIVE">
-<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">NEGATIVE</code><a class="headerlink" href="#Timer.NEGATIVE" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="Timer.NEGATIVE">
+<span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">NEGATIVE</span></span><a class="headerlink" href="#Timer.NEGATIVE" title="永久链接至目标">¶</a></dt>
 <dd><p>Timer channel polarity selection (only relevant in PWM mode).</p>
 </dd></dl>
-<dl class="data">
-<dt id="Timer.TIMEOUT">
-<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">TIMEOUT</code><a class="headerlink" href="#Timer.TIMEOUT" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="Timer.TIMEOUT">
+<span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">TIMEOUT</span></span><a class="headerlink" href="#Timer.TIMEOUT" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="Timer.MATCH">
-<code class="sig-prename descclassname">Timer.</code><code class="sig-name descname">MATCH</code><a class="headerlink" href="#Timer.MATCH" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="Timer.MATCH">
+<span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">MATCH</span></span><a class="headerlink" href="#Timer.MATCH" title="永久链接至目标">¶</a></dt>
 <dd><p>Timer channel IRQ triggers.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -420,10 +422,10 @@ using a 32-bit timer.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

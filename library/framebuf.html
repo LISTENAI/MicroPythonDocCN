@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>framebuf — frame buffer manipulation &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>framebuf — frame buffer manipulation &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="machine — functions related to the hardware" href="machine.html" />
     <link rel="prev" title="cryptolib – cryptographic ciphers" href="cryptolib.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> framebuf — frame buffer manipulation </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -299,12 +301,12 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="framebuf-frame-buffer-manipulation"></span><h1 id="library-framebuf--page-root"><a class="reference internal" href="#library-framebuf--page-root" title="framebuf: Frame buffer manipulation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">framebuf</span></code></a> — frame buffer manipulation<a class="headerlink" href="#library-framebuf--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="module-framebuf">
+<span id="framebuf-frame-buffer-manipulation"></span><h1 id="library-framebuf--page-root"><a class="reference internal" href="#library-framebuf--page-root" title="framebuf: Frame buffer manipulation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">framebuf</span></code></a> — frame buffer manipulation<a class="headerlink" href="#library-framebuf--page-root" title="永久链接至标题">¶</a></h1>
 <p>This module provides a general frame buffer which can be used to create
 bitmap images, which can then be sent to a display.</p>
-
-<h2 id="class-framebuffer">class FrameBuffer<a class="headerlink" href="#class-framebuffer" title="Permalink to this headline">¶</a></h2>
+<section id="class-framebuffer">
+<h2 id="class-framebuffer">class FrameBuffer<a class="headerlink" href="#class-framebuffer" title="永久链接至标题">¶</a></h2>
 <p>The FrameBuffer class provides a pixel buffer which can be drawn upon with
 pixels, lines, rectangles, text and even other FrameBuffer’s. It is useful
 when generating output for displays.</p>
@@ -319,12 +321,12 @@ when generating output for displays.</p>
 <span class="n">fbuf</span><span class="o">.</span><span class="n">hline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span>
 </pre></div>
 </div>
-
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="framebuf.FrameBuffer">
-<em class="property">class </em><code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">FrameBuffer</code><span class="sig-paren">(</span><em class="sig-param">buffer</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em>, <em class="sig-param">format</em>, <em class="sig-param">stride=width</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">FrameBuffer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buffer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">height</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stride</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">width</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer" title="永久链接至目标">¶</a></dt>
 <dd><p>Construct a FrameBuffer object.  The parameters are:</p>
 <blockquote>
 <div><ul class="simple">
@@ -350,72 +352,72 @@ an increased step size.</p></li>
 optionally <em>stride</em>.  Invalid <em>buffer</em> size or dimensions may lead to
 unexpected errors.</p>
 </dd></dl>
-
-
-<h2 id="drawing-primitive-shapes">Drawing primitive shapes<a class="headerlink" href="#drawing-primitive-shapes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="drawing-primitive-shapes">
+<h2 id="drawing-primitive-shapes">Drawing primitive shapes<a class="headerlink" href="#drawing-primitive-shapes" title="永久链接至标题">¶</a></h2>
 <p>The following methods draw shapes onto the FrameBuffer.</p>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.fill">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.fill" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.fill">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.fill" title="永久链接至目标">¶</a></dt>
 <dd><p>Fill the entire FrameBuffer with the specified color.</p>
 </dd></dl>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.pixel">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="optional">[</span>, <em class="sig-param">c</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.pixel" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.pixel">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.pixel" title="永久链接至目标">¶</a></dt>
 <dd><p>If <em>c</em> is not given, get the color value of the specified pixel.
 If <em>c</em> is given, set the specified pixel to the given color.</p>
 </dd></dl>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.hline">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">hline</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.hline" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.hline">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">hline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.hline" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.vline">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">vline</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">h</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.vline" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.vline">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">vline</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.vline" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.line">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">line</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">y1</em>, <em class="sig-param">x2</em>, <em class="sig-param">y2</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.line" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.line">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">line</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.line" title="永久链接至目标">¶</a></dt>
 <dd><p>Draw a line from a set of coordinates using the given color and
 a thickness of 1 pixel. The <a class="reference internal" href="#framebuf.FrameBuffer.line" title="framebuf.FrameBuffer.line"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">line</span></code></a> method draws the line up to
 a second set of coordinates whereas the <a class="reference internal" href="#framebuf.FrameBuffer.hline" title="framebuf.FrameBuffer.hline"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">hline</span></code></a> and <a class="reference internal" href="#framebuf.FrameBuffer.vline" title="framebuf.FrameBuffer.vline"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">vline</span></code></a>
 methods draw horizontal and vertical lines respectively up to
 a given length.</p>
 </dd></dl>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.rect">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">rect</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.rect" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.rect">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.rect" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.fill_rect">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">fill_rect</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.fill_rect" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.fill_rect">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">fill_rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">w</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">h</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.fill_rect" title="永久链接至目标">¶</a></dt>
 <dd><p>Draw a rectangle at the given location, size and color. The <a class="reference internal" href="#framebuf.FrameBuffer.rect" title="framebuf.FrameBuffer.rect"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">rect</span></code></a>
 method draws only a 1 pixel outline whereas the <a class="reference internal" href="#framebuf.FrameBuffer.fill_rect" title="framebuf.FrameBuffer.fill_rect"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">fill_rect</span></code></a> method
 draws both the outline and interior.</p>
 </dd></dl>
-
-
-<h2 id="drawing-text">Drawing text<a class="headerlink" href="#drawing-text" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.text">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param">s</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="optional">[</span>, <em class="sig-param">c</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.text" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="drawing-text">
+<h2 id="drawing-text">Drawing text<a class="headerlink" href="#drawing-text" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.text">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">c</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.text" title="永久链接至目标">¶</a></dt>
 <dd><p>Write text to the FrameBuffer using the the coordinates as the upper-left
 corner of the text. The color of the text can be defined by the optional
 argument but is otherwise a default value of 1. All characters have
 dimensions of 8x8 pixels and there is currently no way to change the font.</p>
 </dd></dl>
-
-
-<h2 id="other-methods">Other methods<a class="headerlink" href="#other-methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.scroll">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">scroll</code><span class="sig-paren">(</span><em class="sig-param">xstep</em>, <em class="sig-param">ystep</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.scroll" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="other-methods">
+<h2 id="other-methods">Other methods<a class="headerlink" href="#other-methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.scroll">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">scroll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xstep</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ystep</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.scroll" title="永久链接至目标">¶</a></dt>
 <dd><p>Shift the contents of the FrameBuffer by the given vector. This may
 leave a footprint of the previous colors in the FrameBuffer.</p>
 </dd></dl>
-<dl class="method">
-<dt id="framebuf.FrameBuffer.blit">
-<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">blit</code><span class="sig-paren">(</span><em class="sig-param">fbuf</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">key=-1</em>, <em class="sig-param">palette=None</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.blit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="framebuf.FrameBuffer.blit">
+<span class="sig-prename descclassname"><span class="pre">FrameBuffer.</span></span><span class="sig-name descname"><span class="pre">blit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fbuf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">palette</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.blit" title="永久链接至目标">¶</a></dt>
 <dd><p>Draw another FrameBuffer on top of the current one at the given coordinates.
 If <em>key</em> is specified then it should be a color integer and the
 corresponding color will be considered transparent: all pixels with that
@@ -431,12 +433,12 @@ application assigns a color to each pixel in the <em>palette</em>. The color of 
 current pixel will be that of that <em>palette</em> pixel whose x position is the
 color of the corresponding source pixel.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="framebuf.framebuf.MONO_VLSB">
-<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">MONO_VLSB</code><a class="headerlink" href="#framebuf.framebuf.MONO_VLSB" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="framebuf.framebuf.MONO_VLSB">
+<span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">MONO_VLSB</span></span><a class="headerlink" href="#framebuf.framebuf.MONO_VLSB" title="永久链接至目标">¶</a></dt>
 <dd><p>Monochrome (1-bit) color format
 This defines a mapping where the bits in a byte are vertically mapped with
 bit 0 being nearest the top of the screen. Consequently each byte occupies
@@ -444,9 +446,9 @@ bit 0 being nearest the top of the screen. Consequently each byte occupies
 locations until the rightmost edge is reached. Further bytes are rendered
 at locations starting at the leftmost edge, 8 pixels lower.</p>
 </dd></dl>
-<dl class="data">
-<dt id="framebuf.framebuf.MONO_HLSB">
-<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">MONO_HLSB</code><a class="headerlink" href="#framebuf.framebuf.MONO_HLSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="framebuf.framebuf.MONO_HLSB">
+<span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">MONO_HLSB</span></span><a class="headerlink" href="#framebuf.framebuf.MONO_HLSB" title="永久链接至目标">¶</a></dt>
 <dd><p>Monochrome (1-bit) color format
 This defines a mapping where the bits in a byte are horizontally mapped.
 Each byte occupies 8 horizontal pixels with bit 7 being the leftmost.
@@ -454,9 +456,9 @@ Subsequent bytes appear at successive horizontal locations until the
 rightmost edge is reached. Further bytes are rendered on the next row, one
 pixel lower.</p>
 </dd></dl>
-<dl class="data">
-<dt id="framebuf.framebuf.MONO_HMSB">
-<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">MONO_HMSB</code><a class="headerlink" href="#framebuf.framebuf.MONO_HMSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="framebuf.framebuf.MONO_HMSB">
+<span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">MONO_HMSB</span></span><a class="headerlink" href="#framebuf.framebuf.MONO_HMSB" title="永久链接至目标">¶</a></dt>
 <dd><p>Monochrome (1-bit) color format
 This defines a mapping where the bits in a byte are horizontally mapped.
 Each byte occupies 8 horizontal pixels with bit 0 being the leftmost.
@@ -464,28 +466,28 @@ Subsequent bytes appear at successive horizontal locations until the
 rightmost edge is reached. Further bytes are rendered on the next row, one
 pixel lower.</p>
 </dd></dl>
-<dl class="data">
-<dt id="framebuf.framebuf.RGB565">
-<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">RGB565</code><a class="headerlink" href="#framebuf.framebuf.RGB565" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="framebuf.framebuf.RGB565">
+<span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">RGB565</span></span><a class="headerlink" href="#framebuf.framebuf.RGB565" title="永久链接至目标">¶</a></dt>
 <dd><p>Red Green Blue (16-bit, 5+6+5) color format</p>
 </dd></dl>
-<dl class="data">
-<dt id="framebuf.framebuf.GS2_HMSB">
-<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">GS2_HMSB</code><a class="headerlink" href="#framebuf.framebuf.GS2_HMSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="framebuf.framebuf.GS2_HMSB">
+<span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">GS2_HMSB</span></span><a class="headerlink" href="#framebuf.framebuf.GS2_HMSB" title="永久链接至目标">¶</a></dt>
 <dd><p>Grayscale (2-bit) color format</p>
 </dd></dl>
-<dl class="data">
-<dt id="framebuf.framebuf.GS4_HMSB">
-<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">GS4_HMSB</code><a class="headerlink" href="#framebuf.framebuf.GS4_HMSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="framebuf.framebuf.GS4_HMSB">
+<span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">GS4_HMSB</span></span><a class="headerlink" href="#framebuf.framebuf.GS4_HMSB" title="永久链接至目标">¶</a></dt>
 <dd><p>Grayscale (4-bit) color format</p>
 </dd></dl>
-<dl class="data">
-<dt id="framebuf.framebuf.GS8">
-<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">GS8</code><a class="headerlink" href="#framebuf.framebuf.GS8" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="framebuf.framebuf.GS8">
+<span class="sig-prename descclassname"><span class="pre">framebuf.</span></span><span class="sig-name descname"><span class="pre">GS8</span></span><a class="headerlink" href="#framebuf.framebuf.GS8" title="永久链接至目标">¶</a></dt>
 <dd><p>Grayscale (8-bit) color format</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -534,10 +536,10 @@ pixel lower.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

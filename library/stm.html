@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>stm — functionality specific to STM32 MCUs &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>stm — functionality specific to STM32 MCUs &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="lcd160cr — control of LCD160CR display" href="lcd160cr.html" />
     <link rel="prev" title="class USB_VCP – USB virtual comm port" href="pyb.USB_VCP.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> stm — functionality specific to STM32 MCUs </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -293,26 +295,26 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="stm-functionality-specific-to-stm32-mcus"></span><h1 id="library-stm--page-root"><a class="reference internal" href="#library-stm--page-root" title="stm: functionality specific to STM32 MCUs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stm</span></code></a> — functionality specific to STM32 MCUs<a class="headerlink" href="#library-stm--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="module-stm">
+<span id="stm-functionality-specific-to-stm32-mcus"></span><h1 id="library-stm--page-root"><a class="reference internal" href="#library-stm--page-root" title="stm: functionality specific to STM32 MCUs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stm</span></code></a> — functionality specific to STM32 MCUs<a class="headerlink" href="#library-stm--page-root" title="永久链接至标题">¶</a></h1>
 <p>This module provides functionality specific to STM32 microcontrollers, including
 direct access to peripheral registers.</p>
-
-<h2 id="memory-access">Memory access<a class="headerlink" href="#memory-access" title="Permalink to this headline">¶</a></h2>
+<section id="memory-access">
+<h2 id="memory-access">Memory access<a class="headerlink" href="#memory-access" title="永久链接至标题">¶</a></h2>
 <p>The module exposes three objects used for raw memory access.</p>
-<dl class="data">
-<dt id="stm.mem8">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">mem8</code><a class="headerlink" href="#stm.mem8" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.mem8">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">mem8</span></span><a class="headerlink" href="#stm.mem8" title="永久链接至目标">¶</a></dt>
 <dd><p>Read/write 8 bits of memory.</p>
 </dd></dl>
-<dl class="data">
-<dt id="stm.mem16">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">mem16</code><a class="headerlink" href="#stm.mem16" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.mem16">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">mem16</span></span><a class="headerlink" href="#stm.mem16" title="永久链接至目标">¶</a></dt>
 <dd><p>Read/write 16 bits of memory.</p>
 </dd></dl>
-<dl class="data">
-<dt id="stm.mem32">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">mem32</code><a class="headerlink" href="#stm.mem32" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.mem32">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">mem32</span></span><a class="headerlink" href="#stm.mem32" title="永久链接至目标">¶</a></dt>
 <dd><p>Read/write 32 bits of memory.</p>
 </dd></dl>
 <p>Use subscript notation <code class="docutils literal notranslate"><span class="pre">[...]</span></code> to index these objects with the address of
@@ -320,35 +322,35 @@ interest.</p>
 <p>These memory objects can be used in combination with the peripheral register
 constants to read and write registers of the MCU hardware peripherals, as well
 as all other areas of address space.</p>
-
-
-<h2 id="peripheral-register-constants">Peripheral register constants<a class="headerlink" href="#peripheral-register-constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="peripheral-register-constants">
+<h2 id="peripheral-register-constants">Peripheral register constants<a class="headerlink" href="#peripheral-register-constants" title="永久链接至标题">¶</a></h2>
 <p>The module defines constants for registers which are generated from CMSIS header
 files, and the constants available depend on the microcontroller series that is
 being compiled for.  Examples of some constants include:</p>
-<dl class="data">
-<dt id="stm.GPIOA">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIOA</code><a class="headerlink" href="#stm.GPIOA" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.GPIOA">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">GPIOA</span></span><a class="headerlink" href="#stm.GPIOA" title="永久链接至目标">¶</a></dt>
 <dd><p>Base address of the GPIOA peripheral.</p>
 </dd></dl>
-<dl class="data">
-<dt id="stm.GPIOB">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIOB</code><a class="headerlink" href="#stm.GPIOB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.GPIOB">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">GPIOB</span></span><a class="headerlink" href="#stm.GPIOB" title="永久链接至目标">¶</a></dt>
 <dd><p>Base address of the GPIOB peripheral.</p>
 </dd></dl>
-<dl class="data">
-<dt id="stm.GPIO_BSRR">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIO_BSRR</code><a class="headerlink" href="#stm.GPIO_BSRR" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.GPIO_BSRR">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">GPIO_BSRR</span></span><a class="headerlink" href="#stm.GPIO_BSRR" title="永久链接至目标">¶</a></dt>
 <dd><p>Offset of the GPIO bit set/reset register.</p>
 </dd></dl>
-<dl class="data">
-<dt id="stm.GPIO_IDR">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIO_IDR</code><a class="headerlink" href="#stm.GPIO_IDR" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.GPIO_IDR">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">GPIO_IDR</span></span><a class="headerlink" href="#stm.GPIO_IDR" title="永久链接至目标">¶</a></dt>
 <dd><p>Offset of the GPIO input data register.</p>
 </dd></dl>
-<dl class="data">
-<dt id="stm.GPIO_ODR">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIO_ODR</code><a class="headerlink" href="#stm.GPIO_ODR" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="stm.GPIO_ODR">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">GPIO_ODR</span></span><a class="headerlink" href="#stm.GPIO_ODR" title="永久链接至目标">¶</a></dt>
 <dd><p>Offset of the GPIO output data register.</p>
 </dd></dl>
 <p>Constants that are named after a peripheral, like <code class="docutils literal notranslate"><span class="pre">GPIOA</span></code>, are the absolute
@@ -365,32 +367,32 @@ full, absolute address of the <code class="docutils literal notranslate"><span c
 <span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">stm</span><span class="o">.</span><span class="n">mem32</span><span class="p">[</span><span class="n">stm</span><span class="o">.</span><span class="n">GPIOA</span> <span class="o">+</span> <span class="n">stm</span><span class="o">.</span><span class="n">GPIO_IDR</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
 </pre></div>
 </div>
-
-
-<h2 id="functions-specific-to-stm32wbxx-mcus">Functions specific to STM32WBxx MCUs<a class="headerlink" href="#functions-specific-to-stm32wbxx-mcus" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="functions-specific-to-stm32wbxx-mcus">
+<h2 id="functions-specific-to-stm32wbxx-mcus">Functions specific to STM32WBxx MCUs<a class="headerlink" href="#functions-specific-to-stm32wbxx-mcus" title="永久链接至标题">¶</a></h2>
 <p>These functions are available on STM32WBxx microcontrollers, and interact with
 the second CPU, the RF core.</p>
-<dl class="function">
-<dt id="stm.rfcore_status">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">rfcore_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_status" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="stm.rfcore_status">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">rfcore_status</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_status" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the status of the second CPU as an integer (the first word of device
 info table).</p>
 </dd></dl>
-<dl class="function">
-<dt id="stm.rfcore_fw_version">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">rfcore_fw_version</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_fw_version" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="stm.rfcore_fw_version">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">rfcore_fw_version</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_fw_version" title="永久链接至目标">¶</a></dt>
 <dd><p>Get the version of the firmware running on the second CPU.  Pass in 0 for
 <em>id</em> to get the FUS version, and 1 to get the WS version.</p>
 <p>Returns a 5-tuple with the full version number.</p>
 </dd></dl>
-<dl class="function">
-<dt id="stm.rfcore_sys_hci">
-<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">rfcore_sys_hci</code><span class="sig-paren">(</span><em class="sig-param">ogf</em>, <em class="sig-param">ocf</em>, <em class="sig-param">data</em>, <em class="sig-param">timeout_ms=0</em><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_sys_hci" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="stm.rfcore_sys_hci">
+<span class="sig-prename descclassname"><span class="pre">stm.</span></span><span class="sig-name descname"><span class="pre">rfcore_sys_hci</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ogf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ocf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_ms</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_sys_hci" title="永久链接至目标">¶</a></dt>
 <dd><p>Execute a HCI command on the SYS channel.  The execution is synchronous.</p>
 <p>Returns a bytes object with the result of the SYS command.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -439,10 +441,10 @@ info table).</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

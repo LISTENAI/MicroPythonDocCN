@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>rp2 — functionality specific to the RP2040 &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>rp2 — functionality specific to the RP2040 &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class Flash – access to built-in flash storage" href="rp2.Flash.html" />
     <link rel="prev" title="esp32 — functionality specific to the ESP32" href="esp32.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> rp2 — functionality specific to the RP2040 </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -293,20 +295,20 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="rp2-functionality-specific-to-the-rp2040"></span><h1 id="library-rp2--page-root"><a class="reference internal" href="#library-rp2--page-root" title="rp2: functionality specific to the RP2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code></a> — functionality specific to the RP2040<a class="headerlink" href="#library-rp2--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="module-rp2">
+<span id="rp2-functionality-specific-to-the-rp2040"></span><h1 id="library-rp2--page-root"><a class="reference internal" href="#library-rp2--page-root" title="rp2: functionality specific to the RP2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code></a> — functionality specific to the RP2040<a class="headerlink" href="#library-rp2--page-root" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">rp2</span></code> module contains functions and classes specific to the RP2040, as
 used in the Raspberry Pi Pico.</p>
 <p>See the <a class="reference external" href="https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-python-sdk.pdf">RP2040 Python datasheet</a>
 for more information, and <a class="reference external" href="https://github.com/raspberrypi/pico-micropython-examples/tree/master/pio">pico-micropython-examples</a>
 for example code.</p>
-
-<h2 id="pio-related-functions">PIO related functions<a class="headerlink" href="#pio-related-functions" title="Permalink to this headline">¶</a></h2>
+<section id="pio-related-functions">
+<h2 id="pio-related-functions">PIO related functions<a class="headerlink" href="#pio-related-functions" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">rp2</span></code> module includes functions for assembling PIO programs.</p>
 <p>For running PIO programs, see <a class="reference internal" href="rp2.StateMachine.html#rp2.StateMachine" title="rp2.StateMachine"><code class="xref py py-class docutils literal notranslate"><span class="pre">rp2.StateMachine</span></code></a>.</p>
-<dl class="function">
-<dt id="rp2.asm_pio">
-<code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">asm_pio</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">out_init=None</em>, <em class="sig-param">set_init=None</em>, <em class="sig-param">sideset_init=None</em>, <em class="sig-param">in_shiftdir=0</em>, <em class="sig-param">out_shiftdir=0</em>, <em class="sig-param">autopush=False</em>, <em class="sig-param">autopull=False</em>, <em class="sig-param">push_thresh=32</em>, <em class="sig-param">pull_thresh=32</em>, <em class="sig-param">fifo_join=PIO.JOIN_NONE</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.asm_pio" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rp2.asm_pio">
+<span class="sig-prename descclassname"><span class="pre">rp2.</span></span><span class="sig-name descname"><span class="pre">asm_pio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sideset_init</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_shiftdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_shiftdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autopush</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">autopull</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">push_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">32</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fifo_join</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">PIO.JOIN_NONE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.asm_pio" title="永久链接至目标">¶</a></dt>
 <dd><p>Assemble a PIO program.</p>
 <p>The following parameters control the initial state of the GPIO pins, as one
 of <a class="reference internal" href="rp2.PIO.html#rp2.PIO.IN_LOW" title="rp2.PIO.IN_LOW"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.IN_LOW</span></code></a>, <a class="reference internal" href="rp2.PIO.html#rp2.PIO.IN_HIGH" title="rp2.PIO.IN_HIGH"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.IN_HIGH</span></code></a>, <a class="reference internal" href="rp2.PIO.html#rp2.PIO.OUT_LOW" title="rp2.PIO.OUT_LOW"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.OUT_LOW</span></code></a> or <a class="reference internal" href="rp2.PIO.html#rp2.PIO.OUT_HIGH" title="rp2.PIO.OUT_HIGH"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.OUT_HIGH</span></code></a>. If the
@@ -340,9 +342,9 @@ combined into a single 8-word FIFO for one direction only. The options
 are <a class="reference internal" href="rp2.PIO.html#rp2.PIO.JOIN_NONE" title="rp2.PIO.JOIN_NONE"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.JOIN_NONE</span></code></a>, <a class="reference internal" href="rp2.PIO.html#rp2.PIO.JOIN_RX" title="rp2.PIO.JOIN_RX"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.JOIN_RX</span></code></a> and <a class="reference internal" href="rp2.PIO.html#rp2.PIO.JOIN_TX" title="rp2.PIO.JOIN_TX"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.JOIN_TX</span></code></a>.</p></li>
 </ul>
 </dd></dl>
-<dl class="function">
-<dt id="rp2.asm_pio_encode">
-<code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">asm_pio_encode</code><span class="sig-paren">(</span><em class="sig-param">instr</em>, <em class="sig-param">sideset_count</em>, <em class="sig-param">sideset_opt=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.asm_pio_encode" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="rp2.asm_pio_encode">
+<span class="sig-prename descclassname"><span class="pre">rp2.</span></span><span class="sig-name descname"><span class="pre">asm_pio_encode</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sideset_count</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sideset_opt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.asm_pio_encode" title="永久链接至目标">¶</a></dt>
 <dd><p>Assemble a single PIO instruction. You usually want to use <a class="reference internal" href="#rp2.asm_pio" title="rp2.asm_pio"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio()</span></code></a>
 instead.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rp2</span><span class="o">.</span><span class="n">asm_pio_encode</span><span class="p">(</span><span class="s2">"set(0, 1)"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
@@ -350,15 +352,15 @@ instead.</p>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="class">
-<dt id="rp2.PIOASMError">
-<em class="property">class </em><code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">PIOASMError</code><a class="headerlink" href="#rp2.PIOASMError" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="rp2.PIOASMError">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rp2.</span></span><span class="sig-name descname"><span class="pre">PIOASMError</span></span><a class="headerlink" href="#rp2.PIOASMError" title="永久链接至目标">¶</a></dt>
 <dd><p>This exception is raised from <a class="reference internal" href="#rp2.asm_pio" title="rp2.asm_pio"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio()</span></code></a> or <a class="reference internal" href="#rp2.asm_pio_encode" title="rp2.asm_pio_encode"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio_encode()</span></code></a> if there is
 an error assembling a PIO program.</p>
 </dd></dl>
-
-
-<h2 id="pio-assembly-language-instructions">PIO assembly language instructions<a class="headerlink" href="#pio-assembly-language-instructions" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="pio-assembly-language-instructions">
+<h2 id="pio-assembly-language-instructions">PIO assembly language instructions<a class="headerlink" href="#pio-assembly-language-instructions" title="永久链接至标题">¶</a></h2>
 <p>PIO state machines are programmed in a custom assembly language with nine core
 PIO-machine instructions.  In MicroPython, PIO assembly routines are written as
 a Python function with the decorator <code class="docutils literal notranslate"><span class="pre">@rp2.asm_pio()</span></code>, and they use Python
@@ -509,9 +511,9 @@ used)</p></li>
 <dt>[value]</dt><dd><p>This is a modifier and is equivalent to <code class="docutils literal notranslate"><span class="pre">.delay(value)</span></code>.</p>
 </dd>
 </dl>
-
-
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="classes">
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="rp2.Flash.html">class Flash – access to built-in flash storage</a></li>
@@ -519,8 +521,8 @@ used)</p></li>
 <li class="toctree-l1"><a class="reference internal" href="rp2.StateMachine.html">class StateMachine – access to the RP2040’s programmable I/O interface</a></li>
 </ul>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -569,10 +571,10 @@ used)</p></li>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

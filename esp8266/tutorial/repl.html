@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>2. Getting a MicroPython REPL prompt &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>2. Getting a MicroPython REPL prompt &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="3. The internal filesystem" href="filesystem.html" />
     <link rel="prev" title="1. Getting started with MicroPython on the ESP8266" href="intro.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="MicroPython 1.18 documentation"
+        <a href="../../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 2. Getting a MicroPython REPL prompt </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the ESP8266</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for ESP8266</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -308,15 +310,15 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="esp8266-tutorial-repl--page-root"><span class="section-number">2. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#esp8266-tutorial-repl--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="getting-a-micropython-repl-prompt">
+<h1 id="esp8266-tutorial-repl--page-root"><span class="section-number">2. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#esp8266-tutorial-repl--page-root" title="永久链接至标题">¶</a></h1>
 <p>REPL stands for Read Evaluate Print Loop, and is the name given to the
 interactive MicroPython prompt that you can access on the ESP8266.  Using the
 REPL is by far the easiest way to test out your code and run commands.</p>
 <p>There are two ways to access the REPL: either via a wired connection through the
 UART serial port, or via WiFi.</p>
-
-<h2 id="repl-over-the-serial-port"><span class="section-number">2.1. </span>REPL over the serial port<a class="headerlink" href="#repl-over-the-serial-port" title="Permalink to this headline">¶</a></h2>
+<section id="repl-over-the-serial-port">
+<h2 id="repl-over-the-serial-port"><span class="section-number">2.1. </span>REPL over the serial port<a class="headerlink" href="#repl-over-the-serial-port" title="永久链接至标题">¶</a></h2>
 <p>The REPL is always available on the UART0 serial peripheral, which is connected
 to the pins GPIO1 for TX and GPIO3 for RX.  The baudrate of the REPL is 115200.
 If your board has a USB-serial convertor on it then you should be able to access
@@ -333,9 +335,9 @@ other terminal programs that will work, so pick your favourite!</p>
 <p>Once you have made the connection over the serial port you can test if it is
 working by hitting enter a few times.  You should see the Python REPL prompt,
 indicated by <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>.</p>
-
-
-<h2 id="webrepl-a-prompt-over-wifi"><span class="section-number">2.2. </span>WebREPL - a prompt over WiFi<a class="headerlink" href="#webrepl-a-prompt-over-wifi" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="webrepl-a-prompt-over-wifi">
+<h2 id="webrepl-a-prompt-over-wifi"><span class="section-number">2.2. </span>WebREPL - a prompt over WiFi<a class="headerlink" href="#webrepl-a-prompt-over-wifi" title="永久链接至标题">¶</a></h2>
 <p>WebREPL allows you to use the Python prompt over WiFi, connecting through a
 browser. The latest versions of Firefox and Chrome are supported.</p>
 <p>For your convenience, WebREPL client is hosted at
@@ -364,9 +366,9 @@ point).  If the connection succeeds then you should see a password prompt.</p>
 <p>Once you type the password configured at the setup step above, press Enter once
 more and you should get a prompt looking like <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>.  You can now start
 typing Python commands!</p>
-
-
-<h2 id="using-the-repl"><span class="section-number">2.3. </span>Using the REPL<a class="headerlink" href="#using-the-repl" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-repl">
+<h2 id="using-the-repl"><span class="section-number">2.3. </span>Using the REPL<a class="headerlink" href="#using-the-repl" title="永久链接至标题">¶</a></h2>
 <p>Once you have a prompt you can start experimenting!  Anything you type at the
 prompt will be executed after you press the Enter key.  MicroPython will run
 the code that you enter and print the result (if there is one).  If there is an
@@ -402,30 +404,30 @@ turn it on and off using the following code:</p>
 <p>Note that <code class="docutils literal notranslate"><span class="pre">on</span></code> method of a Pin might turn the LED off and <code class="docutils literal notranslate"><span class="pre">off</span></code> might
 turn it on (or vice versa), depending on how the LED is wired on your board.
 To resolve this, machine.Signal class is provided.</p>
-
-<h3 id="line-editing"><span class="section-number">2.3.1. </span>Line editing<a class="headerlink" href="#line-editing" title="Permalink to this headline">¶</a></h3>
+<section id="line-editing">
+<h3 id="line-editing"><span class="section-number">2.3.1. </span>Line editing<a class="headerlink" href="#line-editing" title="永久链接至标题">¶</a></h3>
 <p>You can edit the current line that you are entering using the left and right
 arrow keys to move the cursor, as well as the delete and backspace keys.  Also,
 pressing Home or ctrl-A moves the cursor to the start of the line, and pressing
 End or ctrl-E moves to the end of the line.</p>
-
-
-<h3 id="input-history"><span class="section-number">2.3.2. </span>Input history<a class="headerlink" href="#input-history" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="input-history">
+<h3 id="input-history"><span class="section-number">2.3.2. </span>Input history<a class="headerlink" href="#input-history" title="永久链接至标题">¶</a></h3>
 <p>The REPL remembers a certain number of previous lines of text that you entered
 (up to 8 on the ESP8266).  To recall previous lines use the up and down arrow
 keys.</p>
-
-
-<h3 id="tab-completion"><span class="section-number">2.3.3. </span>Tab completion<a class="headerlink" href="#tab-completion" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="tab-completion">
+<h3 id="tab-completion"><span class="section-number">2.3.3. </span>Tab completion<a class="headerlink" href="#tab-completion" title="永久链接至标题">¶</a></h3>
 <p>Pressing the Tab key will do an auto-completion of the current word that you are
 entering.  This can be very useful to find out functions and methods that a
 module or object has.  Try it out by typing “ma” and then pressing Tab.  It
 should complete to “machine” (assuming you imported machine in the above
 example).  Then type “.” and press Tab again to see a list of all the functions
 that the machine module has.</p>
-
-
-<h3 id="line-continuation-and-auto-indent"><span class="section-number">2.3.4. </span>Line continuation and auto-indent<a class="headerlink" href="#line-continuation-and-auto-indent" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="line-continuation-and-auto-indent">
+<h3 id="line-continuation-and-auto-indent"><span class="section-number">2.3.4. </span>Line continuation and auto-indent<a class="headerlink" href="#line-continuation-and-auto-indent" title="永久链接至标题">¶</a></h3>
 <p>Certain things that you type will need “continuing”, that is, will need more
 lines of text to make a proper Python statement.  In this case the prompt will
 change to <code class="docutils literal notranslate"><span class="pre">...</span></code> and the cursor will auto-indent the correct amount so you can
@@ -468,9 +470,9 @@ the toggling press ctrl-C, which will raise a KeyboardInterrupt exception and
 break out of the loop.</p>
 <p>The time module provides some useful functions for making delays and doing
 timing.  Use tab completion to find out what they are and play around with them!</p>
-
-
-<h3 id="paste-mode"><span class="section-number">2.3.5. </span>Paste mode<a class="headerlink" href="#paste-mode" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="paste-mode">
+<h3 id="paste-mode"><span class="section-number">2.3.5. </span>Paste mode<a class="headerlink" href="#paste-mode" title="永久链接至标题">¶</a></h3>
 <p>Pressing ctrl-E will enter a special paste mode.  This allows you to copy and
 paste a chunk of text into the REPL.  If you press ctrl-E you will see the
 paste-mode prompt:</p>
@@ -481,9 +483,9 @@ paste-mode prompt:</p>
 <p>You can then paste (or type) your text in.  Note that none of the special keys
 or commands work in paste mode (eg Tab or backspace), they are just accepted
 as-is.  Press ctrl-D to finish entering the text and execute it.</p>
-
-
-<h3 id="other-control-commands"><span class="section-number">2.3.6. </span>Other control commands<a class="headerlink" href="#other-control-commands" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="other-control-commands">
+<h3 id="other-control-commands"><span class="section-number">2.3.6. </span>Other control commands<a class="headerlink" href="#other-control-commands" title="永久链接至标题">¶</a></h3>
 <p>There are four other control commands:</p>
 <ul class="simple">
 <li><p>Ctrl-A on a blank line will enter raw REPL mode.  This is like a permanent
@@ -493,9 +495,9 @@ paste mode, except that characters are not echoed back.</p></li>
 <li><p>Ctrl-D on a blank line will do a soft reset.</p></li>
 </ul>
 <p>Note that ctrl-A and ctrl-D do not work with WebREPL.</p>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -544,10 +546,10 @@ paste mode, except that characters are not echoed back.</p></li>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>zephyr — functionality specific to the Zephyr port &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>zephyr — functionality specific to the Zephyr port &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class DiskAccess – access to disk storage" href="zephyr.DiskAccess.html" />
     <link rel="prev" title="class StateMachine – access to the RP2040’s programmable I/O interface" href="rp2.StateMachine.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> zephyr — functionality specific to the Zephyr port </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -293,26 +295,26 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="zephyr-functionality-specific-to-the-zephyr-port"></span><h1 id="library-zephyr--page-root"><a class="reference internal" href="#library-zephyr--page-root" title="zephyr: functionality specific to Zephyr"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code></a> — functionality specific to the Zephyr port<a class="headerlink" href="#library-zephyr--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="module-zephyr">
+<span id="zephyr-functionality-specific-to-the-zephyr-port"></span><h1 id="library-zephyr--page-root"><a class="reference internal" href="#library-zephyr--page-root" title="zephyr: functionality specific to Zephyr"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code></a> — functionality specific to the Zephyr port<a class="headerlink" href="#library-zephyr--page-root" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">zephyr</span></code> module contains functions and classes specific to the Zephyr port.</p>
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="zephyr.is_preempt_thread">
-<code class="sig-prename descclassname">zephyr.</code><code class="sig-name descname">is_preempt_thread</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.is_preempt_thread" title="Permalink to this definition">¶</a></dt>
+<section id="functions">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="zephyr.is_preempt_thread">
+<span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">is_preempt_thread</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.is_preempt_thread" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns true if the current thread is a preemptible thread.</p>
 <p>Zephyr preemptible threads are those with non-negative priority values (low priority levels), which therefore,
 can be supplanted as soon as a higher or equal priority thread becomes ready.</p>
 </dd></dl>
-<dl class="function">
-<dt id="zephyr.current_tid">
-<code class="sig-prename descclassname">zephyr.</code><code class="sig-name descname">current_tid</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.current_tid" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="zephyr.current_tid">
+<span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">current_tid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.current_tid" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the thread id of the current thread, which is used to reference the thread.</p>
 </dd></dl>
-<dl class="function">
-<dt id="zephyr.thread_analyze">
-<code class="sig-prename descclassname">zephyr.</code><code class="sig-name descname">thread_analyze</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.thread_analyze" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="zephyr.thread_analyze">
+<span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">thread_analyze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.thread_analyze" title="永久链接至目标">¶</a></dt>
 <dd><p>Runs the Zephyr debug thread analyzer on the current thread and prints stack size statistics in the format:</p>
 <blockquote>
 <div><p>“<code class="docutils literal notranslate"><span class="pre">thread_name</span></code>-20s: STACK: unused <code class="docutils literal notranslate"><span class="pre">available_stack_space</span></code> usage <code class="docutils literal notranslate"><span class="pre">stack_space_used</span></code>
@@ -324,32 +326,32 @@ can be supplanted as soon as a higher or equal priority thread becomes ready.</p
 <p>This function can only be accessed if <code class="docutils literal notranslate"><span class="pre">CONFIG_THREAD_ANALYZER</span></code> is configured for the port in <code class="docutils literal notranslate"><span class="pre">zephyr/prj.conf</span></code>.
 For more infomation, see documentation for Zephyr <a class="reference external" href="https://docs.zephyrproject.org/latest/guides/debug_tools/thread-analyzer.html#thread-analyzer">thread analyzer</a>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="zephyr.shell_exec">
-<code class="sig-prename descclassname">zephyr.</code><code class="sig-name descname">shell_exec</code><span class="sig-paren">(</span><em class="sig-param">cmd_in</em><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.shell_exec" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="zephyr.shell_exec">
+<span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">shell_exec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.shell_exec" title="永久链接至目标">¶</a></dt>
 <dd><p>Executes the given command on an UART backend. This function can only be accessed if <code class="docutils literal notranslate"><span class="pre">CONFIG_SHELL_BACKEND_SERIAL</span></code>
 is configured for the port in <code class="docutils literal notranslate"><span class="pre">zephyr/prj.conf</span></code>.</p>
 <p>A list of possible commands can be found in the documentation for Zephyr <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/shell/index.html?highlight=shell_execute_cmd#commands">shell commands</a>.</p>
 </dd></dl>
-
-
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="classes">
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="zephyr.DiskAccess.html">class DiskAccess – access to disk storage</a></li>
 <li class="toctree-l1"><a class="reference internal" href="zephyr.FlashArea.html">class FlashArea – access to built-in flash storage</a></li>
 </ul>
 </div>
-
-
-<h2 id="additional-modules">Additional Modules<a class="headerlink" href="#additional-modules" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="additional-modules">
+<h2 id="additional-modules">Additional Modules<a class="headerlink" href="#additional-modules" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="zephyr.zsensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code> — Zephyr sensor bindings</a></li>
 </ul>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -398,10 +400,10 @@ is configured for the port in <code class="docutils literal notranslate"><span c
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

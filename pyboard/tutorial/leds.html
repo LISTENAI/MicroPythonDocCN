@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>4. Turning on LEDs and basic Python concepts &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>4. Turning on LEDs and basic Python concepts &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="5. Switches, callbacks and interrupts" href="switch.html" />
     <link rel="prev" title="3. Getting a MicroPython REPL prompt" href="repl.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="MicroPython 1.18 documentation"
+        <a href="../../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 4. Turning on LEDs and basic Python concepts </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the pyboard</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for the pyboard</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -292,8 +294,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="pyboard-tutorial-leds--page-root"><span class="section-number">4. </span>Turning on LEDs and basic Python concepts<a class="headerlink" href="#pyboard-tutorial-leds--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="turning-on-leds-and-basic-python-concepts">
+<h1 id="pyboard-tutorial-leds--page-root"><span class="section-number">4. </span>Turning on LEDs and basic Python concepts<a class="headerlink" href="#pyboard-tutorial-leds--page-root" title="永久链接至标题">¶</a></h1>
 <p>The easiest thing to do on the pyboard is to turn on the LEDs attached to the board. Connect the board, and log in as described in tutorial 1. We will start by turning and LED on in the interpreter, type the following</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myled</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myled</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
@@ -313,8 +315,8 @@
 <p>The first line of code creates an LED object which we have then called led. When we create the object, it takes a single parameter which must be between 1 and 4, corresponding to the 4 LEDs on the board. The pyb.LED class has three important member functions that we will use: on(), off() and toggle(). The other function that we use is pyb.delay() this simply waits for a given time in milliseconds. Once we have created the LED object, the statement while True: creates an infinite loop which toggles the led between on and off and waits for 1 second.</p>
 <p><strong>Exercise: Try changing the time between toggling the led and turning on a different LED.</strong></p>
 <p><strong>Exercise: Connect to the pyboard directly, create a pyb.LED object and turn it on using the on() method.</strong></p>
-
-<h2 id="a-disco-on-your-pyboard"><span class="section-number">4.1. </span>A Disco on your pyboard<a class="headerlink" href="#a-disco-on-your-pyboard" title="Permalink to this headline">¶</a></h2>
+<section id="a-disco-on-your-pyboard">
+<h2 id="a-disco-on-your-pyboard"><span class="section-number">4.1. </span>A Disco on your pyboard<a class="headerlink" href="#a-disco-on-your-pyboard" title="永久链接至标题">¶</a></h2>
 <p>So far we have only used a single LED but the pyboard has 4 available. Let’s start by creating an object for each LED so we can control each of them. We do that by creating a list of LEDS with a list comprehension.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">leds</span> <span class="o">=</span> <span class="p">[</span><span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
 </pre></div>
@@ -345,9 +347,9 @@ Next we will set up an infinite loop that cycles through each of the LEDs turnin
         <span class="n">l</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
 </pre></div>
 </div>
-
-
-<h2 id="the-special-leds"><span class="section-number">4.2. </span>The Special LEDs<a class="headerlink" href="#the-special-leds" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-special-leds">
+<h2 id="the-special-leds"><span class="section-number">4.2. </span>The Special LEDs<a class="headerlink" href="#the-special-leds" title="永久链接至标题">¶</a></h2>
 <p>The yellow and blue LEDs are special. As well as turning them on and off, you can control their intensity using the intensity() method. This takes a number between 0 and 255 that determines how bright it is. The following script makes the blue LED gradually brighter then turns it off again.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">led</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">intensity</span> <span class="o">=</span> <span class="mi">0</span>
@@ -358,8 +360,8 @@ Next we will set up an infinite loop that cycles through each of the LEDs turnin
 </pre></div>
 </div>
 <p>You can call intensity() on LEDs 1 and 2 but they can only be off or on. 0 sets them off and any other number up to 255 turns them on.</p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -408,10 +410,10 @@ Next we will set up an infinite loop that cycles through each of the LEDs turnin
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

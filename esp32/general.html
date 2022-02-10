@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>General information about the ESP32 port &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>General information about the ESP32 port &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython tutorial for ESP32" href="tutorial/index.html" />
     <link rel="prev" title="Quick reference for the ESP32" href="quickref.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> General information about the ESP32 port </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="quickref.html" class="md-tabs__link">Quick reference for the ESP32</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -291,12 +293,12 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="esp32-general"></span><h1 id="esp32-general--page-root">General information about the ESP32 port<a class="headerlink" href="#esp32-general--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="general-information-about-the-esp32-port">
+<span id="esp32-general"></span><h1 id="esp32-general--page-root">General information about the ESP32 port<a class="headerlink" href="#esp32-general--page-root" title="永久链接至标题">¶</a></h1>
 <p>The ESP32 is a popular WiFi and Bluetooth enabled System-on-Chip (SoC) by
 Espressif Systems.</p>
-
-<h2 id="multitude-of-boards">Multitude of boards<a class="headerlink" href="#multitude-of-boards" title="Permalink to this headline">¶</a></h2>
+<section id="multitude-of-boards">
+<h2 id="multitude-of-boards">Multitude of boards<a class="headerlink" href="#multitude-of-boards" title="永久链接至标题">¶</a></h2>
 <p>There is a multitude of modules and boards from different sources which carry
 the ESP32 chip. MicroPython tries to provide a generic port which would run on
 as many boards/modules as possible, but there may be limitations. Espressif
@@ -314,9 +316,9 @@ actual ESP32 pins.</p></li>
 For example pins that are connected to external SPI flash should not be used,
 and a board may only expose a certain selection of pins.</p></li>
 </ul>
-
-
-<h2 id="technical-specifications-and-soc-datasheets">Technical specifications and SoC datasheets<a class="headerlink" href="#technical-specifications-and-soc-datasheets" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="technical-specifications-and-soc-datasheets">
+<h2 id="technical-specifications-and-soc-datasheets">Technical specifications and SoC datasheets<a class="headerlink" href="#technical-specifications-and-soc-datasheets" title="永久链接至标题">¶</a></h2>
 <p>The datasheets and other reference material for ESP32 chip are available
 from the vendor site: <a class="reference external" href="https://www.espressif.com/en/support/download/documents?keys=esp32">https://www.espressif.com/en/support/download/documents?keys=esp32</a> .
 They are the primary reference for the chip technical specifications, capabilities,
@@ -346,8 +348,8 @@ and always-available BootROM bootloader, the ESP32 is not brickable</p></li>
 framework for the ESP32.  This is a FreeRTOS based system.  See the
 <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/index.html">ESP-IDF Programming Guide</a>
 for details.</p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -396,10 +398,10 @@ for details.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

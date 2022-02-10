@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class UART – duplex serial communication bus &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class UART – duplex serial communication bus &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class SPI – a Serial Peripheral Interface bus protocol (controller side)" href="machine.SPI.html" />
     <link rel="prev" title="class PWM – pulse width modulation" href="machine.PWM.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class UART – duplex serial communication bus </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -294,14 +296,14 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-uart"></span><h1 id="library-machine-uart--page-root">class UART – duplex serial communication bus<a class="headerlink" href="#library-machine-uart--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-uart-duplex-serial-communication-bus">
+<span id="machine-uart"></span><h1 id="library-machine-uart--page-root">class UART – duplex serial communication bus<a class="headerlink" href="#library-machine-uart--page-root" title="永久链接至标题">¶</a></h1>
 <p>UART implements the standard UART/USART duplex serial communications protocol.  At
 the physical level it consists of 2 lines: RX and TX.  The unit of communication
 is a character (not to be confused with a string character) which can be 8 or 9
 bits wide.</p>
 <p>UART objects can be created and initialised using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">UART</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">UART</span>
 
 <span class="n">uart</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9600</span><span class="p">)</span>                         <span class="c1"># init with given baudrate</span>
 <span class="n">uart</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="mi">9600</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">parity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># init with given parameters</span>
@@ -321,19 +323,19 @@ using the standard stream methods:</p>
 <span class="n">uart</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">)</span>   <span class="c1"># write the 3 characters</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="machine.UART">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">UART</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.UART">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">UART</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART" title="永久链接至目标">¶</a></dt>
 <dd><p>Construct a UART object of the given id.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="machine.UART.init">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">baudrate=9600</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">parity=None</em>, <em class="sig-param">stop=1</em>, <em class="sig-param">*</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.init">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate=9600</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits=8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parity=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop=1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Initialise the UART bus with the given parameters:</p>
 <blockquote>
 <div><ul class="simple">
@@ -381,14 +383,14 @@ flow control will be disabled. If <em>pins</em> is <code class="docutils literal
 </ul>
 </div></blockquote>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.deinit">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.deinit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.deinit">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Turn off the UART bus.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.any">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">any</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.any" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.any">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">any</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.any" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns an integer counting the number of characters that can be read without
 blocking.  It will return 0 if there are no characters available and a positive
 number if there are characters.  The method may return 1 even if there is more
@@ -400,46 +402,46 @@ than one character available for reading.</p>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.read">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">nbytes</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.read" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.read">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">nbytes</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.read" title="永久链接至目标">¶</a></dt>
 <dd><p>Read characters.  If <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> is specified then read at most that many bytes,
 otherwise read as much data as possible. It may return sooner if a timeout
 is reached. The timeout is configurable in the constructor.</p>
 <p>Return value: a bytes object containing the bytes read in.  Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>
 on timeout.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.readinto">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="optional">[</span>, <em class="sig-param">nbytes</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.readinto" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.readinto">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">readinto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">nbytes</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.readinto" title="永久链接至目标">¶</a></dt>
 <dd><p>Read bytes into the <code class="docutils literal notranslate"><span class="pre">buf</span></code>.  If <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> is specified then read at most
 that many bytes.  Otherwise, read at most <code class="docutils literal notranslate"><span class="pre">len(buf)</span></code> bytes. It may return sooner if a timeout
 is reached. The timeout is configurable in the constructor.</p>
 <p>Return value: number of bytes read and stored into <code class="docutils literal notranslate"><span class="pre">buf</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code> on
 timeout.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.readline">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.readline" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.readline">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">readline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.readline" title="永久链接至目标">¶</a></dt>
 <dd><p>Read a line, ending in a newline character. It may return sooner if a timeout
 is reached. The timeout is configurable in the constructor.</p>
 <p>Return value: the line read or <code class="docutils literal notranslate"><span class="pre">None</span></code> on timeout.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.write">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.write" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.write">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.write" title="永久链接至目标">¶</a></dt>
 <dd><p>Write the buffer of bytes to the bus.</p>
 <p>Return value: number of bytes written or <code class="docutils literal notranslate"><span class="pre">None</span></code> on timeout.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.sendbreak">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">sendbreak</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.sendbreak" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.sendbreak">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">sendbreak</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.sendbreak" title="永久链接至目标">¶</a></dt>
 <dd><p>Send a break condition on the bus. This drives the bus low for a duration
 longer than required for a normal transmission of a character.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.UART.irq">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">trigger</em>, <em class="sig-param">priority=1</em>, <em class="sig-param">handler=None</em>, <em class="sig-param">wake=machine.IDLE</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.UART.irq">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">trigger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wake</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">machine.IDLE</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a callback to be triggered when data is received on the UART.</p>
 <blockquote>
 <div><ul class="simple">
@@ -451,7 +453,7 @@ Higher values represent higher priorities.</p></li>
 </ul>
 </div></blockquote>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>The handler will be called whenever any of the following two conditions are met:</p>
 <blockquote>
 <div><ul class="simple">
@@ -466,17 +468,17 @@ characters waiting.</p>
 <p>Returns an irq object.</p>
 <p>Availability: WiPy.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="machine.UART.RX_ANY">
-<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">RX_ANY</code><a class="headerlink" href="#machine.UART.RX_ANY" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.UART.RX_ANY">
+<span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">RX_ANY</span></span><a class="headerlink" href="#machine.UART.RX_ANY" title="永久链接至目标">¶</a></dt>
 <dd><p>IRQ trigger sources</p>
 <p>Availability: WiPy.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -525,10 +527,10 @@ characters waiting.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

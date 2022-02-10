@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>zlib – zlib decompression &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>zlib – zlib decompression &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="_thread – multithreading support" href="_thread.html" />
     <link rel="prev" title="uasyncio — asynchronous I/O scheduler" href="uasyncio.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> zlib – zlib decompression </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -289,20 +291,20 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="zlib-zlib-decompression"></span><h1 id="library-zlib--page-root"><a class="reference internal" href="#library-zlib--page-root" title="zlib: zlib decompression"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code></a> – zlib decompression<a class="headerlink" href="#library-zlib--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-zlib">
+<span id="zlib-zlib-decompression"></span><h1 id="library-zlib--page-root"><a class="reference internal" href="#library-zlib--page-root" title="zlib: zlib decompression"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zlib</span></code></a> – zlib decompression<a class="headerlink" href="#library-zlib--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/zlib.html#module-zlib" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">zlib</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/zlib.html#module-zlib" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">zlib</span></code></a>.</p>
 <p>This module allows to decompress binary data compressed with
 <a class="reference external" href="https://en.wikipedia.org/wiki/DEFLATE">DEFLATE algorithm</a>
 (commonly used in zlib library and gzip archiver). Compression
 is not yet implemented.</p>
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="zlib.decompress">
-<code class="sig-prename descclassname">zlib.</code><code class="sig-name descname">decompress</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">wbits=0</em>, <em class="sig-param">bufsize=0</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#zlib.decompress" title="Permalink to this definition">¶</a></dt>
+<section id="functions">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="zlib.decompress">
+<span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">decompress</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wbits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bufsize</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zlib.decompress" title="永久链接至目标">¶</a></dt>
 <dd><p>Return decompressed <em>data</em> as bytes. <em>wbits</em> is DEFLATE dictionary window
 size used during compression (8-15, the dictionary size is power of 2 of
 that value). Additionally, if value is positive, <em>data</em> is assumed to be
@@ -310,9 +312,9 @@ zlib stream (with zlib header). Otherwise, if it’s negative, it’s assumed
 to be raw DEFLATE stream. <em>bufsize</em> parameter is for compatibility with
 CPython and is ignored.</p>
 </dd></dl>
-<dl class="class">
-<dt id="zlib.DecompIO">
-<em class="property">class </em><code class="sig-prename descclassname">zlib.</code><code class="sig-name descname">DecompIO</code><span class="sig-paren">(</span><em class="sig-param">stream</em>, <em class="sig-param">wbits=0</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#zlib.DecompIO" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="zlib.DecompIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">zlib.</span></span><span class="sig-name descname"><span class="pre">DecompIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">stream</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wbits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zlib.DecompIO" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a> wrapper which allows transparent decompression of
 compressed data in another <em>stream</em>. This allows to process compressed
 streams with data larger than available heap size. In addition to
@@ -324,8 +326,8 @@ values described in <a class="reference internal" href="#zlib.decompress" title=
 basis and may be changed considerably or removed in later versions.</p>
 </div>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -374,10 +376,10 @@ basis and may be changed considerably or removed in later versions.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

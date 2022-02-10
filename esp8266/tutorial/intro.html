@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>1. Getting started with MicroPython on the ESP8266 &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>1. Getting started with MicroPython on the ESP8266 &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="2. Getting a MicroPython REPL prompt" href="repl.html" />
     <link rel="prev" title="MicroPython tutorial for ESP8266" href="index.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="MicroPython 1.18 documentation"
+        <a href="../../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 1. Getting started with MicroPython on the ESP8266 </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the ESP8266</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for ESP8266</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -302,16 +304,16 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="intro"></span><h1 id="esp8266-tutorial-intro--page-root"><span class="section-number">1. </span>Getting started with MicroPython on the ESP8266<a class="headerlink" href="#esp8266-tutorial-intro--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="getting-started-with-micropython-on-the-esp8266">
+<span id="intro"></span><h1 id="esp8266-tutorial-intro--page-root"><span class="section-number">1. </span>Getting started with MicroPython on the ESP8266<a class="headerlink" href="#esp8266-tutorial-intro--page-root" title="永久链接至标题">¶</a></h1>
 <p>Using MicroPython is a great way to get the most of your ESP8266 board.  And
 vice versa, the ESP8266 chip is a great platform for using MicroPython.  This
 tutorial will guide you through setting up MicroPython, getting a prompt, using
 WebREPL, connecting to the network and communicating with the Internet, using
 the hardware peripherals, and controlling some external components.</p>
 <p>Let’s get started!</p>
-
-<h2 id="requirements"><span class="section-number">1.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h2>
+<section id="requirements">
+<h2 id="requirements"><span class="section-number">1.1. </span>Requirements<a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h2>
 <p>The first thing you need is a board with an ESP8266 chip.  The MicroPython
 software supports the ESP8266 chip itself and any board should work.  The main
 characteristic of a board is how much flash it has, how the GPIO pins are
@@ -326,15 +328,15 @@ for their particular application.</p>
 <p>Names of pins will be given in this tutorial using the chip names (eg GPIO0)
 and it should be straightforward to find which pin this corresponds to on your
 particular board.</p>
-
-
-<h2 id="powering-the-board"><span class="section-number">1.2. </span>Powering the board<a class="headerlink" href="#powering-the-board" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="powering-the-board">
+<h2 id="powering-the-board"><span class="section-number">1.2. </span>Powering the board<a class="headerlink" href="#powering-the-board" title="永久链接至标题">¶</a></h2>
 <p>If your board has a USB connector on it then most likely it is powered through
 this when connected to your PC.  Otherwise you will need to power it directly.
 Please refer to the documentation for your board for further details.</p>
-
-
-<h2 id="getting-the-firmware"><span class="section-number">1.3. </span>Getting the firmware<a class="headerlink" href="#getting-the-firmware" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="getting-the-firmware">
+<h2 id="getting-the-firmware"><span class="section-number">1.3. </span>Getting the firmware<a class="headerlink" href="#getting-the-firmware" title="永久链接至标题">¶</a></h2>
 <p>The first thing you need to do is download the most recent MicroPython firmware
 .bin file to load onto your ESP8266 device. You can download it from the
 <a class="reference external" href="http://micropython.org/download#esp8266">MicroPython downloads page</a>.
@@ -353,9 +355,9 @@ what new changes and features were introduced).</p>
 <p>Support for 512kb modules is provided on a feature preview basis. For end
 users, it’s recommended to use modules with flash of 1024kb or more. As
 such, only daily builds for 512kb modules are provided.</p>
-
-
-<h2 id="deploying-the-firmware"><span class="section-number">1.4. </span>Deploying the firmware<a class="headerlink" href="#deploying-the-firmware" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="deploying-the-firmware">
+<h2 id="deploying-the-firmware"><span class="section-number">1.4. </span>Deploying the firmware<a class="headerlink" href="#deploying-the-firmware" title="永久链接至标题">¶</a></h2>
 <p>Once you have the MicroPython firmware (compiled code), you need to load it onto
 your ESP8266 device.  There are two main steps to do this: first you
 need to put your device in boot-loader mode, and second you need to copy across
@@ -406,16 +408,16 @@ your board!</p>
 <p>If you pulled GPIO0 manually to ground to enter programming mode, release it
 now and reset the device by again pulling the reset pin to ground for a short
 duration.</p>
-
-
-<h2 id="serial-prompt"><span class="section-number">1.5. </span>Serial prompt<a class="headerlink" href="#serial-prompt" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="serial-prompt">
+<h2 id="serial-prompt"><span class="section-number">1.5. </span>Serial prompt<a class="headerlink" href="#serial-prompt" title="永久链接至标题">¶</a></h2>
 <p>Once you have the firmware on the device you can access the REPL (Python prompt)
 over UART0 (GPIO1=TX, GPIO3=RX), which might be connected to a USB-serial
 convertor, depending on your board.  The baudrate is 115200.  The next part of
 the tutorial will discuss the prompt in more detail.</p>
-
-
-<h2 id="wifi"><span class="section-number">1.6. </span>WiFi<a class="headerlink" href="#wifi" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="wifi">
+<h2 id="wifi"><span class="section-number">1.6. </span>WiFi<a class="headerlink" href="#wifi" title="永久链接至标题">¶</a></h2>
 <p>After a fresh install and boot the device configures itself as a WiFi access
 point (AP) that you can connect to.  The ESSID is of the form MicroPython-xxxxxx
 where the x’s are replaced with part of the MAC address of your device (so will
@@ -423,9 +425,9 @@ be the same everytime, and most likely different for all ESP8266 chips).  The
 password for the WiFi is micropythoN (note the upper-case N).  Its IP address
 will be 192.168.4.1 once you connect to its network.  WiFi configuration will
 be discussed in more detail later in the tutorial.</p>
-
-
-<h2 id="troubleshooting-installation-problems"><span class="section-number">1.7. </span>Troubleshooting installation problems<a class="headerlink" href="#troubleshooting-installation-problems" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="troubleshooting-installation-problems">
+<h2 id="troubleshooting-installation-problems"><span class="section-number">1.7. </span>Troubleshooting installation problems<a class="headerlink" href="#troubleshooting-installation-problems" title="永久链接至标题">¶</a></h2>
 <p>If you experience problems during flashing or with running firmware immediately
 after it, here are troubleshooting recommendations:</p>
 <ul>
@@ -486,8 +488,8 @@ for additional documentation and bug tracker where you can report problems.</p><
 <code class="docutils literal notranslate"><span class="pre">esp.check_fw()</span></code> return errors even after multiple retries, you
 may have a defective FlashROM chip, as explained above.</p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -536,10 +538,10 @@ may have a defective FlashROM chip, as explained above.</p></li>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

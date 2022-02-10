@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class I2S – Inter-IC Sound bus protocol &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class I2S – Inter-IC Sound bus protocol &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class RTC – real time clock" href="machine.RTC.html" />
     <link rel="prev" title="class I2C – a two-wire serial protocol" href="machine.I2C.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class I2S – Inter-IC Sound bus protocol </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -294,16 +296,16 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-i2s"></span><h1 id="library-machine-i2s--page-root">class I2S – Inter-IC Sound bus protocol<a class="headerlink" href="#library-machine-i2s--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-i2s-inter-ic-sound-bus-protocol">
+<span id="machine-i2s"></span><h1 id="library-machine-i2s--page-root">class I2S – Inter-IC Sound bus protocol<a class="headerlink" href="#library-machine-i2s--page-root" title="永久链接至标题">¶</a></h1>
 <p>I2S is a synchronous serial protocol used to connect digital audio devices.
 At the physical level, a bus consists of 3 lines: SCK, WS, SD.
 The I2S class supports controller operation.  Peripheral operation is not supported.</p>
 <p>The I2S class is currently available as a Technical Preview.  During the preview period, feedback from
 users is encouraged.  Based on this feedback, the I2S class API and implementation may be changed.</p>
 <p>I2S objects can be created and initialized using:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">I2S</span>
-<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">I2S</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
 <span class="c1"># ESP32</span>
 <span class="n">sck_pin</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">14</span><span class="p">)</span>   <span class="c1"># Serial clock output</span>
@@ -365,11 +367,11 @@ users is encouraged.  Based on this feedback, the I2S class API and implementati
 <span class="n">num_read</span> <span class="o">=</span> <span class="k">await</span> <span class="n">sreader</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>
 </pre></div>
 </div>
-
-<h2 id="constructor">Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="machine.I2S">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">I2S</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">*</em>, <em class="sig-param">sck</em>, <em class="sig-param">ws</em>, <em class="sig-param">sd</em>, <em class="sig-param">mode</em>, <em class="sig-param">bits</em>, <em class="sig-param">format</em>, <em class="sig-param">rate</em>, <em class="sig-param">ibuf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S" title="Permalink to this definition">¶</a></dt>
+<section id="constructor">
+<h2 id="constructor">Constructor<a class="headerlink" href="#constructor" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.I2S">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">I2S</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sck</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ws</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sd</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ibuf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S" title="永久链接至目标">¶</a></dt>
 <dd><p>Construct an I2S object of the given id:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">id</span></code> identifies a particular I2S bus.</p></li>
@@ -400,74 +402,74 @@ sample data is transfered between the internal buffer and the I2S peripheral uni
 Increasing the size of the internal buffer has the potential to increase the time that user applications can perform non-I2S operations
 before underflow (e.g. <code class="docutils literal notranslate"><span class="pre">write</span></code> method) or overflow (e.g. <code class="docutils literal notranslate"><span class="pre">readinto</span></code> method).</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="machine.I2S.init">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">sck</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2S.init">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sck</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.init" title="永久链接至目标">¶</a></dt>
 <dd><p>see Constructor for argument descriptions</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.I2S.deinit">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.deinit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2S.deinit">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Deinitialize the I2S bus</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.I2S.readinto">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.readinto" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2S.readinto">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">readinto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.readinto" title="永久链接至目标">¶</a></dt>
 <dd><p>Read audio samples into the buffer specified by <code class="docutils literal notranslate"><span class="pre">buf</span></code>.  <code class="docutils literal notranslate"><span class="pre">buf</span></code> must support the buffer protocol, such as bytearray or array.
 “buf” byte ordering is little-endian.  For Stereo format, left channel sample precedes right channel sample. For Mono format,
 the left channel sample data is used.
 Returns number of bytes read</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.I2S.write">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.write" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2S.write">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.write" title="永久链接至目标">¶</a></dt>
 <dd><p>Write audio samples contained in <code class="docutils literal notranslate"><span class="pre">buf</span></code>. <code class="docutils literal notranslate"><span class="pre">buf</span></code> must support the buffer protocol, such as bytearray or array.
 “buf” byte ordering is little-endian.  For Stereo format, left channel sample precedes right channel sample. For Mono format,
 the sample data is written to both the right and left channels.
 Returns number of bytes written</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.I2S.irq">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">handler</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2S.irq">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Set a callback. <code class="docutils literal notranslate"><span class="pre">handler</span></code> is called when <code class="docutils literal notranslate"><span class="pre">buf</span></code> is emptied (<code class="docutils literal notranslate"><span class="pre">write</span></code> method) or becomes full (<code class="docutils literal notranslate"><span class="pre">readinto</span></code> method).
 Setting a callback changes the <code class="docutils literal notranslate"><span class="pre">write</span></code> and <code class="docutils literal notranslate"><span class="pre">readinto</span></code> methods to non-blocking operation.
 <code class="docutils literal notranslate"><span class="pre">handler</span></code> is called in the context of the MicroPython scheduler.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.I2S.shift">
-<em class="property">static </em><code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">shift</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">buf</em>, <em class="sig-param">bits</em>, <em class="sig-param">shift</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.shift" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.I2S.shift">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">shift</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2S.shift" title="永久链接至目标">¶</a></dt>
 <dd><p>bitwise shift of all samples contained in <code class="docutils literal notranslate"><span class="pre">buf</span></code>. <code class="docutils literal notranslate"><span class="pre">bits</span></code> specifies sample size in bits. <code class="docutils literal notranslate"><span class="pre">shift</span></code> specifies the number of bits to shift each sample.
 Positive for left shift, negative for right shift.
 Typically used for volume control.  Each bit shift changes sample volume by 6dB.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="machine.I2S.RX">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">RX</code><a class="headerlink" href="#machine.I2S.RX" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.I2S.RX">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">RX</span></span><a class="headerlink" href="#machine.I2S.RX" title="永久链接至目标">¶</a></dt>
 <dd><p>for initialising the I2S bus <code class="docutils literal notranslate"><span class="pre">mode</span></code> to receive</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.I2S.TX">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">TX</code><a class="headerlink" href="#machine.I2S.TX" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.I2S.TX">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">TX</span></span><a class="headerlink" href="#machine.I2S.TX" title="永久链接至目标">¶</a></dt>
 <dd><p>for initialising the I2S bus <code class="docutils literal notranslate"><span class="pre">mode</span></code> to transmit</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.I2S.STEREO">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">STEREO</code><a class="headerlink" href="#machine.I2S.STEREO" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.I2S.STEREO">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">STEREO</span></span><a class="headerlink" href="#machine.I2S.STEREO" title="永久链接至目标">¶</a></dt>
 <dd><p>for initialising the I2S bus <code class="docutils literal notranslate"><span class="pre">format</span></code> to stereo</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.I2S.MONO">
-<code class="sig-prename descclassname">I2S.</code><code class="sig-name descname">MONO</code><a class="headerlink" href="#machine.I2S.MONO" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.I2S.MONO">
+<span class="sig-prename descclassname"><span class="pre">I2S.</span></span><span class="sig-name descname"><span class="pre">MONO</span></span><a class="headerlink" href="#machine.I2S.MONO" title="永久链接至目标">¶</a></dt>
 <dd><p>for initialising the I2S bus <code class="docutils literal notranslate"><span class="pre">format</span></code> to mono</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -516,10 +518,10 @@ Typically used for volume control.  Each bit shift changes sample volume by 6dB.
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

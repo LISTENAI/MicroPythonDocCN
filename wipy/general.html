@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>General information about the WiPy &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>General information about the WiPy &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="WiPy tutorials and examples" href="tutorial/index.html" />
     <link rel="prev" title="Quick reference for the WiPy" href="quickref.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> General information about the WiPy </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="quickref.html" class="md-tabs__link">Quick reference for the WiPy</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -325,10 +327,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="wipy-general"></span><h1 id="wipy-general--page-root">General information about the WiPy<a class="headerlink" href="#wipy-general--page-root" title="Permalink to this headline">¶</a></h1>
-
-<h2 id="no-floating-point-support">No floating point support<a class="headerlink" href="#no-floating-point-support" title="Permalink to this headline">¶</a></h2>
+  <section id="general-information-about-the-wipy">
+<span id="wipy-general"></span><h1 id="wipy-general--page-root">General information about the WiPy<a class="headerlink" href="#wipy-general--page-root" title="永久链接至标题">¶</a></h1>
+<section id="no-floating-point-support">
+<h2 id="no-floating-point-support">No floating point support<a class="headerlink" href="#no-floating-point-support" title="永久链接至标题">¶</a></h2>
 <p>Due to space reasons, there’s no floating point support, and no math module. This
 means that floating point numbers cannot be used anywhere in the code, and that
 all divisions must be performed using ‘//’ instead of ‘/’. Example:</p>
@@ -336,28 +338,28 @@ all divisions must be performed using ‘//’ instead of ‘/’. Example:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">r</span> <span class="o">=</span> <span class="mi">4</span> <span class="o">/</span> <span class="mi">2</span>   <span class="c1"># this WON'T</span>
 </pre></div>
 </div>
-
-
-<h2 id="before-applying-power">Before applying power<a class="headerlink" href="#before-applying-power" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="before-applying-power">
+<h2 id="before-applying-power">Before applying power<a class="headerlink" href="#before-applying-power" title="永久链接至标题">¶</a></h2>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">警告</p>
 <p>The GPIO pins of the WiPy are NOT 5V tolerant, connecting them to voltages higher
 than 3.6V will cause irreparable damage to the board. ADC pins, when configured
 in analog mode cannot withstand voltages above 1.8V. Keep these considerations in
 mind when wiring your electronics.</p>
 </div>
-
-
-<h2 id="wlan-default-behaviour">WLAN default behaviour<a class="headerlink" href="#wlan-default-behaviour" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="wlan-default-behaviour">
+<h2 id="wlan-default-behaviour">WLAN default behaviour<a class="headerlink" href="#wlan-default-behaviour" title="永久链接至标题">¶</a></h2>
 <p>When the WiPy boots with the default factory configuration starts in Access Point
 mode with <code class="docutils literal notranslate"><span class="pre">ssid</span></code> that starts with: <code class="docutils literal notranslate"><span class="pre">wipy-wlan</span></code> and <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">www.wipy.io</span></code>.
 Connect to this network and the WiPy will be reachable at <code class="docutils literal notranslate"><span class="pre">192.168.1.1</span></code>. In order
 to gain access to the interactive prompt, open a telnet session to that IP address on
 the default port (23). You will be asked for credentials:
 <code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">micro</span></code> and <code class="docutils literal notranslate"><span class="pre">password:</span> <span class="pre">python</span></code></p>
-
-
-<span id="wipy-telnet"></span><h2 id="telnet-repl">Telnet REPL<a class="headerlink" href="#telnet-repl" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="telnet-repl">
+<span id="wipy-telnet"></span><h2 id="telnet-repl">Telnet REPL<a class="headerlink" href="#telnet-repl" title="永久链接至标题">¶</a></h2>
 <p>Linux stock telnet works like a charm (also on OSX), but other tools like putty
 work quite well too. The default credentials are: <strong>user:</strong> <code class="docutils literal notranslate"><span class="pre">micro</span></code>, <strong>password:</strong> <code class="docutils literal notranslate"><span class="pre">python</span></code>.
 See <a class="reference internal" href="#network.Server" title="network.Server"><code class="xref py py-class docutils literal notranslate"><span class="pre">network.Server</span></code></a> for info on how to change the defaults.
@@ -365,9 +367,9 @@ For instance, on a linux shell (when connected to the WiPy in AP mode):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ telnet 192.168.1.1
 </pre></div>
 </div>
-
-
-<span id="wipy-filesystem"></span><h2 id="local-file-system-and-ftp-access">Local file system and FTP access<a class="headerlink" href="#local-file-system-and-ftp-access" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="local-file-system-and-ftp-access">
+<span id="wipy-filesystem"></span><h2 id="local-file-system-and-ftp-access">Local file system and FTP access<a class="headerlink" href="#local-file-system-and-ftp-access" title="永久链接至标题">¶</a></h2>
 <p>There is a small internal file system (a drive) on the WiPy, called <code class="docutils literal notranslate"><span class="pre">/flash</span></code>,
 which is stored within the external serial flash memory.  If a micro SD card
 is hooked-up and mounted, it will be available as well.</p>
@@ -389,18 +391,18 @@ if using the native unix ftp client, just after logging in do:</p>
 </div>
 <p>Besides that, the FTP server only supports one data connection at a time. Check out
 the Filezilla settings section below for more info.</p>
-
-
-<h2 id="filezilla-settings">FileZilla settings<a class="headerlink" href="#filezilla-settings" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="filezilla-settings">
+<h2 id="filezilla-settings">FileZilla settings<a class="headerlink" href="#filezilla-settings" title="永久链接至标题">¶</a></h2>
 <p>Do not use the quick connect button, instead, open the site manager and create a new
 configuration. In the <code class="docutils literal notranslate"><span class="pre">General</span></code> tab make sure that encryption is set to: <code class="docutils literal notranslate"><span class="pre">Only</span> <span class="pre">use</span>
 <span class="pre">plain</span> <span class="pre">FTP</span> <span class="pre">(insecure)</span></code>. In the Transfer Settings tab limit the max number of connections
 to one, otherwise FileZilla will try to open a second command connection when retrieving
 and saving files, and for simplicity and to reduce code size, only one command and one
 data connections are possible. Other FTP clients might behave in a similar way.</p>
-
-
-<span id="wipy-firmware-upgrade"></span><h2 id="upgrading-the-firmware-over-the-air">Upgrading the firmware Over The Air<a class="headerlink" href="#upgrading-the-firmware-over-the-air" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upgrading-the-firmware-over-the-air">
+<span id="wipy-firmware-upgrade"></span><h2 id="upgrading-the-firmware-over-the-air">Upgrading the firmware Over The Air<a class="headerlink" href="#upgrading-the-firmware-over-the-air" title="永久链接至标题">¶</a></h2>
 <p>OTA software updates can be performed through the FTP server. Upload the <code class="docutils literal notranslate"><span class="pre">mcuimg.bin</span></code> file
 to: <code class="docutils literal notranslate"><span class="pre">/flash/sys/mcuimg.bin</span></code> it will take around 6s. You won’t see the file being stored
 inside <code class="docutils literal notranslate"><span class="pre">/flash/sys/</span></code> because it’s actually saved bypassing the user file system, so it
@@ -415,7 +417,7 @@ the WiPy by pressing the switch on the board, or by typing:</p>
 It’s always recommended to update to the latest software, but make sure to
 read the <strong>release notes</strong> before.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">bootloader.bin</span></code> found inside <code class="docutils literal notranslate"><span class="pre">Binaries.zip</span></code> is there only for reference, it’s not
 needed for the Over The Air update.</p>
 </div>
@@ -426,9 +428,9 @@ needed for the Over The Air update.</p>
 </div>
 <p>If the version number is lower than the latest release found in
 <a class="reference external" href="https://github.com/wipy/wipy/releases">the releases</a>, go ahead and update your WiPy!</p>
-
-
-<span id="wipy-boot-modes"></span><h2 id="boot-modes-and-safe-boot">Boot modes and safe boot<a class="headerlink" href="#boot-modes-and-safe-boot" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="boot-modes-and-safe-boot">
+<span id="wipy-boot-modes"></span><h2 id="boot-modes-and-safe-boot">Boot modes and safe boot<a class="headerlink" href="#boot-modes-and-safe-boot" title="永久链接至标题">¶</a></h2>
 <p>If you power up normally, or press the reset button, the WiPy will boot
 into standard mode; the <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> file will be executed first, then
 <code class="docutils literal notranslate"><span class="pre">main.py</span></code> will run.</p>
@@ -480,9 +482,9 @@ the execution of both <code class="docutils literal notranslate"><span class="pr
 useful to recover from crash situations caused by the user scripts. The selection
 made during safe boot is not persistent, therefore after the next normal reset
 the latest firmware will run again.</p>
-
-
-<h2 id="the-heartbeat-led">The heartbeat LED<a class="headerlink" href="#the-heartbeat-led" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-heartbeat-led">
+<h2 id="the-heartbeat-led">The heartbeat LED<a class="headerlink" href="#the-heartbeat-led" title="永久链接至标题">¶</a></h2>
 <p>By default the heartbeat LED flashes once every 4s to signal that the system is
 alive. This can be overridden through the <a class="reference internal" href="../library/wipy.html#module-wipy" title="wipy: WiPy specific features"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wipy</span></code></a> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">wipy</span>
@@ -496,9 +498,9 @@ has an error.  Use the REPL to debug it.</p></li>
 <li><p>If the heartbeat LED stays on, then there was a hard fault, you cannot
 recover from this, the only way out is to press the reset switch.</p></li>
 </ol>
-
-
-<h2 id="details-on-sleep-modes">Details on sleep modes<a class="headerlink" href="#details-on-sleep-modes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="details-on-sleep-modes">
+<h2 id="details-on-sleep-modes">Details on sleep modes<a class="headerlink" href="#details-on-sleep-modes" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">machine.idle()</span></code>: Power consumption: ~12mA (in WLAN STA mode). Wake sources:
 any hardware interrupt (including systick with period of 1ms), no special
@@ -507,16 +509,16 @@ configuration required.</p></li>
 and <code class="docutils literal notranslate"><span class="pre">WLAN</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">machine.deepsleep()</span></code>: ~350uA. Wake sources are <code class="docutils literal notranslate"><span class="pre">Pin</span></code> and <code class="docutils literal notranslate"><span class="pre">RTC</span></code>.</p></li>
 </ul>
-
-
-<h2 id="additional-details-for-machine-pin">Additional details for machine.Pin<a class="headerlink" href="#additional-details-for-machine-pin" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="additional-details-for-machine-pin">
+<h2 id="additional-details-for-machine-pin">Additional details for machine.Pin<a class="headerlink" href="#additional-details-for-machine-pin" title="永久链接至标题">¶</a></h2>
 <p>On the WiPy board the pins are identified by their string id:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'GP9'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">,</span> <span class="n">pull</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">drive</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">MED_POWER</span><span class="p">,</span> <span class="n">alt</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>You can also configure the Pin to generate interrupts. For instance:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
 <span class="k">def</span> <span class="nf">pincb</span><span class="p">(</span><span class="n">pin</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">pin</span><span class="o">.</span><span class="n">id</span><span class="p">())</span>
@@ -562,15 +564,15 @@ the last enabled pin as a <code class="docutils literal notranslate"><span class
 </ul>
 </div></blockquote>
 <p>Additional Pin methods:</p>
-<dl class="method">
-<dt id="machine.Pin.alt_list">
-<code class="sig-prename descclassname">machine.Pin.</code><code class="sig-name descname">alt_list</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.alt_list" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.alt_list">
+<span class="sig-prename descclassname"><span class="pre">machine.Pin.</span></span><span class="sig-name descname"><span class="pre">alt_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.alt_list" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns a list of the alternate functions supported by the pin. List items are
 a tuple of the form: <code class="docutils literal notranslate"><span class="pre">('ALT_FUN_NAME',</span> <span class="pre">ALT_FUN_INDEX)</span></code></p>
 </dd></dl>
-
-
-<h2 id="additional-details-for-machine-i2c">Additional details for machine.I2C<a class="headerlink" href="#additional-details-for-machine-i2c" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="additional-details-for-machine-i2c">
+<h2 id="additional-details-for-machine-i2c">Additional details for machine.I2C<a class="headerlink" href="#additional-details-for-machine-i2c" title="永久链接至标题">¶</a></h2>
 <p>On the WiPy there is a single hardware I2C peripheral, identified by “0”.  By
 default this is the peripheral that is used when constructing an I2C instance.
 The default pins are GP23 for SCL and GP13 for SDA, and one can create the
@@ -584,11 +586,11 @@ default I2C peripheral simply by doing:</p>
 </div>
 <p>Only certain pins can be used as SCL/SDA.  Please refer to the pinout for further
 information.</p>
-
-
-<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
-
-<h3 id="incompatible-way-to-create-ssl-sockets">Incompatible way to create SSL sockets<a class="headerlink" href="#incompatible-way-to-create-ssl-sockets" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="known-issues">
+<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="永久链接至标题">¶</a></h2>
+<section id="incompatible-way-to-create-ssl-sockets">
+<h3 id="incompatible-way-to-create-ssl-sockets">Incompatible way to create SSL sockets<a class="headerlink" href="#incompatible-way-to-create-ssl-sockets" title="永久链接至标题">¶</a></h3>
 <p>SSL sockets need to be created the following way before wrapping them with.
 <code class="docutils literal notranslate"><span class="pre">ssl.wrap_socket</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
@@ -606,7 +608,7 @@ FTP server, and they must be placed in specific paths with specific names.</p>
 <li><p>The key for our own certificate goes in: <strong>‘/flash/cert/private.key’</strong></p></li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>When these files are stored, they are placed inside the internal <strong>hidden</strong> file system
 (just like firmware updates), and therefore they are never visible.</p>
 </div>
@@ -620,9 +622,9 @@ and put it in ‘/flash/cert/’. Then do:</p>
 <span class="n">ss</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">socket</span><span class="o">.</span><span class="n">getaddrinfo</span><span class="p">(</span><span class="s1">'cloud.blynk.cc'</span><span class="p">,</span> <span class="mi">8441</span><span class="p">)[</span><span class="mi">0</span><span class="p">][</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
 </pre></div>
 </div>
-
-
-<h3 id="incompatibilities-in-hashlib-module">Incompatibilities in hashlib module<a class="headerlink" href="#incompatibilities-in-hashlib-module" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="incompatibilities-in-hashlib-module">
+<h3 id="incompatibilities-in-hashlib-module">Incompatibilities in hashlib module<a class="headerlink" href="#incompatibilities-in-hashlib-module" title="永久链接至标题">¶</a></h3>
 <p>Due to hardware implementation details of the WiPy, data must be buffered before being
 digested, which would make it impossible to calculate the hash of big blocks of data that
 do not fit in RAM. In this case, since most likely the total size of the data is known
@@ -639,19 +641,19 @@ initial one) is a multiple of 4 bytes.</strong> The last chunk may be of any len
 <span class="nb">hash</span><span class="o">.</span><span class="n">digest</span><span class="p">()</span>
 </pre></div>
 </div>
-
-
-<h3 id="unrelated-function-in-machine-module">Unrelated function in machine module<a class="headerlink" href="#unrelated-function-in-machine-module" title="Permalink to this headline">¶</a></h3>
-<dl class="function">
-<dt id="main">
-<code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#main" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="unrelated-function-in-machine-module">
+<h3 id="unrelated-function-in-machine-module">Unrelated function in machine module<a class="headerlink" href="#unrelated-function-in-machine-module" title="永久链接至标题">¶</a></h3>
+<dl class="py function">
+<dt class="sig sig-object py" id="main">
+<span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main" title="永久链接至目标">¶</a></dt>
 <dd><p>Set the filename of the main script to run after boot.py is finished.  If
 this function is not called then the default file main.py will be executed.</p>
 <p>It only makes sense to call this function from within boot.py.</p>
 </dd></dl>
-
-
-<h3 id="adhoc-way-to-control-telnet-ftp-server-via-network-module">Adhoc way to control telnet/FTP server via network module<a class="headerlink" href="#adhoc-way-to-control-telnet-ftp-server-via-network-module" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adhoc-way-to-control-telnet-ftp-server-via-network-module">
+<h3 id="adhoc-way-to-control-telnet-ftp-server-via-network-module">Adhoc way to control telnet/FTP server via network module<a class="headerlink" href="#adhoc-way-to-control-telnet-ftp-server-via-network-module" title="永久链接至标题">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Server</span></code> class controls the behaviour and the configuration of the FTP and telnet
 services running on the WiPy. Any changes performed using this class’ methods will
 affect both.</p>
@@ -663,61 +665,61 @@ affect both.</p>
 <span class="n">server</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">login</span><span class="o">=</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">),</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">600</span><span class="p">)</span>
 </pre></div>
 </div>
-<dl class="class">
-<dt id="network.Server">
-<em class="property">class </em><code class="sig-prename descclassname">network.</code><code class="sig-name descname">Server</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#network.Server" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="network.Server">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">network.</span></span><span class="sig-name descname"><span class="pre">Server</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.Server" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a server instance, see <code class="docutils literal notranslate"><span class="pre">init</span></code> for parameters of initialization.</p>
 </dd></dl>
-<dl class="method">
-<dt id="server.init">
-<code class="sig-prename descclassname">server.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">login=('micro'</em>, <em class="sig-param">'python')</em>, <em class="sig-param">timeout=300</em><span class="sig-paren">)</span><a class="headerlink" href="#server.init" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="server.init">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">\*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">login=('micro'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">'python')</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout=300</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#server.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Init (and effectively start the server). Optionally a new <code class="docutils literal notranslate"><span class="pre">user</span></code>, <code class="docutils literal notranslate"><span class="pre">password</span></code>
 and <code class="docutils literal notranslate"><span class="pre">timeout</span></code> (in seconds) can be passed.</p>
 </dd></dl>
-<dl class="method">
-<dt id="server.deinit">
-<code class="sig-prename descclassname">server.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.deinit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="server.deinit">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Stop the server</p>
 </dd></dl>
-<dl class="method">
-<dt id="server.timeout">
-<code class="sig-prename descclassname">server.</code><code class="sig-name descname">timeout</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">timeout_in_seconds</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.timeout" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="server.timeout">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">timeout</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">timeout_in_seconds</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#server.timeout" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the server timeout.</p>
 </dd></dl>
-<dl class="method">
-<dt id="server.isrunning">
-<code class="sig-prename descclassname">server.</code><code class="sig-name descname">isrunning</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.isrunning" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="server.isrunning">
+<span class="sig-prename descclassname"><span class="pre">server.</span></span><span class="sig-name descname"><span class="pre">isrunning</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#server.isrunning" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the server is running, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 </dd></dl>
-
-
-<h3 id="adhoc-vfs-like-support">Adhoc VFS-like support<a class="headerlink" href="#adhoc-vfs-like-support" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="adhoc-vfs-like-support">
+<h3 id="adhoc-vfs-like-support">Adhoc VFS-like support<a class="headerlink" href="#adhoc-vfs-like-support" title="永久链接至标题">¶</a></h3>
 <p>WiPy doesn’t implement full MicroPython VFS support, instead following
 functions are defined in <code class="docutils literal notranslate"><span class="pre">os</span></code> module:</p>
-<dl class="function">
-<dt id="mount">
-<code class="sig-name descname">mount</code><span class="sig-paren">(</span><em class="sig-param">block_device</em>, <em class="sig-param">mount_point</em>, <em class="sig-param">*</em>, <em class="sig-param">readonly=False</em><span class="sig-paren">)</span><a class="headerlink" href="#mount" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mount">
+<span class="sig-name descname"><span class="pre">mount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mount_point</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readonly=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mount" title="永久链接至目标">¶</a></dt>
 <dd><p>Mounts a block device (like an <code class="docutils literal notranslate"><span class="pre">SD</span></code> object) in the specified mount
 point. Example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">os</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'/sd'</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="unmount">
-<code class="sig-name descname">unmount</code><span class="sig-paren">(</span><em class="sig-param">path</em><span class="sig-paren">)</span><a class="headerlink" href="#unmount" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="unmount">
+<span class="sig-name descname"><span class="pre">unmount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#unmount" title="永久链接至目标">¶</a></dt>
 <dd><p>Unmounts a previously mounted block device from the given path.</p>
 </dd></dl>
-<dl class="function">
-<dt id="mkfs">
-<code class="sig-name descname">mkfs</code><span class="sig-paren">(</span><em class="sig-param">block_device or path</em><span class="sig-paren">)</span><a class="headerlink" href="#mkfs" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="mkfs">
+<span class="sig-name descname"><span class="pre">mkfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_device</span> <span class="pre">or</span> <span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mkfs" title="永久链接至目标">¶</a></dt>
 <dd><p>Formats the specified path, must be either <code class="docutils literal notranslate"><span class="pre">/flash</span></code> or <code class="docutils literal notranslate"><span class="pre">/sd</span></code>.
 A block device can also be passed like an <code class="docutils literal notranslate"><span class="pre">SD</span></code> object before
 being mounted.</p>
 </dd></dl>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -766,10 +768,10 @@ being mounted.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

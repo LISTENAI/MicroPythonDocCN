@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>Syntax &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>Syntax &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Core language" href="core_language.html" />
     <link rel="prev" title="Python 3.9" href="../differences/python_39.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> Syntax </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython differences from CPython</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -305,13 +307,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="genrst-syntax--page-root">Syntax<a class="headerlink" href="#genrst-syntax--page-root" title="Permalink to this headline">¶</a></h1>
-<p>Generated Thu 10 Feb 2022 09:58:16 UTC</p>
-
-<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-syntax-assign-expr"></span><h3 id="micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror">MicroPython allows using := to assign to the variable of a comprehension, CPython raises a SyntaxError.<a class="headerlink" href="#micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror" title="Permalink to this headline">¶</a></h3>
+  <section id="syntax">
+<h1 id="genrst-syntax--page-root">Syntax<a class="headerlink" href="#genrst-syntax--page-root" title="永久链接至标题">¶</a></h1>
+<p>Generated Thu 10 Feb 2022 10:18:47 UTC</p>
+<section id="operators">
+<h2 id="operators">Operators<a class="headerlink" href="#operators" title="永久链接至标题">¶</a></h2>
+<section id="micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror">
+<span id="cpydiff-syntax-assign-expr"></span><h3 id="micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror">MicroPython allows using := to assign to the variable of a comprehension, CPython raises a SyntaxError.<a class="headerlink" href="#micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is optimised for code size and doesn’t check this case.</p>
 <p><strong>Workaround:</strong> Do not rely on this behaviour if writing CPython compatible code.</p>
 <p>Sample code:</p>
@@ -339,12 +341,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="spaces">Spaces<a class="headerlink" href="#spaces" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-syntax-spaces"></span><h3 id="upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t">uPy requires spaces between literal numbers and keywords, CPy doesn’t<a class="headerlink" href="#upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="spaces">
+<h2 id="spaces">Spaces<a class="headerlink" href="#spaces" title="永久链接至标题">¶</a></h2>
+<section id="upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t">
+<span id="cpydiff-syntax-spaces"></span><h3 id="upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t">uPy requires spaces between literal numbers and keywords, CPy doesn’t<a class="headerlink" href="#upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s2">"1and 0"</span><span class="p">))</span>
@@ -382,12 +384,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="unicode">Unicode<a class="headerlink" href="#unicode" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-syntax-unicode-nameesc"></span><h3 id="unicode-name-escapes-are-not-implemented">Unicode name escapes are not implemented<a class="headerlink" href="#unicode-name-escapes-are-not-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="unicode">
+<h2 id="unicode">Unicode<a class="headerlink" href="#unicode" title="永久链接至标题">¶</a></h2>
+<section id="unicode-name-escapes-are-not-implemented">
+<span id="cpydiff-syntax-unicode-nameesc"></span><h3 id="unicode-name-escapes-are-not-implemented">Unicode name escapes are not implemented<a class="headerlink" href="#unicode-name-escapes-are-not-implemented" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\N{LATIN SMALL LETTER A}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
@@ -412,9 +414,9 @@
 </tr>
 </tbody>
 </table>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -463,10 +465,10 @@
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

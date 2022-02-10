@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>Optimizations &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>Optimizations &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython string interning" href="qstr.html" />
     <link rel="prev" title="Implementing a Module" href="library.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> Optimizations </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython Internals</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -293,17 +295,17 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="id1"></span><h1 id="develop-optimizations--page-root">Optimizations<a class="headerlink" href="#develop-optimizations--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="optimizations">
+<span id="id1"></span><h1 id="develop-optimizations--page-root">Optimizations<a class="headerlink" href="#develop-optimizations--page-root" title="永久链接至标题">¶</a></h1>
 <p>MicroPython uses several optimizations to save RAM but also ensure the efficient
 execution of programs. This chapter discusses some of these optimizations.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p><a class="reference internal" href="qstr.html#qstr"><span class="std std-ref">MicroPython string interning</span></a> and <a class="reference internal" href="maps.html#maps"><span class="std std-ref">Maps and Dictionaries</span></a> details other optimizations on strings and
 dictionaries.</p>
 </div>
-
-<h2 id="frozen-bytecode">Frozen bytecode<a class="headerlink" href="#frozen-bytecode" title="Permalink to this headline">¶</a></h2>
+<section id="frozen-bytecode">
+<h2 id="frozen-bytecode">Frozen bytecode<a class="headerlink" href="#frozen-bytecode" title="永久链接至标题">¶</a></h2>
 <p>When MicroPython loads Python code from the filesystem, it first has to parse the file into
 a temporary in-memory representation, and then generate bytecode for execution, both of which
 are stored in the heap (in RAM). This can lead to significant amounts of memory being used.
@@ -314,9 +316,9 @@ be loaded into RAM, but it avoids the additional overhead of the parsing stage.<
 into the firmware image as part of the main firmware compilation process, which means that
 the bytecode will be executed from ROM. This can lead to a significant memory saving, and
 reduce heap fragmentation.</p>
-
-
-<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="variables">
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="永久链接至标题">¶</a></h2>
 <p>MicroPython processes local and global variables differently. Global variables
 are stored and looked up from a global dictionary that is allocated on the heap
 (note that each module has its own separate dict, so separate namespace).
@@ -340,9 +342,9 @@ These variables use <code class="docutils literal notranslate"><span class="pre"
 <span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
-
-
-<h2 id="allocation-of-memory">Allocation of memory<a class="headerlink" href="#allocation-of-memory" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="allocation-of-memory">
+<h2 id="allocation-of-memory">Allocation of memory<a class="headerlink" href="#allocation-of-memory" title="永久链接至标题">¶</a></h2>
 <p>Most of the common MicroPython constructs are not allocated on the heap.
 However the following are:</p>
 <ul class="simple">
@@ -353,8 +355,8 @@ However the following are:</p>
 </ul>
 <p>For a detailed discussion on a more user-centric perspective on optimization,
 see <a class="reference external" href="https://docs.micropython.org/en/latest/reference/speed_python.html">Maximising MicroPython speed</a></p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -403,10 +405,10 @@ see <a class="reference external" href="https://docs.micropython.org/en/latest/r
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

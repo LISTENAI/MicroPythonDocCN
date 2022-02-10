@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class ADCWiPy – analog to digital conversion &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class ADCWiPy – analog to digital conversion &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class TimerWiPy – control hardware timers" href="machine.TimerWiPy.html" />
     <link rel="prev" title="wipy – WiPy specific features" href="wipy.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class ADCWiPy – analog to digital conversion </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -293,10 +295,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-adcwipy"></span><h1 id="library-machine-adcwipy--page-root">class ADCWiPy – analog to digital conversion<a class="headerlink" href="#library-machine-adcwipy--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-adcwipy-analog-to-digital-conversion">
+<span id="machine-adcwipy"></span><h1 id="library-machine-adcwipy--page-root">class ADCWiPy – analog to digital conversion<a class="headerlink" href="#library-machine-adcwipy--page-root" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>This class is a non-standard ADC implementation for the WiPy.
 It is available simply as <code class="docutils literal notranslate"><span class="pre">machine.ADC</span></code> on the WiPy but is named in the
 documentation below as <code class="docutils literal notranslate"><span class="pre">machine.ADCWiPy</span></code> to distinguish it from the
@@ -310,29 +312,29 @@ more general <a class="reference internal" href="machine.ADC.html#machine-adc"><
 <span class="n">val</span> <span class="o">=</span> <span class="n">apin</span><span class="p">()</span>                    <span class="c1"># read an analog value</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="machine.ADCWiPy">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">ADCWiPy</code><span class="sig-paren">(</span><em class="sig-param">id=0</em>, <em class="sig-param">*</em>, <em class="sig-param">bits=12</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.ADCWiPy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">ADCWiPy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">12</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy" title="永久链接至目标">¶</a></dt>
 <dd><p>Create an ADC object associated with the given pin.
 This allows you to then read analog values on that pin.
 For more info check the <a class="reference external" href="https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png">pinout and alternate functions
 table.</a></p>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">警告</p>
 <p>ADC pin input range is 0-1.4V (being 1.8V the absolute maximum that it
 can withstand). When GP2, GP3, GP4 or GP5 are remapped to the
 ADC block, 1.8 V is the maximum. If these pins are used in digital mode,
 then the maximum allowed input is 3.6V.</p>
 </div>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="machine.ADCWiPy.channel">
-<code class="sig-prename descclassname">ADCWiPy.</code><code class="sig-name descname">channel</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">*</em>, <em class="sig-param">pin</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy.channel" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.ADCWiPy.channel">
+<span class="sig-prename descclassname"><span class="pre">ADCWiPy.</span></span><span class="sig-name descname"><span class="pre">channel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy.channel" title="永久链接至目标">¶</a></dt>
 <dd><p>Create an analog pin. If only channel ID is given, the correct pin will
 be selected. Alternatively, only the pin can be passed and the correct
 channel will be selected. Examples:</p>
@@ -343,43 +345,43 @@ channel will be selected. Examples:</p>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="method">
-<dt id="machine.ADCWiPy.init">
-<code class="sig-prename descclassname">ADCWiPy.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy.init" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.ADCWiPy.init">
+<span class="sig-prename descclassname"><span class="pre">ADCWiPy.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Enable the ADC block.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.ADCWiPy.deinit">
-<code class="sig-prename descclassname">ADCWiPy.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy.deinit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.ADCWiPy.deinit">
+<span class="sig-prename descclassname"><span class="pre">ADCWiPy.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.ADCWiPy.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Disable the ADC block.</p>
 </dd></dl>
-
-
-
-<h1 id="class-adcchannel-read-analog-values-from-internal-or-external-sources">class ADCChannel — read analog values from internal or external sources<a class="headerlink" href="#class-adcchannel-read-analog-values-from-internal-or-external-sources" title="Permalink to this headline">¶</a></h1>
+</section>
+</section>
+<section id="class-adcchannel-read-analog-values-from-internal-or-external-sources">
+<h1 id="class-adcchannel-read-analog-values-from-internal-or-external-sources">class ADCChannel — read analog values from internal or external sources<a class="headerlink" href="#class-adcchannel-read-analog-values-from-internal-or-external-sources" title="永久链接至标题">¶</a></h1>
 <p>ADC channels can be connected to internal points of the MCU or to GPIO pins.
 ADC channels are created using the ADC.channel method.</p>
-<dl class="method">
-<dt id="machine.adcchannel">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">adcchannel</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.adcchannel">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">adcchannel</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel" title="永久链接至目标">¶</a></dt>
 <dd><p>Fast method to read the channel value.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.adcchannel.value">
-<code class="sig-prename descclassname">adcchannel.</code><code class="sig-name descname">value</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel.value" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.adcchannel.value">
+<span class="sig-prename descclassname"><span class="pre">adcchannel.</span></span><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel.value" title="永久链接至目标">¶</a></dt>
 <dd><p>Read the channel value.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.adcchannel.init">
-<code class="sig-prename descclassname">adcchannel.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel.init" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.adcchannel.init">
+<span class="sig-prename descclassname"><span class="pre">adcchannel.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Re-init (and effectively enable) the ADC channel.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.adcchannel.deinit">
-<code class="sig-prename descclassname">adcchannel.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel.deinit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.adcchannel.deinit">
+<span class="sig-prename descclassname"><span class="pre">adcchannel.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.adcchannel.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Disable the ADC channel.</p>
 </dd></dl>
-
+</section>
 
 
           </article>
@@ -428,10 +430,10 @@ ADC channels are created using the ADC.channel method.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

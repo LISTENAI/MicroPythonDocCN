@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>MicroPython .mpy files &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>MicroPython .mpy files &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Writing interrupt handlers" href="isr_rules.html" />
     <link rel="prev" title="MicroPython remote control: mpremote" href="mpremote.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> MicroPython .mpy files </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython language and implementation</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -297,8 +299,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="mpy-files"></span><h1 id="reference-mpyfiles--page-root">MicroPython .mpy files<a class="headerlink" href="#reference-mpyfiles--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="micropython-mpy-files">
+<span id="mpy-files"></span><h1 id="reference-mpyfiles--page-root">MicroPython .mpy files<a class="headerlink" href="#reference-mpyfiles--page-root" title="永久链接至标题">¶</a></h1>
 <p>MicroPython defines the concept of an .mpy file which is a binary container
 file format that holds precompiled code, and which can be imported like a
 normal .py module.  The file <code class="docutils literal notranslate"><span class="pre">foo.mpy</span></code> can be imported via <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">foo</span></code>,
@@ -312,8 +314,8 @@ over <code class="docutils literal notranslate"><span class="pre">foo.mpy</span>
 source files (.py files) via the <code class="docutils literal notranslate"><span class="pre">mpy-cross</span></code> program.  For some architectures
 an .mpy file can also contain native machine code, which can be generated in
 a variety of ways, most notably from C source code.</p>
-
-<h2 id="versioning-and-compatibility-of-mpy-files">Versioning and compatibility of .mpy files<a class="headerlink" href="#versioning-and-compatibility-of-mpy-files" title="Permalink to this headline">¶</a></h2>
+<section id="versioning-and-compatibility-of-mpy-files">
+<h2 id="versioning-and-compatibility-of-mpy-files">Versioning and compatibility of .mpy files<a class="headerlink" href="#versioning-and-compatibility-of-mpy-files" title="永久链接至标题">¶</a></h2>
 <p>A given .mpy file may or may not be compatible with a given MicroPython system.
 Compatibility is based on the following:</p>
 <ul class="simple">
@@ -433,9 +435,9 @@ MicroPython repository at which the .mpy version was changed.</p>
 </tr>
 </tbody>
 </table>
-
-
-<h2 id="binary-encoding-of-mpy-files">Binary encoding of .mpy files<a class="headerlink" href="#binary-encoding-of-mpy-files" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="binary-encoding-of-mpy-files">
+<h2 id="binary-encoding-of-mpy-files">Binary encoding of .mpy files<a class="headerlink" href="#binary-encoding-of-mpy-files" title="永久链接至标题">¶</a></h2>
 <p>MicroPython .mpy files are a binary container format with code objects
 stored internally in a nested hierarchy.  To keep files small while still
 providing a large range of possible values it uses the concept of a
@@ -449,8 +451,8 @@ in the vuint in LSB form.</p>
 <li><p>The raw-code for the outer scope of the module.
 This outer scope is executed when the .mpy file is imported.</p></li>
 </ul>
-
-<h3 id="the-header">The header<a class="headerlink" href="#the-header" title="Permalink to this headline">¶</a></h3>
+<section id="the-header">
+<h3 id="the-header">The header<a class="headerlink" href="#the-header" title="永久链接至标题">¶</a></h3>
 <p>The .mpy header is:</p>
 <table>
 <colgroup>
@@ -480,9 +482,9 @@ This outer scope is executed when the .mpy file is imported.</p></li>
 </tr>
 </tbody>
 </table>
-
-
-<h3 id="raw-code-elements">Raw code elements<a class="headerlink" href="#raw-code-elements" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="raw-code-elements">
+<h3 id="raw-code-elements">Raw code elements<a class="headerlink" href="#raw-code-elements" title="永久链接至标题">¶</a></h3>
 <p>A raw-code element contains code, either bytecode or native machine code.  Its
 contents are:</p>
 <table>
@@ -525,9 +527,9 @@ compressed qstr values.</p>
 another vuint counting the number of sub-raw-code elements.</p>
 <p>The constant objects are then stored next.</p>
 <p>Finally any sub-raw-code elements are stored, recursively.</p>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -576,10 +578,10 @@ another vuint counting the number of sub-raw-code elements.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

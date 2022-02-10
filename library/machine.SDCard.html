@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class SDCard – secure digital memory card &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class SDCard – secure digital memory card &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="micropython – access and control MicroPython internals" href="micropython.html" />
     <link rel="prev" title="class SD – secure digital memory card (cc3200 port only)" href="machine.SD.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class SDCard – secure digital memory card </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -298,8 +300,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-sdcard"></span><h1 id="library-machine-sdcard--page-root">class SDCard – secure digital memory card<a class="headerlink" href="#library-machine-sdcard--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-sdcard-secure-digital-memory-card">
+<span id="machine-sdcard"></span><h1 id="library-machine-sdcard--page-root">class SDCard – secure digital memory card<a class="headerlink" href="#library-machine-sdcard--page-root" title="永久链接至标题">¶</a></h1>
 <p>SD cards are one of the most common small form factor removable storage media.
 SD cards come in a variety of sizes and physical form factors. MMC cards are
 similar removable storage devices while eMMC devices are electrically similar
@@ -317,9 +319,9 @@ for the current hardware. The arguments listed below represent the common
 arguments that might need to be set in order to use either a non-standard slot
 or a non-standard pin assignment. The exact subset of arguments supported will
 vary from platform to platform.</p>
-<dl class="class">
-<dt id="machine.SDCard">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SDCard</code><span class="sig-paren">(</span><em class="sig-param">slot=1</em>, <em class="sig-param">width=1</em>, <em class="sig-param">cd=None</em>, <em class="sig-param">wp=None</em>, <em class="sig-param">sck=None</em>, <em class="sig-param">miso=None</em>, <em class="sig-param">mosi=None</em>, <em class="sig-param">cs=None</em>, <em class="sig-param">freq=20000000</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SDCard" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.SDCard">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SDCard</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">slot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sck</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">miso</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mosi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">20000000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SDCard" title="永久链接至目标">¶</a></dt>
 <dd><p>This class provides access to SD or MMC storage cards using either
 a dedicated SD/MMC interface hardware or through an SPI channel.
 The class implements the block protocol defined by <a class="reference internal" href="os.html#os.AbstractBlockDev" title="os.AbstractBlockDev"><code class="xref py py-class docutils literal notranslate"><span class="pre">os.AbstractBlockDev</span></code></a>.
@@ -343,16 +345,16 @@ unset will select the default interface.</p></li>
 </ul>
 </div></blockquote>
 </dd></dl>
-
-<h2 id="implementation-specific-details">Implementation-specific details<a class="headerlink" href="#implementation-specific-details" title="Permalink to this headline">¶</a></h2>
+<section id="implementation-specific-details">
+<h2 id="implementation-specific-details">Implementation-specific details<a class="headerlink" href="#implementation-specific-details" title="永久链接至标题">¶</a></h2>
 <p>Different implementations of the <code class="docutils literal notranslate"><span class="pre">SDCard</span></code> class on different hardware support
 varying subsets of the options above.</p>
-
-<h3 id="pyboard">PyBoard<a class="headerlink" href="#pyboard" title="Permalink to this headline">¶</a></h3>
+<section id="pyboard">
+<h3 id="pyboard">PyBoard<a class="headerlink" href="#pyboard" title="永久链接至标题">¶</a></h3>
 <p>The standard PyBoard has just one slot. No arguments are necessary or supported.</p>
-
-
-<h3 id="esp32">ESP32<a class="headerlink" href="#esp32" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="esp32">
+<h3 id="esp32">ESP32<a class="headerlink" href="#esp32" title="永久链接至标题">¶</a></h3>
 <p>The ESP32 provides two channels of SD/MMC hardware and also supports
 access to SD Cards through either of the two SPI ports that are
 generally available to the user. As a result the <em>slot</em> argument can
@@ -362,13 +364,13 @@ supports 1, 4 or 8-bit wide access while slot 1 supports 1 or 4-bit
 access; the SPI slots only support 1-bit access.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>Slot 0 is used to communicate with on-board flash memory
 on most ESP32 modules and so will be unavailable to the
 user.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>Most ESP32 modules that provide an SD card slot using the
 dedicated hardware only wire up 1 data pin, so the default
 value for <em>width</em> is 1.</p>
@@ -378,7 +380,7 @@ value for <em>width</em> is 1.</p>
 used by the SPI hardware can be reassigned.</p>
 <blockquote>
 <div><div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>If any of the SPI signals are remapped then all of the SPI
 signals will pass through a GPIO multiplexer unit which
 can limit the performance of high frequency signals. Since
@@ -492,16 +494,16 @@ cause problems on some cards.</p>
 </tbody>
 </table>
 </div></blockquote>
-
-
-<h3 id="cc3200">cc3200<a class="headerlink" href="#cc3200" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="cc3200">
+<h3 id="cc3200">cc3200<a class="headerlink" href="#cc3200" title="永久链接至标题">¶</a></h3>
 <p>You can set the pins used for SPI access by passing a tuple as the
 <em>pins</em> argument.</p>
 <p><em>Note:</em> The current cc3200 SD card implementation names the this class
 <a class="reference internal" href="machine.SD.html#machine.SD" title="machine.SD"><code class="xref py py-class docutils literal notranslate"><span class="pre">machine.SD</span></code></a> rather than <a class="reference internal" href="#machine.SDCard" title="machine.SDCard"><code class="xref py py-class docutils literal notranslate"><span class="pre">machine.SDCard</span></code></a> .</p>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -550,10 +552,10 @@ cause problems on some cards.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

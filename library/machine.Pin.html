@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class Pin – control I/O pins &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class Pin – control I/O pins &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class Signal – control and sense external I/O devices" href="machine.Signal.html" />
     <link rel="prev" title="machine — functions related to the hardware" href="machine.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class Pin – control I/O pins </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -294,8 +296,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-pin"></span><h1 id="library-machine-pin--page-root">class Pin – control I/O pins<a class="headerlink" href="#library-machine-pin--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-pin-control-i-o-pins">
+<span id="machine-pin"></span><h1 id="library-machine-pin--page-root">class Pin – control I/O pins<a class="headerlink" href="#library-machine-pin--page-root" title="永久链接至标题">¶</a></h1>
 <p>A pin object is used to control I/O pins (also known as GPIO - general-purpose
 input/output).  Pin objects are commonly associated with a physical pin that can
 drive an output voltage and read input voltages.  The pin class has methods to set the mode of
@@ -307,7 +309,7 @@ physical pin that the identifier maps to are port-specific.  Possibilities
 for the identifier are an integer, a string or a tuple with port and pin
 number.</p>
 <p>Usage Model:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
 <span class="c1"># create an output pin on pin #0</span>
 <span class="n">p0</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
@@ -329,11 +331,11 @@ number.</p>
 <span class="n">p0</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="k">lambda</span> <span class="n">p</span><span class="p">:</span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">))</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="machine.Pin">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">Pin</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">mode=-1</em>, <em class="sig-param">pull=-1</em>, <em class="sig-param">*</em>, <em class="sig-param">value</em>, <em class="sig-param">drive</em>, <em class="sig-param">alt</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.Pin">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">Pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin" title="永久链接至目标">¶</a></dt>
 <dd><p>Access the pin peripheral (GPIO pin) associated with the given <code class="docutils literal notranslate"><span class="pre">id</span></code>.  If
 additional arguments are given in the constructor then they are used to initialise
 the pin.  Any settings that are not specified will remain in their previous state.</p>
@@ -390,20 +392,20 @@ by calling the constructor or <a class="reference internal" href="#machine.Pin.i
 alternate-function mode is re-initialised with <code class="docutils literal notranslate"><span class="pre">Pin.IN</span></code>, <code class="docutils literal notranslate"><span class="pre">Pin.OUT</span></code>, or
 <code class="docutils literal notranslate"><span class="pre">Pin.OPEN_DRAIN</span></code>, the alternate function will be removed from the pin.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="machine.Pin.init">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">mode=-1</em>, <em class="sig-param">pull=-1</em>, <em class="sig-param">*</em>, <em class="sig-param">value</em>, <em class="sig-param">drive</em>, <em class="sig-param">alt</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.init">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drive</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Re-initialise the pin using the given parameters.  Only those arguments that
 are specified will be set.  The rest of the pin peripheral state will remain
 unchanged.  See the constructor documentation for details of the arguments.</p>
 <p>Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.value">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">value</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">x</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.value" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.value">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">value</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.value" title="永久链接至目标">¶</a></dt>
 <dd><p>This method allows to set and get the value of the pin, depending on whether
 the argument <code class="docutils literal notranslate"><span class="pre">x</span></code> is supplied or not.</p>
 <p>If the argument is omitted then this method gets the digital logic level of
@@ -437,26 +439,26 @@ state.  Otherwise the pin is set to high-impedance state.</p></li>
 </div></blockquote>
 <p>When setting the value this method returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.__call__">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">__call__</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">x</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.__call__" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.__call__">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">__call__</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.__call__" title="永久链接至目标">¶</a></dt>
 <dd><p>Pin objects are callable.  The call method provides a (fast) shortcut to set
 and get the value of the pin.  It is equivalent to Pin.value([x]).
 See <a class="reference internal" href="#machine.Pin.value" title="machine.Pin.value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">Pin.value()</span></code></a> for more details.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.on">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">on</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.on" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.on">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">on</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.on" title="永久链接至目标">¶</a></dt>
 <dd><p>Set pin to “1” output level.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.off">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">off</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.off" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.off">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">off</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.off" title="永久链接至目标">¶</a></dt>
 <dd><p>Set pin to “0” output level.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.irq">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">handler=None</em>, <em class="sig-param">trigger=(Pin.IRQ_FALLING | Pin.IRQ_RISING)</em>, <em class="sig-param">*</em>, <em class="sig-param">priority=1</em>, <em class="sig-param">wake=None</em>, <em class="sig-param">hard=False</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.irq">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Pin.IRQ_FALLING</span> <span class="pre">|</span> <span class="pre">Pin.IRQ_RISING</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wake</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Configure an interrupt handler to be called when the trigger source of the
 pin is active.  If the pin mode is <code class="docutils literal notranslate"><span class="pre">Pin.IN</span></code> then the trigger source is
 the external value on the pin.  If the pin mode is <code class="docutils literal notranslate"><span class="pre">Pin.OUT</span></code> then the
@@ -495,91 +497,91 @@ Not all ports support this argument.</p></li>
 <p>This method returns a callback object.</p>
 </dd></dl>
 <p>The following methods are not part of the core Pin API and only implemented on certain ports.</p>
-<dl class="method">
-<dt id="machine.Pin.low">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">low</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.low" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.low">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">low</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.low" title="永久链接至目标">¶</a></dt>
 <dd><p>Set pin to “0” output level.</p>
 <p>Availability: nrf, rp2, stm32 ports.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.high">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">high</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.high" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.high">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">high</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.high" title="永久链接至目标">¶</a></dt>
 <dd><p>Set pin to “1” output level.</p>
 <p>Availability: nrf, rp2, stm32 ports.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.mode">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">mode</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">mode</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.mode" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.mode">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.mode" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the pin mode.
 See the constructor documentation for details of the <code class="docutils literal notranslate"><span class="pre">mode</span></code> argument.</p>
 <p>Availability: cc3200, stm32 ports.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.pull">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">pull</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">pull</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.pull" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.pull">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">pull</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">pull</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.pull" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the pin pull state.
 See the constructor documentation for details of the <code class="docutils literal notranslate"><span class="pre">pull</span></code> argument.</p>
 <p>Availability: cc3200, stm32 ports.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.Pin.drive">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">drive</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">drive</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.drive" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.Pin.drive">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">drive</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">drive</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.Pin.drive" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the pin drive strength.
 See the constructor documentation for details of the <code class="docutils literal notranslate"><span class="pre">drive</span></code> argument.</p>
 <p>Availability: cc3200 port.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
 <p>The following constants are used to configure the pin objects.  Note that
 not all constants are available on all ports.</p>
-<dl class="data">
-<dt id="machine.Pin.IN">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">IN</code><a class="headerlink" href="#machine.Pin.IN" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.OUT">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">OUT</code><a class="headerlink" href="#machine.Pin.OUT" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.OPEN_DRAIN">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">OPEN_DRAIN</code><a class="headerlink" href="#machine.Pin.OPEN_DRAIN" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.ALT">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">ALT</code><a class="headerlink" href="#machine.Pin.ALT" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.ALT_OPEN_DRAIN">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">ALT_OPEN_DRAIN</code><a class="headerlink" href="#machine.Pin.ALT_OPEN_DRAIN" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.ANALOG">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">ANALOG</code><a class="headerlink" href="#machine.Pin.ANALOG" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.Pin.IN">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">IN</span></span><a class="headerlink" href="#machine.Pin.IN" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.OUT">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">OUT</span></span><a class="headerlink" href="#machine.Pin.OUT" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.OPEN_DRAIN">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">OPEN_DRAIN</span></span><a class="headerlink" href="#machine.Pin.OPEN_DRAIN" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.ALT">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">ALT</span></span><a class="headerlink" href="#machine.Pin.ALT" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.ALT_OPEN_DRAIN">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">ALT_OPEN_DRAIN</span></span><a class="headerlink" href="#machine.Pin.ALT_OPEN_DRAIN" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.ANALOG">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">ANALOG</span></span><a class="headerlink" href="#machine.Pin.ANALOG" title="永久链接至目标">¶</a></dt>
 <dd><p>Selects the pin mode.</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.Pin.PULL_UP">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">PULL_UP</code><a class="headerlink" href="#machine.Pin.PULL_UP" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.PULL_DOWN">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">PULL_DOWN</code><a class="headerlink" href="#machine.Pin.PULL_DOWN" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.PULL_HOLD">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">PULL_HOLD</code><a class="headerlink" href="#machine.Pin.PULL_HOLD" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.Pin.PULL_UP">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">PULL_UP</span></span><a class="headerlink" href="#machine.Pin.PULL_UP" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.PULL_DOWN">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">PULL_DOWN</span></span><a class="headerlink" href="#machine.Pin.PULL_DOWN" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.PULL_HOLD">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">PULL_HOLD</span></span><a class="headerlink" href="#machine.Pin.PULL_HOLD" title="永久链接至目标">¶</a></dt>
 <dd><p>Selects whether there is a pull up/down resistor.  Use the value
 <code class="docutils literal notranslate"><span class="pre">None</span></code> for no pull.</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.Pin.LOW_POWER">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">LOW_POWER</code><a class="headerlink" href="#machine.Pin.LOW_POWER" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.MED_POWER">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">MED_POWER</code><a class="headerlink" href="#machine.Pin.MED_POWER" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.HIGH_POWER">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">HIGH_POWER</code><a class="headerlink" href="#machine.Pin.HIGH_POWER" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.Pin.LOW_POWER">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">LOW_POWER</span></span><a class="headerlink" href="#machine.Pin.LOW_POWER" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.MED_POWER">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">MED_POWER</span></span><a class="headerlink" href="#machine.Pin.MED_POWER" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.HIGH_POWER">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">HIGH_POWER</span></span><a class="headerlink" href="#machine.Pin.HIGH_POWER" title="永久链接至目标">¶</a></dt>
 <dd><p>Selects the pin drive strength.</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.Pin.IRQ_FALLING">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">IRQ_FALLING</code><a class="headerlink" href="#machine.Pin.IRQ_FALLING" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.IRQ_RISING">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">IRQ_RISING</code><a class="headerlink" href="#machine.Pin.IRQ_RISING" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.IRQ_LOW_LEVEL">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">IRQ_LOW_LEVEL</code><a class="headerlink" href="#machine.Pin.IRQ_LOW_LEVEL" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.Pin.IRQ_HIGH_LEVEL">
-<code class="sig-prename descclassname">Pin.</code><code class="sig-name descname">IRQ_HIGH_LEVEL</code><a class="headerlink" href="#machine.Pin.IRQ_HIGH_LEVEL" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.Pin.IRQ_FALLING">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">IRQ_FALLING</span></span><a class="headerlink" href="#machine.Pin.IRQ_FALLING" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.IRQ_RISING">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">IRQ_RISING</span></span><a class="headerlink" href="#machine.Pin.IRQ_RISING" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.IRQ_LOW_LEVEL">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">IRQ_LOW_LEVEL</span></span><a class="headerlink" href="#machine.Pin.IRQ_LOW_LEVEL" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.Pin.IRQ_HIGH_LEVEL">
+<span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">IRQ_HIGH_LEVEL</span></span><a class="headerlink" href="#machine.Pin.IRQ_HIGH_LEVEL" title="永久链接至目标">¶</a></dt>
 <dd><p>Selects the IRQ trigger type.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -628,10 +630,10 @@ not all constants are available on all ports.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,20 +47,20 @@
   
   
   
-    <title>MicroPython libraries &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>MicroPython libraries &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="array – arrays of numeric data" href="array.html" />
-    <link rel="prev" title="MicroPython documentation and references" href="../index.html" />
+    <link rel="prev" title="MicroPython 文档与引用" href="../index.html" />
   
    
 
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> MicroPython libraries </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
       </ul>
     </div>
   </nav>
@@ -163,13 +165,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -340,10 +342,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="micropython-lib"></span><h1 id="library-index--page-root">MicroPython libraries<a class="headerlink" href="#library-index--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="micropython-libraries">
+<span id="micropython-lib"></span><h1 id="library-index--page-root">MicroPython libraries<a class="headerlink" href="#library-index--page-root" title="永久链接至标题">¶</a></h1>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">警告</p>
 <p>Important summary of this section</p>
 <ul class="simple">
 <li><p>MicroPython provides built-in modules that mirror the functionality of the
@@ -369,17 +371,17 @@ even the entire module) described in this documentation <strong>may be unavailab
 in a particular build of MicroPython on a particular system. The best place to
 find general information of the availability/non-availability of a particular
 feature is the “General Information” section which contains information
-pertaining to a specific <a class="reference internal" href="../reference/glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a>.</p>
+pertaining to a specific <a class="reference internal" href="../reference/glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a>.</p>
 <p>On some ports you are able to discover the available, built-in libraries that
-can be imported by entering the following at the <a class="reference internal" href="../reference/glossary.html#term-repl"><span class="xref std std-term">REPL</span></a>:</p>
+can be imported by entering the following at the <a class="reference internal" href="../reference/glossary.html#term-REPL"><span class="xref std std-term">REPL</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="s1">'modules'</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Beyond the built-in libraries described in this documentation, many more
 modules from the Python standard library, as well as further MicroPython
 extensions to it, can be found in <a class="reference internal" href="../reference/glossary.html#term-micropython-lib"><span class="xref std std-term">micropython-lib</span></a>.</p>
-
-<h2 id="python-standard-libraries-and-micro-libraries">Python standard libraries and micro-libraries<a class="headerlink" href="#python-standard-libraries-and-micro-libraries" title="Permalink to this headline">¶</a></h2>
+<section id="python-standard-libraries-and-micro-libraries">
+<h2 id="python-standard-libraries-and-micro-libraries">Python standard libraries and micro-libraries<a class="headerlink" href="#python-standard-libraries-and-micro-libraries" title="永久链接至标题">¶</a></h2>
 <p>The following standard Python libraries have been “micro-ified” to fit in with
 the philosophy of MicroPython.  They provide the core functionality of that
 module and are intended to be a drop-in replacement for the standard Python
@@ -412,9 +414,9 @@ library.</p>
 <li class="toctree-l1"><a class="reference internal" href="_thread.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">_thread</span></code> – multithreading support</a></li>
 </ul>
 </div>
-
-
-<h2 id="micropython-specific-libraries">MicroPython-specific libraries<a class="headerlink" href="#micropython-specific-libraries" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="micropython-specific-libraries">
+<h2 id="micropython-specific-libraries">MicroPython-specific libraries<a class="headerlink" href="#micropython-specific-libraries" title="永久链接至标题">¶</a></h2>
 <p>Functionality specific to the MicroPython implementation is available in
 the following libraries.</p>
 <div class="toctree-wrapper compound">
@@ -430,9 +432,9 @@ the following libraries.</p>
 <li class="toctree-l1"><a class="reference internal" href="uctypes.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uctypes</span></code> – access binary data in a structured way</a></li>
 </ul>
 </div>
-
-
-<h2 id="port-specific-libraries">Port-specific libraries<a class="headerlink" href="#port-specific-libraries" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="port-specific-libraries">
+<h2 id="port-specific-libraries">Port-specific libraries<a class="headerlink" href="#port-specific-libraries" title="永久链接至标题">¶</a></h2>
 <p>In some cases the following port/board-specific libraries have functions or
 classes similar to those in the <a class="reference internal" href="machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> library.  Where this occurs, the
 entry in the port specific library exposes hardware functionality unique to
@@ -440,8 +442,8 @@ that platform.</p>
 <p>To write portable code use functions and classes from the <a class="reference internal" href="machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> module.
 To access platform-specific hardware use the appropriate library, e.g.
 <a class="reference internal" href="pyb.html#module-pyb" title="pyb: functions related to the board"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code></a> in the case of the Pyboard.</p>
-
-<h3 id="libraries-specific-to-the-pyboard">Libraries specific to the pyboard<a class="headerlink" href="#libraries-specific-to-the-pyboard" title="Permalink to this headline">¶</a></h3>
+<section id="libraries-specific-to-the-pyboard">
+<h3 id="libraries-specific-to-the-pyboard">Libraries specific to the pyboard<a class="headerlink" href="#libraries-specific-to-the-pyboard" title="永久链接至标题">¶</a></h3>
 <p>The following libraries are specific to the pyboard.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -476,9 +478,9 @@ To access platform-specific hardware use the appropriate library, e.g.
 </li>
 </ul>
 </div>
-
-
-<h3 id="libraries-specific-to-the-wipy">Libraries specific to the WiPy<a class="headerlink" href="#libraries-specific-to-the-wipy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="libraries-specific-to-the-wipy">
+<h3 id="libraries-specific-to-the-wipy">Libraries specific to the WiPy<a class="headerlink" href="#libraries-specific-to-the-wipy" title="永久链接至标题">¶</a></h3>
 <p>The following libraries and classes are specific to the WiPy.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -504,9 +506,9 @@ To access platform-specific hardware use the appropriate library, e.g.
 </li>
 </ul>
 </div>
-
-
-<h3 id="libraries-specific-to-the-esp8266-and-esp32">Libraries specific to the ESP8266 and ESP32<a class="headerlink" href="#libraries-specific-to-the-esp8266-and-esp32" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="libraries-specific-to-the-esp8266-and-esp32">
+<h3 id="libraries-specific-to-the-esp8266-and-esp32">Libraries specific to the ESP8266 and ESP32<a class="headerlink" href="#libraries-specific-to-the-esp8266-and-esp32" title="永久链接至标题">¶</a></h3>
 <p>The following libraries are specific to the ESP8266 and ESP32.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -525,9 +527,9 @@ To access platform-specific hardware use the appropriate library, e.g.
 </li>
 </ul>
 </div>
-
-
-<h3 id="libraries-specific-to-the-rp2040">Libraries specific to the RP2040<a class="headerlink" href="#libraries-specific-to-the-rp2040" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="libraries-specific-to-the-rp2040">
+<h3 id="libraries-specific-to-the-rp2040">Libraries specific to the RP2040<a class="headerlink" href="#libraries-specific-to-the-rp2040" title="永久链接至标题">¶</a></h3>
 <p>The following libraries are specific to the RP2040, as used in the Raspberry Pi Pico.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -539,9 +541,9 @@ To access platform-specific hardware use the appropriate library, e.g.
 </li>
 </ul>
 </div>
-
-
-<h3 id="libraries-specific-to-zephyr">Libraries specific to Zephyr<a class="headerlink" href="#libraries-specific-to-zephyr" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="libraries-specific-to-zephyr">
+<h3 id="libraries-specific-to-zephyr">Libraries specific to Zephyr<a class="headerlink" href="#libraries-specific-to-zephyr" title="永久链接至标题">¶</a></h3>
 <p>The following libraries are specific to the Zephyr port.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -553,10 +555,10 @@ To access platform-specific hardware use the appropriate library, e.g.
 </li>
 </ul>
 </div>
-
-
-
-<h2 id="extending-built-in-libraries-from-python">Extending built-in libraries from Python<a class="headerlink" href="#extending-built-in-libraries-from-python" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="extending-built-in-libraries-from-python">
+<h2 id="extending-built-in-libraries-from-python">Extending built-in libraries from Python<a class="headerlink" href="#extending-built-in-libraries-from-python" title="永久链接至标题">¶</a></h2>
 <p>In most cases, the above modules are actually named <code class="docutils literal notranslate"><span class="pre">umodule</span></code> rather than
 <code class="docutils literal notranslate"><span class="pre">module</span></code>, but MicroPython will alias any module prefixed with a <code class="docutils literal notranslate"><span class="pre">u</span></code> to the
 non-<code class="docutils literal notranslate"><span class="pre">u</span></code> version. However a file (or <a class="reference internal" href="../reference/glossary.html#term-frozen-module"><span class="xref std std-term">frozen module</span></a>) named
@@ -571,8 +573,8 @@ but also the MicroPython libraries too (e.g. <code class="docutils literal notra
 The main exception is the port-specific libraries (<code class="docutils literal notranslate"><span class="pre">pyb</span></code>, <code class="docutils literal notranslate"><span class="pre">esp</span></code>, etc).</p>
 <p><em>Other than when you specifically want to force the use of the built-in module,
 we recommend always using ``import module`` rather than ``import umodule``.</em></p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -584,7 +586,7 @@ we recommend always using ``import module`` rather than ``import umodule``.</em>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="../index.html" title="MicroPython documentation and references"
+            <a href="../index.html" title="MicroPython 文档与引用"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -593,7 +595,7 @@ we recommend always using ``import module`` rather than ``import umodule``.</em>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> MicroPython documentation and references </span>
+                      class="md-footer-nav__direction"> Previous </span> MicroPython 文档与引用 </span>
               </div>
             </a>
           
@@ -621,10 +623,10 @@ we recommend always using ``import module`` rather than ``import umodule``.</em>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

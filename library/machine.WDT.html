@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class WDT – watchdog timer &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class WDT – watchdog timer &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class SD – secure digital memory card (cc3200 port only)" href="machine.SD.html" />
     <link rel="prev" title="class Timer – control hardware timers" href="machine.Timer.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class WDT – watchdog timer </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -292,41 +294,41 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-wdt"></span><h1 id="library-machine-wdt--page-root">class WDT – watchdog timer<a class="headerlink" href="#library-machine-wdt--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-wdt-watchdog-timer">
+<span id="machine-wdt"></span><h1 id="library-machine-wdt--page-root">class WDT – watchdog timer<a class="headerlink" href="#library-machine-wdt--page-root" title="永久链接至标题">¶</a></h1>
 <p>The WDT is used to restart the system when the application crashes and ends
 up into a non recoverable state. Once started it cannot be stopped or
 reconfigured in any way. After enabling, the application must “feed” the
 watchdog periodically to prevent it from expiring and resetting the system.</p>
 <p>Example usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">WDT</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">WDT</span>
 <span class="n">wdt</span> <span class="o">=</span> <span class="n">WDT</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">2000</span><span class="p">)</span>  <span class="c1"># enable it with a timeout of 2s</span>
 <span class="n">wdt</span><span class="o">.</span><span class="n">feed</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Availability of this class: pyboard, WiPy, esp8266, esp32.</p>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="machine.WDT">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">WDT</code><span class="sig-paren">(</span><em class="sig-param">id=0</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.WDT" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.WDT">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">WDT</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.WDT" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a WDT object and start it. The timeout must be given in milliseconds.
 Once it is running the timeout cannot be changed and the WDT cannot be stopped either.</p>
 <p>Notes: On the esp32 the minimum timeout is 1 second. On the esp8266 a timeout
 cannot be specified, it is determined by the underlying system.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="machine.wdt.feed">
-<code class="sig-prename descclassname">wdt.</code><code class="sig-name descname">feed</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.wdt.feed" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.wdt.feed">
+<span class="sig-prename descclassname"><span class="pre">wdt.</span></span><span class="sig-name descname"><span class="pre">feed</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.wdt.feed" title="永久链接至目标">¶</a></dt>
 <dd><p>Feed the WDT to prevent it from resetting the system. The application
 should place this call in a sensible place ensuring that the WDT is
 only fed after verifying that everything is functioning correctly.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -375,10 +377,10 @@ only fed after verifying that everything is functioning correctly.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class USB_VCP – USB virtual comm port &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class USB_VCP – USB virtual comm port &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="stm — functionality specific to STM32 MCUs" href="stm.html" />
     <link rel="prev" title="class USB_HID – USB Human Interface Device (HID)" href="pyb.USB_HID.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class USB_VCP – USB virtual comm port </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="pyb.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code> — functions related to the board</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -294,57 +296,57 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="pyb-usb-vcp"></span><h1 id="library-pyb-usb-vcp--page-root">class USB_VCP – USB virtual comm port<a class="headerlink" href="#library-pyb-usb-vcp--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-usb-vcp-usb-virtual-comm-port">
+<span id="pyb-usb-vcp"></span><h1 id="library-pyb-usb-vcp--page-root">class USB_VCP – USB virtual comm port<a class="headerlink" href="#library-pyb-usb-vcp--page-root" title="永久链接至标题">¶</a></h1>
 <p>The USB_VCP class allows creation of a <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a>-like object representing the USB
 virtual comm port.  It can be used to read and write data over USB to
 the connected host.</p>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="pyb.pyb.USB_VCP">
-<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">USB_VCP</code><span class="sig-paren">(</span><em class="sig-param">id=0</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.USB_VCP" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyb.pyb.USB_VCP">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">USB_VCP</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.USB_VCP" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a new USB_VCP object.  The <em>id</em> argument specifies which USB VCP port to
 use.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="pyb.USB_VCP.init">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">flow=-1</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.init">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Configure the USB VCP port.  If the <em>flow</em> argument is not -1 then the value sets
 the flow control, which can be a bitwise-or of <code class="docutils literal notranslate"><span class="pre">USB_VCP.RTS</span></code> and <code class="docutils literal notranslate"><span class="pre">USB_VCP.CTS</span></code>.
 RTS is used to control read behaviour and CTS, to control write behaviour.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.setinterrupt">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">setinterrupt</code><span class="sig-paren">(</span><em class="sig-param">chr</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.setinterrupt" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.setinterrupt">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">setinterrupt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">chr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.setinterrupt" title="永久链接至目标">¶</a></dt>
 <dd><p>Set the character which interrupts running Python code.  This is set
 to 3 (CTRL-C) by default, and when a CTRL-C character is received over
 the USB VCP port, a KeyboardInterrupt exception is raised.</p>
 <p>Set to -1 to disable this interrupt feature.  This is useful when you
 want to send raw bytes over the USB VCP port.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.isconnected">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">isconnected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.isconnected" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.isconnected">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">isconnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.isconnected" title="永久链接至目标">¶</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if USB is connected as a serial device, else <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.any">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">any</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.any" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.any">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">any</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.any" title="永久链接至目标">¶</a></dt>
 <dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if any characters waiting, else <code class="docutils literal notranslate"><span class="pre">False</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.close">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.close" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.close">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">close</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.close" title="永久链接至目标">¶</a></dt>
 <dd><p>This method does nothing.  It exists so the USB_VCP object can act as
 a file.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.read">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">nbytes</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.read" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.read">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">nbytes</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.read" title="永久链接至目标">¶</a></dt>
 <dd><p>Read at most <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> from the serial device and return them as a
 bytes object.  If <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> is not specified then the method reads
 all available bytes from the serial device.
@@ -352,9 +354,9 @@ USB_VCP <a class="reference internal" href="../reference/glossary.html#term-stre
 so if no pending data available, this method will return immediately
 with <code class="docutils literal notranslate"><span class="pre">None</span></code> value.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.readinto">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="optional">[</span>, <em class="sig-param">maxlen</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readinto" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.readinto">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">readinto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">maxlen</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readinto" title="永久链接至目标">¶</a></dt>
 <dd><p>Read bytes from the serial device and store them into <code class="docutils literal notranslate"><span class="pre">buf</span></code>, which
 should be a buffer-like object.  At most <code class="docutils literal notranslate"><span class="pre">len(buf)</span></code> bytes are read.
 If <code class="docutils literal notranslate"><span class="pre">maxlen</span></code> is given and then at most <code class="docutils literal notranslate"><span class="pre">min(maxlen,</span> <span class="pre">len(buf))</span></code> bytes
@@ -362,30 +364,30 @@ are read.</p>
 <p>Returns the number of bytes read and stored into <code class="docutils literal notranslate"><span class="pre">buf</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code>
 if no pending data available.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.readline">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readline" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.readline">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">readline</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readline" title="永久链接至目标">¶</a></dt>
 <dd><p>Read a whole line from the serial device.</p>
 <p>Returns a bytes object containing the data, including the trailing
 newline character or <code class="docutils literal notranslate"><span class="pre">None</span></code> if no pending data available.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.readlines">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">readlines</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readlines" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.readlines">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">readlines</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.readlines" title="永久链接至目标">¶</a></dt>
 <dd><p>Read as much data as possible from the serial device, breaking it into
 lines.</p>
 <p>Returns a list of bytes objects, each object being one of the lines.
 Each line will include the newline character.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.write">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.write" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.write">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.write" title="永久链接至目标">¶</a></dt>
 <dd><p>Write the bytes from <code class="docutils literal notranslate"><span class="pre">buf</span></code> to the serial device.</p>
 <p>Returns the number of bytes written.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.recv">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.recv" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.recv">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.recv" title="永久链接至目标">¶</a></dt>
 <dd><p>Receive data on the bus:</p>
 <blockquote>
 <div><ul class="simple">
@@ -397,9 +399,9 @@ or a mutable buffer, which will be filled with received bytes.</p></li>
 <p>Return value: if <code class="docutils literal notranslate"><span class="pre">data</span></code> is an integer then a new buffer of the bytes received,
 otherwise the number of bytes read into <code class="docutils literal notranslate"><span class="pre">data</span></code> is returned.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.send">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.send" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.send">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.send" title="永久链接至目标">¶</a></dt>
 <dd><p>Send data over the USB VCP:</p>
 <blockquote>
 <div><ul class="simple">
@@ -409,9 +411,9 @@ otherwise the number of bytes read into <code class="docutils literal notranslat
 </div></blockquote>
 <p>Return value: number of bytes sent.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.USB_VCP.irq">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">handler=None</em>, <em class="sig-param">trigger=IRQ_RX</em>, <em class="sig-param">hard=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.USB_VCP.irq">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">IRQ_RX</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.USB_VCP.irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Register <em>handler</em> to be called whenever an event specified by <em>trigger</em>
 occurs.  The <em>handler</em> function must take exactly one argument, which will
 be the USB VCP object.  Pass in <code class="docutils literal notranslate"><span class="pre">None</span></code> to disable the callback.</p>
@@ -422,23 +424,23 @@ be the USB VCP object.  Pass in <code class="docutils literal notranslate"><span
 </ul>
 </div></blockquote>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="pyb.USB_VCP.RTS">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">RTS</code><a class="headerlink" href="#pyb.USB_VCP.RTS" title="Permalink to this definition">¶</a></dt>
-<dt id="pyb.USB_VCP.CTS">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">CTS</code><a class="headerlink" href="#pyb.USB_VCP.CTS" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyb.USB_VCP.RTS">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">RTS</span></span><a class="headerlink" href="#pyb.USB_VCP.RTS" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="pyb.USB_VCP.CTS">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">CTS</span></span><a class="headerlink" href="#pyb.USB_VCP.CTS" title="永久链接至目标">¶</a></dt>
 <dd><p>to select the flow control type.</p>
 </dd></dl>
-<dl class="data">
-<dt id="pyb.USB_VCP.IRQ_RX">
-<code class="sig-prename descclassname">USB_VCP.</code><code class="sig-name descname">IRQ_RX</code><a class="headerlink" href="#pyb.USB_VCP.IRQ_RX" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyb.USB_VCP.IRQ_RX">
+<span class="sig-prename descclassname"><span class="pre">USB_VCP.</span></span><span class="sig-name descname"><span class="pre">IRQ_RX</span></span><a class="headerlink" href="#pyb.USB_VCP.IRQ_RX" title="永久链接至目标">¶</a></dt>
 <dd><p>IRQ trigger values for <a class="reference internal" href="#pyb.USB_VCP.irq" title="pyb.USB_VCP.irq"><code class="xref py py-meth docutils literal notranslate"><span class="pre">USB_VCP.irq()</span></code></a>.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -487,10 +489,10 @@ be the USB VCP object.  Pass in <code class="docutils literal notranslate"><span
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

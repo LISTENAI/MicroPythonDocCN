@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class LCD – LCD control for the LCD touch-sensor pyskin &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class LCD – LCD control for the LCD touch-sensor pyskin &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class LED – LED object" href="pyb.LED.html" />
     <link rel="prev" title="class I2C – a two-wire serial protocol" href="pyb.I2C.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class LCD – LCD control for the LCD touch-sensor pyskin </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="pyb.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code> — functions related to the board</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -292,8 +294,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="pyb-lcd"></span><h1 id="library-pyb-lcd--page-root">class LCD – LCD control for the LCD touch-sensor pyskin<a class="headerlink" href="#library-pyb-lcd--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-lcd-lcd-control-for-the-lcd-touch-sensor-pyskin">
+<span id="pyb-lcd"></span><h1 id="library-pyb-lcd--page-root">class LCD – LCD control for the LCD touch-sensor pyskin<a class="headerlink" href="#library-pyb-lcd--page-root" title="永久链接至标题">¶</a></h1>
 <p>The LCD class is used to control the LCD on the LCD touch-sensor pyskin,
 LCD32MKv1.0.  The LCD is a 128x32 pixel monochrome screen, part NHD-C12832A1Z.</p>
 <p>The pyskin must be connected in either the X or Y positions, and then
@@ -326,70 +328,70 @@ For example, to make a bouncing dot, try:</p>
     <span class="n">pyb</span><span class="o">.</span><span class="n">delay</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>               <span class="c1"># pause for 50ms</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="pyb.pyb.LCD">
-<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">LCD</code><span class="sig-paren">(</span><em class="sig-param">skin_position</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.LCD" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyb.pyb.LCD">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">LCD</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">skin_position</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.LCD" title="永久链接至目标">¶</a></dt>
 <dd><p>Construct an LCD object in the given skin position.  <code class="docutils literal notranslate"><span class="pre">skin_position</span></code> can be ‘X’ or ‘Y’, and
 should match the position where the LCD pyskin is plugged in.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="pyb.LCD.command">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">command</code><span class="sig-paren">(</span><em class="sig-param">instr_data</em>, <em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.command" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.command">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">command</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instr_data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.command" title="永久链接至目标">¶</a></dt>
 <dd><p>Send an arbitrary command to the LCD.  Pass 0 for <code class="docutils literal notranslate"><span class="pre">instr_data</span></code> to send an
 instruction, otherwise pass 1 to send data.  <code class="docutils literal notranslate"><span class="pre">buf</span></code> is a buffer with the
 instructions/data to send.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.contrast">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">contrast</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.contrast" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.contrast">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">contrast</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.contrast" title="永久链接至目标">¶</a></dt>
 <dd><p>Set the contrast of the LCD.  Valid values are between 0 and 47.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.fill">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param">colour</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.fill" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.fill">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">fill</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">colour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.fill" title="永久链接至目标">¶</a></dt>
 <dd><p>Fill the screen with the given colour (0 or 1 for white or black).</p>
 <p>This method writes to the hidden buffer.  Use <code class="docutils literal notranslate"><span class="pre">show()</span></code> to show the buffer.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.get">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.get" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.get">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.get" title="永久链接至目标">¶</a></dt>
 <dd><p>Get the pixel at the position <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code>.  Returns 0 or 1.</p>
 <p>This method reads from the visible buffer.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.light">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">light</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.light" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.light">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">light</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.light" title="永久链接至目标">¶</a></dt>
 <dd><p>Turn the backlight on/off.  True or 1 turns it on, False or 0 turns it off.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.pixel">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">colour</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.pixel" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.pixel">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">pixel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.pixel" title="永久链接至目标">¶</a></dt>
 <dd><p>Set the pixel at <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> to the given colour (0 or 1).</p>
 <p>This method writes to the hidden buffer.  Use <code class="docutils literal notranslate"><span class="pre">show()</span></code> to show the buffer.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.show">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">show</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.show" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.show">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">show</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.show" title="永久链接至目标">¶</a></dt>
 <dd><p>Show the hidden buffer on the screen.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.text">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param">str</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">colour</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.text" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.text">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">text</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colour</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.text" title="永久链接至目标">¶</a></dt>
 <dd><p>Draw the given text to the position <code class="docutils literal notranslate"><span class="pre">(x,</span> <span class="pre">y)</span></code> using the given colour (0 or 1).</p>
 <p>This method writes to the hidden buffer.  Use <code class="docutils literal notranslate"><span class="pre">show()</span></code> to show the buffer.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.LCD.write">
-<code class="sig-prename descclassname">LCD.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">str</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.write" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.LCD.write">
+<span class="sig-prename descclassname"><span class="pre">LCD.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.LCD.write" title="永久链接至目标">¶</a></dt>
 <dd><p>Write the string <code class="docutils literal notranslate"><span class="pre">str</span></code> to the screen.  It will appear immediately.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -438,10 +440,10 @@ instructions/data to send.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

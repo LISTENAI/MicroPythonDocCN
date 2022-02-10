@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>6. Comparison instructions &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>6. Comparison instructions &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="7. Branch instructions" href="asm_thumb2_label_branch.html" />
     <link rel="prev" title="5. Arithmetic instructions" href="asm_thumb2_arith.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 6. Comparison instructions </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython language and implementation</a></li>
           <li class="md-tabs__item"><a href="asm_thumb2_index.html" class="md-tabs__link">Inline assembler for Thumb2 architectures</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -298,26 +300,26 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="reference-asm-thumb2-compare--page-root"><span class="section-number">6. </span>Comparison instructions<a class="headerlink" href="#reference-asm-thumb2-compare--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="comparison-instructions">
+<h1 id="reference-asm-thumb2-compare--page-root"><span class="section-number">6. </span>Comparison instructions<a class="headerlink" href="#reference-asm-thumb2-compare--page-root" title="永久链接至标题">¶</a></h1>
 <p>These perform an arithmetic or logical instruction on two arguments, discarding the result
 but setting the condition flags. Typically these are used to test data values without changing
 them prior to executing a conditional branch.</p>
-
-<h2 id="document-conventions"><span class="section-number">6.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="Permalink to this headline">¶</a></h2>
+<section id="document-conventions">
+<h2 id="document-conventions"><span class="section-number">6.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="永久链接至标题">¶</a></h2>
 <p>Notation: <code class="docutils literal notranslate"><span class="pre">Rd,</span> <span class="pre">Rm,</span> <span class="pre">Rn</span></code> denote ARM registers R0-R7. <code class="docutils literal notranslate"><span class="pre">imm8</span></code> denotes an immediate
 value having a width of 8 bits.</p>
-
-
-<h2 id="the-application-program-status-register-apsr"><span class="section-number">6.2. </span>The Application Program Status Register (APSR)<a class="headerlink" href="#the-application-program-status-register-apsr" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="the-application-program-status-register-apsr">
+<h2 id="the-application-program-status-register-apsr"><span class="section-number">6.2. </span>The Application Program Status Register (APSR)<a class="headerlink" href="#the-application-program-status-register-apsr" title="永久链接至标题">¶</a></h2>
 <p>This contains four bits which are tested by the conditional branch instructions. Typically a
 conditional branch will test multiple bits, for example <code class="docutils literal notranslate"><span class="pre">bge(LABEL)</span></code>. The meaning of
 condition codes can depend on whether the operands of an arithmetic instruction are viewed as
 signed or unsigned integers. Thus <code class="docutils literal notranslate"><span class="pre">bhi(LABEL)</span></code> assumes unsigned numbers were processed while
 <code class="docutils literal notranslate"><span class="pre">bgt(LABEL)</span></code> assumes signed operands.</p>
-
-
-<h2 id="apsr-bits"><span class="section-number">6.3. </span>APSR Bits<a class="headerlink" href="#apsr-bits" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="apsr-bits">
+<h2 id="apsr-bits"><span class="section-number">6.3. </span>APSR Bits<a class="headerlink" href="#apsr-bits" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>Z (zero)</p></li>
 </ul>
@@ -340,9 +342,9 @@ as 0x10 + 0xffffffff which will set the carry bit.</p>
 in relation to the operands. For example adding 1 to 0x7fffffff will set the overflow bit because
 the result (0x8000000), viewed as a two’s complement integer, is negative. Note that in this instance
 the carry bit is not set.</p>
-
-
-<h2 id="id1"><span class="section-number">6.4. </span>Comparison instructions<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="id1">
+<h2 id="id1"><span class="section-number">6.4. </span>Comparison instructions<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
 <p>These set the APSR (Application Program Status Register) N (negative), Z (zero), C (carry) and V
 (overflow) flags.</p>
 <ul class="simple">
@@ -351,9 +353,9 @@ the carry bit is not set.</p>
 <li><p>cmn(Rn, Rm) <code class="docutils literal notranslate"><span class="pre">Rn</span> <span class="pre">+</span> <span class="pre">Rm</span></code></p></li>
 <li><p>tst(Rn, Rm) <code class="docutils literal notranslate"><span class="pre">Rn</span> <span class="pre">&amp;</span> <span class="pre">Rm</span></code></p></li>
 </ul>
-
-
-<h2 id="conditional-execution"><span class="section-number">6.5. </span>Conditional execution<a class="headerlink" href="#conditional-execution" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="conditional-execution">
+<h2 id="conditional-execution"><span class="section-number">6.5. </span>Conditional execution<a class="headerlink" href="#conditional-execution" title="永久链接至标题">¶</a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">it</span></code> and <code class="docutils literal notranslate"><span class="pre">ite</span></code> instructions provide a means of conditionally executing from one to four subsequent
 instructions without the need for a label.</p>
 <ul class="simple">
@@ -380,8 +382,8 @@ subsequent one. Thus:</p>
 </div>
 <p>This may be extended to control the execution of upto four subsequent instructions: it[x[y[z]]]
 where x,y,z=t/e; e.g. itt, itee, itete, ittte, itttt, iteee, etc.</p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -430,10 +432,10 @@ where x,y,z=t/e; e.g. itt, itee, itete, ittte, itttt, iteee, etc.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>heapq – heap queue algorithm &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>heapq – heap queue algorithm &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="io – input/output streams" href="io.html" />
     <link rel="prev" title="hashlib – hashing algorithms" href="hashlib.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> heapq – heap queue algorithm </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -289,36 +291,36 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="heapq-heap-queue-algorithm"></span><h1 id="library-heapq--page-root"><a class="reference internal" href="#library-heapq--page-root" title="heapq: heap queue algorithm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code></a> – heap queue algorithm<a class="headerlink" href="#library-heapq--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-heapq">
+<span id="heapq-heap-queue-algorithm"></span><h1 id="library-heapq--page-root"><a class="reference internal" href="#library-heapq--page-root" title="heapq: heap queue algorithm"><code class="xref py py-mod docutils literal notranslate"><span class="pre">heapq</span></code></a> – heap queue algorithm<a class="headerlink" href="#library-heapq--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/heapq.html#module-heapq" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">heapq</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/heapq.html#module-heapq" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">heapq</span></code></a>.</p>
 <p>This module implements the
 <a class="reference external" href="https://en.wikipedia.org/wiki/Heap_%28data_structure%29">min heap queue algorithm</a>.</p>
 <p>A heap queue is essentially a list that has its elements stored in such a way
 that the first item of the list is always the smallest.</p>
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="heapq.heappush">
-<code class="sig-prename descclassname">heapq.</code><code class="sig-name descname">heappush</code><span class="sig-paren">(</span><em class="sig-param">heap</em>, <em class="sig-param">item</em><span class="sig-paren">)</span><a class="headerlink" href="#heapq.heappush" title="Permalink to this definition">¶</a></dt>
+<section id="functions">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="heapq.heappush">
+<span class="sig-prename descclassname"><span class="pre">heapq.</span></span><span class="sig-name descname"><span class="pre">heappush</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heap</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">item</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heapq.heappush" title="永久链接至目标">¶</a></dt>
 <dd><p>Push the <code class="docutils literal notranslate"><span class="pre">item</span></code> onto the <code class="docutils literal notranslate"><span class="pre">heap</span></code>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="heapq.heappop">
-<code class="sig-prename descclassname">heapq.</code><code class="sig-name descname">heappop</code><span class="sig-paren">(</span><em class="sig-param">heap</em><span class="sig-paren">)</span><a class="headerlink" href="#heapq.heappop" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="heapq.heappop">
+<span class="sig-prename descclassname"><span class="pre">heapq.</span></span><span class="sig-name descname"><span class="pre">heappop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">heap</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heapq.heappop" title="永久链接至目标">¶</a></dt>
 <dd><p>Pop the first item from the <code class="docutils literal notranslate"><span class="pre">heap</span></code>, and return it.  Raise <code class="docutils literal notranslate"><span class="pre">IndexError</span></code> if
 <code class="docutils literal notranslate"><span class="pre">heap</span></code> is empty.</p>
 <p>The returned item will be the smallest item in the <code class="docutils literal notranslate"><span class="pre">heap</span></code>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="heapq.heapify">
-<code class="sig-prename descclassname">heapq.</code><code class="sig-name descname">heapify</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#heapq.heapify" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="heapq.heapify">
+<span class="sig-prename descclassname"><span class="pre">heapq.</span></span><span class="sig-name descname"><span class="pre">heapify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#heapq.heapify" title="永久链接至目标">¶</a></dt>
 <dd><p>Convert the list <code class="docutils literal notranslate"><span class="pre">x</span></code> into a heap.  This is an in-place operation.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -367,10 +369,10 @@ that the first item of the list is always the smallest.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

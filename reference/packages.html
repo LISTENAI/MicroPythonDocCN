@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>Distribution packages, package management, and deploying applications &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>Distribution packages, package management, and deploying applications &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Inline assembler for Thumb2 architectures" href="asm_thumb2_index.html" />
     <link rel="prev" title="MicroPython manifest files" href="manifest.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> Distribution packages, package management, and deploying applications </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython language and implementation</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -303,21 +305,21 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="packages"></span><h1 id="reference-packages--page-root">Distribution packages, package management, and deploying applications<a class="headerlink" href="#reference-packages--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="distribution-packages-package-management-and-deploying-applications">
+<span id="packages"></span><h1 id="reference-packages--page-root">Distribution packages, package management, and deploying applications<a class="headerlink" href="#reference-packages--page-root" title="永久链接至标题">¶</a></h1>
 <p>Just as the “big” Python, MicroPython supports creation of “third party”
 packages, distributing them, and easily installing them in each user’s
 environment. This chapter discusses how these actions are achieved.
 Some familiarity with Python packaging is recommended.</p>
-
-<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<section id="overview">
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="永久链接至标题">¶</a></h2>
 <p>Steps below represent a high-level workflow when creating and consuming
 packages:</p>
 <ol class="arabic simple">
 <li><p>Python modules and packages are turned into distribution package
 archives, and published at the Python Package Index (PyPI).</p></li>
 <li><p><a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> package manager can be used to install a distribution package
-on a <a class="reference internal" href="glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a> with networking capabilities (for example,
+on a <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a> with networking capabilities (for example,
 on the Unix port).</p></li>
 <li><p>For ports without networking capabilities, an “installation image”
 can be prepared on the Unix port, and transferred to a device by
@@ -327,9 +329,9 @@ bytecode into MicroPython executable, thus minimizing the memory
 storage overheads.</p></li>
 </ol>
 <p>The sections below describe this process in details.</p>
-
-
-<h2 id="distribution-packages">Distribution packages<a class="headerlink" href="#distribution-packages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="distribution-packages">
+<h2 id="distribution-packages">Distribution packages<a class="headerlink" href="#distribution-packages" title="永久链接至标题">¶</a></h2>
 <p>Python modules and packages can be packaged into archives suitable for
 transfer between systems, storing at the well-known location (PyPI),
 and downloading on demand for deployment. These archives are known as
@@ -353,7 +355,7 @@ the archive which aren’t used by the installation process. In particular,
 <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> package manager doesn’t execute <code class="docutils literal notranslate"><span class="pre">setup.py</span></code> during installation
 (see below), and thus that file is not included in the archive.</p>
 <p>At the same time, these optimizations make MicroPython distribution
-packages not compatible with <a class="reference internal" href="glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a>’s package manager, <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
+packages not compatible with <a class="reference internal" href="glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a>’s package manager, <code class="docutils literal notranslate"><span class="pre">pip</span></code>.
 This isn’t considered a big problem, because:</p>
 <ol class="arabic simple">
 <li><p>Packages can be installed with <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a>, and then can be used with
@@ -365,15 +367,15 @@ the reliance on features not implemented by MicroPython.</p></li>
 <p>Summing up, the MicroPython distribution package archives are highly
 optimized for MicroPython’s target environments, which are highly
 resource constrained devices.</p>
-
-
-<h2 id="upip-package-manager"><code class="docutils literal notranslate"><span class="pre">upip</span></code> package manager<a class="headerlink" href="#upip-package-manager" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="upip-package-manager">
+<h2 id="upip-package-manager"><code class="docutils literal notranslate"><span class="pre">upip</span></code> package manager<a class="headerlink" href="#upip-package-manager" title="永久链接至标题">¶</a></h2>
 <p>MicroPython distribution packages are intended to be installed using
 the <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> package manager. <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> is a Python application which is
 usually distributed (as frozen bytecode) with network-enabled
-<a class="reference internal" href="glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython ports</span></a>. At the very least,
-<a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> is available in the <a class="reference internal" href="glossary.html#term-micropython-unix-port"><span class="xref std std-term">MicroPython Unix port</span></a>.</p>
-<p>On any <a class="reference internal" href="glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a> providing <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a>, it can be accessed as
+<a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython ports</span></a>. At the very least,
+<a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> is available in the <a class="reference internal" href="glossary.html#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix port</span></a>.</p>
+<p>On any <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a> providing <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a>, it can be accessed as
 following:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">upip</span>
 <span class="n">upip</span><span class="o">.</span><span class="n">help</span><span class="p">()</span>
@@ -411,12 +413,12 @@ commands which corresponds to the example above are:</p>
 </pre></div>
 </div>
 <p>[TODO: Describe installation path.]</p>
-
-
-<h2 id="cross-installing-packages">Cross-installing packages<a class="headerlink" href="#cross-installing-packages" title="Permalink to this headline">¶</a></h2>
-<p>For <a class="reference internal" href="glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython ports</span></a> without native networking
+</section>
+<section id="cross-installing-packages">
+<h2 id="cross-installing-packages">Cross-installing packages<a class="headerlink" href="#cross-installing-packages" title="永久链接至标题">¶</a></h2>
+<p>For <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython ports</span></a> without native networking
 capabilities, the recommend process is “cross-installing” them into a
-“directory image” using the <a class="reference internal" href="glossary.html#term-micropython-unix-port"><span class="xref std std-term">MicroPython Unix port</span></a>, and then
+“directory image” using the <a class="reference internal" href="glossary.html#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix port</span></a>, and then
 transferring this image to a device by suitable means.</p>
 <p>Installing to a directory image involves using <code class="docutils literal notranslate"><span class="pre">-p</span></code> switch to <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micropython</span> <span class="o">-</span><span class="n">m</span> <span class="n">upip</span> <span class="n">install</span> <span class="o">-</span><span class="n">p</span> <span class="n">install_dir</span> <span class="n">micropython</span><span class="o">-</span><span class="n">pystone_lowmem</span>
@@ -428,10 +430,10 @@ would need to transfer contents of this directory (without the
 <code class="docutils literal notranslate"><span class="pre">install_dir/</span></code> prefix) to the device, at the suitable location, where
 it can be found by the Python <code class="docutils literal notranslate"><span class="pre">import</span></code> statement (see discussion of
 the <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> installation path above).</p>
-
-
-<h2 id="cross-installing-packages-with-freezing">Cross-installing packages with freezing<a class="headerlink" href="#cross-installing-packages-with-freezing" title="Permalink to this headline">¶</a></h2>
-<p>For the low-memory <a class="reference internal" href="glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython ports</span></a>, the process
+</section>
+<section id="cross-installing-packages-with-freezing">
+<h2 id="cross-installing-packages-with-freezing">Cross-installing packages with freezing<a class="headerlink" href="#cross-installing-packages-with-freezing" title="永久链接至标题">¶</a></h2>
+<p>For the low-memory <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython ports</span></a>, the process
 described in the previous section does not provide the most efficient
 resource usage,because the packages are installed in the source form,
 so need to be compiled to the bytecome on each import. This compilation
@@ -447,7 +449,7 @@ mentioned above:</p>
 <li><p>Filesystem is not required for frozen packages.</p></li>
 </ul>
 <p>Using frozen bytecode requires building the executable (firmware)
-for a given <a class="reference internal" href="glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a> from the C source code. Consequently,
+for a given <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a> from the C source code. Consequently,
 the process is:</p>
 <ol class="arabic simple">
 <li><p>Follow the instructions for a particular port on setting up a
@@ -455,7 +457,7 @@ toolchain and building the port. For example, for ESP8266 port,
 study instructions in <code class="docutils literal notranslate"><span class="pre">ports/esp8266/README.md</span></code> and follow them.
 Make sure you can build the port and deploy the resulting
 executable/firmware successfully before proceeding to the next steps.</p></li>
-<li><p>Build <a class="reference internal" href="glossary.html#term-micropython-unix-port"><span class="xref std std-term">MicroPython Unix port</span></a> and make sure it is in your PATH and
+<li><p>Build <a class="reference internal" href="glossary.html#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix port</span></a> and make sure it is in your PATH and
 you can execute <code class="docutils literal notranslate"><span class="pre">micropython</span></code>.</p></li>
 <li><p>Change to port’s directory (e.g. <code class="docutils literal notranslate"><span class="pre">ports/esp8266/</span></code> for ESP8266).</p></li>
 <li><p>Run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean-frozen</span></code>. This step cleans up any previous
@@ -484,9 +486,9 @@ cases are in general bugs, and should be reported and further
 investigated. If you face such a situation, as an initial step,
 you may want to decrease the amount of frozen modules included.</p></li>
 </ol>
-
-
-<h2 id="creating-distribution-packages">Creating distribution packages<a class="headerlink" href="#creating-distribution-packages" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="creating-distribution-packages">
+<h2 id="creating-distribution-packages">Creating distribution packages<a class="headerlink" href="#creating-distribution-packages" title="永久链接至标题">¶</a></h2>
 <p>Distribution packages for MicroPython are created in the same manner
 as for CPython or any other Python implementation, see references at
 the end of chapter. Setuptools (instead of distutils) should be used,
@@ -497,7 +499,7 @@ is achieved by using custom <code class="docutils literal notranslate"><span cla
 steps remain the same as for the standard setuptools, the user just
 needs to override <code class="docutils literal notranslate"><span class="pre">sdist</span></code> command implementation by passing the
 appropriate argument to <code class="docutils literal notranslate"><span class="pre">setup()</span></code> call:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="kn">import</span> <span class="n">setup</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="k">import</span> <span class="n">setup</span>
 <span class="kn">import</span> <span class="nn">sdist_upip</span>
 
 <span class="n">setup</span><span class="p">(</span>
@@ -509,9 +511,9 @@ appropriate argument to <code class="docutils literal notranslate"><span class="
 <p>The sdist_upip.py module as referenced above can be found in
 <a class="reference internal" href="glossary.html#term-micropython-lib"><code class="xref any std std-term docutils literal notranslate"><span class="pre">micropython-lib</span></code></a>:
 <a class="reference external" href="https://github.com/micropython/micropython-lib/blob/master/sdist_upip.py">https://github.com/micropython/micropython-lib/blob/master/sdist_upip.py</a></p>
-
-
-<h2 id="application-resources">Application resources<a class="headerlink" href="#application-resources" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="application-resources">
+<h2 id="application-resources">Application resources<a class="headerlink" href="#application-resources" title="永久链接至标题">¶</a></h2>
 <p>A complete application, besides the source code, oftentimes also consists
 of data files, e.g. web page templates, game images, etc. It’s clear how
 to deal with those when application is installed manually - you just put
@@ -559,7 +561,7 @@ following calls:</p>
 <span class="n">pkg_resources</span><span class="o">.</span><span class="n">resource_stream</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="s2">"data/image.png"</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can develop and debug using the <a class="reference internal" href="glossary.html#term-micropython-unix-port"><span class="xref std std-term">MicroPython Unix port</span></a> as usual.
+<p>You can develop and debug using the <a class="reference internal" href="glossary.html#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix port</span></a> as usual.
 When time comes to make a distribution package out of it, just use
 overridden “sdist” command from sdist_upip.py module as described in
 the previous section.</p>
@@ -579,16 +581,16 @@ to all resource files:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mpy_bin2res</span><span class="o">.</span><span class="n">py</span> <span class="n">data</span><span class="o">/</span><span class="n">page</span><span class="o">.</span><span class="n">html</span> <span class="n">data</span><span class="o">/</span><span class="n">image</span><span class="o">.</span><span class="n">png</span>
 </pre></div>
 </div>
-
-
-<h2 id="references">References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2 id="references">References<a class="headerlink" href="#references" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>Python Packaging User Guide: <a class="reference external" href="https://packaging.python.org/">https://packaging.python.org/</a></p></li>
 <li><p>Setuptools documentation: <a class="reference external" href="https://setuptools.readthedocs.io/">https://setuptools.readthedocs.io/</a></p></li>
 <li><p>Distutils documentation: <a class="reference external" href="https://docs.python.org/3/library/distutils.html">https://docs.python.org/3/library/distutils.html</a></p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -637,10 +639,10 @@ to all resource files:</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

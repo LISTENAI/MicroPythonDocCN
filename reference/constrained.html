@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>MicroPython on microcontrollers &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>MicroPython on microcontrollers &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython manifest files" href="manifest.html" />
     <link rel="prev" title="Maximising MicroPython speed" href="speed_python.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> MicroPython on microcontrollers </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython language and implementation</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -315,8 +317,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="constrained"></span><h1 id="reference-constrained--page-root">MicroPython on microcontrollers<a class="headerlink" href="#reference-constrained--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="micropython-on-microcontrollers">
+<span id="constrained"></span><h1 id="reference-constrained--page-root">MicroPython on microcontrollers<a class="headerlink" href="#reference-constrained--page-root" title="永久链接至标题">¶</a></h1>
 <p>MicroPython is designed to be capable of running on microcontrollers. These
 have hardware limitations which may be unfamiliar to programmers more familiar
 with conventional computers. In particular the amount of RAM and nonvolatile
@@ -325,8 +327,8 @@ the most of the limited resources. Because MicroPython runs on controllers
 based on a variety of architectures, the methods presented are generic: in some
 cases it will be necessary to obtain detailed information from platform specific
 documentation.</p>
-
-<h2 id="flash-memory">Flash memory<a class="headerlink" href="#flash-memory" title="Permalink to this headline">¶</a></h2>
+<section id="flash-memory">
+<h2 id="flash-memory">Flash memory<a class="headerlink" href="#flash-memory" title="永久链接至标题">¶</a></h2>
 <p>On the Pyboard the simple way to address the limited capacity is to fit a micro
 SD card. In some cases this is impractical, either because the device does not
 have an SD card slot or for reasons of cost or power consumption; hence the
@@ -357,16 +359,16 @@ the module is to be frozen as source or as bytecode).</p></li>
 code of either type - see the platform documentation.</p></li>
 <li><p>Flash the firmware to the device.</p></li>
 </ul>
-
-
-<h2 id="ram">RAM<a class="headerlink" href="#ram" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="ram">
+<h2 id="ram">RAM<a class="headerlink" href="#ram" title="永久链接至标题">¶</a></h2>
 <p>When reducing RAM usage there are two phases to consider: compilation and
 execution. In addition to memory consumption, there is also an issue known as
 heap fragmentation. In general terms it is best to minimise the repeated
 creation and destruction of objects. The reason for this is covered in the
 section covering the <a class="reference internal" href="#heap">heap</a>.</p>
-
-<h3 id="compilation-phase">Compilation phase<a class="headerlink" href="#compilation-phase" title="Permalink to this headline">¶</a></h3>
+<section id="compilation-phase">
+<h3 id="compilation-phase">Compilation phase<a class="headerlink" href="#compilation-phase" title="永久链接至标题">¶</a></h3>
 <p>When a module is imported, MicroPython compiles the code to bytecode which is
 then executed by the MicroPython virtual machine (VM). The bytecode is stored
 in RAM. The compiler itself requires RAM, but this becomes available for use
@@ -387,13 +389,13 @@ bytecode file has a .mpy extension; it may be copied to the filesystem and
 imported in the usual way. Alternatively some or all modules may be implemented
 as frozen bytecode: on most platforms this saves even more RAM as the bytecode
 is run directly from flash rather than being stored in RAM.</p>
-
-
-<h3 id="execution-phase">Execution phase<a class="headerlink" href="#execution-phase" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="execution-phase">
+<h3 id="execution-phase">Execution phase<a class="headerlink" href="#execution-phase" title="永久链接至标题">¶</a></h3>
 <p>There are a number of coding techniques for reducing RAM usage.</p>
 <p><strong>Constants</strong></p>
 <p>MicroPython provides a <code class="docutils literal notranslate"><span class="pre">const</span></code> keyword which may be used as follows:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">micropython</span> <span class="kn">import</span> <span class="n">const</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">micropython</span> <span class="k">import</span> <span class="n">const</span>
 <span class="n">ROWS</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span>
 <span class="n">_COLS</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">ROWS</span>
@@ -504,14 +506,14 @@ string and an array of bytes. MicroPython ensures that Unicode strings take no
 additional space so long as all characters in the string are ASCII (i.e. have
 a value &lt; 126). If values in the full 8-bit range are required <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> and
 <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> objects can be used to ensure that no additional space will be
-required. Note that most string methods (e.g. <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.strip" title="(in Python v3.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.strip()</span></code></a>) apply also to <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>
+required. Note that most string methods (e.g. <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.strip" title="(在 Python v3.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.strip()</span></code></a>) apply also to <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>
 instances so the process of eliminating Unicode can be painless.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'the quick brown fox'</span>   <span class="c1"># A string instance</span>
 <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'the quick brown fox'</span>  <span class="c1"># A bytes instance</span>
 </pre></div>
 </div>
-<p>Where it is necessary to convert between strings and bytes the <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.encode" title="(in Python v3.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.encode()</span></code></a>
-and the <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#bytes.decode" title="(in Python v3.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bytes.decode()</span></code></a> methods can be used. Note that both strings and bytes
+<p>Where it is necessary to convert between strings and bytes the <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.encode" title="(在 Python v3.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.encode()</span></code></a>
+and the <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#bytes.decode" title="(在 Python v3.5)"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bytes.decode()</span></code></a> methods can be used. Note that both strings and bytes
 are immutable. Any operation which takes as input such an object and produces
 another implies at least one RAM allocation to produce the result. In the
 second line below a new bytes object is allocated. This would also occur if <code class="docutils literal notranslate"><span class="pre">foo</span></code>
@@ -545,10 +547,10 @@ modules and again issuing:</p>
 </pre></div>
 </div>
 <p>The Q(xxx) lines should be gone.</p>
-
-
-
-<span id="heap"></span><h2 id="the-heap">The heap<a class="headerlink" href="#the-heap" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="the-heap">
+<span id="heap"></span><h2 id="the-heap">The heap<a class="headerlink" href="#the-heap" title="永久链接至标题">¶</a></h2>
 <p>When a running program instantiates an object the necessary RAM is allocated
 from a fixed size pool known as the heap. When the object goes out of scope (in
 other words becomes inaccessible to code) the redundant object is known as
@@ -561,8 +563,8 @@ following periodically:</p>
 <span class="n">gc</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">gc</span><span class="o">.</span><span class="n">mem_free</span><span class="p">()</span> <span class="o">//</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">gc</span><span class="o">.</span><span class="n">mem_alloc</span><span class="p">())</span>
 </pre></div>
 </div>
-
-<h3 id="fragmentation">Fragmentation<a class="headerlink" href="#fragmentation" title="Permalink to this headline">¶</a></h3>
+<section id="fragmentation">
+<h3 id="fragmentation">Fragmentation<a class="headerlink" href="#fragmentation" title="永久链接至标题">¶</a></h3>
 <p>Say a program creates an object <code class="docutils literal notranslate"><span class="pre">foo</span></code>, then an object <code class="docutils literal notranslate"><span class="pre">bar</span></code>. Subsequently
 <code class="docutils literal notranslate"><span class="pre">foo</span></code> goes out of scope but <code class="docutils literal notranslate"><span class="pre">bar</span></code> remains. The RAM used by <code class="docutils literal notranslate"><span class="pre">foo</span></code> will be
 reclaimed by GC. However if <code class="docutils literal notranslate"><span class="pre">bar</span></code> was allocated to a higher address, the
@@ -576,9 +578,9 @@ or other objects are required it is best to instantiate these early in the
 process of program execution before fragmentation can occur. Further improvements
 may be made by monitoring the state of the heap and by controlling GC; these are
 outlined below.</p>
-
-
-<h3 id="reporting">Reporting<a class="headerlink" href="#reporting" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="reporting">
+<h3 id="reporting">Reporting<a class="headerlink" href="#reporting" title="永久链接至标题">¶</a></h3>
 <p>A number of library functions are available to report on memory allocation and
 to control GC. These are to be found in the <a class="reference internal" href="../library/gc.html#module-gc" title="gc: control the garbage collector"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">gc</span></code></a> and <a class="reference internal" href="../library/micropython.html#module-micropython" title="micropython: access and control MicroPython internals"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">micropython</span></code></a> modules.
 The following example may be pasted at the REPL (<code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">e</span></code> to enter paste mode,
@@ -662,9 +664,9 @@ may be interpreted as follows:</p>
 </table>
 <p>Each letter represents a single block of memory, a block being 16 bytes. So each
 line of the heap dump represents 0x400 bytes or 1KiB of RAM.</p>
-
-
-<h3 id="control-of-garbage-collection">Control of garbage collection<a class="headerlink" href="#control-of-garbage-collection" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="control-of-garbage-collection">
+<h3 id="control-of-garbage-collection">Control of garbage collection<a class="headerlink" href="#control-of-garbage-collection" title="永久链接至标题">¶</a></h3>
 <p>A GC can be demanded at any time by issuing <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a>. It is advantageous
 to do this at intervals, firstly to pre-empt fragmentation and secondly for
 performance. A GC can take several milliseconds but is quicker when there is
@@ -686,10 +688,10 @@ or other initialisation functions. The reason is that if this occurs on
 initialisation the compiler may be starved of RAM when subsequent modules are
 imported. If modules do instantiate data on import then <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> issued
 after the import will ameliorate the problem.</p>
-
-
-
-<h2 id="string-operations">String operations<a class="headerlink" href="#string-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="string-operations">
+<h2 id="string-operations">String operations<a class="headerlink" href="#string-operations" title="永久链接至标题">¶</a></h2>
 <p>MicroPython handles strings in an efficient manner and understanding this can
 help in designing applications to run on microcontrollers. When a module
 is compiled, strings which occur multiple times are stored once only, a process
@@ -700,9 +702,9 @@ as described above, in modules frozen as bytecode it will be located in flash.</
 character by character. The penalty for using strings rather than integers may
 hence be small both in terms of performance and RAM usage - a fact which may
 come as a surprise to C programmers.</p>
-
-
-<h2 id="postscript">Postscript<a class="headerlink" href="#postscript" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="postscript">
+<h2 id="postscript">Postscript<a class="headerlink" href="#postscript" title="永久链接至标题">¶</a></h2>
 <p>MicroPython passes, returns and (by default) copies objects by reference. A
 reference occupies a single machine word so these processes are efficient in
 RAM usage and speed.</p>
@@ -710,15 +712,15 @@ RAM usage and speed.</p>
 there are standard libraries which can assist in storing these efficiently and
 in performing conversions. See the <a class="reference internal" href="../library/array.html#module-array" title="array: efficient arrays of numeric data"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">array</span></code></a>, <a class="reference internal" href="../library/struct.html#module-struct" title="struct: pack and unpack primitive data types"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> and <a class="reference internal" href="../library/uctypes.html#module-uctypes" title="uctypes: access binary data in a structured way"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">uctypes</span></code></a>
 modules.</p>
-
-<h3 id="footnote-gc-collect-return-value">Footnote: gc.collect() return value<a class="headerlink" href="#footnote-gc-collect-return-value" title="Permalink to this headline">¶</a></h3>
+<section id="footnote-gc-collect-return-value">
+<h3 id="footnote-gc-collect-return-value">Footnote: gc.collect() return value<a class="headerlink" href="#footnote-gc-collect-return-value" title="永久链接至标题">¶</a></h3>
 <p>On Unix and Windows platforms the <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> method returns an integer
 which signifies the number of distinct memory regions that were reclaimed in the
 collection (more precisely, the number of heads that were turned into frees). For
 efficiency reasons bare metal ports do not return this value.</p>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -767,10 +769,10 @@ efficiency reasons bare metal ports do not return this value.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

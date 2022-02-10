@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>10. Inline assembler &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>10. Inline assembler &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="11. Power control" href="power_ctrl.html" />
     <link rel="prev" title="9. The Timers" href="timer.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="MicroPython 1.18 documentation"
+        <a href="../../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 10. Inline assembler </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the pyboard</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for the pyboard</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -298,16 +300,16 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="pyboard-tutorial-assembler"></span><h1 id="pyboard-tutorial-assembler--page-root"><span class="section-number">10. </span>Inline assembler<a class="headerlink" href="#pyboard-tutorial-assembler--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="inline-assembler">
+<span id="pyboard-tutorial-assembler"></span><h1 id="pyboard-tutorial-assembler--page-root"><span class="section-number">10. </span>Inline assembler<a class="headerlink" href="#pyboard-tutorial-assembler--page-root" title="永久链接至标题">¶</a></h1>
 <p>Here you will learn how to write inline assembler in MicroPython.</p>
 <p><strong>Note</strong>: this is an advanced tutorial, intended for those who already
 know a bit about microcontrollers and assembly language.</p>
 <p>MicroPython includes an inline assembler.  It allows you to write
 assembly routines as a Python function, and you can call them as you would
 a normal Python function.</p>
-
-<h2 id="returning-a-value"><span class="section-number">10.1. </span>Returning a value<a class="headerlink" href="#returning-a-value" title="Permalink to this headline">¶</a></h2>
+<section id="returning-a-value">
+<h2 id="returning-a-value"><span class="section-number">10.1. </span>Returning a value<a class="headerlink" href="#returning-a-value" title="永久链接至标题">¶</a></h2>
 <p>Inline assembler functions are denoted by a special function decorator.
 Let’s start with the simplest example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython</span><span class="o">.</span><span class="n">asm_thumb</span>
@@ -321,9 +323,9 @@ in this register when the function returns is the value that is returned.
 MicroPython always interprets the <code class="docutils literal notranslate"><span class="pre">r0</span></code> as an integer, and converts it to an
 integer object for the caller.</p>
 <p>If you run <code class="docutils literal notranslate"><span class="pre">print(fun())</span></code> you will see it print out 42.</p>
-
-
-<h2 id="accessing-peripherals"><span class="section-number">10.2. </span>Accessing peripherals<a class="headerlink" href="#accessing-peripherals" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accessing-peripherals">
+<h2 id="accessing-peripherals"><span class="section-number">10.2. </span>Accessing peripherals<a class="headerlink" href="#accessing-peripherals" title="永久链接至标题">¶</a></h2>
 <p>For something a bit more complicated, let’s turn on an LED:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython</span><span class="o">.</span><span class="n">asm_thumb</span>
 <span class="k">def</span> <span class="nf">led_on</span><span class="p">():</span>
@@ -351,9 +353,9 @@ the corresponding bit in <code class="docutils literal notranslate"><span class=
 bit in <code class="docutils literal notranslate"><span class="pre">r0</span></code> is set, so PA13 is pulled high.  This turns on the red LED.</p></li>
 </ul>
 </div></blockquote>
-
-
-<h2 id="accepting-arguments"><span class="section-number">10.3. </span>Accepting arguments<a class="headerlink" href="#accepting-arguments" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="accepting-arguments">
+<h2 id="accepting-arguments"><span class="section-number">10.3. </span>Accepting arguments<a class="headerlink" href="#accepting-arguments" title="永久链接至标题">¶</a></h2>
 <p>Inline assembler functions can accept up to 4 arguments.  If they are
 used, they must be named <code class="docutils literal notranslate"><span class="pre">r0</span></code>, <code class="docutils literal notranslate"><span class="pre">r1</span></code>, <code class="docutils literal notranslate"><span class="pre">r2</span></code> and <code class="docutils literal notranslate"><span class="pre">r3</span></code> to reflect the registers
 and the calling conventions.</p>
@@ -366,9 +368,9 @@ and the calling conventions.</p>
 <p>This performs the computation <code class="docutils literal notranslate"><span class="pre">r0</span> <span class="pre">=</span> <span class="pre">r0</span> <span class="pre">+</span> <span class="pre">r1</span></code>.  Since the result is put
 in <code class="docutils literal notranslate"><span class="pre">r0</span></code>, that is what is returned.  Try <code class="docutils literal notranslate"><span class="pre">asm_add(1,</span> <span class="pre">2)</span></code>, it should return
 3.</p>
-
-
-<h2 id="loops"><span class="section-number">10.4. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="loops">
+<h2 id="loops"><span class="section-number">10.4. </span>Loops<a class="headerlink" href="#loops" title="永久链接至标题">¶</a></h2>
 <p>We can assign labels with <code class="docutils literal notranslate"><span class="pre">label(my_label)</span></code>, and branch to them using
 <code class="docutils literal notranslate"><span class="pre">b(my_label)</span></code>, or a conditional branch like <code class="docutils literal notranslate"><span class="pre">bgt(my_label)</span></code>.</p>
 <p>The following example flashes the green LED.  It flashes it <code class="docutils literal notranslate"><span class="pre">r0</span></code> times.</p>
@@ -411,13 +413,13 @@ in <code class="docutils literal notranslate"><span class="pre">r0</span></code>
     <span class="n">bgt</span><span class="p">(</span><span class="n">loop1</span><span class="p">)</span>
 </pre></div>
 </div>
-
-
-<h2 id="further-reading"><span class="section-number">10.5. </span>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="further-reading">
+<h2 id="further-reading"><span class="section-number">10.5. </span>Further reading<a class="headerlink" href="#further-reading" title="永久链接至标题">¶</a></h2>
 <p>For further information about supported instructions of the inline assembler,
 see the <a class="reference internal" href="../../reference/asm_thumb2_index.html#asm-thumb2-index"><span class="std std-ref">reference documentation</span></a>.</p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -466,10 +468,10 @@ see the <a class="reference internal" href="../../reference/asm_thumb2_index.htm
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

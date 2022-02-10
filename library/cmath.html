@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>cmath – mathematical functions for complex numbers &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>cmath – mathematical functions for complex numbers &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="collections – collection and container types" href="collections.html" />
     <link rel="prev" title="builtins – builtin functions and exceptions" href="builtins.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> cmath – mathematical functions for complex numbers </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -291,77 +293,77 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="cmath-mathematical-functions-for-complex-numbers"></span><h1 id="library-cmath--page-root"><a class="reference internal" href="#library-cmath--page-root" title="cmath: mathematical functions for complex numbers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code></a> – mathematical functions for complex numbers<a class="headerlink" href="#library-cmath--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-cmath">
+<span id="cmath-mathematical-functions-for-complex-numbers"></span><h1 id="library-cmath--page-root"><a class="reference internal" href="#library-cmath--page-root" title="cmath: mathematical functions for complex numbers"><code class="xref py py-mod docutils literal notranslate"><span class="pre">cmath</span></code></a> – mathematical functions for complex numbers<a class="headerlink" href="#library-cmath--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/cmath.html#module-cmath" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">cmath</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/cmath.html#module-cmath" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">cmath</span></code></a>.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">cmath</span></code> module provides some basic mathematical functions for
 working with complex numbers.</p>
 <p>Availability: not available on WiPy and ESP8266. Floating point support
 required for this module.</p>
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="cmath.cos">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">cos</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.cos" title="Permalink to this definition">¶</a></dt>
+<section id="functions">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.cos">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">cos</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.cos" title="永久链接至目标">¶</a></dt>
 <dd><p>Return the cosine of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.exp">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">exp</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.exp" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.exp">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.exp" title="永久链接至目标">¶</a></dt>
 <dd><p>Return the exponential of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.log">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.log" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.log">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">log</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.log" title="永久链接至目标">¶</a></dt>
 <dd><p>Return the natural logarithm of <code class="docutils literal notranslate"><span class="pre">z</span></code>.  The branch cut is along the negative real axis.</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.log10">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">log10</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.log10" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.log10">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">log10</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.log10" title="永久链接至目标">¶</a></dt>
 <dd><p>Return the base-10 logarithm of <code class="docutils literal notranslate"><span class="pre">z</span></code>.  The branch cut is along the negative real axis.</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.phase">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">phase</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.phase" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.phase">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">phase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.phase" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the phase of the number <code class="docutils literal notranslate"><span class="pre">z</span></code>, in the range (-pi, +pi].</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.polar">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">polar</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.polar" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.polar">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">polar</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.polar" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns, as a tuple, the polar form of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.rect">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">rect</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">phi</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.rect" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.rect">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">rect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.rect" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the complex number with modulus <code class="docutils literal notranslate"><span class="pre">r</span></code> and phase <code class="docutils literal notranslate"><span class="pre">phi</span></code>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.sin">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">sin</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.sin" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.sin">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">sin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.sin" title="永久链接至目标">¶</a></dt>
 <dd><p>Return the sine of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="cmath.sqrt">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">sqrt</code><span class="sig-paren">(</span><em class="sig-param">z</em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.sqrt" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="cmath.sqrt">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">sqrt</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">z</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cmath.sqrt" title="永久链接至目标">¶</a></dt>
 <dd><p>Return the square-root of <code class="docutils literal notranslate"><span class="pre">z</span></code>.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="cmath.e">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">e</code><a class="headerlink" href="#cmath.e" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="cmath.e">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">e</span></span><a class="headerlink" href="#cmath.e" title="永久链接至目标">¶</a></dt>
 <dd><p>base of the natural logarithm</p>
 </dd></dl>
-<dl class="data">
-<dt id="cmath.pi">
-<code class="sig-prename descclassname">cmath.</code><code class="sig-name descname">pi</code><a class="headerlink" href="#cmath.pi" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="cmath.pi">
+<span class="sig-prename descclassname"><span class="pre">cmath.</span></span><span class="sig-name descname"><span class="pre">pi</span></span><a class="headerlink" href="#cmath.pi" title="永久链接至目标">¶</a></dt>
 <dd><p>the ratio of a circle’s circumference to its diameter</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -410,10 +412,10 @@ required for this module.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>Modules &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>Modules &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython Internals" href="../develop/index.html" />
     <link rel="prev" title="Builtin types" href="builtin_types.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> Modules </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython differences from CPython</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -353,13 +355,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="genrst-modules--page-root">Modules<a class="headerlink" href="#genrst-modules--page-root" title="Permalink to this headline">¶</a></h1>
-<p>Generated Thu 10 Feb 2022 09:58:16 UTC</p>
-
-<h2 id="array">array<a class="headerlink" href="#array" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-module-array-comparison"></span><h3 id="comparison-between-different-typecodes-not-supported">Comparison between different typecodes not supported<a class="headerlink" href="#comparison-between-different-typecodes-not-supported" title="Permalink to this headline">¶</a></h3>
+  <section id="modules">
+<h1 id="genrst-modules--page-root">Modules<a class="headerlink" href="#genrst-modules--page-root" title="永久链接至标题">¶</a></h1>
+<p>Generated Thu 10 Feb 2022 10:18:47 UTC</p>
+<section id="array">
+<h2 id="array">array<a class="headerlink" href="#array" title="永久链接至标题">¶</a></h2>
+<section id="comparison-between-different-typecodes-not-supported">
+<span id="cpydiff-module-array-comparison"></span><h3 id="comparison-between-different-typecodes-not-supported">Comparison between different typecodes not supported<a class="headerlink" href="#comparison-between-different-typecodes-not-supported" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> Code size</p>
 <p><strong>Workaround:</strong> Compare individual elements</p>
 <p>Sample code:</p>
@@ -385,9 +387,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-module-array-constructor"></span><h3 id="overflow-checking-is-not-implemented">Overflow checking is not implemented<a class="headerlink" href="#overflow-checking-is-not-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="overflow-checking-is-not-implemented">
+<span id="cpydiff-module-array-constructor"></span><h3 id="overflow-checking-is-not-implemented">Overflow checking is not implemented<a class="headerlink" href="#overflow-checking-is-not-implemented" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython implements implicit truncation in order to reduce code size and execution time</p>
 <p><strong>Workaround:</strong> If CPython compatibility is needed then mask the value explicitly</p>
 <p>Sample code:</p>
@@ -419,9 +421,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-array-containment"></span><h3 id="looking-for-integer-not-implemented">Looking for integer not implemented<a class="headerlink" href="#looking-for-integer-not-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="looking-for-integer-not-implemented">
+<span id="cpydiff-modules-array-containment"></span><h3 id="looking-for-integer-not-implemented">Looking for integer not implemented<a class="headerlink" href="#looking-for-integer-not-implemented" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">array</span>
 
@@ -448,9 +450,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-array-deletion"></span><h3 id="array-deletion-not-implemented">Array deletion not implemented<a class="headerlink" href="#array-deletion-not-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="array-deletion-not-implemented">
+<span id="cpydiff-modules-array-deletion"></span><h3 id="array-deletion-not-implemented">Array deletion not implemented<a class="headerlink" href="#array-deletion-not-implemented" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">array</span>
 
@@ -479,9 +481,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-array-subscrstep"></span><h3 id="subscript-with-step-1-is-not-yet-implemented">Subscript with step != 1 is not yet implemented<a class="headerlink" href="#subscript-with-step-1-is-not-yet-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="subscript-with-step-1-is-not-yet-implemented">
+<span id="cpydiff-modules-array-subscrstep"></span><h3 id="subscript-with-step-1-is-not-yet-implemented">Subscript with step != 1 is not yet implemented<a class="headerlink" href="#subscript-with-step-1-is-not-yet-implemented" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">array</span>
 
@@ -509,12 +511,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="builtins">builtins<a class="headerlink" href="#builtins" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-builtin-next-arg2"></span><h3 id="second-argument-to-next-is-not-implemented">Second argument to next() is not implemented<a class="headerlink" href="#second-argument-to-next-is-not-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="builtins">
+<h2 id="builtins">builtins<a class="headerlink" href="#builtins" title="永久链接至标题">¶</a></h2>
+<section id="second-argument-to-next-is-not-implemented">
+<span id="cpydiff-builtin-next-arg2"></span><h3 id="second-argument-to-next-is-not-implemented">Second argument to next() is not implemented<a class="headerlink" href="#second-argument-to-next-is-not-implemented" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is optimised for code space.</p>
 <p><strong>Workaround:</strong> Instead of <code class="docutils literal notranslate"><span class="pre">val</span> <span class="pre">=</span> <span class="pre">next(it,</span> <span class="pre">deflt)</span></code> use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -547,12 +549,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="deque">deque<a class="headerlink" href="#deque" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-modules-deque"></span><h3 id="deque-not-implemented">Deque not implemented<a class="headerlink" href="#deque-not-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="deque">
+<h2 id="deque">deque<a class="headerlink" href="#deque" title="永久链接至标题">¶</a></h2>
+<section id="deque-not-implemented">
+<span id="cpydiff-modules-deque"></span><h3 id="deque-not-implemented">Deque not implemented<a class="headerlink" href="#deque-not-implemented" title="永久链接至标题">¶</a></h3>
 <p><strong>Workaround:</strong> Use regular lists. micropython-lib has implementation of collections.deque.</p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">collections</span>
@@ -581,12 +583,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="json">json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-modules-json-nonserializable"></span><h3 id="json-module-does-not-throw-exception-when-object-is-not-serialisable">JSON module does not throw exception when object is not serialisable<a class="headerlink" href="#json-module-does-not-throw-exception-when-object-is-not-serialisable" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="json">
+<h2 id="json">json<a class="headerlink" href="#json" title="永久链接至标题">¶</a></h2>
+<section id="json-module-does-not-throw-exception-when-object-is-not-serialisable">
+<span id="cpydiff-modules-json-nonserializable"></span><h3 id="json-module-does-not-throw-exception-when-object-is-not-serialisable">JSON module does not throw exception when object is not serialisable<a class="headerlink" href="#json-module-does-not-throw-exception-when-object-is-not-serialisable" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span>
 
@@ -619,12 +621,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="os">os<a class="headerlink" href="#os" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-modules-os-environ"></span><h3 id="environ-attribute-is-not-implemented"><code class="docutils literal notranslate"><span class="pre">environ</span></code> attribute is not implemented<a class="headerlink" href="#environ-attribute-is-not-implemented" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="os">
+<h2 id="os">os<a class="headerlink" href="#os" title="永久链接至标题">¶</a></h2>
+<section id="environ-attribute-is-not-implemented">
+<span id="cpydiff-modules-os-environ"></span><h3 id="environ-attribute-is-not-implemented"><code class="docutils literal notranslate"><span class="pre">environ</span></code> attribute is not implemented<a class="headerlink" href="#environ-attribute-is-not-implemented" title="永久链接至标题">¶</a></h3>
 <p><strong>Workaround:</strong> Use <code class="docutils literal notranslate"><span class="pre">getenv</span></code>, <code class="docutils literal notranslate"><span class="pre">putenv</span></code> and <code class="docutils literal notranslate"><span class="pre">unsetenv</span></code></p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -661,9 +663,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-os-getenv"></span><h3 id="getenv-returns-actual-value-instead-of-cached-value"><code class="docutils literal notranslate"><span class="pre">getenv</span></code> returns actual value instead of cached value<a class="headerlink" href="#getenv-returns-actual-value-instead-of-cached-value" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="getenv-returns-actual-value-instead-of-cached-value">
+<span id="cpydiff-modules-os-getenv"></span><h3 id="getenv-returns-actual-value-instead-of-cached-value"><code class="docutils literal notranslate"><span class="pre">getenv</span></code> returns actual value instead of cached value<a class="headerlink" href="#getenv-returns-actual-value-instead-of-cached-value" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> The <code class="docutils literal notranslate"><span class="pre">environ</span></code> attribute is not implemented</p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -694,9 +696,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-os-getenv-argcount"></span><h3 id="getenv-only-allows-one-argument"><code class="docutils literal notranslate"><span class="pre">getenv</span></code> only allows one argument<a class="headerlink" href="#getenv-only-allows-one-argument" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="getenv-only-allows-one-argument">
+<span id="cpydiff-modules-os-getenv-argcount"></span><h3 id="getenv-only-allows-one-argument"><code class="docutils literal notranslate"><span class="pre">getenv</span></code> only allows one argument<a class="headerlink" href="#getenv-only-allows-one-argument" title="永久链接至标题">¶</a></h3>
 <p><strong>Workaround:</strong> Test that the return value is <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
@@ -729,12 +731,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="random">random<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-modules-random-getrandbits"></span><h3 id="getrandbits-method-can-only-return-a-maximum-of-32-bits-at-a-time"><code class="docutils literal notranslate"><span class="pre">getrandbits</span></code> method can only return a maximum of 32 bits at a time.<a class="headerlink" href="#getrandbits-method-can-only-return-a-maximum-of-32-bits-at-a-time" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="random">
+<h2 id="random">random<a class="headerlink" href="#random" title="永久链接至标题">¶</a></h2>
+<section id="getrandbits-method-can-only-return-a-maximum-of-32-bits-at-a-time">
+<span id="cpydiff-modules-random-getrandbits"></span><h3 id="getrandbits-method-can-only-return-a-maximum-of-32-bits-at-a-time"><code class="docutils literal notranslate"><span class="pre">getrandbits</span></code> method can only return a maximum of 32 bits at a time.<a class="headerlink" href="#getrandbits-method-can-only-return-a-maximum-of-32-bits-at-a-time" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> PRNG’s internal state is only 32bits so it can only return a maximum of 32 bits of data at a time.</p>
 <p><strong>Workaround:</strong> If you need a number that has more than 32 bits then utilize the random module from micropython-lib.</p>
 <p>Sample code:</p>
@@ -747,14 +749,14 @@
 </div>
 <table>
 <colgroup>
-<col style="width: 33%"/>
+<col style="width: 32%"/>
 <col style="width: 68%"/>
 </colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
 </tr>
-<tr class="row-even"><td><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">13179924706185796858</span>
+<tr class="row-even"><td><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">6886409009065945588</span>
 </pre></div>
 </div>
 </td>
@@ -765,9 +767,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-random-randint"></span><h3 id="randint-method-can-only-return-an-integer-that-is-at-most-the-native-word-size"><code class="docutils literal notranslate"><span class="pre">randint</span></code> method can only return an integer that is at most the native word size.<a class="headerlink" href="#randint-method-can-only-return-an-integer-that-is-at-most-the-native-word-size" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="randint-method-can-only-return-an-integer-that-is-at-most-the-native-word-size">
+<span id="cpydiff-modules-random-randint"></span><h3 id="randint-method-can-only-return-an-integer-that-is-at-most-the-native-word-size"><code class="docutils literal notranslate"><span class="pre">randint</span></code> method can only return an integer that is at most the native word size.<a class="headerlink" href="#randint-method-can-only-return-an-integer-that-is-at-most-the-native-word-size" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> PRNG is only able to generate 32 bits of state at a time. The result is then cast into a native sized int instead of a full int object.</p>
 <p><strong>Workaround:</strong> If you need integers larger than native wordsize use the random module from micropython-lib.</p>
 <p>Sample code:</p>
@@ -787,7 +789,7 @@
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
 </tr>
-<tr class="row-even"><td><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">340282366920938463463374607431768211455</span>
+<tr class="row-even"><td><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="mi">340282366920938463463374607431768211456</span>
 </pre></div>
 </div>
 </td>
@@ -798,12 +800,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="struct">struct<a class="headerlink" href="#struct" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-modules-struct-fewargs"></span><h3 id="struct-pack-with-too-few-args-not-checked-by-upy">Struct pack with too few args, not checked by uPy<a class="headerlink" href="#struct-pack-with-too-few-args-not-checked-by-upy" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="struct">
+<h2 id="struct">struct<a class="headerlink" href="#struct" title="永久链接至标题">¶</a></h2>
+<section id="struct-pack-with-too-few-args-not-checked-by-upy">
+<span id="cpydiff-modules-struct-fewargs"></span><h3 id="struct-pack-with-too-few-args-not-checked-by-upy">Struct pack with too few args, not checked by uPy<a class="headerlink" href="#struct-pack-with-too-few-args-not-checked-by-upy" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">struct</span>
 
@@ -834,9 +836,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-struct-manyargs"></span><h3 id="struct-pack-with-too-many-args-not-checked-by-upy">Struct pack with too many args, not checked by uPy<a class="headerlink" href="#struct-pack-with-too-many-args-not-checked-by-upy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="struct-pack-with-too-many-args-not-checked-by-upy">
+<span id="cpydiff-modules-struct-manyargs"></span><h3 id="struct-pack-with-too-many-args-not-checked-by-upy">Struct pack with too many args, not checked by uPy<a class="headerlink" href="#struct-pack-with-too-many-args-not-checked-by-upy" title="永久链接至标题">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">struct</span>
 
@@ -867,9 +869,9 @@
 </tr>
 </tbody>
 </table>
-
-
-<span id="cpydiff-modules-struct-whitespace-in-format"></span><h3 id="struct-pack-with-whitespace-in-format-whitespace-ignored-by-cpython-error-on-upy">Struct pack with whitespace in format, whitespace ignored by CPython, error on uPy<a class="headerlink" href="#struct-pack-with-whitespace-in-format-whitespace-ignored-by-cpython-error-on-upy" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="struct-pack-with-whitespace-in-format-whitespace-ignored-by-cpython-error-on-upy">
+<span id="cpydiff-modules-struct-whitespace-in-format"></span><h3 id="struct-pack-with-whitespace-in-format-whitespace-ignored-by-cpython-error-on-upy">Struct pack with whitespace in format, whitespace ignored by CPython, error on uPy<a class="headerlink" href="#struct-pack-with-whitespace-in-format-whitespace-ignored-by-cpython-error-on-upy" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is optimised for code size.</p>
 <p><strong>Workaround:</strong> Don’t use spaces in format strings.</p>
 <p>Sample code:</p>
@@ -903,12 +905,12 @@
 </tr>
 </tbody>
 </table>
-
-
-
-<h2 id="sys">sys<a class="headerlink" href="#sys" title="Permalink to this headline">¶</a></h2>
-
-<span id="cpydiff-modules-sys-stdassign"></span><h3 id="overriding-sys-stdin-sys-stdout-and-sys-stderr-not-possible">Overriding sys.stdin, sys.stdout and sys.stderr not possible<a class="headerlink" href="#overriding-sys-stdin-sys-stdout-and-sys-stderr-not-possible" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="sys">
+<h2 id="sys">sys<a class="headerlink" href="#sys" title="永久链接至标题">¶</a></h2>
+<section id="overriding-sys-stdin-sys-stdout-and-sys-stderr-not-possible">
+<span id="cpydiff-modules-sys-stdassign"></span><h3 id="overriding-sys-stdin-sys-stdout-and-sys-stderr-not-possible">Overriding sys.stdin, sys.stdout and sys.stderr not possible<a class="headerlink" href="#overriding-sys-stdin-sys-stdout-and-sys-stderr-not-possible" title="永久链接至标题">¶</a></h3>
 <p><strong>Cause:</strong> They are stored in read-only memory.</p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
@@ -937,9 +939,9 @@
 </tr>
 </tbody>
 </table>
-
-
-
+</section>
+</section>
+</section>
 
 
           </article>
@@ -988,10 +990,10 @@
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

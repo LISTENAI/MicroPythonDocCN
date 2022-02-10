@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class SPI – a Serial Peripheral Interface bus protocol (controller side) &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class SPI – a Serial Peripheral Interface bus protocol (controller side) &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class I2C – a two-wire serial protocol" href="machine.I2C.html" />
     <link rel="prev" title="class UART – duplex serial communication bus" href="machine.UART.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class SPI – a Serial Peripheral Interface bus protocol (controller side) </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -294,8 +296,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-spi"></span><h1 id="library-machine-spi--page-root">class SPI – a Serial Peripheral Interface bus protocol (controller side)<a class="headerlink" href="#library-machine-spi--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-spi-a-serial-peripheral-interface-bus-protocol-controller-side">
+<span id="machine-spi"></span><h1 id="library-machine-spi--page-root">class SPI – a Serial Peripheral Interface bus protocol (controller side)<a class="headerlink" href="#library-machine-spi--page-root" title="永久链接至标题">¶</a></h1>
 <p>SPI is a synchronous serial protocol that is driven by a controller. At the
 physical level, a bus consists of 3 lines: SCK, MOSI, MISO. Multiple devices
 can share the same bus. Each device should have a separate, 4th signal,
@@ -310,7 +312,7 @@ Software SPI is implemented by bit-banging and can be used on any pin but
 is not as efficient.  These classes have the same methods available and
 differ primarily in the way they are constructed.</p>
 <p>Example usage:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">SPI</span><span class="p">,</span> <span class="n">Pin</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">SPI</span><span class="p">,</span> <span class="n">Pin</span>
 
 <span class="n">spi</span> <span class="o">=</span> <span class="n">SPI</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">400000</span><span class="p">)</span>           <span class="c1"># Create SPI peripheral 0 at frequency of 400kHz.</span>
                                         <span class="c1"># Depending on the use case, extra parameters may be required</span>
@@ -345,11 +347,11 @@ differ primarily in the way they are constructed.</p>
     <span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                               <span class="c1"># Deselect peripheral.</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="machine.SPI">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SPI</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="machine.SPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI" title="永久链接至目标">¶</a></dt>
 <dd><p>Construct an SPI object on the given bus, <em>id</em>. Values of <em>id</em> depend
 on a particular port and its hardware. Values 0, 1, etc. are commonly used
 to select hardware SPI block #0, #1, etc.</p>
@@ -358,19 +360,19 @@ initialised (it has the settings from the last initialisation of
 the bus, if any).  If extra arguments are given, the bus is initialised.
 See <code class="docutils literal notranslate"><span class="pre">init</span></code> for parameters of initialisation.</p>
 </dd></dl>
-<span class="target" id="machine-softspi"></span><dl class="class">
-<dt id="machine.SoftSPI">
-<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SoftSPI</code><span class="sig-paren">(</span><em class="sig-param">baudrate=500000</em>, <em class="sig-param">*</em>, <em class="sig-param">polarity=0</em>, <em class="sig-param">phase=0</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">firstbit=MSB</em>, <em class="sig-param">sck=None</em>, <em class="sig-param">mosi=None</em>, <em class="sig-param">miso=None</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SoftSPI" title="Permalink to this definition">¶</a></dt>
+<span class="target" id="machine-softspi"></span><dl class="py class">
+<dt class="sig sig-object py" id="machine.SoftSPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SoftSPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">500000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polarity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">firstbit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">MSB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sck</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mosi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">miso</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SoftSPI" title="永久链接至目标">¶</a></dt>
 <dd><p>Construct a new software SPI object.  Additional parameters must be
 given, usually at least <em>sck</em>, <em>mosi</em> and <em>miso</em>, and these are used
 to initialise the bus.  See <a class="reference internal" href="#machine.SPI.init" title="machine.SPI.init"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">SPI.init</span></code></a> for a description of the parameters.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="machine.SPI.init">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">baudrate=1000000</em>, <em class="sig-param">*</em>, <em class="sig-param">polarity=0</em>, <em class="sig-param">phase=0</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">firstbit=SPI.MSB</em>, <em class="sig-param">sck=None</em>, <em class="sig-param">mosi=None</em>, <em class="sig-param">miso=None</em>, <em class="sig-param">pins=(SCK</em>, <em class="sig-param">MOSI</em>, <em class="sig-param">MISO)</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.init">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polarity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">firstbit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SPI.MSB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sck</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mosi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">miso</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(SCK,</span> <span class="pre">MOSI,</span> <span class="pre">MISO)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Initialise the SPI bus with the given parameters:</p>
 <blockquote>
 <div><ul class="simple">
@@ -393,62 +395,62 @@ specify them as a tuple of <code class="docutils literal notranslate"><span clas
 requested baudrate. This is dependant on the platform hardware. The actual
 rate may be determined by printing the SPI object.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.SPI.deinit">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.deinit" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.deinit">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Turn off the SPI bus.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.SPI.read">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param">nbytes</em>, <em class="sig-param">write=0x00</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.read" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.read">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">read</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nbytes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x00</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.read" title="永久链接至目标">¶</a></dt>
 <dd><p>Read a number of bytes specified by <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> while continuously writing
 the single byte given by <code class="docutils literal notranslate"><span class="pre">write</span></code>.
 Returns a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> object with the data that was read.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.SPI.readinto">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em>, <em class="sig-param">write=0x00</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.readinto" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.readinto">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">readinto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">write</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0x00</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.readinto" title="永久链接至目标">¶</a></dt>
 <dd><p>Read into the buffer specified by <code class="docutils literal notranslate"><span class="pre">buf</span></code> while continuously writing the
 single byte given by <code class="docutils literal notranslate"><span class="pre">write</span></code>.
 Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>Note: on WiPy this function returns the number of bytes read.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.SPI.write">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.write" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.write">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">write</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.write" title="永久链接至目标">¶</a></dt>
 <dd><p>Write the bytes contained in <code class="docutils literal notranslate"><span class="pre">buf</span></code>.
 Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>Note: on WiPy this function returns the number of bytes written.</p>
 </dd></dl>
-<dl class="method">
-<dt id="machine.SPI.write_readinto">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">write_readinto</code><span class="sig-paren">(</span><em class="sig-param">write_buf</em>, <em class="sig-param">read_buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.write_readinto" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="machine.SPI.write_readinto">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">write_readinto</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">write_buf</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.write_readinto" title="永久链接至目标">¶</a></dt>
 <dd><p>Write the bytes from <code class="docutils literal notranslate"><span class="pre">write_buf</span></code> while reading into <code class="docutils literal notranslate"><span class="pre">read_buf</span></code>.  The
 buffers can be the same or different, but both buffers must have the
 same length.
 Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 <p>Note: on WiPy this function returns the number of bytes written.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="machine.SPI.CONTROLLER">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">CONTROLLER</code><a class="headerlink" href="#machine.SPI.CONTROLLER" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.SPI.CONTROLLER">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">CONTROLLER</span></span><a class="headerlink" href="#machine.SPI.CONTROLLER" title="永久链接至目标">¶</a></dt>
 <dd><p>for initialising the SPI bus to controller; this is only used for the WiPy</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.SPI.MSB">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">MSB</code><a class="headerlink" href="#machine.SPI.MSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.SPI.MSB">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">MSB</span></span><a class="headerlink" href="#machine.SPI.MSB" title="永久链接至目标">¶</a></dt>
 <dd><p>set the first bit to be the most significant bit</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.SPI.LSB">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">LSB</code><a class="headerlink" href="#machine.SPI.LSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.SPI.LSB">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">LSB</span></span><a class="headerlink" href="#machine.SPI.LSB" title="永久链接至目标">¶</a></dt>
 <dd><p>set the first bit to be the least significant bit</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -497,10 +499,10 @@ Returns <code class="docutils literal notranslate"><span class="pre">None</span>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

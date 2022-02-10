@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>2. Load register from memory &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>2. Load register from memory &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="3. Store register to memory" href="asm_thumb2_str.html" />
     <link rel="prev" title="1. Register move instructions" href="asm_thumb2_mov.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 2. Load register from memory </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython language and implementation</a></li>
           <li class="md-tabs__item"><a href="asm_thumb2_index.html" class="md-tabs__link">Inline assembler for Thumb2 architectures</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -292,17 +294,17 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<h1 id="reference-asm-thumb2-ldr--page-root"><span class="section-number">2. </span>Load register from memory<a class="headerlink" href="#reference-asm-thumb2-ldr--page-root" title="Permalink to this headline">¶</a></h1>
-
-<h2 id="document-conventions"><span class="section-number">2.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="Permalink to this headline">¶</a></h2>
+  <section id="load-register-from-memory">
+<h1 id="reference-asm-thumb2-ldr--page-root"><span class="section-number">2. </span>Load register from memory<a class="headerlink" href="#reference-asm-thumb2-ldr--page-root" title="永久链接至标题">¶</a></h1>
+<section id="document-conventions">
+<h2 id="document-conventions"><span class="section-number">2.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="永久链接至标题">¶</a></h2>
 <p>Notation: <code class="docutils literal notranslate"><span class="pre">Rt,</span> <span class="pre">Rn</span></code> denote ARM registers R0-R7 except where stated. <code class="docutils literal notranslate"><span class="pre">immN</span></code> represents an immediate
 value having a width of N bits hence <code class="docutils literal notranslate"><span class="pre">imm5</span></code> is constrained to the range 0-31. <code class="docutils literal notranslate"><span class="pre">[Rn</span> <span class="pre">+</span> <span class="pre">immN]</span></code> is the contents
 of the memory address obtained by adding Rn and the offset <code class="docutils literal notranslate"><span class="pre">immN</span></code>. Offsets are measured in
 bytes. These instructions affect the condition flags.</p>
-
-
-<h2 id="register-load"><span class="section-number">2.2. </span>Register Load<a class="headerlink" href="#register-load" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="register-load">
+<h2 id="register-load"><span class="section-number">2.2. </span>Register Load<a class="headerlink" href="#register-load" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p>ldr(Rt, [Rn, imm7]) <code class="docutils literal notranslate"><span class="pre">Rt</span> <span class="pre">=</span> <span class="pre">[Rn</span> <span class="pre">+</span> <span class="pre">imm7]</span></code> Load a 32 bit word</p></li>
 <li><p>ldrb(Rt, [Rn, imm5]) <code class="docutils literal notranslate"><span class="pre">Rt</span> <span class="pre">=</span> <span class="pre">[Rn</span> <span class="pre">+</span> <span class="pre">imm5]</span></code> Load a byte</p></li>
@@ -312,8 +314,8 @@ bytes. These instructions affect the condition flags.</p>
 <p>The specified immediate offsets are measured in bytes. Hence in the case of <code class="docutils literal notranslate"><span class="pre">ldr</span></code> the 7 bit value
 enables 32 bit word aligned values to be accessed with a maximum offset of 31 words. In the case of <code class="docutils literal notranslate"><span class="pre">ldrh</span></code> the
 6 bit value enables 16 bit half-word aligned values to be accessed with a maximum offset of 31 half-words.</p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -362,10 +364,10 @@ enables 32 bit word aligned values to be accessed with a maximum offset of 31 wo
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

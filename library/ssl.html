@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>ssl – SSL/TLS module &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>ssl – SSL/TLS module &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="struct – pack and unpack primitive data types" href="struct.html" />
     <link rel="prev" title="socket – socket module" href="socket.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> ssl – SSL/TLS module </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -293,19 +295,19 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="ssl-ssl-tls-module"></span><h1 id="library-ssl--page-root"><a class="reference internal" href="#library-ssl--page-root" title="ssl: TLS/SSL wrapper for socket objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ssl</span></code></a> – SSL/TLS module<a class="headerlink" href="#library-ssl--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-ssl">
+<span id="ssl-ssl-tls-module"></span><h1 id="library-ssl--page-root"><a class="reference internal" href="#library-ssl--page-root" title="ssl: TLS/SSL wrapper for socket objects"><code class="xref py py-mod docutils literal notranslate"><span class="pre">ssl</span></code></a> – SSL/TLS module<a class="headerlink" href="#library-ssl--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/ssl.html#module-ssl" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">ssl</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/ssl.html#module-ssl" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">ssl</span></code></a>.</p>
 <p>This module provides access to Transport Layer Security (previously and
 widely known as “Secure Sockets Layer”) encryption and peer authentication
 facilities for network sockets, both client-side and server-side.</p>
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="ssl.ssl.wrap_socket">
-<code class="sig-prename descclassname">ssl.</code><code class="sig-name descname">wrap_socket</code><span class="sig-paren">(</span><em class="sig-param">sock</em>, <em class="sig-param">server_side=False</em>, <em class="sig-param">keyfile=None</em>, <em class="sig-param">certfile=None</em>, <em class="sig-param">cert_reqs=CERT_NONE</em>, <em class="sig-param">ca_certs=None</em>, <em class="sig-param">do_handshake=True</em><span class="sig-paren">)</span><a class="headerlink" href="#ssl.ssl.wrap_socket" title="Permalink to this definition">¶</a></dt>
+<section id="functions">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="ssl.ssl.wrap_socket">
+<span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">wrap_socket</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sock</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">server_side</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">keyfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">certfile</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cert_reqs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">CERT_NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ca_certs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">do_handshake</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#ssl.ssl.wrap_socket" title="永久链接至目标">¶</a></dt>
 <dd><p>Takes a <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a> <em>sock</em> (usually socket.socket instance of <code class="docutils literal notranslate"><span class="pre">SOCK_STREAM</span></code> type),
 and returns an instance of ssl.SSLSocket, which wraps the underlying stream in
 an SSL context. Returned object has the usual <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a> interface methods like
@@ -323,10 +325,10 @@ until it completes. Note that in AXTLS the handshake can be deferred until the f
 read or write but it then blocks until completion.</p></li>
 </ul>
 <p>Depending on the underlying module implementation in a particular
-<a class="reference internal" href="../reference/glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a>, some or all keyword arguments above may be not supported.</p>
+<a class="reference internal" href="../reference/glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a>, some or all keyword arguments above may be not supported.</p>
 </dd></dl>
 <div class="admonition warning">
-<p class="admonition-title">Warning</p>
+<p class="admonition-title">警告</p>
 <p>Some implementations of <code class="docutils literal notranslate"><span class="pre">ssl</span></code> module do NOT validate server certificates,
 which makes an SSL connection established prone to man-in-the-middle attacks.</p>
 <p>CPython’s <code class="docutils literal notranslate"><span class="pre">wrap_socket</span></code> returns an <code class="docutils literal notranslate"><span class="pre">SSLSocket</span></code> object which has methods typical
@@ -334,28 +336,28 @@ for sockets, such as <code class="docutils literal notranslate"><span class="pre
 returns an object more similar to CPython’s <code class="docutils literal notranslate"><span class="pre">SSLObject</span></code> which does not have
 these socket methods.</p>
 </div>
-
-
-<h2 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="ssl.ssl.SSLError">
-<code class="sig-prename descclassname">ssl.</code><code class="sig-name descname">SSLError</code><a class="headerlink" href="#ssl.ssl.SSLError" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="exceptions">
+<h2 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="ssl.ssl.SSLError">
+<span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">SSLError</span></span><a class="headerlink" href="#ssl.ssl.SSLError" title="永久链接至目标">¶</a></dt>
 <dd><p>This exception does NOT exist. Instead its base class, OSError, is used.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="ssl.ssl.CERT_NONE">
-<code class="sig-prename descclassname">ssl.</code><code class="sig-name descname">CERT_NONE</code><a class="headerlink" href="#ssl.ssl.CERT_NONE" title="Permalink to this definition">¶</a></dt>
-<dt id="ssl.ssl.CERT_OPTIONAL">
-<code class="sig-prename descclassname">ssl.</code><code class="sig-name descname">CERT_OPTIONAL</code><a class="headerlink" href="#ssl.ssl.CERT_OPTIONAL" title="Permalink to this definition">¶</a></dt>
-<dt id="ssl.ssl.CERT_REQUIRED">
-<code class="sig-prename descclassname">ssl.</code><code class="sig-name descname">CERT_REQUIRED</code><a class="headerlink" href="#ssl.ssl.CERT_REQUIRED" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="ssl.ssl.CERT_NONE">
+<span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">CERT_NONE</span></span><a class="headerlink" href="#ssl.ssl.CERT_NONE" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="ssl.ssl.CERT_OPTIONAL">
+<span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">CERT_OPTIONAL</span></span><a class="headerlink" href="#ssl.ssl.CERT_OPTIONAL" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="ssl.ssl.CERT_REQUIRED">
+<span class="sig-prename descclassname"><span class="pre">ssl.</span></span><span class="sig-name descname"><span class="pre">CERT_REQUIRED</span></span><a class="headerlink" href="#ssl.ssl.CERT_REQUIRED" title="永久链接至目标">¶</a></dt>
 <dd><p>Supported values for <em>cert_reqs</em> parameter.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -404,10 +406,10 @@ these socket methods.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

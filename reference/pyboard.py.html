@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>The pyboard.py tool &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>The pyboard.py tool &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython differences from CPython" href="../genrst/index.html" />
     <link rel="prev" title="Working with filesystems" href="filesystem.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> The pyboard.py tool </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython language and implementation</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -295,8 +297,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="pyboard-py"></span><h1 id="reference-pyboard-py--page-root">The pyboard.py tool<a class="headerlink" href="#reference-pyboard-py--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="the-pyboard-py-tool">
+<span id="pyboard-py"></span><h1 id="reference-pyboard-py--page-root">The pyboard.py tool<a class="headerlink" href="#reference-pyboard-py--page-root" title="永久链接至标题">¶</a></h1>
 <p>This is a standalone Python tool that runs on your PC that provides a way to:</p>
 <ul class="simple">
 <li><p>Quickly run a Python script or command on a MicroPython device. This is useful
@@ -340,8 +342,8 @@ optional arguments:
                         path | rmdir path
 </pre></div>
 </div>
-
-<h2 id="running-a-command-on-the-device">Running a command on the device<a class="headerlink" href="#running-a-command-on-the-device" title="Permalink to this headline">¶</a></h2>
+<section id="running-a-command-on-the-device">
+<h2 id="running-a-command-on-the-device">Running a command on the device<a class="headerlink" href="#running-a-command-on-the-device" title="永久链接至标题">¶</a></h2>
 <p>This is useful for testing short snippets of code, or to script an interaction
 with the device.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pyboard.py --device /dev/ttyACM0 -c 'print(1+1)'
@@ -358,9 +360,9 @@ $ pyboard.py -c 'print(1+1)'
 </div>
 <p>Similarly, the <code class="docutils literal notranslate"><span class="pre">PYBOARD_BAUDRATE</span></code> environment variable can be used
 to set the default for the <code class="docutils literal notranslate"><span class="pre">--baudrate</span></code> option.</p>
-
-
-<h2 id="running-a-script-on-the-device">Running a script on the device<a class="headerlink" href="#running-a-script-on-the-device" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="running-a-script-on-the-device">
+<h2 id="running-a-script-on-the-device">Running a script on the device<a class="headerlink" href="#running-a-script-on-the-device" title="永久链接至标题">¶</a></h2>
 <p>If you have a script, <code class="docutils literal notranslate"><span class="pre">app.py</span></code> that you want to run on a device, then use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pyboard.py --device /dev/ttyACM0 app.py
 </pre></div>
@@ -371,9 +373,9 @@ will be displayed.</p>
 <p>If the program app.py does not finish then you’ll need to stop <code class="docutils literal notranslate"><span class="pre">pyboard.py</span></code>,
 eg with Ctrl-C. The program <code class="docutils literal notranslate"><span class="pre">app.py</span></code> will still continue to run on the
 MicroPython device.</p>
-
-
-<h2 id="filesystem-access">Filesystem access<a class="headerlink" href="#filesystem-access" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="filesystem-access">
+<h2 id="filesystem-access">Filesystem access<a class="headerlink" href="#filesystem-access" title="永久链接至标题">¶</a></h2>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag, the following filesystem operations are supported:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">src</span> <span class="pre">[src...]</span> <span class="pre">dest</span></code> Copy files to/from the device.</p></li>
@@ -413,21 +415,21 @@ $ pyboard.py --device /dev/ttyACM0 -f cat boot.py
 ...contents of boot.py...
 </pre></div>
 </div>
-
-
-<h2 id="using-the-pyboard-library">Using the pyboard library<a class="headerlink" href="#using-the-pyboard-library" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="using-the-pyboard-library">
+<h2 id="using-the-pyboard-library">Using the pyboard library<a class="headerlink" href="#using-the-pyboard-library" title="永久链接至标题">¶</a></h2>
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">pyboard.py</span></code> as a library for scripting interactions with a
 MicroPython board.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyboard</span>
 <span class="n">pyb</span> <span class="o">=</span> <span class="n">pyboard</span><span class="o">.</span><span class="n">Pyboard</span><span class="p">(</span><span class="s1">'/dev/ttyACM0'</span><span class="p">,</span> <span class="mi">115200</span><span class="p">)</span>
 <span class="n">pyb</span><span class="o">.</span><span class="n">enter_raw_repl</span><span class="p">()</span>
-<span class="n">ret</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="s1">'print(1+1)'</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+<span class="n">ret</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="k">exec</span><span class="p">(</span><span class="s1">'print(1+1)'</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
 <span class="n">pyb</span><span class="o">.</span><span class="n">exit_raw_repl</span><span class="p">()</span>
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -476,10 +478,10 @@ MicroPython board.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

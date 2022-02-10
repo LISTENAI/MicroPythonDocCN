@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class SPI – a controller-driven serial protocol &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class SPI – a controller-driven serial protocol &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class Switch – switch object" href="pyb.Switch.html" />
     <link rel="prev" title="class Servo – 3-wire hobby servo driver" href="pyb.Servo.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class SPI – a controller-driven serial protocol </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="pyb.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code> — functions related to the board</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -294,13 +296,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="pyb-spi"></span><h1 id="library-pyb-spi--page-root">class SPI – a controller-driven serial protocol<a class="headerlink" href="#library-pyb-spi--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-spi-a-controller-driven-serial-protocol">
+<span id="pyb-spi"></span><h1 id="library-pyb-spi--page-root">class SPI – a controller-driven serial protocol<a class="headerlink" href="#library-pyb-spi--page-root" title="永久链接至标题">¶</a></h1>
 <p>SPI is a serial protocol that is driven by a controller.  At the physical level
 there are 3 lines: SCK, MOSI, MISO.</p>
 <p>See usage model of I2C; SPI is very similar.  Main difference is
 parameters to init the SPI bus:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">SPI</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="k">import</span> <span class="n">SPI</span>
 <span class="n">spi</span> <span class="o">=</span> <span class="n">SPI</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">SPI</span><span class="o">.</span><span class="n">CONTROLLER</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">600000</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">crc</span><span class="o">=</span><span class="mh">0x7</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -315,11 +317,11 @@ None for no CRC, or a polynomial specifier.</p>
 <span class="n">spi</span><span class="o">.</span><span class="n">send_recv</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>              <span class="c1"># send/recv 4 bytes from/to buf</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="pyb.pyb.SPI">
-<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">SPI</code><span class="sig-paren">(</span><em class="sig-param">bus</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.SPI" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pyb.pyb.SPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">SPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.SPI" title="永久链接至目标">¶</a></dt>
 <dd><p>Construct an SPI object on the given bus.  <code class="docutils literal notranslate"><span class="pre">bus</span></code> can be 1 or 2, or
 ‘X’ or ‘Y’. With no additional parameters, the SPI object is created but
 not initialised (it has the settings from the last initialisation of
@@ -335,17 +337,17 @@ See <code class="docutils literal notranslate"><span class="pre">init</span></co
 <p>At the moment, the NSS pin is not used by the SPI driver and is free
 for other use.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="pyb.SPI.deinit">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.deinit" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.SPI.deinit">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">deinit</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.deinit" title="永久链接至目标">¶</a></dt>
 <dd><p>Turn off the SPI bus.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.SPI.init">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">mode</em>, <em class="sig-param">baudrate=328125</em>, <em class="sig-param">*</em>, <em class="sig-param">prescaler</em>, <em class="sig-param">polarity=1</em>, <em class="sig-param">phase=0</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">firstbit=SPI.MSB</em>, <em class="sig-param">ti=False</em>, <em class="sig-param">crc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.init" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.SPI.init">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">328125</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polarity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">firstbit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SPI.MSB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ti</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">crc</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Initialise the SPI bus with the given parameters:</p>
 <blockquote>
 <div><ul class="simple">
@@ -371,9 +373,9 @@ control over the SPI clock frequency, specify <code class="docutils literal notr
 <p>Printing the SPI object will show you the computed baudrate and the chosen
 prescaler.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.SPI.recv">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param">recv</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.recv" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.SPI.recv">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">recv</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.recv" title="永久链接至目标">¶</a></dt>
 <dd><p>Receive data on the bus:</p>
 <blockquote>
 <div><ul class="simple">
@@ -385,9 +387,9 @@ or a mutable buffer, which will be filled with received bytes.</p></li>
 <p>Return value: if <code class="docutils literal notranslate"><span class="pre">recv</span></code> is an integer then a new buffer of the bytes received,
 otherwise the same buffer that was passed in to <code class="docutils literal notranslate"><span class="pre">recv</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.SPI.send">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">send</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.send" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.SPI.send">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">send</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">send</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.send" title="永久链接至目标">¶</a></dt>
 <dd><p>Send data on the bus:</p>
 <blockquote>
 <div><ul class="simple">
@@ -397,9 +399,9 @@ otherwise the same buffer that was passed in to <code class="docutils literal no
 </div></blockquote>
 <p>Return value: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="pyb.SPI.send_recv">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">send_recv</code><span class="sig-paren">(</span><em class="sig-param">send</em>, <em class="sig-param">recv=None</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.send_recv" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="pyb.SPI.send_recv">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">send_recv</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">send</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">recv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.send_recv" title="永久链接至目标">¶</a></dt>
 <dd><p>Send and receive data on the bus at the same time:</p>
 <blockquote>
 <div><ul class="simple">
@@ -412,29 +414,29 @@ be created.</p></li>
 </div></blockquote>
 <p>Return value: the buffer with the received bytes.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="pyb.SPI.CONTROLLER">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">CONTROLLER</code><a class="headerlink" href="#pyb.SPI.CONTROLLER" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyb.SPI.CONTROLLER">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">CONTROLLER</span></span><a class="headerlink" href="#pyb.SPI.CONTROLLER" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="pyb.SPI.PERIPHERAL">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">PERIPHERAL</code><a class="headerlink" href="#pyb.SPI.PERIPHERAL" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyb.SPI.PERIPHERAL">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">PERIPHERAL</span></span><a class="headerlink" href="#pyb.SPI.PERIPHERAL" title="永久链接至目标">¶</a></dt>
 <dd><p>for initialising the SPI bus to controller or peripheral mode</p>
 </dd></dl>
-<dl class="data">
-<dt id="pyb.SPI.LSB">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">LSB</code><a class="headerlink" href="#pyb.SPI.LSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyb.SPI.LSB">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">LSB</span></span><a class="headerlink" href="#pyb.SPI.LSB" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="pyb.SPI.MSB">
-<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">MSB</code><a class="headerlink" href="#pyb.SPI.MSB" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="pyb.SPI.MSB">
+<span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">MSB</span></span><a class="headerlink" href="#pyb.SPI.MSB" title="永久链接至目标">¶</a></dt>
 <dd><p>set the first bit to be the least or most significant bit</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -483,10 +485,10 @@ be created.</p></li>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

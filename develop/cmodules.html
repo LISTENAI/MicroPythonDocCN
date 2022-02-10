@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>MicroPython external C modules &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>MicroPython external C modules &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Native machine code in .mpy files" href="natmod.html" />
     <link rel="prev" title="Extending MicroPython in C" href="extendingmicropython.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> MicroPython external C modules </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython Internals</a></li>
           <li class="md-tabs__item"><a href="extendingmicropython.html" class="md-tabs__link">Extending MicroPython in C</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -296,8 +298,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="cmodules"></span><h1 id="develop-cmodules--page-root">MicroPython external C modules<a class="headerlink" href="#develop-cmodules--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="micropython-external-c-modules">
+<span id="cmodules"></span><h1 id="develop-cmodules--page-root">MicroPython external C modules<a class="headerlink" href="#develop-cmodules--page-root" title="永久链接至标题">¶</a></h1>
 <p>When developing modules for use with MicroPython you may find you run into
 limitations with the Python environment, often due to an inability to access
 certain hardware resources or Python speed limitations.</p>
@@ -318,8 +320,8 @@ method of building, either Make or CMake.</p>
 <p>An alternative approach is to use <a class="reference internal" href="natmod.html#natmod"><span class="std std-ref">Native machine code in .mpy files</span></a> which allows writing custom C
 code that is placed in a .mpy file, which can be imported dynamically in to
 a running MicroPython system without the need to recompile the main firmware.</p>
-
-<h2 id="structure-of-an-external-c-module">Structure of an external C module<a class="headerlink" href="#structure-of-an-external-c-module" title="Permalink to this headline">¶</a></h2>
+<section id="structure-of-an-external-c-module">
+<h2 id="structure-of-an-external-c-module">Structure of an external C module<a class="headerlink" href="#structure-of-an-external-c-module" title="永久链接至标题">¶</a></h2>
 <p>A MicroPython user C module is a directory with the following files:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">*.c</span></code> / <code class="docutils literal notranslate"><span class="pre">*.cpp</span></code> / <code class="docutils literal notranslate"><span class="pre">*.h</span></code> source code files for your module.</p>
@@ -362,9 +364,9 @@ The library should then be linked to the <code class="docutils literal notransla
 <p>See below for full usage example.</p>
 </li>
 </ul>
-
-
-<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="basic-example">
+<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="永久链接至标题">¶</a></h2>
 <p>This simple module named <code class="docutils literal notranslate"><span class="pre">cexample</span></code> provides a single function
 <code class="docutils literal notranslate"><span class="pre">cexample.add_ints(a,</span> <span class="pre">b)</span></code> which adds the two integer args together and returns
 the result. It can be found in the MicroPython source tree
@@ -383,9 +385,9 @@ and has a source file and a Makefile fragment with content as described above:</
 Next to the <code class="docutils literal notranslate"><span class="pre">cexample</span></code> module there’s also <code class="docutils literal notranslate"><span class="pre">cppexample</span></code> which
 works in the same way but shows one way of mixing C and C++ code
 in MicroPython.</p>
-
-
-<h2 id="compiling-the-cmodule-into-micropython">Compiling the cmodule into MicroPython<a class="headerlink" href="#compiling-the-cmodule-into-micropython" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="compiling-the-cmodule-into-micropython">
+<h2 id="compiling-the-cmodule-into-micropython">Compiling the cmodule into MicroPython<a class="headerlink" href="#compiling-the-cmodule-into-micropython" title="永久链接至标题">¶</a></h2>
 <p>To build such a module, compile MicroPython (see <a class="reference external" href="https://github.com/micropython/micropython/wiki/Getting-Started">getting started</a>),
 applying 2 modifications:</p>
 <ol class="arabic simple">
@@ -509,18 +511,18 @@ to the <code class="docutils literal notranslate"><span class="pre">make</span><
 <p>Note that the exact method depends on the port as they have different
 structures.  If not done correctly it will compile but importing will
 fail to find the module.</p>
-
-
-<h2 id="module-usage-in-micropython">Module usage in MicroPython<a class="headerlink" href="#module-usage-in-micropython" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="module-usage-in-micropython">
+<h2 id="module-usage-in-micropython">Module usage in MicroPython<a class="headerlink" href="#module-usage-in-micropython" title="永久链接至标题">¶</a></h2>
 <p>Once built into your copy of MicroPython, the module
 can now be accessed in Python just like any other builtin module, e.g.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cexample</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">cexample</span><span class="o">.</span><span class="n">add_ints</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+<span class="k">print</span><span class="p">(</span><span class="n">cexample</span><span class="o">.</span><span class="n">add_ints</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="c1"># should display 4</span>
 </pre></div>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -569,10 +571,10 @@ can now be accessed in Python just like any other builtin module, e.g.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

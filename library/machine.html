@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>machine — functions related to the hardware &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>machine — functions related to the hardware &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class Pin – control I/O pins" href="machine.Pin.html" />
     <link rel="prev" title="framebuf — frame buffer manipulation" href="framebuf.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> machine — functions related to the hardware </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -299,8 +301,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="machine-functions-related-to-the-hardware"></span><h1 id="library-machine--page-root"><a class="reference internal" href="#library-machine--page-root" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> — functions related to the hardware<a class="headerlink" href="#library-machine--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="module-machine">
+<span id="machine-functions-related-to-the-hardware"></span><h1 id="library-machine--page-root"><a class="reference internal" href="#library-machine--page-root" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> — functions related to the hardware<a class="headerlink" href="#library-machine--page-root" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">machine</span></code> module contains specific functions related to the hardware
 on a particular board. Most functions in this module allow to achieve direct
 and unrestricted access to and control of hardware blocks on a system
@@ -312,82 +314,82 @@ all these callbacks should be considered as executing in an interrupt context.
 This is true for both physical devices with IDs &gt;= 0 and “virtual” devices
 with negative IDs like -1 (these “virtual” devices are still thin shims on
 top of real hardware and real hardware interrupts). See <a class="reference internal" href="../reference/isr_rules.html#isr-rules"><span class="std std-ref">Writing interrupt handlers</span></a>.</p>
-
-<h2 id="reset-related-functions">Reset related functions<a class="headerlink" href="#reset-related-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="machine.reset">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.reset" title="Permalink to this definition">¶</a></dt>
+<section id="reset-related-functions">
+<h2 id="reset-related-functions">Reset related functions<a class="headerlink" href="#reset-related-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.reset">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.reset" title="永久链接至目标">¶</a></dt>
 <dd><p>Resets the device in a manner similar to pushing the external RESET
 button.</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.soft_reset">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">soft_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.soft_reset" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.soft_reset">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">soft_reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.soft_reset" title="永久链接至目标">¶</a></dt>
 <dd><p>Performs a soft reset of the interpreter, deleting all Python objects and
 resetting the Python heap.  It tries to retain the method by which the user
 is connected to the MicroPython REPL (eg serial, USB, Wifi).</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.reset_cause">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">reset_cause</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.reset_cause" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.reset_cause">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">reset_cause</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.reset_cause" title="永久链接至目标">¶</a></dt>
 <dd><p>Get the reset cause. See <a class="reference internal" href="#machine-constants"><span class="std std-ref">constants</span></a> for the possible return values.</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.bootloader">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">bootloader</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.bootloader" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.bootloader">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">bootloader</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.bootloader" title="永久链接至目标">¶</a></dt>
 <dd><p>Reset the device and enter its bootloader.  This is typically used to put the
 device into a state where it can be programmed with new firmware.</p>
 <p>Some ports support passing in an optional <em>value</em> argument which can control
 which bootloader to enter, what to pass to it, or other things.</p>
 </dd></dl>
-
-
-<h2 id="interrupt-related-functions">Interrupt related functions<a class="headerlink" href="#interrupt-related-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="machine.disable_irq">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">disable_irq</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.disable_irq" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="interrupt-related-functions">
+<h2 id="interrupt-related-functions">Interrupt related functions<a class="headerlink" href="#interrupt-related-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.disable_irq">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">disable_irq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.disable_irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Disable interrupt requests.
 Returns the previous IRQ state which should be considered an opaque value.
 This return value should be passed to the <a class="reference internal" href="#machine.enable_irq" title="machine.enable_irq"><code class="xref any py py-func docutils literal notranslate"><span class="pre">enable_irq()</span></code></a> function to restore
 interrupts to their original state, before <a class="reference internal" href="#machine.disable_irq" title="machine.disable_irq"><code class="xref any py py-func docutils literal notranslate"><span class="pre">disable_irq()</span></code></a> was called.</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.enable_irq">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">enable_irq</code><span class="sig-paren">(</span><em class="sig-param">state</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.enable_irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.enable_irq">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">enable_irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.enable_irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Re-enable interrupt requests.
 The <em>state</em> parameter should be the value that was returned from the most
 recent call to the <a class="reference internal" href="#machine.disable_irq" title="machine.disable_irq"><code class="xref any py py-func docutils literal notranslate"><span class="pre">disable_irq()</span></code></a> function.</p>
 </dd></dl>
-
-
-<h2 id="power-related-functions">Power related functions<a class="headerlink" href="#power-related-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="machine.freq">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">freq</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">hz</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.freq" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="power-related-functions">
+<h2 id="power-related-functions">Power related functions<a class="headerlink" href="#power-related-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.freq">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">freq</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">hz</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.freq" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the CPU frequency in hertz.</p>
 <p>On some ports this can also be used to set the CPU frequency by passing in <em>hz</em>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.idle">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">idle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.idle" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.idle">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">idle</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.idle" title="永久链接至目标">¶</a></dt>
 <dd><p>Gates the clock to the CPU, useful to reduce power consumption at any time during
 short or long periods. Peripherals continue working and execution resumes as soon
 as any interrupt is triggered (on many ports this includes system timer
 interrupt occurring at regular intervals on the order of millisecond).</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.sleep">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">sleep</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.sleep" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.sleep">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">sleep</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.sleep" title="永久链接至目标">¶</a></dt>
 <dd><div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>This function is deprecated, use <a class="reference internal" href="#machine.lightsleep" title="machine.lightsleep"><code class="xref any py py-func docutils literal notranslate"><span class="pre">lightsleep()</span></code></a> instead with no arguments.</p>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="machine.lightsleep">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">lightsleep</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">time_ms</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.lightsleep" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.deepsleep">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">deepsleep</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">time_ms</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.deepsleep" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.lightsleep">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">lightsleep</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">time_ms</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.lightsleep" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.deepsleep">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">deepsleep</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">time_ms</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.deepsleep" title="永久链接至目标">¶</a></dt>
 <dd><p>Stops execution in an attempt to enter a low power state.</p>
 <p>If <em>time_ms</em> is specified then this will be the maximum time in milliseconds that
 the sleep will last for.  Otherwise the sleep can last indefinitely.</p>
@@ -406,26 +408,26 @@ return <a class="reference internal" href="#machine.machine.DEEPSLEEP" title="ma
 from other resets.</p></li>
 </ul>
 </dd></dl>
-<dl class="function">
-<dt id="machine.wake_reason">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">wake_reason</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.wake_reason" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.wake_reason">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">wake_reason</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.wake_reason" title="永久链接至目标">¶</a></dt>
 <dd><p>Get the wake reason. See <a class="reference internal" href="#machine-constants"><span class="std std-ref">constants</span></a> for the possible return values.</p>
 <p>Availability: ESP32, WiPy.</p>
 </dd></dl>
-
-
-<h2 id="miscellaneous-functions">Miscellaneous functions<a class="headerlink" href="#miscellaneous-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="machine.unique_id">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.unique_id" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="miscellaneous-functions">
+<h2 id="miscellaneous-functions">Miscellaneous functions<a class="headerlink" href="#miscellaneous-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.unique_id">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">unique_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.unique_id" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns a byte string with a unique identifier of a board/SoC. It will vary
 from a board/SoC instance to another, if underlying hardware allows. Length
 varies by hardware (so use substring of a full value if you expect a short
 ID). In some MicroPython ports, ID corresponds to the network MAC address.</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.time_pulse_us">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">time_pulse_us</code><span class="sig-paren">(</span><em class="sig-param">pin</em>, <em class="sig-param">pulse_level</em>, <em class="sig-param">timeout_us=1000000</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.time_pulse_us" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.time_pulse_us">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">time_pulse_us</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pulse_level</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_us</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.time_pulse_us" title="永久链接至目标">¶</a></dt>
 <dd><p>Time a pulse on the given <em>pin</em>, and return the duration of the pulse in
 microseconds.  The <em>pulse_level</em> argument should be 0 to time a low pulse
 or 1 to time a high pulse.</p>
@@ -438,9 +440,9 @@ If the pin is already equal to <em>pulse_level</em> then timing starts straight 
 above. The timeout is the same for both cases and given by <em>timeout_us</em> (which
 is in microseconds).</p>
 </dd></dl>
-<dl class="function">
-<dt id="machine.bitstream">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">bitstream</code><span class="sig-paren">(</span><em class="sig-param">pin</em>, <em class="sig-param">encoding</em>, <em class="sig-param">timing</em>, <em class="sig-param">data</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.bitstream" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.bitstream">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">bitstream</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pin</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">encoding</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timing</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.bitstream" title="永久链接至目标">¶</a></dt>
 <dd><p>Transmits <em>data</em> by bit-banging the specified <em>pin</em>. The <em>encoding</em> argument
 specifies how the bits are encoded, and <em>timing</em> is an encoding-specific timing
 specification.</p>
@@ -459,54 +461,54 @@ at 800kHz.</p></li>
 at best +/- 120ns, however on faster MCUs (ESP8266, ESP32, STM32, Pyboard), it
 will be closer to +/-30ns.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>For controlling WS2812 / NeoPixel strips, see the <a class="reference internal" href="neopixel.html#module-neopixel" title="neopixel: control of WS2812 / NeoPixel LEDs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">neopixel</span></code></a>
 module for a higher-level API.</p>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="machine.rng">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">rng</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.rng" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="machine.rng">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">rng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.rng" title="永久链接至目标">¶</a></dt>
 <dd><p>Return a 24-bit software generated random number.</p>
 <p>Availability: WiPy.</p>
 </dd></dl>
-
-
-<span id="machine-constants"></span><h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="machine.machine.IDLE">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">IDLE</code><a class="headerlink" href="#machine.machine.IDLE" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.SLEEP">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SLEEP</code><a class="headerlink" href="#machine.machine.SLEEP" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.DEEPSLEEP">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">DEEPSLEEP</code><a class="headerlink" href="#machine.machine.DEEPSLEEP" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<span id="machine-constants"></span><h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.machine.IDLE">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">IDLE</span></span><a class="headerlink" href="#machine.machine.IDLE" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.SLEEP">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SLEEP</span></span><a class="headerlink" href="#machine.machine.SLEEP" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.DEEPSLEEP">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">DEEPSLEEP</span></span><a class="headerlink" href="#machine.machine.DEEPSLEEP" title="永久链接至目标">¶</a></dt>
 <dd><p>IRQ wake values.</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.machine.PWRON_RESET">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">PWRON_RESET</code><a class="headerlink" href="#machine.machine.PWRON_RESET" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.HARD_RESET">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">HARD_RESET</code><a class="headerlink" href="#machine.machine.HARD_RESET" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.WDT_RESET">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">WDT_RESET</code><a class="headerlink" href="#machine.machine.WDT_RESET" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.DEEPSLEEP_RESET">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">DEEPSLEEP_RESET</code><a class="headerlink" href="#machine.machine.DEEPSLEEP_RESET" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.SOFT_RESET">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SOFT_RESET</code><a class="headerlink" href="#machine.machine.SOFT_RESET" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.machine.PWRON_RESET">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">PWRON_RESET</span></span><a class="headerlink" href="#machine.machine.PWRON_RESET" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.HARD_RESET">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">HARD_RESET</span></span><a class="headerlink" href="#machine.machine.HARD_RESET" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.WDT_RESET">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">WDT_RESET</span></span><a class="headerlink" href="#machine.machine.WDT_RESET" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.DEEPSLEEP_RESET">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">DEEPSLEEP_RESET</span></span><a class="headerlink" href="#machine.machine.DEEPSLEEP_RESET" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.SOFT_RESET">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SOFT_RESET</span></span><a class="headerlink" href="#machine.machine.SOFT_RESET" title="永久链接至目标">¶</a></dt>
 <dd><p>Reset causes.</p>
 </dd></dl>
-<dl class="data">
-<dt id="machine.machine.WLAN_WAKE">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">WLAN_WAKE</code><a class="headerlink" href="#machine.machine.WLAN_WAKE" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.PIN_WAKE">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">PIN_WAKE</code><a class="headerlink" href="#machine.machine.PIN_WAKE" title="Permalink to this definition">¶</a></dt>
-<dt id="machine.machine.RTC_WAKE">
-<code class="sig-prename descclassname">machine.</code><code class="sig-name descname">RTC_WAKE</code><a class="headerlink" href="#machine.machine.RTC_WAKE" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="machine.machine.WLAN_WAKE">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">WLAN_WAKE</span></span><a class="headerlink" href="#machine.machine.WLAN_WAKE" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.PIN_WAKE">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">PIN_WAKE</span></span><a class="headerlink" href="#machine.machine.PIN_WAKE" title="永久链接至目标">¶</a></dt>
+<dt class="sig sig-object py" id="machine.machine.RTC_WAKE">
+<span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">RTC_WAKE</span></span><a class="headerlink" href="#machine.machine.RTC_WAKE" title="永久链接至目标">¶</a></dt>
 <dd><p>Wake-up reasons.</p>
 </dd></dl>
-
-
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="classes">
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="machine.Pin.html">class Pin – control I/O pins</a></li>
@@ -524,8 +526,8 @@ module for a higher-level API.</p>
 <li class="toctree-l1"><a class="reference internal" href="machine.SDCard.html">class SDCard – secure digital memory card</a></li>
 </ul>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -574,10 +576,10 @@ module for a higher-level API.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

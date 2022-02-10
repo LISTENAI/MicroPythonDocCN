@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>pyb — functions related to the board &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>pyb — functions related to the board &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class Accel – accelerometer control" href="pyb.Accel.html" />
     <link rel="prev" title="uctypes – access binary data in a structured way" href="uctypes.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> pyb — functions related to the board </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -299,24 +301,24 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="pyb-functions-related-to-the-board"></span><h1 id="library-pyb--page-root"><a class="reference internal" href="#library-pyb--page-root" title="pyb: functions related to the board"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code></a> — functions related to the board<a class="headerlink" href="#library-pyb--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="module-pyb">
+<span id="pyb-functions-related-to-the-board"></span><h1 id="library-pyb--page-root"><a class="reference internal" href="#library-pyb--page-root" title="pyb: functions related to the board"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code></a> — functions related to the board<a class="headerlink" href="#library-pyb--page-root" title="永久链接至标题">¶</a></h1>
 <p>The <code class="docutils literal notranslate"><span class="pre">pyb</span></code> module contains specific functions related to the board.</p>
-
-<h2 id="time-related-functions">Time related functions<a class="headerlink" href="#time-related-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="pyb.delay">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">delay</code><span class="sig-paren">(</span><em class="sig-param">ms</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.delay" title="Permalink to this definition">¶</a></dt>
+<section id="time-related-functions">
+<h2 id="time-related-functions">Time related functions<a class="headerlink" href="#time-related-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.delay">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">delay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ms</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.delay" title="永久链接至目标">¶</a></dt>
 <dd><p>Delay for the given number of milliseconds.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.udelay">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">udelay</code><span class="sig-paren">(</span><em class="sig-param">us</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.udelay" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.udelay">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">udelay</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">us</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.udelay" title="永久链接至目标">¶</a></dt>
 <dd><p>Delay for the given number of microseconds.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.millis">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">millis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.millis" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.millis">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">millis</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.millis" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the number of milliseconds since the board was last reset.</p>
 <p>The result is always a MicroPython smallint (31-bit signed number), so
 after 2^30 milliseconds (about 12.4 days) this will start to return
@@ -325,9 +327,9 @@ negative numbers.</p>
 function will pause for the duration of the “sleeping” state. This
 will affect the outcome of <a class="reference internal" href="#pyb.elapsed_millis" title="pyb.elapsed_millis"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyb.elapsed_millis()</span></code></a>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.micros">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">micros</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.micros" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.micros">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">micros</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.micros" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the number of microseconds since the board was last reset.</p>
 <p>The result is always a MicroPython smallint (31-bit signed number), so
 after 2^30 microseconds (about 17.8 minutes) this will start to return
@@ -336,9 +338,9 @@ negative numbers.</p>
 function will pause for the duration of the “sleeping” state. This
 will affect the outcome of <a class="reference internal" href="#pyb.elapsed_micros" title="pyb.elapsed_micros"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyb.elapsed_micros()</span></code></a>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.elapsed_millis">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">elapsed_millis</code><span class="sig-paren">(</span><em class="sig-param">start</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.elapsed_millis" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.elapsed_millis">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">elapsed_millis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.elapsed_millis" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the number of milliseconds which have elapsed since <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
 <p>This function takes care of counter wrap, and always returns a positive
 number. This means it can be used to measure periods up to about 12.4 days.</p>
@@ -349,9 +351,9 @@ number. This means it can be used to measure periods up to about 12.4 days.</p>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.elapsed_micros">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">elapsed_micros</code><span class="sig-paren">(</span><em class="sig-param">start</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.elapsed_micros" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.elapsed_micros">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">elapsed_micros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">start</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.elapsed_micros" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the number of microseconds which have elapsed since <code class="docutils literal notranslate"><span class="pre">start</span></code>.</p>
 <p>This function takes care of counter wrap, and always returns a positive
 number. This means it can be used to measure periods up to about 17.8 minutes.</p>
@@ -363,23 +365,23 @@ number. This means it can be used to measure periods up to about 17.8 minutes.</
 </pre></div>
 </div>
 </dd></dl>
-
-
-<h2 id="reset-related-functions">Reset related functions<a class="headerlink" href="#reset-related-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="pyb.hard_reset">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">hard_reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.hard_reset" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="reset-related-functions">
+<h2 id="reset-related-functions">Reset related functions<a class="headerlink" href="#reset-related-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.hard_reset">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">hard_reset</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.hard_reset" title="永久链接至目标">¶</a></dt>
 <dd><p>Resets the pyboard in a manner similar to pushing the external RESET
 button.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.bootloader">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">bootloader</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.bootloader" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.bootloader">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">bootloader</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.bootloader" title="永久链接至目标">¶</a></dt>
 <dd><p>Activate the bootloader without BOOT* pins.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.fault_debug">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">fault_debug</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.fault_debug" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.fault_debug">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">fault_debug</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.fault_debug" title="永久链接至目标">¶</a></dt>
 <dd><p>Enable or disable hard-fault debugging.  A hard-fault is when there is a fatal
 error in the underlying system, like an invalid memory access.</p>
 <p>If the <em>value</em> argument is <code class="docutils literal notranslate"><span class="pre">False</span></code> then the board will automatically reset if
@@ -388,32 +390,32 @@ there is a hard fault.</p>
 registers and the stack trace, and then cycle the LEDs indefinitely.</p>
 <p>The default value is disabled, i.e. to automatically reset.</p>
 </dd></dl>
-
-
-<h2 id="interrupt-related-functions">Interrupt related functions<a class="headerlink" href="#interrupt-related-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="pyb.disable_irq">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">disable_irq</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.disable_irq" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="interrupt-related-functions">
+<h2 id="interrupt-related-functions">Interrupt related functions<a class="headerlink" href="#interrupt-related-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.disable_irq">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">disable_irq</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.disable_irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Disable interrupt requests.
 Returns the previous IRQ state: <code class="docutils literal notranslate"><span class="pre">False</span></code>/<code class="docutils literal notranslate"><span class="pre">True</span></code> for disabled/enabled IRQs
 respectively.  This return value can be passed to enable_irq to restore
 the IRQ to its original state.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.enable_irq">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">enable_irq</code><span class="sig-paren">(</span><em class="sig-param">state=True</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.enable_irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.enable_irq">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">enable_irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.enable_irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Enable interrupt requests.
 If <code class="docutils literal notranslate"><span class="pre">state</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> (the default value) then IRQs are enabled.
 If <code class="docutils literal notranslate"><span class="pre">state</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code> then IRQs are disabled.  The most common use of
 this function is to pass it the value returned by <code class="docutils literal notranslate"><span class="pre">disable_irq</span></code> to
 exit a critical section.</p>
 </dd></dl>
-
-
-<h2 id="power-related-functions">Power related functions<a class="headerlink" href="#power-related-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="pyb.freq">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">freq</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">sysclk</em><span class="optional">[</span>, <em class="sig-param">hclk</em><span class="optional">[</span>, <em class="sig-param">pclk1</em><span class="optional">[</span>, <em class="sig-param">pclk2</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.freq" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="power-related-functions">
+<h2 id="power-related-functions">Power related functions<a class="headerlink" href="#power-related-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.freq">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">freq</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">sysclk</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">hclk</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pclk1</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">pclk2</span></span></em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.freq" title="永久链接至目标">¶</a></dt>
 <dd><p>If given no arguments, returns a tuple of clock frequencies:
 (sysclk, hclk, pclk1, pclk2).
 These correspond to:</p>
@@ -447,9 +449,9 @@ the USB may become unreliable.  It is best to change the frequency
 in boot.py, before the USB peripheral is started.  Also note that sysclk
 frequencies below 36MHz do not allow the USB to function correctly.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.wfi">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">wfi</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.wfi" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.wfi">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">wfi</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.wfi" title="永久链接至目标">¶</a></dt>
 <dd><p>Wait for an internal or external interrupt.</p>
 <p>This executes a <code class="docutils literal notranslate"><span class="pre">wfi</span></code> instruction which reduces power consumption
 of the MCU until any interrupt occurs (be it internal or external),
@@ -457,18 +459,18 @@ at which point execution continues.  Note that the system-tick interrupt
 occurs once every millisecond (1000Hz) so this function will block for
 at most 1ms.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.stop">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.stop" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.stop">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.stop" title="永久链接至目标">¶</a></dt>
 <dd><p>Put the pyboard in a “sleeping” state.</p>
 <p>This reduces power consumption to less than 500 uA.  To wake from this
 sleep state requires an external interrupt or a real-time-clock event.
 Upon waking execution continues where it left off.</p>
 <p>See <code class="xref py py-meth docutils literal notranslate"><span class="pre">rtc.wakeup()</span></code> to configure a real-time-clock wakeup event.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.standby">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">standby</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.standby" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.standby">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">standby</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.standby" title="永久链接至目标">¶</a></dt>
 <dd><p>Put the pyboard into a “deep sleep” state.</p>
 <p>This reduces power consumption to less than 50 uA.  To wake from this
 sleep state requires a real-time-clock event, or an external interrupt
@@ -476,45 +478,45 @@ on X1 (PA0=WKUP) or X18 (PC13=TAMP1).
 Upon waking the system undergoes a hard reset.</p>
 <p>See <code class="xref py py-meth docutils literal notranslate"><span class="pre">rtc.wakeup()</span></code> to configure a real-time-clock wakeup event.</p>
 </dd></dl>
-
-
-<h2 id="miscellaneous-functions">Miscellaneous functions<a class="headerlink" href="#miscellaneous-functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="pyb.have_cdc">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">have_cdc</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.have_cdc" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="miscellaneous-functions">
+<h2 id="miscellaneous-functions">Miscellaneous functions<a class="headerlink" href="#miscellaneous-functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.have_cdc">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">have_cdc</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.have_cdc" title="永久链接至目标">¶</a></dt>
 <dd><p>Return True if USB is connected as a serial device, False otherwise.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>This function is deprecated.  Use pyb.USB_VCP().isconnected() instead.</p>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.hid">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">hid</code><span class="sig-paren">(</span><em class="sig-param">(buttons</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">z)</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.hid" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.hid">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">hid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">(buttons</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.hid" title="永久链接至目标">¶</a></dt>
 <dd><p>Takes a 4-tuple (or list) and sends it to the USB host (the PC) to
 signal a HID mouse-motion event.</p>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>This function is deprecated.  Use <a class="reference internal" href="pyb.USB_HID.html#pyb.USB_HID.send" title="pyb.USB_HID.send"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyb.USB_HID.send()</span></code></a> instead.</p>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.info">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">dump_alloc_table</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.info" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.info">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">info</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">dump_alloc_table</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.info" title="永久链接至目标">¶</a></dt>
 <dd><p>Print out lots of information about the board.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.main">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">main</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.main" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.main">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.main" title="永久链接至目标">¶</a></dt>
 <dd><p>Set the filename of the main script to run after boot.py is finished.  If
 this function is not called then the default file main.py will be executed.</p>
 <p>It only makes sense to call this function from within boot.py.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.mount">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">mount</code><span class="sig-paren">(</span><em class="sig-param">device</em>, <em class="sig-param">mountpoint</em>, <em class="sig-param">*</em>, <em class="sig-param">readonly=False</em>, <em class="sig-param">mkfs=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.mount" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.mount">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">mount</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mountpoint</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">readonly</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mkfs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.mount" title="永久链接至目标">¶</a></dt>
 <dd><div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>This function is deprecated. Mounting and unmounting devices should
 be performed by <a class="reference internal" href="os.html#os.mount" title="os.mount"><code class="xref py py-meth docutils literal notranslate"><span class="pre">os.mount()</span></code></a> and <a class="reference internal" href="os.html#os.umount" title="os.umount"><code class="xref py py-meth docutils literal notranslate"><span class="pre">os.umount()</span></code></a> instead.</p>
 </div>
@@ -544,29 +546,29 @@ otherwise it is mounted read-write.</p>
 <p>If <code class="docutils literal notranslate"><span class="pre">mkfs</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code>, then a new filesystem is created if one does not
 already exist.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.repl_uart">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">repl_uart</code><span class="sig-paren">(</span><em class="sig-param">uart</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.repl_uart" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.repl_uart">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">repl_uart</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">uart</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.repl_uart" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the UART object where the REPL is repeated on.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.rng">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">rng</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.rng" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.rng">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">rng</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.rng" title="永久链接至目标">¶</a></dt>
 <dd><p>Return a 30-bit hardware generated random number.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.sync">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">sync</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.sync" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.sync">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">sync</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.sync" title="永久链接至目标">¶</a></dt>
 <dd><p>Sync all file systems.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.unique_id">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">unique_id</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.unique_id" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.unique_id">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">unique_id</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.unique_id" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns a string of 12 bytes (96 bits), which is the unique ID of the MCU.</p>
 </dd></dl>
-<dl class="function">
-<dt id="pyb.usb_mode">
-<code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">usb_mode</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">modestr</em>, <span class="optional">]</span><em class="sig-param">port=-1</em>, <em class="sig-param">vid=0xf055</em>, <em class="sig-param">pid=-1</em>, <em class="sig-param">msc=()</em>, <em class="sig-param">hid=pyb.hid_mouse</em>, <em class="sig-param">high_speed=False</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.usb_mode" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="pyb.usb_mode">
+<span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">usb_mode</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">modestr</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">port=-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vid=0xf055</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pid=-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">msc=()</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hid=pyb.hid_mouse</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">high_speed=False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.usb_mode" title="永久链接至目标">¶</a></dt>
 <dd><p>If called with no arguments, return the current USB mode as a string.</p>
 <p>If called with <em>modestr</em> provided, attempts to configure the USB mode.
 The following values of <em>modestr</em> are understood:</p>
@@ -598,9 +600,9 @@ appropriate tuple for a USB keyboard.</p>
 <p>The <em>high_speed</em> parameter, when set to <code class="docutils literal notranslate"><span class="pre">True</span></code>, enables USB HS mode if
 it is supported by the hardware.</p>
 </dd></dl>
-
-
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="classes">
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="pyb.Accel.html">class Accel – accelerometer control</a></li>
@@ -625,8 +627,8 @@ it is supported by the hardware.</p>
 <li class="toctree-l1"><a class="reference internal" href="pyb.USB_VCP.html">class USB_VCP – USB virtual comm port</a></li>
 </ul>
 </div>
-
-
+</section>
+</section>
 
 
           </article>
@@ -675,10 +677,10 @@ it is supported by the hardware.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

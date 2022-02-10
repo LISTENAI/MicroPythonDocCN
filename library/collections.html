@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>collections – collection and container types &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>collections – collection and container types &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="errno – system error codes" href="errno.html" />
     <link rel="prev" title="cmath – mathematical functions for complex numbers" href="cmath.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> collections – collection and container types </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -289,18 +291,18 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="collections-collection-and-container-types"></span><h1 id="library-collections--page-root"><a class="reference internal" href="#library-collections--page-root" title="collections: collection and container types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code></a> – collection and container types<a class="headerlink" href="#library-collections--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-collections">
+<span id="collections-collection-and-container-types"></span><h1 id="library-collections--page-root"><a class="reference internal" href="#library-collections--page-root" title="collections: collection and container types"><code class="xref py py-mod docutils literal notranslate"><span class="pre">collections</span></code></a> – collection and container types<a class="headerlink" href="#library-collections--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/collections.html#module-collections" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">collections</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/collections.html#module-collections" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">collections</span></code></a>.</p>
 <p>This module implements advanced collection and container types to
 hold/accumulate various objects.</p>
-
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="collections.deque">
-<code class="sig-prename descclassname">collections.</code><code class="sig-name descname">deque</code><span class="sig-paren">(</span><em class="sig-param">iterable</em>, <em class="sig-param">maxlen</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque" title="Permalink to this definition">¶</a></dt>
+<section id="classes">
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="collections.deque">
+<span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">deque</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">iterable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxlen</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque" title="永久链接至目标">¶</a></dt>
 <dd><p>Deques (double-ended queues) are a list-like container that support O(1)
 appends and pops from either side of the deque.  New deques are created
 using the following arguments:</p>
@@ -315,22 +317,22 @@ discard items from the opposite end.</p></li>
 </div></blockquote>
 <p>As well as supporting <a class="reference internal" href="builtins.html#bool" title="bool"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bool</span></code></a> and <a class="reference internal" href="builtins.html#len" title="len"><code class="xref any py py-func docutils literal notranslate"><span class="pre">len</span></code></a>, deque objects have the following
 methods:</p>
-<dl class="method">
-<dt id="collections.deque.append">
-<code class="sig-prename descclassname">deque.</code><code class="sig-name descname">append</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.append" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="collections.deque.append">
+<span class="sig-prename descclassname"><span class="pre">deque.</span></span><span class="sig-name descname"><span class="pre">append</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.append" title="永久链接至目标">¶</a></dt>
 <dd><p>Add <em>x</em> to the right side of the deque.
 Raises IndexError if overflow checking is enabled and there is no more room left.</p>
 </dd></dl>
-<dl class="method">
-<dt id="collections.deque.popleft">
-<code class="sig-prename descclassname">deque.</code><code class="sig-name descname">popleft</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.popleft" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="collections.deque.popleft">
+<span class="sig-prename descclassname"><span class="pre">deque.</span></span><span class="sig-name descname"><span class="pre">popleft</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#collections.deque.popleft" title="永久链接至目标">¶</a></dt>
 <dd><p>Remove and return an item from the left side of the deque.
 Raises IndexError if no items are present.</p>
 </dd></dl>
 </dd></dl>
-<dl class="function">
-<dt id="collections.namedtuple">
-<code class="sig-prename descclassname">collections.</code><code class="sig-name descname">namedtuple</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">fields</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.namedtuple" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="collections.namedtuple">
+<span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">namedtuple</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fields</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.namedtuple" title="永久链接至目标">¶</a></dt>
 <dd><p>This is factory function to create a new namedtuple type with a specific
 name and set of fields. A namedtuple is a subclass of tuple which allows
 to access its fields not just by numeric index, but also with an attribute
@@ -338,7 +340,7 @@ access syntax using symbolic field names. Fields is a sequence of strings
 specifying field names. For compatibility with CPython it can also be a
 a string with space-separated field named (but this is less efficient).
 Example of use:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">namedtuple</span>
 
 <span class="n">MyTuple</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s2">"MyTuple"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"id"</span><span class="p">,</span> <span class="s2">"name"</span><span class="p">))</span>
 <span class="n">t1</span> <span class="o">=</span> <span class="n">MyTuple</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"foo"</span><span class="p">)</span>
@@ -348,13 +350,13 @@ Example of use:</p>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="collections.OrderedDict">
-<code class="sig-prename descclassname">collections.</code><code class="sig-name descname">OrderedDict</code><span class="sig-paren">(</span><em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#collections.OrderedDict" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="collections.OrderedDict">
+<span class="sig-prename descclassname"><span class="pre">collections.</span></span><span class="sig-name descname"><span class="pre">OrderedDict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#collections.OrderedDict" title="永久链接至目标">¶</a></dt>
 <dd><p><code class="docutils literal notranslate"><span class="pre">dict</span></code> type subclass which remembers and preserves the order of keys
 added. When ordered dict is iterated over, keys/items are returned in
 the order they were added:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">OrderedDict</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="k">import</span> <span class="n">OrderedDict</span>
 
 <span class="c1"># To make benefit of ordered keys, OrderedDict should be initialized</span>
 <span class="c1"># from sequence of (key, value) pairs.</span>
@@ -374,8 +376,8 @@ the order they were added:</p>
 </pre></div>
 </div>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -424,10 +426,10 @@ the order they were added:</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

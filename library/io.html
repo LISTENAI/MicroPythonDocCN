@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>io – input/output streams &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>io – input/output streams &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="json – JSON encoding and decoding" href="json.html" />
     <link rel="prev" title="heapq – heap queue algorithm" href="heapq.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> io – input/output streams </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -293,15 +295,15 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="io-input-output-streams"></span><h1 id="library-io--page-root"><a class="reference internal" href="#library-io--page-root" title="io: input/output streams"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> – input/output streams<a class="headerlink" href="#library-io--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-io">
+<span id="io-input-output-streams"></span><h1 id="library-io--page-root"><a class="reference internal" href="#library-io--page-root" title="io: input/output streams"><code class="xref py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> – input/output streams<a class="headerlink" href="#library-io--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/io.html#module-io" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">io</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/io.html#module-io" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">io</span></code></a>.</p>
 <p>This module contains additional types of <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a> (file-like) objects
 and helper functions.</p>
-
-<h2 id="conceptual-hierarchy">Conceptual hierarchy<a class="headerlink" href="#conceptual-hierarchy" title="Permalink to this headline">¶</a></h2>
+<section id="conceptual-hierarchy">
+<h2 id="conceptual-hierarchy">Conceptual hierarchy<a class="headerlink" href="#conceptual-hierarchy" title="永久链接至标题">¶</a></h2>
 <div class="attention admonition">
 <p class="admonition-title">Difference to CPython</p>
 <p>Conceptual hierarchy of stream base classes is simplified in MicroPython,
@@ -357,38 +359,38 @@ for which we may introduce buffering support.)</p>
 <p>Note that for efficiency, MicroPython doesn’t provide abstract base
 classes corresponding to the hierarchy above, and it’s not possible
 to implement, or subclass, a stream class in pure Python.</p>
-
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="io.open">
-<code class="sig-prename descclassname">io.</code><code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">name</em>, <em class="sig-param">mode='r'</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#io.open" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="functions">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="io.open">
+<span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">open</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'r'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.open" title="永久链接至目标">¶</a></dt>
 <dd><p>Open a file. Builtin <code class="docutils literal notranslate"><span class="pre">open()</span></code> function is aliased to this function.
 All ports (which provide access to file system) are required to support
 <em>mode</em> parameter, but support for other arguments vary by port.</p>
 </dd></dl>
-
-
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="io.FileIO">
-<em class="property">class </em><code class="sig-prename descclassname">io.</code><code class="sig-name descname">FileIO</code><span class="sig-paren">(</span><em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#io.FileIO" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="classes">
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="io.FileIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">FileIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.FileIO" title="永久链接至目标">¶</a></dt>
 <dd><p>This is type of a file open in binary mode, e.g. using <code class="docutils literal notranslate"><span class="pre">open(name,</span> <span class="pre">"rb")</span></code>.
 You should not instantiate this class directly.</p>
 </dd></dl>
-<dl class="class">
-<dt id="io.TextIOWrapper">
-<em class="property">class </em><code class="sig-prename descclassname">io.</code><code class="sig-name descname">TextIOWrapper</code><span class="sig-paren">(</span><em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#io.TextIOWrapper" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="io.TextIOWrapper">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">TextIOWrapper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#io.TextIOWrapper" title="永久链接至目标">¶</a></dt>
 <dd><p>This is type of a file open in text mode, e.g. using <code class="docutils literal notranslate"><span class="pre">open(name,</span> <span class="pre">"rt")</span></code>.
 You should not instantiate this class directly.</p>
 </dd></dl>
-<dl class="class">
-<dt id="io.StringIO">
-<em class="property">class </em><code class="sig-prename descclassname">io.</code><code class="sig-name descname">StringIO</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">string</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="io.StringIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">StringIO</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.StringIO" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="class">
-<dt id="io.BytesIO">
-<em class="property">class </em><code class="sig-prename descclassname">io.</code><code class="sig-name descname">BytesIO</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">string</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.BytesIO" title="Permalink to this definition">¶</a></dt>
+<dl class="py class">
+<dt class="sig sig-object py" id="io.BytesIO">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BytesIO</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">string</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#io.BytesIO" title="永久链接至目标">¶</a></dt>
 <dd><p>In-memory file-like objects for input/output. <a class="reference internal" href="#io.StringIO" title="io.StringIO"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StringIO</span></code></a> is used for
 text-mode I/O (similar to a normal file opened with “t” modifier).
 <a class="reference internal" href="#io.BytesIO" title="io.BytesIO"><code class="xref any py py-class docutils literal notranslate"><span class="pre">BytesIO</span></code></a> is used for binary-mode I/O (similar to a normal file
@@ -398,19 +400,19 @@ for <a class="reference internal" href="#io.StringIO" title="io.StringIO"><code 
 methods like <code class="docutils literal notranslate"><span class="pre">read()</span></code>, <code class="docutils literal notranslate"><span class="pre">write()</span></code>, <code class="docutils literal notranslate"><span class="pre">seek()</span></code>, <code class="docutils literal notranslate"><span class="pre">flush()</span></code>,
 <code class="docutils literal notranslate"><span class="pre">close()</span></code> are available on these objects, and additionally, a
 following method:</p>
-<dl class="method">
-<dt id="io.BytesIO.getvalue">
-<code class="sig-name descname">getvalue</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.BytesIO.getvalue" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="io.BytesIO.getvalue">
+<span class="sig-name descname"><span class="pre">getvalue</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#io.BytesIO.getvalue" title="永久链接至目标">¶</a></dt>
 <dd><p>Get the current contents of the underlying buffer which holds data.</p>
 </dd></dl>
 </dd></dl>
-<dl class="class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">io.</code><code class="sig-name descname">StringIO</code><span class="sig-paren">(</span><em class="sig-param">alloc_size</em><span class="sig-paren">)</span></dt>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">StringIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alloc_size</span></span></em><span class="sig-paren">)</span></dt>
 <dd></dd></dl>
-<dl class="class">
-<dt>
-<em class="property">class </em><code class="sig-prename descclassname">io.</code><code class="sig-name descname">BytesIO</code><span class="sig-paren">(</span><em class="sig-param">alloc_size</em><span class="sig-paren">)</span></dt>
+<dl class="py class">
+<dt class="sig sig-object py">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">io.</span></span><span class="sig-name descname"><span class="pre">BytesIO</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alloc_size</span></span></em><span class="sig-paren">)</span></dt>
 <dd><p>Create an empty <a class="reference internal" href="#io.StringIO" title="io.StringIO"><code class="xref any py py-class docutils literal notranslate"><span class="pre">StringIO</span></code></a>/<a class="reference internal" href="#io.BytesIO" title="io.BytesIO"><code class="xref any py py-class docutils literal notranslate"><span class="pre">BytesIO</span></code></a> object, preallocated to hold up
 to <em>alloc_size</em> number of bytes. That means that writing that amount
 of bytes won’t lead to reallocation of the buffer, and thus won’t hit
@@ -422,8 +424,8 @@ cases and in system-level libraries, not for end-user applications.</p>
 <p>These constructors are a MicroPython extension.</p>
 </div>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -472,10 +474,10 @@ cases and in system-level libraries, not for end-user applications.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

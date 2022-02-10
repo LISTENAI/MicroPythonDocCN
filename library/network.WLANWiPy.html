@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class WLANWiPy – WiPy specific WiFi control &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class WLANWiPy – WiPy specific WiFi control &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="class CC3K – control CC3000 WiFi modules" href="network.CC3K.html" />
     <link rel="prev" title="class WLAN – control built-in WiFi interfaces" href="network.WLAN.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class WLANWiPy – WiPy specific WiFi control </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="network.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — network configuration</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -294,10 +296,10 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="network-wlanwipy"></span><h1 id="library-network-wlanwipy--page-root">class WLANWiPy – WiPy specific WiFi control<a class="headerlink" href="#library-network-wlanwipy--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-wlanwipy-wipy-specific-wifi-control">
+<span id="network-wlanwipy"></span><h1 id="library-network-wlanwipy--page-root">class WLANWiPy – WiPy specific WiFi control<a class="headerlink" href="#library-network-wlanwipy--page-root" title="永久链接至标题">¶</a></h1>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>This class is a non-standard WLAN implementation for the WiPy.
 It is available simply as <code class="docutils literal notranslate"><span class="pre">network.WLAN</span></code> on the WiPy but is named in the
 documentation below as <code class="docutils literal notranslate"><span class="pre">network.WLANWiPy</span></code> to distinguish it from the
@@ -317,27 +319,27 @@ more general <a class="reference internal" href="network.WLAN.html#network-wlan"
 <span class="o">...</span>
 </pre></div>
 </div>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="network.WLANWiPy">
-<em class="property">class </em><code class="sig-prename descclassname">network.</code><code class="sig-name descname">WLANWiPy</code><span class="sig-paren">(</span><em class="sig-param">id=0</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="network.WLANWiPy">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">network.</span></span><span class="sig-name descname"><span class="pre">WLANWiPy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id=0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a WLAN object, and optionally configure it. See <a class="reference internal" href="#network.WLANWiPy.init" title="network.WLANWiPy.init"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">init()</span></code></a> for params of configuration.</p>
 </dd></dl>
 <div class="admonition note">
-<p class="admonition-title">Note</p>
+<p class="admonition-title">备注</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">WLAN</span></code> constructor is special in the sense that if no arguments besides the id are given,
 it will return the already existing <code class="docutils literal notranslate"><span class="pre">WLAN</span></code> instance without re-configuring it. This is
 because <code class="docutils literal notranslate"><span class="pre">WLAN</span></code> is a system feature of the WiPy. If the already existing instance is not
 initialized it will do the same as the other constructors an will initialize it with default
 values.</p>
 </div>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="network.WLANWiPy.init">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">mode</em>, <em class="sig-param">*</em>, <em class="sig-param">ssid</em>, <em class="sig-param">auth</em>, <em class="sig-param">channel</em>, <em class="sig-param">antenna</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.init">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssid</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">channel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">antenna</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Set or get the WiFi network processor configuration.</p>
 <p>Arguments are:</p>
 <blockquote>
@@ -364,9 +366,9 @@ values (e.g. ‘ABC1DE45BF’). Only needed when mode is <code class="docutils l
 </pre></div>
 </div>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.connect">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param">ssid</em>, <em class="sig-param">*</em>, <em class="sig-param">auth=None</em>, <em class="sig-param">bssid=None</em>, <em class="sig-param">timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.connect" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.connect">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">connect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssid</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">auth</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bssid</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.connect" title="永久链接至目标">¶</a></dt>
 <dd><p>Connect to a WiFi access point using the given SSID, and other security
 parameters.</p>
 <blockquote>
@@ -381,26 +383,26 @@ APs with the same ssid.</p></li>
 </ul>
 </div></blockquote>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.scan">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">scan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.scan" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.scan">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">scan</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.scan" title="永久链接至目标">¶</a></dt>
 <dd><p>Performs a network scan and returns a list of named tuples with (ssid, bssid, sec, channel, rssi).
 Note that channel is always <code class="docutils literal notranslate"><span class="pre">None</span></code> since this info is not provided by the WiPy.</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.disconnect">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.disconnect" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.disconnect">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">disconnect</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.disconnect" title="永久链接至目标">¶</a></dt>
 <dd><p>Disconnect from the WiFi access point.</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.isconnected">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">isconnected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.isconnected" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.isconnected">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">isconnected</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.isconnected" title="永久链接至目标">¶</a></dt>
 <dd><p>In case of STA mode, returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if connected to a WiFi access point and has a valid IP address.
 In AP mode returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when a station is connected, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.ifconfig">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">ifconfig</code><span class="sig-paren">(</span><em class="sig-param">if_id=0, config=['dhcp' or configtuple]</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.ifconfig" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.ifconfig">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">ifconfig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">if_id</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">config</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['dhcp'</span> <span class="pre">or</span> <span class="pre">configtuple]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.ifconfig" title="永久链接至目标">¶</a></dt>
 <dd><p>With no parameters given returns a 4-tuple of <em>(ip, subnet_mask, gateway, DNS_server)</em>.</p>
 <p>if <code class="docutils literal notranslate"><span class="pre">'dhcp'</span></code> is passed as a parameter then the DHCP client is enabled and the IP params
 are negotiated with the AP.</p>
@@ -409,39 +411,39 @@ are negotiated with the AP.</p>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.mode">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">mode</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">mode</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.mode" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.mode">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">mode</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.mode" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the WLAN mode.</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.ssid">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">ssid</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">ssid</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.ssid" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.ssid">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">ssid</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">ssid</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.ssid" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the SSID when in AP mode.</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.auth">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">auth</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">auth</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.auth" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.auth">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">auth</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">auth</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.auth" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the authentication type when in AP mode.</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.channel">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">channel</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">channel</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.channel" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.channel">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">channel</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">channel</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.channel" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the channel (only applicable in AP mode).</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.antenna">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">antenna</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">antenna</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.antenna" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.antenna">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">antenna</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">antenna</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.antenna" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set the antenna type (external or internal).</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.mac">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">mac</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">mac_addr</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.mac" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.mac">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">mac</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">mac_addr</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.mac" title="永久链接至目标">¶</a></dt>
 <dd><p>Get or set a 6-byte long bytes object with the MAC address.</p>
 </dd></dl>
-<dl class="method">
-<dt id="network.WLANWiPy.irq">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">handler</em>, <em class="sig-param">wake</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="network.WLANWiPy.irq">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wake</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Create a callback to be triggered when a WLAN event occurs during <code class="docutils literal notranslate"><span class="pre">machine.SLEEP</span></code>
 mode. Events are triggered by socket activity or by WLAN connection/disconnection.</p>
 <blockquote>
@@ -452,42 +454,42 @@ mode. Events are triggered by socket activity or by WLAN connection/disconnectio
 </div></blockquote>
 <p>Returns an IRQ object.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="network.WLANWiPy.STA">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">STA</code><a class="headerlink" href="#network.WLANWiPy.STA" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="network.WLANWiPy.STA">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">STA</span></span><a class="headerlink" href="#network.WLANWiPy.STA" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="network.WLANWiPy.AP">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">AP</code><a class="headerlink" href="#network.WLANWiPy.AP" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="network.WLANWiPy.AP">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">AP</span></span><a class="headerlink" href="#network.WLANWiPy.AP" title="永久链接至目标">¶</a></dt>
 <dd><p>selects the WLAN mode</p>
 </dd></dl>
-<dl class="data">
-<dt id="network.WLANWiPy.WEP">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">WEP</code><a class="headerlink" href="#network.WLANWiPy.WEP" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="network.WLANWiPy.WEP">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">WEP</span></span><a class="headerlink" href="#network.WLANWiPy.WEP" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="network.WLANWiPy.WPA">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">WPA</code><a class="headerlink" href="#network.WLANWiPy.WPA" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="network.WLANWiPy.WPA">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">WPA</span></span><a class="headerlink" href="#network.WLANWiPy.WPA" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="network.WLANWiPy.WPA2">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">WPA2</code><a class="headerlink" href="#network.WLANWiPy.WPA2" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="network.WLANWiPy.WPA2">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">WPA2</span></span><a class="headerlink" href="#network.WLANWiPy.WPA2" title="永久链接至目标">¶</a></dt>
 <dd><p>selects the network security</p>
 </dd></dl>
-<dl class="data">
-<dt id="network.WLANWiPy.INT_ANT">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">INT_ANT</code><a class="headerlink" href="#network.WLANWiPy.INT_ANT" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="network.WLANWiPy.INT_ANT">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">INT_ANT</span></span><a class="headerlink" href="#network.WLANWiPy.INT_ANT" title="永久链接至目标">¶</a></dt>
 <dd></dd></dl>
-<dl class="data">
-<dt id="network.WLANWiPy.EXT_ANT">
-<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">EXT_ANT</code><a class="headerlink" href="#network.WLANWiPy.EXT_ANT" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="network.WLANWiPy.EXT_ANT">
+<span class="sig-prename descclassname"><span class="pre">WLANWiPy.</span></span><span class="sig-name descname"><span class="pre">EXT_ANT</span></span><a class="headerlink" href="#network.WLANWiPy.EXT_ANT" title="永久链接至目标">¶</a></dt>
 <dd><p>selects the antenna type</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -536,10 +538,10 @@ mode. Events are triggered by socket activity or by WLAN connection/disconnectio
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

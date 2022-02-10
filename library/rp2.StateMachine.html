@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>class StateMachine – access to the RP2040’s programmable I/O interface &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>class StateMachine – access to the RP2040’s programmable I/O interface &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="zephyr — functionality specific to the Zephyr port" href="zephyr.html" />
     <link rel="prev" title="class PIO – advanced PIO usage" href="rp2.PIO.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> class StateMachine – access to the RP2040’s programmable I/O interface </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
           <li class="md-tabs__item"><a href="rp2.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code> — functionality specific to the RP2040</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -292,28 +294,28 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="rp2-statemachine"></span><h1 id="library-rp2-statemachine--page-root">class StateMachine – access to the RP2040’s programmable I/O interface<a class="headerlink" href="#library-rp2-statemachine--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="class-statemachine-access-to-the-rp2040-s-programmable-i-o-interface">
+<span id="rp2-statemachine"></span><h1 id="library-rp2-statemachine--page-root">class StateMachine – access to the RP2040’s programmable I/O interface<a class="headerlink" href="#library-rp2-statemachine--page-root" title="永久链接至标题">¶</a></h1>
 <p>The <a class="reference internal" href="#rp2.StateMachine" title="rp2.StateMachine"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateMachine</span></code></a> class gives access to the RP2040’s PIO (programmable
 I/O) interface.</p>
 <p>For assembling PIO programs, see <a class="reference internal" href="rp2.html#rp2.asm_pio" title="rp2.asm_pio"><code class="xref py py-func docutils literal notranslate"><span class="pre">rp2.asm_pio()</span></code></a>.</p>
-
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
-<dl class="class">
-<dt id="rp2.StateMachine">
-<em class="property">class </em><code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">StateMachine</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="optional">[</span>, <em class="sig-param">program</em>, <em class="sig-param">...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine" title="Permalink to this definition">¶</a></dt>
+<section id="constructors">
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="rp2.StateMachine">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">rp2.</span></span><span class="sig-name descname"><span class="pre">StateMachine</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine" title="永久链接至目标">¶</a></dt>
 <dd><p>Get the state machine numbered <em>id</em>. The RP2040 has two identical PIO
 instances, each with 4 state machines: so there are 8 state machines in
 total, numbered 0 to 7.</p>
 <p>Optionally initialize it with the given program <em>program</em>: see
 <a class="reference internal" href="#rp2.StateMachine.init" title="rp2.StateMachine.init"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.init</span></code></a>.</p>
 </dd></dl>
-
-
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
-<dl class="method">
-<dt id="rp2.StateMachine.init">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">program</em>, <em class="sig-param">freq=-1</em>, <em class="sig-param">*</em>, <em class="sig-param">in_base=None</em>, <em class="sig-param">out_base=None</em>, <em class="sig-param">set_base=None</em>, <em class="sig-param">jmp_pin=None</em>, <em class="sig-param">sideset_base=None</em>, <em class="sig-param">in_shiftdir=None</em>, <em class="sig-param">out_shiftdir=None</em>, <em class="sig-param">push_thresh=None</em>, <em class="sig-param">pull_thresh=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.init" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="methods">
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.init">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">program</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jmp_pin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sideset_base</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">in_shiftdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">out_shiftdir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">push_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull_thresh</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.init" title="永久链接至目标">¶</a></dt>
 <dd><p>Configure the state machine instance to run the given <em>program</em>.</p>
 <p>The program is added to the instruction memory of this PIO instance. If the
 instruction memory already contains this program, then its offset is
@@ -343,9 +345,9 @@ re-pushing is triggered.</p></li>
 re-pushing is triggered.</p></li>
 </ul>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.active">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">active</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.active" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.active">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">active</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.active" title="永久链接至目标">¶</a></dt>
 <dd><p>Gets or sets whether the state machine is currently running.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sm</span><span class="o">.</span><span class="n">active</span><span class="p">()</span>
 <span class="go">True</span>
@@ -354,9 +356,9 @@ re-pushing is triggered.</p></li>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.restart">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">restart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.restart" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.restart">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">restart</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.restart" title="永久链接至目标">¶</a></dt>
 <dd><p>Restarts the state machine and jumps to the beginning of the program.</p>
 <p>This method clears the state machine’s internal state using the RP2040’s
 <code class="docutils literal notranslate"><span class="pre">SM_RESTART</span></code> register. This includes:</p>
@@ -370,57 +372,57 @@ re-pushing is triggered.</p></li>
 </ul>
 </div></blockquote>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.exec">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">exec</code><span class="sig-paren">(</span><em class="sig-param">instr</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.exec" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.exec">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">exec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">instr</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.exec" title="永久链接至目标">¶</a></dt>
 <dd><p>Execute a single PIO instruction. Uses <a class="reference internal" href="rp2.html#rp2.asm_pio_encode" title="rp2.asm_pio_encode"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio_encode</span></code></a> to encode the
 instruction from the given string <em>instr</em>.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sm</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="s2">"set(0, 1)"</span><span class="p">)</span>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.get">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">buf=None</em>, <em class="sig-param">shift=0</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.get" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.get">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">buf</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.get" title="永久链接至目标">¶</a></dt>
 <dd><p>Pull a word from the state machine’s RX FIFO.</p>
 <p>If the FIFO is empty, it blocks until data arrives (i.e. the state machine
 pushes a word).</p>
 <p>The value is shifted right by <em>shift</em> bits before returning, i.e. the
 return value is <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">&gt;&gt;</span> <span class="pre">shift</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.put">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">put</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">shift=0</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.put" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.put">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">put</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shift</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.put" title="永久链接至目标">¶</a></dt>
 <dd><p>Push a word onto the state machine’s TX FIFO.</p>
 <p>If the FIFO is full, it blocks until there is space (i.e. the state machine
 pulls a word).</p>
 <p>The value is first shifted left by <em>shift</em> bits, i.e. the state machine
 receives <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">&lt;&lt;</span> <span class="pre">shift</span></code>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.rx_fifo">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">rx_fifo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.rx_fifo" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.rx_fifo">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">rx_fifo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.rx_fifo" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the number of words in the state machine’s RX FIFO. A value of 0
 indicates the FIFO is empty.</p>
 <p>Useful for checking if data is waiting to be read, before calling
 <a class="reference internal" href="#rp2.StateMachine.get" title="rp2.StateMachine.get"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.get()</span></code></a>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.tx_fifo">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">tx_fifo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.tx_fifo" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.tx_fifo">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">tx_fifo</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.tx_fifo" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the number of words in the state machine’s TX FIFO. A value of 0
 indicates the FIFO is empty.</p>
 <p>Useful for checking if there is space to push another word using
 <a class="reference internal" href="#rp2.StateMachine.put" title="rp2.StateMachine.put"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.put()</span></code></a>.</p>
 </dd></dl>
-<dl class="method">
-<dt id="rp2.StateMachine.irq">
-<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">handler=None</em>, <em class="sig-param">trigger=0|1</em>, <em class="sig-param">hard=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.irq" title="Permalink to this definition">¶</a></dt>
+<dl class="py method">
+<dt class="sig sig-object py" id="rp2.StateMachine.irq">
+<span class="sig-prename descclassname"><span class="pre">StateMachine.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span> <span class="pre">|</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hard</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.irq" title="永久链接至目标">¶</a></dt>
 <dd><p>Returns the IRQ object for the given StateMachine.</p>
 <p>Optionally configure it.</p>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -469,10 +471,10 @@ indicates the FIFO is empty.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

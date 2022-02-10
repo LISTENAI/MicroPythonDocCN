@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>sys – system specific functions &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>sys – system specific functions &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="time – time related functions" href="time.html" />
     <link rel="prev" title="struct – pack and unpack primitive data types" href="struct.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> sys – system specific functions </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -291,23 +293,23 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="sys-system-specific-functions"></span><h1 id="library-sys--page-root"><a class="reference internal" href="#library-sys--page-root" title="sys: system specific functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> – system specific functions<a class="headerlink" href="#library-sys--page-root" title="Permalink to this headline">¶</a></h1>
-<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+  <section id="module-sys">
+<span id="sys-system-specific-functions"></span><h1 id="library-sys--page-root"><a class="reference internal" href="#library-sys--page-root" title="sys: system specific functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code></a> – system specific functions<a class="headerlink" href="#library-sys--page-root" title="永久链接至标题">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/sys.html#module-sys" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">sys</span></code></a>.</p>
-
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<dl class="function">
-<dt id="sys.exit">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">exit</code><span class="sig-paren">(</span><em class="sig-param">retval=0</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#sys.exit" title="Permalink to this definition">¶</a></dt>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/sys.html#module-sys" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">sys</span></code></a>.</p>
+<section id="functions">
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="sys.exit">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">exit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">retval</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sys.exit" title="永久链接至目标">¶</a></dt>
 <dd><p>Terminate current program with a given exit code. Underlyingly, this
 function raise as <a class="reference internal" href="builtins.html#SystemExit" title="SystemExit"><code class="xref any py py-exc docutils literal notranslate"><span class="pre">SystemExit</span></code></a> exception. If an argument is given, its
 value given as an argument to <a class="reference internal" href="builtins.html#SystemExit" title="SystemExit"><code class="xref any py py-exc docutils literal notranslate"><span class="pre">SystemExit</span></code></a>.</p>
 </dd></dl>
-<dl class="function">
-<dt id="sys.atexit">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">atexit</code><span class="sig-paren">(</span><em class="sig-param">func</em><span class="sig-paren">)</span><a class="headerlink" href="#sys.atexit" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="sys.atexit">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">atexit</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">func</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sys.atexit" title="永久链接至目标">¶</a></dt>
 <dd><p>Register <em>func</em> to be called upon termination.  <em>func</em> must be a callable
 that takes no arguments, or <code class="docutils literal notranslate"><span class="pre">None</span></code> to disable the call.  The <code class="docutils literal notranslate"><span class="pre">atexit</span></code>
 function will return the previous value set by this function, which is
@@ -315,12 +317,12 @@ initially <code class="docutils literal notranslate"><span class="pre">None</spa
 <div class="attention admonition">
 <p class="admonition-title">Difference to CPython</p>
 <p>This function is a MicroPython extension intended to provide similar
-functionality to the <a class="reference external" href="https://docs.python.org/3.5/library/atexit.html#module-atexit" title="(in Python v3.5)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">atexit</span></code></a> module in CPython.</p>
+functionality to the <a class="reference external" href="https://docs.python.org/3.5/library/atexit.html#module-atexit" title="(在 Python v3.5)"><code class="xref py py-mod docutils literal notranslate"><span class="pre">atexit</span></code></a> module in CPython.</p>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="sys.print_exception">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">print_exception</code><span class="sig-paren">(</span><em class="sig-param">exc</em>, <em class="sig-param">file=sys.stdout</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#sys.print_exception" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="sys.print_exception">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">print_exception</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">exc</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">sys.stdout</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sys.print_exception" title="永久链接至目标">¶</a></dt>
 <dd><p>Print exception with a traceback to a file-like object <em>file</em> (or
 <a class="reference internal" href="#sys.stdout" title="sys.stdout"><code class="xref any py py-data docutils literal notranslate"><span class="pre">sys.stdout</span></code></a> by default).</p>
 <div class="attention admonition">
@@ -333,31 +335,31 @@ positional; further arguments are not supported. CPython-compatible
 <code class="docutils literal notranslate"><span class="pre">traceback</span></code> module can be found in <a class="reference internal" href="../reference/glossary.html#term-micropython-lib"><code class="xref any std std-term docutils literal notranslate"><span class="pre">micropython-lib</span></code></a>.</p>
 </div>
 </dd></dl>
-<dl class="function">
-<dt id="sys.settrace">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">settrace</code><span class="sig-paren">(</span><em class="sig-param">tracefunc</em><span class="sig-paren">)</span><a class="headerlink" href="#sys.settrace" title="Permalink to this definition">¶</a></dt>
+<dl class="py function">
+<dt class="sig sig-object py" id="sys.settrace">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">settrace</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tracefunc</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#sys.settrace" title="永久链接至目标">¶</a></dt>
 <dd><p>Enable tracing of bytecode execution.  For details see the <a class="reference external" href="https://docs.python.org/3/library/sys.html#sys.settrace">CPython
 documentaion</a>.</p>
 <p>This function requires a custom MicroPython build as it is typically not
 present in pre-built firmware (due to it affecting performance).  The relevant
 configuration option is <em>MICROPY_PY_SYS_SETTRACE</em>.</p>
 </dd></dl>
-
-
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
-<dl class="data">
-<dt id="sys.argv">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">argv</code><a class="headerlink" href="#sys.argv" title="Permalink to this definition">¶</a></dt>
+</section>
+<section id="constants">
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.argv">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">argv</span></span><a class="headerlink" href="#sys.argv" title="永久链接至目标">¶</a></dt>
 <dd><p>A mutable list of arguments the current program was started with.</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.byteorder">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">byteorder</code><a class="headerlink" href="#sys.byteorder" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.byteorder">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">byteorder</span></span><a class="headerlink" href="#sys.byteorder" title="永久链接至目标">¶</a></dt>
 <dd><p>The byte order of the system (<code class="docutils literal notranslate"><span class="pre">"little"</span></code> or <code class="docutils literal notranslate"><span class="pre">"big"</span></code>).</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.implementation">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">implementation</code><a class="headerlink" href="#sys.implementation" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.implementation">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">implementation</span></span><a class="headerlink" href="#sys.implementation" title="永久链接至目标">¶</a></dt>
 <dd><p>Object with information about the current Python implementation. For
 MicroPython, it has following attributes:</p>
 <ul class="simple">
@@ -373,9 +375,9 @@ minimal ports).</p>
 bare minimum is implemented in MicroPython.</p>
 </div>
 </dd></dl>
-<dl class="data">
-<dt id="sys.maxsize">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">maxsize</code><a class="headerlink" href="#sys.maxsize" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.maxsize">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">maxsize</span></span><a class="headerlink" href="#sys.maxsize" title="永久链接至目标">¶</a></dt>
 <dd><p>Maximum value which a native integer type can hold on the current platform,
 or maximum value representable by MicroPython integer type, if it’s smaller
 than platform max value (that is the case for MicroPython ports without
@@ -399,15 +401,15 @@ value directly, but instead count number of bits in it:</p>
 </pre></div>
 </div>
 </dd></dl>
-<dl class="data">
-<dt id="sys.modules">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">modules</code><a class="headerlink" href="#sys.modules" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.modules">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">modules</span></span><a class="headerlink" href="#sys.modules" title="永久链接至目标">¶</a></dt>
 <dd><p>Dictionary of loaded modules. On some ports, it may not include builtin
 modules.</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.path">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">path</code><a class="headerlink" href="#sys.path" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.path">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">path</span></span><a class="headerlink" href="#sys.path" title="永久链接至目标">¶</a></dt>
 <dd><p>A mutable list of directories to search for imported modules.</p>
 <div class="attention admonition">
 <p class="admonition-title">Difference to CPython</p>
@@ -417,9 +419,9 @@ If no frozen module is found then search will <em>not</em> look for a directory 
 <code class="docutils literal notranslate"><span class="pre">.frozen</span></code>, instead it will continue with the next entry in <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p>
 </div>
 </dd></dl>
-<dl class="data">
-<dt id="sys.platform">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">platform</code><a class="headerlink" href="#sys.platform" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.platform">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">platform</span></span><a class="headerlink" href="#sys.platform" title="永久链接至目标">¶</a></dt>
 <dd><p>The platform that MicroPython is running on. For OS/RTOS ports, this is
 usually an identifier of the OS, e.g. <code class="docutils literal notranslate"><span class="pre">"linux"</span></code>. For baremetal ports it
 is an identifier of a board, e.g. <code class="docutils literal notranslate"><span class="pre">"pyboard"</span></code> for the original MicroPython
@@ -427,29 +429,29 @@ reference board. It thus can be used to distinguish one board from another.
 If you need to check whether your program runs on MicroPython (vs other
 Python implementation), use <a class="reference internal" href="#sys.implementation" title="sys.implementation"><code class="xref any py py-data docutils literal notranslate"><span class="pre">sys.implementation</span></code></a> instead.</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.stderr">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">stderr</code><a class="headerlink" href="#sys.stderr" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.stderr">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">stderr</span></span><a class="headerlink" href="#sys.stderr" title="永久链接至目标">¶</a></dt>
 <dd><p>Standard error <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a>.</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.stdin">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">stdin</code><a class="headerlink" href="#sys.stdin" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.stdin">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">stdin</span></span><a class="headerlink" href="#sys.stdin" title="永久链接至目标">¶</a></dt>
 <dd><p>Standard input <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a>.</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.stdout">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">stdout</code><a class="headerlink" href="#sys.stdout" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.stdout">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">stdout</span></span><a class="headerlink" href="#sys.stdout" title="永久链接至目标">¶</a></dt>
 <dd><p>Standard output <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a>.</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.version">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">version</code><a class="headerlink" href="#sys.version" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.version">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">version</span></span><a class="headerlink" href="#sys.version" title="永久链接至目标">¶</a></dt>
 <dd><p>Python language version that this implementation conforms to, as a string.</p>
 </dd></dl>
-<dl class="data">
-<dt id="sys.version_info">
-<code class="sig-prename descclassname">sys.</code><code class="sig-name descname">version_info</code><a class="headerlink" href="#sys.version_info" title="Permalink to this definition">¶</a></dt>
+<dl class="py data">
+<dt class="sig sig-object py" id="sys.version_info">
+<span class="sig-prename descclassname"><span class="pre">sys.</span></span><span class="sig-name descname"><span class="pre">version_info</span></span><a class="headerlink" href="#sys.version_info" title="永久链接至目标">¶</a></dt>
 <dd><p>Python language version that this implementation conforms to, as a tuple of ints.</p>
 <blockquote>
 <div><div class="attention admonition">
@@ -459,8 +461,8 @@ they can be referenced only by index, not by name.</p>
 </div>
 </div></blockquote>
 </dd></dl>
-
-
+</section>
+</section>
 
 
           </article>
@@ -509,10 +511,10 @@ they can be referenced only by index, not by name.</p>
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

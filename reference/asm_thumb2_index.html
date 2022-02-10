@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>Inline assembler for Thumb2 architectures &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <title>Inline assembler for Thumb2 architectures &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
-    <script src="../_static/language_data.js"></script>
+    <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" />
+    <link rel="index" title="索引" href="../genindex.html" />
+    <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="1. Register move instructions" href="asm_thumb2_mov.html" />
     <link rel="prev" title="Distribution packages, package management, and deploying applications" href="packages.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../index.html" title="MicroPython 1.18 documentation"
+        <a href="../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> Inline assembler for Thumb2 architectures </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython language and implementation</a></li>
       </ul>
     </div>
@@ -164,13 +166,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -295,8 +297,8 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="asm-thumb2-index"></span><h1 id="reference-asm-thumb2-index--page-root">Inline assembler for Thumb2 architectures<a class="headerlink" href="#reference-asm-thumb2-index--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="inline-assembler-for-thumb2-architectures">
+<span id="asm-thumb2-index"></span><h1 id="reference-asm-thumb2-index--page-root">Inline assembler for Thumb2 architectures<a class="headerlink" href="#reference-asm-thumb2-index--page-root" title="永久链接至标题">¶</a></h1>
 <p>This document assumes some familiarity with assembly language programming and should be read after studying
 the <a class="reference internal" href="../pyboard/tutorial/assembler.html#pyboard-tutorial-assembler"><span class="std std-ref">tutorial</span></a>. For a detailed description of the instruction set consult the
 Architecture Reference Manual detailed below.
@@ -306,8 +308,8 @@ to be as close as possible to that defined in the above ARM manual, converted to
 operate on registers <code class="docutils literal notranslate"><span class="pre">R0-R7</span></code> only: where <code class="docutils literal notranslate"><span class="pre">R8-R15</span></code> are supported this is stated. Registers <code class="docutils literal notranslate"><span class="pre">R8-R12</span></code> must be
 restored to their initial value before return from a function. Registers <code class="docutils literal notranslate"><span class="pre">R13-R15</span></code> constitute the Link Register,
 Stack Pointer and Program Counter respectively.</p>
-
-<h2 id="document-conventions">Document conventions<a class="headerlink" href="#document-conventions" title="Permalink to this headline">¶</a></h2>
+<section id="document-conventions">
+<h2 id="document-conventions">Document conventions<a class="headerlink" href="#document-conventions" title="永久链接至标题">¶</a></h2>
 <p>Where possible the behaviour of each instruction is described in Python, for example</p>
 <ul class="simple">
 <li><p>add(Rd, Rn, Rm) <code class="docutils literal notranslate"><span class="pre">Rd</span> <span class="pre">=</span> <span class="pre">Rn</span> <span class="pre">+</span> <span class="pre">Rm</span></code></p></li>
@@ -315,9 +317,9 @@ Stack Pointer and Program Counter respectively.</p>
 <p>This enables the effect of instructions to be demonstrated in Python. In certain case this is impossible
 because Python doesn’t support concepts such as indirection. The pseudocode employed in such cases is
 described on the relevant page.</p>
-
-
-<h2 id="instruction-categories">Instruction categories<a class="headerlink" href="#instruction-categories" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="instruction-categories">
+<h2 id="instruction-categories">Instruction categories<a class="headerlink" href="#instruction-categories" title="永久链接至标题">¶</a></h2>
 <p>The following sections details the subset of the ARM Thumb-2 instruction set supported by MicroPython.</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -334,18 +336,18 @@ described on the relevant page.</p>
 <li class="toctree-l1"><a class="reference internal" href="asm_thumb2_directives.html">11. Assembler directives</a></li>
 </ul>
 </div>
-
-
-<h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="usage-examples">
+<h2 id="usage-examples">Usage examples<a class="headerlink" href="#usage-examples" title="永久链接至标题">¶</a></h2>
 <p>These sections provide further code examples and hints on the use of the assembler.</p>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="asm_thumb2_hints_tips.html">1. Hints and tips</a></li>
 </ul>
 </div>
-
-
-<h2 id="references">References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="references">
+<h2 id="references">References<a class="headerlink" href="#references" title="永久链接至标题">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference internal" href="../pyboard/tutorial/assembler.html#pyboard-tutorial-assembler"><span class="std std-ref">Assembler Tutorial</span></a></p></li>
 <li><p><a class="reference external" href="http://wiki.micropython.org/platforms/boards/pyboard/assembler">Wiki hints and tips</a></p></li>
@@ -358,8 +360,8 @@ Manual</a></p></li>
 <li><p>ARM v7-M Architecture Reference Manual (Available on the
 ARM site after a simple registration procedure. Also available on academic sites but beware of out of date versions.)</p></li>
 </ul>
-
-
+</section>
+</section>
 
 
           </article>
@@ -408,10 +410,10 @@ ARM site after a simple registration procedure. Also available on academic sites
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

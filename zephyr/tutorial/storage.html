@@ -1,9 +1,11 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="zh_CN">
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <meta name="lang:clipboard.copy" content="Copy to clipboard">
@@ -45,18 +47,18 @@
   
   
   
-    <title>3. Filesystems and Storage &#8212; MicroPython 1.18 documentation</title>
-    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <title>3. Filesystems and Storage &#8212; MicroPython 1.18 文档</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="4. GPIO Pins" href="pins.html" />
     <link rel="prev" title="2. Getting a MicroPython REPL prompt" href="repl.html" />
   
@@ -82,7 +84,7 @@
   <nav class="md-header-nav md-grid">
     <div class="md-flex navheader">
       <div class="md-flex__cell md-flex__cell--shrink">
-        <a href="../../index.html" title="MicroPython 1.18 documentation"
+        <a href="../../index.html" title="MicroPython 1.18 文档"
            class="md-header-nav__button md-logo">
           
             &nbsp;
@@ -94,7 +96,7 @@
       </div>
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
-          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
           <span class="md-header-nav__topic"> 3. Filesystems and Storage </span>
         </div>
       </div>
@@ -151,7 +153,7 @@
   <nav class="md-tabs" data-md-component="tabs">
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
-          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the Zephyr port</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for the Zephyr port</a></li>
       </ul>
@@ -165,13 +167,13 @@
               <div class="md-sidebar__inner">
                 <nav class="md-nav md-nav--primary" data-md-level="0">
   <label class="md-nav__title md-nav__title--site" for="__drawer">
-    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+    <a href="../../index.html" title="MicroPython 1.18 文档" class="md-nav__button md-logo">
       
         <img src="../../_static/" alt=" logo" width="48" height="48">
       
     </a>
     <a href="../../index.html"
-       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+       title="MicroPython 1.18 文档">MicroPython 1.18 文档</a>
   </label>
   
 
@@ -292,13 +294,13 @@
         <div class="md-content">
           <article class="md-content__inner md-typeset" role="main">
             
-  
-<span id="storage-zephyr"></span><h1 id="zephyr-tutorial-storage--page-root"><span class="section-number">3. </span>Filesystems and Storage<a class="headerlink" href="#zephyr-tutorial-storage--page-root" title="Permalink to this headline">¶</a></h1>
+  <section id="filesystems-and-storage">
+<span id="storage-zephyr"></span><h1 id="zephyr-tutorial-storage--page-root"><span class="section-number">3. </span>Filesystems and Storage<a class="headerlink" href="#zephyr-tutorial-storage--page-root" title="永久链接至标题">¶</a></h1>
 <p>Storage modules support virtual filesystem with FAT and littlefs formats, backed by either
 Zephyr DiskAccess or FlashArea (flash map) APIs depending on which the board supports.</p>
 <p>See <a class="reference external" href="https://docs.micropython.org/en/latest/library/os.html?highlight=os#filesystem-mounting">os Filesystem Mounting</a>.</p>
-
-<h2 id="disk-access"><span class="section-number">3.1. </span>Disk Access<a class="headerlink" href="#disk-access" title="Permalink to this headline">¶</a></h2>
+<section id="disk-access">
+<h2 id="disk-access"><span class="section-number">3.1. </span>Disk Access<a class="headerlink" href="#disk-access" title="永久链接至标题">¶</a></h2>
 <p>The <a class="reference internal" href="../../library/zephyr.DiskAccess.html#zephyr-diskaccess"><span class="std std-ref">zephyr.DiskAccess</span></a> class can be used to access storage devices, such as SD cards.
 This class uses <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/storage/disk/access.html">Zephyr Disk Access API</a> and
 implements the <a class="reference internal" href="../../library/os.html#os.AbstractBlockDev" title="os.AbstractBlockDev"><code class="xref any py py-class docutils literal notranslate"><span class="pre">os.AbstractBlockDev</span></code></a> protocol.</p>
@@ -307,7 +309,7 @@ be auto detected and initialized by filesystem at boot. Use the disk driver inte
 file system to access SD cards via disk access (see below).</p>
 <p>Example usage of FatFS with an SD card on the mimxrt1050_evk board:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">zephyr</span> <span class="kn">import</span> <span class="n">DiskAccess</span>
+<span class="kn">from</span> <span class="nn">zephyr</span> <span class="k">import</span> <span class="n">DiskAccess</span>
 <span class="n">bdev</span> <span class="o">=</span> <span class="n">zephyr</span><span class="o">.</span><span class="n">DiskAccess</span><span class="p">(</span><span class="s1">'SDHC'</span><span class="p">)</span>        <span class="c1"># create block device object using DiskAccess</span>
 <span class="n">os</span><span class="o">.</span><span class="n">VfsFat</span><span class="o">.</span><span class="n">mkfs</span><span class="p">(</span><span class="n">bdev</span><span class="p">)</span>                    <span class="c1"># create FAT filesystem object using the disk storage block</span>
 <span class="n">os</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="n">bdev</span><span class="p">,</span> <span class="s1">'/sd'</span><span class="p">)</span>                   <span class="c1"># mount the filesystem at the SD card subdirectory</span>
@@ -316,9 +318,9 @@ file system to access SD cards via disk access (see below).</p>
 <span class="nb">print</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="s1">'/sd/hello.txt'</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">())</span>     <span class="c1"># print contents of the file</span>
 </pre></div>
 </div>
-
-
-<h2 id="flash-area"><span class="section-number">3.2. </span>Flash Area<a class="headerlink" href="#flash-area" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="flash-area">
+<h2 id="flash-area"><span class="section-number">3.2. </span>Flash Area<a class="headerlink" href="#flash-area" title="永久链接至标题">¶</a></h2>
 <p>The <a class="reference internal" href="../../library/zephyr.FlashArea.html#zephyr-flasharea"><span class="std std-ref">zephyr.FlashArea</span></a> class can be used to implement a low-level storage system or
 customize filesystem configurations. To store persistent data on the device, using a higher-level filesystem
 API is recommended (see below).</p>
@@ -326,7 +328,7 @@ API is recommended (see below).</p>
 implements the <a class="reference internal" href="../../library/os.html#os.AbstractBlockDev" title="os.AbstractBlockDev"><code class="xref any py py-class docutils literal notranslate"><span class="pre">os.AbstractBlockDev</span></code></a> protocol.</p>
 <p>Example usage with the internal flash on the reel_board or the rv32m1_vega_ri5cy board:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">zephyr</span> <span class="kn">import</span> <span class="n">FlashArea</span>
+<span class="kn">from</span> <span class="nn">zephyr</span> <span class="k">import</span> <span class="n">FlashArea</span>
 <span class="n">bdev</span> <span class="o">=</span> <span class="n">FlashArea</span><span class="p">(</span><span class="n">FlashArea</span><span class="o">.</span><span class="n">STORAGE</span><span class="p">,</span> <span class="mi">4096</span><span class="p">)</span>   <span class="c1"># create block device object using FlashArea</span>
 <span class="n">os</span><span class="o">.</span><span class="n">VfsLfs2</span><span class="o">.</span><span class="n">mkfs</span><span class="p">(</span><span class="n">bdev</span><span class="p">)</span>                       <span class="c1"># create Little filesystem object using the flash area block</span>
 <span class="n">os</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="n">bdev</span><span class="p">,</span> <span class="s1">'/flash'</span><span class="p">)</span>                    <span class="c1"># mount the filesystem at the flash storage subdirectory</span>
@@ -337,8 +339,8 @@ implements the <a class="reference internal" href="../../library/os.html#os.Abst
 </div>
 <p>For boards such as the frdm_k64f in which the MicroPython application spills into the default flash storage
 partition, use the scratch partition by replacing <code class="docutils literal notranslate"><span class="pre">FlashArea.STORAGE</span></code> with the integer value 4.</p>
-
-
+</section>
+</section>
 
 
           </article>
@@ -387,10 +389,10 @@ partition, use the scratch partition by replacing <code class="docutils literal 
               
           </div>
             Last updated on
-              10 Feb 2022.
+              10 2月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
