@@ -11,14 +11,18 @@ jobs:
     runs-on: Ubuntu-20.04
 
     steps:
-    - uses: actions/checkout@v2
+    - name: sync main branch
+      uses: actions/checkout@v2
     # Standard drop-in approach that should work for most people.
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        pre-build-command: "pip3 install sphinx-material && pip3 install sphinx-intl"
-        build-command: "make html"
-        docs-folder: "docs/"
-    - uses: actions/checkout@v2
+    - name: build_docs
+      uses: docker://sphinxdoc:sphinx
+      run: |
+        pip3 install sphinx-intl
+        pip3 install sphinx-material
+        cd docs
+        make html
+    - name: sync gh-pages branch
+      uses: actions/checkout@v2
       with:
         ref: gh-pages
         path: gh-pages
