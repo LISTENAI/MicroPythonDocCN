@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.ADC.rst:5
+msgid "class ADC -- analog to digital conversion"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:7
+msgid "Usage::"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:24
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:28
+msgid ""
+"Create an ADC object associated with the given pin. This allows you to "
+"then read analog values on that pin."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:32
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:36
+msgid ""
+"Read the value on the analog pin and return it.  The returned value will "
+"be between 0 and 4095."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:41
+msgid "Read analog values into ``buf`` at a rate set by the ``timer`` object."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:43
+msgid ""
+"``buf`` can be bytearray or array.array for example.  The ADC values have"
+" 12-bit resolution and are stored directly into ``buf`` if its element "
+"size is 16 bits or greater.  If ``buf`` has only 8-bit elements (eg a "
+"bytearray) then the sample resolution will be reduced to 8 bits."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:48
+msgid ""
+"``timer`` should be a Timer object, and a sample is read each time the "
+"timer triggers.  The timer must already be initialised and running at the"
+" desired sampling frequency."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:52
+msgid ""
+"To support previous behaviour of this function, ``timer`` can also be an "
+"integer which specifies the frequency (in Hz) to sample at.  In this case"
+" Timer(6) will be automatically configured to run at the given frequency."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:56
+msgid "Example using a Timer object (preferred way)::"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:63
+msgid "Example using an integer for the frequency::"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:72
+msgid ""
+"This function does not allocate any heap memory. It has blocking "
+"behaviour: it does not return to the calling program until the buffer is "
+"full."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:77
+msgid ""
+"This is a static method. It can be used to extract relative timing or "
+"phase data from multiple ADC's."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:80
+msgid ""
+"It reads analog values from multiple ADC's into buffers at a rate set by "
+"the *timer* object. Each time the timer triggers a sample is rapidly read"
+" from each ADC in turn."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:84
+msgid ""
+"ADC and buffer instances are passed in tuples with each ADC having an "
+"associated buffer. All buffers must be of the same type and length and "
+"the number of buffers must equal the number of ADC's."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:88
+msgid ""
+"Buffers can be ``bytearray`` or ``array.array`` for example. The ADC "
+"values have 12-bit resolution and are stored directly into the buffer if "
+"its element size is 16 bits or greater.  If buffers have only 8-bit "
+"elements (eg a ``bytearray``) then the sample resolution will be reduced "
+"to 8 bits."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:93
+msgid ""
+"*timer* must be a Timer object. The timer must already be initialised and"
+" running at the desired sampling frequency."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:96
+msgid "Example reading 3 ADC's::"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:110
+msgid ""
+"This function does not allocate any heap memory. It has blocking "
+"behaviour: it does not return to the calling program until the buffers "
+"are full."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:113
+msgid ""
+"The function returns ``True`` if all samples were acquired with correct "
+"timing. At high sample rates the time taken to acquire a set of samples "
+"can exceed the timer period. In this case the function returns ``False``,"
+" indicating a loss of precision in the sample interval. In extreme cases "
+"samples may be missed."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:119
+msgid ""
+"The maximum rate depends on factors including the data width and the "
+"number of ADC's being read. In testing two ADC's were sampled at a timer "
+"rate of 210kHz without overrun. Samples were missed at 215kHz.  For three"
+" ADC's the limit is around 140kHz, and for four it is around 110kHz. At "
+"high sample rates disabling interrupts for the duration can reduce the "
+"risk of sporadic data loss."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:127
+msgid "The ADCAll Object"
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:129
+msgid ""
+"Instantiating this changes all masked ADC pins to analog inputs. The "
+"preprocessed MCU temperature, VREF and VBAT data can be accessed on ADC "
+"channels 16, 17 and 18 respectively. Appropriate scaling is handled "
+"according to reference voltage used (usually 3.3V). The temperature "
+"sensor on the chip is factory calibrated and allows to read the die "
+"temperature to +/- 1 degree centigrade. Although this sounds pretty "
+"accurate, don't forget that the MCU's internal temperature is measured. "
+"Depending on processing loads and I/O subsystems active the die "
+"temperature may easily be tens of degrees above ambient temperature. On "
+"the other hand a pyboard woken up after a long standby period will show "
+"correct ambient temperature within limits mentioned above."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:138
+msgid ""
+"The ``ADCAll`` ``read_core_vbat()``, ``read_vref()`` and "
+"``read_core_vref()`` methods read the backup battery voltage, reference "
+"voltage and the (1.21V nominal) reference voltage using the actual supply"
+" as a reference. All results are floating point numbers giving direct "
+"voltage values."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:142
+msgid ""
+"``read_core_vbat()`` returns the voltage of the backup battery. This "
+"voltage is also adjusted according to the actual supply voltage. To avoid"
+" analog input overload the battery voltage is measured via a voltage "
+"divider and scaled according to the divider value. To prevent excessive "
+"loads to the backup battery, the voltage divider is only active during "
+"ADC conversion."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:147
+msgid ""
+"``read_vref()`` is evaluated by measuring the internal voltage reference "
+"and backscale it using factory calibration value of the internal voltage "
+"reference. In most cases the reading would be close to 3.3V. If the "
+"pyboard is operated from a battery, the supply voltage may drop to values"
+" below 3.3V. The pyboard will still operate fine as long as the operating"
+" conditions are met. With proper settings of MCU clock, flash access "
+"speed and programming mode it is possible to run the pyboard down to 2 V "
+"and still get useful ADC conversion."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:154
+msgid ""
+"It is very important to make sure analog input voltages never exceed "
+"actual supply voltage."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:156
+msgid ""
+"Other analog input channels (0..15) will return unscaled integer values "
+"according to the selected precision."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:159
+msgid ""
+"To avoid unwanted activation of analog inputs (channel 0..15) a second "
+"parameter can be specified. This parameter is a binary pattern where each"
+" requested analog input has the corresponding bit set. The default value "
+"is 0xffffffff which means all analog inputs are active. If just the "
+"internal channels (16..18) are required, the mask value should be "
+"0x70000."
+msgstr ""
+
+#: ../../library/pyb.ADC.rst:164
+msgid "Example::"
+msgstr ""
+

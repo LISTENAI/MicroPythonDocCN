@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/asm_thumb2_stack.rst:2
+msgid "Stack push and pop"
+msgstr ""
+
+#: ../../reference/asm_thumb2_stack.rst:5
+msgid "Document conventions"
+msgstr ""
+
+#: ../../reference/asm_thumb2_stack.rst:7
+msgid ""
+"The ``push()`` and ``pop()`` instructions accept as their argument a "
+"register set containing a subset, or possibly all, of the general-purpose"
+" registers R0-R12 and the link register (lr or R14). As with any Python "
+"set the order in which the registers are specified is immaterial. Thus "
+"the in the following example the pop() instruction would restore R1, R7 "
+"and R8 to their contents prior to the push():"
+msgstr ""
+
+#: ../../reference/asm_thumb2_stack.rst:13
+msgid "push({r1, r8, r7}) Save three registers on the stack."
+msgstr ""
+
+#: ../../reference/asm_thumb2_stack.rst:14
+msgid "pop({r7, r1, r8}) Restore them"
+msgstr ""
+
+#: ../../reference/asm_thumb2_stack.rst:17
+msgid "Stack operations"
+msgstr ""
+
+#: ../../reference/asm_thumb2_stack.rst:19
+msgid "push({regset}) Push a set of registers onto the stack"
+msgstr ""
+
+#: ../../reference/asm_thumb2_stack.rst:20
+msgid "pop({regset}) Restore a set of registers from the stack"
+msgstr ""
+

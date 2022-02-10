@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/select.rst:2
+msgid ":mod:`select` -- wait for events on a set of streams"
+msgstr ""
+
+#: ../../library/select.rst:7
+msgid "|see_cpython_module| :mod:`python:select`."
+msgstr ""
+
+#: ../../library/select.rst:9
+msgid ""
+"This module provides functions to efficiently wait for events on multiple"
+" `streams <stream>` (select streams which are ready for operations)."
+msgstr ""
+
+#: ../../library/select.rst:13
+msgid "Functions"
+msgstr ""
+
+#: ../../library/select.rst:17
+msgid "Create an instance of the Poll class."
+msgstr ""
+
+#: ../../library/select.rst:21
+msgid "Wait for activity on a set of objects."
+msgstr ""
+
+#: ../../library/select.rst:23
+msgid ""
+"This function is provided by some MicroPython ports for compatibility and"
+" is not efficient. Usage of :class:`Poll` is recommended instead."
+msgstr ""
+
+#: ../../library/select.rst:29
+msgid "class ``Poll``"
+msgstr ""
+
+#: ../../library/select.rst:32
+msgid "Methods"
+msgstr ""
+
+#: ../../library/select.rst:36
+msgid "Register `stream` *obj* for polling. *eventmask* is logical OR of:"
+msgstr ""
+
+#: ../../library/select.rst:38
+msgid "``select.POLLIN``  - data available for reading"
+msgstr ""
+
+#: ../../library/select.rst:39
+msgid "``select.POLLOUT`` - more data can be written"
+msgstr ""
+
+#: ../../library/select.rst:41
+msgid ""
+"Note that flags like ``select.POLLHUP`` and ``select.POLLERR`` are *not* "
+"valid as input eventmask (these are unsolicited events which will be "
+"returned from `poll()` regardless of whether they are asked for). This "
+"semantics is per POSIX."
+msgstr ""
+
+#: ../../library/select.rst:46
+msgid "*eventmask* defaults to ``select.POLLIN | select.POLLOUT``."
+msgstr ""
+
+#: ../../library/select.rst:48
+msgid ""
+"It is OK to call this function multiple times for the same *obj*. "
+"Successive calls will update *obj*'s eventmask to the value of "
+"*eventmask* (i.e. will behave as `modify()`)."
+msgstr ""
+
+#: ../../library/select.rst:54
+msgid "Unregister *obj* from polling."
+msgstr ""
+
+#: ../../library/select.rst:58
+msgid ""
+"Modify the *eventmask* for *obj*. If *obj* is not registered, `OSError` "
+"is raised with error of ENOENT."
+msgstr ""
+
+#: ../../library/select.rst:63
+msgid ""
+"Wait for at least one of the registered objects to become ready or have "
+"an exceptional condition, with optional timeout in milliseconds (if "
+"*timeout* arg is not specified or -1, there is no timeout)."
+msgstr ""
+
+#: ../../library/select.rst:67
+msgid ""
+"Returns list of (``obj``, ``event``, ...) tuples. There may be other "
+"elements in tuple, depending on a platform and version, so don't assume "
+"that its size is 2. The ``event`` element specifies which events happened"
+" with a stream and is a combination of ``select.POLL*`` constants "
+"described above. Note that flags ``select.POLLHUP`` and "
+"``select.POLLERR`` can be returned at any time (even if were not asked "
+"for), and must be acted on accordingly (the corresponding stream "
+"unregistered from poll and likely closed), because otherwise all further "
+"invocations of `poll()` may return immediately with these flags set for "
+"this stream again."
+msgstr ""
+
+#: ../../library/select.rst:77
+msgid "In case of timeout, an empty list is returned."
+msgstr ""
+
+#: ../../library/select.rst:79 ../../library/select.rst:96
+msgid "Difference to CPython"
+msgstr ""
+
+#: ../../library/select.rst:82
+msgid "Tuples returned may contain more than 2 elements as described above."
+msgstr ""
+
+#: ../../library/select.rst:86
+msgid ""
+"Like :meth:`poll.poll`, but instead returns an iterator which yields a "
+"`callee-owned tuple`. This function provides an efficient, allocation-"
+"free way to poll on streams."
+msgstr ""
+
+#: ../../library/select.rst:90
+msgid ""
+"If *flags* is 1, one-shot behaviour for events is employed: streams for "
+"which events happened will have their event masks automatically reset "
+"(equivalent to ``poll.modify(obj, 0)``), so new events for such a stream "
+"won't be processed until new mask is set with `poll.modify()`. This "
+"behaviour is useful for asynchronous I/O schedulers."
+msgstr ""
+
+#: ../../library/select.rst:99
+msgid "This function is a MicroPython extension."
+msgstr ""
+

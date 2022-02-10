@@ -1,0 +1,131 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/hardware/index.rst:2
+msgid "The pyboard hardware"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:4
+msgid "For the pyboard:"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:6
+msgid "v1.1"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:7
+msgid ""
+"`PYBv1.1 schematics and layout "
+"<https://micropython.org/resources/PYBv11.pdf>`_ (2.9MiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:11
+msgid "v1.0"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:9
+msgid ""
+"`PYBv1.0 schematics and layout "
+"<http://micropython.org/resources/PYBv10b.pdf>`_ (2.4MiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:10
+msgid ""
+"`PYBv1.0 metric dimensions <http://micropython.org/resources/PYBv10b-"
+"metric-dimensions.pdf>`_ (360KiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:11
+msgid ""
+"`PYBv1.0 imperial dimensions <http://micropython.org/resources/PYBv10b-"
+"imperial-dimensions.pdf>`_ (360KiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:13
+msgid "For the official skin modules:"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:15
+msgid ""
+"`LCD32MKv1.0 schematics "
+"<http://micropython.org/resources/LCD32MKv10-schematics.pdf>`_ (194KiB "
+"PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:16
+msgid ""
+"`AMPv1.0 schematics "
+"<http://micropython.org/resources/AMPv10-schematics.pdf>`_ (209KiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:17
+msgid "LCD160CRv1.0: see :mod:`lcd160cr`"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:20
+msgid "Datasheets for the components on the pyboard"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:22
+msgid ""
+"The microcontroller: `STM32F405RGT6 "
+"<http://www.st.com/web/catalog/mmc/FM141/SC1169/SS1577/LN1035/PF252144>`_"
+" (link to manufacturer's site)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:23
+msgid ""
+"The accelerometer: `Freescale MMA7660 "
+"<http://micropython.org/resources/datasheets/MMA7660FC.pdf>`_ (800kiB "
+"PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:24
+msgid ""
+"The LDO voltage regulator: `Microchip MCP1802 "
+"<http://micropython.org/resources/datasheets/MCP1802-22053C.pdf>`_ "
+"(400kiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:27
+msgid "Datasheets for other components"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:29
+msgid ""
+"The LCD display on the LCD touch-sensor skin: `Newhaven Display NHD-"
+"C12832A1Z-FSW-FBW-3V3 <http://micropython.org/resources/datasheets/NHD-"
+"C12832A1Z-FSW-FBW-3V3.pdf>`_ (460KiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:30
+msgid ""
+"The touch sensor chip on the LCD touch-sensor skin: `Freescale MPR121 "
+"<http://micropython.org/resources/datasheets/MPR121.pdf>`_ (280KiB PDF)"
+msgstr ""
+
+#: ../../pyboard/hardware/index.rst:31
+msgid ""
+"The digital potentiometer on the audio skin: `Microchip MCP4541 "
+"<http://micropython.org/resources/datasheets/MCP4541-22107B.pdf>`_ "
+"(2.7MiB PDF)"
+msgstr ""
+

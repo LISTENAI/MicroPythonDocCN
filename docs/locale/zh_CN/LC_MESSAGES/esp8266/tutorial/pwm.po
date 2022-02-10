@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/pwm.rst:2
+msgid "Pulse Width Modulation"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:4
+msgid ""
+"Pulse width modulation (PWM) is a way to get an artificial analog output "
+"on a digital pin.  It achieves this by rapidly toggling the pin from low "
+"to high. There are two parameters associated with this: the frequency of "
+"the toggling, and the duty cycle.  The duty cycle is defined to be how "
+"long the pin is high compared with the length of a single period (low "
+"plus high time).  Maximum duty cycle is when the pin is high all of the "
+"time, and minimum is when it is low all of the time."
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:12
+msgid ""
+"On the ESP8266 the pins 0, 2, 4, 5, 12, 13, 14 and 15 all support PWM.  "
+"The limitation is that they must all be at the same frequency, and the "
+"frequency must be between 1Hz and 1kHz."
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:16
+msgid "To use PWM on a pin you must first create the pin object, for example::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:21
+msgid "Then create the PWM object using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:25
+msgid "You can set the frequency and duty cycle using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:30
+#, python-format
+msgid ""
+"Note that the duty cycle is between 0 (all off) and 1023 (all on), with "
+"512 being a 50% duty. Values beyond this min/max will be clipped. If you "
+"print the PWM object then it will tell you its current configuration::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:37
+msgid ""
+"You can also call the ``freq()`` and ``duty()`` methods with no arguments"
+" to get their current values."
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:40
+msgid "The pin will continue to be in PWM mode until you deinitialise it using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:45
+msgid "Fading an LED"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:47
+msgid ""
+"Let's use the PWM feature to fade an LED.  Assuming your board has an LED"
+" connected to pin 2 (ESP-12 modules do) we can create an LED-PWM object "
+"using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:52
+msgid "Notice that we can set the frequency in the PWM constructor."
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:54
+msgid ""
+"For the next part we will use timing and some math, so import these "
+"modules::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:58
+msgid "Then create a function to pulse the LED::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:65
+msgid "You can try this function out using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:69
+msgid "For a nice effect you can pulse many times in a row::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:74
+msgid "Remember you can use ctrl-C to interrupt the code."
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:77
+msgid "Control a hobby servo"
+msgstr ""
+
+#: ../../esp8266/tutorial/pwm.rst:79
+msgid ""
+"Hobby servo motors can be controlled using PWM.  They require a frequency"
+" of 50Hz and then a duty between about 40 and 115, with 77 being the "
+"centre value. If you connect a servo to the power and ground pins, and "
+"then the signal line to pin 12 (other pins will work just as well), you "
+"can control the motor using::"
+msgstr ""
+

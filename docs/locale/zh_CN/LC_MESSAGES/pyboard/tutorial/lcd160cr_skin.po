@@ -1,0 +1,193 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:2
+msgid "The LCD160CR skin"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:4
+msgid "This tutorial shows how to get started using the LCD160CR skin."
+msgstr ""
+
+msgid "LCD160CRv1.0 picture"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:10
+msgid ""
+"For detailed documentation of the driver for the display see the "
+":mod:`lcd160cr` module."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:14
+msgid "Plugging in the display"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:16
+msgid ""
+"The display can be plugged directly into a pyboard (all pyboard versions "
+"are supported).  You plug the display onto the top of the pyboard either "
+"in the X or Y positions.  The display should cover half of the pyboard. "
+"See the picture above for how to achieve this; the left half of the "
+"picture shows the X position, and the right half shows the Y position."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:23
+msgid "Getting the driver"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:25
+msgid ""
+"You can control the display directly using a power/enable pin and an I2C "
+"bus, but it is much more convenient to use the driver provided by the "
+":mod:`lcd160cr` module.  This driver is included in recent version of the"
+" pyboard firmware (see `here <http://micropython.org/download>`__).  You "
+"can also find the driver in the GitHub repository `here "
+"<https://github.com/micropython/micropython/blob/master/drivers/display/lcd160cr.py>`__,"
+" and to use this version you will need to copy the file to your board, "
+"into a directory that is searched by import (usually the lib/ directory)."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:34
+msgid "Once you have the driver installed you need to import it to use it::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:39
+msgid "Testing the display"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:41
+msgid ""
+"There is a test program which you can use to test the features of the "
+"display, and which also serves as a basis to start creating your own code"
+" that uses the LCD.  This test program is included in recent versions of "
+"the pyboard firmware and is also available on GitHub `here "
+"<https://github.com/micropython/micropython/blob/master/drivers/display/lcd160cr_test.py>`__."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:47
+msgid "To run the test from the MicroPython prompt do::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:51
+msgid ""
+"It will then print some brief instructions.  You will need to know which "
+"position your display is connected to (X or Y) and then you can run "
+"(assuming you have the display on position X)::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:58
+msgid "Drawing some graphics"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:60
+msgid ""
+"You must first create an LCD160CR object which will control the display."
+"  Do this using::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:66
+msgid ""
+"This assumes your display is connected in the X position.  If it's in the"
+" Y position then use ``lcd = lcd160cr.LCD160CR('Y')`` instead."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:69
+msgid "To erase the screen and draw a line, try::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:75
+msgid ""
+"The next example draws random rectangles on the screen.  You can copy-"
+"and-paste it into the MicroPython prompt by first pressing \"Ctrl-E\" at "
+"the prompt, then \"Ctrl-D\" once you have pasted the text. ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:87
+msgid "Using the touch sensor"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:89
+msgid ""
+"The display includes a resistive touch sensor that can report the "
+"position (in pixels) of a single force-based touch on the screen.  To see"
+" if there is a touch on the screen use::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:95
+msgid ""
+"This will return either ``False`` or ``True``.  Run the above command "
+"while touching the screen to see the result."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:98
+msgid "To get the location of the touch you can use the method::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:102
+msgid ""
+"This will return a 3-tuple, with the first entry being 0 or 1 depending "
+"on whether there is currently anything touching the screen (1 if there "
+"is), and the second and third entries in the tuple being the x and y "
+"coordinates of the current (or most recent) touch."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:108
+msgid "Directing the MicroPython output to the display"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:110
+msgid ""
+"The display supports input from a UART and implements basic VT100 "
+"commands, which means it can be used as a simple, general purpose "
+"terminal.  Let's set up the pyboard to redirect its output to the "
+"display."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:114
+msgid "First you need to create a UART object::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:119
+msgid ""
+"This assumes your display is connected to position X.  If it's on "
+"position Y then use ``uart = pyb.UART('YA', 115200)`` instead."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:122
+msgid "Now, connect the REPL output to this UART::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:126
+msgid ""
+"From now on anything you type at the MicroPython prompt, and any output "
+"you receive, will appear on the display."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd160cr_skin.rst:129
+msgid ""
+"No set-up commands are required for this mode to work and you can use the"
+" display to monitor the output of any UART, not just from the pyboard.  "
+"All that is needed is for the display to have power, ground and the "
+"power/enable pin driven high. Then any characters on the display's UART "
+"input will be printed to the screen. You can adjust the UART baudrate "
+"from the default of 115200 using the `set_uart_baudrate` method."
+msgstr ""
+

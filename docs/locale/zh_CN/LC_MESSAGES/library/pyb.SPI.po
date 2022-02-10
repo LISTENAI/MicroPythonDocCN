@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.SPI.rst:5
+msgid "class SPI -- a controller-driven serial protocol"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:7
+msgid ""
+"SPI is a serial protocol that is driven by a controller.  At the physical"
+" level there are 3 lines: SCK, MOSI, MISO."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:10
+msgid ""
+"See usage model of I2C; SPI is very similar.  Main difference is "
+"parameters to init the SPI bus::"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:16
+msgid ""
+"Only required parameter is mode, SPI.CONTROLLER or SPI.PERIPHERAL.  "
+"Polarity can be 0 or 1, and is the level the idle clock line sits at.  "
+"Phase can be 0 or 1 to sample data on the first or second clock edge "
+"respectively.  Crc can be None for no CRC, or a polynomial specifier."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:21
+msgid "Additional methods for SPI::"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:29
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:33
+msgid ""
+"Construct an SPI object on the given bus.  ``bus`` can be 1 or 2, or 'X' "
+"or 'Y'. With no additional parameters, the SPI object is created but not "
+"initialised (it has the settings from the last initialisation of the bus,"
+" if any).  If extra arguments are given, the bus is initialised. See "
+"``init`` for parameters of initialisation."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:39
+msgid "The physical pins of the SPI buses are:"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:41
+msgid ""
+"``SPI(1)`` is on the X position: ``(NSS, SCK, MISO, MOSI) = (X5, X6, X7, "
+"X8) = (PA4, PA5, PA6, PA7)``"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:42
+msgid ""
+"``SPI(2)`` is on the Y position: ``(NSS, SCK, MISO, MOSI) = (Y5, Y6, Y7, "
+"Y8) = (PB12, PB13, PB14, PB15)``"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:44
+msgid ""
+"At the moment, the NSS pin is not used by the SPI driver and is free for "
+"other use."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:48
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:52
+msgid "Turn off the SPI bus."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:56
+msgid "Initialise the SPI bus with the given parameters:"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:58
+msgid "``mode`` must be either ``SPI.CONTROLLER`` or ``SPI.PERIPHERAL``."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:59
+msgid "``baudrate`` is the SCK clock rate (only sensible for a controller)."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:60
+msgid ""
+"``prescaler`` is the prescaler to use to derive SCK from the APB bus "
+"frequency; use of ``prescaler`` overrides ``baudrate``."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:62
+msgid "``polarity`` can be 0 or 1, and is the level the idle clock line sits at."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:63
+msgid ""
+"``phase`` can be 0 or 1 to sample data on the first or second clock edge "
+"respectively."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:65
+msgid ""
+"``bits`` can be 8 or 16, and is the number of bits in each transferred "
+"word."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:66
+msgid "``firstbit`` can be ``SPI.MSB`` or ``SPI.LSB``."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:67
+msgid ""
+"``ti`` True indicates Texas Instruments, as opposed to Motorola, signal "
+"conventions."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:68
+msgid "``crc`` can be None for no CRC, or a polynomial specifier."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:70
+msgid ""
+"Note that the SPI clock frequency will not always be the requested "
+"baudrate. The hardware only supports baudrates that are the APB bus "
+"frequency (see :meth:`pyb.freq`) divided by a prescaler, which can be 2, "
+"4, 8, 16, 32, 64, 128 or 256.  SPI(1) is on AHB2, and SPI(2) is on AHB1."
+"  For precise control over the SPI clock frequency, specify ``prescaler``"
+" instead of ``baudrate``."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:77
+msgid ""
+"Printing the SPI object will show you the computed baudrate and the "
+"chosen prescaler."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:82
+msgid "Receive data on the bus:"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:84
+msgid ""
+"``recv`` can be an integer, which is the number of bytes to receive, or a"
+" mutable buffer, which will be filled with received bytes."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:86 ../../library/pyb.SPI.rst:108
+msgid "``timeout`` is the timeout in milliseconds to wait for the receive."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:88
+msgid ""
+"Return value: if ``recv`` is an integer then a new buffer of the bytes "
+"received, otherwise the same buffer that was passed in to ``recv``."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:93
+msgid "Send data on the bus:"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:95 ../../library/pyb.SPI.rst:104
+msgid "``send`` is the data to send (an integer to send, or a buffer object)."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:96
+msgid "``timeout`` is the timeout in milliseconds to wait for the send."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:98
+msgid "Return value: ``None``."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:102
+msgid "Send and receive data on the bus at the same time:"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:105
+msgid ""
+"``recv`` is a mutable buffer which will be filled with received bytes. It"
+" can be the same as ``send``, or omitted.  If omitted, a new buffer will "
+"be created."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:110
+msgid "Return value: the buffer with the received bytes."
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:113
+msgid "Constants"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:118
+msgid "for initialising the SPI bus to controller or peripheral mode"
+msgstr ""
+
+#: ../../library/pyb.SPI.rst:123
+msgid "set the first bit to be the least or most significant bit"
+msgstr ""
+

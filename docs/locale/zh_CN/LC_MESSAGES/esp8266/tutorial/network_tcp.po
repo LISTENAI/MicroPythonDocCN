@@ -1,0 +1,123 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/network_tcp.rst:2
+msgid "Network - TCP sockets"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:4
+msgid ""
+"The building block of most of the internet is the TCP socket.  These "
+"sockets provide a reliable stream of bytes between the connected network "
+"devices. This part of the tutorial will show how to use TCP sockets in a "
+"few different cases."
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:10
+msgid "Star Wars Asciimation"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:12
+msgid ""
+"The simplest thing to do is to download data from the internet.  In this "
+"case we will use the Star Wars Asciimation service provided by the "
+"blinkenlights.nl website.  It uses the telnet protocol on port 23 to "
+"stream data to anyone that connects.  It's very simple to use because it "
+"doesn't require you to authenticate (give a username or password), you "
+"can just start downloading data straight away."
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:19
+msgid "The first thing to do is make sure we have the socket module available::"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:23
+msgid "Then get the IP address of the server::"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:27
+msgid ""
+"The ``getaddrinfo`` function actually returns a list of addresses, and "
+"each address has more information than we need.  We want to get just the "
+"first valid address, and then just the IP address and port of the server."
+"  To do this use::"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:33
+msgid ""
+"If you type ``addr_info`` and ``addr`` at the prompt you will see exactly"
+" what information they hold."
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:36
+msgid "Using the IP address we can make a socket and connect to the server::"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:41
+msgid "Now that we are connected we can download and display the data::"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:48
+msgid ""
+"When this loop executes it should start showing the animation (use ctrl-C"
+" to interrupt it)."
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:51
+msgid ""
+"You should also be able to run this same code on your PC using normal "
+"Python if you want to try it out there."
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:55
+msgid "HTTP GET request"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:57
+msgid ""
+"The next example shows how to download a webpage.  HTTP uses port 80 and "
+"you first need to send a \"GET\" request before you can download "
+"anything.  As part of the request you need to specify the page to "
+"retrieve."
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:61
+msgid "Let's define a function that can download and print a URL::"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:78
+msgid "Then you can try::"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:82
+msgid "This should retrieve the webpage and print the HTML to the console."
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:85
+msgid "Simple HTTP server"
+msgstr ""
+
+#: ../../esp8266/tutorial/network_tcp.rst:87
+msgid ""
+"The following code creates an simple HTTP server which serves a single "
+"webpage that contains a table with the state of all the GPIO pins::"
+msgstr ""
+

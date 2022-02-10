@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/network.CC3K.rst:5
+msgid "class CC3K -- control CC3000 WiFi modules"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:7
+msgid "This class provides a driver for CC3000 WiFi modules.  Example usage::"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:19
+msgid ""
+"For this example to work the CC3000 module must have the following "
+"connections:"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:21
+msgid "MOSI connected to Y8"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:22
+msgid "MISO connected to Y7"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:23
+msgid "CLK connected to Y6"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:24
+msgid "CS connected to Y5"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:25
+msgid "VBEN connected to Y4"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:26
+msgid "IRQ connected to Y3"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:28
+msgid "It is possible to use other SPI buses and other pins for CS, VBEN and IRQ."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:31
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:35
+msgid ""
+"Create a CC3K driver object, initialise the CC3000 module using the given"
+" SPI bus and pins, and return the CC3K object."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:38
+msgid "Arguments are:"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:40
+msgid ""
+"*spi* is an :ref:`SPI object <pyb.SPI>` which is the SPI bus that the "
+"CC3000 is connected to (the MOSI, MISO and CLK pins)."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:42
+msgid ""
+"*pin_cs* is a :ref:`Pin object <pyb.Pin>` which is connected to the "
+"CC3000 CS pin."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:43
+msgid ""
+"*pin_en* is a :ref:`Pin object <pyb.Pin>` which is connected to the "
+"CC3000 VBEN pin."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:44
+msgid ""
+"*pin_irq* is a :ref:`Pin object <pyb.Pin>` which is connected to the "
+"CC3000 IRQ pin."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:46
+msgid ""
+"All of these objects will be initialised by the driver, so there is no "
+"need to initialise them yourself.  For example, you can use::"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:52
+msgid "Methods"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:56
+msgid ""
+"Connect to a WiFi access point using the given SSID, and other security "
+"parameters."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:61
+msgid "Disconnect from the WiFi access point."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:65
+msgid ""
+"Returns True if connected to a WiFi access point and has a valid IP "
+"address, False otherwise."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:70
+msgid ""
+"Returns a 7-tuple with (ip, subnet mask, gateway, DNS server, DHCP "
+"server, MAC address, SSID)."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:75
+msgid "Return the version of the patch program (firmware) on the CC3000."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:79
+msgid ""
+"Upload the current firmware to the CC3000.  You must pass 'pgm' as the "
+"first argument in order for the upload to proceed."
+msgstr ""
+
+#: ../../library/network.CC3K.rst:83
+msgid "Constants"
+msgstr ""
+
+#: ../../library/network.CC3K.rst:89
+msgid "security type to use"
+msgstr ""
+

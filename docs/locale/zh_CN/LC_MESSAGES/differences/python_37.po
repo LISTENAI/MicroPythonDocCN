@@ -1,0 +1,267 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../differences/python_37.rst:4
+msgid "Python 3.7"
+msgstr ""
+
+#: ../../differences/python_37.rst:6
+msgid "New Features:"
+msgstr ""
+
+#: ../../differences/python_37.rst:9
+msgid "**Features:**"
+msgstr ""
+
+#: ../../differences/python_37.rst:9
+msgid "**Status**"
+msgstr ""
+
+#: ../../differences/python_37.rst:11
+msgid "`PEP 538 <https://www.python.org/dev/peps/pep-0538/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:11
+msgid "Coercing the legacy C locale to a UTF-8 based locale"
+msgstr ""
+
+#: ../../differences/python_37.rst:14
+msgid "`PEP 539 <https://www.python.org/dev/peps/pep-0539/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:14
+msgid "A New C-API for Thread-Local Storage in CPython"
+msgstr ""
+
+#: ../../differences/python_37.rst:16
+msgid "`PEP 540 <https://www.python.org/dev/peps/pep-0540/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:16
+msgid "UTF-8 mode"
+msgstr ""
+
+#: ../../differences/python_37.rst:18
+msgid "`PEP 552 <https://www.python.org/dev/peps/pep-0552/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:18
+msgid "Deterministic pyc"
+msgstr ""
+
+#: ../../differences/python_37.rst:20
+msgid "`PEP 553 <https://www.python.org/dev/peps/pep-0553/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:20
+msgid "Built-in breakpoint()"
+msgstr ""
+
+#: ../../differences/python_37.rst:22
+msgid "`PEP 557 <https://www.python.org/dev/peps/pep-0557/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:22
+msgid "Data Classes"
+msgstr ""
+
+#: ../../differences/python_37.rst:24
+msgid "`PEP 560 <https://www.python.org/dev/peps/pep-0560/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:24
+msgid "Core support for typing module and generic types"
+msgstr ""
+
+#: ../../differences/python_37.rst:26
+msgid "`PEP 562 <https://www.python.org/dev/peps/pep-0562/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:26
+msgid "Module __getattr__ and __dir__"
+msgstr ""
+
+#: ../../differences/python_37.rst:26
+msgid "Partially done"
+msgstr ""
+
+#: ../../differences/python_37.rst:28
+msgid "`PEP 563 <https://www.python.org/dev/peps/pep-0563/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:28
+msgid "Postponed Evaluation of Annotations"
+msgstr ""
+
+#: ../../differences/python_37.rst:30
+msgid "`PEP 564 <https://www.python.org/dev/peps/pep-0564/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:30
+msgid "Time functions with nanosecond resolution"
+msgstr ""
+
+#: ../../differences/python_37.rst:32
+msgid "`PEP 565 <https://www.python.org/dev/peps/pep-0565/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:32
+msgid "Show DeprecationWarning in __main__"
+msgstr ""
+
+#: ../../differences/python_37.rst:34
+msgid "`PEP 567 <https://www.python.org/dev/peps/pep-0567/>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:34
+msgid "Context Variables"
+msgstr ""
+
+#: ../../differences/python_37.rst:37
+msgid "Other Language Changes:"
+msgstr ""
+
+#: ../../differences/python_37.rst:40
+msgid "async and await are now reserved keywords"
+msgstr ""
+
+#: ../../differences/python_37.rst:40
+msgid "Completed"
+msgstr ""
+
+#: ../../differences/python_37.rst:42
+msgid "dict objects must preserve insertion-order"
+msgstr ""
+
+#: ../../differences/python_37.rst:44
+msgid ""
+"More than 255 arguments can now be passed to a function; a function can "
+"now have more than 255 parameters"
+msgstr ""
+
+#: ../../differences/python_37.rst:46
+msgid ""
+"bytes.fromhex() and bytearray.fromhex() now ignore all ASCII whitespace, "
+"not only spaces"
+msgstr ""
+
+#: ../../differences/python_37.rst:48
+msgid ""
+"str, bytes, and bytearray gained support for the new isascii() method, "
+"which can be used to test if a string or bytes contain only the ASCII "
+"characters"
+msgstr ""
+
+#: ../../differences/python_37.rst:51
+msgid ""
+"ImportError now displays module name and module __file__ path whenfrom "
+"... import ... fails"
+msgstr ""
+
+#: ../../differences/python_37.rst:53
+msgid ""
+"Circular imports involving absolute imports with binding a submodule to a"
+" name are now supported"
+msgstr ""
+
+#: ../../differences/python_37.rst:55
+msgid ""
+"object.__format__(x, '') is now equivalent to str(x) rather than "
+"format(str(self), '')"
+msgstr ""
+
+#: ../../differences/python_37.rst:57
+msgid ""
+"In order to better support dynamic creation of stack traces, "
+"types.TracebackType can now be instantiated from Python code, and the "
+"tb_next attribute on tracebacks is now writable"
+msgstr ""
+
+#: ../../differences/python_37.rst:60
+msgid ""
+"When using the -m switch, sys.path[0] is now eagerly expanded to the full"
+" starting directory path, rather than being left as the empty directory "
+"(which allows imports from the current working directory at the time when"
+" an import occurs)"
+msgstr ""
+
+#: ../../differences/python_37.rst:64
+msgid ""
+"The new -X importtime option or the PYTHONPROFILEIMPORTTIME environment "
+"variable can be used to show the timing of each module import"
+msgstr ""
+
+#: ../../differences/python_37.rst:68
+msgid "Changes to built-in modules:"
+msgstr ""
+
+#: ../../differences/python_37.rst:71
+msgid "`asyncio <https://docs.python.org/3/whatsnew/3.7.html#asyncio>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:73
+msgid "asyncio (many, may need a separate ticket)"
+msgstr ""
+
+#: ../../differences/python_37.rst:75
+msgid "`gc <https://docs.python.org/3/whatsnew/3.7.html#gc>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:77
+msgid "New features include *gc.freeze()*, *gc.unfreeze()*, *gc-get_freeze_count*"
+msgstr ""
+
+#: ../../differences/python_37.rst:79
+msgid "`math <https://docs.python.org/3/whatsnew/3.7.html#math>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:81
+msgid "math.remainder() added to implement IEEE 754-style remainder"
+msgstr ""
+
+#: ../../differences/python_37.rst:83
+msgid "`re <https://docs.python.org/3/whatsnew/3.7.html#re>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:85
+msgid ""
+"A number of tidy up features including better support for splitting on "
+"empty strings and copy support for compiled expressions and match objects"
+msgstr ""
+
+#: ../../differences/python_37.rst:88
+msgid "`sys <https://docs.python.org/3/whatsnew/3.7.html#sys>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:90
+msgid ""
+"sys.breakpointhook() added. "
+"sys.get(/set)_coroutine_origin_tracking_depth() added"
+msgstr ""
+
+#: ../../differences/python_37.rst:92
+msgid "`time <https://docs.python.org/3/whatsnew/3.7.html#time>`_"
+msgstr ""
+
+#: ../../differences/python_37.rst:94
+msgid "Mostly updates to support nanosecond resolution in PEP564, see above"
+msgstr ""
+

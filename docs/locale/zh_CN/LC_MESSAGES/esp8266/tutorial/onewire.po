@@ -1,0 +1,47 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/onewire.rst:2
+msgid "Controlling 1-wire devices"
+msgstr ""
+
+#: ../../esp8266/tutorial/onewire.rst:4
+msgid ""
+"The 1-wire bus is a serial bus that uses just a single wire for "
+"communication (in addition to wires for ground and power).  The DS18B20 "
+"temperature sensor is a very popular 1-wire device, and here we show how "
+"to use the onewire module to read from such a device."
+msgstr ""
+
+#: ../../esp8266/tutorial/onewire.rst:9
+msgid ""
+"For the following code to work you need to have at least one DS18S20 or "
+"DS18B20 temperature sensor with its data line connected to GPIO12.  You "
+"must also power the sensors and connect a 4.7k Ohm resistor between the "
+"data pin and the power pin.  ::"
+msgstr ""
+
+#: ../../esp8266/tutorial/onewire.rst:36
+msgid ""
+"Note that you must execute the ``convert_temp()`` function to initiate a "
+"temperature reading, then wait at least 750ms before reading the value."
+msgstr ""
+

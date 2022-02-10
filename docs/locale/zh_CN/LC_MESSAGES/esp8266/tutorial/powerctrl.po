@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/powerctrl.rst:2
+msgid "Power control"
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:4
+msgid ""
+"The ESP8266 provides the ability to change the CPU frequency on the fly, "
+"and enter a deep-sleep state.  Both can be used to manage power "
+"consumption."
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:8
+msgid "Changing the CPU frequency"
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:10
+msgid ""
+"The machine module has a function to get and set the CPU frequency.  To "
+"get the current frequency use::"
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:17
+msgid ""
+"By default the CPU runs at 80MHz.  It can be changed to 160MHz if you "
+"need more processing power, at the expense of current consumption::"
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:24
+msgid ""
+"You can change to the higher frequency just while your code does the "
+"heavy processing and then change back when it's finished."
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:28
+msgid "Deep-sleep mode"
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:30
+msgid ""
+"The deep-sleep mode will shut down the ESP8266 and all its peripherals, "
+"including the WiFi (but not including the real-time-clock, which is used "
+"to wake the chip).  This drastically reduces current consumption and is a"
+" good way to make devices that can run for a while on a battery."
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:35
+msgid ""
+"To be able to use the deep-sleep feature you must connect GPIO16 to the "
+"reset pin (RST on the Adafruit Feather HUZZAH board).  Then the following"
+" code can be used to sleep and wake the device::"
+msgstr ""
+
+#: ../../esp8266/tutorial/powerctrl.rst:51
+msgid ""
+"Note that when the chip wakes from a deep-sleep it is completely reset, "
+"including all of the memory.  The boot scripts will run as usual and you "
+"can put code in them to check the reset cause to perhaps do something "
+"different if the device just woke from a deep-sleep.  For example, to "
+"print the reset cause you can use::"
+msgstr ""
+

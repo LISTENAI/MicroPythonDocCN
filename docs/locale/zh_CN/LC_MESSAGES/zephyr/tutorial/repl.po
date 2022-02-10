@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../zephyr/tutorial/repl.rst:2
+msgid "Getting a MicroPython REPL prompt"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:4
+msgid ""
+"REPL stands for Read Evaluate Print Loop, and is the name given to the "
+"interactive MicroPython prompt that you can access on your board through "
+"Zephyr. It is recommended to use REPL to test out your code and run "
+"commands."
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:9
+msgid "REPL over the serial port"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:11
+msgid ""
+"The REPL is available on a UART serial peripheral specified for the board"
+" by the ``zephyr,console`` devicetree node. The baudrate of the REPL is "
+"115200. If your board has a USB-serial convertor on it then you should be"
+" able to access the REPL directly from your PC."
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:16
+msgid ""
+"To access the prompt over USB-serial you will need to use a terminal "
+"emulator program. For a Linux or Mac machine, open a terminal and run::"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:21
+msgid ""
+"You can also try ``picocom`` or ``minicom`` instead of screen. You may "
+"have to use ``/dev/ttyACM1`` or a higher number for ``ttyACM``. "
+"Additional permissions may be necessary to access this device (eg group "
+"``uucp`` or ``dialout``, or use sudo). For Windows, get a terminal "
+"software, such as puTTY and connect via a serial session using the proper"
+" COM port."
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:28
+msgid "Using the REPL"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:30
+msgid ""
+"With your serial program open (PuTTY, screen, picocom, etc) you may see a"
+" blank screen with a flashing cursor. Press Enter (or reset the board) "
+"and you should be presented with the following text::"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:39
+msgid "Now you can try running MicroPython code directly on your board."
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:41
+msgid ""
+"Anything you type at the prompt, indicated by ``>>>``, will be executed "
+"after you press the Enter key. If there is an error with the text that "
+"you enter then an error message is printed."
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:45
+msgid "Start by typing the following at the prompt to make sure it is working::"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:50
+msgid ""
+"If you already know some python you can now try some basic commands here."
+" For example::"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:60
+msgid "If your board has an LED, you can blink it using the following code::"
+msgstr ""
+
+#: ../../zephyr/tutorial/repl.rst:72
+msgid ""
+"The above code uses an LED location for a FRDM-K64F board (port B, pin "
+"21; following Zephyr conventions ports are identified by \"GPIO_x\", "
+"where *x* starts from 0). You will need to adjust it for another board "
+"using the board's reference materials."
+msgstr ""
+

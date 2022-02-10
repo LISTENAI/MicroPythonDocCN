@@ -1,0 +1,174 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.ExtInt.rst:5
+msgid "class ExtInt -- configure I/O pins to interrupt on external events"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:7
+msgid ""
+"There are a total of 22 interrupt lines. 16 of these can come from GPIO "
+"pins and the remaining 6 are from internal sources."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:10
+msgid ""
+"For lines 0 through 15, a given line can map to the corresponding line "
+"from an arbitrary port. So line 0 can map to Px0 where x is A, B, C, ... "
+"and line 1 can map to Px1 where x is A, B, C, ... ::"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:17
+msgid "Note: ExtInt will automatically configure the gpio line as an input. ::"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:21
+msgid ""
+"Now every time a falling edge is seen on the X1 pin, the callback will be"
+" called. Caution: mechanical pushbuttons have \"bounce\" and pushing or "
+"releasing a switch will often generate multiple edges. See: "
+"http://www.eng.utah.edu/~cs5780/debouncing.pdf for a detailed "
+"explanation, along with various techniques for debouncing."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:27
+msgid "Trying to register 2 callbacks onto the same pin will throw an exception."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:29
+msgid ""
+"If pin is passed as an integer, then it is assumed to map to one of the "
+"internal interrupt sources, and must be in the range 16 through 22."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:32
+msgid ""
+"All other pin objects go through the pin mapper to come up with one of "
+"the gpio pins. ::"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:37
+msgid ""
+"Valid modes are pyb.ExtInt.IRQ_RISING, pyb.ExtInt.IRQ_FALLING, "
+"pyb.ExtInt.IRQ_RISING_FALLING, pyb.ExtInt.EVT_RISING, "
+"pyb.ExtInt.EVT_FALLING, and pyb.ExtInt.EVT_RISING_FALLING."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:41
+msgid ""
+"Only the IRQ_xxx modes have been tested. The EVT_xxx modes have something"
+" to do with sleep mode and the WFE instruction."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:44
+msgid ""
+"Valid pull values are pyb.Pin.PULL_UP, pyb.Pin.PULL_DOWN, "
+"pyb.Pin.PULL_NONE."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:46
+msgid ""
+"There is also a C API, so that drivers which require EXTI interrupt lines"
+" can also use this code. See extint.h for the available functions and "
+"usrsw.h for an example of using this."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:52
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:56
+msgid "Create an ExtInt object:"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:58
+msgid ""
+"``pin`` is the pin on which to enable the interrupt (can be a pin object "
+"or any valid pin name)."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:59
+msgid ""
+"``mode`` can be one of: - ``ExtInt.IRQ_RISING`` - trigger on a rising "
+"edge; - ``ExtInt.IRQ_FALLING`` - trigger on a falling edge; - "
+"``ExtInt.IRQ_RISING_FALLING`` - trigger on a rising or falling edge."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:63
+msgid ""
+"``pull`` can be one of: - ``pyb.Pin.PULL_NONE`` - no pull up or down "
+"resistors; - ``pyb.Pin.PULL_UP`` - enable the pull-up resistor; - "
+"``pyb.Pin.PULL_DOWN`` - enable the pull-down resistor."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:67
+msgid ""
+"``callback`` is the function to call when the interrupt triggers.  The "
+"callback function must accept exactly 1 argument, which is the line that "
+"triggered the interrupt."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:73
+msgid "Class methods"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:77
+msgid "Dump the values of the EXTI registers."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:81
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:85
+msgid ""
+"Disable the interrupt associated with the ExtInt object. This could be "
+"useful for debouncing."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:90
+msgid "Enable a disabled interrupt."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:94
+msgid "Return the line number that the pin is mapped to."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:98
+msgid "Trigger the callback from software."
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:102
+msgid "Constants"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:106
+msgid "interrupt on a falling edge"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:110
+msgid "interrupt on a rising edge"
+msgstr ""
+
+#: ../../library/pyb.ExtInt.rst:114
+msgid "interrupt on a rising or falling edge"
+msgstr ""
+

@@ -1,0 +1,208 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/index.rst:4
+msgid "MicroPython libraries"
+msgstr ""
+
+#: ../../library/index.rst:8
+msgid "Important summary of this section"
+msgstr ""
+
+#: ../../library/index.rst:10
+msgid ""
+"MicroPython provides built-in modules that mirror the functionality of "
+"the Python standard library (e.g. :mod:`os`, :mod:`time`), as well as "
+"MicroPython-specific modules (e.g. :mod:`bluetooth`, :mod:`machine`)."
+msgstr ""
+
+#: ../../library/index.rst:13
+msgid ""
+"Most standard library modules implement a subset of the functionality of "
+"the equivalent Python module, and in a few cases provide some "
+"MicroPython-specific extensions (e.g. :mod:`array`, :mod:`os`)"
+msgstr ""
+
+#: ../../library/index.rst:16
+msgid ""
+"Due to resource constraints or other limitations, some ports or firmware "
+"versions may not include all the functionality documented here."
+msgstr ""
+
+#: ../../library/index.rst:18
+msgid ""
+"To allow for extensibility, the built-in modules can be extended from "
+"Python code loaded onto the device."
+msgstr ""
+
+#: ../../library/index.rst:21
+msgid ""
+"This chapter describes modules (function and class libraries) which are "
+"built into MicroPython. This documentation in general aspires to describe"
+" all modules and functions/classes which are implemented in the "
+"MicroPython project. However, MicroPython is highly configurable, and "
+"each port to a particular board/embedded system may include only a subset"
+" of the available MicroPython libraries."
+msgstr ""
+
+#: ../../library/index.rst:28
+msgid ""
+"With that in mind, please be warned that some functions/classes in a "
+"module (or even the entire module) described in this documentation **may "
+"be unavailable** in a particular build of MicroPython on a particular "
+"system. The best place to find general information of the availability"
+"/non-availability of a particular feature is the \"General Information\" "
+"section which contains information pertaining to a specific "
+":term:`MicroPython port`."
+msgstr ""
+
+#: ../../library/index.rst:35
+msgid ""
+"On some ports you are able to discover the available, built-in libraries "
+"that can be imported by entering the following at the :term:`REPL`::"
+msgstr ""
+
+#: ../../library/index.rst:40
+msgid ""
+"Beyond the built-in libraries described in this documentation, many more "
+"modules from the Python standard library, as well as further MicroPython "
+"extensions to it, can be found in :term:`micropython-lib`."
+msgstr ""
+
+#: ../../library/index.rst:45
+msgid "Python standard libraries and micro-libraries"
+msgstr ""
+
+#: ../../library/index.rst:47
+msgid ""
+"The following standard Python libraries have been \"micro-ified\" to fit "
+"in with the philosophy of MicroPython.  They provide the core "
+"functionality of that module and are intended to be a drop-in replacement"
+" for the standard Python library."
+msgstr ""
+
+#: ../../library/index.rst:82
+msgid "MicroPython-specific libraries"
+msgstr ""
+
+#: ../../library/index.rst:84
+msgid ""
+"Functionality specific to the MicroPython implementation is available in "
+"the following libraries."
+msgstr ""
+
+#: ../../library/index.rst:102
+msgid "Port-specific libraries"
+msgstr ""
+
+#: ../../library/index.rst:104
+msgid ""
+"In some cases the following port/board-specific libraries have functions "
+"or classes similar to those in the :mod:`machine` library.  Where this "
+"occurs, the entry in the port specific library exposes hardware "
+"functionality unique to that platform."
+msgstr ""
+
+#: ../../library/index.rst:109
+msgid ""
+"To write portable code use functions and classes from the :mod:`machine` "
+"module. To access platform-specific hardware use the appropriate library,"
+" e.g. :mod:`pyb` in the case of the Pyboard."
+msgstr ""
+
+#: ../../library/index.rst:115
+msgid "Libraries specific to the pyboard"
+msgstr ""
+
+#: ../../library/index.rst:117
+msgid "The following libraries are specific to the pyboard."
+msgstr ""
+
+#: ../../library/index.rst:128
+msgid "Libraries specific to the WiPy"
+msgstr ""
+
+#: ../../library/index.rst:130
+msgid "The following libraries and classes are specific to the WiPy."
+msgstr ""
+
+#: ../../library/index.rst:141
+msgid "Libraries specific to the ESP8266 and ESP32"
+msgstr ""
+
+#: ../../library/index.rst:143
+msgid "The following libraries are specific to the ESP8266 and ESP32."
+msgstr ""
+
+#: ../../library/index.rst:153
+msgid "Libraries specific to the RP2040"
+msgstr ""
+
+#: ../../library/index.rst:155
+msgid ""
+"The following libraries are specific to the RP2040, as used in the "
+"Raspberry Pi Pico."
+msgstr ""
+
+#: ../../library/index.rst:163
+msgid "Libraries specific to Zephyr"
+msgstr ""
+
+#: ../../library/index.rst:165
+msgid "The following libraries are specific to the Zephyr port."
+msgstr ""
+
+#: ../../library/index.rst:173
+msgid "Extending built-in libraries from Python"
+msgstr ""
+
+#: ../../library/index.rst:175
+msgid ""
+"In most cases, the above modules are actually named ``umodule`` rather "
+"than ``module``, but MicroPython will alias any module prefixed with a "
+"``u`` to the non-``u`` version. However a file (or :term:`frozen module`)"
+" named ``module.py`` will take precedence over this alias."
+msgstr ""
+
+#: ../../library/index.rst:180
+msgid ""
+"This allows the user to provide an extended implementation of a built-in "
+"library (perhaps to provide additional CPython compatibility). The user-"
+"provided module (in ``module.py``) can still use the built-in "
+"functionality by importing ``umodule`` directly. This is used extensively"
+" in :term:`micropython-lib`. See :ref:`packages` for more information."
+msgstr ""
+
+#: ../../library/index.rst:186
+msgid ""
+"This applies to both the Python standard libraries (e.g. ``os``, "
+"``time``, etc), but also the MicroPython libraries too (e.g. ``machine``,"
+" ``bluetooth``, etc). The main exception is the port-specific libraries "
+"(``pyb``, ``esp``, etc)."
+msgstr ""
+
+#: ../../library/index.rst:190
+msgid ""
+"*Other than when you specifically want to force the use of the built-in "
+"module, we recommend always using ``import module`` rather than ``import "
+"umodule``.*"
+msgstr ""
+

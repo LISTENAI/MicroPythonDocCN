@@ -1,0 +1,364 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/re.rst:2
+msgid ":mod:`re` -- simple regular expressions"
+msgstr ""
+
+#: ../../library/re.rst:7
+msgid "|see_cpython_module| :mod:`python:re`."
+msgstr ""
+
+#: ../../library/re.rst:9
+msgid ""
+"This module implements regular expression operations. Regular expression "
+"syntax supported is a subset of CPython ``re`` module (and actually is a "
+"subset of POSIX extended regular expressions)."
+msgstr ""
+
+#: ../../library/re.rst:13
+msgid "Supported operators and special sequences are:"
+msgstr ""
+
+#: ../../library/re.rst:16
+msgid "``.``"
+msgstr ""
+
+#: ../../library/re.rst:16
+msgid "Match any character."
+msgstr ""
+
+#: ../../library/re.rst:20
+msgid "``[...]``"
+msgstr ""
+
+#: ../../library/re.rst:19
+msgid ""
+"Match set of characters. Individual characters and ranges are supported, "
+"including negated sets (e.g. ``[^a-c]``)."
+msgstr ""
+
+#: ../../library/re.rst:23
+msgid "``^``"
+msgstr ""
+
+#: ../../library/re.rst:23
+msgid "Match the start of the string."
+msgstr ""
+
+#: ../../library/re.rst:26
+msgid "``$``"
+msgstr ""
+
+#: ../../library/re.rst:26
+msgid "Match the end of the string."
+msgstr ""
+
+#: ../../library/re.rst:29
+msgid "``?``"
+msgstr ""
+
+#: ../../library/re.rst:29
+msgid "Match zero or one of the previous sub-pattern."
+msgstr ""
+
+#: ../../library/re.rst:32
+msgid "``*``"
+msgstr ""
+
+#: ../../library/re.rst:32
+msgid "Match zero or more of the previous sub-pattern."
+msgstr ""
+
+#: ../../library/re.rst:35
+msgid "``+``"
+msgstr ""
+
+#: ../../library/re.rst:35
+msgid "Match one or more of the previous sub-pattern."
+msgstr ""
+
+#: ../../library/re.rst:39
+msgid "``??``"
+msgstr ""
+
+#: ../../library/re.rst:38
+msgid ""
+"Non-greedy version of ``?``, match zero or one, with the preference for "
+"zero."
+msgstr ""
+
+#: ../../library/re.rst:43
+msgid "``*?``"
+msgstr ""
+
+#: ../../library/re.rst:42
+msgid ""
+"Non-greedy version of ``*``, match zero or more, with the preference for "
+"the shortest match."
+msgstr ""
+
+#: ../../library/re.rst:47
+msgid "``+?``"
+msgstr ""
+
+#: ../../library/re.rst:46
+msgid ""
+"Non-greedy version of ``+``, match one or more, with the preference for "
+"the shortest match."
+msgstr ""
+
+#: ../../library/re.rst:51
+msgid "``|``"
+msgstr ""
+
+#: ../../library/re.rst:50
+msgid ""
+"Match either the left-hand side or the right-hand side sub-patterns of "
+"this operator."
+msgstr ""
+
+#: ../../library/re.rst:55
+msgid "``(...)``"
+msgstr ""
+
+#: ../../library/re.rst:54
+msgid ""
+"Grouping. Each group is capturing (a substring it captures can be "
+"accessed with `match.group()` method)."
+msgstr ""
+
+#: ../../library/re.rst:58
+msgid "``\\d``"
+msgstr ""
+
+#: ../../library/re.rst:58
+msgid "Matches digit. Equivalent to ``[0-9]``."
+msgstr ""
+
+#: ../../library/re.rst:61
+msgid "``\\D``"
+msgstr ""
+
+#: ../../library/re.rst:61
+msgid "Matches non-digit. Equivalent to ``[^0-9]``."
+msgstr ""
+
+#: ../../library/re.rst:64
+msgid "``\\s``"
+msgstr ""
+
+#: ../../library/re.rst:64
+msgid "Matches whitespace. Equivalent to ``[ \\t-\\r]``."
+msgstr ""
+
+#: ../../library/re.rst:67
+msgid "``\\S``"
+msgstr ""
+
+#: ../../library/re.rst:67
+msgid "Matches non-whitespace. Equivalent to ``[^ \\t-\\r]``."
+msgstr ""
+
+#: ../../library/re.rst:70
+msgid "``\\w``"
+msgstr ""
+
+#: ../../library/re.rst:70
+msgid "Matches \"word characters\" (ASCII only). Equivalent to ``[A-Za-z0-9_]``."
+msgstr ""
+
+#: ../../library/re.rst:73
+msgid "``\\W``"
+msgstr ""
+
+#: ../../library/re.rst:73
+msgid ""
+"Matches non \"word characters\" (ASCII only). Equivalent to "
+"``[^A-Za-z0-9_]``."
+msgstr ""
+
+#: ../../library/re.rst:84
+msgid "``\\``"
+msgstr ""
+
+#: ../../library/re.rst:76
+msgid ""
+"Escape character. Any other character following the backslash, except for"
+" those listed above, is taken literally. For example, ``\\*`` is "
+"equivalent to literal ``*`` (not treated as the ``*`` operator). Note "
+"that ``\\r``, ``\\n``, etc. are not handled specially, and will be "
+"equivalent to literal letters ``r``, ``n``, etc. Due to this, it's not "
+"recommended to use raw Python strings (``r\"\"``) for regular "
+"expressions. For example, ``r\"\\r\\n\"`` when used as the regular "
+"expression is equivalent to ``\"rn\"``. To match CR character followed by"
+" LF, use ``\"\\r\\n\"``."
+msgstr ""
+
+#: ../../library/re.rst:86
+msgid "**NOT SUPPORTED**:"
+msgstr ""
+
+#: ../../library/re.rst:88
+msgid "counted repetitions (``{m,n}``)"
+msgstr ""
+
+#: ../../library/re.rst:89
+msgid "named groups (``(?P<name>...)``)"
+msgstr ""
+
+#: ../../library/re.rst:90
+msgid "non-capturing groups (``(?:...)``)"
+msgstr ""
+
+#: ../../library/re.rst:91
+msgid "more advanced assertions (``\\b``, ``\\B``)"
+msgstr ""
+
+#: ../../library/re.rst:92
+msgid ""
+"special character escapes like ``\\r``, ``\\n`` - use Python's own "
+"escaping instead"
+msgstr ""
+
+#: ../../library/re.rst:94
+msgid "etc."
+msgstr ""
+
+#: ../../library/re.rst:96
+msgid "Example::"
+msgstr ""
+
+#: ../../library/re.rst:110
+msgid "Functions"
+msgstr ""
+
+#: ../../library/re.rst:114
+msgid "Compile regular expression, return `regex <regex>` object."
+msgstr ""
+
+#: ../../library/re.rst:118
+msgid ""
+"Compile *regex_str* and match against *string*. Match always happens from"
+" starting position in a string."
+msgstr ""
+
+#: ../../library/re.rst:123
+msgid ""
+"Compile *regex_str* and search it in a *string*. Unlike `match`, this "
+"will search string for first position which matches regex (which still "
+"may be 0 if regex is anchored)."
+msgstr ""
+
+#: ../../library/re.rst:129
+msgid ""
+"Compile *regex_str* and search for it in *string*, replacing all matches "
+"with *replace*, and returning the new string."
+msgstr ""
+
+#: ../../library/re.rst:132
+msgid ""
+"*replace* can be a string or a function.  If it is a string then escape "
+"sequences of the form ``\\<number>`` and ``\\g<number>`` can be used to "
+"expand to the corresponding group (or an empty string for unmatched "
+"groups). If *replace* is a function then it must take a single argument "
+"(the match) and should return a replacement string."
+msgstr ""
+
+#: ../../library/re.rst:138
+msgid ""
+"If *count* is specified and non-zero then substitution will stop after "
+"this many substitutions are made.  The *flags* argument is ignored."
+msgstr ""
+
+#: ../../library/re.rst:141
+msgid "Note: availability of this function depends on :term:`MicroPython port`."
+msgstr ""
+
+#: ../../library/re.rst:145
+msgid ""
+"Flag value, display debug information about compiled expression. "
+"(Availability depends on :term:`MicroPython port`.)"
+msgstr ""
+
+#: ../../library/re.rst:152
+msgid "Regex objects"
+msgstr ""
+
+#: ../../library/re.rst:154
+msgid ""
+"Compiled regular expression. Instances of this class are created using "
+"`re.compile()`."
+msgstr ""
+
+#: ../../library/re.rst:161
+msgid ""
+"Similar to the module-level functions :meth:`match`, :meth:`search` and "
+":meth:`sub`. Using methods is (much) more efficient if the same regex is "
+"applied to multiple strings."
+msgstr ""
+
+#: ../../library/re.rst:168
+msgid ""
+"Split a *string* using regex. If *max_split* is given, it specifies "
+"maximum number of splits to perform. Returns list of strings (there may "
+"be up to *max_split+1* elements if it's specified)."
+msgstr ""
+
+#: ../../library/re.rst:173
+msgid "Match objects"
+msgstr ""
+
+#: ../../library/re.rst:175
+msgid ""
+"Match objects as returned by `match()` and `search()` methods, and passed"
+" to the replacement function in `sub()`."
+msgstr ""
+
+#: ../../library/re.rst:180
+msgid ""
+"Return matching (sub)string. *index* is 0 for entire match, 1 and above "
+"for each capturing group. Only numeric groups are supported."
+msgstr ""
+
+#: ../../library/re.rst:185
+msgid "Return a tuple containing all the substrings of the groups of the match."
+msgstr ""
+
+#: ../../library/re.rst:187 ../../library/re.rst:202
+msgid "Note: availability of this method depends on :term:`MicroPython port`."
+msgstr ""
+
+#: ../../library/re.rst:192
+msgid ""
+"Return the index in the original string of the start or end of the "
+"substring group that was matched.  *index* defaults to the entire group, "
+"otherwise it will select a group."
+msgstr ""
+
+#: ../../library/re.rst:196
+msgid "Note: availability of these methods depends on :term:`MicroPython port`."
+msgstr ""
+
+#: ../../library/re.rst:200
+msgid "Returns the 2-tuple ``(match.start(index), match.end(index))``."
+msgstr ""
+

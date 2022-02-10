@@ -1,0 +1,231 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/network.WLANWiPy.rst:5
+msgid "class WLANWiPy -- WiPy specific WiFi control"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:9
+msgid ""
+"This class is a non-standard WLAN implementation for the WiPy. It is "
+"available simply as ``network.WLAN`` on the WiPy but is named in the "
+"documentation below as ``network.WLANWiPy`` to distinguish it from the "
+"more general :ref:`network.WLAN <network.WLAN>` class."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:14
+msgid ""
+"This class provides a driver for the WiFi network processor in the WiPy. "
+"Example usage::"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:29
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:33
+msgid ""
+"Create a WLAN object, and optionally configure it. See `init()` for "
+"params of configuration."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:37
+msgid ""
+"The ``WLAN`` constructor is special in the sense that if no arguments "
+"besides the id are given, it will return the already existing ``WLAN`` "
+"instance without re-configuring it. This is because ``WLAN`` is a system "
+"feature of the WiPy. If the already existing instance is not initialized "
+"it will do the same as the other constructors an will initialize it with "
+"default values."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:44
+msgid "Methods"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:48
+msgid "Set or get the WiFi network processor configuration."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:50
+msgid "Arguments are:"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:52
+msgid "*mode* can be either ``WLAN.STA`` or ``WLAN.AP``."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:53
+msgid ""
+"*ssid* is a string with the ssid name. Only needed when mode is "
+"``WLAN.AP``."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:54
+msgid ""
+"*auth* is a tuple with (sec, key). Security can be ``None``, "
+"``WLAN.WEP``, ``WLAN.WPA`` or ``WLAN.WPA2``. The key is a string with the"
+" network password. If ``sec`` is ``WLAN.WEP`` the key must be a string "
+"representing hexadecimal values (e.g. 'ABC1DE45BF'). Only needed when "
+"mode is ``WLAN.AP``."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:58
+msgid ""
+"*channel* a number in the range 1-11. Only needed when mode is "
+"``WLAN.AP``."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:59
+msgid ""
+"*antenna* selects between the internal and the external antenna. Can be "
+"either ``WLAN.INT_ANT`` or ``WLAN.EXT_ANT``."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:62
+msgid "For example, you can do::"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:67
+msgid "or::"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:74
+msgid ""
+"Connect to a WiFi access point using the given SSID, and other security "
+"parameters."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:77
+msgid ""
+"*auth* is a tuple with (sec, key). Security can be ``None``, "
+"``WLAN.WEP``, ``WLAN.WPA`` or ``WLAN.WPA2``. The key is a string with the"
+" network password. If ``sec`` is ``WLAN.WEP`` the key must be a string "
+"representing hexadecimal values (e.g. 'ABC1DE45BF')."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:81
+msgid ""
+"*bssid* is the MAC address of the AP to connect to. Useful when there are"
+" several APs with the same ssid."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:83
+msgid ""
+"*timeout* is the maximum time in milliseconds to wait for the connection "
+"to succeed."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:87
+msgid ""
+"Performs a network scan and returns a list of named tuples with (ssid, "
+"bssid, sec, channel, rssi). Note that channel is always ``None`` since "
+"this info is not provided by the WiPy."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:92
+msgid "Disconnect from the WiFi access point."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:96
+msgid ""
+"In case of STA mode, returns ``True`` if connected to a WiFi access point"
+" and has a valid IP address. In AP mode returns ``True`` when a station "
+"is connected, ``False`` otherwise."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:101
+msgid ""
+"With no parameters given returns a 4-tuple of *(ip, subnet_mask, gateway,"
+" DNS_server)*."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:103
+msgid ""
+"if ``'dhcp'`` is passed as a parameter then the DHCP client is enabled "
+"and the IP params are negotiated with the AP."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:106
+msgid ""
+"If the 4-tuple config is given then a static IP is configured. For "
+"instance::"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:112
+msgid "Get or set the WLAN mode."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:116
+msgid "Get or set the SSID when in AP mode."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:120
+msgid "Get or set the authentication type when in AP mode."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:124
+msgid "Get or set the channel (only applicable in AP mode)."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:128
+msgid "Get or set the antenna type (external or internal)."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:132
+msgid "Get or set a 6-byte long bytes object with the MAC address."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:136
+msgid ""
+"Create a callback to be triggered when a WLAN event occurs during "
+"``machine.SLEEP`` mode. Events are triggered by socket activity or by "
+"WLAN connection/disconnection."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:139
+msgid "*handler* is the function that gets called when the IRQ is triggered."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:140
+msgid "*wake* must be ``machine.SLEEP``."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:142
+msgid "Returns an IRQ object."
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:145
+msgid "Constants"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:150
+msgid "selects the WLAN mode"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:156
+msgid "selects the network security"
+msgstr ""
+
+#: ../../library/network.WLANWiPy.rst:161
+msgid "selects the antenna type"
+msgstr ""
+

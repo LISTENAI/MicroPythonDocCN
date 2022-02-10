@@ -1,0 +1,42 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../develop/extendingmicropython.rst:4
+msgid "Extending MicroPython in C"
+msgstr ""
+
+#: ../../develop/extendingmicropython.rst:6
+msgid ""
+"This chapter describes options for implementing additional functionality "
+"in C, but from code written outside of the main MicroPython repository. "
+"The first approach is useful for building your own custom firmware with "
+"some project-specific additional modules or functions that can be "
+"accessed from Python. The second approach is for building modules that "
+"can be loaded at runtime."
+msgstr ""
+
+#: ../../develop/extendingmicropython.rst:11
+msgid ""
+"Please see the :ref:`library section <internals_library>` for more "
+"information on building core modules that live in the main MicroPython "
+"repository."
+msgstr ""
+

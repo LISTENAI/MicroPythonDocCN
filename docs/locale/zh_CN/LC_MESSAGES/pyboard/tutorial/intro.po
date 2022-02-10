@@ -1,0 +1,108 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/intro.rst:2
+msgid "Introduction to the pyboard"
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:4
+msgid ""
+"To get the most out of your pyboard, there are a few basic things to "
+"understand about how it works."
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:8
+msgid "Caring for your pyboard"
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:10
+msgid "Because the pyboard does not have a housing it needs a bit of care:"
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:12
+msgid ""
+"Be gentle when plugging/unplugging the USB cable.  Whilst the USB "
+"connector is soldered through the board and is relatively strong, if it "
+"breaks off it can be very difficult to fix."
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:16
+msgid ""
+"Static electricity can shock the components on the pyboard and destroy "
+"them. If you experience a lot of static electricity in your area (eg dry "
+"and cold climates), take extra care not to shock the pyboard.  If your "
+"pyboard came in a black plastic box, then this box is the best way to "
+"store and carry the pyboard as it is an anti-static box (it is made of a "
+"conductive plastic, with conductive foam inside)."
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:23
+msgid ""
+"As long as you take care of the hardware, you should be okay.  It's "
+"almost impossible to break the software on the pyboard, so feel free to "
+"play around with writing code as much as you like.  If the filesystem "
+"gets corrupt, see below on how to reset it.  In the worst case you might "
+"need to reflash the MicroPython software, but that can be done over USB."
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:30
+msgid "Layout of the pyboard"
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:32
+msgid ""
+"The micro USB connector is on the top right, the micro SD card slot on "
+"the top left of the board.  There are 4 LEDs between the SD slot and USB "
+"connector.  The colours are: red on the bottom, then green, orange, and "
+"blue on the top.  There are 2 switches: the right one is the reset "
+"switch, the left is the user switch."
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:39
+msgid "Plugging in and powering on"
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:41
+msgid ""
+"The pyboard can be powered via USB.  Connect it to your PC via a micro "
+"USB cable.  There is only one way that the cable will fit.  Once "
+"connected, the green LED on the board should flash quickly."
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:46
+msgid "Powering by an external power source"
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:48
+msgid "The pyboard can be powered by a battery or other external power source."
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:50
+msgid ""
+"**Be sure to connect the positive lead of the power supply to VIN, and "
+"ground to GND.  There is no polarity protection on the pyboard so you "
+"must be careful when connecting anything to VIN.**"
+msgstr ""
+
+#: ../../pyboard/tutorial/intro.rst:54
+msgid "**The input voltage must be between 3.6V and 10V.**"
+msgstr ""
+

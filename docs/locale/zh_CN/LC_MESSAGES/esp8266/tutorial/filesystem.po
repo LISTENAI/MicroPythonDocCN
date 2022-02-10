@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/filesystem.rst:2
+msgid "The internal filesystem"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:4
+msgid ""
+"If your devices has 1Mbyte or more of storage then it will be set up "
+"(upon first boot) to contain a filesystem.  This filesystem uses the FAT "
+"format and is stored in the flash after the MicroPython firmware."
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:9
+msgid "Creating and reading files"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:11
+msgid ""
+"MicroPython on the ESP8266 supports the standard way of accessing files "
+"in Python, using the built-in ``open()`` function."
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:14
+msgid "To create a file try::"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:21
+msgid ""
+"The \"9\" is the number of bytes that were written with the ``write()`` "
+"method. Then you can read back the contents of this new file using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:29
+msgid ""
+"Note that the default mode when opening a file is to open it in read-only"
+" mode, and as a text file.  Specify ``'wb'`` as the second argument to "
+"``open()`` to open for writing in binary mode, and ``'rb'`` to open for "
+"reading in binary mode."
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:35
+msgid "Listing file and more"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:37
+msgid ""
+"The os module can be used for further control over the filesystem.  First"
+" import the module::"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:42
+msgid "Then try listing the contents of the filesystem::"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:47
+msgid "You can make directories::"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:51
+msgid "And remove entries::"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:56
+msgid "Start up scripts"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:58
+msgid ""
+"There are two files that are treated specially by the ESP8266 when it "
+"starts up: boot.py and main.py.  The boot.py script is executed first (if"
+" it exists) and then once it completes the main.py script is executed.  "
+"You can create these files yourself and populate them with the code that "
+"you want to run when the device starts up."
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:65
+msgid "Accessing the filesystem via WebREPL"
+msgstr ""
+
+#: ../../esp8266/tutorial/filesystem.rst:67
+msgid ""
+"You can access the filesystem over WebREPL using the web client in a "
+"browser or via the command-line tool. Please refer to Quick Reference and"
+" Tutorial sections for more information about WebREPL."
+msgstr ""
+

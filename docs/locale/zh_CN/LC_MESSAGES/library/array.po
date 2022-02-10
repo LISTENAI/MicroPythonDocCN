@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/array.rst:2
+msgid ":mod:`array` -- arrays of numeric data"
+msgstr ""
+
+#: ../../library/array.rst:7
+msgid "|see_cpython_module| :mod:`python:array`."
+msgstr ""
+
+#: ../../library/array.rst:9
+msgid ""
+"Supported format codes: ``b``, ``B``, ``h``, ``H``, ``i``, ``I``, ``l``, "
+"``L``, ``q``, ``Q``, ``f``, ``d`` (the latter 2 depending on the "
+"floating-point support)."
+msgstr ""
+
+#: ../../library/array.rst:14
+msgid "Classes"
+msgstr ""
+
+#: ../../library/array.rst:18
+msgid ""
+"Create array with elements of given type. Initial contents of the array "
+"are given by *iterable*. If it is not provided, an empty array is "
+"created."
+msgstr ""
+
+#: ../../library/array.rst:24
+msgid "Append new element *val* to the end of array, growing it."
+msgstr ""
+
+#: ../../library/array.rst:28
+msgid ""
+"Append new elements as contained in *iterable* to the end of array, "
+"growing it."
+msgstr ""
+

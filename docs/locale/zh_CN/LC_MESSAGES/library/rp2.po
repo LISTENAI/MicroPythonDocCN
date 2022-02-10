@@ -1,0 +1,510 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/rp2.rst:4
+msgid ":mod:`rp2` --- functionality specific to the RP2040"
+msgstr ""
+
+#: ../../library/rp2.rst:9
+msgid ""
+"The ``rp2`` module contains functions and classes specific to the RP2040,"
+" as used in the Raspberry Pi Pico."
+msgstr ""
+
+#: ../../library/rp2.rst:12
+msgid ""
+"See the `RP2040 Python datasheet <https://datasheets.raspberrypi.org/pico"
+"/raspberry-pi-pico-python-sdk.pdf>`_ for more information, and `pico-"
+"micropython-examples <https://github.com/raspberrypi/pico-micropython-"
+"examples/tree/master/pio>`_ for example code."
+msgstr ""
+
+#: ../../library/rp2.rst:20
+msgid "PIO related functions"
+msgstr ""
+
+#: ../../library/rp2.rst:22
+msgid "The ``rp2`` module includes functions for assembling PIO programs."
+msgstr ""
+
+#: ../../library/rp2.rst:24
+msgid "For running PIO programs, see :class:`rp2.StateMachine`."
+msgstr ""
+
+#: ../../library/rp2.rst:28
+msgid "Assemble a PIO program."
+msgstr ""
+
+#: ../../library/rp2.rst:30
+msgid ""
+"The following parameters control the initial state of the GPIO pins, as "
+"one of `PIO.IN_LOW`, `PIO.IN_HIGH`, `PIO.OUT_LOW` or `PIO.OUT_HIGH`. If "
+"the program uses more than one pin, provide a tuple, e.g. "
+"``out_init=(PIO.OUT_LOW, PIO.OUT_LOW)``."
+msgstr ""
+
+#: ../../library/rp2.rst:35
+msgid "*out_init* configures the pins used for ``out()`` instructions."
+msgstr ""
+
+#: ../../library/rp2.rst:36
+msgid ""
+"*set_init* configures the pins used for ``set()`` instructions. There can"
+" be at most 5."
+msgstr ""
+
+#: ../../library/rp2.rst:38
+msgid ""
+"*sideset_init* configures the pins used side-setting. There can be at "
+"most 5."
+msgstr ""
+
+#: ../../library/rp2.rst:41
+msgid ""
+"The following parameters are used by default, but can be overridden in "
+"`StateMachine.init()`:"
+msgstr ""
+
+#: ../../library/rp2.rst:44
+msgid ""
+"*in_shiftdir* is the default direction the ISR will shift, either "
+"`PIO.SHIFT_LEFT` or `PIO.SHIFT_RIGHT`."
+msgstr ""
+
+#: ../../library/rp2.rst:46
+msgid ""
+"*out_shiftdir* is the default direction the OSR will shift, either "
+"`PIO.SHIFT_LEFT` or `PIO.SHIFT_RIGHT`."
+msgstr ""
+
+#: ../../library/rp2.rst:48
+msgid ""
+"*push_thresh* is the threshold in bits before auto-push or conditional "
+"re-pushing is triggered."
+msgstr ""
+
+#: ../../library/rp2.rst:50
+msgid ""
+"*pull_thresh* is the threshold in bits before auto-push or conditional "
+"re-pushing is triggered."
+msgstr ""
+
+#: ../../library/rp2.rst:53
+msgid "The remaining parameters are:"
+msgstr ""
+
+#: ../../library/rp2.rst:55
+msgid "*autopush* configures whether auto-push is enabled."
+msgstr ""
+
+#: ../../library/rp2.rst:56
+msgid "*autopull* configures whether auto-pull is enabled."
+msgstr ""
+
+#: ../../library/rp2.rst:57
+msgid ""
+"*fifo_join* configures whether the 4-word TX and RX FIFOs should be "
+"combined into a single 8-word FIFO for one direction only. The options "
+"are `PIO.JOIN_NONE`, `PIO.JOIN_RX` and `PIO.JOIN_TX`."
+msgstr ""
+
+#: ../../library/rp2.rst:63
+msgid ""
+"Assemble a single PIO instruction. You usually want to use `asm_pio()` "
+"instead."
+msgstr ""
+
+#: ../../library/rp2.rst:71
+msgid ""
+"This exception is raised from `asm_pio()` or `asm_pio_encode()` if there "
+"is an error assembling a PIO program."
+msgstr ""
+
+#: ../../library/rp2.rst:76
+msgid "PIO assembly language instructions"
+msgstr ""
+
+#: ../../library/rp2.rst:78
+msgid ""
+"PIO state machines are programmed in a custom assembly language with nine"
+" core PIO-machine instructions.  In MicroPython, PIO assembly routines "
+"are written as a Python function with the decorator ``@rp2.asm_pio()``, "
+"and they use Python syntax.  Such routines support standard Python "
+"variables and arithmetic, as well as the following custom functions that "
+"encode PIO instructions and direct the assembler.  See sec 3.4 of the "
+"RP2040 datasheet for further details."
+msgstr ""
+
+#: ../../library/rp2.rst:87
+msgid "wrap_target()"
+msgstr ""
+
+#: ../../library/rp2.rst:86
+msgid ""
+"Specify the location where execution continues after program wrapping. By"
+" default this is the start of the PIO routine."
+msgstr ""
+
+#: ../../library/rp2.rst:92
+msgid "wrap()"
+msgstr ""
+
+#: ../../library/rp2.rst:90
+msgid ""
+"Specify the location where the program finishes and wraps around. If this"
+" directive is not used then it is added automatically at the end of the "
+"PIO routine.  Wrapping does not cost any execution cycles."
+msgstr ""
+
+#: ../../library/rp2.rst:96
+msgid "label(label)"
+msgstr ""
+
+#: ../../library/rp2.rst:95
+msgid ""
+"Define a label called *label* at the current location.  *label* can be a "
+"string or integer."
+msgstr ""
+
+#: ../../library/rp2.rst:103
+msgid "word(instr, label=None)"
+msgstr ""
+
+#: ../../library/rp2.rst:99
+msgid "Insert an arbitrary 16-bit word in the assembled output."
+msgstr ""
+
+#: ../../library/rp2.rst:101
+msgid "*instr*: the 16-bit value"
+msgstr ""
+
+#: ../../library/rp2.rst:102
+msgid ""
+"*label*: if given, look up the label and logical-or the label's value "
+"with *instr*"
+msgstr ""
+
+#: ../../library/rp2.rst:122
+msgid "jmp(...)"
+msgstr ""
+
+#: ../../library/rp2.rst:106
+msgid "This instruction takes two forms:"
+msgstr ""
+
+#: ../../library/rp2.rst:109
+msgid "jmp(label)"
+msgstr ""
+
+#: ../../library/rp2.rst:109
+msgid "*label*: label to jump to unconditionally"
+msgstr ""
+
+#: ../../library/rp2.rst:122
+msgid "jmp(cond, label)"
+msgstr ""
+
+#: ../../library/rp2.rst:112
+msgid "*cond*: the condition to check, one of:"
+msgstr ""
+
+#: ../../library/rp2.rst:114
+msgid "``not_x``, ``not_y``: true if register is zero"
+msgstr ""
+
+#: ../../library/rp2.rst:115
+msgid "``x_dec``, ``y_dec``: true if register is non-zero, and do post decrement"
+msgstr ""
+
+#: ../../library/rp2.rst:117
+msgid "``x_not_y``: true if X is not equal to Y"
+msgstr ""
+
+#: ../../library/rp2.rst:118
+msgid "``pin``: true if the input pin is set"
+msgstr ""
+
+#: ../../library/rp2.rst:119
+msgid "``not_osre``: true if OSR is not empty (hasn't reached its threshold)"
+msgstr ""
+
+#: ../../library/rp2.rst:122
+msgid "*label*: label to jump to if condition is true"
+msgstr ""
+
+#: ../../library/rp2.rst:130
+msgid "wait(polarity, src, index)"
+msgstr ""
+
+#: ../../library/rp2.rst:125
+msgid "Block, waiting for high/low on a pin or IRQ line."
+msgstr ""
+
+#: ../../library/rp2.rst:127
+msgid "*polarity*: 0 or 1, whether to wait for a low or high value"
+msgstr ""
+
+#: ../../library/rp2.rst:128
+msgid ""
+"*src*: one of: ``gpio`` (absolute pin), ``pin`` (pin relative to "
+"StateMachine's ``in_base`` argument), ``irq``"
+msgstr ""
+
+#: ../../library/rp2.rst:130
+msgid "*index*: 0-31, the index for *src*"
+msgstr ""
+
+#: ../../library/rp2.rst:136
+msgid "in_(src, bit_count)"
+msgstr ""
+
+#: ../../library/rp2.rst:133
+msgid "Shift data in from *src* to ISR."
+msgstr ""
+
+#: ../../library/rp2.rst:135
+msgid "*src*: one of: ``pins``, ``x``, ``y``, ``null``, ``isr``, ``osr``"
+msgstr ""
+
+#: ../../library/rp2.rst:136
+msgid "*bit_count*: number of bits to shift in (1-32)"
+msgstr ""
+
+#: ../../library/rp2.rst:143
+msgid "out(dest, bit_count)"
+msgstr ""
+
+#: ../../library/rp2.rst:139
+msgid "Shift data out from OSR to *dest*."
+msgstr ""
+
+#: ../../library/rp2.rst:141
+msgid ""
+"*dest*: one of: ``pins``, ``x``, ``y``, ``pindirs``, ``pc``, ``isr``, "
+"``exec``"
+msgstr ""
+
+#: ../../library/rp2.rst:143
+msgid "*bit_count*: number of bits to shift out (1-32)"
+msgstr ""
+
+#: ../../library/rp2.rst:158
+msgid "push(...)"
+msgstr ""
+
+#: ../../library/rp2.rst:146
+msgid ""
+"Push ISR to the RX FIFO, then clear ISR to zero. This instruction takes "
+"the following forms:"
+msgstr ""
+
+#: ../../library/rp2.rst:149
+msgid "push()"
+msgstr ""
+
+#: ../../library/rp2.rst:150
+msgid "push(block)"
+msgstr ""
+
+#: ../../library/rp2.rst:151
+msgid "push(noblock)"
+msgstr ""
+
+#: ../../library/rp2.rst:152
+msgid "push(iffull)"
+msgstr ""
+
+#: ../../library/rp2.rst:153
+msgid "push(iffull, block)"
+msgstr ""
+
+#: ../../library/rp2.rst:154
+msgid "push(iffull, noblock)"
+msgstr ""
+
+#: ../../library/rp2.rst:156
+msgid ""
+"If ``block`` is used then the instruction stalls if the RX FIFO is full. "
+"The default is to block.  If ``iffull`` is used then it only pushes if "
+"the input shift count has reached its threshold."
+msgstr ""
+
+#: ../../library/rp2.rst:173
+msgid "pull(...)"
+msgstr ""
+
+#: ../../library/rp2.rst:161
+msgid ""
+"Pull from the TX FIFO into OSR. This instruction takes the following "
+"forms:"
+msgstr ""
+
+#: ../../library/rp2.rst:164
+msgid "pull()"
+msgstr ""
+
+#: ../../library/rp2.rst:165
+msgid "pull(block)"
+msgstr ""
+
+#: ../../library/rp2.rst:166
+msgid "pull(noblock)"
+msgstr ""
+
+#: ../../library/rp2.rst:167
+msgid "pull(ifempty)"
+msgstr ""
+
+#: ../../library/rp2.rst:168
+msgid "pull(ifempty, block)"
+msgstr ""
+
+#: ../../library/rp2.rst:169
+msgid "pull(ifempty, noblock)"
+msgstr ""
+
+#: ../../library/rp2.rst:171
+msgid ""
+"If ``block`` is used then the instruction stalls if the TX FIFO is empty."
+" The default is to block.  If ``ifempty`` is used then it only pulls if "
+"the output shift count has reached its threshold."
+msgstr ""
+
+#: ../../library/rp2.rst:181
+msgid "mov(dest, src)"
+msgstr ""
+
+#: ../../library/rp2.rst:176
+msgid "Move into *dest* the value from *src*."
+msgstr ""
+
+#: ../../library/rp2.rst:178
+msgid "*dest*: one of: ``pins``, ``x``, ``y``, ``exec``, ``pc``, ``isr``, ``osr``"
+msgstr ""
+
+#: ../../library/rp2.rst:179
+msgid ""
+"*src*: one of: ``pins``, ``x``, ``y``, ``null``, ``status``, ``isr``, "
+"``osr``; this argument can be optionally modified by wrapping it in "
+"``invert()`` or ``reverse()`` (but not both together)"
+msgstr ""
+
+#: ../../library/rp2.rst:198
+msgid "irq(...)"
+msgstr ""
+
+#: ../../library/rp2.rst:184
+msgid "Set or clear an IRQ flag. This instruction takes two forms:"
+msgstr ""
+
+#: ../../library/rp2.rst:188
+msgid "irq(index)"
+msgstr ""
+
+#: ../../library/rp2.rst:188 ../../library/rp2.rst:192
+msgid "*index*: 0-7, or ``rel(0)`` to ``rel(7)``"
+msgstr ""
+
+#: ../../library/rp2.rst:192
+msgid "irq(mode, index)"
+msgstr ""
+
+#: ../../library/rp2.rst:191
+msgid "*mode*: one of: ``block``, ``clear``"
+msgstr ""
+
+#: ../../library/rp2.rst:194
+msgid ""
+"If ``block`` is used then the instruction stalls until the flag is "
+"cleared by another entity.  If ``clear`` is used then the flag is cleared"
+" instead of being set.  Relative IRQ indices add the state machine ID to "
+"the IRQ index with modulo-4 addition.  IRQs 0-3 are visible from to the "
+"processor, 4-7 are internal to the state machines."
+msgstr ""
+
+#: ../../library/rp2.rst:204
+msgid "set(dest, data)"
+msgstr ""
+
+#: ../../library/rp2.rst:201
+msgid "Set *dest* with the value *data*."
+msgstr ""
+
+#: ../../library/rp2.rst:203
+msgid "*dest*: ``pins``, ``x``, ``y``, ``pindirs``"
+msgstr ""
+
+#: ../../library/rp2.rst:204
+msgid "*data*: value (0-31)"
+msgstr ""
+
+#: ../../library/rp2.rst:208
+msgid "nop()"
+msgstr ""
+
+#: ../../library/rp2.rst:207
+msgid ""
+"This is a pseudoinstruction that assembles to ``mov(y, y)`` and has no "
+"side effect."
+msgstr ""
+
+#: ../../library/rp2.rst:214
+msgid ".side(value)"
+msgstr ""
+
+#: ../../library/rp2.rst:211
+msgid ""
+"This is a modifier which can be applied to any instruction, and is used "
+"to control side-set pin values."
+msgstr ""
+
+#: ../../library/rp2.rst:214
+msgid "*value*: the value (bits) to output on the side-set pins"
+msgstr ""
+
+#: ../../library/rp2.rst:221
+msgid ".delay(value)"
+msgstr ""
+
+#: ../../library/rp2.rst:217
+msgid ""
+"This is a modifier which can be applied to any instruction, and specifies"
+" how many cycles to delay for after the instruction executes."
+msgstr ""
+
+#: ../../library/rp2.rst:220
+msgid ""
+"*value*: cycles to delay, 0-31 (maximum value reduced if side-set pins "
+"are used)"
+msgstr ""
+
+#: ../../library/rp2.rst:225
+msgid "[value]"
+msgstr ""
+
+#: ../../library/rp2.rst:224
+msgid "This is a modifier and is equivalent to ``.delay(value)``."
+msgstr ""
+
+#: ../../library/rp2.rst:228
+msgid "Classes"
+msgstr ""
+

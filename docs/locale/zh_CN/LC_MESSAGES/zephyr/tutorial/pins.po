@@ -1,0 +1,105 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../zephyr/tutorial/pins.rst:4
+msgid "GPIO Pins"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:6
+msgid "Use :ref:`machine.Pin <machine.Pin>` to control I/O pins."
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:8
+msgid ""
+"For Zephyr, pins are initialized using a tuple of port and pin number "
+"``(\\\"GPIO_x\\\", pin#)`` for the ``id`` value. For example to "
+"initialize a pin for the red LED on a FRDM-k64 board::"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:13
+msgid ""
+"Reference your board's datasheet or Zephyr documentation for pin numbers,"
+" see below for more examples."
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:15
+msgid "Pin Formatting"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:18
+msgid "Board"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:19
+msgid "Pin"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:20
+msgid "Format"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:21
+msgid "frdm_k64f"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:22
+msgid "Red LED = PTB22"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:23
+msgid "(\"GPIO_1\", 22)"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:24
+msgid "96b_carbon"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:25
+msgid "LED1 = PD2"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:26
+msgid "(\"GPIOD\", 2)"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:27
+msgid "mimxrt685_evk_cm33"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:28
+msgid "Green LED = PIO0_14"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:29
+msgid "(\"GPIO0\", 14)"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:32
+msgid "Interrupts"
+msgstr ""
+
+#: ../../zephyr/tutorial/pins.rst:34
+msgid ""
+"The Zephyr port also supports interrupt handling for Pins using "
+"`machine.Pin.irq() <machine.Pin.irq>`. To respond to Pin change IRQs "
+"run::"
+msgstr ""
+

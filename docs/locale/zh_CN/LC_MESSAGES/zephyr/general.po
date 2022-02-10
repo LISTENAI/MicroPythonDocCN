@@ -1,0 +1,55 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../zephyr/general.rst:4
+msgid "General information about the Zephyr port"
+msgstr "Zephyr 适配的通用信息"
+
+#: ../../zephyr/general.rst:6
+msgid ""
+"The Zephyr Project is a Linux Foundation hosted Collaboration Project. "
+"It’s an open source collaborative effort uniting developers and users in "
+"building a small, scalable, real-time operating system (RTOS) optimized "
+"for resource-constrained devices, across multiple architectures."
+msgstr ""
+
+#: ../../zephyr/general.rst:12
+msgid "Multitude of boards"
+msgstr ""
+
+#: ../../zephyr/general.rst:14
+msgid ""
+"There is a multitude of modules and boards from different sources that "
+"are supported by the Zephyr OS. All boards supported by Zephyr (with "
+"standard level of features support, like UART console) should work with "
+"MicroPython (but not all were tested). The FRDM-K64f board is taken as a "
+"reference board for the port for this documentation. If you have another "
+"board, please make sure you have a datasheet, schematics and other "
+"reference materials for your board handy to look up various aspects of "
+"your board functioning."
+msgstr ""
+
+#: ../../zephyr/general.rst:22
+msgid ""
+"For a full list of Zephyr supported boards click `here (external link) "
+"<https://docs.zephyrproject.org/latest/boards/index.html#boards>`_"
+msgstr ""
+

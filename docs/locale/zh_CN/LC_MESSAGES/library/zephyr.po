@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/zephyr.rst:4
+msgid ":mod:`zephyr` --- functionality specific to the Zephyr port"
+msgstr ""
+
+#: ../../library/zephyr.rst:9
+msgid ""
+"The ``zephyr`` module contains functions and classes specific to the "
+"Zephyr port."
+msgstr ""
+
+#: ../../library/zephyr.rst:12
+msgid "Functions"
+msgstr ""
+
+#: ../../library/zephyr.rst:16
+msgid "Returns true if the current thread is a preemptible thread."
+msgstr ""
+
+#: ../../library/zephyr.rst:18
+msgid ""
+"Zephyr preemptible threads are those with non-negative priority values "
+"(low priority levels), which therefore, can be supplanted as soon as a "
+"higher or equal priority thread becomes ready."
+msgstr ""
+
+#: ../../library/zephyr.rst:23
+msgid ""
+"Returns the thread id of the current thread, which is used to reference "
+"the thread."
+msgstr ""
+
+#: ../../library/zephyr.rst:27
+msgid ""
+"Runs the Zephyr debug thread analyzer on the current thread and prints "
+"stack size statistics in the format:"
+msgstr ""
+
+#: ../../library/zephyr.rst:29
+msgid ""
+"\"``thread_name``-20s: STACK: unused ``available_stack_space`` usage "
+"``stack_space_used`` / ``stack_size`` (``percent_stack_space_used`` %); "
+"CPU: ``cpu_utilization`` %\""
+msgstr ""
+
+#: ../../library/zephyr.rst:32
+msgid ""
+"*CPU utilization is only printed if runtime statistics are configured via"
+" the ``CONFIG_THREAD_RUNTIME_STATS`` kconfig*"
+msgstr ""
+
+#: ../../library/zephyr.rst:34
+msgid ""
+"This function can only be accessed if ``CONFIG_THREAD_ANALYZER`` is "
+"configured for the port in ``zephyr/prj.conf``. For more infomation, see "
+"documentation for Zephyr `thread analyzer "
+"<https://docs.zephyrproject.org/latest/guides/debug_tools/thread-"
+"analyzer.html#thread-analyzer>`_."
+msgstr ""
+
+#: ../../library/zephyr.rst:40
+msgid ""
+"Executes the given command on an UART backend. This function can only be "
+"accessed if ``CONFIG_SHELL_BACKEND_SERIAL`` is configured for the port in"
+" ``zephyr/prj.conf``."
+msgstr ""
+
+#: ../../library/zephyr.rst:43
+msgid ""
+"A list of possible commands can be found in the documentation for Zephyr "
+"`shell commands "
+"<https://docs.zephyrproject.org/latest/reference/shell/index.html?highlight=shell_execute_cmd#commands>`_."
+msgstr ""
+
+#: ../../library/zephyr.rst:46
+msgid "Classes"
+msgstr ""
+
+#: ../../library/zephyr.rst:55
+msgid "Additional Modules"
+msgstr ""
+

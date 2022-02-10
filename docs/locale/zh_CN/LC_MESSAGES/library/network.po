@@ -1,0 +1,209 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/network.rst:3
+msgid ":mod:`network` --- network configuration"
+msgstr ""
+
+#: ../../library/network.rst:8
+msgid ""
+"This module provides network drivers and routing configuration. To use "
+"this module, a MicroPython variant/build with network capabilities must "
+"be installed. Network drivers for specific hardware are available within "
+"this module and are used to configure hardware network interface(s). "
+"Network services provided by configured interfaces are then available for"
+" use via the :mod:`socket` module."
+msgstr ""
+
+#: ../../library/network.rst:15
+msgid "For example::"
+msgstr ""
+
+#: ../../library/network.rst:39
+msgid "Common network adapter interface"
+msgstr ""
+
+#: ../../library/network.rst:41
+msgid ""
+"This section describes an (implied) abstract base class for all network "
+"interface classes implemented by :term:`MicroPython ports <MicroPython "
+"port>` for different hardware. This means that MicroPython does not "
+"actually provide ``AbstractNIC`` class, but any actual NIC class, as "
+"described in the following sections, implements methods as described "
+"here."
+msgstr ""
+
+#: ../../library/network.rst:49
+msgid ""
+"Instantiate a network interface object. Parameters are network interface "
+"dependent. If there are more than one interface of the same type, the "
+"first parameter should be `id`."
+msgstr ""
+
+#: ../../library/network.rst:55
+msgid ""
+"Activate (\"up\") or deactivate (\"down\") the network interface, if a "
+"boolean argument is passed. Otherwise, query current state if no argument"
+" is provided. Most other methods require an active interface (behaviour "
+"of calling them on inactive interface is undefined)."
+msgstr ""
+
+#: ../../library/network.rst:63
+msgid ""
+"Connect the interface to a network. This method is optional, and "
+"available only for interfaces which are not \"always connected\". If no "
+"parameters are given, connect to the default (or the only) service. If a "
+"single parameter is given, it is the primary identifier of a service to "
+"connect to. It may be accompanied by a key (password) required to access "
+"said service. There can be further arbitrary keyword-only parameters, "
+"depending on the networking medium type and/or particular device. "
+"Parameters can be used to: a) specify alternative service identifier "
+"types; b) provide additional connection parameters. For various medium "
+"types, there are different sets of predefined/recommended parameters, "
+"among them:"
+msgstr ""
+
+#: ../../library/network.rst:75
+msgid "WiFi: *bssid* keyword to connect to a specific BSSID (MAC address)"
+msgstr ""
+
+#: ../../library/network.rst:79
+msgid "Disconnect from network."
+msgstr ""
+
+#: ../../library/network.rst:83
+msgid "Returns ``True`` if connected to network, otherwise returns ``False``."
+msgstr ""
+
+#: ../../library/network.rst:87
+msgid ""
+"Scan for the available network services/connections. Returns a list of "
+"tuples with discovered service parameters. For various network media, "
+"there are different variants of predefined/ recommended tuple formats, "
+"among them:"
+msgstr ""
+
+#: ../../library/network.rst:92
+msgid ""
+"WiFi: (ssid, bssid, channel, RSSI, authmode, hidden). There may be "
+"further fields, specific to a particular device."
+msgstr ""
+
+#: ../../library/network.rst:95
+msgid ""
+"The function may accept additional keyword arguments to filter scan "
+"results (e.g. scan for a particular service, on a particular channel, for"
+" services of a particular set, etc.), and to affect scan duration and "
+"other parameters. Where possible, parameter names should match those in "
+"connect()."
+msgstr ""
+
+#: ../../library/network.rst:103
+msgid ""
+"Query dynamic status information of the interface.  When called with no "
+"argument the return value describes the network link status.  Otherwise "
+"*param* should be a string naming the particular status parameter to "
+"retrieve."
+msgstr ""
+
+#: ../../library/network.rst:108
+msgid ""
+"The return types and values are dependent on the network "
+"medium/technology.  Some of the parameters that may be supported are:"
+msgstr ""
+
+#: ../../library/network.rst:111
+msgid "WiFi STA: use ``'rssi'`` to retrieve the RSSI of the AP signal"
+msgstr ""
+
+#: ../../library/network.rst:112
+msgid ""
+"WiFi AP: use ``'stations'`` to retrieve a list of all the STAs connected "
+"to the AP.  The list contains tuples of the form (MAC, RSSI)."
+msgstr ""
+
+#: ../../library/network.rst:118
+msgid ""
+"Get/set IP-level network interface parameters: IP address, subnet mask, "
+"gateway and DNS server. When called with no arguments, this method "
+"returns a 4-tuple with the above information. To set the above values, "
+"pass a 4-tuple with the required information.  For example::"
+msgstr ""
+
+#: ../../library/network.rst:128
+msgid ""
+"Get or set general network interface parameters. These methods allow to "
+"work with additional parameters beyond standard IP configuration (as "
+"dealt with by `ifconfig()`). These include network-specific and hardware-"
+"specific parameters. For setting parameters, the keyword argument syntax "
+"should be used, and multiple parameters can be set at once. For querying,"
+" a parameter name should be quoted as a string, and only one parameter "
+"can be queried at a time::"
+msgstr ""
+
+#: ../../library/network.rst:143
+msgid "Specific network class implementations"
+msgstr ""
+
+#: ../../library/network.rst:145
+msgid ""
+"The following concrete classes implement the AbstractNIC interface and "
+"provide a way to control networking interfaces of various kinds."
+msgstr ""
+
+#: ../../library/network.rst:157
+msgid "Network functions"
+msgstr ""
+
+#: ../../library/network.rst:159
+msgid "The following are functions available in the network module."
+msgstr ""
+
+#: ../../library/network.rst:163
+msgid "Get or set the PHY mode."
+msgstr ""
+
+#: ../../library/network.rst:165
+msgid ""
+"If the *mode* parameter is provided, sets the mode to its value. If the "
+"function is called without parameters, returns the current mode."
+msgstr ""
+
+#: ../../library/network.rst:171
+msgid "The possible modes are defined as constants:"
+msgstr ""
+
+#: ../../library/network.rst:169
+msgid "``MODE_11B`` -- IEEE 802.11b,"
+msgstr ""
+
+#: ../../library/network.rst:170
+msgid "``MODE_11G`` -- IEEE 802.11g,"
+msgstr ""
+
+#: ../../library/network.rst:171
+msgid "``MODE_11N`` -- IEEE 802.11n."
+msgstr ""
+
+#: ../../library/network.rst:173
+msgid "Availability: ESP8266."
+msgstr ""
+

@@ -1,0 +1,171 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/machine.PWM.rst:5
+msgid "class PWM -- pulse width modulation"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:7
+msgid "This class provides pulse width modulation output."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:9
+msgid "Example usage::"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:24
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:28
+msgid "Construct and return a new PWM object using the following parameters:"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:30
+msgid ""
+"*dest* is the entity on which the PWM is output, which is usually a "
+":ref:`machine.Pin <machine.Pin>` object, but a port may allow other "
+"values, like integers."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:33
+msgid ""
+"*freq* should be an integer which sets the frequency in Hz for the PWM "
+"cycle."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:35
+msgid "*duty_u16* sets the duty cycle as a ratio ``duty_u16 / 65535``."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:36
+msgid "*duty_ns* sets the pulse width in nanoseconds."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:38
+msgid ""
+"Setting *freq* may affect other PWM objects if the objects share the same"
+" underlying PWM generator (this is hardware specific). Only one of "
+"*duty_u16* and *duty_ns* should be specified at a time."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:43
+msgid "Methods"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:47
+msgid ""
+"Modify settings for the PWM object.  See the above constructor for "
+"details about the parameters."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:52
+msgid "Disable the PWM output."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:56
+msgid "Get or set the current frequency of the PWM output."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:58
+msgid "With no arguments the frequency in Hz is returned."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:60
+msgid ""
+"With a single *value* argument the frequency is set to that value in Hz."
+"  The method may raise a ``ValueError`` if the frequency is outside the "
+"valid range."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:65
+msgid ""
+"Get or set the current duty cycle of the PWM output, as an unsigned "
+"16-bit value in the range 0 to 65535 inclusive."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:68
+msgid "With no arguments the duty cycle is returned."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:70
+msgid ""
+"With a single *value* argument the duty cycle is set to that value, "
+"measured as the ratio ``value / 65535``."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:75
+msgid ""
+"Get or set the current pulse width of the PWM output, as a value in "
+"nanoseconds."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:77
+msgid "With no arguments the pulse width in nanoseconds is returned."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:79
+msgid "With a single *value* argument the pulse width is set to that value."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:82
+msgid "Limitations of PWM"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:84
+msgid ""
+"Not all frequencies can be generated with absolute accuracy due to the "
+"discrete nature of the computing hardware.  Typically the PWM frequency "
+"is obtained by dividing some integer base frequency by an integer "
+"divider. For example, if the base frequency is 80MHz and the required PWM"
+" frequency is 300kHz the divider must be a non-integer number 80000000 / "
+"300000 = 266.67. After rounding the divider is set to 267 and the PWM "
+"frequency will be 80000000 / 267 = 299625.5 Hz, not 300kHz.  If the "
+"divider is set to 266 then the PWM frequency will be 80000000 / 266 = "
+"300751.9 Hz, but again not 300kHz."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:93
+msgid ""
+"The duty cycle has the same discrete nature and its absolute accuracy is "
+"not achievable.  On most hardware platforms the duty will be applied at "
+"the next frequency period.  Therefore, you should wait more than "
+"\"1/frequency\" before measuring the duty."
+msgstr ""
+
+#: ../../library/machine.PWM.rst:98
+msgid ""
+"The frequency and the duty cycle resolution are usually interdependent. "
+"The higher the PWM frequency the lower the duty resolution which is "
+"available, and vice versa. For example, a 300kHz PWM frequency can have a"
+" duty cycle resolution of 8 bit, not 16-bit as may be expected.  In this "
+"case, the lowest 8 bits of *duty_u16* are insignificant. So::"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:106
+msgid "and::"
+msgstr ""
+
+#: ../../library/machine.PWM.rst:110
+#, python-format
+msgid "will generate PWM with the same 50% duty cycle."
+msgstr ""
+

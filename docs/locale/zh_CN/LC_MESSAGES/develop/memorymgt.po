@@ -1,0 +1,234 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../develop/memorymgt.rst:4
+msgid "Memory Management"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:6
+msgid ""
+"Unlike programming languages such as C/C++, MicroPython hides memory "
+"management details from the developer by supporting automatic memory "
+"management. Automatic memory management is a technique used by operating "
+"systems or applications to automatically manage the allocation and "
+"deallocation of memory. This eliminates challenges such as forgetting to "
+"free the memory allocated to an object. Automatic memory management also "
+"avoids the critical issue of using memory that is already released. "
+"Automatic memory management takes many forms, one of them being garbage "
+"collection (GC)."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:14
+msgid "The garbage collector usually has two responsibilities;"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:16
+msgid "Allocate new objects in available memory."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:17
+msgid "Free unused memory."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:19
+msgid ""
+"There are many GC algorithms but MicroPython uses the `Mark and Sweep "
+"<https://en.wikipedia.org/wiki/Tracing_garbage_collection#Basic_algorithm>`_"
+" policy for managing memory. This algorithm has a mark phase that "
+"traverses the heap marking all live objects while the sweep phase goes "
+"through the heap reclaiming all unmarked objects."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:24
+msgid ""
+"Garbage collection functionality in MicroPython is available through the "
+"``gc`` built-in module:"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:43
+msgid ""
+"Even when ``gc.disable()`` is invoked, collection can be triggered with "
+"``gc.collect()``."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:46
+msgid "The object model"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:48
+msgid ""
+"All MicroPython objects are referred to by the ``mp_obj_t`` data type. "
+"This is usually word-sized (i.e. the same size as a pointer on the target"
+" architecture), and can be typically 32-bit (STM32, nRF, ESP32, Unix x86)"
+" or 64-bit (Unix x64). It can also be greater than a word-size for "
+"certain object representations, for example ``OBJ_REPR_D`` has a 64-bit "
+"sized ``mp_obj_t`` on a 32-bit architecture."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:54
+msgid ""
+"An ``mp_obj_t`` represents a MicroPython object, for example an integer, "
+"float, type, dict or class instance. Some objects, like booleans and "
+"small integers, have their value stored directly in the ``mp_obj_t`` "
+"value and do not require additional memory. Other objects have their "
+"value store elsewhere in memory (for example on the garbage-collected "
+"heap) and their ``mp_obj_t`` contains a pointer to that memory. A portion"
+" of ``mp_obj_t`` is the tag which tells what type of object it is."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:60
+msgid ""
+"See ``py/mpconfig.h`` for the specific details of the available "
+"representations."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:62
+msgid "**Pointer tagging**"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:64
+msgid ""
+"Because pointers are word-aligned, when they are stored in an "
+"``mp_obj_t`` the lower bits of this object handle will be zero.  For "
+"example on a 32-bit architecture the lower 2 bits will be zero:"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:68 ../../develop/memorymgt.rst:88
+msgid "``********|********|********|******00``"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:70
+msgid ""
+"These bits are reserved for purposes of storing a tag. The tag stores "
+"extra information as opposed to introducing a new field to store that "
+"information in the object, which may be inefficient.  In MicroPython the "
+"tag tells if we are dealing with a small integer, interned (small) string"
+" or a concrete object, and different semantics apply to each of these."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:75
+msgid "For small integers the mapping is this:"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:77
+msgid "``********|********|********|*******1``"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:79
+msgid ""
+"Where the asterisks hold the actual integer value.  For an interned "
+"string or an immediate object (e.g. ``True``) the layout of the "
+"``mp_obj_t`` value is, respectively:"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:82
+msgid "``********|********|********|*****010``"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:84
+msgid "``********|********|********|*****110``"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:86
+msgid "While a concrete object that is none of the above takes the form:"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:90
+msgid "The stars here correspond to the address of the concrete object in memory."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:93
+msgid "Allocation of objects"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:95
+msgid ""
+"The value of a small integer is stored directly in the ``mp_obj_t`` and "
+"will be allocated in-place, not on the heap or elsewhere.  As such, "
+"creation of small integers does not affect the heap.  Similarly for "
+"interned strings that already have their textual data stored elsewhere, "
+"and immediate values like ``None``, ``False`` and ``True``."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:101
+msgid ""
+"Everything else which is a concrete object is allocated on the heap and "
+"its object structure is such that a field is reserved in the object "
+"header to store the type of the object."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:116
+msgid ""
+"The heap's smallest unit of allocation is a block, which is four machine "
+"words in size (16 bytes on a 32-bit machine, 32 bytes on a 64-bit "
+"machine). Another structure also allocated on the heap tracks the "
+"allocation of objects in each block. This structure is called a *bitmap*."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:123
+msgid ""
+"The bitmap tracks whether a block is \"free\" or \"in use\" and use two "
+"bits to track this state for each block."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:126
+msgid ""
+"The mark-sweep garbage collector manages the objects allocated on the "
+"heap, and also utilises the bitmap to mark objects that are still in use."
+" See `py/gc.c "
+"<https://github.com/micropython/micropython/blob/master/py/gc.c>`_ for "
+"the full implementation of these details."
+msgstr ""
+
+#: ../../develop/memorymgt.rst:131
+msgid "**Allocation: heap layout**"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:133
+msgid ""
+"The heap is arranged such that it consists of blocks in pools. A block "
+"can have different properties:"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:136
+msgid "*ATB(allocation table byte):* If set, then the block is a normal block"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:137
+msgid "*FREE:* Free block"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:138
+msgid "*HEAD:* Head of a chain of blocks"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:139
+msgid "*TAIL:* In the tail of a chain of blocks"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:140
+msgid "*MARK :* Marked head block"
+msgstr ""
+
+#: ../../develop/memorymgt.rst:141
+msgid "*FTB(finaliser table byte):* If set, then the block has a finaliser"
+msgstr ""
+

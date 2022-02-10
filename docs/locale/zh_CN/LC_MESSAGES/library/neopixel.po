@@ -1,0 +1,106 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/neopixel.rst:2
+msgid ":mod:`neopixel` --- control of WS2812 / NeoPixel LEDs"
+msgstr ""
+
+#: ../../library/neopixel.rst:7
+msgid "This module provides a driver for WS2818 / NeoPixel LEDs."
+msgstr ""
+
+#: ../../library/neopixel.rst:9
+msgid ""
+"This module is only included by default on the ESP8266 and ESP32 ports. "
+"On STM32 / Pyboard, you can `download the module "
+"<https://github.com/micropython/micropython/blob/master/drivers/neopixel/neopixel.py>`_"
+" and copy it to the filesystem."
+msgstr ""
+
+#: ../../library/neopixel.rst:15
+msgid "class NeoPixel"
+msgstr ""
+
+#: ../../library/neopixel.rst:17
+msgid ""
+"This class stores pixel data for a WS2812 LED strip connected to a pin. "
+"The application should set pixel data and then call "
+":meth:`NeoPixel.write` when it is ready to update the strip."
+msgstr ""
+
+#: ../../library/neopixel.rst:21
+msgid "For example::"
+msgstr ""
+
+#: ../../library/neopixel.rst:37
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/neopixel.rst:41
+msgid "Construct an NeoPixel object.  The parameters are:"
+msgstr ""
+
+#: ../../library/neopixel.rst:43
+msgid "*pin* is a machine.Pin instance."
+msgstr ""
+
+#: ../../library/neopixel.rst:44
+msgid "*n* is the number of LEDs in the strip."
+msgstr ""
+
+#: ../../library/neopixel.rst:45
+msgid "*bpp* is 3 for RGB LEDs, and 4 for RGBW LEDs."
+msgstr ""
+
+#: ../../library/neopixel.rst:46
+msgid "*timing* is 0 for 400KHz, and 1 for 800kHz LEDs (most are 800kHz)."
+msgstr ""
+
+#: ../../library/neopixel.rst:49
+msgid "Pixel access methods"
+msgstr ""
+
+#: ../../library/neopixel.rst:53
+msgid ""
+"Sets the value of all pixels to the specified *pixel* value (i.e. an "
+"RGB/RGBW tuple)."
+msgstr ""
+
+#: ../../library/neopixel.rst:58
+msgid "Returns the number of LEDs in the strip."
+msgstr ""
+
+#: ../../library/neopixel.rst:62
+msgid "Set the pixel at *index* to the value, which is an RGB/RGBW tuple."
+msgstr ""
+
+#: ../../library/neopixel.rst:66
+msgid "Returns the pixel at *index* as an RGB/RGBW tuple."
+msgstr ""
+
+#: ../../library/neopixel.rst:69
+msgid "Output methods"
+msgstr ""
+
+#: ../../library/neopixel.rst:73
+msgid "Writes the current pixel data to the strip."
+msgstr ""
+

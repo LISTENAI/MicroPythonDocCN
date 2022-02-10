@@ -1,0 +1,96 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../wipy/tutorial/wlan.rst:2
+msgid "WLAN step by step"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:4
+msgid ""
+"The WLAN is a system feature of the WiPy, therefore it is always enabled "
+"(even while in ``machine.SLEEP``), except when deepsleep mode is entered."
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:7
+msgid "In order to retrieve the current WLAN instance, do::"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:12
+msgid ""
+"You can check the current mode (which is always ``WLAN.AP`` after power "
+"up)::"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:17
+msgid ""
+"When you change the WLAN mode following the instructions below, your WLAN"
+" connection to the WiPy will be broken. This means you will not be able "
+"to run these commands interactively over the WLAN."
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:22
+msgid "There are two ways around this::"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:22
+msgid ""
+"put this setup code into your :ref:`boot.py file<wipy_filesystem>` so "
+"that it gets executed automatically after reset."
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:23
+msgid ""
+":ref:`duplicate the REPL on UART <wipy_uart>`, so that you can run "
+"commands via USB."
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:26
+msgid "Connecting to your home router"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:28
+msgid ""
+"The WLAN network card always boots in ``WLAN.AP`` mode, so we must first "
+"configure it as a station::"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:35
+msgid "Now you can proceed to scan for networks::"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:48
+msgid "Assigning a static IP address when booting"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:50
+msgid ""
+"If you want your WiPy to connect to your home router after boot-up, and "
+"with a fixed IP address so that you can access it via telnet or FTP, use "
+"the following script as /flash/boot.py::"
+msgstr ""
+
+#: ../../wipy/tutorial/wlan.rst:70
+msgid ""
+"Notice how we check for the reset cause and the connection status, this "
+"is crucial in order to be able to soft reset the WiPy during a telnet "
+"session without breaking the connection."
+msgstr ""
+

@@ -1,0 +1,155 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/assembler.rst:4
+msgid "Inline assembler"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:6
+msgid "Here you will learn how to write inline assembler in MicroPython."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:8
+msgid ""
+"**Note**: this is an advanced tutorial, intended for those who already "
+"know a bit about microcontrollers and assembly language."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:11
+msgid ""
+"MicroPython includes an inline assembler.  It allows you to write "
+"assembly routines as a Python function, and you can call them as you "
+"would a normal Python function."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:16
+msgid "Returning a value"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:18
+msgid ""
+"Inline assembler functions are denoted by a special function decorator. "
+"Let's start with the simplest example::"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:25
+msgid ""
+"You can enter this in a script or at the REPL.  This function takes no "
+"arguments and returns the number 42.  ``r0`` is a register, and the value"
+" in this register when the function returns is the value that is "
+"returned. MicroPython always interprets the ``r0`` as an integer, and "
+"converts it to an integer object for the caller."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:31
+msgid "If you run ``print(fun())`` you will see it print out 42."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:34
+msgid "Accessing peripherals"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:36
+msgid "For something a bit more complicated, let's turn on an LED::"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:44
+msgid "This code uses a few new concepts:"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:46
+msgid ""
+"``stm`` is a module which provides a set of constants for easy access to "
+"the registers of the pyboard's microcontroller.  Try running ``import "
+"stm`` and then ``help(stm)`` at the REPL.  It will give you a list of all"
+" the available constants."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:51
+msgid ""
+"``stm.GPIOA`` is the address in memory of the GPIOA peripheral. On the "
+"pyboard, the red LED is on port A, pin PA13."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:54
+msgid ""
+"``movwt`` moves a 32-bit number into a register.  It is a convenience "
+"function that turns into 2 thumb instructions: ``movw`` followed by "
+"``movt``. The ``movt`` also shifts the immediate value right by 16 bits."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:58
+msgid ""
+"``strh`` stores a half-word (16 bits).  The instruction above stores the "
+"lower 16-bits of ``r1`` into the memory location ``r0 + stm.GPIO_BSRRL``."
+" This has the effect of setting high all those pins on port A for which "
+"the corresponding bit in ``r0`` is set.  In our example above, the 13th "
+"bit in ``r0`` is set, so PA13 is pulled high.  This turns on the red LED."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:65
+msgid "Accepting arguments"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:67
+msgid ""
+"Inline assembler functions can accept up to 4 arguments.  If they are "
+"used, they must be named ``r0``, ``r1``, ``r2`` and ``r3`` to reflect the"
+" registers and the calling conventions."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:71
+msgid "Here is a function that adds its arguments::"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:77
+msgid ""
+"This performs the computation ``r0 = r0 + r1``.  Since the result is put "
+"in ``r0``, that is what is returned.  Try ``asm_add(1, 2)``, it should "
+"return 3."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:82
+msgid "Loops"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:84
+msgid ""
+"We can assign labels with ``label(my_label)``, and branch to them using "
+"``b(my_label)``, or a conditional branch like ``bgt(my_label)``."
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:87
+msgid ""
+"The following example flashes the green LED.  It flashes it ``r0`` times."
+" ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:128
+msgid "Further reading"
+msgstr ""
+
+#: ../../pyboard/tutorial/assembler.rst:130
+msgid ""
+"For further information about supported instructions of the inline "
+"assembler, see the :ref:`reference documentation <asm_thumb2_index>`."
+msgstr ""
+

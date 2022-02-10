@@ -1,0 +1,59 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/machine.ADC.rst:5
+msgid "class ADC -- analog to digital conversion"
+msgstr ""
+
+#: ../../library/machine.ADC.rst:7
+msgid ""
+"The ADC class provides an interface to analog-to-digital convertors, and "
+"represents a single endpoint that can sample a continuous voltage and "
+"convert it to a discretised value."
+msgstr ""
+
+#: ../../library/machine.ADC.rst:11
+msgid "Example usage::"
+msgstr ""
+
+#: ../../library/machine.ADC.rst:19
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/machine.ADC.rst:23
+msgid ""
+"Access the ADC associated with a source identified by *id*.  This *id* "
+"may be an integer (usually specifying a channel number), a :ref:`Pin "
+"<machine.Pin>` object, or other value supported by the underlying "
+"machine."
+msgstr ""
+
+#: ../../library/machine.ADC.rst:29
+msgid "Methods"
+msgstr ""
+
+#: ../../library/machine.ADC.rst:33
+msgid ""
+"Take an analog reading and return an integer in the range 0-65535. The "
+"return value represents the raw reading taken by the ADC, scaled such "
+"that the minimum value is 0 and the maximum value is 65535."
+msgstr ""
+

@@ -1,0 +1,233 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/servo.rst:2
+msgid "Controlling hobby servo motors"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:4
+#, python-format
+msgid ""
+"There are 4 dedicated connection points on the pyboard for connecting up "
+"hobby servo motors (see eg `Wikipedia "
+"<http://en.wikipedia.org/wiki/Servo_%28radio_control%29>`__). These "
+"motors have 3 wires: ground, power and signal.  On the pyboard you can "
+"connect them in the bottom right corner, with the signal pin on the far "
+"right.  Pins X1, X2, X3 and X4 are the 4 dedicated servo signal pins."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:13
+msgid ""
+"In this picture there are male-male double adaptors to connect the servos"
+" to the header pins on the pyboard."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:16
+msgid ""
+"The ground wire on a servo is usually the darkest coloured one, either "
+"black or dark brown.  The power wire will most likely be red."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:19
+msgid ""
+"The power pin for the servos (labelled VIN) is connected directly to the "
+"input power source of the pyboard.  When powered via USB, VIN is powered "
+"through a diode by the 5V USB power line.  Connect to USB, the pyboard "
+"can power at least 4 small to medium sized servo motors."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:24
+msgid ""
+"If using a battery to power the pyboard and run servo motors, make sure "
+"it is not greater than 6V, since this is the maximum voltage most servo "
+"motors can take.  (Some motors take only up to 4.8V, so check what type "
+"you are using.)"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:30
+msgid "Creating a Servo object"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:32
+msgid ""
+"Plug in a servo to position 1 (the one with pin X1) and create a servo "
+"object using::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:37
+msgid "To change the angle of the servo use the ``angle`` method::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:42
+msgid ""
+"The angle here is measured in degrees, and ranges from about -90 to +90, "
+"depending on the motor.  Calling ``angle`` without parameters will return"
+" the current angle::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:49
+msgid ""
+"Note that for some angles, the returned angle is not exactly the same as "
+"the angle you set, due to rounding errors in setting the pulse width."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:52
+msgid ""
+"You can pass a second parameter to the ``angle`` method, which specifies "
+"how long to take (in milliseconds) to reach the desired angle.  For "
+"example, to take 1 second (1000 milliseconds) to go from the current "
+"position to 50 degrees, use ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:59
+msgid ""
+"This command will return straight away and the servo will continue to "
+"move to the desired angle, and stop when it gets there.  You can use this"
+" feature as a speed control, or to synchronise 2 or more servo motors.  "
+"If we have another servo motor (``servo2 = pyb.Servo(2)``) then we can do"
+" ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:66
+msgid ""
+"This will move the servos together, making them both take 2 seconds to "
+"reach their final angles."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:69
+msgid ""
+"Note: the semicolon between the 2 expressions above is used so that they "
+"are executed one after the other when you press enter at the REPL prompt."
+" In a script you don't need to do this, you can just write them one line "
+"after the other."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:75
+msgid "Continuous rotation servos"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:77
+msgid ""
+"So far we have been using standard servos that move to a specific angle "
+"and stay at that angle.  These servo motors are useful to create joints "
+"of a robot, or things like pan-tilt mechanisms.  Internally, the motor "
+"has a variable resistor (potentiometer) which measures the current angle "
+"and applies power to the motor proportional to how far it is from the "
+"desired angle.  The desired angle is set by the width of a high-pulse on "
+"the servo signal wire.  A pulse width of 1500 microsecond corresponds to "
+"the centre position (0 degrees).  The pulses are sent at 50 Hz, ie 50 "
+"pulses per second."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:87
+msgid ""
+"You can also get **continuous rotation** servo motors which turn "
+"continuously clockwise or counterclockwise.  The direction and speed of "
+"rotation is set by the pulse width on the signal wire.  A pulse width of "
+"1500 microseconds corresponds to a stopped motor.  A pulse width smaller "
+"or larger than this means rotate one way or the other, at a given speed."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:94
+msgid ""
+"On the pyboard, the servo object for a continuous rotation motor is the "
+"same as before.  In fact, using ``angle`` you can set the speed.  But to "
+"make it easier to understand what is intended, there is another method "
+"called ``speed`` which sets the speed::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:101
+msgid ""
+"``speed`` has the same functionality as ``angle``: you can get the speed,"
+" set it, and set it with a time to reach the final speed. ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:109
+msgid ""
+"The final command above will set the motor to stop, but take 2 seconds to"
+" do it.  This is essentially a control over the acceleration of the "
+"continuous servo."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:113
+msgid ""
+"A servo speed of 100 (or -100) is considered maximum speed, but actually "
+"you can go a bit faster than that, depending on the particular motor."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:116
+msgid ""
+"The only difference between the ``angle`` and ``speed`` methods (apart "
+"from the name) is the way the input numbers (angle or speed) are "
+"converted to a pulse width."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:121
+msgid "Calibration"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:123
+msgid ""
+"The conversion from angle or speed to pulse width is done by the servo "
+"object using its calibration values.  To get the current calibration, use"
+" ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:130
+msgid "There are 5 numbers here, which have meaning:"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:132
+msgid "Minimum pulse width; the smallest pulse width that the servo accepts."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:133
+msgid "Maximum pulse width; the largest pulse width that the servo accepts."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:134
+msgid ""
+"Centre pulse width; the pulse width that puts the servo at 0 degrees or 0"
+" speed."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:136
+msgid ""
+"The pulse width corresponding to 90 degrees.  This sets the conversion in"
+" the method ``angle`` of angle to pulse width."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:138
+msgid ""
+"The pulse width corresponding to a speed of 100.  This sets the "
+"conversion in the method ``speed`` of speed to pulse width."
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:141
+msgid "You can recalibrate the servo (change its default values) by using::"
+msgstr ""
+
+#: ../../pyboard/tutorial/servo.rst:145
+msgid ""
+"Of course, you would change the above values to suit your particular "
+"servo motor."
+msgstr ""
+

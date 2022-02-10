@@ -1,0 +1,107 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../rp2/general.rst:4
+msgid "General information about the RP2xxx port"
+msgstr ""
+
+#: ../../rp2/general.rst:6
+msgid ""
+"The rp2 port supports boards powered by the Raspberry Pi Foundation's "
+"RP2xxx family of microcontrollers, most notably the Raspberry Pi Pico "
+"that employs the RP2040."
+msgstr ""
+
+#: ../../rp2/general.rst:11
+msgid "Technical specifications and SoC datasheets"
+msgstr ""
+
+#: ../../rp2/general.rst:13
+msgid ""
+"For detailed technical specifications, please refer to the `datasheets "
+"<https://datasheets.raspberrypi.org/rp2040/rp2040-datasheet.pdf>`_"
+msgstr ""
+
+#: ../../rp2/general.rst:16
+msgid ""
+"The RP2040 microcontroller is manufactured on a 40 nm silicon process in "
+"a 7x7mm QFN-56 SMD package. The key features include:"
+msgstr ""
+
+#: ../../rp2/general.rst:19
+msgid "133 MHz dual ARM Cortex-M0+ cores (overclockable to over 400 MHz)"
+msgstr ""
+
+#: ../../rp2/general.rst:20
+msgid "264KB SRAM in six independent banks"
+msgstr ""
+
+#: ../../rp2/general.rst:21
+msgid ""
+"No internal Flash or EEPROM memory (after reset, the bootloader loads "
+"firmware from either the external flash memory or USB bus into internal "
+"SRAM)"
+msgstr ""
+
+#: ../../rp2/general.rst:23
+msgid "QSPI bus controller, which supports up to 16 MB of external Flash memory"
+msgstr ""
+
+#: ../../rp2/general.rst:25
+msgid "On-chip programmable LDO to generate core voltage"
+msgstr ""
+
+#: ../../rp2/general.rst:26
+msgid "2 on-chip PLLs to generate USB and core clocks"
+msgstr ""
+
+#: ../../rp2/general.rst:27
+msgid "30 GPIO pins, of which 4 can optionally be used as analog inputs"
+msgstr ""
+
+#: ../../rp2/general.rst:29
+msgid "The peripherals include:"
+msgstr ""
+
+#: ../../rp2/general.rst:31
+msgid "2 UARTs"
+msgstr ""
+
+#: ../../rp2/general.rst:32
+msgid "2 SPI controllers"
+msgstr ""
+
+#: ../../rp2/general.rst:33
+msgid "2 I2C contollers"
+msgstr ""
+
+#: ../../rp2/general.rst:34
+msgid "16 PWM channels"
+msgstr ""
+
+#: ../../rp2/general.rst:35
+msgid "USB 1.1 controller"
+msgstr ""
+
+#: ../../rp2/general.rst:36
+msgid "8 PIO state machines"
+msgstr ""
+

@@ -1,0 +1,102 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/machine.ADCWiPy.rst:5
+msgid "class ADCWiPy -- analog to digital conversion"
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:9
+msgid ""
+"This class is a non-standard ADC implementation for the WiPy. It is "
+"available simply as ``machine.ADC`` on the WiPy but is named in the "
+"documentation below as ``machine.ADCWiPy`` to distinguish it from the "
+"more general :ref:`machine.ADC <machine.ADC>` class."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:14
+msgid "Usage::"
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:23
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:27
+msgid ""
+"Create an ADC object associated with the given pin. This allows you to "
+"then read analog values on that pin. For more info check the `pinout and "
+"alternate functions table. "
+"<https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png>`_"
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:34
+msgid ""
+"ADC pin input range is 0-1.4V (being 1.8V the absolute maximum that it "
+"can withstand). When GP2, GP3, GP4 or GP5 are remapped to the ADC block, "
+"1.8 V is the maximum. If these pins are used in digital mode, then the "
+"maximum allowed input is 3.6V."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:40
+msgid "Methods"
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:44
+msgid ""
+"Create an analog pin. If only channel ID is given, the correct pin will "
+"be selected. Alternatively, only the pin can be passed and the correct "
+"channel will be selected. Examples::"
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:55
+msgid "Enable the ADC block."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:59
+msgid "Disable the ADC block."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:62
+msgid "class ADCChannel --- read analog values from internal or external sources"
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:64
+msgid ""
+"ADC channels can be connected to internal points of the MCU or to GPIO "
+"pins. ADC channels are created using the ADC.channel method."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:69
+msgid "Fast method to read the channel value."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:73
+msgid "Read the channel value."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:77
+msgid "Re-init (and effectively enable) the ADC channel."
+msgstr ""
+
+#: ../../library/machine.ADCWiPy.rst:81
+msgid "Disable the ADC channel."
+msgstr ""
+

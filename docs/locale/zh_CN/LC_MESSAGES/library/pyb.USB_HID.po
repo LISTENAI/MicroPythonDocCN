@@ -1,0 +1,78 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.USB_HID.rst:5
+msgid "class USB_HID -- USB Human Interface Device (HID)"
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:7
+msgid ""
+"The USB_HID class allows creation of an object representing the USB Human"
+" Interface Device (HID) interface.  It can be used to emulate a "
+"peripheral such as a mouse or keyboard."
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:11
+msgid ""
+"Before you can use this class, you need to use :meth:`pyb.usb_mode()` to "
+"set the USB mode to include the HID interface."
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:14
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:18
+msgid "Create a new USB_HID object."
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:22
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:26
+msgid "Receive data on the bus:"
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:28
+msgid ""
+"``data`` can be an integer, which is the number of bytes to receive, or a"
+" mutable buffer, which will be filled with received bytes."
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:30
+msgid "``timeout`` is the timeout in milliseconds to wait for the receive."
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:32
+msgid ""
+"Return value: if ``data`` is an integer then a new buffer of the bytes "
+"received, otherwise the number of bytes read into ``data`` is returned."
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:37
+msgid "Send data over the USB HID interface:"
+msgstr ""
+
+#: ../../library/pyb.USB_HID.rst:39
+msgid "``data`` is the data to send (a tuple/list of integers, or a bytearray)."
+msgstr ""
+

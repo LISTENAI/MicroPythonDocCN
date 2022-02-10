@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/zephyr.DiskAccess.rst:5
+msgid "class DiskAccess -- access to disk storage"
+msgstr ""
+
+#: ../../library/zephyr.DiskAccess.rst:7
+msgid ""
+"Uses `Zephyr Disk Access API "
+"<https://docs.zephyrproject.org/latest/reference/storage/disk/access.html>`_."
+msgstr ""
+
+#: ../../library/zephyr.DiskAccess.rst:9
+msgid ""
+"This class allows access to storage devices on the board, such as support"
+" for SD card controllers and interfacing with SD cards via SPI. Disk "
+"devices are automatically detected and initialized on boot using Zephyr "
+"devicetree data."
+msgstr ""
+
+#: ../../library/zephyr.DiskAccess.rst:13
+msgid ""
+"The Zephyr disk access class enables the transfer of data between a disk "
+"device and an accessible memory buffer given a disk name, buffer, "
+"starting disk block, and number of sectors to read. MicroPython reads as "
+"many blocks as necessary to fill the buffer, so the number of sectors to "
+"read is found by dividing the buffer length by block size of the disk."
+msgstr ""
+
+#: ../../library/zephyr.DiskAccess.rst:18
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/zephyr.DiskAccess.rst:22
+msgid ""
+"Gets an object for accessing disk memory of the specific disk. For "
+"accessing an SD card on the mimxrt1050_evk, ``disk_name`` would be "
+"``SDHC``. See board documentation and devicetree for usable disk names "
+"for your board (ex. RT boards use style USDHC#)."
+msgstr ""
+
+#: ../../library/zephyr.DiskAccess.rst:27
+msgid "Methods"
+msgstr ""
+
+#: ../../library/zephyr.DiskAccess.rst:35
+msgid ""
+"These methods implement the simple and extended :ref:`block protocol "
+"<block-device-interface>` defined by :class:`uos.AbstractBlockDev`."
+msgstr ""
+

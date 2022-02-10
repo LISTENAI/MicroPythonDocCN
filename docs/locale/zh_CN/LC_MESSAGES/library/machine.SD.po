@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/machine.SD.rst:5
+msgid "class SD -- secure digital memory card (cc3200 port only)"
+msgstr ""
+
+#: ../../library/machine.SD.rst:9
+msgid "This is a non-standard class and is only available on the cc3200 port."
+msgstr ""
+
+#: ../../library/machine.SD.rst:12
+msgid ""
+"The SD card class allows to configure and enable the memory card module "
+"of the WiPy and automatically mount it as ``/sd`` as part of the file "
+"system. There are several pin combinations that can be used to wire the "
+"SD card socket to the WiPy and the pins used can be specified in the "
+"constructor. Please check the `pinout and alternate functions table. "
+"<https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png>`_ "
+"for more info regarding the pins which can be remapped to be used with a "
+"SD card."
+msgstr ""
+
+#: ../../library/machine.SD.rst:20
+msgid "Example usage::"
+msgstr ""
+
+#: ../../library/machine.SD.rst:31
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/machine.SD.rst:35
+msgid "Create a SD card object. See ``init()`` for parameters if initialization."
+msgstr ""
+
+#: ../../library/machine.SD.rst:38
+msgid "Methods"
+msgstr ""
+
+#: ../../library/machine.SD.rst:42
+msgid ""
+"Enable the SD card. In order to initialize the card, give it a 3-tuple: "
+"``(clk_pin, cmd_pin, dat0_pin)``."
+msgstr ""
+
+#: ../../library/machine.SD.rst:47
+msgid "Disable the SD card."
+msgstr ""
+

@@ -1,0 +1,135 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/network.WIZNET5K.rst:5
+msgid "class WIZNET5K -- control WIZnet5x00 Ethernet modules"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:7
+msgid ""
+"This class allows you to control WIZnet5x00 Ethernet adaptors based on "
+"the W5200 and W5500 chipsets.  The particular chipset that is supported "
+"by the firmware is selected at compile-time via the MICROPY_PY_WIZNET5K "
+"option."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:12
+msgid "Example usage::"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:21
+msgid ""
+"For this example to work the WIZnet5x00 module must have the following "
+"connections:"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:23
+msgid "MOSI connected to X8"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:24
+msgid "MISO connected to X7"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:25
+msgid "SCLK connected to X6"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:26
+msgid "nSS connected to X5"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:27
+msgid "nRESET connected to X4"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:29
+msgid "It is possible to use other SPI buses and other pins for nSS and nRESET."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:32
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:36
+msgid ""
+"Create a WIZNET5K driver object, initialise the WIZnet5x00 module using "
+"the given SPI bus and pins, and return the WIZNET5K object."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:39
+msgid "Arguments are:"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:41
+msgid ""
+"*spi* is an :ref:`SPI object <pyb.SPI>` which is the SPI bus that the "
+"WIZnet5x00 is connected to (the MOSI, MISO and SCLK pins)."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:43
+msgid ""
+"*pin_cs* is a :ref:`Pin object <pyb.Pin>` which is connected to the "
+"WIZnet5x00 nSS pin."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:44
+msgid ""
+"*pin_rst* is a :ref:`Pin object <pyb.Pin>` which is connected to the "
+"WIZnet5x00 nRESET pin."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:46
+msgid ""
+"All of these objects will be initialised by the driver, so there is no "
+"need to initialise them yourself.  For example, you can use::"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:52
+msgid "Methods"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:56
+msgid ""
+"Returns ``True`` if the physical Ethernet link is connected and up. "
+"Returns ``False`` otherwise."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:61
+msgid "Get/set IP address, subnet mask, gateway and DNS."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:63
+msgid ""
+"When called with no arguments, this method returns a 4-tuple with the "
+"above information."
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:65
+msgid ""
+"To set the above values, pass a 4-tuple with the required information.  "
+"For example::"
+msgstr ""
+
+#: ../../library/network.WIZNET5K.rst:71
+msgid "Dump the WIZnet5x00 registers.  Useful for debugging."
+msgstr ""
+

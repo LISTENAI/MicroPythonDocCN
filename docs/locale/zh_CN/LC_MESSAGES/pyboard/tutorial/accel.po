@@ -1,0 +1,98 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/accel.rst:2
+msgid "The accelerometer"
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:4
+msgid ""
+"Here you will learn how to read the accelerometer and signal using LEDs "
+"states like tilt left and tilt right."
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:7
+msgid "Using the accelerometer"
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:9
+msgid ""
+"The pyboard has an accelerometer (a tiny mass on a tiny spring) that can "
+"be used to detect the angle of the board and motion. There is a different"
+" sensor for each of the x, y, z directions. To get the value of the "
+"accelerometer, create a pyb.Accel() object and then call the x() method. "
+"::"
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:18
+msgid ""
+"This returns a signed integer with a value between around -30 and 30. "
+"Note that the measurement is very noisy, this means that even if you keep"
+" the board perfectly still there will be some variation in the number "
+"that you measure. Because of this, you shouldn't use the exact value of "
+"the x() method but see if it is in a certain range."
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:24
+msgid ""
+"We will start by using the accelerometer to turn on a light if it is not "
+"flat. ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:39
+msgid ""
+"We create Accel and LED objects, then get the value of the x direction of"
+" the accelerometer. If the magnitude of x is bigger than a certain value "
+"``SENSITIVITY``, then the LED turns on, otherwise it turns off. The loop "
+"has a small ``pyb.delay()`` otherwise the LED flashes annoyingly when the"
+" value of x is close to ``SENSITIVITY``. Try running this on the pyboard "
+"and tilt the board left and right to make the LED turn on and off."
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:46
+msgid ""
+"**Exercise: Change the above script so that the blue LED gets brighter "
+"the more you tilt the pyboard.  HINT: You will need to rescale the "
+"values, intensity goes from 0-255.**"
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:51
+msgid "Making a spirit level"
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:53
+msgid ""
+"The example above is only sensitive to the angle in the x direction but "
+"if we use the ``y()`` value and more LEDs we can turn the pyboard into a "
+"spirit level. ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/accel.rst:87
+msgid ""
+"We start by creating a tuple of LED objects for the x and y directions. "
+"Tuples are immutable objects in python which means they can't be modified"
+" once they are created. We then proceed as before but turn on a different"
+" LED for positive and negative x values. We then do the same for the y "
+"direction. This isn't particularly sophisticated but it does the job. Run"
+" this on your pyboard and you should see different LEDs turning on "
+"depending on how you tilt the board."
+msgstr ""
+

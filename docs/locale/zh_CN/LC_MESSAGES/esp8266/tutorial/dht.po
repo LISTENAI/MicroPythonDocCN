@@ -1,0 +1,124 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/dht.rst:2
+msgid "Temperature and Humidity"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:4
+msgid ""
+"DHT (Digital Humidity & Temperature) sensors are low cost digital sensors"
+" with capacitive humidity sensors and thermistors to measure the "
+"surrounding air. They feature a chip that handles analog to digital "
+"conversion and provide a 1-wire interface. Newer sensors additionally "
+"provide an I2C interface."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:9
+msgid ""
+"The DHT11 (blue) and DHT22 (white) sensors provide the same 1-wire "
+"interface, however, the DHT22 requires a separate object as it has more "
+"complex calculation. DHT22 have 1 decimal place resolution for both "
+"humidity and temperature readings. DHT11 have whole number for both."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:14
+msgid ""
+"A custom 1-wire protocol, which is different to Dallas 1-wire, is used to"
+" get the measurements from the sensor. The payload consists of a humidity"
+" value, a temperature value and a checksum."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:18
+msgid ""
+"To use the 1-wire interface, construct the objects referring to their "
+"data pin::"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:28
+msgid "Then measure and read their values with::"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:34
+msgid ""
+"Values returned from ``temperature()`` are in degrees Celsius and values "
+"returned from ``humidity()`` are a percentage of relative humidity."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:37
+msgid ""
+"The DHT11 can be called no more than once per second and the DHT22 once "
+"every two seconds for most accurate results. Sensor accuracy will degrade"
+" over time. Each sensor supports a different operating range. Refer to "
+"the product datasheets for specifics."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:42
+msgid ""
+"In 1-wire mode, only three of the four pins are used and in I2C mode, all"
+" four pins are used. Older sensors may still have 4 pins even though they"
+" do not support I2C. The 3rd pin is simply not connected."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:46
+msgid "Pin configurations:"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:48
+msgid "Sensor without I2C in 1-wire mode (eg. DHT11, DHT22, AM2301, AM2302):"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:50
+msgid "1=VDD, 2=Data, 3=NC, 4=GND"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:52
+msgid "Sensor with I2C in 1-wire mode (eg. DHT12, AM2320, AM2321, AM2322):"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:54
+msgid "1=VDD, 2=Data, 3=GND, 4=GND"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:56
+msgid "Sensor with I2C in I2C mode (eg. DHT12, AM2320, AM2321, AM2322):"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:58
+msgid "1=VDD, 2=SDA, 3=GND, 4=SCL"
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:60
+msgid "You should use pull-up resistors for the Data, SDA and SCL pins."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:62
+msgid ""
+"To make newer I2C sensors work in backwards compatible 1-wire mode, you "
+"must connect both pins 3 and 4 to GND. This disables the I2C interface."
+msgstr ""
+
+#: ../../esp8266/tutorial/dht.rst:65
+msgid ""
+"DHT22 sensors are now sold under the name AM2302 and are otherwise "
+"identical."
+msgstr ""
+

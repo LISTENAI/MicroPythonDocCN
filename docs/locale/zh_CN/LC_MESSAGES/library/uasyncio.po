@@ -1,0 +1,408 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/uasyncio.rst:2
+msgid ":mod:`uasyncio` --- asynchronous I/O scheduler"
+msgstr ""
+
+#: ../../library/uasyncio.rst:7
+msgid ""
+"|see_cpython_module| `asyncio "
+"<https://docs.python.org/3.8/library/asyncio.html>`_"
+msgstr ""
+
+#: ../../library/uasyncio.rst:10
+msgid "Example::"
+msgstr ""
+
+#: ../../library/uasyncio.rst:35
+msgid "Core functions"
+msgstr ""
+
+#: ../../library/uasyncio.rst:39
+msgid "Create a new task from the given coroutine and schedule it to run."
+msgstr ""
+
+#: ../../library/uasyncio.rst:41
+msgid "Returns the corresponding `Task` object."
+msgstr ""
+
+#: ../../library/uasyncio.rst:45
+msgid "Return the `Task` object associated with the currently running task."
+msgstr ""
+
+#: ../../library/uasyncio.rst:49
+msgid "Create a new task from the given coroutine and run it until it completes."
+msgstr ""
+
+#: ../../library/uasyncio.rst:51
+msgid "Returns the value returned by *coro*."
+msgstr ""
+
+#: ../../library/uasyncio.rst:55
+msgid "Sleep for *t* seconds (can be a float)."
+msgstr ""
+
+#: ../../library/uasyncio.rst:57 ../../library/uasyncio.rst:81
+#: ../../library/uasyncio.rst:96 ../../library/uasyncio.rst:143
+#: ../../library/uasyncio.rst:166 ../../library/uasyncio.rst:187
+#: ../../library/uasyncio.rst:207 ../../library/uasyncio.rst:217
+#: ../../library/uasyncio.rst:238 ../../library/uasyncio.rst:244
+#: ../../library/uasyncio.rst:260 ../../library/uasyncio.rst:266
+#: ../../library/uasyncio.rst:278 ../../library/uasyncio.rst:293
+msgid "This is a coroutine."
+msgstr ""
+
+#: ../../library/uasyncio.rst:61
+msgid "Sleep for *t* milliseconds."
+msgstr ""
+
+#: ../../library/uasyncio.rst:63 ../../library/uasyncio.rst:87
+#: ../../library/uasyncio.rst:252
+msgid "This is a coroutine, and a MicroPython extension."
+msgstr ""
+
+#: ../../library/uasyncio.rst:66
+msgid "Additional functions"
+msgstr ""
+
+#: ../../library/uasyncio.rst:70
+msgid ""
+"Wait for the *awaitable* to complete, but cancel it if it takes longer "
+"than *timeout* seconds.  If *awaitable* is not a task then a task will be"
+" created from it."
+msgstr ""
+
+#: ../../library/uasyncio.rst:74
+msgid ""
+"If a timeout occurs, it cancels the task and raises "
+"``asyncio.TimeoutError``: this should be trapped by the caller.  The task"
+" receives ``asyncio.CancelledError`` which may be ignored or trapped "
+"using ``try...except`` or ``try...finally`` to run cleanup code."
+msgstr ""
+
+#: ../../library/uasyncio.rst:79
+msgid "Returns the return value of *awaitable*."
+msgstr ""
+
+#: ../../library/uasyncio.rst:85
+msgid "Similar to `wait_for` but *timeout* is an integer in milliseconds."
+msgstr ""
+
+#: ../../library/uasyncio.rst:91
+msgid ""
+"Run all *awaitables* concurrently.  Any *awaitables* that are not tasks "
+"are promoted to tasks."
+msgstr ""
+
+#: ../../library/uasyncio.rst:94
+msgid "Returns a list of return values of all *awaitables*."
+msgstr ""
+
+#: ../../library/uasyncio.rst:99
+msgid "class Task"
+msgstr ""
+
+#: ../../library/uasyncio.rst:103
+msgid ""
+"This object wraps a coroutine into a running task.  Tasks can be waited "
+"on using ``await task``, which will wait for the task to complete and "
+"return the return value of the task."
+msgstr ""
+
+#: ../../library/uasyncio.rst:107
+msgid ""
+"Tasks should not be created directly, rather use `create_task` to create "
+"them."
+msgstr ""
+
+#: ../../library/uasyncio.rst:111
+msgid ""
+"Cancel the task by injecting ``asyncio.CancelledError`` into it.  The "
+"task may ignore this exception.  Cleanup code may be run by trapping it, "
+"or via ``try ... finally``."
+msgstr ""
+
+#: ../../library/uasyncio.rst:116
+msgid "class Event"
+msgstr ""
+
+#: ../../library/uasyncio.rst:120
+msgid ""
+"Create a new event which can be used to synchronise tasks.  Events start "
+"in the cleared state."
+msgstr ""
+
+#: ../../library/uasyncio.rst:125
+msgid "Returns ``True`` if the event is set, ``False`` otherwise."
+msgstr ""
+
+#: ../../library/uasyncio.rst:129
+msgid "Set the event.  Any tasks waiting on the event will be scheduled to run."
+msgstr ""
+
+#: ../../library/uasyncio.rst:131
+msgid ""
+"Note: This must be called from within a task. It is not safe to call this"
+" from an IRQ, scheduler callback, or other thread. See `ThreadSafeFlag`."
+msgstr ""
+
+#: ../../library/uasyncio.rst:136
+msgid "Clear the event."
+msgstr ""
+
+#: ../../library/uasyncio.rst:140
+msgid ""
+"Wait for the event to be set.  If the event is already set then it "
+"returns immediately."
+msgstr ""
+
+#: ../../library/uasyncio.rst:146
+msgid "class ThreadSafeFlag"
+msgstr ""
+
+#: ../../library/uasyncio.rst:150
+msgid ""
+"Create a new flag which can be used to synchronise a task with code "
+"running outside the asyncio loop, such as other threads, IRQs, or "
+"scheduler callbacks.  Flags start in the cleared state."
+msgstr ""
+
+#: ../../library/uasyncio.rst:156
+msgid ""
+"Set the flag.  If there is a task waiting on the event, it will be "
+"scheduled to run."
+msgstr ""
+
+#: ../../library/uasyncio.rst:161
+msgid ""
+"Wait for the flag to be set.  If the flag is already set then it returns "
+"immediately."
+msgstr ""
+
+#: ../../library/uasyncio.rst:164
+msgid "A flag may only be waited on by a single task at a time."
+msgstr ""
+
+#: ../../library/uasyncio.rst:169
+msgid "class Lock"
+msgstr ""
+
+#: ../../library/uasyncio.rst:173
+msgid ""
+"Create a new lock which can be used to coordinate tasks.  Locks start in "
+"the unlocked state."
+msgstr ""
+
+#: ../../library/uasyncio.rst:176
+msgid ""
+"In addition to the methods below, locks can be used in an ``async with`` "
+"statement."
+msgstr ""
+
+#: ../../library/uasyncio.rst:180
+msgid "Returns ``True`` if the lock is locked, otherwise ``False``."
+msgstr ""
+
+#: ../../library/uasyncio.rst:184
+msgid ""
+"Wait for the lock to be in the unlocked state and then lock it in an "
+"atomic way.  Only one task can acquire the lock at any one time."
+msgstr ""
+
+#: ../../library/uasyncio.rst:191
+msgid ""
+"Release the lock.  If any tasks are waiting on the lock then the next one"
+" in the queue is scheduled to run and the lock remains locked.  "
+"Otherwise, no tasks are waiting an the lock becomes unlocked."
+msgstr ""
+
+#: ../../library/uasyncio.rst:196
+msgid "TCP stream connections"
+msgstr ""
+
+#: ../../library/uasyncio.rst:200
+msgid ""
+"Open a TCP connection to the given *host* and *port*.  The *host* address"
+" will be resolved using `socket.getaddrinfo`, which is currently a "
+"blocking call."
+msgstr ""
+
+#: ../../library/uasyncio.rst:203
+msgid ""
+"Returns a pair of streams: a reader and a writer stream. Will raise a "
+"socket-specific ``OSError`` if the host could not be resolved or if the "
+"connection could not be made."
+msgstr ""
+
+#: ../../library/uasyncio.rst:211
+msgid ""
+"Start a TCP server on the given *host* and *port*.  The *callback* will "
+"be called with incoming, accepted connections, and be passed 2 arguments:"
+" reader and writer streams for the connection."
+msgstr ""
+
+#: ../../library/uasyncio.rst:215
+msgid "Returns a `Server` object."
+msgstr ""
+
+#: ../../library/uasyncio.rst:221
+msgid ""
+"This represents a TCP stream connection.  To minimise code this class "
+"implements both a reader and a writer, and both ``StreamReader`` and "
+"``StreamWriter`` alias to this class."
+msgstr ""
+
+#: ../../library/uasyncio.rst:227
+msgid ""
+"Get extra information about the stream, given by *v*.  The valid values "
+"for *v* are: ``peername``."
+msgstr ""
+
+#: ../../library/uasyncio.rst:232
+msgid "Close the stream."
+msgstr ""
+
+#: ../../library/uasyncio.rst:236
+msgid "Wait for the stream to close."
+msgstr ""
+
+#: ../../library/uasyncio.rst:242
+msgid "Read up to *n* bytes and return them."
+msgstr ""
+
+#: ../../library/uasyncio.rst:248
+msgid "Read up to n bytes into *buf* with n being equal to the length of *buf*."
+msgstr ""
+
+#: ../../library/uasyncio.rst:250
+msgid "Return the number of bytes read into *buf*."
+msgstr ""
+
+#: ../../library/uasyncio.rst:256
+msgid "Read exactly *n* bytes and return them as a bytes object."
+msgstr ""
+
+#: ../../library/uasyncio.rst:258
+msgid ""
+"Raises an ``EOFError`` exception if the stream ends before reading *n* "
+"bytes."
+msgstr ""
+
+#: ../../library/uasyncio.rst:264
+msgid "Read a line and return it."
+msgstr ""
+
+#: ../../library/uasyncio.rst:270
+msgid ""
+"Accumulated *buf* to the output buffer.  The data is only flushed when "
+"`Stream.drain` is called.  It is recommended to call `Stream.drain` "
+"immediately after calling this function."
+msgstr ""
+
+#: ../../library/uasyncio.rst:276
+msgid "Drain (write) all buffered output data out to the stream."
+msgstr ""
+
+#: ../../library/uasyncio.rst:282
+msgid ""
+"This represents the server class returned from `start_server`.  It can be"
+" used in an ``async with`` statement to close the server upon exit."
+msgstr ""
+
+#: ../../library/uasyncio.rst:287
+msgid "Close the server."
+msgstr ""
+
+#: ../../library/uasyncio.rst:291
+msgid "Wait for the server to close."
+msgstr ""
+
+#: ../../library/uasyncio.rst:296
+msgid "Event Loop"
+msgstr ""
+
+#: ../../library/uasyncio.rst:300
+msgid "Return the event loop used to schedule and run tasks.  See `Loop`."
+msgstr ""
+
+#: ../../library/uasyncio.rst:304
+msgid "Reset the event loop and return it."
+msgstr ""
+
+#: ../../library/uasyncio.rst:306
+msgid ""
+"Note: since MicroPython only has a single event loop this function just "
+"resets the loop's state, it does not create a new one."
+msgstr ""
+
+#: ../../library/uasyncio.rst:311
+msgid ""
+"This represents the object which schedules and runs tasks.  It cannot be "
+"created, use `get_event_loop` instead."
+msgstr ""
+
+#: ../../library/uasyncio.rst:316
+msgid "Create a task from the given *coro* and return the new `Task` object."
+msgstr ""
+
+#: ../../library/uasyncio.rst:320
+msgid "Run the event loop until `stop()` is called."
+msgstr ""
+
+#: ../../library/uasyncio.rst:324
+msgid ""
+"Run the given *awaitable* until it completes.  If *awaitable* is not a "
+"task then it will be promoted to one."
+msgstr ""
+
+#: ../../library/uasyncio.rst:329
+msgid "Stop the event loop."
+msgstr ""
+
+#: ../../library/uasyncio.rst:333
+msgid "Close the event loop."
+msgstr ""
+
+#: ../../library/uasyncio.rst:337
+msgid ""
+"Set the exception handler to call when a Task raises an exception that is"
+" not caught.  The *handler* should accept two arguments: ``(loop, "
+"context)``."
+msgstr ""
+
+#: ../../library/uasyncio.rst:342
+msgid ""
+"Get the current exception handler.  Returns the handler, or ``None`` if "
+"no custom handler is set."
+msgstr ""
+
+#: ../../library/uasyncio.rst:347
+msgid "The default exception handler that is called."
+msgstr ""
+
+#: ../../library/uasyncio.rst:351
+msgid ""
+"Call the current exception handler.  The argument *context* is passed "
+"through and is a dictionary containing keys: ``'message'``, "
+"``'exception'``, ``'future'``."
+msgstr ""
+

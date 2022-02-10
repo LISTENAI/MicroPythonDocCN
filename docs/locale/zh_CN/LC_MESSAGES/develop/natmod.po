@@ -1,0 +1,348 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../develop/natmod.rst:4
+msgid "Native machine code in .mpy files"
+msgstr ""
+
+#: ../../develop/natmod.rst:6
+msgid ""
+"This section describes how to build and work with .mpy files that contain"
+" native machine code from a language other than Python.  This allows you "
+"to write code in a language like C, compile and link it into a .mpy file,"
+" and then import this file like a normal Python module.  This can be used"
+" for implementing functionality which is performance critical, or for "
+"including an existing library written in another language."
+msgstr ""
+
+#: ../../develop/natmod.rst:13
+msgid ""
+"One of the main advantages of using native .mpy files is that native "
+"machine code can be imported by a script dynamically, without the need to"
+" rebuild the main MicroPython firmware.  This is in contrast to "
+":ref:`cmodules` which also allows defining custom modules in C but they "
+"must be compiled into the main firmware image."
+msgstr ""
+
+#: ../../develop/natmod.rst:18
+msgid ""
+"The focus here is on using C to build native modules, but in principle "
+"any language which can be compiled to stand-alone machine code can be put"
+" into a .mpy file."
+msgstr ""
+
+#: ../../develop/natmod.rst:22
+msgid ""
+"A native .mpy module is built using the ``mpy_ld.py`` tool, which is "
+"found in the ``tools/`` directory of the project.  This tool takes a set "
+"of object files (.o files) and links them together to create a native "
+".mpy files.  It requires CPython 3 and the library pyelftools v0.25 or "
+"greater."
+msgstr ""
+
+#: ../../develop/natmod.rst:28
+msgid "Supported features and limitations"
+msgstr ""
+
+#: ../../develop/natmod.rst:30
+msgid ""
+"A .mpy file can contain MicroPython bytecode and/or native machine code."
+"  If it contains native machine code then the .mpy file has a specific "
+"architecture associated with it.  Current supported architectures are "
+"(these are the valid options for the ``ARCH`` variable, see below):"
+msgstr ""
+
+#: ../../develop/natmod.rst:35
+msgid "``x86`` (32 bit)"
+msgstr ""
+
+#: ../../develop/natmod.rst:36
+msgid "``x64`` (64 bit x86)"
+msgstr ""
+
+#: ../../develop/natmod.rst:37
+msgid "``armv7m`` (ARM Thumb 2, eg Cortex-M3)"
+msgstr ""
+
+#: ../../develop/natmod.rst:38
+msgid ""
+"``armv7emsp`` (ARM Thumb 2, single precision float, eg Cortex-M4F, "
+"Cortex-M7)"
+msgstr ""
+
+#: ../../develop/natmod.rst:39
+msgid "``armv7emdp`` (ARM Thumb 2, double precision float, eg Cortex-M7)"
+msgstr ""
+
+#: ../../develop/natmod.rst:40
+msgid "``xtensa`` (non-windowed, eg ESP8266)"
+msgstr ""
+
+#: ../../develop/natmod.rst:41
+msgid "``xtensawin`` (windowed with window size 8, eg ESP32)"
+msgstr ""
+
+#: ../../develop/natmod.rst:43
+msgid ""
+"When compiling and linking the native .mpy file the architecture must be "
+"chosen and the corresponding file can only be imported on that "
+"architecture.  For more details about .mpy files see :ref:`mpy_files`."
+msgstr ""
+
+#: ../../develop/natmod.rst:47
+msgid ""
+"Native code must be compiled as position independent code (PIC) and use a"
+" global offset table (GOT), although the details of this varies from "
+"architecture to architecture.  When importing .mpy files with native code"
+" the import machinery is able to do some basic relocation of the native "
+"code.  This includes relocating text, rodata and BSS sections."
+msgstr ""
+
+#: ../../develop/natmod.rst:53
+msgid "Supported features of the linker and dynamic loader are:"
+msgstr ""
+
+#: ../../develop/natmod.rst:55
+msgid "executable code (text)"
+msgstr ""
+
+#: ../../develop/natmod.rst:56
+msgid ""
+"read-only data (rodata), including strings and constant data (arrays, "
+"structs, etc)"
+msgstr ""
+
+#: ../../develop/natmod.rst:57
+msgid "zeroed data (BSS)"
+msgstr ""
+
+#: ../../develop/natmod.rst:58
+msgid "pointers in text to text, rodata and BSS"
+msgstr ""
+
+#: ../../develop/natmod.rst:59
+msgid "pointers in rodata to text, rodata and BSS"
+msgstr ""
+
+#: ../../develop/natmod.rst:61
+msgid "The known limitations are:"
+msgstr ""
+
+#: ../../develop/natmod.rst:63
+msgid ""
+"data sections are not supported; workaround: use BSS data and initialise "
+"the data values explicitly"
+msgstr ""
+
+#: ../../develop/natmod.rst:66
+msgid ""
+"static BSS variables are not supported; workaround: use global BSS "
+"variables"
+msgstr ""
+
+#: ../../develop/natmod.rst:68
+msgid ""
+"So, if your C code has writable data, make sure the data is defined "
+"globally, without an initialiser, and only written to within functions."
+msgstr ""
+
+#: ../../develop/natmod.rst:71
+msgid ""
+"Linker limitation: the native module is not linked against the symbol "
+"table of the full MicroPython firmware.  Rather, it is linked against an "
+"explicit table of exported symbols found in ``mp_fun_table`` (in "
+"``py/nativeglue.h``), that is fixed at firmware build time.  It is thus "
+"not possible to simply call some arbitrary HAL/OS/RTOS/system function, "
+"for example."
+msgstr ""
+
+#: ../../develop/natmod.rst:77
+msgid ""
+"New symbols can be added to the end of the table and the firmware "
+"rebuilt. The symbols also need to be added to ``tools/mpy_ld.py``'s "
+"``fun_table`` dict in the same location.  This allows ``mpy_ld.py`` to be"
+" able to pick the new symbols up and provide relocations for them when "
+"the mpy is imported.  Finally, if the symbol is a function, a macro or "
+"stub should be added to ``py/dynruntime.h`` to make it easy to call the "
+"function."
+msgstr ""
+
+#: ../../develop/natmod.rst:85
+msgid "Defining a native module"
+msgstr ""
+
+#: ../../develop/natmod.rst:87
+msgid ""
+"A native .mpy module is defined by a set of files that are used to build "
+"the .mpy. The filesystem layout consists of two main parts, the source "
+"files and the Makefile:"
+msgstr ""
+
+#: ../../develop/natmod.rst:90
+msgid ""
+"In the simplest case only a single C source file is required, which "
+"contains all the code that will be compiled into the .mpy module.  This C"
+" source code must include the ``py/dynruntime.h`` file to access the "
+"MicroPython dynamic API, and must at least define a function called "
+"``mpy_init``.  This function will be the entry point of the module, "
+"called when the module is imported."
+msgstr ""
+
+#: ../../develop/natmod.rst:96
+msgid ""
+"The module can be split into multiple C source files if desired.  Parts "
+"of the module can also be implemented in Python.  All source files should"
+" be listed in the Makefile, by adding them to the ``SRC`` variable (see "
+"below).  This includes both C source files as well as any Python files "
+"which will be included in the resulting .mpy file."
+msgstr ""
+
+#: ../../develop/natmod.rst:102
+msgid ""
+"The ``Makefile`` contains the build configuration for the module and list"
+" the source files used to build the .mpy module.  It should define "
+"``MPY_DIR`` as the location of the MicroPython repository (to find header"
+" files, the relevant Makefile fragment, and the ``mpy_ld.py`` tool), "
+"``MOD`` as the name of the module, ``SRC`` as the list of source files, "
+"optionally specify the machine architecture via ``ARCH``, and then "
+"include ``py/dynruntime.mk``."
+msgstr ""
+
+#: ../../develop/natmod.rst:110
+msgid "Minimal example"
+msgstr ""
+
+#: ../../develop/natmod.rst:112
+msgid ""
+"This section provides a fully working example of a simple module named "
+"``factorial``. This module provides a single function "
+"``factorial.factorial(x)`` which computes the factorial of the input and "
+"returns the result."
+msgstr ""
+
+#: ../../develop/natmod.rst:116
+msgid "Directory layout::"
+msgstr ""
+
+#: ../../develop/natmod.rst:122
+msgid "The file ``factorial.c`` contains:"
+msgstr ""
+
+#: ../../develop/natmod.rst:161
+msgid "The file ``Makefile`` contains:"
+msgstr ""
+
+#: ../../develop/natmod.rst:181
+msgid "Compiling the module"
+msgstr ""
+
+#: ../../develop/natmod.rst:183
+msgid "The prerequisite tools needed to build a native .mpy file are:"
+msgstr ""
+
+#: ../../develop/natmod.rst:185
+msgid ""
+"The MicroPython repository (at least the ``py/`` and ``tools/`` "
+"directories)."
+msgstr ""
+
+#: ../../develop/natmod.rst:186
+msgid ""
+"CPython 3, and the library pyelftools (eg ``pip install "
+"'pyelftools>=0.25'``)."
+msgstr ""
+
+#: ../../develop/natmod.rst:187
+msgid "GNU make."
+msgstr ""
+
+#: ../../develop/natmod.rst:188
+msgid "A C compiler for the target architecture (if C source is used)."
+msgstr ""
+
+#: ../../develop/natmod.rst:189
+msgid ""
+"Optionally ``mpy-cross``, built from the MicroPython repository (if .py "
+"source is used)."
+msgstr ""
+
+#: ../../develop/natmod.rst:191
+msgid ""
+"Be sure to select the correct ``ARCH`` for the target you are going to "
+"run on. Then build with::"
+msgstr ""
+
+#: ../../develop/natmod.rst:196
+msgid ""
+"Without modifying the Makefile you can specify the target architecture "
+"via::"
+msgstr ""
+
+#: ../../develop/natmod.rst:201
+msgid "Module usage in MicroPython"
+msgstr ""
+
+#: ../../develop/natmod.rst:203
+msgid ""
+"Once the module is built there should be a file called ``factorial.mpy``."
+"  Copy this so it is accessible on the filesystem of your MicroPython "
+"system and can be found in the import path.  The module can now be "
+"accessed in Python just like any other module, for example::"
+msgstr ""
+
+#: ../../develop/natmod.rst:213
+msgid "Further examples"
+msgstr ""
+
+#: ../../develop/natmod.rst:215
+msgid ""
+"See ``examples/natmod/`` for further examples which show many of the "
+"available features of native .mpy modules.  Such features include:"
+msgstr ""
+
+#: ../../develop/natmod.rst:218
+msgid "using multiple C source files"
+msgstr ""
+
+#: ../../develop/natmod.rst:219
+msgid "including Python code alongside C code"
+msgstr ""
+
+#: ../../develop/natmod.rst:220
+msgid "rodata and BSS data"
+msgstr ""
+
+#: ../../develop/natmod.rst:221
+msgid "memory allocation"
+msgstr ""
+
+#: ../../develop/natmod.rst:222
+msgid "use of floating point"
+msgstr ""
+
+#: ../../develop/natmod.rst:223
+msgid "exception handling"
+msgstr ""
+
+#: ../../develop/natmod.rst:224
+msgid "including external C libraries"
+msgstr ""
+

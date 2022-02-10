@@ -1,0 +1,325 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../genrst/builtin_types.rst:4
+msgid "Builtin types"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:5
+msgid "Generated Thu 10 Feb 2022 06:34:04 UTC"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:8
+msgid "Exception"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:13
+msgid ""
+"All exceptions have readable ``value`` and ``errno`` attributes, not just"
+" ``StopIteration`` and ``OSError``."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:15
+msgid "**Cause:** MicroPython is optimised to reduce code size."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:17
+msgid ""
+"**Workaround:** Only use ``value`` on ``StopIteration`` exceptions, and "
+"``errno`` on ``OSError`` exceptions.  Do not use or rely on these "
+"attributes on other exceptions."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:19 ../../genrst/builtin_types.rst:40
+#: ../../genrst/builtin_types.rst:72 ../../genrst/builtin_types.rst:93
+#: ../../genrst/builtin_types.rst:127 ../../genrst/builtin_types.rst:154
+#: ../../genrst/builtin_types.rst:180 ../../genrst/builtin_types.rst:201
+#: ../../genrst/builtin_types.rst:222 ../../genrst/builtin_types.rst:246
+#: ../../genrst/builtin_types.rst:266 ../../genrst/builtin_types.rst:290
+#: ../../genrst/builtin_types.rst:311 ../../genrst/builtin_types.rst:340
+#: ../../genrst/builtin_types.rst:363 ../../genrst/builtin_types.rst:384
+#: ../../genrst/builtin_types.rst:406 ../../genrst/builtin_types.rst:423
+#: ../../genrst/builtin_types.rst:442 ../../genrst/builtin_types.rst:463
+#: ../../genrst/builtin_types.rst:480 ../../genrst/builtin_types.rst:497
+#: ../../genrst/builtin_types.rst:517
+msgid "Sample code::"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:26 ../../genrst/builtin_types.rst:48
+#: ../../genrst/builtin_types.rst:79 ../../genrst/builtin_types.rst:103
+#: ../../genrst/builtin_types.rst:139 ../../genrst/builtin_types.rst:161
+#: ../../genrst/builtin_types.rst:185 ../../genrst/builtin_types.rst:206
+#: ../../genrst/builtin_types.rst:227 ../../genrst/builtin_types.rst:251
+#: ../../genrst/builtin_types.rst:271 ../../genrst/builtin_types.rst:297
+#: ../../genrst/builtin_types.rst:323 ../../genrst/builtin_types.rst:347
+#: ../../genrst/builtin_types.rst:370 ../../genrst/builtin_types.rst:391
+#: ../../genrst/builtin_types.rst:411 ../../genrst/builtin_types.rst:428
+#: ../../genrst/builtin_types.rst:447 ../../genrst/builtin_types.rst:468
+#: ../../genrst/builtin_types.rst:485 ../../genrst/builtin_types.rst:502
+#: ../../genrst/builtin_types.rst:522
+msgid "CPy output:"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:26 ../../genrst/builtin_types.rst:48
+#: ../../genrst/builtin_types.rst:79 ../../genrst/builtin_types.rst:103
+#: ../../genrst/builtin_types.rst:139 ../../genrst/builtin_types.rst:161
+#: ../../genrst/builtin_types.rst:185 ../../genrst/builtin_types.rst:206
+#: ../../genrst/builtin_types.rst:227 ../../genrst/builtin_types.rst:251
+#: ../../genrst/builtin_types.rst:271 ../../genrst/builtin_types.rst:297
+#: ../../genrst/builtin_types.rst:323 ../../genrst/builtin_types.rst:347
+#: ../../genrst/builtin_types.rst:370 ../../genrst/builtin_types.rst:391
+#: ../../genrst/builtin_types.rst:411 ../../genrst/builtin_types.rst:428
+#: ../../genrst/builtin_types.rst:447 ../../genrst/builtin_types.rst:468
+#: ../../genrst/builtin_types.rst:485 ../../genrst/builtin_types.rst:502
+#: ../../genrst/builtin_types.rst:522
+msgid "uPy output:"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:38
+msgid "Exception chaining not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:66
+msgid "User-defined attributes for builtin exceptions are not supported"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:68 ../../genrst/builtin_types.rst:218
+msgid "**Cause:** MicroPython is highly optimized for memory usage."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:70
+msgid "**Workaround:** Use user-defined exception subclasses."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:89
+msgid "Exception in while loop condition may have unexpected line number"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:91
+msgid ""
+"**Cause:** Condition checks are optimized to happen at the end of loop "
+"body, and that line number is reported."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:117
+msgid "Exception.__init__ method does not exist."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:119
+msgid ""
+"**Cause:** Subclassing native classes is not fully supported in "
+"MicroPython."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:121
+msgid "**Workaround:** Call using ``super()`` instead::"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:147
+msgid "bytearray"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:152
+msgid "Array slice assignment with unsupported RHS"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:169
+msgid "bytes"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:174
+msgid "bytes objects support .format() method"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:176
+#, python-format
+msgid ""
+"**Cause:** MicroPython strives to be a more regular implementation, so if"
+" both `str` and `bytes` support ``__mod__()`` (the % operator), it makes "
+"sense to support ``format()`` for both too. Support for ``__mod__`` can "
+"also be compiled out, which leaves only ``format()`` for bytes "
+"formatting."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:178
+msgid ""
+"**Workaround:** If you are interested in CPython compatibility, don't use"
+" ``.format()`` on bytes objects."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:197
+msgid "bytes() with keywords not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:199
+msgid ""
+"**Workaround:** Pass the encoding as a positional parameter, e.g. "
+"``print(bytes('abc', 'utf-8'))``"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:216
+msgid "Bytes subscription with step != 1 not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:220
+msgid "**Workaround:** Use explicit loop for this very rare operation."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:235
+msgid "dict"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:240
+msgid "Dictionary keys view does not behave as a set."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:242
+msgid "**Cause:** Not implemented."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:244
+msgid ""
+"**Workaround:** Explicitly convert keys to a set before using set "
+"operations."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:259
+msgid "float"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:264
+msgid "uPy and CPython outputs formats may differ"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:279
+msgid "int"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:284
+msgid "``bit_length`` method doesn't exist."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:286
+msgid "**Cause:** bit_length method is not implemented."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:288
+msgid "**Workaround:** Avoid using this method on MicroPython."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:307
+msgid "No int conversion for int-derived types available"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:309
+msgid ""
+"**Workaround:** Avoid subclassing builtin types unless really needed. "
+"Prefer https://en.wikipedia.org/wiki/Composition_over_inheritance ."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:331
+msgid "list"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:336
+msgid "List delete with step != 1 not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:338 ../../genrst/builtin_types.rst:382
+msgid "**Workaround:** Use explicit loop for this rare operation."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:357
+msgid "List slice-store with non-iterable on RHS is not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:359
+msgid "**Cause:** RHS is restricted to be a tuple or list"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:361
+msgid ""
+"**Workaround:** Use ``list(<iter>)`` on RHS to convert the iterable to a "
+"list"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:380
+msgid "List store with step != 1 not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:399
+msgid "str"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:404
+msgid "Start/end indices such as str.endswith(s, start) not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:421
+msgid "Attributes/subscr not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:438
+msgid "str(...) with keywords not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:440
+msgid ""
+"**Workaround:** Input the encoding format directly. eg "
+"``print(bytes('abc', 'utf-8'))``"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:457
+msgid "str.ljust() and str.rjust() not implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:459
+msgid ""
+"**Cause:** MicroPython is highly optimized for memory usage. Easy "
+"workarounds available."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:461
+#, python-format
+msgid ""
+"**Workaround:** Instead of ``s.ljust(10)`` use ``\"%-10s\" % s``, instead"
+" of ``s.rjust(10)`` use ``\"% 10s\" % s``. Alternatively, "
+"``\"{:<10}\".format(s)`` or ``\"{:>10}\".format(s)``."
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:478
+msgid ""
+"None as first argument for rsplit such as str.rsplit(None, n) not "
+"implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:495
+msgid "Subscript with step != 1 is not yet implemented"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:510
+msgid "tuple"
+msgstr ""
+
+#: ../../genrst/builtin_types.rst:515
+msgid "Tuple load with step != 1 not implemented"
+msgstr ""
+

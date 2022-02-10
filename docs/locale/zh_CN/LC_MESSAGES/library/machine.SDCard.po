@@ -1,0 +1,333 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/machine.SDCard.rst:5
+msgid "class SDCard -- secure digital memory card"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:7
+msgid ""
+"SD cards are one of the most common small form factor removable storage "
+"media. SD cards come in a variety of sizes and physical form factors. MMC"
+" cards are similar removable storage devices while eMMC devices are "
+"electrically similar storage devices designed to be embedded into other "
+"systems. All three form share a common protocol for communication with "
+"their host system and high-level support looks the same for them all. As "
+"such in MicroPython they are implemented in a single class called "
+":class:`machine.SDCard` ."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:15
+msgid ""
+"Both SD and MMC interfaces support being accessed with a variety of bus "
+"widths. When being accessed with a 1-bit wide interface they can be "
+"accessed using the SPI protocol. Different MicroPython hardware platforms"
+" support different widths and pin configurations but for most platforms "
+"there is a standard configuration for any given hardware. In general "
+"constructing an ``SDCard`` object with without passing any parameters "
+"will initialise the interface to the default card slot for the current "
+"hardware. The arguments listed below represent the common arguments that "
+"might need to be set in order to use either a non-standard slot or a non-"
+"standard pin assignment. The exact subset of arguments supported will "
+"vary from platform to platform."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:28
+msgid ""
+"This class provides access to SD or MMC storage cards using either a "
+"dedicated SD/MMC interface hardware or through an SPI channel. The class "
+"implements the block protocol defined by :class:`os.AbstractBlockDev`. "
+"This allows the mounting of an SD card to be as simple as::"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:35
+msgid "The constructor takes the following parameters:"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:37
+msgid ""
+"*slot* selects which of the available interfaces to use. Leaving this "
+"unset will select the default interface."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:40
+msgid "*width* selects the bus width for the SD/MMC interface."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:42
+msgid "*cd* can be used to specify a card-detect pin."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:44
+msgid "*wp* can be used to specify a write-protect pin."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:46
+msgid "*sck* can be used to specify an SPI clock pin."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:48
+msgid "*miso* can be used to specify an SPI miso pin."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:50
+msgid "*mosi* can be used to specify an SPI mosi pin."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:52
+msgid "*cs* can be used to specify an SPI chip select pin."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:54
+msgid ""
+"*freq* selects the SD/MMC interface frequency in Hz (only supported on "
+"the ESP32)."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:57
+msgid "Implementation-specific details"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:59
+msgid ""
+"Different implementations of the ``SDCard`` class on different hardware "
+"support varying subsets of the options above."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:63
+msgid "PyBoard"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:65
+msgid ""
+"The standard PyBoard has just one slot. No arguments are necessary or "
+"supported."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:68
+msgid "ESP32"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:70
+msgid ""
+"The ESP32 provides two channels of SD/MMC hardware and also supports "
+"access to SD Cards through either of the two SPI ports that are generally"
+" available to the user. As a result the *slot* argument can take a value "
+"between 0 and 3, inclusive. Slots 0 and 1 use the built-in SD/MMC "
+"hardware while slots 2 and 3 use the SPI ports. Slot 0 supports 1, 4 or "
+"8-bit wide access while slot 1 supports 1 or 4-bit access; the SPI slots "
+"only support 1-bit access."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:78
+msgid ""
+"Slot 0 is used to communicate with on-board flash memory on most ESP32 "
+"modules and so will be unavailable to the user."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:82
+msgid ""
+"Most ESP32 modules that provide an SD card slot using the dedicated "
+"hardware only wire up 1 data pin, so the default value for *width* is 1."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:86
+msgid ""
+"The pins used by the dedicated SD/MMC hardware are fixed. The pins used "
+"by the SPI hardware can be reassigned."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:89
+msgid ""
+"If any of the SPI signals are remapped then all of the SPI signals will "
+"pass through a GPIO multiplexer unit which can limit the performance of "
+"high frequency signals. Since the normal operating speed for SD cards is "
+"40MHz this can cause problems on some cards."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:95
+msgid "The default (and preferred) pin assignment are as follows:"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:98
+msgid "Slot"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:98
+msgid "0"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:98
+msgid "1"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:98 ../../library/machine.SDCard.rst:107
+msgid "2"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:98
+msgid "3"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:100
+msgid "Signal"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:100
+msgid "Pin"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:102
+msgid "sck"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:102
+msgid "6"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:102
+msgid "14"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:102 ../../library/machine.SDCard.rst:114
+msgid "18"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:103
+msgid "cmd"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:103
+msgid "11"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:103 ../../library/machine.SDCard.rst:104
+msgid "15"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:104
+msgid "cs"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:104 ../../library/machine.SDCard.rst:113
+msgid "5"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:105
+msgid "miso"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:105
+msgid "19"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:105 ../../library/machine.SDCard.rst:109
+msgid "12"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:106
+msgid "mosi"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:106
+msgid "23"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:106 ../../library/machine.SDCard.rst:110
+msgid "13"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:107
+msgid "D0"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:107
+msgid "7"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:108
+msgid "D1"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:108
+msgid "8"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:108
+msgid "4"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:109
+msgid "D2"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:109
+msgid "9"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:110
+msgid "D3"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:110
+msgid "10"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:111
+msgid "D4"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:111
+msgid "16"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:112
+msgid "D5"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:112
+msgid "17"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:113
+msgid "D6"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:114
+msgid "D7"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:118
+msgid "cc3200"
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:120
+msgid ""
+"You can set the pins used for SPI access by passing a tuple as the *pins*"
+" argument."
+msgstr ""
+
+#: ../../library/machine.SDCard.rst:123
+msgid ""
+"*Note:* The current cc3200 SD card implementation names the this class "
+":class:`machine.SD` rather than :class:`machine.SDCard` ."
+msgstr ""
+

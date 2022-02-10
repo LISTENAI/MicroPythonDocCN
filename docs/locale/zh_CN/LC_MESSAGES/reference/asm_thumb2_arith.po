@@ -1,0 +1,125 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/asm_thumb2_arith.rst:2
+msgid "Arithmetic instructions"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:5
+msgid "Document conventions"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:7
+msgid ""
+"Notation: ``Rd, Rm, Rn`` denote ARM registers R0-R7. ``immN`` denotes an "
+"immediate value having a width of N bits e.g. ``imm8``, ``imm3``. "
+"``carry`` denotes the carry condition flag, ``not(carry)`` denotes its "
+"complement. In the case of instructions with more than one register "
+"argument, it is permissible for some to be identical. For example the "
+"following will add the contents of R0 to itself, placing the result in "
+"R0:"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:13
+msgid "add(r0, r0, r0)"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:15
+msgid "Arithmetic instructions affect the condition flags except where stated."
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:18
+msgid "Addition"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:20
+msgid "add(Rdn, imm8) ``Rdn = Rdn + imm8``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:21
+msgid "add(Rd, Rn, imm3) ``Rd = Rn + imm3``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:22
+msgid "add(Rd, Rn, Rm) ``Rd = Rn +Rm``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:23
+msgid "adc(Rd, Rn) ``Rd = Rd + Rn + carry``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:26
+msgid "Subtraction"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:28
+msgid "sub(Rdn, imm8) ``Rdn = Rdn - imm8``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:29
+msgid "sub(Rd, Rn, imm3) ``Rd = Rn - imm3``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:30
+msgid "sub(Rd, Rn, Rm) ``Rd = Rn - Rm``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:31
+msgid "sbc(Rd, Rn) ``Rd = Rd - Rn - not(carry)``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:34
+msgid "Negation"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:36
+msgid "neg(Rd, Rn) ``Rd = -Rn``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:39
+msgid "Multiplication and division"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:41
+msgid "mul(Rd, Rn) ``Rd = Rd * Rn``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:43
+msgid ""
+"This produces a 32 bit result with overflow lost. The result may be "
+"treated as signed or unsigned according to the definition of the "
+"operands."
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:46
+msgid "sdiv(Rd, Rn, Rm) ``Rd = Rn / Rm``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:47
+msgid "udiv(Rd, Rn, Rm) ``Rd = Rn / Rm``"
+msgstr ""
+
+#: ../../reference/asm_thumb2_arith.rst:49
+msgid ""
+"These functions perform signed and unsigned division respectively. "
+"Condition flags are not affected."
+msgstr ""
+

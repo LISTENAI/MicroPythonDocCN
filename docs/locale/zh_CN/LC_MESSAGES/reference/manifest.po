@@ -1,0 +1,207 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/manifest.rst:2
+msgid "MicroPython manifest files"
+msgstr ""
+
+#: ../../reference/manifest.rst:4
+msgid ""
+"When building firmware for a device the following components are included"
+" in the compilation process:"
+msgstr ""
+
+#: ../../reference/manifest.rst:7
+msgid "the core MicroPython virtual machine and runtime"
+msgstr ""
+
+#: ../../reference/manifest.rst:8
+msgid ""
+"port-specific system code and drivers to interface with the "
+"microcontroller/device that the firmware is targeting"
+msgstr ""
+
+#: ../../reference/manifest.rst:10
+msgid "standard built-in modules, like ``sys``"
+msgstr ""
+
+#: ../../reference/manifest.rst:11
+msgid "extended built-in modules, like ``json`` and ``machine``"
+msgstr ""
+
+#: ../../reference/manifest.rst:12
+msgid "extra modules written in C/C++"
+msgstr ""
+
+#: ../../reference/manifest.rst:13
+msgid "extra modules written in Python"
+msgstr ""
+
+#: ../../reference/manifest.rst:15
+msgid ""
+"All the modules included in the firmware are available via ``import`` "
+"from Python code.  The extra modules written in Python that are included "
+"in a build (the last point above) are called *frozen modules*, and are "
+"specified by a ``manifest.py`` file.  Changing this manifest requires "
+"rebuilding the firmware."
+msgstr ""
+
+#: ../../reference/manifest.rst:20
+msgid ""
+"It's also possible to add additional modules to the filesystem of the "
+"device once it is up and running.  Adding and removing modules to/from "
+"the filesystem does not require rebuilding the firmware so is a simpler "
+"process than rebuilding firmware.  The benefit of using a manifest is "
+"that frozen modules are more efficient: they are faster to import and "
+"take up less RAM once imported."
+msgstr ""
+
+#: ../../reference/manifest.rst:26
+msgid ""
+"MicroPython manifest files are Python files and can contain arbitrary "
+"Python code.  There are also a set of commands (predefined functions) "
+"which are used to specify the Python source files to include.  These "
+"commands are described below."
+msgstr ""
+
+#: ../../reference/manifest.rst:32
+msgid "Freezing source code"
+msgstr ""
+
+#: ../../reference/manifest.rst:36
+msgid ""
+"Freeze the input specified by *path*, automatically determining its type."
+"  A ``.py`` script will be compiled to a ``.mpy`` first then frozen, and "
+"a ``.mpy`` file will be frozen directly."
+msgstr ""
+
+#: ../../reference/manifest.rst:40
+msgid ""
+"*path* must be a directory, which is the base directory to begin "
+"searching for files.  When importing the resulting frozen modules, the "
+"name of the module will start after *path*, i.e. *path* is excluded from "
+"the module name."
+msgstr ""
+
+#: ../../reference/manifest.rst:45
+msgid ""
+"If *path* is relative, it is resolved to the current ``manifest.py``.  "
+"Use ``$(MPY_DIR)``, ``$(MPY_LIB_DIR)``, ``$(PORT_DIR)``, ``$(BOARD_DIR)``"
+" if you need to access specific paths."
+msgstr ""
+
+#: ../../reference/manifest.rst:49
+msgid "If *script* is None, all files in *path* will be frozen."
+msgstr ""
+
+#: ../../reference/manifest.rst:51
+msgid ""
+"If *script* is an iterable then ``freeze()`` is called on all items of "
+"the iterable (with the same *path* and *opt* passed through)."
+msgstr ""
+
+#: ../../reference/manifest.rst:54
+msgid ""
+"If *script* is a string then it specifies the file or directory to "
+"freeze, and can include extra directories before the file or last "
+"directory.  The file or directory will be searched for in *path*.  If "
+"*script* is a directory then all files in that directory will be frozen."
+msgstr ""
+
+#: ../../reference/manifest.rst:59
+msgid ""
+"*opt* is the optimisation level to pass to mpy-cross when compiling "
+"``.py`` to ``.mpy``."
+msgstr ""
+
+#: ../../reference/manifest.rst:64
+msgid ""
+"Freeze the given *path* and all ``.py`` scripts within it as a string, "
+"which will be compiled upon import."
+msgstr ""
+
+#: ../../reference/manifest.rst:69
+msgid ""
+"Freeze the input by first compiling the ``.py`` scripts to ``.mpy`` "
+"files, then freezing the resulting ``.mpy`` files.  See ``freeze()`` for "
+"further details on the arguments."
+msgstr ""
+
+#: ../../reference/manifest.rst:75
+msgid ""
+"Freeze the input, which must be ``.mpy`` files that are frozen directly. "
+"See ``freeze()`` for further details on the arguments."
+msgstr ""
+
+#: ../../reference/manifest.rst:80
+msgid "Including other manifest files"
+msgstr ""
+
+#: ../../reference/manifest.rst:84
+msgid "Include another manifest."
+msgstr ""
+
+#: ../../reference/manifest.rst:86
+msgid ""
+"The *manifest* argument can be a string (filename) or an iterable of "
+"strings."
+msgstr ""
+
+#: ../../reference/manifest.rst:89
+msgid "Relative paths are resolved with respect to the current manifest file."
+msgstr ""
+
+#: ../../reference/manifest.rst:91
+msgid ""
+"Optional *kwargs* can be provided which will be available to the included"
+" script via the *options* variable."
+msgstr ""
+
+#: ../../reference/manifest.rst:94
+msgid "For example:"
+msgstr ""
+
+#: ../../reference/manifest.rst:100
+msgid "then in path.py:"
+msgstr ""
+
+#: ../../reference/manifest.rst:113
+msgid "Examples"
+msgstr ""
+
+#: ../../reference/manifest.rst:115
+msgid "To freeze a single file which is available as ``import mydriver``, use:"
+msgstr ""
+
+#: ../../reference/manifest.rst:121
+msgid ""
+"To freeze a set of files which are available as ``import test1`` and "
+"``import test2``, and which are compiled with optimisation level 3, use:"
+msgstr ""
+
+#: ../../reference/manifest.rst:128
+msgid "To freeze a module which can be imported as ``import mymodule``, use:"
+msgstr ""
+
+#: ../../reference/manifest.rst:141
+msgid "To include a manifest from the MicroPython repository, use:"
+msgstr ""
+

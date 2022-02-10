@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.Servo.rst:5
+msgid "class Servo -- 3-wire hobby servo driver"
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:7
+msgid ""
+"Servo objects control standard hobby servo motors with 3-wires (ground, "
+"power, signal).  There are 4 positions on the pyboard where these motors "
+"can be plugged in: pins X1 through X4 are the signal pins, and next to "
+"them are 4 sets of power and ground pins."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:12
+msgid "Example usage::"
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:26
+msgid ""
+"The Servo objects use Timer(5) to produce the PWM output.  You can use "
+"Timer(5) for Servo control, or your own purposes, but not both at the "
+"same time."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:31
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:35
+msgid ""
+"Create a servo object.  ``id`` is 1-4, and corresponds to pins X1 through"
+" X4."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:39
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:43
+msgid "If no arguments are given, this function returns the current angle."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:45
+msgid "If arguments are given, this function sets the angle of the servo:"
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:47
+msgid "``angle`` is the angle to move to in degrees."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:48
+msgid ""
+"``time`` is the number of milliseconds to take to get to the specified "
+"angle.  If omitted, then the servo moves as quickly as possible to its "
+"new position."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:54
+msgid "If no arguments are given, this function returns the current speed."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:56
+msgid "If arguments are given, this function sets the speed of the servo:"
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:58
+msgid "``speed`` is the speed to change to, between -100 and 100."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:59
+msgid ""
+"``time`` is the number of milliseconds to take to get to the specified "
+"speed.  If omitted, then the servo accelerates as quickly as possible."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:64
+msgid ""
+"If no arguments are given, this function returns the current raw pulse-"
+"width value."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:67
+msgid "If an argument is given, this function sets the raw pulse-width value."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:71
+msgid ""
+"If no arguments are given, this function returns the current calibration "
+"data, as a 5-tuple."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:74
+msgid "If arguments are given, this function sets the timing calibration:"
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:76
+msgid "``pulse_min`` is the minimum allowed pulse width."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:77
+msgid "``pulse_max`` is the maximum allowed pulse width."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:78
+msgid ""
+"``pulse_centre`` is the pulse width corresponding to the centre/zero "
+"position."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:79
+msgid "``pulse_angle_90`` is the pulse width corresponding to 90 degrees."
+msgstr ""
+
+#: ../../library/pyb.Servo.rst:80
+msgid "``pulse_speed_100`` is the pulse width corresponding to a speed of 100."
+msgstr ""
+

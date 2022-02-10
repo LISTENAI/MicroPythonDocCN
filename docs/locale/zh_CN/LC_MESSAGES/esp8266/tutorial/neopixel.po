@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/neopixel.rst:2
+msgid "Controlling NeoPixels"
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:4
+msgid ""
+"NeoPixels, also known as WS2812 LEDs, are full-colour LEDs that are "
+"connected in serial, are individually addressable, and can have their "
+"red, green and blue components set between 0 and 255.  They require "
+"precise timing to control them and there is a special neopixel module to "
+"do just this."
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:9
+msgid "To create a NeoPixel object do the following::"
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:14
+msgid ""
+"This configures a NeoPixel strip on GPIO4 with 8 pixels.  You can adjust "
+"the \"4\" (pin number) and the \"8\" (number of pixel) to suit your set "
+"up."
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:17
+msgid "To set the colour of pixels use::"
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:23
+msgid ""
+"For LEDs with more than 3 colours, such as RGBW pixels or RGBY pixels, "
+"the NeoPixel class takes a ``bpp`` parameter. To setup a NeoPixel object "
+"for an RGBW Pixel, do the following::"
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:30
+msgid ""
+"In a 4-bpp mode, remember to use 4-tuples instead of 3-tuples to set the "
+"colour. For example to set the first three pixels use::"
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:37
+msgid "Then use the ``write()`` method to output the colours to the LEDs::"
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:41
+msgid "The following demo function makes a fancy show on the LEDs::"
+msgstr ""
+
+#: ../../esp8266/tutorial/neopixel.rst:82
+msgid "Execute it using::"
+msgstr ""
+

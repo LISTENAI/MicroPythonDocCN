@@ -1,0 +1,72 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../zephyr/tutorial/intro.rst:4
+msgid "Getting started with MicroPython on the Zephyr port"
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:6
+msgid "Let’s get started!"
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:9
+msgid "Requirements"
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:11
+msgid ""
+"To use the MicroPython Zephyr port, you will need a Zephyr supported "
+"board (for a list of acceptable boards see :ref:`zephyr_general`)."
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:15
+msgid "Powering up"
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:17
+msgid ""
+"If your board has a USB connector on it then most likely it is powered "
+"through this when connected to your PC. Otherwise you will need to power "
+"it directly. Please refer to the documentation for your board for further"
+" details."
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:23
+msgid "Getting and deploying the firmware"
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:25
+msgid ""
+"The first step you will need to do is either clone the `MicroPython "
+"repository <https://github.com/micropython/micropython.git>`_ or download"
+" it from the `MicroPython downloads page "
+"<http://micropython.org/download>`_. If you are an end user of "
+"MicroPython, it is recommended to start with the stable firmware builds. "
+"If you would like to work on development, you may follow the daily builds"
+" on git."
+msgstr ""
+
+#: ../../zephyr/tutorial/intro.rst:30
+msgid ""
+"Next, follow the Zephyr port readme document (``ports/zephyr/README.md``)"
+" to build and run the application on your board."
+msgstr ""
+

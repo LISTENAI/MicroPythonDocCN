@@ -1,0 +1,44 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/adc.rst:2
+msgid "Analog to Digital Conversion"
+msgstr ""
+
+#: ../../esp8266/tutorial/adc.rst:4
+msgid ""
+"The ESP8266 has a single pin (separate to the GPIO pins) which can be "
+"used to read analog voltages and convert them to a digital value.  You "
+"can construct such an ADC pin object using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/adc.rst:11
+msgid "Then read its value with::"
+msgstr ""
+
+#: ../../esp8266/tutorial/adc.rst:16
+msgid ""
+"The values returned from the ``read()`` function are between 0 (for 0.0 "
+"volts) and 1024 (for 1.0 volts).  Please note that this input can only "
+"tolerate a maximum of 1.0 volts and you must use a voltage divider "
+"circuit to measure larger voltages."
+msgstr ""
+

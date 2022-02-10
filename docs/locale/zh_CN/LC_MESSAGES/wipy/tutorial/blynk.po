@@ -1,0 +1,64 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../wipy/tutorial/blynk.rst:2
+msgid "Getting started with Blynk and the WiPy"
+msgstr ""
+
+#: ../../wipy/tutorial/blynk.rst:4
+msgid ""
+"Blynk provides iOS and Android apps to control any hardware over the "
+"Internet or directly using Bluetooth. You can easily build graphic "
+"interfaces for all your projects by simply dragging and dropping widgets,"
+" right on your smartphone."
+msgstr ""
+
+#: ../../wipy/tutorial/blynk.rst:8
+msgid ""
+"Before anything else, make sure that your WiPy is running the latest "
+"software, check :ref:`OTA How-To <wipy_firmware_upgrade>` for "
+"instructions."
+msgstr ""
+
+#: ../../wipy/tutorial/blynk.rst:11
+msgid ""
+"Get the `Blynk library <https://github.com/vshymanskyy/blynk-library-"
+"python/blob/master/BlynkLib.py>`_ and put it in ``/flash/lib/`` via FTP."
+msgstr ""
+
+#: ../../wipy/tutorial/blynk.rst:12
+msgid ""
+"Get the `Blynk example for WiPy <https://github.com/vshymanskyy/blynk-"
+"library-python/blob/master/examples/hardware/PyCom_WiPy.py>`_, edit the "
+"network settings, and afterwards upload it to ``/flash/`` via FTP as "
+"well."
+msgstr ""
+
+#: ../../wipy/tutorial/blynk.rst:14
+msgid ""
+"Follow the instructions on each example to setup the Blynk dashboard on "
+"your smartphone or tablet."
+msgstr ""
+
+#: ../../wipy/tutorial/blynk.rst:15
+msgid "Give it a try, for instance::"
+msgstr ""
+

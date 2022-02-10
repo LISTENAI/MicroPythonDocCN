@@ -1,0 +1,87 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.Accel.rst:5
+msgid "class Accel -- accelerometer control"
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:7
+msgid "Accel is an object that controls the accelerometer.  Example usage::"
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:13
+msgid "Raw values are between -32 and 31."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:17
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:21
+msgid "Create and return an accelerometer object."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:24
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:28
+msgid "Get a 3-tuple of filtered x, y and z values."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:30
+msgid ""
+"Implementation note: this method is currently implemented as taking the "
+"sum of 4 samples, sampled from the 3 previous calls to this function "
+"along with the sample from the current call.  Returned values are "
+"therefore 4 times the size of what they would be from the raw x(), y() "
+"and z() calls."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:37
+msgid "Get the tilt register."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:41
+msgid "Get the x-axis value."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:45
+msgid "Get the y-axis value."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:49
+msgid "Get the z-axis value."
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:52
+msgid "Hardware Note"
+msgstr ""
+
+#: ../../library/pyb.Accel.rst:54
+msgid ""
+"The accelerometer uses I2C bus 1 to communicate with the processor. "
+"Consequently when readings are being taken pins X9 and X10 should be "
+"unused (other than for I2C). Other devices using those pins, and which "
+"therefore cannot be used concurrently, are UART 1 and Timer 4 channels 1 "
+"and 2."
+msgstr ""
+

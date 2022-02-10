@@ -1,0 +1,57 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/asm_thumb2_misc.rst:2
+msgid "Miscellaneous instructions"
+msgstr ""
+
+#: ../../reference/asm_thumb2_misc.rst:4
+msgid "nop() ``pass`` no operation."
+msgstr ""
+
+#: ../../reference/asm_thumb2_misc.rst:5
+msgid "wfi() Suspend execution in a low power state until an interrupt occurs."
+msgstr ""
+
+#: ../../reference/asm_thumb2_misc.rst:6
+msgid "cpsid(flags) set the Priority Mask Register - disable interrupts."
+msgstr ""
+
+#: ../../reference/asm_thumb2_misc.rst:7
+msgid "cpsie(flags) clear the Priority Mask Register - enable interrupts."
+msgstr ""
+
+#: ../../reference/asm_thumb2_misc.rst:8
+msgid ""
+"mrs(Rd, special_reg) ``Rd = special_reg`` copy a special register to a "
+"general register. The special register may be IPSR (Interrupt Status "
+"Register) or BASEPRI (Base Priority Register). The IPSR provides a means "
+"of determining the exception number of an interrupt being processed. It "
+"contains zero if no interrupt is being processed."
+msgstr ""
+
+#: ../../reference/asm_thumb2_misc.rst:12
+msgid ""
+"Currently the ``cpsie()`` and ``cpsid()`` functions are partially "
+"implemented. They require but ignore the flags argument and serve as a "
+"means of enabling and disabling interrupts."
+msgstr ""
+

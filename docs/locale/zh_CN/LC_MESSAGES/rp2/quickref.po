@@ -1,0 +1,300 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../rp2/quickref.rst:4
+msgid "Quick reference for the RP2"
+msgstr ""
+
+msgid "Raspberry Pi Pico"
+msgstr ""
+
+#: ../../rp2/quickref.rst:10
+msgid ""
+"The Raspberry Pi Pico Development Board (image attribution: Raspberry Pi "
+"Foundation)."
+msgstr ""
+
+#: ../../rp2/quickref.rst:12
+msgid ""
+"Below is a quick reference for Raspberry Pi RP2xxx boards.  If it is your"
+" first time working with this board it may be useful to get an overview "
+"of the microcontroller:"
+msgstr ""
+
+#: ../../rp2/quickref.rst:22
+msgid "Installing MicroPython"
+msgstr ""
+
+#: ../../rp2/quickref.rst:24
+msgid ""
+"See the corresponding section of tutorial: :ref:`rp2_intro`. It also "
+"includes a troubleshooting subsection."
+msgstr ""
+
+#: ../../rp2/quickref.rst:28
+msgid "General board control"
+msgstr ""
+
+#: ../../rp2/quickref.rst:30
+msgid ""
+"The MicroPython REPL is accessed via the USB serial port. Tab-completion "
+"is useful to find out what methods an object has. Paste mode (ctrl-E) is "
+"useful to paste a large slab of Python code into the REPL."
+msgstr ""
+
+#: ../../rp2/quickref.rst:34
+msgid "The :mod:`machine` module::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:41
+msgid "The :mod:`rp2` module::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:46
+msgid "Delay and timing"
+msgstr ""
+
+#: ../../rp2/quickref.rst:48
+msgid "Use the :mod:`time <time>` module::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:59
+msgid "Timers"
+msgstr ""
+
+#: ../../rp2/quickref.rst:61
+msgid ""
+"RP2040's system timer peripheral provides a global microsecond timebase "
+"and generates interrupts for it.  The software timer is available "
+"currently, and there are unlimited number of them (memory permitting). "
+"There is no need to specify the timer id (id=-1 is supported at the "
+"moment) as it will default to this."
+msgstr ""
+
+#: ../../rp2/quickref.rst:67
+msgid "Use the :mod:`machine.Timer` class::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:78
+msgid "Pins and GPIO"
+msgstr ""
+
+#: ../../rp2/quickref.rst:80
+msgid "Use the :ref:`machine.Pin <machine.Pin>` class::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:96
+msgid "Programmable IO (PIO)"
+msgstr ""
+
+#: ../../rp2/quickref.rst:98
+msgid ""
+"PIO is useful to build low-level IO interfaces from scratch.  See the "
+":mod:`rp2` module for detailed explaination of the assembly instructions."
+msgstr ""
+
+#: ../../rp2/quickref.rst:101
+msgid "Example using PIO to blink an LED at 1Hz::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:127
+msgid "UART (serial bus)"
+msgstr ""
+
+#: ../../rp2/quickref.rst:129
+msgid ""
+"There are two UARTs, UART0 and UART1. UART0 can be mapped to GPIO 0/1, "
+"12/13 and 16/17, and UART1 to GPIO 4/5 and 8/9."
+msgstr ""
+
+#: ../../rp2/quickref.rst:133
+msgid "See :ref:`machine.UART <machine.UART>`. ::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:142
+msgid ""
+"REPL over UART is disabled by default. You can see the :ref:`rp2_intro` "
+"for details on how to enable REPL over UART."
+msgstr ""
+
+#: ../../rp2/quickref.rst:147
+msgid "PWM (pulse width modulation)"
+msgstr ""
+
+#: ../../rp2/quickref.rst:149
+msgid ""
+"There are 8 independent channels each of which have 2 outputs making it "
+"16 PWM channels in total which can be clocked from 7Hz to 125Mhz."
+msgstr ""
+
+#: ../../rp2/quickref.rst:152
+msgid "Use the ``machine.PWM`` class::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:164
+msgid "ADC (analog to digital conversion)"
+msgstr ""
+
+#: ../../rp2/quickref.rst:166
+msgid ""
+"RP2040 has five ADC channels in total, four of which are 12-bit SAR based"
+" ADCs: GP26, GP27, GP28 and GP29. The input signal for ADC0, ADC1, ADC2 "
+"and ADC3 can be connected with GP26, GP27, GP28, GP29 respectively (On "
+"Pico board, GP29 is connected to VSYS). The standard ADC range is 0-3.3V."
+" The fifth channel is connected to the in-built temperature sensor and "
+"can be used for measuring the temperature."
+msgstr ""
+
+#: ../../rp2/quickref.rst:173
+msgid "Use the :ref:`machine.ADC <machine.ADC>` class::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:180
+msgid "Software SPI bus"
+msgstr ""
+
+#: ../../rp2/quickref.rst:182
+msgid ""
+"Software SPI (using bit-banging) works on all pins, and is accessed via "
+"the :ref:`machine.SoftSPI <machine.SoftSPI>` class::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:208
+msgid ""
+"Currently *all* of ``sck``, ``mosi`` and ``miso`` *must* be specified "
+"when initialising Software SPI."
+msgstr ""
+
+#: ../../rp2/quickref.rst:212
+msgid "Hardware SPI bus"
+msgstr ""
+
+#: ../../rp2/quickref.rst:214
+msgid ""
+"The RP2040 has 2 hardware SPI buses which is accessed via the "
+":ref:`machine.SPI <machine.SPI>` class and has the same methods as "
+"software SPI above::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:225
+msgid "Software I2C bus"
+msgstr ""
+
+#: ../../rp2/quickref.rst:227
+msgid ""
+"Software I2C (using bit-banging) works on all output-capable pins, and is"
+" accessed via the :ref:`machine.SoftI2C <machine.SoftI2C>` class::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:243
+msgid "Hardware I2C bus"
+msgstr ""
+
+#: ../../rp2/quickref.rst:245
+msgid ""
+"The driver is accessed via the :ref:`machine.I2C <machine.I2C>` class and"
+" has the same methods as software I2C above::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:254
+msgid "I2S bus"
+msgstr ""
+
+#: ../../rp2/quickref.rst:256
+msgid "See :ref:`machine.I2S <machine.I2S>`. ::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:266
+msgid "The ``ws`` pin number must be one greater than the ``sck`` pin number."
+msgstr ""
+
+#: ../../rp2/quickref.rst:268
+msgid ""
+"The I2S class is currently available as a Technical Preview.  During the "
+"preview period, feedback from users is encouraged.  Based on this "
+"feedback, the I2S class API and implementation may be changed."
+msgstr ""
+
+#: ../../rp2/quickref.rst:271
+msgid "Two I2S buses are supported with id=0 and id=1."
+msgstr ""
+
+#: ../../rp2/quickref.rst:274
+msgid "Real time clock (RTC)"
+msgstr ""
+
+#: ../../rp2/quickref.rst:276
+msgid "See :ref:`machine.RTC <machine.RTC>` ::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:286
+msgid "WDT (Watchdog timer)"
+msgstr ""
+
+#: ../../rp2/quickref.rst:288
+msgid ""
+"The RP2040 has a watchdog which is a countdown timer that can restart "
+"parts of the chip if it reaches zero."
+msgstr ""
+
+#: ../../rp2/quickref.rst:291
+msgid "See :ref:`machine.WDT <machine.WDT>`. ::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:301
+msgid "OneWire driver"
+msgstr ""
+
+#: ../../rp2/quickref.rst:303
+msgid "The OneWire driver is implemented in software and works on all pins::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:316
+msgid "There is a specific driver for DS18S20 and DS18B20 devices::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:326
+msgid ""
+"Be sure to put a 4.7k pull-up resistor on the data line.  Note that the "
+"``convert_temp()`` method must be called each time you want to sample the"
+" temperature."
+msgstr ""
+
+#: ../../rp2/quickref.rst:331
+msgid "NeoPixel and APA106 driver"
+msgstr ""
+
+#: ../../rp2/quickref.rst:333
+msgid "Use the ``neopixel`` and ``apa106`` modules::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:345
+msgid ""
+"The APA106 driver extends NeoPixel, but internally uses a different "
+"colour order::"
+msgstr ""
+
+#: ../../rp2/quickref.rst:351
+msgid ""
+"APA102 (DotStar) uses a different driver as it has an additional clock "
+"pin."
+msgstr ""
+

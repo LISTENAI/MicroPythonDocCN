@@ -1,0 +1,94 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/gc.rst:2
+msgid ":mod:`gc` -- control the garbage collector"
+msgstr ""
+
+#: ../../library/gc.rst:7
+msgid "|see_cpython_module| :mod:`python:gc`."
+msgstr ""
+
+#: ../../library/gc.rst:10
+msgid "Functions"
+msgstr ""
+
+#: ../../library/gc.rst:14
+msgid "Enable automatic garbage collection."
+msgstr ""
+
+#: ../../library/gc.rst:18
+msgid ""
+"Disable automatic garbage collection.  Heap memory can still be "
+"allocated, and garbage collection can still be initiated manually using "
+":meth:`gc.collect`."
+msgstr ""
+
+#: ../../library/gc.rst:23
+msgid "Run a garbage collection."
+msgstr ""
+
+#: ../../library/gc.rst:27
+msgid "Return the number of bytes of heap RAM that are allocated."
+msgstr ""
+
+#: ../../library/gc.rst:29 ../../library/gc.rst:39 ../../library/gc.rst:61
+msgid "Difference to CPython"
+msgstr ""
+
+#: ../../library/gc.rst:32 ../../library/gc.rst:42
+msgid "This function is MicroPython extension."
+msgstr ""
+
+#: ../../library/gc.rst:36
+msgid ""
+"Return the number of bytes of available heap RAM, or -1 if this amount is"
+" not known."
+msgstr ""
+
+#: ../../library/gc.rst:46
+msgid ""
+"Set or query the additional GC allocation threshold. Normally, a "
+"collection is triggered only when a new allocation cannot be satisfied, "
+"i.e. on an out-of-memory (OOM) condition. If this function is called, in "
+"addition to OOM, a collection will be triggered each time after *amount* "
+"bytes have been allocated (in total, since the previous time such an "
+"amount of bytes have been allocated). *amount* is usually specified as "
+"less than the full heap size, with the intention to trigger a collection "
+"earlier than when the heap becomes exhausted, and in the hope that an "
+"early collection will prevent excessive memory fragmentation. This is a "
+"heuristic measure, the effect of which will vary from application to "
+"application, as well as the optimal value of the *amount* parameter."
+msgstr ""
+
+#: ../../library/gc.rst:58
+msgid ""
+"Calling the function without argument will return the current value of "
+"the threshold. A value of -1 means a disabled allocation threshold."
+msgstr ""
+
+#: ../../library/gc.rst:64
+msgid ""
+"This function is a MicroPython extension. CPython has a similar function "
+"- ``set_threshold()``, but due to different GC implementations, its "
+"signature and semantics are different."
+msgstr ""
+

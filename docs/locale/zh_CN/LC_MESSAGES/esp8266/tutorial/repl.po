@@ -1,0 +1,312 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/repl.rst:2
+msgid "Getting a MicroPython REPL prompt"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:4
+msgid ""
+"REPL stands for Read Evaluate Print Loop, and is the name given to the "
+"interactive MicroPython prompt that you can access on the ESP8266.  Using"
+" the REPL is by far the easiest way to test out your code and run "
+"commands."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:8
+msgid ""
+"There are two ways to access the REPL: either via a wired connection "
+"through the UART serial port, or via WiFi."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:12
+msgid "REPL over the serial port"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:14
+msgid ""
+"The REPL is always available on the UART0 serial peripheral, which is "
+"connected to the pins GPIO1 for TX and GPIO3 for RX.  The baudrate of the"
+" REPL is 115200. If your board has a USB-serial convertor on it then you "
+"should be able to access the REPL directly from your PC.  Otherwise you "
+"will need to have a way of communicating with the UART."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:20
+msgid ""
+"To access the prompt over USB-serial you need to use a terminal emulator "
+"program. On Windows TeraTerm is a good choice, on Mac you can use the "
+"built-in ``screen`` program, and Linux has ``picocom`` and ``minicom``.  "
+"Of course, there are many other terminal programs that will work, so pick"
+" your favourite!"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:25
+msgid "For example, on Linux you can try running::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:29
+msgid ""
+"Once you have made the connection over the serial port you can test if it"
+" is working by hitting enter a few times.  You should see the Python REPL"
+" prompt, indicated by ``>>>``."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:34
+msgid "WebREPL - a prompt over WiFi"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:36
+msgid ""
+"WebREPL allows you to use the Python prompt over WiFi, connecting through"
+" a browser. The latest versions of Firefox and Chrome are supported."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:39
+msgid ""
+"For your convenience, WebREPL client is hosted at "
+"`<http://micropython.org/webrepl>`__. Alternatively, you can install it "
+"locally from the the GitHub repository "
+"`<https://github.com/micropython/webrepl>`__."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:44
+msgid ""
+"Before connecting to WebREPL, you should set a password and enable it via"
+" a normal serial connection. Initial versions of MicroPython for ESP8266 "
+"came with WebREPL automatically enabled on the boot and with the ability "
+"to set a password via WiFi on the first connection, but as WebREPL was "
+"becoming more widely known and popular, the initial setup has switched to"
+" a wired connection for improved security::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:53
+msgid ""
+"Follow the on-screen instructions and prompts. To make any changes "
+"active, you will need to reboot your device."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:56
+msgid ""
+"To use WebREPL connect your computer to the ESP8266's access point "
+"(MicroPython-xxxxxx, see the previous section about this).  If you have "
+"already reconfigured your ESP8266 to connect to a router then you can "
+"skip this part."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:61
+msgid ""
+"Once you are on the same network as the ESP8266 you click the \"Connect\""
+" button (if you are connecting via a router then you may need to change "
+"the IP address, by default the IP address is correct when connected to "
+"the ESP8266's access point).  If the connection succeeds then you should "
+"see a password prompt."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:66
+msgid ""
+"Once you type the password configured at the setup step above, press "
+"Enter once more and you should get a prompt looking like ``>>>``.  You "
+"can now start typing Python commands!"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:71
+msgid "Using the REPL"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:73
+msgid ""
+"Once you have a prompt you can start experimenting!  Anything you type at"
+" the prompt will be executed after you press the Enter key.  MicroPython "
+"will run the code that you enter and print the result (if there is one)."
+"  If there is an error with the text that you enter then an error message"
+" is printed."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:78
+msgid "Try typing the following at the prompt::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:83
+msgid ""
+"Note that you shouldn't type the ``>>>`` arrows, they are there to "
+"indicate that you should type the text after it at the prompt.  And then "
+"the line following is what the device should respond with.  In the end, "
+"once you have entered the text ``print(\"hello esp8266!\")`` and pressed "
+"the Enter key, the output on your screen should look exactly like it does"
+" above."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:89
+msgid ""
+"If you already know some python you can now try some basic commands here."
+"   For example::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:99
+msgid ""
+"If your board has an LED attached to GPIO2 (the ESP-12 modules do) then "
+"you can turn it on and off using the following code::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:107
+msgid ""
+"Note that ``on`` method of a Pin might turn the LED off and ``off`` might"
+" turn it on (or vice versa), depending on how the LED is wired on your "
+"board. To resolve this, machine.Signal class is provided."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:112
+msgid "Line editing"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:114
+msgid ""
+"You can edit the current line that you are entering using the left and "
+"right arrow keys to move the cursor, as well as the delete and backspace "
+"keys.  Also, pressing Home or ctrl-A moves the cursor to the start of the"
+" line, and pressing End or ctrl-E moves to the end of the line."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:120
+msgid "Input history"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:122
+msgid ""
+"The REPL remembers a certain number of previous lines of text that you "
+"entered (up to 8 on the ESP8266).  To recall previous lines use the up "
+"and down arrow keys."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:127
+msgid "Tab completion"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:129
+msgid ""
+"Pressing the Tab key will do an auto-completion of the current word that "
+"you are entering.  This can be very useful to find out functions and "
+"methods that a module or object has.  Try it out by typing \"ma\" and "
+"then pressing Tab.  It should complete to \"machine\" (assuming you "
+"imported machine in the above example).  Then type \".\" and press Tab "
+"again to see a list of all the functions that the machine module has."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:137
+msgid "Line continuation and auto-indent"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:139
+msgid ""
+"Certain things that you type will need \"continuing\", that is, will need"
+" more lines of text to make a proper Python statement.  In this case the "
+"prompt will change to ``...`` and the cursor will auto-indent the correct"
+" amount so you can start typing the next line straight away.  Try this by"
+" defining the following function::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:152
+msgid ""
+"In the above, you needed to press the Enter key three times in a row to "
+"finish the compound statement (that's the three lines with just dots on "
+"them).  The other way to finish a compound statement is to press "
+"backspace to get to the start of the line, then press the Enter key.  (If"
+" you did something wrong and want to escape the continuation mode then "
+"press ctrl-C; all lines will be ignored.)"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:159
+msgid ""
+"The function you just defined allows you to toggle a pin.  The pin object"
+" you created earlier should still exist (recreate it if it doesn't) and "
+"you can toggle the LED using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:165
+msgid ""
+"Let's now toggle the LED in a loop (if you don't have an LED then you can"
+" just print some text instead of calling toggle, to see the effect)::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:177
+msgid ""
+"This will toggle the LED at 1Hz (half a second on, half a second off).  "
+"To stop the toggling press ctrl-C, which will raise a KeyboardInterrupt "
+"exception and break out of the loop."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:181
+msgid ""
+"The time module provides some useful functions for making delays and "
+"doing timing.  Use tab completion to find out what they are and play "
+"around with them!"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:185
+msgid "Paste mode"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:187
+msgid ""
+"Pressing ctrl-E will enter a special paste mode.  This allows you to copy"
+" and paste a chunk of text into the REPL.  If you press ctrl-E you will "
+"see the paste-mode prompt::"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:194
+msgid ""
+"You can then paste (or type) your text in.  Note that none of the special"
+" keys or commands work in paste mode (eg Tab or backspace), they are just"
+" accepted as-is.  Press ctrl-D to finish entering the text and execute "
+"it."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:199
+msgid "Other control commands"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:201
+msgid "There are four other control commands:"
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:203
+msgid ""
+"Ctrl-A on a blank line will enter raw REPL mode.  This is like a "
+"permanent paste mode, except that characters are not echoed back."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:206
+msgid "Ctrl-B on a blank like goes to normal REPL mode."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:208
+msgid "Ctrl-C cancels any input, or interrupts the currently running code."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:210
+msgid "Ctrl-D on a blank line will do a soft reset."
+msgstr ""
+
+#: ../../esp8266/tutorial/repl.rst:212
+msgid "Note that ctrl-A and ctrl-D do not work with WebREPL."
+msgstr ""
+

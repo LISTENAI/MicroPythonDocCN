@@ -1,0 +1,782 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp32/quickref.rst:4
+msgid "Quick reference for the ESP32"
+msgstr ""
+
+msgid "ESP32 board"
+msgstr ""
+
+#: ../../esp32/quickref.rst:10
+msgid "The Espressif ESP32 Development Board (image attribution: Adafruit)."
+msgstr ""
+
+#: ../../esp32/quickref.rst:12
+msgid ""
+"Below is a quick reference for ESP32-based boards.  If it is your first "
+"time working with this board it may be useful to get an overview of the "
+"microcontroller:"
+msgstr ""
+
+#: ../../esp32/quickref.rst:22
+msgid "Installing MicroPython"
+msgstr ""
+
+#: ../../esp32/quickref.rst:24
+msgid ""
+"See the corresponding section of tutorial: :ref:`esp32_intro`. It also "
+"includes a troubleshooting subsection."
+msgstr ""
+
+#: ../../esp32/quickref.rst:28
+msgid "General board control"
+msgstr ""
+
+#: ../../esp32/quickref.rst:30
+msgid ""
+"The MicroPython REPL is on UART0 (GPIO1=TX, GPIO3=RX) at baudrate 115200."
+" Tab-completion is useful to find out what methods an object has. Paste "
+"mode (ctrl-E) is useful to paste a large slab of Python code into the "
+"REPL."
+msgstr ""
+
+#: ../../esp32/quickref.rst:35
+msgid "The :mod:`machine` module::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:42
+msgid "The :mod:`esp` module::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:56
+msgid "The :mod:`esp32` module::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:64
+msgid ""
+"Note that the temperature sensor in the ESP32 will typically read higher "
+"than ambient due to the IC getting warm while it runs.  This effect can "
+"be minimised by reading the temperature sensor immediately after waking "
+"up from sleep."
+msgstr ""
+
+#: ../../esp32/quickref.rst:69
+msgid "Networking"
+msgstr ""
+
+#: ../../esp32/quickref.rst:71
+msgid "The :mod:`network` module::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:88
+msgid "A useful function for connecting to your local WiFi network is::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:101
+msgid ""
+"Once the network is established the :mod:`socket <socket>` module can be "
+"used to create and use TCP/UDP sockets as usual, and the ``urequests`` "
+"module for convenient HTTP requests."
+msgstr ""
+
+#: ../../esp32/quickref.rst:105
+msgid ""
+"After a call to ``wlan.connect()``, the device will by default retry to "
+"connect **forever**, even when the authentication failed or no AP is in "
+"range. ``wlan.status()`` will return ``network.STAT_CONNECTING`` in this "
+"state until a connection succeeds or the interface gets disabled.  This "
+"can be changed by calling ``wlan.config(reconnects=n)``, where n are the "
+"number of desired reconnect attempts (0 means it won't retry, -1 will "
+"restore the default behaviour of trying to reconnect forever)."
+msgstr ""
+
+#: ../../esp32/quickref.rst:114
+msgid "Delay and timing"
+msgstr ""
+
+#: ../../esp32/quickref.rst:116
+msgid "Use the :mod:`time <time>` module::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:127
+msgid "Timers"
+msgstr ""
+
+#: ../../esp32/quickref.rst:129
+msgid ""
+"The ESP32 port has four hardware timers. Use the :ref:`machine.Timer "
+"<machine.Timer>` class with a timer ID from 0 to 3 (inclusive)::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:140
+msgid "The period is in milliseconds."
+msgstr ""
+
+#: ../../esp32/quickref.rst:142
+msgid "Virtual timers are not currently supported on this port."
+msgstr ""
+
+#: ../../esp32/quickref.rst:147
+msgid "Pins and GPIO"
+msgstr ""
+
+#: ../../esp32/quickref.rst:149
+msgid "Use the :ref:`machine.Pin <machine.Pin>` class::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:164
+msgid ""
+"Available Pins are from the following ranges (inclusive): 0-19, 21-23, "
+"25-27, 32-39. These correspond to the actual GPIO pin numbers of ESP32 "
+"chip.  Note that many end-user boards use their own adhoc pin numbering "
+"(marked e.g. D0, D1, ...). For mapping between board logical pins and "
+"physical chip pins consult your board documentation."
+msgstr ""
+
+#: ../../esp32/quickref.rst:170 ../../esp32/quickref.rst:470
+msgid "Notes:"
+msgstr ""
+
+#: ../../esp32/quickref.rst:172
+msgid "Pins 1 and 3 are REPL UART TX and RX respectively"
+msgstr ""
+
+#: ../../esp32/quickref.rst:174
+msgid ""
+"Pins 6, 7, 8, 11, 16, and 17 are used for connecting the embedded flash, "
+"and are not recommended for other uses"
+msgstr ""
+
+#: ../../esp32/quickref.rst:177
+msgid "Pins 34-39 are input only, and also do not have internal pull-up resistors"
+msgstr ""
+
+#: ../../esp32/quickref.rst:179
+msgid ""
+"The pull value of some pins can be set to ``Pin.PULL_HOLD`` to reduce "
+"power consumption during deepsleep."
+msgstr ""
+
+#: ../../esp32/quickref.rst:182
+msgid ""
+"There's a higher-level abstraction :ref:`machine.Signal <machine.Signal>`"
+" which can be used to invert a pin. Useful for illuminating active-low "
+"LEDs using ``on()`` or ``value(1)``."
+msgstr ""
+
+#: ../../esp32/quickref.rst:187
+msgid "UART (serial bus)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:189
+msgid "See :ref:`machine.UART <machine.UART>`. ::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:197
+msgid ""
+"The ESP32 has three hardware UARTs: UART0, UART1 and UART2. They each "
+"have default GPIO assigned to them, however depending on your ESP32 "
+"variant and board, these pins may conflict with embedded flash, onboard "
+"PSRAM or peripherals."
+msgstr ""
+
+#: ../../esp32/quickref.rst:202
+msgid ""
+"Any GPIO can be used for hardware UARTs using the GPIO matrix, so to "
+"avoid conflicts simply provide ``tx`` and ``rx`` pins when constructing. "
+"The default pins listed below."
+msgstr ""
+
+#: ../../esp32/quickref.rst:207 ../../esp32/quickref.rst:360
+#: ../../esp32/quickref.rst:402
+msgid "\\"
+msgstr ""
+
+#: ../../esp32/quickref.rst:207
+msgid "UART0"
+msgstr ""
+
+#: ../../esp32/quickref.rst:207
+msgid "UART1"
+msgstr ""
+
+#: ../../esp32/quickref.rst:207
+msgid "UART2"
+msgstr ""
+
+#: ../../esp32/quickref.rst:209
+msgid "tx"
+msgstr ""
+
+#: ../../esp32/quickref.rst:209 ../../esp32/quickref.rst:249
+msgid "1"
+msgstr ""
+
+#: ../../esp32/quickref.rst:209
+msgid "10"
+msgstr ""
+
+#: ../../esp32/quickref.rst:209
+msgid "17"
+msgstr ""
+
+#: ../../esp32/quickref.rst:210
+msgid "rx"
+msgstr ""
+
+#: ../../esp32/quickref.rst:210
+msgid "3"
+msgstr ""
+
+#: ../../esp32/quickref.rst:210
+msgid "9"
+msgstr ""
+
+#: ../../esp32/quickref.rst:210 ../../esp32/quickref.rst:254
+msgid "16"
+msgstr ""
+
+#: ../../esp32/quickref.rst:214
+msgid "PWM (pulse width modulation)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:216
+msgid ""
+"PWM can be enabled on all output-enabled pins. The base frequency can "
+"range from 1Hz to 40MHz but there is a tradeoff; as the base frequency "
+"*increases* the duty resolution *decreases*. See `LED Control "
+"<https://docs.espressif.com/projects/esp-idf/en/latest/api-"
+"reference/peripherals/ledc.html>`_ for more details."
+msgstr ""
+
+#: ../../esp32/quickref.rst:222
+msgid "Use the :ref:`machine.PWM <machine.PWM>` class::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:244
+msgid "ESP chips have different hardware peripherals:"
+msgstr ""
+
+#: ../../esp32/quickref.rst:247
+msgid "Hardware specification"
+msgstr ""
+
+#: ../../esp32/quickref.rst:247
+msgid "ESP32"
+msgstr ""
+
+#: ../../esp32/quickref.rst:247
+msgid "ESP32-S2"
+msgstr ""
+
+#: ../../esp32/quickref.rst:247
+msgid "ESP32-C3"
+msgstr ""
+
+#: ../../esp32/quickref.rst:249
+msgid "Number of groups (speed modes)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:249
+msgid "2"
+msgstr ""
+
+#: ../../esp32/quickref.rst:250
+msgid "Number of timers per group"
+msgstr ""
+
+#: ../../esp32/quickref.rst:250 ../../esp32/quickref.rst:253
+msgid "4"
+msgstr ""
+
+#: ../../esp32/quickref.rst:251
+msgid "Number of channels per group"
+msgstr ""
+
+#: ../../esp32/quickref.rst:251 ../../esp32/quickref.rst:253
+#: ../../esp32/quickref.rst:254
+msgid "8"
+msgstr ""
+
+#: ../../esp32/quickref.rst:251 ../../esp32/quickref.rst:254
+msgid "6"
+msgstr ""
+
+#: ../../esp32/quickref.rst:253
+msgid "Different PWM frequencies (groups * timers)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:254
+msgid "Total PWM channels (Pins, duties) (groups * channels)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:257
+msgid ""
+"A maximum number of PWM channels (Pins) are available on the ESP32 - 16 "
+"channels, but only 8 different PWM frequencies are available, the "
+"remaining 8 channels must have the same frequency.  On the other hand, 16"
+" independent PWM duty cycles are possible at the same frequency."
+msgstr ""
+
+#: ../../esp32/quickref.rst:262
+msgid "See more examples in the :ref:`esp32_pwm` tutorial."
+msgstr ""
+
+#: ../../esp32/quickref.rst:265
+msgid "ADC (analog to digital conversion)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:267
+msgid ""
+"On the ESP32 ADC functionality is available on Pins 32-39. Note that, "
+"when using the default configuration, input voltages on the ADC pin must "
+"be between 0.0v and 1.0v (anything above 1.0v will just read as 4095).  "
+"Attenuation must be applied in order to increase this usable voltage "
+"range."
+msgstr ""
+
+#: ../../esp32/quickref.rst:272
+msgid "Use the :ref:`machine.ADC <machine.ADC>` class::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:283
+msgid "ESP32 specific ADC class method reference:"
+msgstr ""
+
+#: ../../esp32/quickref.rst:287
+msgid ""
+"This method allows for the setting of the amount of attenuation on the "
+"input of the ADC. This allows for a wider possible input voltage range, "
+"at the cost of accuracy (the same number of bits now represents a wider "
+"range). The possible attenuation options are:"
+msgstr ""
+
+#: ../../esp32/quickref.rst:292
+msgid ""
+"``ADC.ATTN_0DB``: 0dB attenuation, gives a maximum input voltage of 1.00v"
+" - this is the default configuration"
+msgstr ""
+
+#: ../../esp32/quickref.rst:294
+msgid ""
+"``ADC.ATTN_2_5DB``: 2.5dB attenuation, gives a maximum input voltage of "
+"approximately 1.34v"
+msgstr ""
+
+#: ../../esp32/quickref.rst:296
+msgid ""
+"``ADC.ATTN_6DB``: 6dB attenuation, gives a maximum input voltage of "
+"approximately 2.00v"
+msgstr ""
+
+#: ../../esp32/quickref.rst:298
+msgid ""
+"``ADC.ATTN_11DB``: 11dB attenuation, gives a maximum input voltage of "
+"approximately 3.6v"
+msgstr ""
+
+#: ../../esp32/quickref.rst:302
+msgid ""
+"Despite 11dB attenuation allowing for up to a 3.6v range, note that the "
+"absolute maximum voltage rating for the input pins is 3.6v, and so going "
+"near this boundary may be damaging to the IC!"
+msgstr ""
+
+#: ../../esp32/quickref.rst:308
+msgid ""
+"This method allows for the setting of the number of bits to be utilised "
+"and returned during ADC reads. Possible width options are:"
+msgstr ""
+
+#: ../../esp32/quickref.rst:311
+msgid "``ADC.WIDTH_9BIT``: 9 bit data"
+msgstr ""
+
+#: ../../esp32/quickref.rst:312
+msgid "``ADC.WIDTH_10BIT``: 10 bit data"
+msgstr ""
+
+#: ../../esp32/quickref.rst:313
+msgid "``ADC.WIDTH_11BIT``: 11 bit data"
+msgstr ""
+
+#: ../../esp32/quickref.rst:314
+msgid "``ADC.WIDTH_12BIT``: 12 bit data - this is the default configuration"
+msgstr ""
+
+#: ../../esp32/quickref.rst:317
+msgid "Software SPI bus"
+msgstr ""
+
+#: ../../esp32/quickref.rst:319
+msgid ""
+"Software SPI (using bit-banging) works on all pins, and is accessed via "
+"the :ref:`machine.SoftSPI <machine.SoftSPI>` class::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:345
+msgid ""
+"Currently *all* of ``sck``, ``mosi`` and ``miso`` *must* be specified "
+"when initialising Software SPI."
+msgstr ""
+
+#: ../../esp32/quickref.rst:349
+msgid "Hardware SPI bus"
+msgstr ""
+
+#: ../../esp32/quickref.rst:351
+msgid ""
+"There are two hardware SPI channels that allow faster transmission rates "
+"(up to 80Mhz). These may be used on any IO pins that support the required"
+" direction and are otherwise unused (see :ref:`Pins_and_GPIO`) but if "
+"they are not configured to their default pins then they need to pass "
+"through an extra layer of GPIO multiplexing, which can impact their "
+"reliability at high speeds. Hardware SPI channels are limited to 40MHz "
+"when used on pins other than the default ones listed below."
+msgstr ""
+
+#: ../../esp32/quickref.rst:360
+msgid "HSPI (id=1)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:360
+msgid "VSPI (id=2)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:362
+msgid "sck"
+msgstr ""
+
+#: ../../esp32/quickref.rst:362
+msgid "14"
+msgstr ""
+
+#: ../../esp32/quickref.rst:362 ../../esp32/quickref.rst:404
+msgid "18"
+msgstr ""
+
+#: ../../esp32/quickref.rst:363
+msgid "mosi"
+msgstr ""
+
+#: ../../esp32/quickref.rst:363
+msgid "13"
+msgstr ""
+
+#: ../../esp32/quickref.rst:363
+msgid "23"
+msgstr ""
+
+#: ../../esp32/quickref.rst:364
+msgid "miso"
+msgstr ""
+
+#: ../../esp32/quickref.rst:364
+msgid "12"
+msgstr ""
+
+#: ../../esp32/quickref.rst:364 ../../esp32/quickref.rst:405
+msgid "19"
+msgstr ""
+
+#: ../../esp32/quickref.rst:367
+msgid ""
+"Hardware SPI is accessed via the :ref:`machine.SPI <machine.SPI>` class "
+"and has the same methods as software SPI above::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:377
+msgid "Software I2C bus"
+msgstr ""
+
+#: ../../esp32/quickref.rst:379
+msgid ""
+"Software I2C (using bit-banging) works on all output-capable pins, and is"
+" accessed via the :ref:`machine.SoftI2C <machine.SoftI2C>` class::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:395
+msgid "Hardware I2C bus"
+msgstr ""
+
+#: ../../esp32/quickref.rst:397
+msgid ""
+"There are two hardware I2C peripherals with identifiers 0 and 1.  Any "
+"available output-capable pins can be used for SCL and SDA but the "
+"defaults are given below."
+msgstr ""
+
+#: ../../esp32/quickref.rst:402
+msgid "I2C(0)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:402
+msgid "I2C(1)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:404
+msgid "scl"
+msgstr ""
+
+#: ../../esp32/quickref.rst:404
+msgid "25"
+msgstr ""
+
+#: ../../esp32/quickref.rst:405
+msgid "sda"
+msgstr ""
+
+#: ../../esp32/quickref.rst:405
+msgid "26"
+msgstr ""
+
+#: ../../esp32/quickref.rst:408
+msgid ""
+"The driver is accessed via the :ref:`machine.I2C <machine.I2C>` class and"
+" has the same methods as software I2C above::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:417
+msgid "I2S bus"
+msgstr ""
+
+#: ../../esp32/quickref.rst:419
+msgid "See :ref:`machine.I2S <machine.I2S>`. ::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:429
+msgid ""
+"The I2S class is currently available as a Technical Preview.  During the "
+"preview period, feedback from users is encouraged.  Based on this "
+"feedback, the I2S class API and implementation may be changed."
+msgstr ""
+
+#: ../../esp32/quickref.rst:432
+msgid "ESP32 has two I2S buses with id=0 and id=1"
+msgstr ""
+
+#: ../../esp32/quickref.rst:435
+msgid "Real time clock (RTC)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:437
+msgid "See :ref:`machine.RTC <machine.RTC>` ::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:446
+msgid "WDT (Watchdog timer)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:448
+msgid "See :ref:`machine.WDT <machine.WDT>`. ::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:457
+msgid "Deep-sleep mode"
+msgstr ""
+
+#: ../../esp32/quickref.rst:459
+msgid "The following code can be used to sleep, wake and check the reset cause::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:472
+msgid ""
+"Calling ``deepsleep()`` without an argument will put the device to sleep "
+"indefinitely"
+msgstr ""
+
+#: ../../esp32/quickref.rst:474
+msgid "A software reset does not change the reset cause"
+msgstr ""
+
+#: ../../esp32/quickref.rst:475
+msgid ""
+"There may be some leakage current flowing through enabled internal "
+"pullups. To further reduce power consumption it is possible to disable "
+"the internal pullups::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:480
+msgid ""
+"After leaving deepsleep it may be necessary to un-hold the pin explicitly"
+" (e.g. if it is an output pin) via::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:486
+msgid "SD card"
+msgstr ""
+
+#: ../../esp32/quickref.rst:488
+msgid "See :ref:`machine.SDCard <machine.SDCard>`. ::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:501
+msgid "RMT"
+msgstr ""
+
+#: ../../esp32/quickref.rst:503
+msgid ""
+"The RMT is ESP32-specific and allows generation of accurate digital "
+"pulses with 12.5ns resolution.  See :ref:`esp32.RMT <esp32.RMT>` for "
+"details.  Usage is::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:515
+msgid "OneWire driver"
+msgstr ""
+
+#: ../../esp32/quickref.rst:517
+msgid "The OneWire driver is implemented in software and works on all pins::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:530
+msgid "There is a specific driver for DS18S20 and DS18B20 devices::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:540
+msgid ""
+"Be sure to put a 4.7k pull-up resistor on the data line.  Note that the "
+"``convert_temp()`` method must be called each time you want to sample the"
+" temperature."
+msgstr ""
+
+#: ../../esp32/quickref.rst:545
+msgid "NeoPixel and APA106 driver"
+msgstr ""
+
+#: ../../esp32/quickref.rst:547
+msgid "Use the ``neopixel`` and ``apa106`` modules::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:559
+msgid ""
+"The APA106 driver extends NeoPixel, but internally uses a different "
+"colour order::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:565
+msgid "For low-level driving of a NeoPixel::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:571
+msgid ""
+"By default ``NeoPixel`` is configured to control the more popular "
+"*800kHz* units. It is possible to use alternative timing to control other"
+" (typically 400kHz) devices by passing ``timing=0`` when constructing the"
+" ``NeoPixel`` object."
+msgstr ""
+
+#: ../../esp32/quickref.rst:576
+msgid ""
+"The low-level driver uses an RMT channel by default.  To configure this "
+"see `RMT.bitstream_channel`."
+msgstr ""
+
+#: ../../esp32/quickref.rst:579
+msgid ""
+"APA102 (DotStar) uses a different driver as it has an additional clock "
+"pin."
+msgstr ""
+
+#: ../../esp32/quickref.rst:582
+msgid "Capacitive touch"
+msgstr ""
+
+#: ../../esp32/quickref.rst:584
+msgid "Use the ``TouchPad`` class in the ``machine`` module::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:591
+msgid ""
+"``TouchPad.read`` returns a value relative to the capacitive variation. "
+"Small numbers (typically in the *tens*) are common when a pin is touched,"
+" larger numbers (above *one thousand*) when no touch is present. However "
+"the values are *relative* and can vary depending on the board and "
+"surrounding composition so some calibration may be required."
+msgstr ""
+
+#: ../../esp32/quickref.rst:596
+msgid ""
+"There are ten capacitive touch-enabled pins that can be used on the "
+"ESP32: 0, 2, 4, 12, 13 14, 15, 27, 32, 33. Trying to assign to any other "
+"pins will result in a ``ValueError``."
+msgstr ""
+
+#: ../../esp32/quickref.rst:599
+msgid "Note that TouchPads can be used to wake an ESP32 from sleep::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:610
+msgid ""
+"For more details on touchpads refer to `Espressif Touch Sensor "
+"<https://docs.espressif.com/projects/esp-idf/en/latest/api-"
+"reference/peripherals/touch_pad.html>`_."
+msgstr ""
+
+#: ../../esp32/quickref.rst:615
+msgid "DHT driver"
+msgstr ""
+
+#: ../../esp32/quickref.rst:617
+msgid "The DHT driver is implemented in software and works on all pins::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:633
+msgid "WebREPL (web browser interactive prompt)"
+msgstr ""
+
+#: ../../esp32/quickref.rst:635
+msgid ""
+"WebREPL (REPL over WebSockets, accessible via a web browser) is an "
+"experimental feature available in ESP32 port. Download web client from "
+"https://github.com/micropython/webrepl (hosted version available at "
+"http://micropython.org/webrepl), and configure it by executing::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:642
+msgid ""
+"and following on-screen instructions. After reboot, it will be available "
+"for connection. If you disabled automatic start-up on boot, you may run "
+"configured daemon on demand using::"
+msgstr ""
+
+#: ../../esp32/quickref.rst:652
+msgid ""
+"The WebREPL daemon listens on all active interfaces, which can be STA or "
+"AP.  This allows you to connect to the ESP32 via a router (the STA "
+"interface) or directly when connected to its access point."
+msgstr ""
+
+#: ../../esp32/quickref.rst:656
+msgid ""
+"In addition to terminal/command prompt access, WebREPL also has provision"
+" for file transfer (both upload and download).  The web client has "
+"buttons for the corresponding functions, or you can use the command-line "
+"client ``webrepl_cli.py`` from the repository above."
+msgstr ""
+
+#: ../../esp32/quickref.rst:661
+msgid ""
+"See the MicroPython forum for other community-supported alternatives to "
+"transfer files to an ESP32 board."
+msgstr ""
+

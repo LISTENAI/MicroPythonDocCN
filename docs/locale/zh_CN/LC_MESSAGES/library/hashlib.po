@@ -1,0 +1,95 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/hashlib.rst:2
+msgid ":mod:`hashlib` -- hashing algorithms"
+msgstr ""
+
+#: ../../library/hashlib.rst:7
+msgid "|see_cpython_module| :mod:`python:hashlib`."
+msgstr ""
+
+#: ../../library/hashlib.rst:9
+msgid ""
+"This module implements binary data hashing algorithms. The exact "
+"inventory of available algorithms depends on a board. Among the "
+"algorithms which may be implemented:"
+msgstr ""
+
+#: ../../library/hashlib.rst:13
+msgid ""
+"SHA256 - The current generation, modern hashing algorithm (of SHA2 "
+"series). It is suitable for cryptographically-secure purposes. Included "
+"in the MicroPython core and any board is recommended to provide this, "
+"unless it has particular code size constraints."
+msgstr ""
+
+#: ../../library/hashlib.rst:18
+msgid ""
+"SHA1 - A previous generation algorithm. Not recommended for new usages, "
+"but SHA1 is a part of number of Internet standards and existing "
+"applications, so boards targeting network connectivity and "
+"interoperability will try to provide this."
+msgstr ""
+
+#: ../../library/hashlib.rst:23
+msgid ""
+"MD5 - A legacy algorithm, not considered cryptographically secure. Only "
+"selected boards, targeting interoperability with legacy applications, "
+"will offer this."
+msgstr ""
+
+#: ../../library/hashlib.rst:28
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/hashlib.rst:32
+msgid "Create an SHA256 hasher object and optionally feed ``data`` into it."
+msgstr ""
+
+#: ../../library/hashlib.rst:36
+msgid "Create an SHA1 hasher object and optionally feed ``data`` into it."
+msgstr ""
+
+#: ../../library/hashlib.rst:40
+msgid "Create an MD5 hasher object and optionally feed ``data`` into it."
+msgstr ""
+
+#: ../../library/hashlib.rst:43
+msgid "Methods"
+msgstr ""
+
+#: ../../library/hashlib.rst:47
+msgid "Feed more binary data into hash."
+msgstr ""
+
+#: ../../library/hashlib.rst:51
+msgid ""
+"Return hash for all data passed through hash, as a bytes object. After "
+"this method is called, more data cannot be fed into the hash any longer."
+msgstr ""
+
+#: ../../library/hashlib.rst:56
+msgid ""
+"This method is NOT implemented. Use ``binascii.hexlify(hash.digest())`` "
+"to achieve a similar effect."
+msgstr ""
+

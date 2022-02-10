@@ -1,0 +1,60 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/ssd1306.rst:4
+msgid "Using a SSD1306 OLED display"
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:6
+msgid ""
+"The SSD1306 OLED display uses either a SPI or I2C interface and comes in "
+"a variety of sizes (128x64, 128x32, 72x40, 64x48) and colours (white, "
+"yellow, blue, yellow + blue)."
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:9
+msgid "Hardware SPI interface::"
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:22
+msgid "Software SPI interface::"
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:35
+msgid "I2C interface::"
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:44
+msgid "Print Hello World on the first line::"
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:49
+msgid "Basic functions::"
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:61
+msgid "Subclassing FrameBuffer provides support for graphics primitives::"
+msgstr ""
+
+#: ../../esp8266/tutorial/ssd1306.rst:81
+msgid "Draw the MicroPython logo and print some text::"
+msgstr ""
+

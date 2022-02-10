@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../wipy/tutorial/timer.rst:2
+msgid "Hardware timers"
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:4
+msgid ""
+"Timers can be used for a great variety of tasks, calling a function "
+"periodically, counting events, and generating a PWM signal are among the "
+"most common use cases. Each timer consists of two 16-bit channels and "
+"this channels can be tied together to form one 32-bit timer. The "
+"operating mode needs to be configured per timer, but then the period (or "
+"the frequency) can be independently configured on each channel. By using "
+"the callback method, the timer event can call a Python function."
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:11
+msgid "Example usage to toggle an LED at a fixed frequency::"
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:21
+msgid "Example using named function for the callback::"
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:36
+msgid "Further examples::"
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:50
+msgid "Additional constants for Timer class"
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:54
+msgid "PWM timer operating mode."
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:59
+msgid ""
+"Selects the timer channel. Must be ORed (``Timer.A`` | ``Timer.B``) when "
+"using a 32-bit timer."
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:65
+msgid "Timer channel polarity selection (only relevant in PWM mode)."
+msgstr ""
+
+#: ../../wipy/tutorial/timer.rst:70
+msgid "Timer channel IRQ triggers."
+msgstr ""
+

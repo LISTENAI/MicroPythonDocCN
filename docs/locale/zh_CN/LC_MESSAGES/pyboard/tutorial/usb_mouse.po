@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/usb_mouse.rst:2
+msgid "Making the pyboard act as a USB mouse"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:4
+msgid ""
+"The pyboard is a USB device, and can configured to act as a mouse instead"
+" of the default USB flash drive."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:7
+msgid ""
+"To do this we must first edit the ``boot.py`` file to change the USB "
+"configuration.  If you have not yet touched your ``boot.py`` file then it"
+" will look something like this::"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:19
+msgid ""
+"To enable the mouse mode, uncomment the last line of the file, to make it"
+" look like::"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:24
+msgid ""
+"If you already changed your ``boot.py`` file, then the minimum code it "
+"needs to work is::"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:30
+msgid ""
+"This tells the pyboard to configure itself as a VCP (Virtual COM Port, ie"
+" serial port) and HID (human interface device, in our case a mouse) USB "
+"device when it boots up."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:34
+msgid ""
+"Eject/unmount the pyboard drive and reset it using the RST switch. Your "
+"PC should now detect the pyboard as a mouse!"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:38
+msgid "Sending mouse events by hand"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:40
+msgid ""
+"To get the py-mouse to do anything we need to send mouse events to the "
+"PC. We will first do this manually using the REPL prompt.  Connect to "
+"your pyboard using your serial program and type the following (no need to"
+" type the ``#`` and text following it)::"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:48
+msgid ""
+"Your mouse should move 100 pixels to the right!  In the command above you"
+" are sending 4 pieces of information: **button status**, **x-direction**,"
+" **y-direction**, and **scroll**.  The number 100 is telling the PC that "
+"the mouse moved 100 pixels in the x direction."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:52
+msgid "Let's make the mouse oscillate left and right::"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:62
+msgid ""
+"The first argument to the function ``osc`` is the number of mouse events "
+"to send, and the second argument is the delay (in milliseconds) between "
+"events.  Try playing around with different numbers."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:66
+msgid "**Exercise: make the mouse go around in a circle.**"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:69
+msgid "Making a mouse with the accelerometer"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:71
+msgid ""
+"Now lets make the mouse move based on the angle of the pyboard, using the"
+" accelerometer.  The following code can be typed directly at the REPL "
+"prompt, or put in the ``main.py`` file.  Here, we'll put in in "
+"``main.py`` because to do that we will learn how to go into safe mode."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:76
+msgid ""
+"At the moment the pyboard is acting as a serial USB device and an HID (a "
+"mouse). So you cannot access the filesystem to edit your ``main.py`` "
+"file."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:79
+msgid ""
+"You also can't edit your ``boot.py`` to get out of HID-mode and back to "
+"normal mode with a USB drive..."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:82
+msgid ""
+"To get around this we need to go into *safe mode*.  This was described in"
+" the [safe mode tutorial](tut-reset), but we repeat the instructions "
+"here:"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:85
+msgid "Hold down the USR switch."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:86
+msgid "While still holding down USR, press and release the RST switch."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:87
+msgid "The LEDs will then cycle green to orange to green+orange and back again."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:88
+msgid ""
+"Keep holding down USR until *only the orange LED is lit*, and then let go"
+" of the USR switch."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:90
+msgid "The orange LED should flash quickly 4 times, and then turn off."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:91
+msgid "You are now in safe mode."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:93
+msgid ""
+"In safe mode, the ``boot.py`` and ``main.py`` files are not executed, and"
+" so the pyboard boots up with default settings.  This means you now have "
+"access to the filesystem (the USB drive should appear), and you can edit "
+"``main.py``. (Leave ``boot.py`` as-is, because we still want to go back "
+"to HID-mode after we finish editing ``main.py``.)"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:99
+msgid "In ``main.py`` put the following code::"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:111
+msgid ""
+"Save your file, eject/unmount your pyboard drive, and reset it using the "
+"RST switch.  It should now act as a mouse, and the angle of the board "
+"will move the mouse around.  Try it out, and see if you can make the "
+"mouse stand still!"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:115
+msgid "Press the USR switch to stop the mouse motion."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:117
+msgid ""
+"You'll note that the y-axis is inverted.  That's easy to fix: just put a "
+"minus sign in front of the y-coordinate in the ``hid.send()`` line above."
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:121
+msgid "Restoring your pyboard to normal"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:123
+msgid ""
+"If you leave your pyboard as-is, it'll behave as a mouse everytime you "
+"plug it in.  You probably want to change it back to normal.  To do this "
+"you need to first enter safe mode (see above), and then edit the "
+"``boot.py`` file. In the ``boot.py`` file, comment out (put a # in front "
+"of) the line with the ``VCP+HID`` setting, so it looks like::"
+msgstr ""
+
+#: ../../pyboard/tutorial/usb_mouse.rst:131
+msgid ""
+"Save your file, eject/unmount the drive, and reset the pyboard.  It is "
+"now back to normal operating mode."
+msgstr ""
+

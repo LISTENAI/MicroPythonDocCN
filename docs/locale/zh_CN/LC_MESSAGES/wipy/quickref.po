@@ -1,0 +1,151 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../wipy/quickref.rst:4
+msgid "Quick reference for the WiPy"
+msgstr ""
+
+msgid "WiPy pinout and alternate functions table"
+msgstr ""
+
+#: ../../wipy/quickref.rst:10
+msgid ""
+"Below is a quick reference for CC3200/WiPy.  If it is your first time "
+"working with this board please consider reading the following sections "
+"first:"
+msgstr ""
+
+#: ../../wipy/quickref.rst:20
+msgid "General board control (including sleep modes)"
+msgstr ""
+
+#: ../../wipy/quickref.rst:22
+msgid "See the :mod:`machine` module::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:36
+msgid "Pins and GPIO"
+msgstr ""
+
+#: ../../wipy/quickref.rst:38
+msgid "See :ref:`machine.Pin <machine.Pin>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:54
+msgid "Timers"
+msgstr ""
+
+#: ../../wipy/quickref.rst:56
+msgid ""
+"See :ref:`machine.TimerWiPy <machine.TimerWiPy>` and :ref:`machine.Pin "
+"<machine.Pin>`. Timer ``id``'s take values from 0 to 3.::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:70
+msgid "PWM (pulse width modulation)"
+msgstr ""
+
+#: ../../wipy/quickref.rst:72
+msgid ""
+"See :ref:`machine.Pin <machine.Pin>` and :ref:`machine.Timer "
+"<machine.Timer>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:83
+msgid "ADC (analog to digital conversion)"
+msgstr ""
+
+#: ../../wipy/quickref.rst:85
+msgid "See :ref:`machine.ADCWiPy <machine.ADCWiPy>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:94
+msgid "UART (serial bus)"
+msgstr ""
+
+#: ../../wipy/quickref.rst:96
+msgid "See :ref:`machine.UART <machine.UART>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:104
+msgid "SPI bus"
+msgstr ""
+
+#: ../../wipy/quickref.rst:106
+msgid "See :ref:`machine.SPI <machine.SPI>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:118
+msgid "I2C bus"
+msgstr ""
+
+#: ../../wipy/quickref.rst:120
+msgid "See :ref:`machine.I2C <machine.I2C>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:132
+msgid "Watchdog timer (WDT)"
+msgstr ""
+
+#: ../../wipy/quickref.rst:134
+msgid "See :ref:`machine.WDT <machine.WDT>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:143
+msgid "Real time clock (RTC)"
+msgstr ""
+
+#: ../../wipy/quickref.rst:145
+msgid "See :ref:`machine.RTC <machine.RTC>` ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:169
+msgid "SD card"
+msgstr ""
+
+#: ../../wipy/quickref.rst:171
+msgid "See :ref:`machine.SD <machine.SD>`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:183
+msgid "WLAN (WiFi)"
+msgstr ""
+
+#: ../../wipy/quickref.rst:185
+msgid "See :ref:`network.WLAN <network.WLAN>` and :mod:`machine`. ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:206
+msgid "Telnet and FTP server"
+msgstr ""
+
+#: ../../wipy/quickref.rst:208
+msgid "See :class:`network.Server` ::"
+msgstr ""
+
+#: ../../wipy/quickref.rst:219
+msgid "Heart beat LED"
+msgstr ""
+
+#: ../../wipy/quickref.rst:221
+msgid "See :mod:`wipy`. ::"
+msgstr ""
+

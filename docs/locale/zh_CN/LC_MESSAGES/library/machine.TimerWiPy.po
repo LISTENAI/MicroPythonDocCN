@@ -1,0 +1,283 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/machine.TimerWiPy.rst:5
+msgid "class TimerWiPy -- control hardware timers"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:9
+msgid ""
+"This class is a non-standard Timer implementation for the WiPy. It is "
+"available simply as ``machine.Timer`` on the WiPy but is named in the "
+"documentation below as ``machine.TimerWiPy`` to distinguish it from the "
+"more general :ref:`machine.Timer <machine.Timer>` class."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:14
+msgid ""
+"Hardware timers deal with timing of periods and events. Timers are "
+"perhaps the most flexible and heterogeneous kind of hardware in MCUs and "
+"SoCs, differently greatly from a model to a model. MicroPython's Timer "
+"class defines a baseline operation of executing a callback with a given "
+"period (or once after some delay), and allow specific boards to define "
+"more non-standard behaviour (which thus won't be portable to other "
+"boards)."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:21
+msgid ""
+"See discussion of :ref:`important constraints <machine_callbacks>` on "
+"Timer callbacks."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:26
+msgid ""
+"Memory can't be allocated inside irq handlers (an interrupt) and so "
+"exceptions raised within a handler don't give much information.  See "
+":func:`micropython.alloc_emergency_exception_buf` for how to get around "
+"this limitation."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:32
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:36
+msgid ""
+"Construct a new timer object of the given id. Id of -1 constructs a "
+"virtual timer (if supported by a board)."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:40
+#: ../../library/machine.TimerWiPy.rst:114
+msgid "Methods"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:44
+msgid "Initialise the timer. Example::"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:49
+msgid "Keyword arguments:"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:51
+msgid "``mode`` can be one of:"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:53
+msgid ""
+"``TimerWiPy.ONE_SHOT`` - The timer runs once until the configured period "
+"of the channel expires."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:55
+msgid ""
+"``TimerWiPy.PERIODIC`` - The timer runs periodically at the configured "
+"frequency of the channel."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:57
+msgid "``TimerWiPy.PWM``      - Output a PWM signal on a pin."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:59
+msgid ""
+"``width`` must be either 16 or 32 (bits). For really low frequencies < "
+"5Hz (or large periods), 32-bit timers should be used. 32-bit mode is only"
+" available for ``ONE_SHOT`` AND ``PERIODIC`` modes."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:65
+msgid ""
+"Deinitialises the timer. Stops the timer, and disables the timer "
+"peripheral."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:69
+msgid ""
+"If only a channel identifier passed, then a previously initialized "
+"channel object is returned (or ``None`` if there is no previous channel)."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:72
+msgid "Otherwise, a TimerChannel object is initialized and returned."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:74
+msgid ""
+"The operating mode is is the one configured to the Timer object that was "
+"used to create the channel."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:77
+msgid ""
+"``channel`` if the width of the timer is 16-bit, then must be either "
+"``TIMER.A``, ``TIMER.B``. If the width is 32-bit then it **must be** "
+"``TIMER.A | TIMER.B``."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:80
+msgid "Keyword only arguments:"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:82
+msgid "``freq`` sets the frequency in Hz."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:83
+msgid "``period`` sets the period in microseconds."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:87
+msgid "Either ``freq`` or ``period`` must be given, never both."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:89
+msgid ""
+"``polarity`` this is applicable for ``PWM``, and defines the polarity of "
+"the duty cycle"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:90
+msgid ""
+"``duty_cycle`` only applicable to ``PWM``. It's a percentage "
+"(0.00-100.00). Since the WiPy doesn't support floating point numbers the "
+"duty cycle must be specified in the range 0-10000, where 10000 would "
+"represent 100.00, 5050 represents 50.50, and so on."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:96
+msgid ""
+"When the channel is in PWM mode, the corresponding pin is assigned "
+"automatically, therefore there's no need to assign the alternate function"
+" of the pin via the ``Pin`` class. The pins which support PWM "
+"functionality are the following:"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:100
+msgid "``GP24`` on Timer 0 channel A."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:101
+msgid "``GP25`` on Timer 1 channel A."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:102
+msgid "``GP9``  on Timer 2 channel B."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:103
+msgid "``GP10`` on Timer 3 channel A."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:104
+msgid "``GP11`` on Timer 3 channel B."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:107
+msgid "class TimerChannel --- setup a channel for a timer"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:109
+msgid "Timer channels are used to generate/capture a signal using a timer."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:111
+msgid "TimerChannel objects are created using the Timer.channel() method."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:118
+msgid ""
+"The behaviour of this callback is heavily dependent on the operating mode"
+" of the timer channel:"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:121
+msgid ""
+"If mode is ``TimerWiPy.PERIODIC`` the callback is executed periodically "
+"with the configured frequency or period."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:123
+msgid ""
+"If mode is ``TimerWiPy.ONE_SHOT`` the callback is executed once when the "
+"configured timer expires."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:125
+msgid ""
+"If mode is ``TimerWiPy.PWM`` the callback is executed when reaching the "
+"duty cycle value."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:128
+msgid "The accepted params are:"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:130
+msgid ""
+"``priority`` level of the interrupt. Can take values in the range 1-7. "
+"Higher values represent higher priorities."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:132
+msgid ""
+"``handler`` is an optional function to be called when the interrupt is "
+"triggered."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:133
+msgid ""
+"``trigger`` must be ``TimerWiPy.TIMEOUT`` when the operating mode is "
+"either ``TimerWiPy.PERIODIC`` or ``TimerWiPy.ONE_SHOT``. In the case that"
+" mode is ``TimerWiPy.PWM`` then trigger must be equal to "
+"``TimerWiPy.MATCH``."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:137
+msgid "Returns a callback object."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:141
+msgid "Get or set the timer channel frequency (in Hz)."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:145
+msgid "Get or set the timer channel period (in microseconds)."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:149
+msgid ""
+"Get or set the duty cycle of the PWM signal. It's a percentage "
+"(0.00-100.00). Since the WiPy doesn't support floating point numbers the "
+"duty cycle must be specified in the range 0-10000, where 10000 would "
+"represent 100.00, 5050 represents 50.50, and so on."
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:154
+msgid "Constants"
+msgstr ""
+
+#: ../../library/machine.TimerWiPy.rst:159
+msgid "Timer operating mode."
+msgstr ""
+

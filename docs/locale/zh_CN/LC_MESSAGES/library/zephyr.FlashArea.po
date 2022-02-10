@@ -1,0 +1,76 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/zephyr.FlashArea.rst:5
+msgid "class FlashArea -- access to built-in flash storage"
+msgstr ""
+
+#: ../../library/zephyr.FlashArea.rst:7
+msgid ""
+"Uses `Zephyr flash map API "
+"<https://docs.zephyrproject.org/latest/reference/storage/flash_map/flash_map.html"
+"#flash-map>`_."
+msgstr ""
+
+#: ../../library/zephyr.FlashArea.rst:9
+msgid ""
+"This class allows access to device flash partition data. Flash area "
+"structs consist of a globally unique ID number, the name of the flash "
+"device the partition is in, the start offset (expressed in relation to "
+"the flash memory beginning address per partition), and the size of the "
+"partition that the device represents. For fixed flash partitions, data "
+"from the device tree is used; however, fixed flash partitioning is not "
+"enforced in MicroPython because MCUBoot is not enabled."
+msgstr ""
+
+#: ../../library/zephyr.FlashArea.rst:16
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/zephyr.FlashArea.rst:20
+msgid ""
+"Gets an object for accessing flash memory at partition specified by "
+"``id`` and with block size of ``block_size``."
+msgstr ""
+
+#: ../../library/zephyr.FlashArea.rst:22
+msgid ""
+"``id`` values are integers correlating to fixed flash partitions defined "
+"in the devicetree. A commonly used partition is the designated flash "
+"storage area defined as ``FlashArea.STORAGE`` if "
+"``FLASH_AREA_LABEL_EXISTS(storage)`` returns true at boot. Zephyr "
+"devicetree fixed flash partitions are ``boot_partition``, "
+"``slot0_partition``, ``slot1_partition``, and ``scratch_partition``. "
+"Because MCUBoot is not enabled by default for MicroPython, these fixed "
+"partitions can be accessed by ID integer values 1, 2, 3, and 4, "
+"respectively."
+msgstr ""
+
+#: ../../library/zephyr.FlashArea.rst:30
+msgid "Methods"
+msgstr ""
+
+#: ../../library/zephyr.FlashArea.rst:38
+msgid ""
+"These methods implement the simple and extended :ref:`block protocol "
+"<block-device-interface>` defined by :class:`uos.AbstractBlockDev`."
+msgstr ""
+

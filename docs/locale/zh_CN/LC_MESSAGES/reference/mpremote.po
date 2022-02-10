@@ -1,0 +1,239 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/mpremote.rst:2
+msgid "MicroPython remote control: mpremote"
+msgstr ""
+
+#: ../../reference/mpremote.rst:4
+msgid ""
+"The ``mpremote`` command line tool provides an integrated set of "
+"utilities to remotely interact with and automate a MicroPython device "
+"over a serial connection."
+msgstr ""
+
+#: ../../reference/mpremote.rst:8
+msgid "To use mpremote install it via ``pip``:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:14
+msgid ""
+"The simplest way to use this tool is just by invoking it without any "
+"arguments:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:20
+msgid ""
+"This command automatically detects and connects to the first available "
+"serial device and provides an interactive REPL.  Serial ports are opened "
+"in exclusive mode, so running a second (or third, etc) instance of "
+"``mpremote`` will connect to subsequent serial devices, if any are "
+"available."
+msgstr ""
+
+#: ../../reference/mpremote.rst:27
+msgid "Commands"
+msgstr ""
+
+#: ../../reference/mpremote.rst:29
+msgid ""
+"For REPL access, running ``mpremote`` without any arguments is usually "
+"all that is needed.  ``mpremote`` also supports a set of commands given "
+"at the command line which will perform various actions on remote "
+"MicroPython devices."
+msgstr ""
+
+#: ../../reference/mpremote.rst:33
+msgid "The full list of supported commands are:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:35
+msgid "connect to a specified device via a device-name shortcut:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:41
+msgid "connect to specified device via name:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:47
+msgid "``<device>`` may be one of:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:49
+msgid "``list``: list available devices"
+msgstr ""
+
+#: ../../reference/mpremote.rst:50
+msgid "``auto``: connect to the first available device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:51
+msgid ""
+"``id:<serial>``: connect to the device with USB serial number "
+"``<serial>`` (the second entry in the output from the ``connect list`` "
+"command)"
+msgstr ""
+
+#: ../../reference/mpremote.rst:54
+msgid "``port:<path>``: connect to the device with the given path"
+msgstr ""
+
+#: ../../reference/mpremote.rst:55
+msgid "any valid device name/path, to connect to that device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:57
+msgid "disconnect current device:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:63
+msgid "enter the REPL on the connected device:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:69
+msgid "Options are:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:71
+msgid ""
+"``--capture <file>``, to capture output of the REPL session to the given "
+"file"
+msgstr ""
+
+#: ../../reference/mpremote.rst:73
+msgid ""
+"``--inject-code <string>``, to specify characters to inject at the REPL "
+"when Ctrl-J is pressed"
+msgstr ""
+
+#: ../../reference/mpremote.rst:75
+msgid ""
+"``--inject-file <file>``, to specify a file to inject at the REPL when "
+"Ctrl-K is pressed"
+msgstr ""
+
+#: ../../reference/mpremote.rst:78
+msgid "evaluate and print the result of a Python expression:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:84
+msgid "execute the given Python code:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:90
+msgid "run a script from the local filesystem:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:96
+msgid "execute filesystem commands on the device:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:102
+msgid "``<command>`` may be:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:104
+msgid "``cat <file..>`` to show the contents of a file or files on the device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:105
+msgid "``ls`` to list the current directory"
+msgstr ""
+
+#: ../../reference/mpremote.rst:106
+msgid "``ls <dirs...>`` to list the given directories"
+msgstr ""
+
+#: ../../reference/mpremote.rst:107
+msgid ""
+"``cp [-r] <src...> <dest>`` to copy files; use \":\" as a prefix to "
+"specify a file on the device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:109
+msgid "``rm <src...>`` to remove files on the device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:110
+msgid "``mkdir <dirs...>`` to create directories on the device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:111
+msgid "``rmdir <dirs...>`` to remove directories on the device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:113
+msgid "mount the local directory on the remote device:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:119
+msgid ""
+"Multiple commands can be specified and they will be run sequentially. "
+"Connection and disconnection will be done automatically at the start and "
+"end of the execution of the tool, if such commands are not explicitly "
+"given.  Automatic connection will search for the first available serial "
+"device. If no action is specified then the REPL will be entered."
+msgstr ""
+
+#: ../../reference/mpremote.rst:126
+msgid "Shortcuts"
+msgstr ""
+
+#: ../../reference/mpremote.rst:128
+msgid "Shortcuts can be defined using the macro system.  Built-in shortcuts are::"
+msgstr ""
+
+#: ../../reference/mpremote.rst:132
+msgid "``a0``, ``a1``, ``a2``, ``a3``: connect to /dev/ttyACM?"
+msgstr ""
+
+#: ../../reference/mpremote.rst:134
+msgid "``u0``, ``u1``, ``u2``, ``u3``: connect to /dev/ttyUSB?"
+msgstr ""
+
+#: ../../reference/mpremote.rst:136
+msgid "``c0``, ``c1``, ``c2``, ``c3``: connect to COM?"
+msgstr ""
+
+#: ../../reference/mpremote.rst:138
+msgid ""
+"``cat``, ``ls``, ``cp``, ``rm``, ``mkdir``, ``rmdir``, ``df``: filesystem"
+" commands"
+msgstr ""
+
+#: ../../reference/mpremote.rst:141
+msgid "``reset``: reset the device"
+msgstr ""
+
+#: ../../reference/mpremote.rst:143
+msgid "``bootloader``: make the device enter its bootloader"
+msgstr ""
+
+#: ../../reference/mpremote.rst:145
+msgid ""
+"Any user configuration, including user-defined shortcuts, can be placed "
+"in the file ``.config/mpremote/config.py``. For example:"
+msgstr ""
+
+#: ../../reference/mpremote.rst:166
+msgid "Examples"
+msgstr ""
+

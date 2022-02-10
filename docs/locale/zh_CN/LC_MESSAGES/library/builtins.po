@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/builtins.rst:2
+msgid ":mod:`builtins` -- builtin functions and exceptions"
+msgstr ""
+
+#: ../../library/builtins.rst:4
+msgid ""
+"All builtin functions and exceptions are described here. They are also "
+"available via ``builtins`` module."
+msgstr ""
+
+#: ../../library/builtins.rst:8
+msgid "Functions and types"
+msgstr ""
+
+#: ../../library/builtins.rst:24
+msgid "|see_cpython| `python:bytes`."
+msgstr ""
+
+#: ../../library/builtins.rst:38
+msgid ""
+"The argument *name* should be a string, and this function deletes the "
+"named attribute from the object given by *obj*."
+msgstr ""
+
+#: ../../library/builtins.rst:77 ../../library/builtins.rst:82
+msgid ""
+"In MicroPython, `byteorder` parameter must be positional (this is "
+"compatible with CPython)."
+msgstr ""
+
+#: ../../library/builtins.rst:135
+msgid "The *slice* builtin is the type that slice objects have."
+msgstr ""
+
+#: ../../library/builtins.rst:155
+msgid "Exceptions"
+msgstr ""
+
+#: ../../library/builtins.rst:187
+msgid "|see_cpython| `python:SystemExit`."
+msgstr ""
+
+#: ../../library/builtins.rst:191
+msgid "|see_cpython| `python:TypeError`."
+msgstr ""
+

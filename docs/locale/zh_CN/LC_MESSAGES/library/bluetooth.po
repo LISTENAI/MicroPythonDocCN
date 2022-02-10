@@ -1,0 +1,968 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/bluetooth.rst:2
+msgid ":mod:`bluetooth` --- low-level Bluetooth"
+msgstr ""
+
+#: ../../library/bluetooth.rst:7
+msgid ""
+"This module provides an interface to a Bluetooth controller on a board. "
+"Currently this supports Bluetooth Low Energy (BLE) in Central, "
+"Peripheral, Broadcaster, and Observer roles, as well as GATT Server and "
+"Client and L2CAP connection-oriented-channels. A device may operate in "
+"multiple roles concurrently. Pairing (and bonding) is supported on some "
+"ports."
+msgstr ""
+
+#: ../../library/bluetooth.rst:13
+msgid ""
+"This API is intended to match the low-level Bluetooth protocol and "
+"provide building-blocks for higher-level abstractions such as specific "
+"device types."
+msgstr ""
+
+#: ../../library/bluetooth.rst:16
+msgid ""
+"This module is still under development and its classes, functions, "
+"methods and constants are subject to change."
+msgstr ""
+
+#: ../../library/bluetooth.rst:20
+msgid "class BLE"
+msgstr ""
+
+#: ../../library/bluetooth.rst:23 ../../library/bluetooth.rst:752
+msgid "Constructor"
+msgstr ""
+
+#: ../../library/bluetooth.rst:27
+msgid "Returns the singleton BLE object."
+msgstr ""
+
+#: ../../library/bluetooth.rst:30
+msgid "Configuration"
+msgstr ""
+
+#: ../../library/bluetooth.rst:34
+msgid ""
+"Optionally changes the active state of the BLE radio, and returns the "
+"current state."
+msgstr ""
+
+#: ../../library/bluetooth.rst:37
+msgid ""
+"The radio must be made active before using any other methods on this "
+"class."
+msgstr ""
+
+#: ../../library/bluetooth.rst:42
+msgid ""
+"Get or set configuration values of the BLE interface.  To get a value the"
+" parameter name should be quoted as a string, and just one parameter is "
+"queried at a time.  To set values use the keyword syntax, and one ore "
+"more parameter can be set at a time."
+msgstr ""
+
+#: ../../library/bluetooth.rst:47
+msgid "Currently supported values are:"
+msgstr ""
+
+#: ../../library/bluetooth.rst:49
+msgid ""
+"``'mac'``: The current address in use, depending on the current address "
+"mode. This returns a tuple of ``(addr_type, addr)``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:52
+msgid "See :meth:`gatts_write <BLE.gatts_write>` for details about address type."
+msgstr ""
+
+#: ../../library/bluetooth.rst:54
+msgid "This may only be queried while the interface is currently active."
+msgstr ""
+
+#: ../../library/bluetooth.rst:56
+msgid "``'addr_mode'``: Sets the address mode. Values can be:"
+msgstr ""
+
+#: ../../library/bluetooth.rst:58
+msgid "0x00 - PUBLIC - Use the controller's public address."
+msgstr ""
+
+#: ../../library/bluetooth.rst:59
+msgid "0x01 - RANDOM - Use a generated static address."
+msgstr ""
+
+#: ../../library/bluetooth.rst:60
+msgid "0x02 - RPA - Use resolvable private addresses."
+msgstr ""
+
+#: ../../library/bluetooth.rst:61
+msgid "0x03 - NRPA - Use non-resolvable private addresses."
+msgstr ""
+
+#: ../../library/bluetooth.rst:63
+msgid ""
+"By default the interface mode will use a PUBLIC address if available, "
+"otherwise it will use a RANDOM address."
+msgstr ""
+
+#: ../../library/bluetooth.rst:66
+msgid ""
+"``'gap_name'``: Get/set the GAP device name used by service 0x1800, "
+"characteristic 0x2a00.  This can be set at any time and changed multiple "
+"times."
+msgstr ""
+
+#: ../../library/bluetooth.rst:70
+msgid ""
+"``'rxbuf'``: Get/set the size in bytes of the internal buffer used to "
+"store incoming events.  This buffer is global to the entire BLE driver "
+"and so handles incoming data for all events, including all "
+"characteristics. Increasing this allows better handling of bursty "
+"incoming data (for example scan results) and the ability to receive "
+"larger characteristic values."
+msgstr ""
+
+#: ../../library/bluetooth.rst:76
+msgid ""
+"``'mtu'``: Get/set the MTU that will be used during a ATT MTU exchange. "
+"The resulting MTU will be the minimum of this and the remote device's "
+"MTU. ATT MTU exchange will not happen automatically (unless the remote "
+"device initiates it), and must be manually initiated with "
+":meth:`gattc_exchange_mtu<BLE.gattc_exchange_mtu>`. Use the "
+"``_IRQ_MTU_EXCHANGED`` event to discover the MTU for a given connection."
+msgstr ""
+
+#: ../../library/bluetooth.rst:83
+msgid ""
+"``'bond'``: Sets whether bonding will be enabled during pairing. When "
+"enabled, pairing requests will set the \"bond\" flag and the keys will be"
+" stored by both devices."
+msgstr ""
+
+#: ../../library/bluetooth.rst:87
+msgid "``'mitm'``: Sets whether MITM-protection is required for pairing."
+msgstr ""
+
+#: ../../library/bluetooth.rst:89
+msgid "``'io'``: Sets the I/O capabilities of this device."
+msgstr ""
+
+#: ../../library/bluetooth.rst:91
+msgid "Available options are::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:99
+msgid ""
+"``'le_secure'``: Sets whether \"LE Secure\" pairing is required. Default "
+"is false (i.e. allow \"Legacy Pairing\")."
+msgstr ""
+
+#: ../../library/bluetooth.rst:103
+msgid "Event Handling"
+msgstr ""
+
+#: ../../library/bluetooth.rst:107
+msgid ""
+"Registers a callback for events from the BLE stack. The *handler* takes "
+"two arguments, ``event`` (which will be one of the codes below) and "
+"``data`` (which is an event-specific tuple of values)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:111
+msgid ""
+"**Note:** As an optimisation to prevent unnecessary allocations, the "
+"``addr``, ``adv_data``, ``char_data``, ``notify_data``, and ``uuid`` "
+"entries in the tuples are read-only memoryview instances pointing to "
+":mod:`bluetooth`'s internal ringbuffer, and are only valid during the "
+"invocation of the IRQ handler function.  If your program needs to save "
+"one of these values to access after the IRQ handler has returned (e.g. by"
+" saving it in a class instance or global variable), then it needs to take"
+" a copy of the data, either by using ``bytes()`` or ``bluetooth.UUID()``,"
+" like this::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:123
+msgid ""
+"For example, the IRQ handler for a scan result might inspect the "
+"``adv_data`` to decide if it's the correct device, and only then copy the"
+" address data to be used elsewhere in the program.  And to print data "
+"from within the IRQ handler, ``print(bytes(addr))`` will be needed."
+msgstr ""
+
+#: ../../library/bluetooth.rst:128
+msgid "An event handler showing all possible events::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:245
+msgid "The event codes are::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:279
+msgid ""
+"For the ``_IRQ_GATTS_READ_REQUEST`` event, the available return codes "
+"are::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:288
+msgid "For the ``_IRQ_PASSKEY_ACTION`` event, the available actions are::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:295
+msgid ""
+"In order to save space in the firmware, these constants are not included "
+"on the :mod:`bluetooth` module. Add the ones that you need from the list "
+"above to your program."
+msgstr ""
+
+#: ../../library/bluetooth.rst:301
+msgid "Broadcaster Role (Advertiser)"
+msgstr ""
+
+#: ../../library/bluetooth.rst:305
+msgid ""
+"Starts advertising at the specified interval (in **micro**\\ seconds). "
+"This interval will be rounded down to the nearest 625us. To stop "
+"advertising, set *interval_us* to ``None``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:309
+msgid ""
+"*adv_data* and *resp_data* can be any type that implements the buffer "
+"protocol (e.g. ``bytes``, ``bytearray``, ``str``). *adv_data* is included"
+" in all broadcasts, and *resp_data* is send in reply to an active scan."
+msgstr ""
+
+#: ../../library/bluetooth.rst:313
+msgid ""
+"**Note:** if *adv_data* (or *resp_data*) is ``None``, then the data "
+"passed to the previous call to ``gap_advertise`` will be re-used. This "
+"allows a broadcaster to resume advertising with just "
+"``gap_advertise(interval_us)``. To clear the advertising payload pass an "
+"empty ``bytes``, i.e. ``b''``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:320
+msgid "Observer Role (Scanner)"
+msgstr ""
+
+#: ../../library/bluetooth.rst:324
+msgid ""
+"Run a scan operation lasting for the specified duration (in **milli**\\ "
+"seconds)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:326
+msgid "To scan indefinitely, set *duration_ms* to ``0``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:328
+msgid "To stop scanning, set *duration_ms* to ``None``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:330
+msgid ""
+"Use *interval_us* and *window_us* to optionally configure the duty cycle."
+" The scanner will run for *window_us* **micro**\\ seconds every "
+"*interval_us* **micro**\\ seconds for a total of *duration_ms* "
+"**milli**\\ seconds. The default interval and window are 1.28 seconds and"
+" 11.25 milliseconds respectively (background scanning)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:336
+msgid ""
+"For each scan result the ``_IRQ_SCAN_RESULT`` event will be raised, with "
+"event data ``(addr_type, addr, adv_type, rssi, adv_data)``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:341
+msgid "``addr_type`` values indicate public or random addresses:"
+msgstr ""
+
+#: ../../library/bluetooth.rst:340
+msgid "0x00 - PUBLIC"
+msgstr ""
+
+#: ../../library/bluetooth.rst:341
+msgid ""
+"0x01 - RANDOM (either static, RPA, or NRPA, the type is encoded in the "
+"address itself)"
+msgstr ""
+
+#: ../../library/bluetooth.rst:343
+msgid "``adv_type`` values correspond to the Bluetooth Specification:"
+msgstr ""
+
+#: ../../library/bluetooth.rst:345
+msgid "0x00 - ADV_IND - connectable and scannable undirected advertising"
+msgstr ""
+
+#: ../../library/bluetooth.rst:346
+msgid "0x01 - ADV_DIRECT_IND - connectable directed advertising"
+msgstr ""
+
+#: ../../library/bluetooth.rst:347
+msgid "0x02 - ADV_SCAN_IND - scannable undirected advertising"
+msgstr ""
+
+#: ../../library/bluetooth.rst:348
+msgid "0x03 - ADV_NONCONN_IND - non-connectable undirected advertising"
+msgstr ""
+
+#: ../../library/bluetooth.rst:349
+msgid "0x04 - SCAN_RSP - scan response"
+msgstr ""
+
+#: ../../library/bluetooth.rst:351
+msgid ""
+"``active`` can be set ``True`` if you want to receive scan responses in "
+"the results."
+msgstr ""
+
+#: ../../library/bluetooth.rst:353
+msgid ""
+"When scanning is stopped (either due to the duration finishing or when "
+"explicitly stopped), the ``_IRQ_SCAN_DONE`` event will be raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:358
+msgid "Central Role"
+msgstr ""
+
+#: ../../library/bluetooth.rst:360
+msgid ""
+"A central device can connect to peripherals that it has discovered using "
+"the observer role (see :meth:`gap_scan<BLE.gap_scan>`) or with a known "
+"address."
+msgstr ""
+
+#: ../../library/bluetooth.rst:364
+msgid "Connect to a peripheral."
+msgstr ""
+
+#: ../../library/bluetooth.rst:366
+msgid "See :meth:`gap_scan <BLE.gap_scan>` for details about address types."
+msgstr ""
+
+#: ../../library/bluetooth.rst:368
+msgid ""
+"To cancel an outstanding connection attempt early, call "
+"``gap_connect(None)``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:371
+msgid ""
+"On success, the ``_IRQ_PERIPHERAL_CONNECT`` event will be raised. If "
+"cancelling a connection attempt, the ``_IRQ_PERIPHERAL_DISCONNECT`` event"
+" will be raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:375
+msgid ""
+"The device will wait up to *scan_duration_ms* to receive an advertising "
+"payload from the device."
+msgstr ""
+
+#: ../../library/bluetooth.rst:378
+msgid ""
+"The connection interval can be configured in **micro**\\ seconds using "
+"either or both of *min_conn_interval_us* and *max_conn_interval_us*. "
+"Otherwise a default interval will be chosen, typically between 30000 and "
+"50000 microseconds. A shorter interval will increase throughput, at the "
+"expense of power usage."
+msgstr ""
+
+#: ../../library/bluetooth.rst:386
+msgid "Peripheral Role"
+msgstr ""
+
+#: ../../library/bluetooth.rst:388
+msgid ""
+"A peripheral device is expected to send connectable advertisements (see "
+":meth:`gap_advertise<BLE.gap_advertise>`). It will usually be acting as a"
+" GATT server, having first registered services and characteristics using "
+":meth:`gatts_register_services<BLE.gatts_register_services>`."
+msgstr ""
+
+#: ../../library/bluetooth.rst:393
+msgid ""
+"When a central connects, the ``_IRQ_CENTRAL_CONNECT`` event will be "
+"raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:397
+msgid "Central & Peripheral Roles"
+msgstr ""
+
+#: ../../library/bluetooth.rst:401
+msgid ""
+"Disconnect the specified connection handle. This can either be a central "
+"that has connected to this device (if acting as a peripheral) or a "
+"peripheral that was previously connected to by this device (if acting as "
+"a central)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:406
+msgid ""
+"On success, the ``_IRQ_PERIPHERAL_DISCONNECT`` or "
+"``_IRQ_CENTRAL_DISCONNECT`` event will be raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:409
+msgid ""
+"Returns ``False`` if the connection handle wasn't connected, and ``True``"
+" otherwise."
+msgstr ""
+
+#: ../../library/bluetooth.rst:414
+msgid "GATT Server"
+msgstr ""
+
+#: ../../library/bluetooth.rst:416
+msgid ""
+"A GATT server has a set of registered services. Each service may contain "
+"characteristics, which each have a value. Characteristics can also "
+"contain descriptors, which themselves have values."
+msgstr ""
+
+#: ../../library/bluetooth.rst:420
+msgid ""
+"These values are stored locally, and are accessed by their \"value "
+"handle\" which is generated during service registration. They can also be"
+" read from or written to by a remote client device. Additionally, a "
+"server can \"notify\" a characteristic to a connected client via a "
+"connection handle."
+msgstr ""
+
+#: ../../library/bluetooth.rst:425
+msgid ""
+"A device in either central or peripheral roles may function as a GATT "
+"server, however in most cases it will be more common for a peripheral "
+"device to act as the server."
+msgstr ""
+
+#: ../../library/bluetooth.rst:429
+msgid ""
+"Characteristics and descriptors have a default maximum size of 20 bytes. "
+"Anything written to them by a client will be truncated to this length. "
+"However, any local write will increase the maximum size, so if you want "
+"to allow larger writes from a client to a given characteristic, use "
+":meth:`gatts_write<BLE.gatts_write>` after registration. e.g. "
+"``gatts_write(char_handle, bytes(100))``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:438
+msgid ""
+"Configures the server with the specified services, replacing any existing"
+" services."
+msgstr ""
+
+#: ../../library/bluetooth.rst:441
+msgid ""
+"*services_definition* is a list of **services**, where each **service** "
+"is a two-element tuple containing a UUID and a list of "
+"**characteristics**."
+msgstr ""
+
+#: ../../library/bluetooth.rst:444
+msgid ""
+"Each **characteristic** is a two-or-three-element tuple containing a "
+"UUID, a **flags** value, and optionally a list of *descriptors*."
+msgstr ""
+
+#: ../../library/bluetooth.rst:447
+msgid ""
+"Each **descriptor** is a two-element tuple containing a UUID and a "
+"**flags** value."
+msgstr ""
+
+#: ../../library/bluetooth.rst:450
+msgid ""
+"The **flags** are a bitwise-OR combination of the flags defined below. "
+"These set both the behaviour of the characteristic (or descriptor) as "
+"well as the security and privacy requirements."
+msgstr ""
+
+#: ../../library/bluetooth.rst:454
+msgid ""
+"The return value is a list (one element per service) of tuples (each "
+"element is a value handle). Characteristics and descriptor handles are "
+"flattened into the same tuple, in the order that they are defined."
+msgstr ""
+
+#: ../../library/bluetooth.rst:458
+msgid ""
+"The following example registers two services (Heart Rate, and Nordic "
+"UART)::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:470
+msgid ""
+"The three value handles (``hr``, ``tx``, ``rx``) can be used with "
+":meth:`gatts_read <BLE.gatts_read>`, :meth:`gatts_write "
+"<BLE.gatts_write>`, :meth:`gatts_notify <BLE.gatts_notify>`, and "
+":meth:`gatts_indicate <BLE.gatts_indicate>`."
+msgstr ""
+
+#: ../../library/bluetooth.rst:474
+msgid "**Note:** Advertising must be stopped before registering services."
+msgstr ""
+
+#: ../../library/bluetooth.rst:476
+msgid "Available flags for characteristics and descriptors are::"
+msgstr ""
+
+#: ../../library/bluetooth.rst:495
+msgid ""
+"As for the IRQs above, any required constants should be added to your "
+"Python code."
+msgstr ""
+
+#: ../../library/bluetooth.rst:499
+msgid ""
+"Reads the local value for this handle (which has either been written by "
+":meth:`gatts_write <BLE.gatts_write>` or by a remote client)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:504
+msgid "Writes the local value for this handle, which can be read by a client."
+msgstr ""
+
+#: ../../library/bluetooth.rst:506
+msgid ""
+"If *send_update* is ``True``, then any subscribed clients will be "
+"notified (or indicated, depending on what they're subscribed to and which"
+" operations the characteristic supports) about this write."
+msgstr ""
+
+#: ../../library/bluetooth.rst:512
+msgid "Sends a notification request to a connected client."
+msgstr ""
+
+#: ../../library/bluetooth.rst:514
+msgid ""
+"If *data* is not ``None``, then that value is sent to the client as part "
+"of the notification. The local value will not be modified."
+msgstr ""
+
+#: ../../library/bluetooth.rst:517
+msgid ""
+"Otherwise, if *data* is ``None``, then the current local value (as set "
+"with :meth:`gatts_write <BLE.gatts_write>`) will be sent."
+msgstr ""
+
+#: ../../library/bluetooth.rst:520
+msgid ""
+"**Note:** The notification will be sent regardless of the subscription "
+"status of the client to this characteristic."
+msgstr ""
+
+#: ../../library/bluetooth.rst:525
+msgid ""
+"Sends an indication request containing the characteristic's current value"
+" to a connected client."
+msgstr ""
+
+#: ../../library/bluetooth.rst:528
+msgid ""
+"On acknowledgment (or failure, e.g. timeout), the "
+"``_IRQ_GATTS_INDICATE_DONE`` event will be raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:531
+msgid ""
+"**Note:** The indication will be sent regardless of the subscription "
+"status of the client to this characteristic."
+msgstr ""
+
+#: ../../library/bluetooth.rst:536
+msgid ""
+"Sets the internal buffer size for a value in bytes. This will limit the "
+"largest possible write that can be received. The default is 20."
+msgstr ""
+
+#: ../../library/bluetooth.rst:539
+msgid ""
+"Setting *append* to ``True`` will make all remote writes append to, "
+"rather than replace, the current value. At most *len* bytes can be "
+"buffered in this way. When you use :meth:`gatts_read <BLE.gatts_read>`, "
+"the value will be cleared after reading. This feature is useful when "
+"implementing something like the Nordic UART Service."
+msgstr ""
+
+#: ../../library/bluetooth.rst:546
+msgid "GATT Client"
+msgstr ""
+
+#: ../../library/bluetooth.rst:548
+msgid ""
+"A GATT client can discover and read/write characteristics on a remote "
+"GATT server."
+msgstr ""
+
+#: ../../library/bluetooth.rst:550
+msgid ""
+"It is more common for a central role device to act as the GATT client, "
+"however it's also possible for a peripheral to act as a client in order "
+"to discover information about the central that has connected to it (e.g. "
+"to read the device name from the device information service)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:557
+msgid "Query a connected server for its services."
+msgstr ""
+
+#: ../../library/bluetooth.rst:559
+msgid "Optionally specify a service *uuid* to query for that service only."
+msgstr ""
+
+#: ../../library/bluetooth.rst:561
+msgid ""
+"For each service discovered, the ``_IRQ_GATTC_SERVICE_RESULT`` event will"
+" be raised, followed by ``_IRQ_GATTC_SERVICE_DONE`` on completion."
+msgstr ""
+
+#: ../../library/bluetooth.rst:566
+msgid "Query a connected server for characteristics in the specified range."
+msgstr ""
+
+#: ../../library/bluetooth.rst:568
+msgid ""
+"Optionally specify a characteristic *uuid* to query for that "
+"characteristic only."
+msgstr ""
+
+#: ../../library/bluetooth.rst:571
+msgid ""
+"You can use ``start_handle=1``, ``end_handle=0xffff`` to search for a "
+"characteristic in any service."
+msgstr ""
+
+#: ../../library/bluetooth.rst:574
+msgid ""
+"For each characteristic discovered, the "
+"``_IRQ_GATTC_CHARACTERISTIC_RESULT`` event will be raised, followed by "
+"``_IRQ_GATTC_CHARACTERISTIC_DONE`` on completion."
+msgstr ""
+
+#: ../../library/bluetooth.rst:579
+msgid "Query a connected server for descriptors in the specified range."
+msgstr ""
+
+#: ../../library/bluetooth.rst:581
+msgid ""
+"For each descriptor discovered, the ``_IRQ_GATTC_DESCRIPTOR_RESULT`` "
+"event will be raised, followed by ``_IRQ_GATTC_DESCRIPTOR_DONE`` on "
+"completion."
+msgstr ""
+
+#: ../../library/bluetooth.rst:586
+msgid ""
+"Issue a remote read to a connected server for the specified "
+"characteristic or descriptor handle."
+msgstr ""
+
+#: ../../library/bluetooth.rst:589
+msgid ""
+"When a value is available, the ``_IRQ_GATTC_READ_RESULT`` event will be "
+"raised. Additionally, the ``_IRQ_GATTC_READ_DONE`` will be raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:594
+msgid ""
+"Issue a remote write to a connected server for the specified "
+"characteristic or descriptor handle."
+msgstr ""
+
+#: ../../library/bluetooth.rst:597
+msgid ""
+"The argument *mode* specifies the write behaviour, with the currently "
+"supported values being:"
+msgstr ""
+
+#: ../../library/bluetooth.rst:600
+msgid ""
+"``mode=0`` (default) is a write-without-response: the write will be sent "
+"to the remote server but no confirmation will be returned, and no event "
+"will be raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:603
+msgid ""
+"``mode=1`` is a write-with-response: the remote server is requested to "
+"send a response/acknowledgement that it received the data."
+msgstr ""
+
+#: ../../library/bluetooth.rst:607
+msgid ""
+"If a response is received from the remote server the "
+"``_IRQ_GATTC_WRITE_DONE`` event will be raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:612
+msgid ""
+"Initiate MTU exchange with a connected server, using the preferred MTU "
+"set using ``BLE.config(mtu=value)``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:615
+msgid ""
+"The ``_IRQ_MTU_EXCHANGED`` event will be raised when MTU exchange "
+"completes."
+msgstr ""
+
+#: ../../library/bluetooth.rst:618
+msgid ""
+"**Note:** MTU exchange is typically initiated by the central. When using "
+"the BlueKitchen stack in the central role, it does not support a remote "
+"peripheral initiating the MTU exchange. NimBLE works for both roles."
+msgstr ""
+
+#: ../../library/bluetooth.rst:624
+msgid "L2CAP connection-oriented-channels"
+msgstr ""
+
+#: ../../library/bluetooth.rst:626
+msgid ""
+"This feature allows for socket-like data exchange between two BLE "
+"devices. Once the devices are connected via GAP, either device can listen"
+" for the other to connect on a numeric PSM (Protocol/Service "
+"Multiplexer)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:630
+msgid ""
+"**Note:** This is currently only supported when using the NimBLE stack on"
+" STM32 and Unix (not ESP32). Only one L2CAP channel may be active at a "
+"given time (i.e. you cannot connect while listening)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:634
+msgid ""
+"Active L2CAP channels are identified by the connection handle that they "
+"were established on and a CID (channel ID)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:637
+msgid ""
+"Connection-oriented channels have built-in credit-based flow control. "
+"Unlike ATT, where devices negotiate a shared MTU, both the listening and "
+"connecting devices each set an independent MTU which limits the maximum "
+"amount of outstanding data that the remote device can send before it is "
+"fully consumed in :meth:`l2cap_recvinto <BLE.l2cap_recvinto>`."
+msgstr ""
+
+#: ../../library/bluetooth.rst:645
+msgid ""
+"Start listening for incoming L2CAP channel requests on the specified "
+"*psm* with the local MTU set to *mtu*."
+msgstr ""
+
+#: ../../library/bluetooth.rst:648
+msgid ""
+"When a remote device initiates a connection, the ``_IRQ_L2CAP_ACCEPT`` "
+"event will be raised, which gives the listening server a chance to reject"
+" the incoming connection (by returning a non-zero integer)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:652
+msgid ""
+"Once the connection is accepted, the ``_IRQ_L2CAP_CONNECT`` event will be"
+" raised, allowing the server to obtain the channel id (CID) and the local"
+" and remote MTU."
+msgstr ""
+
+#: ../../library/bluetooth.rst:656
+msgid "**Note:** It is not currently possible to stop listening."
+msgstr ""
+
+#: ../../library/bluetooth.rst:660
+msgid ""
+"Connect to a listening peer on the specified *psm* with local MTU set to "
+"*mtu*."
+msgstr ""
+
+#: ../../library/bluetooth.rst:662
+msgid ""
+"On successful connection, the the ``_IRQ_L2CAP_CONNECT`` event will be "
+"raised, allowing the client to obtain the CID and the local and remote "
+"(peer) MTU."
+msgstr ""
+
+#: ../../library/bluetooth.rst:665
+msgid ""
+"An unsuccessful connection will raise the ``_IRQ_L2CAP_DISCONNECT`` event"
+" with a non-zero status."
+msgstr ""
+
+#: ../../library/bluetooth.rst:670
+msgid ""
+"Disconnect an active L2CAP channel with the specified *conn_handle* and "
+"*cid*."
+msgstr ""
+
+#: ../../library/bluetooth.rst:675
+msgid ""
+"Send the specified *buf* (which must support the buffer protocol) on the "
+"L2CAP channel identified by *conn_handle* and *cid*."
+msgstr ""
+
+#: ../../library/bluetooth.rst:678
+msgid ""
+"The specified buffer cannot be larger than the remote (peer) MTU, and no "
+"more than twice the size of the local MTU."
+msgstr ""
+
+#: ../../library/bluetooth.rst:681
+msgid ""
+"This will return ``False`` if the channel is now \"stalled\", which means"
+" that :meth:`l2cap_send <BLE.l2cap_send>` must not be called again until "
+"the ``_IRQ_L2CAP_SEND_READY`` event is received (which will happen when "
+"the remote device grants more credits, typically after it has received "
+"and processed the data)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:689
+msgid ""
+"Receive data from the specified *conn_handle* and *cid* into the provided"
+" *buf* (which must support the buffer protocol, e.g. bytearray or "
+"memoryview)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:693
+msgid "Returns the number of bytes read from the channel."
+msgstr ""
+
+#: ../../library/bluetooth.rst:695
+msgid "If *buf* is None, then returns the number of bytes available."
+msgstr ""
+
+#: ../../library/bluetooth.rst:697
+msgid ""
+"**Note:** After receiving the ``_IRQ_L2CAP_RECV`` event, the application "
+"should continue calling :meth:`l2cap_recvinto <BLE.l2cap_recvinto>` until"
+" no more bytes are available in the receive buffer (typically up to the "
+"size of the remote (peer) MTU)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:702
+msgid ""
+"Until the receive buffer is empty, the remote device will not be granted "
+"more channel credits and will be unable to send any more data."
+msgstr ""
+
+#: ../../library/bluetooth.rst:707
+msgid "Pairing and bonding"
+msgstr ""
+
+#: ../../library/bluetooth.rst:709
+msgid ""
+"Pairing allows a connection to be encrypted and authenticated via "
+"exchange of secrets (with optional MITM protection via passkey "
+"authentication)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:712
+msgid ""
+"Bonding is the process of storing those secrets into non-volatile "
+"storage. When bonded, a device is able to resolve a resolvable private "
+"address (RPA) from another device based on the stored identity resolving "
+"key (IRK). To support bonding, an application must implement the "
+"``_IRQ_GET_SECRET`` and ``_IRQ_SET_SECRET`` events."
+msgstr ""
+
+#: ../../library/bluetooth.rst:718
+msgid ""
+"**Note:** This is currently only supported when using the NimBLE stack on"
+" STM32 and Unix (not ESP32)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:723
+msgid "Initiate pairing with the remote device."
+msgstr ""
+
+#: ../../library/bluetooth.rst:725
+msgid ""
+"Before calling this, ensure that the ``io``, ``mitm``, ``le_secure``, and"
+" ``bond`` configuration options are set (via :meth:`config<BLE.config>`)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:728
+msgid ""
+"On successful pairing, the ``_IRQ_ENCRYPTION_UPDATE`` event will be "
+"raised."
+msgstr ""
+
+#: ../../library/bluetooth.rst:732
+msgid ""
+"Respond to a ``_IRQ_PASSKEY_ACTION`` event for the specified "
+"*conn_handle* and *action*."
+msgstr ""
+
+#: ../../library/bluetooth.rst:735
+msgid ""
+"The *passkey* is a numeric value and will depend on on the *action* "
+"(which will depend on what I/O capability has been set):"
+msgstr ""
+
+#: ../../library/bluetooth.rst:738
+msgid ""
+"When the *action* is ``_PASSKEY_ACTION_INPUT``, then the application "
+"should prompt the user to enter the passkey that is shown on the remote "
+"device."
+msgstr ""
+
+#: ../../library/bluetooth.rst:740
+msgid ""
+"When the *action* is ``_PASSKEY_ACTION_DISPLAY``, then the application "
+"should generate a random 6-digit passkey and show it to the user."
+msgstr ""
+
+#: ../../library/bluetooth.rst:742
+msgid ""
+"When the *action* is ``_PASSKEY_ACTION_NUMERIC_COMPARISON``, then the "
+"application should show the passkey that was provided in the "
+"``_IRQ_PASSKEY_ACTION`` event and then respond with either ``0`` (cancel "
+"pairing), or ``1`` (accept pairing)."
+msgstr ""
+
+#: ../../library/bluetooth.rst:748
+msgid "class UUID"
+msgstr ""
+
+#: ../../library/bluetooth.rst:756
+msgid "Creates a UUID instance with the specified **value**."
+msgstr ""
+
+#: ../../library/bluetooth.rst:758
+msgid "The **value** can be either:"
+msgstr ""
+
+#: ../../library/bluetooth.rst:760
+msgid "A 16-bit integer. e.g. ``0x2908``."
+msgstr ""
+
+#: ../../library/bluetooth.rst:761
+msgid "A 128-bit UUID string. e.g. ``'6E400001-B5A3-F393-E0A9-E50E24DCCA9E'``."
+msgstr ""
+

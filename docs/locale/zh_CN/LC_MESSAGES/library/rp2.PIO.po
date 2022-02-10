@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/rp2.PIO.rst:5
+msgid "class PIO -- advanced PIO usage"
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:7
+msgid ""
+"The :class:`PIO` class gives access to an instance of the RP2040's PIO "
+"(programmable I/O) interface."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:10
+msgid ""
+"The preferred way to interact with PIO is using "
+":class:`rp2.StateMachine`, the PIO class is for advanced use."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:13
+msgid "For assembling PIO programs, see :func:`rp2.asm_pio`."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:17
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:21
+msgid ""
+"Gets the PIO instance numbered *id*. The RP2040 has two PIO instances, "
+"numbered 0 and 1."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:24
+msgid "Raises a ``ValueError`` if any other argument is provided."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:28
+msgid "Methods"
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:32
+msgid "Add the *program* to the instruction memory of this PIO instance."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:34
+msgid ""
+"The amount of memory available for programs on each PIO instance is "
+"limited. If there isn't enough space left in the PIO's program memory "
+"this method will raise ``OSError(ENOMEM)``."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:40
+msgid "Remove *program* from the instruction memory of this PIO instance."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:42
+msgid "If no program is provided, it removes all programs."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:44
+msgid "It is not an error to remove a program which has already been removed."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:48
+msgid ""
+"Gets the state machine numbered *id*. On the RP2040, each PIO instance "
+"has four state machines, numbered 0 to 3."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:51
+msgid "Optionally initialize it with a *program*: see `StateMachine.init`."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:58
+msgid "Returns the IRQ object for this PIO instance."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:60
+msgid "MicroPython only uses IRQ 0 on each PIO instance. IRQ 1 is not available."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:62
+msgid "Optionally configure it."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:66
+msgid "Constants"
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:73
+msgid ""
+"These constants are used for the *out_init*, *set_init*, and "
+"*sideset_init* arguments to `asm_pio`."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:79
+msgid ""
+"These constants are used for the *in_shiftdir* and *out_shiftdir* "
+"arguments to `asm_pio` or `StateMachine.init`."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:86
+msgid "These constants are used for the *fifo_join* argument to `asm_pio`."
+msgstr ""
+
+#: ../../library/rp2.PIO.rst:93
+msgid "These constants are used for the *trigger* argument to `PIO.irq`."
+msgstr ""
+

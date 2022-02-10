@@ -1,0 +1,438 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.Timer.rst:5
+msgid "class Timer -- control internal timers"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:7
+msgid ""
+"Timers can be used for a great variety of tasks.  At the moment, only the"
+" simplest case is implemented: that of calling a function periodically."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:10
+msgid ""
+"Each timer consists of a counter that counts up at a certain rate.  The "
+"rate at which it counts is the peripheral clock frequency (in Hz) divided"
+" by the timer prescaler.  When the counter reaches the timer period it "
+"triggers an event, and the counter resets back to zero.  By using the "
+"callback method, the timer event can call a Python function."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:16
+msgid "Example usage to toggle an LED at a fixed frequency::"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:22
+msgid "Example using named function for the callback::"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:29
+msgid "Further examples::"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:39
+msgid ""
+"*Note:* Timer(2) and Timer(3) are used for PWM to set the intensity of "
+"LED(3) and LED(4) respectively.  But these timers are only configured for"
+" PWM if the intensity of the relevant LED is set to a value between 1 and"
+" 254.  If the intensity feature of the LEDs is not used then these timers"
+" are free for general purpose use.  Similarly, Timer(5) controls the "
+"servo driver, and Timer(6) is used for timed ADC/DAC reading/writing.  It"
+" is recommended to use the other timers in your programs."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:47
+msgid ""
+"*Note:* Memory can't be allocated during a callback (an interrupt) and so"
+" exceptions raised within a callback don't give much information.  See "
+":func:`micropython.alloc_emergency_exception_buf` for how to get around "
+"this limitation."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:54
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:58
+msgid ""
+"Construct a new timer object of the given id.  If additional arguments "
+"are given, then the timer is initialised by ``init(...)``. ``id`` can be "
+"1 to 14."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:63 ../../library/pyb.Timer.rst:229
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:67
+msgid ""
+"Initialise the timer.  Initialisation must be either by frequency (in Hz)"
+" or by prescaler and period::"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:73 ../../library/pyb.Timer.rst:138
+msgid "Keyword arguments:"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:75
+msgid ""
+"``freq`` --- specifies the periodic frequency of the timer. You might "
+"also view this as the frequency with which the timer goes through one "
+"complete cycle."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:78
+msgid ""
+"``prescaler`` [0-0xffff] - specifies the value to be loaded into the "
+"timer's Prescaler Register (PSC). The timer clock source is divided by "
+"(``prescaler + 1``) to arrive at the timer clock. Timers 2-7 and 12-14 "
+"have a clock source of 84 MHz (pyb.freq()[2] \\* 2), and Timers 1, and "
+"8-11 have a clock source of 168 MHz (pyb.freq()[3] \\* 2)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:84
+msgid ""
+"``period`` [0-0xffff] for timers 1, 3, 4, and 6-15. [0-0x3fffffff] for "
+"timers 2 & 5. Specifies the value to be loaded into the timer's "
+"AutoReload Register (ARR). This determines the period of the timer (i.e. "
+"when the counter cycles). The timer counter will roll-over after ``period"
+" + 1`` timer clock cycles."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:90 ../../library/pyb.Timer.rst:140
+msgid "``mode`` can be one of:"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:92
+msgid "``Timer.UP`` - configures the timer to count from 0 to ARR (default)"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:93
+msgid "``Timer.DOWN`` - configures the timer to count from ARR down to 0."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:94
+msgid ""
+"``Timer.CENTER`` - configures the timer to count from 0 to ARR and then "
+"back down to 0."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:97
+msgid ""
+"``div`` can be one of 1, 2, or 4. Divides the timer clock to determine "
+"the sampling clock used by the digital filters."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:100
+msgid "``callback`` - as per Timer.callback()"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:102
+msgid ""
+"``deadtime`` - specifies the amount of \"dead\" or inactive time between "
+"transitions on complimentary channels (both channels will be inactive) "
+"for this time). ``deadtime`` may be an integer between 0 and 1008, with "
+"the following restrictions: 0-128 in steps of 1. 128-256 in steps of 2, "
+"256-512 in steps of 8, and 512-1008 in steps of 16. ``deadtime`` measures"
+" ticks of ``source_freq`` divided by ``div`` clock ticks. ``deadtime`` is"
+" only available on timers 1 and 8."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:110
+msgid "You must either specify freq or both of period and prescaler."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:114
+msgid "Deinitialises the timer."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:116
+msgid "Disables the callback (and the associated irq)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:118
+msgid ""
+"Disables any channel callbacks (and the associated irq). Stops the timer,"
+" and disables the timer peripheral."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:123
+msgid ""
+"Set the function to be called when the timer triggers. ``fun`` is passed "
+"1 argument, the timer object. If ``fun`` is ``None`` then the callback "
+"will be disabled."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:129
+msgid ""
+"If only a channel number is passed, then a previously initialized channel"
+" object is returned (or ``None`` if there is no previous channel)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:132
+msgid "Otherwise, a TimerChannel object is initialized and returned."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:134
+msgid ""
+"Each channel can be configured to perform pwm, output compare, or input "
+"capture. All channels share the same underlying timer, which means that "
+"they share the same timer clock."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:142
+msgid "``Timer.PWM`` --- configure the timer in PWM mode (active high)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:143
+msgid "``Timer.PWM_INVERTED`` --- configure the timer in PWM mode (active low)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:144
+msgid "``Timer.OC_TIMING`` --- indicates that no pin is driven."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:145
+msgid ""
+"``Timer.OC_ACTIVE`` --- the pin will be made active when a compare match "
+"occurs (active is determined by polarity)"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:146
+msgid ""
+"``Timer.OC_INACTIVE`` --- the pin will be made inactive when a compare "
+"match occurs."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:147
+msgid ""
+"``Timer.OC_TOGGLE`` --- the pin will be toggled when an compare match "
+"occurs."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:148
+msgid ""
+"``Timer.OC_FORCED_ACTIVE`` --- the pin is forced active (compare match is"
+" ignored)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:149
+msgid ""
+"``Timer.OC_FORCED_INACTIVE`` --- the pin is forced inactive (compare "
+"match is ignored)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:150
+msgid "``Timer.IC`` --- configure the timer in Input Capture mode."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:151
+msgid ""
+"``Timer.ENC_A`` --- configure the timer in Encoder mode. The counter only"
+" changes when CH1 changes."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:152
+msgid ""
+"``Timer.ENC_B`` --- configure the timer in Encoder mode. The counter only"
+" changes when CH2 changes."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:153
+msgid ""
+"``Timer.ENC_AB`` --- configure the timer in Encoder mode. The counter "
+"changes when CH1 or CH2 changes."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:155
+msgid "``callback`` - as per TimerChannel.callback()"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:157
+msgid ""
+"``pin`` None (the default) or a Pin object. If specified (and not None) "
+"this will cause the alternate function of the the indicated pin to be "
+"configured for this timer channel. An error will be raised if the pin "
+"doesn't support any alternate functions for this timer channel."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:162
+msgid "Keyword arguments for Timer.PWM modes:"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:164
+msgid "``pulse_width`` - determines the initial pulse width value to use."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:165
+msgid ""
+"``pulse_width_percent`` - determines the initial pulse width percentage "
+"to use."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:167
+msgid "Keyword arguments for Timer.OC modes:"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:169
+msgid "``compare`` - determines the initial value of the compare register."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:171 ../../library/pyb.Timer.rst:178
+msgid "``polarity`` can be one of:"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:173
+msgid "``Timer.HIGH`` - output is active high"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:174
+msgid "``Timer.LOW`` - output is active low"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:176
+msgid "Optional keyword arguments for Timer.IC modes:"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:180
+msgid "``Timer.RISING`` - captures on rising edge."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:181
+msgid "``Timer.FALLING`` - captures on falling edge."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:182
+msgid "``Timer.BOTH`` - captures on both edges."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:184
+msgid ""
+"Note that capture only works on the primary channel, and not on the "
+"complimentary channels."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:187
+msgid "Notes for Timer.ENC modes:"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:189
+msgid ""
+"Requires 2 pins, so one or both pins will need to be configured to use "
+"the appropriate timer AF using the Pin API."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:191
+msgid "Read the encoder value using the timer.counter() method."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:192
+msgid "Only works on CH1 and CH2 (and not on CH1N or CH2N)"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:193
+msgid "The channel number is ignored when setting the encoder mode."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:195
+msgid "PWM Example::"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:203
+msgid "Get or set the timer counter."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:207
+msgid ""
+"Get or set the frequency for the timer (changes prescaler and period if "
+"set)."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:211
+msgid "Get or set the period of the timer."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:215
+msgid "Get or set the prescaler for the timer."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:219
+msgid "Get the frequency of the source of the timer."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:222
+msgid "class TimerChannel --- setup a channel for a timer"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:224
+msgid "Timer channels are used to generate/capture a signal using a timer."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:226
+msgid "TimerChannel objects are created using the Timer.channel() method."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:233
+msgid ""
+"Set the function to be called when the timer channel triggers. ``fun`` is"
+" passed 1 argument, the timer object. If ``fun`` is ``None`` then the "
+"callback will be disabled."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:239
+msgid ""
+"Get or set the capture value associated with a channel. capture, compare,"
+" and pulse_width are all aliases for the same function. capture is the "
+"logical name to use when the channel is in input capture mode."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:245
+msgid ""
+"Get or set the compare value associated with a channel. capture, compare,"
+" and pulse_width are all aliases for the same function. compare is the "
+"logical name to use when the channel is in output compare mode."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:251
+msgid ""
+"Get or set the pulse width value associated with a channel. capture, "
+"compare, and pulse_width are all aliases for the same function. "
+"pulse_width is the logical name to use when the channel is in PWM mode."
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:255
+msgid ""
+"In edge aligned mode, a pulse_width of ``period + 1`` corresponds to a "
+"duty cycle of 100% In center aligned mode, a pulse width of ``period`` "
+"corresponds to a duty cycle of 100%"
+msgstr ""
+
+#: ../../library/pyb.Timer.rst:260
+msgid ""
+"Get or set the pulse width percentage associated with a channel.  The "
+"value is a number between 0 and 100 and sets the percentage of the timer "
+"period for which the pulse is active.  The value can be an integer or "
+"floating-point number for more accuracy.  For example, a value of 25 "
+"gives a duty cycle of 25%."
+msgstr ""
+

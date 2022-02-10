@@ -1,0 +1,683 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/constrained.rst:4
+msgid "MicroPython on microcontrollers"
+msgstr ""
+
+#: ../../reference/constrained.rst:6
+msgid ""
+"MicroPython is designed to be capable of running on microcontrollers. "
+"These have hardware limitations which may be unfamiliar to programmers "
+"more familiar with conventional computers. In particular the amount of "
+"RAM and nonvolatile \"disk\" (flash memory) storage is limited. This "
+"tutorial offers ways to make the most of the limited resources. Because "
+"MicroPython runs on controllers based on a variety of architectures, the "
+"methods presented are generic: in some cases it will be necessary to "
+"obtain detailed information from platform specific documentation."
+msgstr ""
+
+#: ../../reference/constrained.rst:16
+msgid "Flash memory"
+msgstr ""
+
+#: ../../reference/constrained.rst:18
+msgid ""
+"On the Pyboard the simple way to address the limited capacity is to fit a"
+" micro SD card. In some cases this is impractical, either because the "
+"device does not have an SD card slot or for reasons of cost or power "
+"consumption; hence the on-chip flash must be used. The firmware including"
+" the MicroPython subsystem is stored in the onboard flash. The remaining "
+"capacity is available for use. For reasons connected with the physical "
+"architecture of the flash memory part of this capacity may be "
+"inaccessible as a filesystem. In such cases this space may be employed by"
+" incorporating user modules into a firmware build which is then flashed "
+"to the device."
+msgstr ""
+
+#: ../../reference/constrained.rst:28
+msgid ""
+"There are two ways to achieve this: frozen modules and frozen bytecode. "
+"Frozen modules store the Python source with the firmware. Frozen bytecode"
+" uses the cross compiler to convert the source to bytecode which is then "
+"stored with the firmware. In either case the module may be accessed with "
+"an import statement:"
+msgstr ""
+
+#: ../../reference/constrained.rst:37
+msgid ""
+"The procedure for producing frozen modules and bytecode is platform "
+"dependent; instructions for building the firmware can be found in the "
+"README files in the relevant part of the source tree."
+msgstr ""
+
+#: ../../reference/constrained.rst:41
+msgid "In general terms the steps are as follows:"
+msgstr ""
+
+#: ../../reference/constrained.rst:43
+msgid ""
+"Clone the MicroPython `repository "
+"<https://github.com/micropython/micropython>`_."
+msgstr ""
+
+#: ../../reference/constrained.rst:44
+msgid "Acquire the (platform specific) toolchain to build the firmware."
+msgstr ""
+
+#: ../../reference/constrained.rst:45
+msgid "Build the cross compiler."
+msgstr ""
+
+#: ../../reference/constrained.rst:46
+msgid ""
+"Place the modules to be frozen in a specified directory (dependent on "
+"whether the module is to be frozen as source or as bytecode)."
+msgstr ""
+
+#: ../../reference/constrained.rst:48
+msgid ""
+"Build the firmware. A specific command may be required to build frozen "
+"code of either type - see the platform documentation."
+msgstr ""
+
+#: ../../reference/constrained.rst:50
+msgid "Flash the firmware to the device."
+msgstr ""
+
+#: ../../reference/constrained.rst:53
+msgid "RAM"
+msgstr ""
+
+#: ../../reference/constrained.rst:55
+msgid ""
+"When reducing RAM usage there are two phases to consider: compilation and"
+" execution. In addition to memory consumption, there is also an issue "
+"known as heap fragmentation. In general terms it is best to minimise the "
+"repeated creation and destruction of objects. The reason for this is "
+"covered in the section covering the `heap`_."
+msgstr ""
+
+#: ../../reference/constrained.rst:62
+msgid "Compilation phase"
+msgstr ""
+
+#: ../../reference/constrained.rst:64
+msgid ""
+"When a module is imported, MicroPython compiles the code to bytecode "
+"which is then executed by the MicroPython virtual machine (VM). The "
+"bytecode is stored in RAM. The compiler itself requires RAM, but this "
+"becomes available for use when the compilation has completed."
+msgstr ""
+
+#: ../../reference/constrained.rst:69
+msgid ""
+"If a number of modules have already been imported the situation can arise"
+" where there is insufficient RAM to run the compiler. In this case the "
+"import statement will produce a memory exception."
+msgstr ""
+
+#: ../../reference/constrained.rst:73
+msgid ""
+"If a module instantiates global objects on import it will consume RAM at "
+"the time of import, which is then unavailable for the compiler to use on "
+"subsequent imports. In general it is best to avoid code which runs on "
+"import; a better approach is to have initialisation code which is run by "
+"the application after all modules have been imported. This maximises the "
+"RAM available to the compiler."
+msgstr ""
+
+#: ../../reference/constrained.rst:80
+msgid ""
+"If RAM is still insufficient to compile all modules one solution is to "
+"precompile modules. MicroPython has a cross compiler capable of compiling"
+" Python modules to bytecode (see the README in the mpy-cross directory). "
+"The resulting bytecode file has a .mpy extension; it may be copied to the"
+" filesystem and imported in the usual way. Alternatively some or all "
+"modules may be implemented as frozen bytecode: on most platforms this "
+"saves even more RAM as the bytecode is run directly from flash rather "
+"than being stored in RAM."
+msgstr ""
+
+#: ../../reference/constrained.rst:89
+msgid "Execution phase"
+msgstr ""
+
+#: ../../reference/constrained.rst:91
+msgid "There are a number of coding techniques for reducing RAM usage."
+msgstr ""
+
+#: ../../reference/constrained.rst:93
+msgid "**Constants**"
+msgstr ""
+
+#: ../../reference/constrained.rst:95
+msgid "MicroPython provides a ``const`` keyword which may be used as follows:"
+msgstr ""
+
+#: ../../reference/constrained.rst:105
+msgid ""
+"In both instances where the constant is assigned to a variable the "
+"compiler will avoid coding a lookup to the name of the constant by "
+"substituting its literal value. This saves bytecode and hence RAM. "
+"However the ``ROWS`` value will occupy at least two machine words, one "
+"each for the key and value in the globals dictionary. The presence in the"
+" dictionary is necessary because another module might import or use it. "
+"This RAM can be saved by prepending the name with an underscore as in "
+"``_COLS``: this symbol is not visible outside the module so will not "
+"occupy RAM."
+msgstr ""
+
+#: ../../reference/constrained.rst:114
+msgid ""
+"The argument to ``const()`` may be anything which, at compile time, "
+"evaluates to an integer e.g. ``0x100`` or ``1 << 8``. It can even include"
+" other const symbols that have already been defined, e.g. ``1 << BIT``."
+msgstr ""
+
+#: ../../reference/constrained.rst:118
+msgid "**Constant data structures**"
+msgstr ""
+
+#: ../../reference/constrained.rst:120
+msgid ""
+"Where there is a substantial volume of constant data and the platform "
+"supports execution from Flash, RAM may be saved as follows. The data "
+"should be located in Python modules and frozen as bytecode. The data must"
+" be defined as `bytes` objects. The compiler 'knows' that `bytes` objects"
+" are immutable and ensures that the objects remain in flash memory rather"
+" than being copied to RAM. The `struct` module can assist in converting "
+"between `bytes` types and other Python built-in types."
+msgstr ""
+
+#: ../../reference/constrained.rst:128
+msgid ""
+"When considering the implications of frozen bytecode, note that in Python"
+" strings, floats, bytes, integers and complex numbers are immutable. "
+"Accordingly these will be frozen into flash. Thus, in the line"
+msgstr ""
+
+#: ../../reference/constrained.rst:136
+msgid ""
+"the actual string \"The quick brown fox\" will reside in flash. At "
+"runtime a reference to the string is assigned to the *variable* "
+"``mystring``. The reference occupies a single machine word. In principle "
+"a long integer could be used to store constant data:"
+msgstr ""
+
+#: ../../reference/constrained.rst:145
+msgid ""
+"As in the string example, at runtime a reference to the arbitrarily large"
+" integer is assigned to the variable ``bar``. That reference occupies a "
+"single machine word."
+msgstr ""
+
+#: ../../reference/constrained.rst:149
+msgid ""
+"It might be expected that tuples of integers could be employed for the "
+"purpose of storing constant data with minimal RAM use. With the current "
+"compiler this is ineffective (the code works, but RAM is not saved)."
+msgstr ""
+
+#: ../../reference/constrained.rst:157
+msgid ""
+"At runtime the tuple will be located in RAM. This may be subject to "
+"future improvement."
+msgstr ""
+
+#: ../../reference/constrained.rst:160
+msgid "**Needless object creation**"
+msgstr ""
+
+#: ../../reference/constrained.rst:162
+msgid ""
+"There are a number of situations where objects may unwittingly be created"
+" and destroyed. This can reduce the usability of RAM through "
+"fragmentation. The following sections discuss instances of this."
+msgstr ""
+
+#: ../../reference/constrained.rst:166
+msgid "**String concatenation**"
+msgstr ""
+
+#: ../../reference/constrained.rst:168
+msgid ""
+"Consider the following code fragments which aim to produce constant "
+"strings:"
+msgstr ""
+
+#: ../../reference/constrained.rst:178
+msgid ""
+"Each produces the same outcome, however the first needlessly creates two "
+"string objects at runtime, allocates more RAM for concatenation before "
+"producing the third. The others perform the concatenation at compile time"
+" which is more efficient, reducing fragmentation."
+msgstr ""
+
+#: ../../reference/constrained.rst:183
+msgid ""
+"Where strings must be dynamically created before being fed to a stream "
+"such as a file it will save RAM if this is done in a piecemeal fashion. "
+"Rather than creating a large string object, create a substring and feed "
+"it to the stream before dealing with the next."
+msgstr ""
+
+#: ../../reference/constrained.rst:188
+msgid ""
+"The best way to create dynamic strings is by means of the string "
+"``format()`` method:"
+msgstr ""
+
+#: ../../reference/constrained.rst:195
+msgid "**Buffers**"
+msgstr ""
+
+#: ../../reference/constrained.rst:197
+msgid ""
+"When accessing devices such as instances of UART, I2C and SPI interfaces,"
+" using pre-allocated buffers avoids the creation of needless objects. "
+"Consider these two loops:"
+msgstr ""
+
+#: ../../reference/constrained.rst:212
+msgid ""
+"The first creates a buffer on each pass whereas the second re-uses a pre-"
+"allocated buffer; this is both faster and more efficient in terms of "
+"memory fragmentation."
+msgstr ""
+
+#: ../../reference/constrained.rst:215
+msgid "**Bytes are smaller than ints**"
+msgstr ""
+
+#: ../../reference/constrained.rst:217
+msgid ""
+"On most platforms an integer consumes four bytes. Consider the two calls "
+"to the function ``foo()``:"
+msgstr ""
+
+#: ../../reference/constrained.rst:228
+msgid ""
+"In the first call a tuple of integers is created in RAM. The second "
+"efficiently creates a `bytes` object consuming the minimum amount of RAM."
+" If the module were frozen as bytecode, the `bytes` object would reside "
+"in flash."
+msgstr ""
+
+#: ../../reference/constrained.rst:232
+msgid "**Strings Versus Bytes**"
+msgstr ""
+
+#: ../../reference/constrained.rst:234
+msgid ""
+"Python3 introduced Unicode support. This introduced a distinction between"
+" a string and an array of bytes. MicroPython ensures that Unicode strings"
+" take no additional space so long as all characters in the string are "
+"ASCII (i.e. have a value < 126). If values in the full 8-bit range are "
+"required `bytes` and `bytearray` objects can be used to ensure that no "
+"additional space will be required. Note that most string methods (e.g. "
+":meth:`str.strip()`) apply also to `bytes` instances so the process of "
+"eliminating Unicode can be painless."
+msgstr ""
+
+#: ../../reference/constrained.rst:247
+msgid ""
+"Where it is necessary to convert between strings and bytes the "
+":meth:`str.encode` and the :meth:`bytes.decode` methods can be used. Note"
+" that both strings and bytes are immutable. Any operation which takes as "
+"input such an object and produces another implies at least one RAM "
+"allocation to produce the result. In the second line below a new bytes "
+"object is allocated. This would also occur if ``foo`` were a string."
+msgstr ""
+
+#: ../../reference/constrained.rst:259
+msgid "**Runtime compiler execution**"
+msgstr ""
+
+#: ../../reference/constrained.rst:261
+msgid ""
+"The Python funcitons `eval` and `exec` invoke the compiler at runtime, "
+"which requires significant amounts of RAM. Note that the ``pickle`` "
+"library from `micropython-lib` employs `exec`. It may be more RAM "
+"efficient to use the `json` library for object serialisation."
+msgstr ""
+
+#: ../../reference/constrained.rst:266
+msgid "**Storing strings in flash**"
+msgstr ""
+
+#: ../../reference/constrained.rst:268
+msgid ""
+"Python strings are immutable hence have the potential to be stored in "
+"read only memory. The compiler can place in flash strings defined in "
+"Python code. As with frozen modules it is necessary to have a copy of the"
+" source tree on the PC and the toolchain to build the firmware. The "
+"procedure will work even if the modules have not been fully debugged, so "
+"long as they can be imported and run."
+msgstr ""
+
+#: ../../reference/constrained.rst:274
+msgid "After importing the modules, execute:"
+msgstr ""
+
+#: ../../reference/constrained.rst:280
+msgid ""
+"Then copy and paste all the Q(xxx) lines into a text editor. Check for "
+"and remove lines which are obviously invalid. Open the file "
+"qstrdefsport.h which will be found in ports/stm32 (or the equivalent "
+"directory for the architecture in use). Copy and paste the corrected "
+"lines at the end of the file. Save the file, rebuild and flash the "
+"firmware. The outcome can be checked by importing the modules and again "
+"issuing:"
+msgstr ""
+
+#: ../../reference/constrained.rst:291
+msgid "The Q(xxx) lines should be gone."
+msgstr ""
+
+#: ../../reference/constrained.rst:296
+msgid "The heap"
+msgstr ""
+
+#: ../../reference/constrained.rst:298
+msgid ""
+"When a running program instantiates an object the necessary RAM is "
+"allocated from a fixed size pool known as the heap. When the object goes "
+"out of scope (in other words becomes inaccessible to code) the redundant "
+"object is known as \"garbage\". A process known as \"garbage collection\""
+" (GC) reclaims that memory, returning it to the free heap. This process "
+"runs automatically, however it can be invoked directly by issuing "
+"`gc.collect()`."
+msgstr ""
+
+#: ../../reference/constrained.rst:305
+msgid ""
+"The discourse on this is somewhat involved. For a 'quick fix' issue the "
+"following periodically:"
+msgstr ""
+
+#: ../../reference/constrained.rst:314
+msgid "Fragmentation"
+msgstr ""
+
+#: ../../reference/constrained.rst:316
+msgid ""
+"Say a program creates an object ``foo``, then an object ``bar``. "
+"Subsequently ``foo`` goes out of scope but ``bar`` remains. The RAM used "
+"by ``foo`` will be reclaimed by GC. However if ``bar`` was allocated to a"
+" higher address, the RAM reclaimed from ``foo`` will only be of use for "
+"objects no bigger than ``foo``. In a complex or long running program the "
+"heap can become fragmented: despite there being a substantial amount of "
+"RAM available, there is insufficient contiguous space to allocate a "
+"particular object, and the program fails with a memory error."
+msgstr ""
+
+#: ../../reference/constrained.rst:325
+msgid ""
+"The techniques outlined above aim to minimise this. Where large permanent"
+" buffers or other objects are required it is best to instantiate these "
+"early in the process of program execution before fragmentation can occur."
+" Further improvements may be made by monitoring the state of the heap and"
+" by controlling GC; these are outlined below."
+msgstr ""
+
+#: ../../reference/constrained.rst:332
+msgid "Reporting"
+msgstr ""
+
+#: ../../reference/constrained.rst:334
+msgid ""
+"A number of library functions are available to report on memory "
+"allocation and to control GC. These are to be found in the `gc` and "
+"`micropython` modules. The following example may be pasted at the REPL "
+"(``ctrl e`` to enter paste mode, ``ctrl d`` to run it)."
+msgstr ""
+
+#: ../../reference/constrained.rst:358
+msgid "Methods employed above:"
+msgstr ""
+
+#: ../../reference/constrained.rst:360
+msgid "`gc.collect()` Force a garbage collection. See footnote."
+msgstr ""
+
+#: ../../reference/constrained.rst:361
+msgid "`micropython.mem_info()` Print a summary of RAM utilisation."
+msgstr ""
+
+#: ../../reference/constrained.rst:362
+msgid "`gc.mem_free()` Return the free heap size in bytes."
+msgstr ""
+
+#: ../../reference/constrained.rst:363
+msgid "`gc.mem_alloc()` Return the number of bytes currently allocated."
+msgstr ""
+
+#: ../../reference/constrained.rst:364
+msgid ""
+"``micropython.mem_info(1)`` Print a table of heap utilisation (detailed "
+"below)."
+msgstr ""
+
+#: ../../reference/constrained.rst:366
+msgid ""
+"The numbers produced are dependent on the platform, but it can be seen "
+"that declaring the function uses a small amount of RAM in the form of "
+"bytecode emitted by the compiler (the RAM used by the compiler has been "
+"reclaimed). Running the function uses over 10KiB, but on return ``a`` is "
+"garbage because it is out of scope and cannot be referenced. The final "
+"`gc.collect()` recovers that memory."
+msgstr ""
+
+#: ../../reference/constrained.rst:373
+msgid ""
+"The final output produced by ``micropython.mem_info(1)`` will vary in "
+"detail but may be interpreted as follows:"
+msgstr ""
+
+#: ../../reference/constrained.rst:377
+msgid "Symbol"
+msgstr ""
+
+#: ../../reference/constrained.rst:377
+msgid "Meaning"
+msgstr ""
+
+#: ../../reference/constrained.rst:379
+msgid "."
+msgstr ""
+
+#: ../../reference/constrained.rst:379
+msgid "free block"
+msgstr ""
+
+#: ../../reference/constrained.rst:380
+msgid "h"
+msgstr ""
+
+#: ../../reference/constrained.rst:380
+msgid "head block"
+msgstr ""
+
+#: ../../reference/constrained.rst:381
+msgid "="
+msgstr ""
+
+#: ../../reference/constrained.rst:381
+msgid "tail block"
+msgstr ""
+
+#: ../../reference/constrained.rst:382
+msgid "m"
+msgstr ""
+
+#: ../../reference/constrained.rst:382
+msgid "marked head block"
+msgstr ""
+
+#: ../../reference/constrained.rst:383
+msgid "T"
+msgstr ""
+
+#: ../../reference/constrained.rst:383
+msgid "tuple"
+msgstr ""
+
+#: ../../reference/constrained.rst:384
+msgid "L"
+msgstr ""
+
+#: ../../reference/constrained.rst:384
+msgid "list"
+msgstr ""
+
+#: ../../reference/constrained.rst:385
+msgid "D"
+msgstr ""
+
+#: ../../reference/constrained.rst:385
+msgid "dict"
+msgstr ""
+
+#: ../../reference/constrained.rst:386
+msgid "F"
+msgstr ""
+
+#: ../../reference/constrained.rst:386
+msgid "float"
+msgstr ""
+
+#: ../../reference/constrained.rst:387
+msgid "B"
+msgstr ""
+
+#: ../../reference/constrained.rst:387
+msgid "byte code"
+msgstr ""
+
+#: ../../reference/constrained.rst:388
+msgid "M"
+msgstr ""
+
+#: ../../reference/constrained.rst:388
+msgid "module"
+msgstr ""
+
+#: ../../reference/constrained.rst:391
+msgid ""
+"Each letter represents a single block of memory, a block being 16 bytes. "
+"So each line of the heap dump represents 0x400 bytes or 1KiB of RAM."
+msgstr ""
+
+#: ../../reference/constrained.rst:395
+msgid "Control of garbage collection"
+msgstr ""
+
+#: ../../reference/constrained.rst:397
+msgid ""
+"A GC can be demanded at any time by issuing `gc.collect()`. It is "
+"advantageous to do this at intervals, firstly to pre-empt fragmentation "
+"and secondly for performance. A GC can take several milliseconds but is "
+"quicker when there is little work to do (about 1ms on the Pyboard). An "
+"explicit call can minimise that delay while ensuring it occurs at points "
+"in the program when it is acceptable."
+msgstr ""
+
+#: ../../reference/constrained.rst:403
+msgid ""
+"Automatic GC is provoked under the following circumstances. When an "
+"attempt at allocation fails, a GC is performed and the allocation re-"
+"tried. Only if this fails is an exception raised. Secondly an automatic "
+"GC will be triggered if the amount of free RAM falls below a threshold. "
+"This threshold can be adapted as execution progresses:"
+msgstr ""
+
+#: ../../reference/constrained.rst:414
+#, python-format
+msgid ""
+"This will provoke a GC when more than 25% of the currently free heap "
+"becomes occupied."
+msgstr ""
+
+#: ../../reference/constrained.rst:417
+msgid ""
+"In general modules should instantiate data objects at runtime using "
+"constructors or other initialisation functions. The reason is that if "
+"this occurs on initialisation the compiler may be starved of RAM when "
+"subsequent modules are imported. If modules do instantiate data on import"
+" then `gc.collect()` issued after the import will ameliorate the problem."
+msgstr ""
+
+#: ../../reference/constrained.rst:424
+msgid "String operations"
+msgstr ""
+
+#: ../../reference/constrained.rst:426
+msgid ""
+"MicroPython handles strings in an efficient manner and understanding this"
+" can help in designing applications to run on microcontrollers. When a "
+"module is compiled, strings which occur multiple times are stored once "
+"only, a process known as string interning. In MicroPython an interned "
+"string is known as a ``qstr``. In a module imported normally that single "
+"instance will be located in RAM, but as described above, in modules "
+"frozen as bytecode it will be located in flash."
+msgstr ""
+
+#: ../../reference/constrained.rst:433
+msgid ""
+"String comparisons are also performed efficiently using hashing rather "
+"than character by character. The penalty for using strings rather than "
+"integers may hence be small both in terms of performance and RAM usage - "
+"a fact which may come as a surprise to C programmers."
+msgstr ""
+
+#: ../../reference/constrained.rst:439
+msgid "Postscript"
+msgstr ""
+
+#: ../../reference/constrained.rst:441
+msgid ""
+"MicroPython passes, returns and (by default) copies objects by reference."
+" A reference occupies a single machine word so these processes are "
+"efficient in RAM usage and speed."
+msgstr ""
+
+#: ../../reference/constrained.rst:445
+msgid ""
+"Where variables are required whose size is neither a byte nor a machine "
+"word there are standard libraries which can assist in storing these "
+"efficiently and in performing conversions. See the `array`, `struct` and "
+"`uctypes` modules."
+msgstr ""
+
+#: ../../reference/constrained.rst:451
+msgid "Footnote: gc.collect() return value"
+msgstr ""
+
+#: ../../reference/constrained.rst:453
+msgid ""
+"On Unix and Windows platforms the `gc.collect()` method returns an "
+"integer which signifies the number of distinct memory regions that were "
+"reclaimed in the collection (more precisely, the number of heads that "
+"were turned into frees). For efficiency reasons bare metal ports do not "
+"return this value."
+msgstr ""
+

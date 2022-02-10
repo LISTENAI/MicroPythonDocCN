@@ -1,0 +1,69 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/zlib.rst:2
+msgid ":mod:`zlib` -- zlib decompression"
+msgstr ""
+
+#: ../../library/zlib.rst:7
+msgid "|see_cpython_module| :mod:`python:zlib`."
+msgstr ""
+
+#: ../../library/zlib.rst:9
+msgid ""
+"This module allows to decompress binary data compressed with `DEFLATE "
+"algorithm <https://en.wikipedia.org/wiki/DEFLATE>`_ (commonly used in "
+"zlib library and gzip archiver). Compression is not yet implemented."
+msgstr ""
+
+#: ../../library/zlib.rst:15
+msgid "Functions"
+msgstr ""
+
+#: ../../library/zlib.rst:19
+msgid ""
+"Return decompressed *data* as bytes. *wbits* is DEFLATE dictionary window"
+" size used during compression (8-15, the dictionary size is power of 2 of"
+" that value). Additionally, if value is positive, *data* is assumed to be"
+" zlib stream (with zlib header). Otherwise, if it's negative, it's "
+"assumed to be raw DEFLATE stream. *bufsize* parameter is for "
+"compatibility with CPython and is ignored."
+msgstr ""
+
+#: ../../library/zlib.rst:28
+msgid ""
+"Create a `stream` wrapper which allows transparent decompression of "
+"compressed data in another *stream*. This allows to process compressed "
+"streams with data larger than available heap size. In addition to values "
+"described in :func:`decompress`, *wbits* may take values 24..31 (16 + "
+"8..15), meaning that input stream has gzip header."
+msgstr ""
+
+#: ../../library/zlib.rst:34
+msgid "Difference to CPython"
+msgstr ""
+
+#: ../../library/zlib.rst:37
+msgid ""
+"This class is MicroPython extension. It's included on provisional basis "
+"and may be changed considerably or removed in later versions."
+msgstr ""
+

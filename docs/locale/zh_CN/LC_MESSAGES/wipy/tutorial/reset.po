@@ -1,0 +1,101 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../wipy/tutorial/reset.rst:2
+msgid "Reset and boot modes"
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:4
+msgid "There are soft resets and hard resets."
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:6
+msgid ""
+"A soft reset simply clears the state of the MicroPython virtual machine, "
+"but leaves hardware peripherals unaffected. To do a soft reset, simply "
+"press **Ctrl+D** on the REPL, or within a script do::"
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:13
+msgid ""
+"A hard reset is the same as performing a power cycle to the board. In "
+"order to hard reset the WiPy, press the switch on the board or::"
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:20
+msgid "Safe boot"
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:22
+msgid ""
+"If something goes wrong with your WiPy, don't panic!  It is almost "
+"impossible for you to break the WiPy by programming the wrong thing."
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:25
+msgid ""
+"The first thing to try is to boot in safe mode: this temporarily skips "
+"execution of ``boot.py`` and ``main.py`` and gives default WLAN settings."
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:28
+msgid ""
+"If you have problems with the filesystem you can :ref:`format the "
+"internal flash drive <wipy_factory_reset>`."
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:31
+msgid ""
+"To boot in safe mode, follow the detailed instructions described "
+":ref:`here <wipy_boot_modes>`."
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:33
+msgid ""
+"In safe mode, the ``boot.py`` and ``main.py`` files are not executed, and"
+" so the WiPy boots up with default settings.  This means you now have "
+"access to the filesystem, and you can edit ``boot.py`` and ``main.py`` to"
+" fix any problems."
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:37
+msgid ""
+"Entering safe mode is temporary, and does not make any changes to the "
+"files on the WiPy."
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:43
+msgid "Factory reset the filesystem"
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:45
+msgid ""
+"If you WiPy's filesystem gets corrupted (very unlikely, but possible), "
+"you can format it very easily by doing::"
+msgstr ""
+
+#: ../../wipy/tutorial/reset.rst:51
+msgid ""
+"Resetting the filesystem deletes all files on the internal WiPy storage "
+"(not the SD card), and restores the files ``boot.py`` and ``main.py`` "
+"back to their original state after the next reset."
+msgstr ""
+

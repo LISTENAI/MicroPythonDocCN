@@ -1,0 +1,97 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/cmath.rst:2
+msgid ":mod:`cmath` -- mathematical functions for complex numbers"
+msgstr ""
+
+#: ../../library/cmath.rst:7
+msgid "|see_cpython_module| :mod:`python:cmath`."
+msgstr ""
+
+#: ../../library/cmath.rst:9
+msgid ""
+"The ``cmath`` module provides some basic mathematical functions for "
+"working with complex numbers."
+msgstr ""
+
+#: ../../library/cmath.rst:12
+msgid ""
+"Availability: not available on WiPy and ESP8266. Floating point support "
+"required for this module."
+msgstr ""
+
+#: ../../library/cmath.rst:16
+msgid "Functions"
+msgstr ""
+
+#: ../../library/cmath.rst:20
+msgid "Return the cosine of ``z``."
+msgstr ""
+
+#: ../../library/cmath.rst:24
+msgid "Return the exponential of ``z``."
+msgstr ""
+
+#: ../../library/cmath.rst:28
+msgid ""
+"Return the natural logarithm of ``z``.  The branch cut is along the "
+"negative real axis."
+msgstr ""
+
+#: ../../library/cmath.rst:32
+msgid ""
+"Return the base-10 logarithm of ``z``.  The branch cut is along the "
+"negative real axis."
+msgstr ""
+
+#: ../../library/cmath.rst:36
+msgid "Returns the phase of the number ``z``, in the range (-pi, +pi]."
+msgstr ""
+
+#: ../../library/cmath.rst:40
+msgid "Returns, as a tuple, the polar form of ``z``."
+msgstr ""
+
+#: ../../library/cmath.rst:44
+msgid "Returns the complex number with modulus ``r`` and phase ``phi``."
+msgstr ""
+
+#: ../../library/cmath.rst:48
+msgid "Return the sine of ``z``."
+msgstr ""
+
+#: ../../library/cmath.rst:52
+msgid "Return the square-root of ``z``."
+msgstr ""
+
+#: ../../library/cmath.rst:55
+msgid "Constants"
+msgstr ""
+
+#: ../../library/cmath.rst:59
+msgid "base of the natural logarithm"
+msgstr ""
+
+#: ../../library/cmath.rst:63
+msgid "the ratio of a circle's circumference to its diameter"
+msgstr ""
+

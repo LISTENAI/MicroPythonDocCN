@@ -1,0 +1,144 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/stm.rst:4
+msgid ":mod:`stm` --- functionality specific to STM32 MCUs"
+msgstr ""
+
+#: ../../library/stm.rst:9
+msgid ""
+"This module provides functionality specific to STM32 microcontrollers, "
+"including direct access to peripheral registers."
+msgstr ""
+
+#: ../../library/stm.rst:13
+msgid "Memory access"
+msgstr ""
+
+#: ../../library/stm.rst:15
+msgid "The module exposes three objects used for raw memory access."
+msgstr ""
+
+#: ../../library/stm.rst:19
+msgid "Read/write 8 bits of memory."
+msgstr ""
+
+#: ../../library/stm.rst:23
+msgid "Read/write 16 bits of memory."
+msgstr ""
+
+#: ../../library/stm.rst:27
+msgid "Read/write 32 bits of memory."
+msgstr ""
+
+#: ../../library/stm.rst:29
+msgid ""
+"Use subscript notation ``[...]`` to index these objects with the address "
+"of interest."
+msgstr ""
+
+#: ../../library/stm.rst:32
+msgid ""
+"These memory objects can be used in combination with the peripheral "
+"register constants to read and write registers of the MCU hardware "
+"peripherals, as well as all other areas of address space."
+msgstr ""
+
+#: ../../library/stm.rst:38
+msgid "Peripheral register constants"
+msgstr ""
+
+#: ../../library/stm.rst:40
+msgid ""
+"The module defines constants for registers which are generated from CMSIS"
+" header files, and the constants available depend on the microcontroller "
+"series that is being compiled for.  Examples of some constants include:"
+msgstr ""
+
+#: ../../library/stm.rst:46
+msgid "Base address of the GPIOA peripheral."
+msgstr ""
+
+#: ../../library/stm.rst:50
+msgid "Base address of the GPIOB peripheral."
+msgstr ""
+
+#: ../../library/stm.rst:54
+msgid "Offset of the GPIO bit set/reset register."
+msgstr ""
+
+#: ../../library/stm.rst:58
+msgid "Offset of the GPIO input data register."
+msgstr ""
+
+#: ../../library/stm.rst:62
+msgid "Offset of the GPIO output data register."
+msgstr ""
+
+#: ../../library/stm.rst:64
+msgid ""
+"Constants that are named after a peripheral, like ``GPIOA``, are the "
+"absolute address of that peripheral.  Constants that have a prefix which "
+"is the name of a peripheral, like ``GPIO_BSRR``, are relative offsets of "
+"the register.  Accessing peripheral registers requires adding the "
+"absolute base address of the peripheral and the relative register offset."
+"  For example ``GPIOA + GPIO_BSRR`` is the full, absolute address of the "
+"``GPIOA->BSRR`` register."
+msgstr ""
+
+#: ../../library/stm.rst:71
+msgid "Example use:"
+msgstr ""
+
+#: ../../library/stm.rst:83
+msgid "Functions specific to STM32WBxx MCUs"
+msgstr ""
+
+#: ../../library/stm.rst:85
+msgid ""
+"These functions are available on STM32WBxx microcontrollers, and interact"
+" with the second CPU, the RF core."
+msgstr ""
+
+#: ../../library/stm.rst:90
+msgid ""
+"Returns the status of the second CPU as an integer (the first word of "
+"device info table)."
+msgstr ""
+
+#: ../../library/stm.rst:95
+msgid ""
+"Get the version of the firmware running on the second CPU.  Pass in 0 for"
+" *id* to get the FUS version, and 1 to get the WS version."
+msgstr ""
+
+#: ../../library/stm.rst:98
+msgid "Returns a 5-tuple with the full version number."
+msgstr ""
+
+#: ../../library/stm.rst:102
+msgid "Execute a HCI command on the SYS channel.  The execution is synchronous."
+msgstr ""
+
+#: ../../library/stm.rst:104
+msgid "Returns a bytes object with the result of the SYS command."
+msgstr ""
+

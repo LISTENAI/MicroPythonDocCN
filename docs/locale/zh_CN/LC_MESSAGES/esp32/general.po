@@ -1,0 +1,162 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp32/general.rst:4
+msgid "General information about the ESP32 port"
+msgstr ""
+
+#: ../../esp32/general.rst:6
+msgid ""
+"The ESP32 is a popular WiFi and Bluetooth enabled System-on-Chip (SoC) by"
+" Espressif Systems."
+msgstr ""
+
+#: ../../esp32/general.rst:10
+msgid "Multitude of boards"
+msgstr ""
+
+#: ../../esp32/general.rst:12
+msgid ""
+"There is a multitude of modules and boards from different sources which "
+"carry the ESP32 chip. MicroPython tries to provide a generic port which "
+"would run on as many boards/modules as possible, but there may be "
+"limitations. Espressif development boards are taken as reference for the "
+"port (for example, testing is performed on them).  For any board you are "
+"using please make sure you have a datasheet, schematics and other "
+"reference materials so you can look up any board-specific functions."
+msgstr ""
+
+#: ../../esp32/general.rst:20
+msgid ""
+"To make a generic ESP32 port and support as many boards as possible the "
+"following design and implementation decision were made:"
+msgstr ""
+
+#: ../../esp32/general.rst:23
+msgid ""
+"GPIO pin numbering is based on ESP32 chip numbering.  Please have the "
+"manual/pin diagram of your board at hand to find correspondence between "
+"your board pins and actual ESP32 pins."
+msgstr ""
+
+#: ../../esp32/general.rst:26
+msgid ""
+"All pins are supported by MicroPython but not all are usable on any given"
+" board. For example pins that are connected to external SPI flash should "
+"not be used, and a board may only expose a certain selection of pins."
+msgstr ""
+
+#: ../../esp32/general.rst:32
+msgid "Technical specifications and SoC datasheets"
+msgstr ""
+
+#: ../../esp32/general.rst:34
+msgid ""
+"The datasheets and other reference material for ESP32 chip are available "
+"from the vendor site: "
+"https://www.espressif.com/en/support/download/documents?keys=esp32 . They"
+" are the primary reference for the chip technical specifications, "
+"capabilities, operating modes, internal functioning, etc."
+msgstr ""
+
+#: ../../esp32/general.rst:39
+msgid "For your convenience, some of technical specifications are provided below:"
+msgstr ""
+
+#: ../../esp32/general.rst:41
+msgid "Architecture: Xtensa Dual-Core 32-bit LX6"
+msgstr ""
+
+#: ../../esp32/general.rst:42
+msgid "CPU frequency: up to 240MHz"
+msgstr ""
+
+#: ../../esp32/general.rst:43
+msgid "Total RAM available: 528KB (part of it reserved for system)"
+msgstr ""
+
+#: ../../esp32/general.rst:44
+msgid "BootROM: 448KB"
+msgstr ""
+
+#: ../../esp32/general.rst:45
+msgid "Internal FlashROM: none"
+msgstr ""
+
+#: ../../esp32/general.rst:46
+msgid "External FlashROM: code and data, via SPI Flash; usual size 4MB"
+msgstr ""
+
+#: ../../esp32/general.rst:47
+msgid ""
+"GPIO: 34 (GPIOs are multiplexed with other functions, including external "
+"FlashROM, UART, etc.)"
+msgstr ""
+
+#: ../../esp32/general.rst:49
+msgid "UART: 3 RX/TX UART (no hardware handshaking), one TX-only UART"
+msgstr ""
+
+#: ../../esp32/general.rst:50
+msgid "SPI: 4 SPI interfaces (one used for FlashROM)"
+msgstr ""
+
+#: ../../esp32/general.rst:51
+msgid "I2C: 2 I2C (bitbang implementation available on any pins)"
+msgstr ""
+
+#: ../../esp32/general.rst:52
+msgid "I2S: 2"
+msgstr ""
+
+#: ../../esp32/general.rst:53
+msgid "ADC: 12-bit SAR ADC up to 18 channels"
+msgstr ""
+
+#: ../../esp32/general.rst:54
+msgid "DAC: 2 8-bit DACs"
+msgstr ""
+
+#: ../../esp32/general.rst:55
+msgid "RMT: 8 channels allowing accurate pulse transmit/receive"
+msgstr ""
+
+#: ../../esp32/general.rst:56
+msgid ""
+"Programming: using BootROM bootloader from UART - due to external "
+"FlashROM and always-available BootROM bootloader, the ESP32 is not "
+"brickable"
+msgstr ""
+
+#: ../../esp32/general.rst:59
+msgid ""
+"For more information see the ESP32 datasheet: "
+"https://www.espressif.com/sites/default/files/documentation/esp32_datasheet_en.pdf"
+msgstr ""
+
+#: ../../esp32/general.rst:61
+msgid ""
+"MicroPython is implemented on top of the ESP-IDF, Espressif's development"
+" framework for the ESP32.  This is a FreeRTOS based system.  See the "
+"`ESP-IDF Programming Guide <https://docs.espressif.com/projects/esp-"
+"idf/en/latest/index.html>`_ for details."
+msgstr ""
+

@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/tutorial/pins.rst:2
+msgid "GPIO Pins"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:4
+msgid ""
+"The way to connect your board to the external world, and control other "
+"components, is through the GPIO pins.  Not all pins are available to use,"
+" in most cases only pins 0, 2, 4, 5, 12, 13, 14, 15, and 16 can be used."
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:8
+msgid ""
+"The pins are available in the machine module, so make sure you import "
+"that first.  Then you can create a pin using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:13
+msgid ""
+"Here, the \"0\" is the pin that you want to access.  Usually you want to "
+"configure the pin to be input or output, and you do this when "
+"constructing it.  To make an input pin use::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:19
+msgid ""
+"You can either use PULL_UP or None for the input pull-mode.  If it's not "
+"specified then it defaults to None, which is no pull resistor. GPIO16 has"
+" no pull-up mode. You can read the value on the pin using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:27
+msgid ""
+"The pin on your board may return 0 or 1 here, depending on what it's "
+"connected to.  To make an output pin use::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:32
+msgid "Then set its value using::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:37
+msgid "Or::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:43
+msgid "External interrupts"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:45
+msgid ""
+"All pins except number 16 can be configured to trigger a hard interrupt "
+"if their input changes.  You can set code (a callback function) to be "
+"executed on the trigger."
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:49
+msgid ""
+"Let's first define a callback function, which must take a single "
+"argument, being the pin that triggered the function.  We will make the "
+"function just print the pin::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:56
+msgid "Next we will create two pins and configure them as inputs::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:62
+msgid ""
+"An finally we need to tell the pins when to trigger, and the function to "
+"call when they detect an event::"
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:68
+msgid ""
+"We set pin 0 to trigger only on a falling edge of the input (when it goes"
+" from high to low), and set pin 2 to trigger on both a rising and falling"
+" edge.  After entering this code you can apply high and low voltages to "
+"pins 0 and 2 to see the interrupt being executed."
+msgstr ""
+
+#: ../../esp8266/tutorial/pins.rst:73
+msgid ""
+"A hard interrupt will trigger as soon as the event occurs and will "
+"interrupt any running code, including Python code.  As such your callback"
+" functions are limited in what they can do (they cannot allocate memory, "
+"for example) and should be as short and simple as possible."
+msgstr ""
+

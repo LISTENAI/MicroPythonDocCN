@@ -1,0 +1,184 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/machine.SPI.rst:5
+msgid "class SPI -- a Serial Peripheral Interface bus protocol (controller side)"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:7
+msgid ""
+"SPI is a synchronous serial protocol that is driven by a controller. At "
+"the physical level, a bus consists of 3 lines: SCK, MOSI, MISO. Multiple "
+"devices can share the same bus. Each device should have a separate, 4th "
+"signal, CS (Chip Select), to select a particular device on a bus with "
+"which communication takes place. Management of a CS signal should happen "
+"in user code (via machine.Pin class)."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:14
+msgid ""
+"Both hardware and software SPI implementations exist via the "
+":ref:`machine.SPI <machine.SPI>` and `machine.SoftSPI` classes.  Hardware"
+" SPI uses underlying hardware support of the system to perform the "
+"reads/writes and is usually efficient and fast but may have restrictions "
+"on which pins can be used. Software SPI is implemented by bit-banging and"
+" can be used on any pin but is not as efficient.  These classes have the "
+"same methods available and differ primarily in the way they are "
+"constructed."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:22
+msgid "Example usage::"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:59
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:63
+msgid ""
+"Construct an SPI object on the given bus, *id*. Values of *id* depend on "
+"a particular port and its hardware. Values 0, 1, etc. are commonly used "
+"to select hardware SPI block #0, #1, etc."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:67
+msgid ""
+"With no additional parameters, the SPI object is created but not "
+"initialised (it has the settings from the last initialisation of the bus,"
+" if any).  If extra arguments are given, the bus is initialised. See "
+"``init`` for parameters of initialisation."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:75
+msgid ""
+"Construct a new software SPI object.  Additional parameters must be "
+"given, usually at least *sck*, *mosi* and *miso*, and these are used to "
+"initialise the bus.  See `SPI.init` for a description of the parameters."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:80
+msgid "Methods"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:84
+msgid "Initialise the SPI bus with the given parameters:"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:86
+msgid "``baudrate`` is the SCK clock rate."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:87
+msgid "``polarity`` can be 0 or 1, and is the level the idle clock line sits at."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:88
+msgid ""
+"``phase`` can be 0 or 1 to sample data on the first or second clock edge "
+"respectively."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:90
+msgid ""
+"``bits`` is the width in bits of each transfer. Only 8 is guaranteed to "
+"be supported by all hardware."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:91
+msgid "``firstbit`` can be ``SPI.MSB`` or ``SPI.LSB``."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:92
+msgid ""
+"``sck``, ``mosi``, ``miso`` are pins (machine.Pin) objects to use for bus"
+" signals. For most hardware SPI blocks (as selected by ``id`` parameter "
+"to the constructor), pins are fixed and cannot be changed. In some cases,"
+" hardware blocks allow 2-3 alternative pin sets for a hardware SPI block."
+" Arbitrary pin assignments are possible only for a bitbanging SPI driver "
+"(``id`` = -1)."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:97
+msgid ""
+"``pins`` - WiPy port doesn't ``sck``, ``mosi``, ``miso`` arguments, and "
+"instead allows to specify them as a tuple of ``pins`` parameter."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:100
+msgid ""
+"In the case of hardware SPI the actual clock frequency may be lower than "
+"the requested baudrate. This is dependant on the platform hardware. The "
+"actual rate may be determined by printing the SPI object."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:106
+msgid "Turn off the SPI bus."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:110
+msgid ""
+"Read a number of bytes specified by ``nbytes`` while continuously writing"
+" the single byte given by ``write``. Returns a ``bytes`` object with the "
+"data that was read."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:116
+msgid ""
+"Read into the buffer specified by ``buf`` while continuously writing the "
+"single byte given by ``write``. Returns ``None``."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:120
+msgid "Note: on WiPy this function returns the number of bytes read."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:124
+msgid "Write the bytes contained in ``buf``. Returns ``None``."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:127 ../../library/machine.SPI.rst:136
+msgid "Note: on WiPy this function returns the number of bytes written."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:131
+msgid ""
+"Write the bytes from ``write_buf`` while reading into ``read_buf``.  The "
+"buffers can be the same or different, but both buffers must have the same"
+" length. Returns ``None``."
+msgstr ""
+
+#: ../../library/machine.SPI.rst:139
+msgid "Constants"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:143
+msgid "for initialising the SPI bus to controller; this is only used for the WiPy"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:147
+msgid "set the first bit to be the most significant bit"
+msgstr ""
+
+#: ../../library/machine.SPI.rst:151
+msgid "set the first bit to be the least significant bit"
+msgstr ""
+

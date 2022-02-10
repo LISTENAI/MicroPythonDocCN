@@ -1,0 +1,110 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/lcd_skin.rst:2
+msgid "The LCD and touch-sensor skin"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:4
+msgid "Soldering and using the LCD and touch-sensor skin."
+msgstr ""
+
+msgid "pyboard with LCD skin"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:14
+msgid ""
+"The following video shows how to solder the headers onto the LCD skin. At"
+" the end of the video, it shows you how to correctly connect the LCD skin"
+" to the pyboard."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:21
+msgid ""
+"For circuit schematics and datasheets for the components on the skin see "
+":ref:`hardware_index`."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:24
+msgid "Using the LCD"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:26
+msgid ""
+"To get started using the LCD, try the following at the MicroPython "
+"prompt. Make sure the LCD skin is attached to the pyboard as pictured at "
+"the top of this page. ::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:34
+msgid "You can make a simple animation using the code::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:46
+msgid "Using the touch sensor"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:48
+msgid ""
+"To read the touch-sensor data you need to use the I2C bus.  The MPR121 "
+"capacitive touch sensor has address 90."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:51
+msgid "To get started, try::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:58
+msgid ""
+"The first line above makes an I2C object, and the second line enables the"
+" 4 touch sensors.  The third line reads the touch status and the "
+"``touch`` variable holds the state of the 4 touch buttons (A, B, X, Y)."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:63
+msgid ""
+"There is a simple driver `here "
+"<http://micropython.org/resources/examples/mpr121.py>`__ which allows you"
+" to set the threshold and debounce parameters, and easily read the touch "
+"status and electrode voltage levels.  Copy this script to your pyboard "
+"(either flash or SD card, in the top directory or ``lib/`` directory) and"
+" then try::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:77
+msgid ""
+"This will continuously print out the touch status of all electrodes. Try "
+"touching each one in turn."
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:80
+msgid ""
+"Note that if you put the LCD skin in the Y-position, then you need to "
+"initialise the I2C bus using::"
+msgstr ""
+
+#: ../../pyboard/tutorial/lcd_skin.rst:85
+msgid ""
+"There is also a demo which uses the LCD and the touch sensors together, "
+"and can be found `here "
+"<http://micropython.org/resources/examples/lcddemo.py>`__."
+msgstr ""
+

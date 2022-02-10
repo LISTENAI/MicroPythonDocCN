@@ -1,0 +1,218 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../rp2/tutorial/pio.rst:2
+msgid "Programmable IO"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:4
+msgid ""
+"The RP2040 has hardware support for standard communication protocols like"
+" I2C, SPI and UART. For protocols where there is no hardware support, or "
+"where there is a requirement of custom I/O behaviour, Programmable Input "
+"Output (PIO) comes into play.  Also, some MicroPython applications make "
+"use of a technique called bit banging in which pins are rapidly turned on"
+" and off to transmit data.  This can make the entire process slow as the "
+"processor concentrates on bit banging rather than executing other logic."
+"  However, PIO allows bit banging to happen in the background while the "
+"CPU is executing the main work."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:13
+msgid ""
+"Along with the two central Cortex-M0+ processing cores, the RP2040 has "
+"two PIO blocks each of which has four independent state machines.  These "
+"state machines can transfer data to/from other entities using First-In-"
+"First-Out (FIFO) buffers, which allow the state machine and main "
+"processor to work independently yet also synchronise their data.  Each "
+"FIFO has four words (each of 32 bits) which can be linked to the DMA to "
+"transfer larger amounts of data."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:20
+msgid "All PIO instructions follow a common pattern::"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:24
+msgid ""
+"The side-set ``.side(...)`` and delay ``[...]`` parts are both optional, "
+"and if specified allow the instruction to perform more than one "
+"operation.  This keeps PIO programs small and efficient."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:28
+msgid "There are nine instructions which perform the following tasks:"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:30
+msgid "``jmp()`` transfers control to a different part of the code"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:31
+msgid "``wait()`` pauses until a particular action happens"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:32
+msgid ""
+"``in_()`` shifts the bits from a source (scratch register or set of pins)"
+" to the input shift register"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:34
+msgid "``out()`` shifts the bits from the output shift register to a destination"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:35
+msgid "``push()`` sends data to the RX FIFO"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:36
+msgid "``pull()`` receives data from the TX FIFO"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:37
+msgid "``mov()`` moves data from a source to a destination"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:38
+msgid "``irq()`` sets or clears an IRQ flag"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:39
+msgid "``set()`` writes a literal value to a destination"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:41
+msgid "The instruction modifiers are:"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:43
+msgid "``.side()`` sets the side-set pins at the start of the instruction"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:44
+msgid ""
+"``[]`` delays for a certain number of cycles after execution of the "
+"instruction"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:46
+msgid "There are also directives:"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:48
+msgid ""
+"``wrap_target()`` specifies where the program execution will get "
+"continued from"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:49
+msgid ""
+"``wrap()`` specifies the instruction where the control flow of the "
+"program will get wrapped from"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:51
+msgid "``label()`` sets a label for use with ``jmp()`` instructions"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:52
+msgid ""
+"``word()`` emits a raw 16-bit value which acts as an instruction in the "
+"program"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:55
+msgid "An example"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:57
+msgid ""
+"Take the ``pio_1hz.py`` example for a simple understanding of how to use "
+"the PIO and state machines. Below is the code for reference."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:96
+msgid ""
+"This creates an instance of class :class:`rp2.StateMachine` which runs "
+"the ``blink_1hz`` program at 2000Hz, and connects to pin 25.  The "
+"``blink_1hz`` program uses the PIO to blink an LED connected to this pin "
+"at 1Hz, and also raises an IRQ as the LED turns on.  This IRQ then calls "
+"the ``lambda`` function which prints out a millisecond timestamp."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:102
+msgid ""
+"The ``blink_1hz`` program is a PIO assembler routine.  It connects to a "
+"single pin which is configured as an output and starts out low.  The "
+"instructions do the following:"
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:106
+msgid "``irq(rel(0))`` raises the IRQ associated with the state machine."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:107
+msgid "The LED is turned on via the ``set(pins, 1)`` instruction."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:108
+msgid ""
+"The value 31 is put into register X, and then there is a delay for 5 more"
+" cycles, specified by the ``[5]``."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:110
+msgid "The ``nop() [29]`` instruction waits for 30 cycles."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:111
+msgid ""
+"The ``jmp(x_dec, \"delay_high\")`` will keep looping to the "
+"``delay_high`` label as long as the register X is non-zero, and will also"
+" post-decrement X.  Since X starts with the value 31 this jump will "
+"happen 31 times, so the ``nop() [29]`` runs 32 times in total (note there"
+" is also one instruction cycle taken by the ``jmp`` for each of these 32 "
+"loops)."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:116
+msgid "``set(pins, 0)`` will turn the LED off by setting pin 25 low."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:117
+msgid "Another 32 loops of ``nop() [29]`` and ``jmp(...)`` will execute."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:118
+msgid ""
+"Because ``wrap_target()`` and ``wrap()`` are not specified, their default"
+" will be used and execution of the program will wrap around from the "
+"bottom to the top.  This wrapping does not cost any execution cycles."
+msgstr ""
+
+#: ../../rp2/tutorial/pio.rst:122
+msgid ""
+"The entire routine takes exactly 2000 cycles of the state machine.  "
+"Setting the frequency of the state machine to 2000Hz makes the LED blink "
+"at 1Hz."
+msgstr ""
+

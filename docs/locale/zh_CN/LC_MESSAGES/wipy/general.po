@@ -1,0 +1,566 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../wipy/general.rst:4
+msgid "General information about the WiPy"
+msgstr ""
+
+#: ../../wipy/general.rst:7
+msgid "No floating point support"
+msgstr ""
+
+#: ../../wipy/general.rst:9
+msgid ""
+"Due to space reasons, there's no floating point support, and no math "
+"module. This means that floating point numbers cannot be used anywhere in"
+" the code, and that all divisions must be performed using '//' instead of"
+" '/'. Example::"
+msgstr ""
+
+#: ../../wipy/general.rst:17
+msgid "Before applying power"
+msgstr ""
+
+#: ../../wipy/general.rst:21
+msgid ""
+"The GPIO pins of the WiPy are NOT 5V tolerant, connecting them to "
+"voltages higher than 3.6V will cause irreparable damage to the board. ADC"
+" pins, when configured in analog mode cannot withstand voltages above "
+"1.8V. Keep these considerations in mind when wiring your electronics."
+msgstr ""
+
+#: ../../wipy/general.rst:27
+msgid "WLAN default behaviour"
+msgstr ""
+
+#: ../../wipy/general.rst:29
+msgid ""
+"When the WiPy boots with the default factory configuration starts in "
+"Access Point mode with ``ssid`` that starts with: ``wipy-wlan`` and "
+"``key: www.wipy.io``. Connect to this network and the WiPy will be "
+"reachable at ``192.168.1.1``. In order to gain access to the interactive "
+"prompt, open a telnet session to that IP address on the default port "
+"(23). You will be asked for credentials: ``login: micro`` and ``password:"
+" python``"
+msgstr ""
+
+#: ../../wipy/general.rst:39
+msgid "Telnet REPL"
+msgstr ""
+
+#: ../../wipy/general.rst:41
+msgid ""
+"Linux stock telnet works like a charm (also on OSX), but other tools like"
+" putty work quite well too. The default credentials are: **user:** "
+"``micro``, **password:** ``python``. See :class:`network.Server` for info"
+" on how to change the defaults. For instance, on a linux shell (when "
+"connected to the WiPy in AP mode)::"
+msgstr ""
+
+#: ../../wipy/general.rst:51
+msgid "Local file system and FTP access"
+msgstr ""
+
+#: ../../wipy/general.rst:53
+msgid ""
+"There is a small internal file system (a drive) on the WiPy, called "
+"``/flash``, which is stored within the external serial flash memory.  If "
+"a micro SD card is hooked-up and mounted, it will be available as well."
+msgstr ""
+
+#: ../../wipy/general.rst:57
+msgid ""
+"When the WiPy starts up, it always boots from the ``boot.py`` located in "
+"the ``/flash`` file system. On boot up, the current directory is "
+"``/flash``."
+msgstr ""
+
+#: ../../wipy/general.rst:60
+msgid ""
+"The file system is accessible via the native FTP server running in the "
+"WiPy. Open your FTP client of choice and connect to:"
+msgstr ""
+
+#: ../../wipy/general.rst:63
+msgid ""
+"**url:** ``ftp://192.168.1.1``, **user:** ``micro``, **password:** "
+"``python``"
+msgstr ""
+
+#: ../../wipy/general.rst:65
+msgid ""
+"See :class:`network.Server` for info on how to change the defaults. The "
+"recommended clients are: Linux stock FTP (also in OSX), Filezilla and "
+"FireFTP. For example, on a linux shell::"
+msgstr ""
+
+#: ../../wipy/general.rst:71
+msgid ""
+"The FTP server on the WiPy doesn't support active mode, only passive, "
+"therefore, if using the native unix ftp client, just after logging in "
+"do::"
+msgstr ""
+
+#: ../../wipy/general.rst:76
+msgid ""
+"Besides that, the FTP server only supports one data connection at a time."
+" Check out the Filezilla settings section below for more info."
+msgstr ""
+
+#: ../../wipy/general.rst:80
+msgid "FileZilla settings"
+msgstr ""
+
+#: ../../wipy/general.rst:81
+msgid ""
+"Do not use the quick connect button, instead, open the site manager and "
+"create a new configuration. In the ``General`` tab make sure that "
+"encryption is set to: ``Only use plain FTP (insecure)``. In the Transfer "
+"Settings tab limit the max number of connections to one, otherwise "
+"FileZilla will try to open a second command connection when retrieving "
+"and saving files, and for simplicity and to reduce code size, only one "
+"command and one data connections are possible. Other FTP clients might "
+"behave in a similar way."
+msgstr ""
+
+#: ../../wipy/general.rst:91
+msgid "Upgrading the firmware Over The Air"
+msgstr ""
+
+#: ../../wipy/general.rst:93
+msgid ""
+"OTA software updates can be performed through the FTP server. Upload the "
+"``mcuimg.bin`` file to: ``/flash/sys/mcuimg.bin`` it will take around 6s."
+" You won't see the file being stored inside ``/flash/sys/`` because it's "
+"actually saved bypassing the user file system, so it ends up inside the "
+"internal **hidden** file system, but rest assured that it was "
+"successfully transferred, and it has been signed with a MD5 checksum to "
+"verify its integrity. Now, reset the WiPy by pressing the switch on the "
+"board, or by typing::"
+msgstr ""
+
+#: ../../wipy/general.rst:103
+msgid ""
+"Software updates can be found in: https://github.com/wipy/wipy/releases "
+"(**Binaries.zip**). It's always recommended to update to the latest "
+"software, but make sure to read the **release notes** before."
+msgstr ""
+
+#: ../../wipy/general.rst:109
+msgid ""
+"The ``bootloader.bin`` found inside ``Binaries.zip`` is there only for "
+"reference, it's not needed for the Over The Air update."
+msgstr ""
+
+#: ../../wipy/general.rst:112
+msgid "In order to check your software version, do::"
+msgstr ""
+
+#: ../../wipy/general.rst:117
+msgid ""
+"If the version number is lower than the latest release found in `the "
+"releases <https://github.com/wipy/wipy/releases>`_, go ahead and update "
+"your WiPy!"
+msgstr ""
+
+#: ../../wipy/general.rst:124
+msgid "Boot modes and safe boot"
+msgstr ""
+
+#: ../../wipy/general.rst:126
+msgid ""
+"If you power up normally, or press the reset button, the WiPy will boot "
+"into standard mode; the ``boot.py`` file will be executed first, then "
+"``main.py`` will run."
+msgstr ""
+
+#: ../../wipy/general.rst:130
+msgid ""
+"You can override this boot sequence by pulling ``GP28`` **up** (connect "
+"it to the 3v3 output pin) during reset. This procedure also allows going "
+"back in time to old firmware versions. The WiPy can hold up to 3 "
+"different firmware versions, which are: the factory firmware plus 2 user "
+"updates."
+msgstr ""
+
+#: ../../wipy/general.rst:135
+msgid ""
+"After reset, if ``GP28`` is held high, the heartbeat LED will start "
+"flashing slowly, if after 3 seconds the pin is still being held high, the"
+" LED will start blinking a bit faster and the WiPy will select the "
+"previous user update to boot. If the previous user update is the desired "
+"firmware image, ``GP28`` must be released before 3 more seconds elapse. "
+"If 3 seconds later the pin is still high, the factory firmware will be "
+"selected, the LED will flash quickly for 1.5 seconds and the WiPy will "
+"proceed to boot. The firmware selection mechanism is as follows:"
+msgstr ""
+
+#: ../../wipy/general.rst:144
+msgid "**Safe Boot Pin** ``GP28`` **released during:**"
+msgstr ""
+
+#: ../../wipy/general.rst:147
+msgid "1st 3 secs window"
+msgstr ""
+
+#: ../../wipy/general.rst:147
+msgid "2nd 3 secs window"
+msgstr ""
+
+#: ../../wipy/general.rst:147
+msgid "Final 1.5 secs window"
+msgstr ""
+
+#: ../../wipy/general.rst
+msgid "Safe boot, *latest*"
+msgstr ""
+
+#: ../../wipy/general.rst
+msgid "firmware is selected"
+msgstr ""
+
+#: ../../wipy/general.rst
+msgid "Safe boot, *previous*"
+msgstr ""
+
+#: ../../wipy/general.rst
+msgid "user update selected"
+msgstr ""
+
+#: ../../wipy/general.rst
+msgid "Safe boot, the *factory*"
+msgstr ""
+
+#: ../../wipy/general.rst:153
+msgid ""
+"On all of the above 3 scenarios, safe boot mode is entered, meaning that "
+"the execution of both ``boot.py`` and ``main.py`` is skipped. This is "
+"useful to recover from crash situations caused by the user scripts. The "
+"selection made during safe boot is not persistent, therefore after the "
+"next normal reset the latest firmware will run again."
+msgstr ""
+
+#: ../../wipy/general.rst:160
+msgid "The heartbeat LED"
+msgstr ""
+
+#: ../../wipy/general.rst:162
+msgid ""
+"By default the heartbeat LED flashes once every 4s to signal that the "
+"system is alive. This can be overridden through the :mod:`wipy` module::"
+msgstr ""
+
+#: ../../wipy/general.rst:168
+msgid "There are currently 2 kinds of errors that you might see:"
+msgstr ""
+
+#: ../../wipy/general.rst:170
+msgid ""
+"If the heartbeat LED flashes quickly, then a Python script (eg "
+"``main.py``) has an error.  Use the REPL to debug it."
+msgstr ""
+
+#: ../../wipy/general.rst:172
+msgid ""
+"If the heartbeat LED stays on, then there was a hard fault, you cannot "
+"recover from this, the only way out is to press the reset switch."
+msgstr ""
+
+#: ../../wipy/general.rst:176
+msgid "Details on sleep modes"
+msgstr ""
+
+#: ../../wipy/general.rst:178
+msgid ""
+"``machine.idle()``: Power consumption: ~12mA (in WLAN STA mode). Wake "
+"sources: any hardware interrupt (including systick with period of 1ms), "
+"no special configuration required."
+msgstr ""
+
+#: ../../wipy/general.rst:181
+msgid ""
+"``machine.lightsleep()``: 950uA (in WLAN STA mode). Wake sources are "
+"``Pin``, ``RTC`` and ``WLAN``"
+msgstr ""
+
+#: ../../wipy/general.rst:183
+msgid "``machine.deepsleep()``: ~350uA. Wake sources are ``Pin`` and ``RTC``."
+msgstr ""
+
+#: ../../wipy/general.rst:186
+msgid "Additional details for machine.Pin"
+msgstr ""
+
+#: ../../wipy/general.rst:188
+msgid "On the WiPy board the pins are identified by their string id::"
+msgstr ""
+
+#: ../../wipy/general.rst:193
+msgid "You can also configure the Pin to generate interrupts. For instance::"
+msgstr ""
+
+#: ../../wipy/general.rst:207
+msgid ""
+"Now every time a falling edge is seen on the gpio pin, the callback will "
+"be executed. Caution: mechanical push buttons have \"bounce\" and pushing"
+" or releasing a switch will often generate multiple edges. See: "
+"http://www.eng.utah.edu/~cs5780/debouncing.pdf for a detailed "
+"explanation, along with various techniques for debouncing."
+msgstr ""
+
+#: ../../wipy/general.rst:213
+msgid ""
+"All pin objects go through the pin mapper to come up with one of the gpio"
+" pins."
+msgstr ""
+
+#: ../../wipy/general.rst:216
+msgid "For the ``drive`` parameter the strengths are:"
+msgstr ""
+
+#: ../../wipy/general.rst:218
+msgid "``Pin.LOW_POWER`` - 2mA drive capability."
+msgstr ""
+
+#: ../../wipy/general.rst:219
+msgid "``Pin.MED_POWER`` - 4mA drive capability."
+msgstr ""
+
+#: ../../wipy/general.rst:220
+msgid "``Pin.HIGH_POWER`` - 6mA drive capability."
+msgstr ""
+
+#: ../../wipy/general.rst:222
+msgid ""
+"For the ``alt`` parameter please refer to the pinout and alternate "
+"functions table at "
+"<https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png>`_ "
+"for the specific alternate functions that each pin supports."
+msgstr ""
+
+#: ../../wipy/general.rst:226
+msgid ""
+"For interrupts, the ``priority`` can take values in the range 1-7.  And "
+"the ``wake`` parameter has the following properties:"
+msgstr ""
+
+#: ../../wipy/general.rst:229
+msgid "If ``wake_from=machine.Sleep.ACTIVE`` any pin can wake the board."
+msgstr ""
+
+#: ../../wipy/general.rst:230
+msgid ""
+"If ``wake_from=machine.Sleep.SUSPENDED`` pins ``GP2``, ``GP4``, ``GP10``,"
+" ``GP11``, GP17`` or ``GP24`` can wake the board. Note that only 1 of "
+"this pins can be enabled as a wake source at the same time, so, only the "
+"last enabled pin as a ``machine.Sleep.SUSPENDED`` wake source will have "
+"effect."
+msgstr ""
+
+#: ../../wipy/general.rst:234
+msgid ""
+"If ``wake_from=machine.Sleep.SUSPENDED`` pins ``GP2``, ``GP4``, ``GP10``,"
+" ``GP11``, ``GP17`` and ``GP24`` can wake the board. In this case all of "
+"the 6 pins can be enabled as a ``machine.Sleep.HIBERNATE`` wake source at"
+" the same time."
+msgstr ""
+
+#: ../../wipy/general.rst:238
+msgid "Additional Pin methods:"
+msgstr ""
+
+#: ../../wipy/general.rst:242
+msgid ""
+"Returns a list of the alternate functions supported by the pin. List "
+"items are a tuple of the form: ``('ALT_FUN_NAME', ALT_FUN_INDEX)``"
+msgstr ""
+
+#: ../../wipy/general.rst:246
+msgid "Additional details for machine.I2C"
+msgstr ""
+
+#: ../../wipy/general.rst:248
+msgid ""
+"On the WiPy there is a single hardware I2C peripheral, identified by "
+"\"0\".  By default this is the peripheral that is used when constructing "
+"an I2C instance. The default pins are GP23 for SCL and GP13 for SDA, and "
+"one can create the default I2C peripheral simply by doing::"
+msgstr ""
+
+#: ../../wipy/general.rst:255
+msgid "The pins and frequency can be specified as::"
+msgstr ""
+
+#: ../../wipy/general.rst:259
+msgid ""
+"Only certain pins can be used as SCL/SDA.  Please refer to the pinout for"
+" further information."
+msgstr ""
+
+#: ../../wipy/general.rst:263
+msgid "Known issues"
+msgstr ""
+
+#: ../../wipy/general.rst:266
+msgid "Incompatible way to create SSL sockets"
+msgstr ""
+
+#: ../../wipy/general.rst:268
+msgid ""
+"SSL sockets need to be created the following way before wrapping them "
+"with. ``ssl.wrap_socket``::"
+msgstr ""
+
+#: ../../wipy/general.rst:276
+msgid ""
+"Certificates must be used in order to validate the other side of the "
+"connection, and also to authenticate ourselves with the other end. Such "
+"certificates must be stored as files using the FTP server, and they must "
+"be placed in specific paths with specific names."
+msgstr ""
+
+#: ../../wipy/general.rst:280
+msgid ""
+"The certificate to validate the other side goes in: "
+"**'/flash/cert/ca.pem'**"
+msgstr ""
+
+#: ../../wipy/general.rst:281
+msgid ""
+"The certificate to authenticate ourselves goes in: "
+"**'/flash/cert/cert.pem'**"
+msgstr ""
+
+#: ../../wipy/general.rst:282
+msgid "The key for our own certificate goes in: **'/flash/cert/private.key'**"
+msgstr ""
+
+#: ../../wipy/general.rst:286
+msgid ""
+"When these files are stored, they are placed inside the internal "
+"**hidden** file system (just like firmware updates), and therefore they "
+"are never visible."
+msgstr ""
+
+#: ../../wipy/general.rst:289
+msgid ""
+"For instance to connect to the Blynk servers using certificates, take the"
+" file ``ca.pem`` located in the `blynk examples folder "
+"<https://github.com/wipy/wipy/tree/master/examples/blynk>`_. and put it "
+"in '/flash/cert/'. Then do::"
+msgstr ""
+
+#: ../../wipy/general.rst:300
+msgid "Incompatibilities in hashlib module"
+msgstr ""
+
+#: ../../wipy/general.rst:302
+msgid ""
+"Due to hardware implementation details of the WiPy, data must be buffered"
+" before being digested, which would make it impossible to calculate the "
+"hash of big blocks of data that do not fit in RAM. In this case, since "
+"most likely the total size of the data is known in advance, the size can "
+"be passed to the constructor and hence the HASH hardware engine of the "
+"WiPy can be properly initialized without needing buffering. If "
+"``block_size`` is to be given, an initial chunk of ``data`` must be "
+"passed as well. **When using this extension, care must be taken to make "
+"sure that the length of all intermediate chunks (including the initial "
+"one) is a multiple of 4 bytes.** The last chunk may be of any length."
+msgstr ""
+
+#: ../../wipy/general.rst:311 ../../wipy/general.rst:336
+msgid "Example::"
+msgstr ""
+
+#: ../../wipy/general.rst:320
+msgid "Unrelated function in machine module"
+msgstr ""
+
+#: ../../wipy/general.rst:324
+msgid ""
+"Set the filename of the main script to run after boot.py is finished.  If"
+" this function is not called then the default file main.py will be "
+"executed."
+msgstr ""
+
+#: ../../wipy/general.rst:327
+msgid "It only makes sense to call this function from within boot.py."
+msgstr ""
+
+#: ../../wipy/general.rst:330
+msgid "Adhoc way to control telnet/FTP server via network module"
+msgstr ""
+
+#: ../../wipy/general.rst:332
+msgid ""
+"The ``Server`` class controls the behaviour and the configuration of the "
+"FTP and telnet services running on the WiPy. Any changes performed using "
+"this class' methods will affect both."
+msgstr ""
+
+#: ../../wipy/general.rst:346
+msgid "Create a server instance, see ``init`` for parameters of initialization."
+msgstr ""
+
+#: ../../wipy/general.rst:350
+msgid ""
+"Init (and effectively start the server). Optionally a new ``user``, "
+"``password`` and ``timeout`` (in seconds) can be passed."
+msgstr ""
+
+#: ../../wipy/general.rst:355
+msgid "Stop the server"
+msgstr ""
+
+#: ../../wipy/general.rst:359
+msgid "Get or set the server timeout."
+msgstr ""
+
+#: ../../wipy/general.rst:363
+msgid "Returns ``True`` if the server is running, ``False`` otherwise."
+msgstr ""
+
+#: ../../wipy/general.rst:366
+msgid "Adhoc VFS-like support"
+msgstr ""
+
+#: ../../wipy/general.rst:368
+msgid ""
+"WiPy doesn't implement full MicroPython VFS support, instead following "
+"functions are defined in ``os`` module:"
+msgstr ""
+
+#: ../../wipy/general.rst:373
+msgid ""
+"Mounts a block device (like an ``SD`` object) in the specified mount "
+"point. Example::"
+msgstr ""
+
+#: ../../wipy/general.rst:380
+msgid "Unmounts a previously mounted block device from the given path."
+msgstr ""
+
+#: ../../wipy/general.rst:384
+msgid ""
+"Formats the specified path, must be either ``/flash`` or ``/sd``. A block"
+" device can also be passed like an ``SD`` object before being mounted."
+msgstr ""
+

@@ -1,0 +1,342 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../reference/repl.rst:2
+msgid "The MicroPython Interactive Interpreter Mode (aka REPL)"
+msgstr ""
+
+#: ../../reference/repl.rst:4
+msgid ""
+"This section covers some characteristics of the MicroPython Interactive "
+"Interpreter Mode. A commonly used term for this is REPL (read-eval-print-"
+"loop) which will be used to refer to this interactive prompt."
+msgstr ""
+
+#: ../../reference/repl.rst:9
+msgid "Auto-indent"
+msgstr ""
+
+#: ../../reference/repl.rst:11
+msgid ""
+"When typing python statements which end in a colon (for example if, for, "
+"while) then the prompt will change to three dots (...) and the cursor "
+"will be indented by 4 spaces. When you press return, the next line will "
+"continue at the same level of indentation for regular statements or an "
+"additional level of indentation where appropriate. If you press the "
+"backspace key then it will undo one level of indentation."
+msgstr ""
+
+#: ../../reference/repl.rst:18
+msgid ""
+"If your cursor is all the way back at the beginning, pressing RETURN will"
+" then execute the code that you've entered. The following shows what "
+"you'd see after entering a for statement (the underscore shows where the "
+"cursor winds up):"
+msgstr ""
+
+#: ../../reference/repl.rst:25
+msgid ""
+"If you then enter an if statement, an additional level of indentation "
+"will be provided:"
+msgstr ""
+
+#: ../../reference/repl.rst:32
+msgid "Now enter ``break`` followed by RETURN and press BACKSPACE:"
+msgstr ""
+
+#: ../../reference/repl.rst:39
+msgid ""
+"Finally type ``print(i)``, press RETURN, press BACKSPACE and press RETURN"
+" again:"
+msgstr ""
+
+#: ../../reference/repl.rst:52
+msgid ""
+"Auto-indent won't be applied if the previous two lines were all spaces.  "
+"This means that you can finish entering a compound statement by pressing "
+"RETURN twice, and then a third press will finish and execute."
+msgstr ""
+
+#: ../../reference/repl.rst:57
+msgid "Auto-completion"
+msgstr ""
+
+#: ../../reference/repl.rst:59
+msgid ""
+"While typing a command at the REPL, if the line typed so far corresponds "
+"to the beginning of the name of something, then pressing TAB will show "
+"possible things that could be entered. For example, first import the "
+"machine module by entering ``import machine`` and pressing RETURN. Then "
+"type ``m`` and press TAB and it should expand to ``machine``. Enter a dot"
+" ``.`` and press TAB again. You should see something like:"
+msgstr ""
+
+#: ../../reference/repl.rst:72
+msgid ""
+"The word will be expanded as much as possible until multiple "
+"possibilities exist. For example, type ``machine.Pin.AF3`` and press TAB "
+"and it will expand to ``machine.Pin.AF3_TIM``. Pressing TAB a second time"
+" will show the possible expansions:"
+msgstr ""
+
+#: ../../reference/repl.rst:82
+msgid "Interrupting a running program"
+msgstr ""
+
+#: ../../reference/repl.rst:84
+msgid ""
+"You can interrupt a running program by pressing Ctrl-C. This will raise a"
+" KeyboardInterrupt which will bring you back to the REPL, providing your "
+"program doesn't intercept the KeyboardInterrupt exception."
+msgstr ""
+
+#: ../../reference/repl.rst:88
+msgid "For example:"
+msgstr ""
+
+#: ../../reference/repl.rst:107
+msgid "Paste mode"
+msgstr ""
+
+#: ../../reference/repl.rst:109
+msgid ""
+"If you want to paste some code into your terminal window, the auto-indent"
+" feature will mess things up. For example, if you had the following "
+"python code: ::"
+msgstr ""
+
+#: ../../reference/repl.rst:117
+msgid ""
+"and you try to paste this into the normal REPL, then you will see "
+"something like this:"
+msgstr ""
+
+#: ../../reference/repl.rst:129
+msgid ""
+"If you press Ctrl-E, then you will enter paste mode, which essentially "
+"turns off the auto-indent feature, and changes the prompt from ``>>>`` to"
+" ``===``. For example:"
+msgstr ""
+
+#: ../../reference/repl.rst:143
+msgid ""
+"Paste Mode allows blank lines to be pasted. The pasted text is compiled "
+"as if it were a file. Pressing Ctrl-D exits paste mode and initiates the "
+"compilation."
+msgstr ""
+
+#: ../../reference/repl.rst:147
+msgid "Soft reset"
+msgstr ""
+
+#: ../../reference/repl.rst:149
+msgid ""
+"A soft reset will reset the python interpreter, but tries not to reset "
+"the method by which you're connected to the MicroPython board (USB-"
+"serial, or Wifi)."
+msgstr ""
+
+#: ../../reference/repl.rst:152
+msgid ""
+"You can perform a soft reset from the REPL by pressing Ctrl-D, or from "
+"your python code by executing: ::"
+msgstr ""
+
+#: ../../reference/repl.rst:157
+msgid ""
+"For example, if you reset your MicroPython board, and you execute a dir()"
+" command, you'd see something like this:"
+msgstr ""
+
+#: ../../reference/repl.rst:163
+msgid "Now create some variables and repeat the dir() command:"
+msgstr ""
+
+#: ../../reference/repl.rst:172
+msgid ""
+"Now if you enter Ctrl-D, and repeat the dir() command, you'll see that "
+"your variables no longer exist:"
+msgstr ""
+
+#: ../../reference/repl.rst:186
+msgid "The special variable _ (underscore)"
+msgstr ""
+
+#: ../../reference/repl.rst:188
+msgid ""
+"When you use the REPL, you may perform computations and see the results. "
+"MicroPython stores the results of the previous statement in the variable "
+"_ (underscore). So you can use the underscore to save the result in a "
+"variable. For example:"
+msgstr ""
+
+#: ../../reference/repl.rst:200
+msgid "Raw mode and raw-paste mode"
+msgstr ""
+
+#: ../../reference/repl.rst:202
+msgid ""
+"Raw mode (also called raw REPL) is not something that a person would "
+"normally use. It is intended for programmatic use and essentially behaves"
+" like paste mode with echo turned off, and with optional flow control."
+msgstr ""
+
+#: ../../reference/repl.rst:206
+msgid ""
+"Raw mode is entered using Ctrl-A. You then send your python code, "
+"followed by a Ctrl-D. The Ctrl-D will be acknowledged by 'OK' and then "
+"the python code will be compiled and executed. Any output (or errors) "
+"will be sent back. Entering Ctrl-B will leave raw mode and return the the"
+" regular (aka friendly) REPL."
+msgstr ""
+
+#: ../../reference/repl.rst:211
+msgid ""
+"Raw-paste mode is an additional mode within the raw REPL that includes "
+"flow control, and which compiles code as it receives it. This makes it "
+"more robust for high-speed transfer of code into the device, and it also "
+"uses less RAM when receiving because it does not need to store a verbatim"
+" copy of the code before compiling (unlike standard raw mode)."
+msgstr ""
+
+#: ../../reference/repl.rst:217
+msgid "Raw-paste mode uses the following protocol:"
+msgstr ""
+
+#: ../../reference/repl.rst:219
+msgid "Enter raw REPL as usual via ctrl-A."
+msgstr ""
+
+#: ../../reference/repl.rst:221
+msgid "Write 3 bytes: ``b\"\\x05A\\x01\"`` (ie ctrl-E then \"A\" then ctrl-A)."
+msgstr ""
+
+#: ../../reference/repl.rst:223
+msgid "Read 2 bytes to determine if the device entered raw-paste mode:"
+msgstr ""
+
+#: ../../reference/repl.rst:225
+msgid ""
+"If the result is ``b\"R\\x00\"`` then the device understands the command "
+"but doesn't support raw paste."
+msgstr ""
+
+#: ../../reference/repl.rst:228
+msgid ""
+"If the result is ``b\"R\\x01\"`` then the device does support raw paste "
+"and has entered this mode."
+msgstr ""
+
+#: ../../reference/repl.rst:231
+msgid ""
+"Otherwise the result should be ``b\"ra\"`` and the device doesn't support"
+" raw paste and the string ``b\"w REPL; CTRL-B to exit\\r\\n>\"`` should "
+"be read and discarded."
+msgstr ""
+
+#: ../../reference/repl.rst:235
+msgid ""
+"If the device is in raw-paste mode then continue, otherwise fallback to "
+"standard raw mode."
+msgstr ""
+
+#: ../../reference/repl.rst:238
+msgid ""
+"Read 2 bytes, this is the flow control window-size-increment (in bytes) "
+"stored as a 16-bit unsigned little endian integer.  The initial value for"
+" the remaining-window-size variable should be set to this number."
+msgstr ""
+
+#: ../../reference/repl.rst:242
+msgid "Write out the code to the device:"
+msgstr ""
+
+#: ../../reference/repl.rst:244
+msgid ""
+"While there are bytes to send, write up to the remaining-window-size "
+"worth of bytes, and decrease the remaining-window-size by the number of "
+"bytes written."
+msgstr ""
+
+#: ../../reference/repl.rst:248
+msgid ""
+"If the remaining-window-size is 0, or there is a byte waiting to read, "
+"read 1 byte.  If this byte is ``b\"\\x01\"`` then increase the remaining-"
+"window-size by the window-size-increment from step 5.  If this byte is "
+"``b\"\\x04\"`` then the device wants to end the data reception, and "
+"``b\"\\x04\"`` should be written to the device and no more code sent "
+"after that.  (Note: if there is a byte waiting to be read from the device"
+" then it does not need to be read and acted upon immediately, the device "
+"will continue to consume incoming bytes as long as reamining-window-size "
+"is greater than 0.)"
+msgstr ""
+
+#: ../../reference/repl.rst:257
+msgid ""
+"When all code has been written to the device, write ``b\"\\x04\"`` to "
+"indicate end-of-data."
+msgstr ""
+
+#: ../../reference/repl.rst:260
+msgid ""
+"Read from the device until ``b\"\\x04\"`` is received.  At this point the"
+" device has received and compiled all of the code that was sent and is "
+"executing it."
+msgstr ""
+
+#: ../../reference/repl.rst:263
+msgid ""
+"The device outputs any characters produced by the executing code.  When "
+"(if) the code finishes ``b\"\\x04\"`` will be output, followed by any "
+"exception that was uncaught, followed again by ``b\"\\x04\"``.  It then "
+"goes back to the standard raw REPL and outputs ``b\">\"``."
+msgstr ""
+
+#: ../../reference/repl.rst:268
+msgid ""
+"For example, starting at a new line at the normal (friendly) REPL, if you"
+" write::"
+msgstr ""
+
+#: ../../reference/repl.rst:272
+msgid "Then the device will respond with something like::"
+msgstr ""
+
+#: ../../reference/repl.rst:276
+msgid "Broken down over time this looks like::"
+msgstr ""
+
+#: ../../reference/repl.rst:293
+msgid ""
+"In this case the flow control window-size-increment is 128 and there are "
+"two windows worth of data immediately available at the start, one from "
+"the initial window-size-increment value and one from the explicit "
+"``b\"\\x01\"`` value that is sent.  So this means up to 256 bytes can be "
+"written to begin with before waiting or checking for more incoming flow-"
+"control characters."
+msgstr ""
+
+#: ../../reference/repl.rst:299
+msgid ""
+"The ``tools/pyboard.py`` program uses the raw REPL, including raw-paste "
+"mode, to execute Python code on a MicroPython-enabled board."
+msgstr ""
+

@@ -1,0 +1,386 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/pyb.Pin.rst:5
+msgid "class Pin -- control I/O pins"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:7
+msgid ""
+"A pin is the basic object to control I/O pins.  It has methods to set the"
+" mode of the pin (input, output, etc) and methods to get and set the "
+"digital logic level. For analog control of a pin, see the ADC class."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:11
+msgid "Usage Model:"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:13
+msgid "All Board Pins are predefined as pyb.Pin.board.Name::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:19
+msgid ""
+"CPU pins which correspond to the board pins are available as "
+"``pyb.Pin.cpu.Name``. For the CPU pins, the names are the port letter "
+"followed by the pin number. On the PYBv1.0, ``pyb.Pin.board.X1`` and "
+"``pyb.Pin.cpu.A0`` are the same pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:24
+msgid "You can also use strings::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:28
+msgid "Users can add their own names::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:34
+msgid "and can query mappings::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:38
+msgid "Users can also add their own mapping function::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:46
+msgid ""
+"So, if you were to call: ``pyb.Pin(\"LeftMotorDir\", pyb.Pin.OUT_PP)`` "
+"then ``\"LeftMotorDir\"`` is passed directly to the mapper function."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:49
+msgid ""
+"To summarise, the following order determines how things get mapped into "
+"an ordinal pin number:"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:52
+msgid "Directly specify a pin object"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:53
+msgid "User supplied mapping function"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:54
+msgid "User supplied mapping (object must be usable as a dictionary key)"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:55
+msgid "Supply a string which matches a board pin"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:56
+msgid "Supply a string which matches a CPU port/pin"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:58
+msgid ""
+"You can set ``pyb.Pin.debug(True)`` to get some debug information about "
+"how a particular object gets mapped to a pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:61
+msgid ""
+"When a pin has the ``Pin.PULL_UP`` or ``Pin.PULL_DOWN`` pull-mode "
+"enabled, that pin has an effective 40k Ohm resistor pulling it to 3V3 or "
+"GND respectively (except pin Y5 which has 11k Ohm resistors)."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:65
+msgid ""
+"Now every time a falling edge is seen on the gpio pin, the callback will "
+"be executed. Caution: mechanical push buttons have \"bounce\" and pushing"
+" or releasing a switch will often generate multiple edges. See: "
+"http://www.eng.utah.edu/~cs5780/debouncing.pdf for a detailed "
+"explanation, along with various techniques for debouncing."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:71
+msgid ""
+"All pin objects go through the pin mapper to come up with one of the gpio"
+" pins."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:75
+msgid "Constructors"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:79
+msgid ""
+"Create a new Pin object associated with the id.  If additional arguments "
+"are given, they are used to initialise the pin.  See :meth:`pin.init`."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:83
+msgid "Class methods"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:87
+msgid "Get or set the debugging state (``True`` or ``False`` for on or off)."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:91
+msgid "Get or set the pin mapper dictionary."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:95
+msgid "Get or set the pin mapper function."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:99 ../../library/pyb.Pin.rst:253
+msgid "Methods"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:103
+msgid "Initialise the pin:"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:105
+msgid "*mode* can be one of:"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:107
+msgid "``Pin.IN`` - configure the pin for input;"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:108
+msgid "``Pin.OUT_PP`` - configure the pin for output, with push-pull control;"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:109
+msgid "``Pin.OUT_OD`` - configure the pin for output, with open-drain control;"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:110
+msgid "``Pin.AF_PP`` - configure the pin for alternate function, pull-pull;"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:111
+msgid "``Pin.AF_OD`` - configure the pin for alternate function, open-drain;"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:112
+msgid "``Pin.ANALOG`` - configure the pin for analog."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:114
+msgid "*pull* can be one of:"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:116
+msgid "``Pin.PULL_NONE`` - no pull up or down resistors;"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:117
+msgid "``Pin.PULL_UP`` - enable the pull-up resistor;"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:118
+msgid "``Pin.PULL_DOWN`` - enable the pull-down resistor."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:120
+msgid ""
+"*value* if not None will set the port output value before enabling the "
+"pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:122
+msgid ""
+"*alt* can be used when mode is ``Pin.AF_PP`` or ``Pin.AF_OD`` to set the "
+"index or name of one of the alternate functions associated with a pin. "
+"This arg was previously called *af* which can still be used if needed."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:126
+msgid "Returns: ``None``."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:130
+msgid "Get or set the digital logic level of the pin:"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:132
+msgid "With no argument, return 0 or 1 depending on the logic level of the pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:133
+msgid ""
+"With ``value`` given, set the logic level of the pin.  ``value`` can be "
+"anything that converts to a boolean.  If it converts to ``True``, the pin"
+" is set high, otherwise it is set low."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:139
+msgid "Return a string describing the pin object."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:143
+msgid ""
+"Returns the currently configured alternate-function of the pin. The "
+"integer returned will match one of the allowed constants for the af "
+"argument to the init function."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:149
+msgid "Returns an array of alternate functions available for this pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:153
+msgid "Returns the base address of the GPIO block associated with this pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:157
+msgid ""
+"Returns the currently configured mode of the pin. The integer returned "
+"will match one of the allowed constants for the mode argument to the init"
+" function."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:163
+msgid "Get the pin name."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:167
+msgid "Returns the cpu and board names for this pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:171
+msgid "Get the pin number."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:175
+msgid "Get the pin port."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:179
+msgid ""
+"Returns the currently configured pull of the pin. The integer returned "
+"will match one of the allowed constants for the pull argument to the init"
+" function."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:184
+msgid "Constants"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:188
+msgid "initialise the pin to alternate-function mode with an open-drain drive"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:192
+msgid "initialise the pin to alternate-function mode with a push-pull drive"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:196
+msgid "initialise the pin to analog mode"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:200
+msgid "initialise the pin to input mode"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:204
+msgid "initialise the pin to output mode with an open-drain drive"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:208
+msgid "initialise the pin to output mode with a push-pull drive"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:212
+msgid "enable the pull-down resistor on the pin"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:216
+msgid "don't enable any pull up or down resistors on the pin"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:220
+msgid "enable the pull-up resistor on the pin"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:223
+msgid "class PinAF -- Pin Alternate Functions"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:225
+msgid ""
+"A Pin represents a physical pin on the microprocessor. Each pin can have "
+"a variety of functions (GPIO, I2C SDA, etc). Each PinAF object represents"
+" a particular function for a pin."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:229
+msgid "Usage Model::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:234
+msgid ""
+"x3_af will now contain an array of PinAF objects which are available on "
+"pin X3."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:238
+msgid "For the pyboard, x3_af would contain:"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:238
+msgid "[Pin.AF1_TIM2, Pin.AF2_TIM5, Pin.AF3_TIM9, Pin.AF7_USART2]"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:240
+msgid ""
+"Normally, each peripheral would configure the af automatically, but "
+"sometimes the same function is available on multiple pins, and having "
+"more control is desired."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:244
+msgid "To configure X3 to expose TIM2_CH3, you could use::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:248
+msgid "or::"
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:257
+msgid "Return a string describing the alternate function."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:261
+msgid "Return the alternate function index."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:265
+msgid "Return the name of the alternate function."
+msgstr ""
+
+#: ../../library/pyb.Pin.rst:269
+msgid ""
+"Return the base register associated with the peripheral assigned to this "
+"alternate function. For example, if the alternate function were TIM2_CH3 "
+"this would return stm.TIM2"
+msgstr ""
+

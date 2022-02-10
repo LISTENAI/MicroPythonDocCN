@@ -1,0 +1,299 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../genrst/core_language.rst:4
+msgid "Core language"
+msgstr ""
+
+#: ../../genrst/core_language.rst:5
+msgid "Generated Thu 10 Feb 2022 06:34:04 UTC"
+msgstr ""
+
+#: ../../genrst/core_language.rst:10
+msgid ""
+"f-strings don't support concatenation with adjacent literals if the "
+"adjacent literals contain braces or are f-strings"
+msgstr ""
+
+#: ../../genrst/core_language.rst:12 ../../genrst/core_language.rst:43
+#: ../../genrst/core_language.rst:67 ../../genrst/core_language.rst:87
+msgid "**Cause:** MicroPython is optimised for code space."
+msgstr ""
+
+#: ../../genrst/core_language.rst:14
+msgid ""
+"**Workaround:** Use the + operator between literal strings when either or"
+" both are f-strings"
+msgstr ""
+
+#: ../../genrst/core_language.rst:16 ../../genrst/core_language.rst:47
+#: ../../genrst/core_language.rst:69 ../../genrst/core_language.rst:91
+#: ../../genrst/core_language.rst:123 ../../genrst/core_language.rst:155
+#: ../../genrst/core_language.rst:188 ../../genrst/core_language.rst:233
+#: ../../genrst/core_language.rst:272 ../../genrst/core_language.rst:296
+#: ../../genrst/core_language.rst:323 ../../genrst/core_language.rst:350
+#: ../../genrst/core_language.rst:399 ../../genrst/core_language.rst:425
+#: ../../genrst/core_language.rst:459 ../../genrst/core_language.rst:482
+#: ../../genrst/core_language.rst:505 ../../genrst/core_language.rst:540
+msgid "Sample code::"
+msgstr ""
+
+#: ../../genrst/core_language.rst:27 ../../genrst/core_language.rst:54
+#: ../../genrst/core_language.rst:75 ../../genrst/core_language.rst:107
+#: ../../genrst/core_language.rst:139 ../../genrst/core_language.rst:172
+#: ../../genrst/core_language.rst:218 ../../genrst/core_language.rst:253
+#: ../../genrst/core_language.rst:280 ../../genrst/core_language.rst:307
+#: ../../genrst/core_language.rst:335 ../../genrst/core_language.rst:378
+#: ../../genrst/core_language.rst:411 ../../genrst/core_language.rst:439
+#: ../../genrst/core_language.rst:466 ../../genrst/core_language.rst:489
+#: ../../genrst/core_language.rst:521 ../../genrst/core_language.rst:553
+msgid "CPy output:"
+msgstr ""
+
+#: ../../genrst/core_language.rst:27 ../../genrst/core_language.rst:54
+#: ../../genrst/core_language.rst:75 ../../genrst/core_language.rst:107
+#: ../../genrst/core_language.rst:139 ../../genrst/core_language.rst:172
+#: ../../genrst/core_language.rst:218 ../../genrst/core_language.rst:253
+#: ../../genrst/core_language.rst:280 ../../genrst/core_language.rst:307
+#: ../../genrst/core_language.rst:335 ../../genrst/core_language.rst:378
+#: ../../genrst/core_language.rst:411 ../../genrst/core_language.rst:439
+#: ../../genrst/core_language.rst:466 ../../genrst/core_language.rst:489
+#: ../../genrst/core_language.rst:521 ../../genrst/core_language.rst:553
+msgid "uPy output:"
+msgstr ""
+
+#: ../../genrst/core_language.rst:41
+msgid ""
+"f-strings cannot support expressions that require parsing to resolve "
+"unbalanced nested braces and brackets"
+msgstr ""
+
+#: ../../genrst/core_language.rst:45
+msgid ""
+"**Workaround:** Always use balanced braces and brackets in expressions "
+"inside f-strings"
+msgstr ""
+
+#: ../../genrst/core_language.rst:65
+msgid "Raw f-strings are not supported"
+msgstr ""
+
+#: ../../genrst/core_language.rst:85
+msgid "f-strings don't support the !r, !s, and !a conversions"
+msgstr ""
+
+#: ../../genrst/core_language.rst:89
+msgid "**Workaround:** Use repr(), str(), and ascii() explictly."
+msgstr ""
+
+#: ../../genrst/core_language.rst:116
+msgid "Classes"
+msgstr ""
+
+#: ../../genrst/core_language.rst:121
+msgid "Special method __del__ not implemented for user-defined classes"
+msgstr ""
+
+#: ../../genrst/core_language.rst:149
+msgid "Method Resolution Order (MRO) is not compliant with CPython"
+msgstr ""
+
+#: ../../genrst/core_language.rst:151
+msgid "**Cause:** Depth first non-exhaustive method resolution order"
+msgstr ""
+
+#: ../../genrst/core_language.rst:153
+msgid ""
+"**Workaround:** Avoid complex class hierarchies with multiple inheritance"
+" and complex method overrides. Keep in mind that many languages don't "
+"support multiple inheritance at all."
+msgstr ""
+
+#: ../../genrst/core_language.rst:182
+msgid "When inheriting from multiple classes super() only calls one class"
+msgstr ""
+
+#: ../../genrst/core_language.rst:184
+msgid "**Cause:** See :ref:`cpydiff_core_class_mro`"
+msgstr ""
+
+#: ../../genrst/core_language.rst:186
+msgid "**Workaround:** See :ref:`cpydiff_core_class_mro`"
+msgstr ""
+
+#: ../../genrst/core_language.rst:231
+msgid ""
+"Calling super() getter property in subclass will return a property "
+"object, not the value"
+msgstr ""
+
+#: ../../genrst/core_language.rst:261
+msgid "Functions"
+msgstr ""
+
+#: ../../genrst/core_language.rst:266
+msgid "Error messages for methods may display unexpected argument counts"
+msgstr ""
+
+#: ../../genrst/core_language.rst:268
+msgid "**Cause:** MicroPython counts \"self\" as an argument."
+msgstr ""
+
+#: ../../genrst/core_language.rst:270
+msgid ""
+"**Workaround:** Interpret error messages with the information above in "
+"mind."
+msgstr ""
+
+#: ../../genrst/core_language.rst:290
+msgid "Function objects do not have the ``__module__`` attribute"
+msgstr ""
+
+#: ../../genrst/core_language.rst:292
+msgid "**Cause:** MicroPython is optimized for reduced code size and RAM usage."
+msgstr ""
+
+#: ../../genrst/core_language.rst:294
+msgid ""
+"**Workaround:** Use ``sys.modules[function.__globals__['__name__']]`` for"
+" non-builtin modules."
+msgstr ""
+
+#: ../../genrst/core_language.rst:317
+msgid "User-defined attributes for functions are not supported"
+msgstr ""
+
+#: ../../genrst/core_language.rst:319
+msgid "**Cause:** MicroPython is highly optimized for memory usage."
+msgstr ""
+
+#: ../../genrst/core_language.rst:321
+msgid "**Workaround:** Use external dictionary, e.g. ``FUNC_X[f] = 0``."
+msgstr ""
+
+#: ../../genrst/core_language.rst:343
+msgid "Generator"
+msgstr ""
+
+#: ../../genrst/core_language.rst:348
+msgid ""
+"Context manager __exit__() not called in a generator which does not run "
+"to completion"
+msgstr ""
+
+#: ../../genrst/core_language.rst:390
+msgid "Runtime"
+msgstr ""
+
+#: ../../genrst/core_language.rst:395
+msgid "Local variables aren't included in locals() result"
+msgstr ""
+
+#: ../../genrst/core_language.rst:397
+msgid ""
+"**Cause:** MicroPython doesn't maintain symbolic local environment, it is"
+" optimized to an array of slots. Thus, local variables can't be accessed "
+"by a name."
+msgstr ""
+
+#: ../../genrst/core_language.rst:421
+msgid "Code running in eval() function doesn't have access to local variables"
+msgstr ""
+
+#: ../../genrst/core_language.rst:423
+msgid ""
+"**Cause:** MicroPython doesn't maintain symbolic local environment, it is"
+" optimized to an array of slots. Thus, local variables can't be accessed "
+"by a name. Effectively, ``eval(expr)`` in MicroPython is equivalent to "
+"``eval(expr, globals(), globals())``."
+msgstr ""
+
+#: ../../genrst/core_language.rst:448
+msgid "import"
+msgstr ""
+
+#: ../../genrst/core_language.rst:453
+msgid "__all__ is unsupported in __init__.py in MicroPython."
+msgstr ""
+
+#: ../../genrst/core_language.rst:455
+msgid "**Cause:** Not implemented."
+msgstr ""
+
+#: ../../genrst/core_language.rst:457
+msgid ""
+"**Workaround:** Manually import the sub-modules directly in __init__.py "
+"using ``from . import foo, bar``."
+msgstr ""
+
+#: ../../genrst/core_language.rst:476
+msgid ""
+"__path__ attribute of a package has a different type (single string "
+"instead of list of strings) in MicroPython"
+msgstr ""
+
+#: ../../genrst/core_language.rst:478
+msgid ""
+"**Cause:** MicroPython does't support namespace packages split across "
+"filesystem. Beyond that, MicroPython's import system is highly optimized "
+"for minimal memory usage."
+msgstr ""
+
+#: ../../genrst/core_language.rst:480
+msgid ""
+"**Workaround:** Details of import handling is inherently implementation "
+"dependent. Don't rely on such details in portable applications."
+msgstr ""
+
+#: ../../genrst/core_language.rst:499
+msgid "Failed to load modules are still registered as loaded"
+msgstr ""
+
+#: ../../genrst/core_language.rst:501
+msgid ""
+"**Cause:** To make module handling more efficient, it's not wrapped with "
+"exception handling."
+msgstr ""
+
+#: ../../genrst/core_language.rst:503
+msgid ""
+"**Workaround:** Test modules before production use; during development, "
+"use ``del sys.modules[\"name\"]``, or just soft or hard reset the board."
+msgstr ""
+
+#: ../../genrst/core_language.rst:534
+msgid "MicroPython does't support namespace packages split across filesystem."
+msgstr ""
+
+#: ../../genrst/core_language.rst:536
+msgid ""
+"**Cause:** MicroPython's import system is highly optimized for "
+"simplicity, minimal memory usage, and minimal filesystem search overhead."
+msgstr ""
+
+#: ../../genrst/core_language.rst:538
+msgid ""
+"**Workaround:** Don't install modules belonging to the same namespace "
+"package in different directories. For MicroPython, it's recommended to "
+"have at most 3-component module search paths: for your current "
+"application, per-user (writable), system-wide (non-writable)."
+msgstr ""
+

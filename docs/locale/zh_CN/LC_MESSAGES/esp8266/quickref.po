@@ -1,0 +1,398 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../esp8266/quickref.rst:4
+msgid "Quick reference for the ESP8266"
+msgstr ""
+
+msgid "Adafruit Feather HUZZAH board"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:10
+msgid "The Adafruit Feather HUZZAH board (image attribution: Adafruit)."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:12
+msgid ""
+"Below is a quick reference for ESP8266-based boards.  If it is your first"
+" time working with this board please consider reading the following "
+"sections first:"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:22
+msgid "Installing MicroPython"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:24
+msgid ""
+"See the corresponding section of tutorial: :ref:`intro`. It also includes"
+" a troubleshooting subsection."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:28
+msgid "General board control"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:30
+msgid ""
+"The MicroPython REPL is on UART0 (GPIO1=TX, GPIO3=RX) at baudrate 115200."
+" Tab-completion is useful to find out what methods an object has. Paste "
+"mode (ctrl-E) is useful to paste a large slab of Python code into the "
+"REPL."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:35
+msgid "The :mod:`machine` module::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:42
+msgid "The :mod:`esp` module::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:50
+msgid "Networking"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:52
+msgid "The :mod:`network` module::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:68
+msgid "A useful function for connecting to your local WiFi network is::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:81
+msgid ""
+"Once the network is established the :mod:`socket <socket>` module can be "
+"used to create and use TCP/UDP sockets as usual."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:85
+msgid "Delay and timing"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:87
+msgid "Use the :mod:`time <time>` module::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:98
+msgid "Timers"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:100
+msgid ""
+"Virtual (RTOS-based) timers are supported. Use the :ref:`machine.Timer "
+"<machine.Timer>` class with timer ID of -1::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:109
+msgid "The period is in milliseconds."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:112
+msgid "Pins and GPIO"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:114
+msgid "Use the :ref:`machine.Pin <machine.Pin>` class::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:129
+msgid ""
+"Available pins are: 0, 1, 2, 3, 4, 5, 12, 13, 14, 15, 16, which "
+"correspond to the actual GPIO pin numbers of ESP8266 chip. Note that many"
+" end-user boards use their own adhoc pin numbering (marked e.g. D0, D1, "
+"...). As MicroPython supports different boards and modules, physical pin "
+"numbering was chosen as the lowest common denominator. For mapping "
+"between board logical pins and physical chip pins, consult your board "
+"documentation."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:136
+msgid ""
+"Note that Pin(1) and Pin(3) are REPL UART TX and RX respectively. Also "
+"note that Pin(16) is a special pin (used for wakeup from deepsleep mode) "
+"and may be not available for use with higher-level classes like "
+"``Neopixel``."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:141
+msgid ""
+"There's a higher-level abstraction :ref:`machine.Signal <machine.Signal>`"
+" which can be used to invert a pin. Useful for illuminating active-low "
+"LEDs using ``on()`` or ``value(1)``."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:146
+msgid "UART (serial bus)"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:148
+msgid "See :ref:`machine.UART <machine.UART>`. ::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:155
+msgid ""
+"Two UARTs are available. UART0 is on Pins 1 (TX) and 3 (RX). UART0 is "
+"bidirectional, and by default is used for the REPL. UART1 is on Pins 2 "
+"(TX) and 8 (RX) however Pin 8 is used to connect the flash chip, so UART1"
+" is TX only."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:160
+msgid ""
+"When UART0 is attached to the REPL, all incoming chars on UART(0) go "
+"straight to stdin so uart.read() will always return None.  Use "
+"sys.stdin.read() if it's needed to read characters from the UART(0) while"
+" it's also used for the REPL (or detach, read, then reattach). When "
+"detached the UART(0) can be used for other purposes."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:166
+msgid ""
+"If there are no objects in any of the dupterm slots when the REPL is "
+"started (on hard or soft reset) then UART(0) is automatically attached. "
+"Without this, the only way to recover a board without a REPL would be to "
+"completely erase and reflash (which would install the default boot.py "
+"which attaches the REPL)."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:172
+msgid "To detach the REPL from UART0, use::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:177
+msgid ""
+"The REPL is attached by default. If you have detached it, to reattach it "
+"use::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:185
+msgid "PWM (pulse width modulation)"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:187
+msgid ""
+"PWM can be enabled on all pins except Pin(16).  There is a single "
+"frequency for all channels, with range between 1 and 1000 (measured in "
+"Hz).  The duty cycle is between 0 and 1023 inclusive."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:191
+msgid "Use the ``machine.PWM`` class::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:205
+msgid "ADC (analog to digital conversion)"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:207
+msgid ""
+"ADC is available on a dedicated pin. Note that input voltages on the ADC "
+"pin must be between 0v and 1.0v."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:210
+msgid "Use the :ref:`machine.ADC <machine.ADC>` class::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:218
+msgid "Software SPI bus"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:220
+msgid ""
+"There are two SPI drivers. One is implemented in software (bit-banging) "
+"and works on all pins, and is accessed via the :ref:`machine.SoftSPI "
+"<machine.SoftSPI>` class::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:248
+msgid "Hardware SPI bus"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:250
+msgid ""
+"The hardware SPI is faster (up to 80Mhz), but only works on following "
+"pins: ``MISO`` is GPIO12, ``MOSI`` is GPIO13, and ``SCK`` is GPIO14. It "
+"has the same methods as the bitbanging SPI class above, except for the "
+"pin parameters for the constructor and init (as those are fixed)::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:259
+msgid "(``SPI(0)`` is used for FlashROM and not available to users.)"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:262
+msgid "I2C bus"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:264
+msgid ""
+"The I2C driver is implemented in software and works on all pins, and is "
+"accessed via the :ref:`machine.I2C <machine.I2C>` class (which is an "
+"alias of :ref:`machine.SoftI2C <machine.SoftI2C>`)::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:280
+msgid "Real time clock (RTC)"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:282
+msgid "See :ref:`machine.RTC <machine.RTC>` ::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:296
+msgid ""
+"Not all methods are implemented: `RTC.now()`, `RTC.irq(handler=*) "
+"<RTC.irq>` (using a custom handler), `RTC.init()` and `RTC.deinit()` are "
+"currently not supported."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:301
+msgid "WDT (Watchdog timer)"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:303
+msgid "See :ref:`machine.WDT <machine.WDT>`. ::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:312
+msgid "Deep-sleep mode"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:314
+msgid ""
+"Connect GPIO16 to the reset pin (RST on HUZZAH).  Then the following code"
+" can be used to sleep, wake and check the reset cause::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:334
+msgid "OneWire driver"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:336
+msgid "The OneWire driver is implemented in software and works on all pins::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:349
+msgid "There is a specific driver for DS18S20 and DS18B20 devices::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:359
+msgid ""
+"Be sure to put a 4.7k pull-up resistor on the data line.  Note that the "
+"``convert_temp()`` method must be called each time you want to sample the"
+" temperature."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:364
+msgid "NeoPixel driver"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:366
+msgid "Use the ``neopixel`` module::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:377
+msgid "For low-level driving of a NeoPixel::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:383
+msgid ""
+"By default ``NeoPixel`` is configured to control the more popular "
+"*800kHz* units. It is possible to use alternative timing to control other"
+" (typically 400kHz) devices by passing ``timing=0`` when constructing the"
+" ``NeoPixel`` object."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:390
+msgid "APA102 driver"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:392
+msgid "Use the ``apa102`` module::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:404
+msgid "For low-level driving of an APA102::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:410
+msgid "DHT driver"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:412
+msgid "The DHT driver is implemented in software and works on all pins::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:428
+msgid "SSD1306 driver"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:430
+msgid ""
+"Driver for SSD1306 monochrome OLED displays. See tutorial :ref:`ssd1306`."
+" ::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:442
+msgid "WebREPL (web browser interactive prompt)"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:444
+msgid ""
+"WebREPL (REPL over WebSockets, accessible via a web browser) is an "
+"experimental feature available in ESP8266 port. Download web client from "
+"https://github.com/micropython/webrepl (hosted version available at "
+"http://micropython.org/webrepl), and configure it by executing::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:451
+msgid ""
+"and following on-screen instructions. After reboot, it will be available "
+"for connection. If you disabled automatic start-up on boot, you may run "
+"configured daemon on demand using::"
+msgstr ""
+
+#: ../../esp8266/quickref.rst:458
+msgid ""
+"The supported way to use WebREPL is by connecting to ESP8266 access "
+"point, but the daemon is also started on STA interface if it is active, "
+"so if your router is set up and works correctly, you may also use WebREPL"
+" while connected to your normal Internet access point (use the ESP8266 AP"
+" connection method if you face any issues)."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:464
+msgid ""
+"Besides terminal/command prompt access, WebREPL also has provision for "
+"file transfer (both upload and download). Web client has buttons for the "
+"corresponding functions, or you can use command-line client "
+"``webrepl_cli.py`` from the repository above."
+msgstr ""
+
+#: ../../esp8266/quickref.rst:469
+msgid ""
+"See the MicroPython forum for other community-supported alternatives to "
+"transfer files to ESP8266."
+msgstr ""
+

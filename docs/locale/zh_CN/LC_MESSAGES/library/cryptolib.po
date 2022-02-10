@@ -1,0 +1,85 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/cryptolib.rst:2
+msgid ":mod:`cryptolib` -- cryptographic ciphers"
+msgstr ""
+
+#: ../../library/cryptolib.rst:8
+msgid "Classes"
+msgstr ""
+
+#: ../../library/cryptolib.rst:14
+msgid ""
+"Initialize cipher object, suitable for encryption/decryption. Note: after"
+" initialization, cipher object can be use only either for encryption or "
+"decryption. Running decrypt() operation after encrypt() or vice versa is "
+"not supported."
+msgstr ""
+
+#: ../../library/cryptolib.rst:19
+msgid "Parameters are:"
+msgstr ""
+
+#: ../../library/cryptolib.rst:21
+msgid "*key* is an encryption/decryption key (bytes-like)."
+msgstr ""
+
+#: ../../library/cryptolib.rst:22
+msgid "*mode* is:"
+msgstr ""
+
+#: ../../library/cryptolib.rst:24
+msgid ""
+"``1`` (or ``cryptolib.MODE_ECB`` if it exists) for Electronic Code Book "
+"(ECB)."
+msgstr ""
+
+#: ../../library/cryptolib.rst:25
+msgid ""
+"``2`` (or ``cryptolib.MODE_CBC`` if it exists) for Cipher Block Chaining "
+"(CBC)."
+msgstr ""
+
+#: ../../library/cryptolib.rst:26
+msgid "``6`` (or ``cryptolib.MODE_CTR`` if it exists) for Counter mode (CTR)."
+msgstr ""
+
+#: ../../library/cryptolib.rst:28
+msgid "*IV* is an initialization vector for CBC mode."
+msgstr ""
+
+#: ../../library/cryptolib.rst:29
+msgid "For Counter mode, *IV* is the initial value for the counter."
+msgstr ""
+
+#: ../../library/cryptolib.rst:33
+msgid ""
+"Encrypt *in_buf*. If no *out_buf* is given result is returned as a newly "
+"allocated `bytes` object. Otherwise, result is written into mutable "
+"buffer *out_buf*. *in_buf* and *out_buf* can also refer to the same "
+"mutable buffer, in which case data is encrypted in-place."
+msgstr ""
+
+#: ../../library/cryptolib.rst:40
+msgid "Like `encrypt()`, but for decryption."
+msgstr ""
+

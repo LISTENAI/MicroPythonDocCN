@@ -1,0 +1,213 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../pyboard/tutorial/script.rst:2
+msgid "Running your first script"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:4
+msgid ""
+"Let's jump right in and get a Python script running on the pyboard.  "
+"After all, that's what it's all about!"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:8
+msgid "Connecting your pyboard"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:10
+msgid ""
+"Connect your pyboard to your PC (Windows, Mac or Linux) with a micro USB "
+"cable. There is only one way that the cable will connect, so you can't "
+"get it wrong."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:15
+msgid ""
+"When the pyboard is connected to your PC it will power on and enter the "
+"start up process (the boot process).  The green LED should light up for "
+"half a second or less, and when it turns off it means the boot process "
+"has completed."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:20
+msgid "Opening the pyboard USB drive"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:22
+msgid ""
+"Your PC should now recognise the pyboard.  It depends on the type of PC "
+"you have as to what happens next:"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:25
+msgid ""
+"**Windows**: Your pyboard will appear as a removable USB flash drive. "
+"Windows may automatically pop-up a window, or you may need to go there "
+"using Explorer."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:29
+msgid ""
+"Windows will also see that the pyboard has a serial device, and it will "
+"try to automatically configure this device.  If it does, cancel the "
+"process. We will get the serial device working in the next tutorial."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:33
+msgid ""
+"**Mac**: Your pyboard will appear on the desktop as a removable disc. It "
+"will probably be called ``PYBFLASH``.  Click on it to open the pyboard "
+"folder."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:36
+msgid ""
+"**Linux**: Your pyboard will appear as a removable medium.  On Ubuntu it "
+"will mount automatically and pop-up a window with the pyboard folder. On "
+"other Linux distributions, the pyboard may be mounted automatically, or "
+"you may need to do it manually.  At a terminal command line, type "
+"``lsblk`` to see a list of connected drives, and then ``mount /dev/sdb1``"
+" (replace ``sdb1`` with the appropriate device).  You may need to be root"
+" to do this."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:43
+msgid ""
+"Okay, so you should now have the pyboard connected as a USB flash drive, "
+"and a window (or command line) should be showing the files on the pyboard"
+" drive."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:46
+msgid ""
+"The drive you are looking at is known as ``/flash`` by the pyboard, and "
+"should contain the following 4 files:"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:50
+msgid ""
+"`boot.py <http://micropython.org/resources/fresh-pyboard/boot.py>`_ -- "
+"the various configuration options for the pyboard."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:50
+msgid "It is executed when the pyboard boots up."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:53
+msgid ""
+"`main.py <http://micropython.org/resources/fresh-pyboard/main.py>`_ -- "
+"the Python program to be run."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:53
+msgid "It is executed after ``boot.py``."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:56
+msgid ""
+"`README.txt <http://micropython.org/resources/fresh-pyboard/README.txt>`_"
+" -- basic information about getting started with the pyboard."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:56
+msgid "This provides pointers for new users and can be safely deleted."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:59
+msgid ""
+"`pybcdc.inf <http://micropython.org/resources/fresh-pyboard/pybcdc.inf>`_"
+" -- the Windows driver file to configure the serial USB device."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:59
+msgid "More about this in the next tutorial."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:62
+msgid "Editing ``main.py``"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:64
+msgid ""
+"Now we are going to write our Python program, so open the ``main.py`` "
+"file in a text editor.  On Windows you can use notepad, or any other "
+"editor. On Mac and Linux, use your favourite text editor.  With the file "
+"open you will see it contains 1 line::"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:71
+msgid ""
+"This line starts with a # character, which means that it is a *comment*."
+"  Such lines will not do anything, and are there for you to write notes "
+"about your program."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:75
+msgid "Let's add 2 lines to this ``main.py`` file, to make it look like this::"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:81
+msgid ""
+"The first line we wrote says that we want to use the ``pyb`` module. This"
+" module contains all the functions and classes to control the features of"
+" the pyboard."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:85
+msgid ""
+"The second line that we wrote turns the blue LED on: it first gets the "
+"``LED`` class from the ``pyb`` module, creates LED number 4 (the blue "
+"LED), and then turns it on."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:90
+msgid "Resetting the pyboard"
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:92
+msgid ""
+"To run this little script, you need to first save and close the "
+"``main.py`` file, and then eject (or unmount) the pyboard USB drive.  Do "
+"this like you would a normal USB flash drive."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:96
+msgid ""
+"When the drive is safely ejected/unmounted you can get to the fun part: "
+"press the RST switch on the pyboard to reset and run your script. The RST"
+" switch is the small black button just below the USB connector on the "
+"board, on the right edge."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:101
+msgid ""
+"When you press RST the green LED will flash quickly, and then the blue "
+"LED should turn on and stay on."
+msgstr ""
+
+#: ../../pyboard/tutorial/script.rst:104
+msgid ""
+"Congratulations!  You have written and run your very first MicroPython "
+"program!"
+msgstr ""
+

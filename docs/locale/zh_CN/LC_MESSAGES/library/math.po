@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) - The MicroPython Documentation is Copyright © 2014-2022,
+# Damien P. George, Paul Sokolovsky, and contributors
+# This file is distributed under the same license as the MicroPython
+# package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: MicroPython 1.18\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-02-10 14:42+0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.9.1\n"
+
+#: ../../library/math.rst:2
+msgid ":mod:`math` -- mathematical functions"
+msgstr ""
+
+#: ../../library/math.rst:7
+msgid "|see_cpython_module| :mod:`python:math`."
+msgstr ""
+
+#: ../../library/math.rst:9
+msgid ""
+"The ``math`` module provides some basic mathematical functions for "
+"working with floating-point numbers."
+msgstr ""
+
+#: ../../library/math.rst:12
+msgid "*Note:* On the pyboard, floating-point numbers have 32-bit precision."
+msgstr ""
+
+#: ../../library/math.rst:14
+msgid ""
+"Availability: not available on WiPy. Floating point support required for "
+"this module."
+msgstr ""
+
+#: ../../library/math.rst:18
+msgid "Functions"
+msgstr ""
+
+#: ../../library/math.rst:22
+msgid "Return the inverse cosine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:26
+msgid "Return the inverse hyperbolic cosine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:30
+msgid "Return the inverse sine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:34
+msgid "Return the inverse hyperbolic sine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:38
+msgid "Return the inverse tangent of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:42
+msgid "Return the principal value of the inverse tangent of ``y/x``."
+msgstr ""
+
+#: ../../library/math.rst:46
+msgid "Return the inverse hyperbolic tangent of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:50
+msgid "Return an integer, being ``x`` rounded towards positive infinity."
+msgstr ""
+
+#: ../../library/math.rst:54
+msgid "Return ``x`` with the sign of ``y``."
+msgstr ""
+
+#: ../../library/math.rst:58
+msgid "Return the cosine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:62
+msgid "Return the hyperbolic cosine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:66
+msgid "Return radians ``x`` converted to degrees."
+msgstr ""
+
+#: ../../library/math.rst:70
+msgid "Return the error function of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:74
+msgid "Return the complementary error function of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:78
+msgid "Return the exponential of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:82
+msgid "Return ``exp(x) - 1``."
+msgstr ""
+
+#: ../../library/math.rst:86
+msgid "Return the absolute value of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:90
+msgid "Return an integer, being ``x`` rounded towards negative infinity."
+msgstr ""
+
+#: ../../library/math.rst:94
+msgid "Return the remainder of ``x/y``."
+msgstr ""
+
+#: ../../library/math.rst:98
+msgid ""
+"Decomposes a floating-point number into its mantissa and exponent. The "
+"returned value is the tuple ``(m, e)`` such that ``x == m * 2**e`` "
+"exactly.  If ``x == 0`` then the function returns ``(0.0, 0)``, otherwise"
+" the relation ``0.5 <= abs(m) < 1`` holds."
+msgstr ""
+
+#: ../../library/math.rst:105
+msgid "Return the gamma function of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:109
+msgid "Return ``True`` if ``x`` is finite."
+msgstr ""
+
+#: ../../library/math.rst:113
+msgid "Return ``True`` if ``x`` is infinite."
+msgstr ""
+
+#: ../../library/math.rst:117
+msgid "Return ``True`` if ``x`` is not-a-number"
+msgstr ""
+
+#: ../../library/math.rst:121
+msgid "Return ``x * (2**exp)``."
+msgstr ""
+
+#: ../../library/math.rst:125
+msgid "Return the natural logarithm of the gamma function of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:129
+msgid "Return the natural logarithm of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:133
+msgid "Return the base-10 logarithm of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:137
+msgid "Return the base-2 logarithm of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:141
+msgid ""
+"Return a tuple of two floats, being the fractional and integral parts of "
+"``x``.  Both return values have the same sign as ``x``."
+msgstr ""
+
+#: ../../library/math.rst:146
+msgid "Returns ``x`` to the power of ``y``."
+msgstr ""
+
+#: ../../library/math.rst:150
+msgid "Return degrees ``x`` converted to radians."
+msgstr ""
+
+#: ../../library/math.rst:154
+msgid "Return the sine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:158
+msgid "Return the hyperbolic sine of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:162
+msgid "Return the square root of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:166
+msgid "Return the tangent of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:170
+msgid "Return the hyperbolic tangent of ``x``."
+msgstr ""
+
+#: ../../library/math.rst:174
+msgid "Return an integer, being ``x`` rounded towards 0."
+msgstr ""
+
+#: ../../library/math.rst:177
+msgid "Constants"
+msgstr ""
+
+#: ../../library/math.rst:181
+msgid "base of the natural logarithm"
+msgstr ""
+
+#: ../../library/math.rst:185
+msgid "the ratio of a circle's circumference to its diameter"
+msgstr ""
+
