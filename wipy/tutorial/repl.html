@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>2. Getting a MicroPython REPL prompt &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="3. Getting started with Blynk and the WiPy" href="blynk.html" />
+    <link rel="prev" title="1. Introduction to the WiPy" href="intro.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#wipy/tutorial/repl" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> 2. Getting a MicroPython REPL prompt </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../../"versions.json"",
+        target_loc = "../../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the WiPy</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">WiPy tutorials and examples</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#wipy-tutorial-repl--page-root" class="md-nav__link">2. Getting a MicroPython REPL prompt</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#windows" class="md-nav__link">2.1. Windows</a>
+        </li>
+        <li class="md-nav__item"><a href="#mac-os-x" class="md-nav__link">2.2. Mac OS X</a>
+        </li>
+        <li class="md-nav__item"><a href="#linux" class="md-nav__link">2.3. Linux</a>
+        </li>
+        <li class="md-nav__item"><a href="#using-the-repl-prompt" class="md-nav__link">2.4. Using the REPL prompt</a>
+        </li>
+        <li class="md-nav__item"><a href="#resetting-the-board" class="md-nav__link">2.5. Resetting the board</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../../_sources/wipy/tutorial/repl.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<h1 id="wipy-tutorial-repl--page-root"><span class="section-number">2. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#wipy-tutorial-repl--page-root" title="Permalink to this headline">¶</a></h1>
+<p>REPL stands for Read Evaluate Print Loop, and is the name given to the
+interactive MicroPython prompt that you can access on the WiPy.  Using
+the REPL is by far the easiest way to test out your code and run commands.
+You can use the REPL in addition to writing scripts in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>.</p>
+<p id="wipy-uart">To use the REPL, you must connect to the WiPy either via <a class="reference internal" href="../general.html#wipy-telnet"><span class="std std-ref">telnet</span></a>,
+or with a USB to serial converter wired to one of the two UARTs on the
+WiPy. To enable REPL duplication on UART0 (the one accessible via the expansion board)
+do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">UART</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">uart</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">115200</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">os</span><span class="o">.</span><span class="n">dupterm</span><span class="p">(</span><span class="n">uart</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Place this piece of code inside your <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> so that it’s done automatically after
+reset.</p>
+
+<h2 id="windows"><span class="section-number">2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this headline">¶</a></h2>
+<p>First you need to install the FTDI drivers for the expansion board’s USB to serial
+converter. Then you need a terminal software. The best option is to download the
+free program PuTTY: <a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">putty.exe</a>.</p>
+<p><strong>In order to get to the telnet REPL:</strong></p>
+<p>Using putty, select <code class="docutils literal notranslate"><span class="pre">Telnet</span></code> as connection type, leave the default port (23)
+and enter the IP address of your WiPy (192.168.1.1 when in <code class="docutils literal notranslate"><span class="pre">WLAN.AP</span></code> mode),
+then click open.</p>
+<p><strong>In order to get to the REPL UART:</strong></p>
+<p>Using your serial program you must connect to the COM port that you found in the
+previous step.  With PuTTY, click on “Session” in the left-hand panel, then click
+the “Serial” radio button on the right, then enter you COM port (eg COM4) in the
+“Serial Line” box.  Finally, click the “Open” button.</p>
+
+
+<h2 id="mac-os-x"><span class="section-number">2.2. </span>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this headline">¶</a></h2>
+<p>Open a terminal and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ telnet 192.168.1.1
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ screen /dev/tty.usbmodem* 115200
+</pre></div>
+</div>
+<p>When you are finished and want to exit <code class="docutils literal notranslate"><span class="pre">screen</span></code>, type CTRL-A CTRL-. If your keyboard does not have a -key (i.e. you need an obscure combination for \ like ALT-SHIFT-7) you can remap the <code class="docutils literal notranslate"><span class="pre">quit</span></code> command:</p>
+<ul class="simple">
+<li><p>create <code class="docutils literal notranslate"><span class="pre">~/.screenrc</span></code></p></li>
+<li><p>add <code class="docutils literal notranslate"><span class="pre">bind</span> <span class="pre">q</span> <span class="pre">quit</span></code></p></li>
+</ul>
+<p>This will allow you to quit <code class="docutils literal notranslate"><span class="pre">screen</span></code> by hitting CTRL-A Q.</p>
+
+
+<h2 id="linux"><span class="section-number">2.3. </span>Linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h2>
+<p>Open a terminal and run:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ telnet 192.168.1.1
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ screen /dev/ttyUSB0 115200
+</pre></div>
+</div>
+<p>You can also try <code class="docutils literal notranslate"><span class="pre">picocom</span></code> or <code class="docutils literal notranslate"><span class="pre">minicom</span></code> instead of screen.  You may have to
+use <code class="docutils literal notranslate"><span class="pre">/dev/ttyUSB01</span></code> or a higher number for <code class="docutils literal notranslate"><span class="pre">ttyUSB</span></code>.  And, you may need to give
+yourself the correct permissions to access this devices (eg group <code class="docutils literal notranslate"><span class="pre">uucp</span></code> or <code class="docutils literal notranslate"><span class="pre">dialout</span></code>,
+or use sudo).</p>
+
+
+<h2 id="using-the-repl-prompt"><span class="section-number">2.4. </span>Using the REPL prompt<a class="headerlink" href="#using-the-repl-prompt" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s try running some MicroPython code directly on the WiPy.</p>
+<p>With your serial program open (PuTTY, screen, picocom, etc) you may see a blank
+screen with a flashing cursor.  Press Enter and you should be presented with a
+MicroPython prompt, i.e. <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>.  Let’s make sure it is working with the obligatory test:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello WiPy!"</span><span class="p">)</span>
+<span class="go">hello WiPy!</span>
+</pre></div>
+</div>
+<p>In the above, you should not type in the <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> characters.  They are there to
+indicate that you should type the text after it at the prompt.  In the end, once
+you have entered the text <code class="docutils literal notranslate"><span class="pre">print("hello</span> <span class="pre">WiPy!")</span></code> and pressed Enter, the output
+on your screen should look like it does above.</p>
+<p>If you already know some Python you can now try some basic commands here.</p>
+<p>If any of this is not working you can try either a hard reset or a soft reset;
+see below.</p>
+<p>Go ahead and try typing in some other commands.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">wipy</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">wipy</span><span class="o">.</span><span class="n">heartbeat</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># disable the heartbeat</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">led</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'GP25'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">led</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">led</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">led</span><span class="o">.</span><span class="n">toggle</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="go">3</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">4</span> <span class="o">//</span> <span class="mi">2</span>
+<span class="go">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="mi">20</span> <span class="o">*</span> <span class="s1">'py'</span>
+<span class="go">'pypypypypypypypypypypypypypypypypypypypy'</span>
+</pre></div>
+</div>
+
+
+<h2 id="resetting-the-board"><span class="section-number">2.5. </span>Resetting the board<a class="headerlink" href="#resetting-the-board" title="Permalink to this headline">¶</a></h2>
+<p>If something goes wrong, you can reset the board in two ways. The first is to press CTRL-D
+at the MicroPython prompt, which performs a soft reset.  You will see a message something like:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">MPY: soft reboot</span>
+<span class="go">MicroPython v1.4.6-146-g1d8b5e5 on 2015-10-21; WiPy with CC3200</span>
+<span class="go">Type "help()" for more information.</span>
+<span class="go">&gt;&gt;&gt;</span>
+</pre></div>
+</div>
+<p>If that isn’t working you can perform a hard reset (turn-it-off-and-on-again) by pressing the
+RST switch (the small black button next to the heartbeat LED). During telnet, this will end
+your session, disconnecting whatever program that you used to connect to the WiPy.</p>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="intro.html" title="1. Introduction to the WiPy"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <span class="section-number">1. </span>Introduction to the WiPy </span>
+              </div>
+            </a>
+          
+          
+            <a href="blynk.html" title="3. Getting started with Blynk and the WiPy"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <span class="section-number">3. </span>Getting started with Blynk and the WiPy </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

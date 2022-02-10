@@ -1,0 +1,442 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>btree – simple BTree database &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="cryptolib – cryptographic ciphers" href="cryptolib.html" />
+    <link rel="prev" title="bluetooth — low-level Bluetooth" href="bluetooth.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/btree" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> btree – simple BTree database </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-btree--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">btree</span></code> – simple BTree database</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/btree.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="btree-simple-btree-database"></span><h1 id="library-btree--page-root"><a class="reference internal" href="#library-btree--page-root" title="btree: simple BTree database"><code class="xref py py-mod docutils literal notranslate"><span class="pre">btree</span></code></a> – simple BTree database<a class="headerlink" href="#library-btree--page-root" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">btree</span></code> module implements a simple key-value database using external
+storage (disk files, or in general case, a random-access <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a>). Keys are
+stored sorted in the database, and besides efficient retrieval by a key
+value, a database also supports efficient ordered range scans (retrieval
+of values with the keys in a given range). On the application interface
+side, BTree database work as close a possible to a way standard <a class="reference internal" href="builtins.html#dict" title="dict"><code class="xref any py py-class docutils literal notranslate"><span class="pre">dict</span></code></a>
+type works, one notable difference is that both keys and values must
+be <a class="reference internal" href="builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> objects (so, if you want to store objects of other types, you
+need to serialize them to <a class="reference internal" href="builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> first).</p>
+<p>The module is based on the well-known BerkelyDB library, version 1.xx.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">btree</span>
+
+<span class="c1"># First, we need to open a stream which holds a database</span>
+<span class="c1"># This is usually a file, but can be in-memory database</span>
+<span class="c1"># using io.BytesIO, a raw flash partition, etc.</span>
+<span class="c1"># Oftentimes, you want to create a database file if it doesn't</span>
+<span class="c1"># exist and open if it exists. Idiom below takes care of this.</span>
+<span class="c1"># DO NOT open database with "a+b" access mode.</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"mydb"</span><span class="p">,</span> <span class="s2">"r+b"</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">OSError</span><span class="p">:</span>
+    <span class="n">f</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">"mydb"</span><span class="p">,</span> <span class="s2">"w+b"</span><span class="p">)</span>
+
+<span class="c1"># Now open a database itself</span>
+<span class="n">db</span> <span class="o">=</span> <span class="n">btree</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="c1"># The keys you add will be sorted internally in the database</span>
+<span class="n">db</span><span class="p">[</span><span class="sa">b</span><span class="s2">"3"</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">"three"</span>
+<span class="n">db</span><span class="p">[</span><span class="sa">b</span><span class="s2">"1"</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">"one"</span>
+<span class="n">db</span><span class="p">[</span><span class="sa">b</span><span class="s2">"2"</span><span class="p">]</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">"two"</span>
+
+<span class="c1"># Assume that any changes are cached in memory unless</span>
+<span class="c1"># explicitly flushed (or database closed). Flush database</span>
+<span class="c1"># at the end of each "transaction".</span>
+<span class="n">db</span><span class="o">.</span><span class="n">flush</span><span class="p">()</span>
+
+<span class="c1"># Prints b'two'</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">db</span><span class="p">[</span><span class="sa">b</span><span class="s2">"2"</span><span class="p">])</span>
+
+<span class="c1"># Iterate over sorted keys in the database, starting from b"2"</span>
+<span class="c1"># until the end of the database, returning only values.</span>
+<span class="c1"># Mind that arguments passed to values() method are *key* values.</span>
+<span class="c1"># Prints:</span>
+<span class="c1">#   b'two'</span>
+<span class="c1">#   b'three'</span>
+<span class="k">for</span> <span class="n">word</span> <span class="ow">in</span> <span class="n">db</span><span class="o">.</span><span class="n">values</span><span class="p">(</span><span class="sa">b</span><span class="s2">"2"</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">word</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">db</span><span class="p">[</span><span class="sa">b</span><span class="s2">"2"</span><span class="p">]</span>
+
+<span class="c1"># No longer true, prints False</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">b</span><span class="s2">"2"</span> <span class="ow">in</span> <span class="n">db</span><span class="p">)</span>
+
+<span class="c1"># Prints:</span>
+<span class="c1">#  b"1"</span>
+<span class="c1">#  b"3"</span>
+<span class="k">for</span> <span class="n">key</span> <span class="ow">in</span> <span class="n">db</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">key</span><span class="p">)</span>
+
+<span class="n">db</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+
+<span class="c1"># Don't forget to close the underlying stream!</span>
+<span class="n">f</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="btree.open">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">open</code><span class="sig-paren">(</span><em class="sig-param">stream</em>, <em class="sig-param">*</em>, <em class="sig-param">flags=0</em>, <em class="sig-param">pagesize=0</em>, <em class="sig-param">cachesize=0</em>, <em class="sig-param">minkeypage=0</em><span class="sig-paren">)</span><a class="headerlink" href="#btree.open" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open a database from a random-access <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a> (like an open file). All
+other parameters are optional and keyword-only, and allow to tweak advanced
+parameters of the database operation (most users will not need them):</p>
+<ul class="simple">
+<li><p><em>flags</em> - Currently unused.</p></li>
+<li><p><em>pagesize</em> - Page size used for the nodes in BTree. Acceptable range
+is 512-65536. If 0, a port-specific default will be used, optimized for
+port’s memory usage and/or performance.</p></li>
+<li><p><em>cachesize</em> - Suggested memory cache size in bytes. For a
+board with enough memory using larger values may improve performance.
+Cache policy is as follows: entire cache is not allocated at once;
+instead, accessing a new page in database will allocate a memory buffer
+for it, until value specified by <em>cachesize</em> is reached. Then, these
+buffers will be managed using LRU (least recently used) policy. More
+buffers may still be allocated if needed (e.g., if a database contains
+big keys and/or values). Allocated cache buffers aren’t reclaimed.</p></li>
+<li><p><em>minkeypage</em> - Minimum number of keys to store per page. Default value
+of 0 equivalent to 2.</p></li>
+</ul>
+<p>Returns a BTree object, which implements a dictionary protocol (set
+of methods), and some additional methods described below.</p>
+</dd></dl>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="btree.btree.close">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">close</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.close" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the database. It’s mandatory to close the database at the end of
+processing, as some unwritten data may be still in the cache. Note that
+this does not close underlying stream with which the database was opened,
+it should be closed separately (which is also mandatory to make sure that
+data flushed from buffer to the underlying storage).</p>
+</dd></dl>
+<dl class="method">
+<dt id="btree.btree.flush">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">flush</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flush any data in cache to the underlying stream.</p>
+</dd></dl>
+<dl class="method">
+<dt id="btree.btree.__getitem__">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">__getitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.__getitem__" title="Permalink to this definition">¶</a></dt>
+<dt id="btree.btree.get">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">default=None</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.get" title="Permalink to this definition">¶</a></dt>
+<dt id="btree.btree.__setitem__">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">__setitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">val</em><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.__setitem__" title="Permalink to this definition">¶</a></dt>
+<dt id="btree.btree.__delitem__">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">__delitem__</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.__delitem__" title="Permalink to this definition">¶</a></dt>
+<dt id="btree.btree.__contains__">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">__contains__</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.__contains__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Standard dictionary methods.</p>
+</dd></dl>
+<dl class="method">
+<dt id="btree.btree.__iter__">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">__iter__</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.__iter__" title="Permalink to this definition">¶</a></dt>
+<dd><p>A BTree object can be iterated over directly (similar to a dictionary)
+to get access to all keys in order.</p>
+</dd></dl>
+<dl class="method">
+<dt id="btree.btree.keys">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">keys</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">start_key</em><span class="optional">[</span>, <em class="sig-param">end_key</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.keys" title="Permalink to this definition">¶</a></dt>
+<dt id="btree.btree.values">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">values</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">start_key</em><span class="optional">[</span>, <em class="sig-param">end_key</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.values" title="Permalink to this definition">¶</a></dt>
+<dt id="btree.btree.items">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">items</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">start_key</em><span class="optional">[</span>, <em class="sig-param">end_key</em><span class="optional">[</span>, <em class="sig-param">flags</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#btree.btree.items" title="Permalink to this definition">¶</a></dt>
+<dd><p>These methods are similar to standard dictionary methods, but also can
+take optional parameters to iterate over a key sub-range, instead of
+the entire database. Note that for all 3 methods, <em>start_key</em> and
+<em>end_key</em> arguments represent key values. For example, <a class="reference internal" href="#btree.btree.values" title="btree.btree.values"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">values()</span></code></a>
+method will iterate over values corresponding to they key range
+given. None values for <em>start_key</em> means “from the first key”, no
+<em>end_key</em> or its value of None means “until the end of database”.
+By default, range is inclusive of <em>start_key</em> and exclusive of
+<em>end_key</em>, you can include <em>end_key</em> in iteration by passing <em>flags</em>
+of <a class="reference internal" href="#btree.INCL" title="btree.INCL"><code class="xref any py py-data docutils literal notranslate"><span class="pre">btree.INCL</span></code></a>. You can iterate in descending key direction
+by passing <em>flags</em> of <a class="reference internal" href="#btree.DESC" title="btree.DESC"><code class="xref any py py-data docutils literal notranslate"><span class="pre">btree.DESC</span></code></a>. The flags values can be ORed
+together.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="btree.INCL">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">INCL</code><a class="headerlink" href="#btree.INCL" title="Permalink to this definition">¶</a></dt>
+<dd><p>A flag for <a class="reference internal" href="#btree.btree.keys" title="btree.btree.keys"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">keys()</span></code></a>, <a class="reference internal" href="#btree.btree.values" title="btree.btree.values"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">values()</span></code></a>, <a class="reference internal" href="#btree.btree.items" title="btree.btree.items"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">items()</span></code></a> methods to specify that
+scanning should be inclusive of the end key.</p>
+</dd></dl>
+<dl class="data">
+<dt id="btree.DESC">
+<code class="sig-prename descclassname">btree.</code><code class="sig-name descname">DESC</code><a class="headerlink" href="#btree.DESC" title="Permalink to this definition">¶</a></dt>
+<dd><p>A flag for <a class="reference internal" href="#btree.btree.keys" title="btree.btree.keys"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">keys()</span></code></a>, <a class="reference internal" href="#btree.btree.values" title="btree.btree.values"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">values()</span></code></a>, <a class="reference internal" href="#btree.btree.items" title="btree.btree.items"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">items()</span></code></a> methods to specify that
+scanning should be in descending direction of keys.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="bluetooth.html" title="bluetooth — low-level Bluetooth"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">bluetooth</span></code> — low-level Bluetooth </span>
+              </div>
+            </a>
+          
+          
+            <a href="cryptolib.html" title="cryptolib – cryptographic ciphers"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">cryptolib</span></code> – cryptographic ciphers </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

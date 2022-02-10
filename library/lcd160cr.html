@@ -1,0 +1,759 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>lcd160cr — control of LCD160CR display &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="wipy – WiPy specific features" href="wipy.html" />
+    <link rel="prev" title="stm — functionality specific to STM32 MCUs" href="stm.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/lcd160cr" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> lcd160cr — control of LCD160CR display </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-lcd160cr--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code> — control of LCD160CR display</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#class-lcd160cr" class="md-nav__link">class LCD160CR</a>
+        </li>
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#static-methods" class="md-nav__link">Static methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#instance-members" class="md-nav__link">Instance members</a>
+        </li>
+        <li class="md-nav__item"><a href="#setup-commands" class="md-nav__link">Setup commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#pixel-access-methods" class="md-nav__link">Pixel access methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#drawing-text" class="md-nav__link">Drawing text</a>
+        </li>
+        <li class="md-nav__item"><a href="#drawing-primitive-shapes" class="md-nav__link">Drawing primitive shapes</a>
+        </li>
+        <li class="md-nav__item"><a href="#touch-screen-methods" class="md-nav__link">Touch screen methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#advanced-commands" class="md-nav__link">Advanced commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/lcd160cr.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="lcd160cr-control-of-lcd160cr-display"></span><h1 id="library-lcd160cr--page-root"><a class="reference internal" href="#library-lcd160cr--page-root" title="lcd160cr: control of LCD160CR display"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code></a> — control of LCD160CR display<a class="headerlink" href="#library-lcd160cr--page-root" title="Permalink to this headline">¶</a></h1>
+<p>This module provides control of the MicroPython LCD160CR display.</p>
+<a class="reference internal image-reference" href="http://micropython.org/resources/LCD160CRv10-persp.jpg"><img alt="LCD160CRv1.0 picture" src="http://micropython.org/resources/LCD160CRv10-persp.jpg" style="width: 640px;"/></a>
+<p>Further resources are available via the following links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="http://micropython.org/resources/LCD160CRv10-refmanual.pdf">LCD160CRv1.0 reference manual</a> (100KiB PDF)</p></li>
+<li><p><a class="reference external" href="http://micropython.org/resources/LCD160CRv10-schematics.pdf">LCD160CRv1.0 schematics</a> (1.6MiB PDF)</p></li>
+</ul>
+
+<h2 id="class-lcd160cr">class LCD160CR<a class="headerlink" href="#class-lcd160cr" title="Permalink to this headline">¶</a></h2>
+<p>The LCD160CR class provides an interface to the display.  Create an
+instance of this class and use its methods to draw to the LCD and get
+the status of the touch panel.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">lcd160cr</span>
+
+<span class="n">lcd</span> <span class="o">=</span> <span class="n">lcd160cr</span><span class="o">.</span><span class="n">LCD160CR</span><span class="p">(</span><span class="s1">'X'</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_orient</span><span class="p">(</span><span class="n">lcd160cr</span><span class="o">.</span><span class="n">PORTRAIT</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_pos</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_text_color</span><span class="p">(</span><span class="n">lcd</span><span class="o">.</span><span class="n">rgb</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">lcd</span><span class="o">.</span><span class="n">rgb</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">set_font</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lcd</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'Hello MicroPython!'</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'touch:'</span><span class="p">,</span> <span class="n">lcd</span><span class="o">.</span><span class="n">get_touch</span><span class="p">())</span>
+</pre></div>
+</div>
+
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="lcd160cr.LCD160CR">
+<em class="property">class </em><code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">LCD160CR</code><span class="sig-paren">(</span><em class="sig-param">connect=None</em>, <em class="sig-param">*</em>, <em class="sig-param">pwr=None</em>, <em class="sig-param">i2c=None</em>, <em class="sig-param">spi=None</em>, <em class="sig-param">i2c_addr=98</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an LCD160CR object.  The parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>connect</em> is a string specifying the physical connection of the LCD
+display to the board; valid values are “X”, “Y”, “XY”, “YX”.
+Use “X” when the display is connected to a pyboard in the X-skin
+position, and “Y” when connected in the Y-skin position.  “XY”
+and “YX” are used when the display is connected to the right or
+left side of the pyboard, respectively.</p></li>
+<li><p><em>pwr</em> is a Pin object connected to the LCD’s power/enabled pin.</p></li>
+<li><p><em>i2c</em> is an I2C object connected to the LCD’s I2C interface.</p></li>
+<li><p><em>spi</em> is an SPI object connected to the LCD’s SPI interface.</p></li>
+<li><p><em>i2c_addr</em> is the I2C address of the display.</p></li>
+</ul>
+</div></blockquote>
+<p>One must specify either a valid <em>connect</em> or all of <em>pwr</em>, <em>i2c</em> and <em>spi</em>.
+If a valid <em>connect</em> is given then any of <em>pwr</em>, <em>i2c</em> or <em>spi</em> which are
+not passed as parameters (i.e. they are <code class="docutils literal notranslate"><span class="pre">None</span></code>) will be created based on the
+value of <em>connect</em>.  This allows to override the default interface to the
+display if needed.</p>
+<p>The default values are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>“X” is for the X-skin and uses:
+<code class="docutils literal notranslate"><span class="pre">pwr=Pin("X4")</span></code>, <code class="docutils literal notranslate"><span class="pre">i2c=I2C("X")</span></code>, <code class="docutils literal notranslate"><span class="pre">spi=SPI("X")</span></code></p></li>
+<li><p>“Y” is for the Y-skin and uses:
+<code class="docutils literal notranslate"><span class="pre">pwr=Pin("Y4")</span></code>, <code class="docutils literal notranslate"><span class="pre">i2c=I2C("Y")</span></code>, <code class="docutils literal notranslate"><span class="pre">spi=SPI("Y")</span></code></p></li>
+<li><p>“XY” is for the right-side and uses:
+<code class="docutils literal notranslate"><span class="pre">pwr=Pin("X4")</span></code>, <code class="docutils literal notranslate"><span class="pre">i2c=I2C("Y")</span></code>, <code class="docutils literal notranslate"><span class="pre">spi=SPI("X")</span></code></p></li>
+<li><p>“YX” is for the left-side and uses:
+<code class="docutils literal notranslate"><span class="pre">pwr=Pin("Y4")</span></code>, <code class="docutils literal notranslate"><span class="pre">i2c=I2C("X")</span></code>, <code class="docutils literal notranslate"><span class="pre">spi=SPI("Y")</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>See <a class="reference external" href="http://micropython.org/resources/LCD160CRv10-positions.jpg">this image</a>
+for how the display can be connected to the pyboard.</p>
+</dd></dl>
+
+
+<h2 id="static-methods">Static methods<a class="headerlink" href="#static-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.rgb">
+<em class="property">static </em><code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">rgb</code><span class="sig-paren">(</span><em class="sig-param">r</em>, <em class="sig-param">g</em>, <em class="sig-param">b</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.rgb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a 16-bit integer representing the given rgb color values.  The
+16-bit value can be used to set the font color (see
+<a class="reference internal" href="#lcd160cr.LCD160CR.set_text_color" title="lcd160cr.LCD160CR.set_text_color"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_text_color()</span></code></a>) pen color (see <a class="reference internal" href="#lcd160cr.LCD160CR.set_pen" title="lcd160cr.LCD160CR.set_pen"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_pen()</span></code></a>)
+and draw individual pixels.</p>
+</dd></dl>
+<dl class="method">
+<dt>
+<code class="sig-name descname">LCD160CR.clip_line(data, w, h):</code></dt>
+<dd><p>Clip the given line data.  This is for internal use.</p>
+</dd></dl>
+
+
+<h2 id="instance-members">Instance members<a class="headerlink" href="#instance-members" title="Permalink to this headline">¶</a></h2>
+<p>The following instance members are publicly accessible.</p>
+<dl class="data">
+<dt id="lcd160cr.LCD160CR.w">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">w</code><a class="headerlink" href="#lcd160cr.LCD160CR.w" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="data">
+<dt id="lcd160cr.LCD160CR.h">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">h</code><a class="headerlink" href="#lcd160cr.LCD160CR.h" title="Permalink to this definition">¶</a></dt>
+<dd><p>The width and height of the display, respectively, in pixels.  These
+members are updated when calling <a class="reference internal" href="#lcd160cr.LCD160CR.set_orient" title="lcd160cr.LCD160CR.set_orient"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_orient()</span></code></a> and should
+be considered read-only.</p>
+</dd></dl>
+
+
+<h2 id="setup-commands">Setup commands<a class="headerlink" href="#setup-commands" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_power">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_power</code><span class="sig-paren">(</span><em class="sig-param">on</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_power" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn the display on or off, depending on the given value of <em>on</em>: 0 or <code class="docutils literal notranslate"><span class="pre">False</span></code>
+will turn the display off, and 1 or <code class="docutils literal notranslate"><span class="pre">True</span></code> will turn it on.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_orient">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_orient</code><span class="sig-paren">(</span><em class="sig-param">orient</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_orient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the orientation of the display.  The <em>orient</em> parameter can be one
+of <a class="reference internal" href="#lcd160cr.lcd160cr.PORTRAIT" title="lcd160cr.lcd160cr.PORTRAIT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PORTRAIT</span></code></a>, <a class="reference internal" href="#lcd160cr.lcd160cr.LANDSCAPE" title="lcd160cr.lcd160cr.LANDSCAPE"><code class="xref any py py-data docutils literal notranslate"><span class="pre">LANDSCAPE</span></code></a>, <a class="reference internal" href="#lcd160cr.lcd160cr.PORTRAIT_UPSIDEDOWN" title="lcd160cr.lcd160cr.PORTRAIT_UPSIDEDOWN"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PORTRAIT_UPSIDEDOWN</span></code></a>, <a class="reference internal" href="#lcd160cr.lcd160cr.LANDSCAPE_UPSIDEDOWN" title="lcd160cr.lcd160cr.LANDSCAPE_UPSIDEDOWN"><code class="xref any py py-data docutils literal notranslate"><span class="pre">LANDSCAPE_UPSIDEDOWN</span></code></a>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_brightness">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_brightness</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_brightness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the brightness of the display, between 0 and 31.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_i2c_addr">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_i2c_addr</code><span class="sig-paren">(</span><em class="sig-param">addr</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_i2c_addr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the I2C address of the display.  The <em>addr</em> value must have the
+lower 2 bits cleared.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_uart_baudrate">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_uart_baudrate</code><span class="sig-paren">(</span><em class="sig-param">baudrate</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_uart_baudrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the baudrate of the UART interface.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_startup_deco">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_startup_deco</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_startup_deco" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the start-up decoration of the display.  The <em>value</em> parameter can be a
+logical or of <a class="reference internal" href="#lcd160cr.lcd160cr.STARTUP_DECO_NONE" title="lcd160cr.lcd160cr.STARTUP_DECO_NONE"><code class="xref any py py-data docutils literal notranslate"><span class="pre">STARTUP_DECO_NONE</span></code></a>, <a class="reference internal" href="#lcd160cr.lcd160cr.STARTUP_DECO_MLOGO" title="lcd160cr.lcd160cr.STARTUP_DECO_MLOGO"><code class="xref any py py-data docutils literal notranslate"><span class="pre">STARTUP_DECO_MLOGO</span></code></a>, <a class="reference internal" href="#lcd160cr.lcd160cr.STARTUP_DECO_INFO" title="lcd160cr.lcd160cr.STARTUP_DECO_INFO"><code class="xref any py py-data docutils literal notranslate"><span class="pre">STARTUP_DECO_INFO</span></code></a>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.save_to_flash">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">save_to_flash</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.save_to_flash" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save the following parameters to flash so they persist on restart and power up:
+initial decoration, orientation, brightness, UART baud rate, I2C address.</p>
+</dd></dl>
+
+
+<h2 id="pixel-access-methods">Pixel access methods<a class="headerlink" href="#pixel-access-methods" title="Permalink to this headline">¶</a></h2>
+<p>The following methods manipulate individual pixels on the display.</p>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_pixel">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the specified pixel to the given color.  The color should be a 16-bit
+integer and can be created by <a class="reference internal" href="#lcd160cr.LCD160CR.rgb" title="lcd160cr.LCD160CR.rgb"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.rgb()</span></code></a>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.get_pixel">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">get_pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.get_pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the 16-bit value of the specified pixel.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.get_line">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">get_line</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.get_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Low-level method to get a line of pixels into the given buffer.
+To read <em>n</em> pixels <em>buf</em> should be <em>2*n+1</em> bytes in length.  The first byte
+is a dummy byte and should be ignored, and subsequent bytes represent the
+pixels in the line starting at coordinate <em>(x, y)</em>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.screen_dump">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">screen_dump</code><span class="sig-paren">(</span><em class="sig-param">buf</em>, <em class="sig-param">x=0</em>, <em class="sig-param">y=0</em>, <em class="sig-param">w=None</em>, <em class="sig-param">h=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.screen_dump" title="Permalink to this definition">¶</a></dt>
+<dd><p>Dump the contents of the screen to the given buffer.  The parameters <em>x</em> and <em>y</em>
+specify the starting coordinate, and <em>w</em> and <em>h</em> the size of the region.  If <em>w</em>
+or <em>h</em> are <code class="docutils literal notranslate"><span class="pre">None</span></code> then they will take on their maximum values, set by the size
+of the screen minus the given <em>x</em> and <em>y</em> values.  <em>buf</em> should be large enough
+to hold <code class="docutils literal notranslate"><span class="pre">2*w*h</span></code> bytes.  If it’s smaller then only the initial horizontal lines
+will be stored.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.screen_load">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">screen_load</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.screen_load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load the entire screen from the given buffer.</p>
+</dd></dl>
+
+
+<h2 id="drawing-text">Drawing text<a class="headerlink" href="#drawing-text" title="Permalink to this headline">¶</a></h2>
+<p>To draw text one sets the position, color and font, and then uses
+<a class="reference internal" href="#lcd160cr.LCD160CR.write" title="lcd160cr.LCD160CR.write"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">LCD160CR.write</span></code></a> to draw the text.</p>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_pos">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_pos</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_pos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position for text output using <a class="reference internal" href="#lcd160cr.LCD160CR.write" title="lcd160cr.LCD160CR.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.write()</span></code></a>.  The position
+is the upper-left corner of the text.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_text_color">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_text_color</code><span class="sig-paren">(</span><em class="sig-param">fg</em>, <em class="sig-param">bg</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_text_color" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the foreground and background color of the text.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_font">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_font</code><span class="sig-paren">(</span><em class="sig-param">font</em>, <em class="sig-param">scale=0</em>, <em class="sig-param">bold=0</em>, <em class="sig-param">trans=0</em>, <em class="sig-param">scroll=0</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_font" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the font for the text.  Subsequent calls to <a class="reference internal" href="#lcd160cr.LCD160CR.write" title="lcd160cr.LCD160CR.write"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">write</span></code></a> will use the newly
+configured font.  The parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>font</em> is the font family to use, valid values are 0, 1, 2, 3.</p></li>
+<li><p><em>scale</em> is a scaling value for each character pixel, where the pixels
+are drawn as a square with side length equal to <em>scale + 1</em>.  The value
+can be between 0 and 63.</p></li>
+<li><p><em>bold</em> controls the number of pixels to overdraw each character pixel,
+making a bold effect.  The lower 2 bits of <em>bold</em> are the number of
+pixels to overdraw in the horizontal direction, and the next 2 bits are
+for the vertical direction.  For example, a <em>bold</em> value of 5 will
+overdraw 1 pixel in both the horizontal and vertical directions.</p></li>
+<li><p><em>trans</em> can be either 0 or 1 and if set to 1 the characters will be
+drawn with a transparent background.</p></li>
+<li><p><em>scroll</em> can be either 0 or 1 and if set to 1 the display will do a
+soft scroll if the text moves to the next line.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.write">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write text to the display, using the current position, color and font.
+As text is written the position is automatically incremented.  The
+display supports basic VT100 control codes such as newline and backspace.</p>
+</dd></dl>
+
+
+<h2 id="drawing-primitive-shapes">Drawing primitive shapes<a class="headerlink" href="#drawing-primitive-shapes" title="Permalink to this headline">¶</a></h2>
+<p>Primitive drawing commands use a foreground and background color set by the
+<a class="reference internal" href="#lcd160cr.LCD160CR.set_pen" title="lcd160cr.LCD160CR.set_pen"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">set_pen</span></code></a> method.</p>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_pen">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_pen</code><span class="sig-paren">(</span><em class="sig-param">line</em>, <em class="sig-param">fill</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_pen" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the line and fill color for primitive shapes.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.erase">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">erase</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.erase" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erase the entire display to the pen fill color.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.dot">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">dot</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a single pixel at the given location using the pen line color.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.rect">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">rect</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.rect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.rect_outline">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">rect_outline</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.rect_outline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.rect_interior">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">rect_interior</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.rect_interior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a rectangle at the given location and size using the pen line
+color for the outline, and the pen fill color for the interior.
+The <a class="reference internal" href="#lcd160cr.LCD160CR.rect" title="lcd160cr.LCD160CR.rect"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">rect</span></code></a> method draws the outline and interior, while the other methods
+just draw one or the other.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.line">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">line</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">y1</em>, <em class="sig-param">x2</em>, <em class="sig-param">y2</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a line between the given coordinates using the pen line color.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.dot_no_clip">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">dot_no_clip</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.dot_no_clip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.rect_no_clip">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">rect_no_clip</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.rect_no_clip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.rect_outline_no_clip">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">rect_outline_no_clip</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.rect_outline_no_clip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.rect_interior_no_clip">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">rect_interior_no_clip</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.rect_interior_no_clip" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.line_no_clip">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">line_no_clip</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">y1</em>, <em class="sig-param">x2</em>, <em class="sig-param">y2</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.line_no_clip" title="Permalink to this definition">¶</a></dt>
+<dd><p>These methods are as above but don’t do any clipping on the input
+coordinates.  They are faster than the clipping versions and can be
+used when you know that the coordinates are within the display.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.poly_dot">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">poly_dot</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.poly_dot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a sequence of dots using the pen line color.
+The <em>data</em> should be a buffer of bytes, with each successive pair of
+bytes corresponding to coordinate pairs (x, y).</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.poly_line">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">poly_line</code><span class="sig-paren">(</span><em class="sig-param">data</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.poly_line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#lcd160cr.LCD160CR.poly_dot" title="lcd160cr.LCD160CR.poly_dot"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.poly_dot()</span></code></a> but draws lines between the dots.</p>
+</dd></dl>
+
+
+<h2 id="touch-screen-methods">Touch screen methods<a class="headerlink" href="#touch-screen-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.touch_config">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">touch_config</code><span class="sig-paren">(</span><em class="sig-param">calib=False</em>, <em class="sig-param">save=False</em>, <em class="sig-param">irq=None</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.touch_config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the touch panel:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>If <em>calib</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code> then the call will trigger a touch calibration of
+the resistive touch sensor.  This requires the user to touch various
+parts of the screen.</p></li>
+<li><p>If <em>save</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code> then the touch parameters will be saved to NVRAM
+to persist across reset/power up.</p></li>
+<li><p>If <em>irq</em> is <code class="docutils literal notranslate"><span class="pre">True</span></code> then the display will be configured to pull the IRQ
+line low when a touch force is detected.  If <em>irq</em> is <code class="docutils literal notranslate"><span class="pre">False</span></code> then this
+feature is disabled.  If <em>irq</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code> (the default value) then no
+change is made to this setting.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.is_touched">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">is_touched</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.is_touched" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a boolean: <code class="docutils literal notranslate"><span class="pre">True</span></code> if there is currently a touch force on the screen,
+<code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.get_touch">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">get_touch</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.get_touch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a 3-tuple of: <em>(active, x, y)</em>.  If there is currently a touch force
+on the screen then <em>active</em> is 1, otherwise it is 0.  The <em>x</em> and <em>y</em> values
+indicate the position of the current or most recent touch.</p>
+</dd></dl>
+
+
+<h2 id="advanced-commands">Advanced commands<a class="headerlink" href="#advanced-commands" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_spi_win">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_spi_win</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_spi_win" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the window that SPI data is written to.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.fast_spi">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">fast_spi</code><span class="sig-paren">(</span><em class="sig-param">flush=True</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.fast_spi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ready the display to accept RGB pixel data on the SPI bus, resetting the location
+of the first byte to go to the top-left corner of the window set by
+<a class="reference internal" href="#lcd160cr.LCD160CR.set_spi_win" title="lcd160cr.LCD160CR.set_spi_win"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_spi_win()</span></code></a>.
+The method returns an SPI object which can be used to write the pixel data.</p>
+<p>Pixels should be sent as 16-bit RGB values in the 5-6-5 format.  The destination
+counter will increase as data is sent, and data can be sent in arbitrary sized
+chunks.  Once the destination counter reaches the end of the window specified by
+<a class="reference internal" href="#lcd160cr.LCD160CR.set_spi_win" title="lcd160cr.LCD160CR.set_spi_win"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_spi_win()</span></code></a> it will wrap around to the top-left corner of that window.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.show_framebuf">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">show_framebuf</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.show_framebuf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show the given buffer on the display.  <em>buf</em> should be an array of bytes containing
+the 16-bit RGB values for the pixels, and they will be written to the area
+specified by <a class="reference internal" href="#lcd160cr.LCD160CR.set_spi_win" title="lcd160cr.LCD160CR.set_spi_win"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_spi_win()</span></code></a>, starting from the top-left corner.</p>
+<p>The <a class="reference external" href="framebuf.html">framebuf</a> module can be used to construct frame buffers
+and provides drawing primitives. Using a frame buffer will improve
+performance of animations when compared to drawing directly to the screen.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_scroll">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_scroll</code><span class="sig-paren">(</span><em class="sig-param">on</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_scroll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn scrolling on or off.  This controls globally whether any window regions will
+scroll.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_scroll_win">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_scroll_win</code><span class="sig-paren">(</span><em class="sig-param">win</em>, <em class="sig-param">x=-1</em>, <em class="sig-param">y=0</em>, <em class="sig-param">w=0</em>, <em class="sig-param">h=0</em>, <em class="sig-param">vec=0</em>, <em class="sig-param">pat=0</em>, <em class="sig-param">fill=0x07e0</em>, <em class="sig-param">color=0</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_scroll_win" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure a window region for scrolling:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>win</em> is the window id to configure.  There are 0..7 standard windows for
+general purpose use.  Window 8 is the text scroll window (the ticker).</p></li>
+<li><p><em>x</em>, <em>y</em>, <em>w</em>, <em>h</em> specify the location of the window in the display.</p></li>
+<li><p><em>vec</em> specifies the direction and speed of scroll: it is a 16-bit value
+of the form <code class="docutils literal notranslate"><span class="pre">0bF.ddSSSSSSSSSSSS</span></code>.  <em>dd</em> is 0, 1, 2, 3 for +x, +y, -x,
+-y scrolling. <em>F</em> sets the speed format, with 0 meaning that the window
+is shifted <em>S % 256</em> pixel every frame, and 1 meaning that the window
+is shifted 1 pixel every <em>S</em> frames.</p></li>
+<li><p><em>pat</em> is a 16-bit pattern mask for the background.</p></li>
+<li><p><em>fill</em> is the fill color.</p></li>
+<li><p><em>color</em> is the extra color, either of the text or pattern foreground.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_scroll_win_param">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_scroll_win_param</code><span class="sig-paren">(</span><em class="sig-param">win</em>, <em class="sig-param">param</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_scroll_win_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set a single parameter of a scrolling window region:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>win</em> is the window id, 0..8.</p></li>
+<li><p><em>param</em> is the parameter number to configure, 0..7, and corresponds
+to the parameters in the <a class="reference internal" href="#lcd160cr.LCD160CR.set_scroll_win" title="lcd160cr.LCD160CR.set_scroll_win"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">set_scroll_win</span></code></a> method.</p></li>
+<li><p><em>value</em> is the value to set.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.set_scroll_buf">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">set_scroll_buf</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.set_scroll_buf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the string for scrolling in window 8.  The parameter <em>s</em> must be a string
+with length 32 or less.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.jpeg">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">jpeg</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.jpeg" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a JPEG.  <em>buf</em> should contain the entire JPEG data. JPEG data should
+not include EXIF information. The following encodings are supported: Baseline
+DCT, Huffman coding, 8 bits per sample, 3 color components, YCbCr4:2:2.
+The origin of the JPEG is set by <a class="reference internal" href="#lcd160cr.LCD160CR.set_pos" title="lcd160cr.LCD160CR.set_pos"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_pos()</span></code></a>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.jpeg_start">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">jpeg_start</code><span class="sig-paren">(</span><em class="sig-param">total_len</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.jpeg_start" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.jpeg_data">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">jpeg_data</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.jpeg_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Display a JPEG with the data split across multiple buffers.  There must be
+a single call to <a class="reference internal" href="#lcd160cr.LCD160CR.jpeg_start" title="lcd160cr.LCD160CR.jpeg_start"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">jpeg_start</span></code></a> to begin with, specifying the total number of
+bytes in the JPEG.  Then this number of bytes must be transferred to the
+display using one or more calls to the <a class="reference internal" href="#lcd160cr.LCD160CR.jpeg_data" title="lcd160cr.LCD160CR.jpeg_data"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">jpeg_data</span></code></a> command.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.feed_wdt">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">feed_wdt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.feed_wdt" title="Permalink to this definition">¶</a></dt>
+<dd><p>The first call to this method will start the display’s internal watchdog
+timer.  Subsequent calls will feed the watchdog.  The timeout is roughly 30
+seconds.</p>
+</dd></dl>
+<dl class="method">
+<dt id="lcd160cr.LCD160CR.reset">
+<code class="sig-prename descclassname">LCD160CR.</code><code class="sig-name descname">reset</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#lcd160cr.LCD160CR.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reset the display.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="lcd160cr.lcd160cr.PORTRAIT">
+<code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">PORTRAIT</code><a class="headerlink" href="#lcd160cr.lcd160cr.PORTRAIT" title="Permalink to this definition">¶</a></dt>
+<dt id="lcd160cr.lcd160cr.LANDSCAPE">
+<code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">LANDSCAPE</code><a class="headerlink" href="#lcd160cr.lcd160cr.LANDSCAPE" title="Permalink to this definition">¶</a></dt>
+<dt id="lcd160cr.lcd160cr.PORTRAIT_UPSIDEDOWN">
+<code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">PORTRAIT_UPSIDEDOWN</code><a class="headerlink" href="#lcd160cr.lcd160cr.PORTRAIT_UPSIDEDOWN" title="Permalink to this definition">¶</a></dt>
+<dt id="lcd160cr.lcd160cr.LANDSCAPE_UPSIDEDOWN">
+<code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">LANDSCAPE_UPSIDEDOWN</code><a class="headerlink" href="#lcd160cr.lcd160cr.LANDSCAPE_UPSIDEDOWN" title="Permalink to this definition">¶</a></dt>
+<dd><p>Orientations of the display, used by <a class="reference internal" href="#lcd160cr.LCD160CR.set_orient" title="lcd160cr.LCD160CR.set_orient"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_orient()</span></code></a>.</p>
+</dd></dl>
+<dl class="data">
+<dt id="lcd160cr.lcd160cr.STARTUP_DECO_NONE">
+<code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">STARTUP_DECO_NONE</code><a class="headerlink" href="#lcd160cr.lcd160cr.STARTUP_DECO_NONE" title="Permalink to this definition">¶</a></dt>
+<dt id="lcd160cr.lcd160cr.STARTUP_DECO_MLOGO">
+<code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">STARTUP_DECO_MLOGO</code><a class="headerlink" href="#lcd160cr.lcd160cr.STARTUP_DECO_MLOGO" title="Permalink to this definition">¶</a></dt>
+<dt id="lcd160cr.lcd160cr.STARTUP_DECO_INFO">
+<code class="sig-prename descclassname">lcd160cr.</code><code class="sig-name descname">STARTUP_DECO_INFO</code><a class="headerlink" href="#lcd160cr.lcd160cr.STARTUP_DECO_INFO" title="Permalink to this definition">¶</a></dt>
+<dd><p>Types of start-up decoration, can be OR’ed together, used by
+<a class="reference internal" href="#lcd160cr.LCD160CR.set_startup_deco" title="lcd160cr.LCD160CR.set_startup_deco"><code class="xref py py-meth docutils literal notranslate"><span class="pre">LCD160CR.set_startup_deco()</span></code></a>.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="stm.html" title="stm — functionality specific to STM32 MCUs"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">stm</span></code> — functionality specific to STM32 MCUs </span>
+              </div>
+            </a>
+          
+          
+            <a href="wipy.html" title="wipy – WiPy specific features"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">wipy</span></code> – WiPy specific features </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,549 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Quick reference for the pyboard &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="General information about the pyboard" href="general.html" />
+    <link rel="prev" title="MicroPython license information" href="../license.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#pyboard/quickref" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> Quick reference for the pyboard </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#pyboard-quickref--page-root" class="md-nav__link">Quick reference for the pyboard</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#general-board-control" class="md-nav__link">General board control</a>
+        </li>
+        <li class="md-nav__item"><a href="#delay-and-timing" class="md-nav__link">Delay and timing</a>
+        </li>
+        <li class="md-nav__item"><a href="#internal-leds" class="md-nav__link">Internal LEDs</a>
+        </li>
+        <li class="md-nav__item"><a href="#internal-switch" class="md-nav__link">Internal switch</a>
+        </li>
+        <li class="md-nav__item"><a href="#pins-and-gpio" class="md-nav__link">Pins and GPIO</a>
+        </li>
+        <li class="md-nav__item"><a href="#servo-control" class="md-nav__link">Servo control</a>
+        </li>
+        <li class="md-nav__item"><a href="#external-interrupts" class="md-nav__link">External interrupts</a>
+        </li>
+        <li class="md-nav__item"><a href="#timers" class="md-nav__link">Timers</a>
+        </li>
+        <li class="md-nav__item"><a href="#rtc-real-time-clock" class="md-nav__link">RTC (real time clock)</a>
+        </li>
+        <li class="md-nav__item"><a href="#pwm-pulse-width-modulation" class="md-nav__link">PWM (pulse width modulation)</a>
+        </li>
+        <li class="md-nav__item"><a href="#adc-analog-to-digital-conversion" class="md-nav__link">ADC (analog to digital conversion)</a>
+        </li>
+        <li class="md-nav__item"><a href="#dac-digital-to-analog-conversion" class="md-nav__link">DAC (digital to analog conversion)</a>
+        </li>
+        <li class="md-nav__item"><a href="#uart-serial-bus" class="md-nav__link">UART (serial bus)</a>
+        </li>
+        <li class="md-nav__item"><a href="#spi-bus" class="md-nav__link">SPI bus</a>
+        </li>
+        <li class="md-nav__item"><a href="#i2c-bus" class="md-nav__link">I2C bus</a>
+        </li>
+        <li class="md-nav__item"><a href="#i2s-bus" class="md-nav__link">I2S bus</a>
+        </li>
+        <li class="md-nav__item"><a href="#can-bus-controller-area-network" class="md-nav__link">CAN bus (controller area network)</a>
+        </li>
+        <li class="md-nav__item"><a href="#internal-accelerometer" class="md-nav__link">Internal accelerometer</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/pyboard/quickref.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="pyboard-quickref"></span><h1 id="pyboard-quickref--page-root">Quick reference for the pyboard<a class="headerlink" href="#pyboard-quickref--page-root" title="Permalink to this headline">¶</a></h1>
+<p>The below pinout is for PYBv1.1.  You can also view pinouts for
+other versions of the pyboard:
+<a class="reference external" href="http://micropython.org/resources/pybv10-pinout.jpg">PYBv1.0</a>
+or <a class="reference external" href="http://micropython.org/resources/pyblitev10ac-pinout.jpg">PYBLITEv1.0-AC</a>
+or <a class="reference external" href="http://micropython.org/resources/pyblitev10-pinout.jpg">PYBLITEv1.0</a>.</p>
+<a class="reference internal image-reference" href="http://micropython.org/resources/pybv11-pinout.jpg"><img alt="PYBv1.1 pinout" src="http://micropython.org/resources/pybv11-pinout.jpg" style="width: 700px;"/></a>
+<p>Below is a quick reference for the pyboard.  If it is your first time working with
+this board please consider reading the following sections first:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General information about the pyboard</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">MicroPython tutorial for the pyboard</a></li>
+</ul>
+</div>
+
+<h2 id="general-board-control">General board control<a class="headerlink" href="#general-board-control" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.html#module-pyb" title="pyb: functions related to the board"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyb</span>
+
+<span class="n">pyb</span><span class="o">.</span><span class="n">repl_uart</span><span class="p">(</span><span class="n">pyb</span><span class="o">.</span><span class="n">UART</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9600</span><span class="p">))</span> <span class="c1"># duplicate REPL on UART(1)</span>
+<span class="n">pyb</span><span class="o">.</span><span class="n">wfi</span><span class="p">()</span> <span class="c1"># pause CPU, waiting for interrupt</span>
+<span class="n">pyb</span><span class="o">.</span><span class="n">freq</span><span class="p">()</span> <span class="c1"># get CPU and bus frequencies</span>
+<span class="n">pyb</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">60000000</span><span class="p">)</span> <span class="c1"># set CPU freq to 60MHz</span>
+<span class="n">pyb</span><span class="o">.</span><span class="n">stop</span><span class="p">()</span> <span class="c1"># stop CPU, waiting for external interrupt</span>
+</pre></div>
+</div>
+
+
+<h2 id="delay-and-timing">Delay and timing<a class="headerlink" href="#delay-and-timing" title="Permalink to this headline">¶</a></h2>
+<p>Use the <a class="reference internal" href="../library/time.html#module-time" title="time: time related functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
+
+<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>           <span class="c1"># sleep for 1 second</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span>      <span class="c1"># sleep for 500 milliseconds</span>
+<span class="n">time</span><span class="o">.</span><span class="n">sleep_us</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>       <span class="c1"># sleep for 10 microseconds</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span> <span class="c1"># get value of millisecond counter</span>
+<span class="n">delta</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="n">start</span><span class="p">)</span> <span class="c1"># compute time difference</span>
+</pre></div>
+</div>
+
+
+<h2 id="internal-leds">Internal LEDs<a class="headerlink" href="#internal-leds" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.LED.html#pyb-led"><span class="std std-ref">pyb.LED</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">LED</span>
+
+<span class="n">led</span> <span class="o">=</span> <span class="n">LED</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># 1=red, 2=green, 3=yellow, 4=blue</span>
+<span class="n">led</span><span class="o">.</span><span class="n">toggle</span><span class="p">()</span>
+<span class="n">led</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
+<span class="n">led</span><span class="o">.</span><span class="n">off</span><span class="p">()</span>
+
+<span class="c1"># LEDs 3 and 4 support PWM intensity (0-255)</span>
+<span class="n">LED</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">intensity</span><span class="p">()</span>    <span class="c1"># get intensity</span>
+<span class="n">LED</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">intensity</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span> <span class="c1"># set intensity to half</span>
+</pre></div>
+</div>
+
+
+<h2 id="internal-switch">Internal switch<a class="headerlink" href="#internal-switch" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Switch.html#pyb-switch"><span class="std std-ref">pyb.Switch</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Switch</span>
+
+<span class="n">sw</span> <span class="o">=</span> <span class="n">Switch</span><span class="p">()</span>
+<span class="n">sw</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="c1"># returns True or False</span>
+<span class="n">sw</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="k">lambda</span><span class="p">:</span> <span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">toggle</span><span class="p">())</span>
+</pre></div>
+</div>
+
+
+<h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Pin.html#pyb-pin"><span class="std std-ref">pyb.Pin</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Pin</span>
+
+<span class="n">p_out</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'X1'</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT_PP</span><span class="p">)</span>
+<span class="n">p_out</span><span class="o">.</span><span class="n">high</span><span class="p">()</span>
+<span class="n">p_out</span><span class="o">.</span><span class="n">low</span><span class="p">()</span>
+
+<span class="n">p_in</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'X2'</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
+<span class="n">p_in</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="c1"># get value, 0 or 1</span>
+</pre></div>
+</div>
+
+
+<h2 id="servo-control">Servo control<a class="headerlink" href="#servo-control" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Servo.html#pyb-servo"><span class="std std-ref">pyb.Servo</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Servo</span>
+
+<span class="n">s1</span> <span class="o">=</span> <span class="n">Servo</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># servo on position 1 (X1, VIN, GND)</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span> <span class="c1"># move to 45 degrees</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">angle</span><span class="p">(</span><span class="o">-</span><span class="mi">60</span><span class="p">,</span> <span class="mi">1500</span><span class="p">)</span> <span class="c1"># move to -60 degrees in 1500ms</span>
+<span class="n">s1</span><span class="o">.</span><span class="n">speed</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span> <span class="c1"># for continuous rotation servos</span>
+</pre></div>
+</div>
+
+
+<h2 id="external-interrupts">External interrupts<a class="headerlink" href="#external-interrupts" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.ExtInt.html#pyb-extint"><span class="std std-ref">pyb.ExtInt</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">ExtInt</span>
+
+<span class="n">callback</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">e</span><span class="p">:</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"intr"</span><span class="p">)</span>
+<span class="n">ext</span> <span class="o">=</span> <span class="n">ExtInt</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'Y1'</span><span class="p">),</span> <span class="n">ExtInt</span><span class="o">.</span><span class="n">IRQ_RISING</span><span class="p">,</span> <span class="n">Pin</span><span class="o">.</span><span class="n">PULL_NONE</span><span class="p">,</span> <span class="n">callback</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+<h2 id="timers">Timers<a class="headerlink" href="#timers" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Timer.html#pyb-timer"><span class="std std-ref">pyb.Timer</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Timer</span>
+
+<span class="n">tim</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">tim</span><span class="o">.</span><span class="n">counter</span><span class="p">()</span> <span class="c1"># get counter value</span>
+<span class="n">tim</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span> <span class="c1"># 0.5 Hz</span>
+<span class="n">tim</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">toggle</span><span class="p">())</span>
+</pre></div>
+</div>
+
+
+<h2 id="rtc-real-time-clock">RTC (real time clock)<a class="headerlink" href="#rtc-real-time-clock" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.RTC.html#pyb-rtc"><span class="std std-ref">pyb.RTC</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">RTC</span>
+
+<span class="n">rtc</span> <span class="o">=</span> <span class="n">RTC</span><span class="p">()</span>
+<span class="n">rtc</span><span class="o">.</span><span class="n">datetime</span><span class="p">((</span><span class="mi">2017</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">23</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span> <span class="c1"># set a specific date and time</span>
+<span class="n">rtc</span><span class="o">.</span><span class="n">datetime</span><span class="p">()</span> <span class="c1"># get date and time</span>
+</pre></div>
+</div>
+
+
+<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Pin.html#pyb-pin"><span class="std std-ref">pyb.Pin</span></a> and <a class="reference internal" href="../library/pyb.Timer.html#pyb-timer"><span class="std std-ref">pyb.Timer</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">Timer</span>
+
+<span class="n">p</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'X1'</span><span class="p">)</span> <span class="c1"># X1 has TIM2, CH1</span>
+<span class="n">tim</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">ch</span> <span class="o">=</span> <span class="n">tim</span><span class="o">.</span><span class="n">channel</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">Timer</span><span class="o">.</span><span class="n">PWM</span><span class="p">,</span> <span class="n">pin</span><span class="o">=</span><span class="n">p</span><span class="p">)</span>
+<span class="n">ch</span><span class="o">.</span><span class="n">pulse_width_percent</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Pin.html#pyb-pin"><span class="std std-ref">pyb.Pin</span></a> and <a class="reference internal" href="../library/pyb.ADC.html#pyb-adc"><span class="std std-ref">pyb.ADC</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">ADC</span>
+
+<span class="n">adc</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'X19'</span><span class="p">))</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">read</span><span class="p">()</span> <span class="c1"># read value, 0-4095</span>
+</pre></div>
+</div>
+
+
+<h2 id="dac-digital-to-analog-conversion">DAC (digital to analog conversion)<a class="headerlink" href="#dac-digital-to-analog-conversion" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Pin.html#pyb-pin"><span class="std std-ref">pyb.Pin</span></a> and <a class="reference internal" href="../library/pyb.DAC.html#pyb-dac"><span class="std std-ref">pyb.DAC</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">DAC</span>
+
+<span class="n">dac</span> <span class="o">=</span> <span class="n">DAC</span><span class="p">(</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'X5'</span><span class="p">))</span>
+<span class="n">dac</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">120</span><span class="p">)</span> <span class="c1"># output between 0 and 255</span>
+</pre></div>
+</div>
+
+
+<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.UART.html#pyb-uart"><span class="std std-ref">pyb.UART</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">UART</span>
+
+<span class="n">uart</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9600</span><span class="p">)</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># read up to 5 bytes</span>
+</pre></div>
+</div>
+
+
+<h2 id="spi-bus">SPI bus<a class="headerlink" href="#spi-bus" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.SPI.html#pyb-spi"><span class="std std-ref">pyb.SPI</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">SPI</span>
+
+<span class="n">spi</span> <span class="o">=</span> <span class="n">SPI</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">SPI</span><span class="o">.</span><span class="n">CONTROLLER</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">200000</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># receive 5 bytes on the bus</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">send_recv</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span> <span class="c1"># send and receive 5 bytes</span>
+</pre></div>
+</div>
+
+
+<h2 id="i2c-bus">I2C bus<a class="headerlink" href="#i2c-bus" title="Permalink to this headline">¶</a></h2>
+<p>Hardware I2C is available on the X and Y halves of the pyboard via <code class="docutils literal notranslate"><span class="pre">I2C('X')</span></code>
+and <code class="docutils literal notranslate"><span class="pre">I2C('Y')</span></code>.  Alternatively pass in the integer identifier of the peripheral,
+eg <code class="docutils literal notranslate"><span class="pre">I2C(1)</span></code>.  Software I2C is also available by explicitly specifying the
+<code class="docutils literal notranslate"><span class="pre">scl</span></code> and <code class="docutils literal notranslate"><span class="pre">sda</span></code> pins instead of the bus name.  For more details see
+<a class="reference internal" href="../library/machine.I2C.html#machine-i2c"><span class="std std-ref">machine.I2C</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">I2C</span>
+
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="s1">'X'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">400000</span><span class="p">)</span>                 <span class="c1"># create hardware I2c object</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="n">scl</span><span class="o">=</span><span class="s1">'X1'</span><span class="p">,</span> <span class="n">sda</span><span class="o">=</span><span class="s1">'X2'</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>  <span class="c1"># create software I2C object</span>
+
+<span class="n">i2c</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>                          <span class="c1"># returns list of peripheral addresses</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span>          <span class="c1"># write 5 bytes to peripheral with address 0x42</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">readfrom</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>               <span class="c1"># read 5 bytes from peripheral</span>
+
+<span class="n">i2c</span><span class="o">.</span><span class="n">readfrom_mem</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># read 2 bytes from peripheral 0x42, peripheral memory 0x10</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">writeto_mem</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="s1">'xy'</span><span class="p">)</span>   <span class="c1"># write 2 bytes to peripheral 0x42, peripheral memory 0x10</span>
+</pre></div>
+</div>
+<p>Note: for legacy I2C support see <a class="reference internal" href="../library/pyb.I2C.html#pyb-i2c"><span class="std std-ref">pyb.I2C</span></a>.</p>
+
+
+<h2 id="i2s-bus">I2S bus<a class="headerlink" href="#i2s-bus" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.I2S.html#machine-i2s"><span class="std std-ref">machine.I2S</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">I2S</span><span class="p">,</span> <span class="n">Pin</span>
+
+<span class="n">i2s</span> <span class="o">=</span> <span class="n">I2S</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">sck</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'Y6'</span><span class="p">),</span> <span class="n">ws</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'Y5'</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'Y8'</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">I2S</span><span class="o">.</span><span class="n">TX</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">I2S</span><span class="o">.</span><span class="n">STEREO</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">44100</span><span class="p">,</span> <span class="n">ibuf</span><span class="o">=</span><span class="mi">40000</span><span class="p">)</span> <span class="c1"># create I2S object</span>
+<span class="n">i2s</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>             <span class="c1"># write buffer of audio samples to I2S device</span>
+
+<span class="n">i2s</span> <span class="o">=</span> <span class="n">I2S</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">sck</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'X5'</span><span class="p">),</span> <span class="n">ws</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'X6'</span><span class="p">),</span> <span class="n">sd</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'Y4'</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">I2S</span><span class="o">.</span><span class="n">RX</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">16</span><span class="p">,</span> <span class="nb">format</span><span class="o">=</span><span class="n">I2S</span><span class="o">.</span><span class="n">MONO</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="mi">22050</span><span class="p">,</span> <span class="n">ibuf</span><span class="o">=</span><span class="mi">40000</span><span class="p">)</span> <span class="c1"># create I2S object</span>
+<span class="n">i2s</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>          <span class="c1"># fill buffer with audio samples from I2S device</span>
+</pre></div>
+</div>
+<p>The I2S class is currently available as a Technical Preview.  During the preview period, feedback from
+users is encouraged.  Based on this feedback, the I2S class API and implementation may be changed.</p>
+<p>PYBv1.0/v1.1 has one I2S bus with id=2.
+PYBD-SFxW has two I2S buses with id=1 and id=2.
+I2S is shared with SPI.</p>
+
+
+<h2 id="can-bus-controller-area-network">CAN bus (controller area network)<a class="headerlink" href="#can-bus-controller-area-network" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.CAN.html#pyb-can"><span class="std std-ref">pyb.CAN</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">CAN</span>
+
+<span class="n">can</span> <span class="o">=</span> <span class="n">CAN</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">CAN</span><span class="o">.</span><span class="n">LOOPBACK</span><span class="p">)</span>
+<span class="n">can</span><span class="o">.</span><span class="n">setfilter</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">CAN</span><span class="o">.</span><span class="n">LIST16</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="p">(</span><span class="mi">123</span><span class="p">,</span> <span class="mi">124</span><span class="p">,</span> <span class="mi">125</span><span class="p">,</span> <span class="mi">126</span><span class="p">))</span>
+<span class="n">can</span><span class="o">.</span><span class="n">send</span><span class="p">(</span><span class="s1">'message!'</span><span class="p">,</span> <span class="mi">123</span><span class="p">)</span>   <span class="c1"># send a message with id 123</span>
+<span class="n">can</span><span class="o">.</span><span class="n">recv</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                 <span class="c1"># receive message on FIFO 0</span>
+</pre></div>
+</div>
+
+
+<h2 id="internal-accelerometer">Internal accelerometer<a class="headerlink" href="#internal-accelerometer" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/pyb.Accel.html#pyb-accel"><span class="std std-ref">pyb.Accel</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">Accel</span>
+
+<span class="n">accel</span> <span class="o">=</span> <span class="n">Accel</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">accel</span><span class="o">.</span><span class="n">x</span><span class="p">(),</span> <span class="n">accel</span><span class="o">.</span><span class="n">y</span><span class="p">(),</span> <span class="n">accel</span><span class="o">.</span><span class="n">z</span><span class="p">(),</span> <span class="n">accel</span><span class="o">.</span><span class="n">tilt</span><span class="p">())</span>
+</pre></div>
+</div>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../license.html" title="MicroPython license information"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> MicroPython license information </span>
+              </div>
+            </a>
+          
+          
+            <a href="general.html" title="General information about the pyboard"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> General information about the pyboard </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

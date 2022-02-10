@@ -1,0 +1,519 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>time – time related functions &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="uasyncio — asynchronous I/O scheduler" href="uasyncio.html" />
+    <link rel="prev" title="sys – system specific functions" href="sys.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/time" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> time – time related functions </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-time--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> – time related functions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/time.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="time-time-related-functions"></span><h1 id="library-time--page-root"><a class="reference internal" href="#library-time--page-root" title="time: time related functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> – time related functions<a class="headerlink" href="#library-time--page-root" title="Permalink to this headline">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+as described below. For more information, refer to the original
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/time.html#module-time" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">time</span></code></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">time</span></code> module provides functions for getting the current time and date,
+measuring time intervals, and for delays.</p>
+<p><strong>Time Epoch</strong>: Unix port uses standard for POSIX systems epoch of
+1970-01-01 00:00:00 UTC. However, embedded ports use epoch of
+2000-01-01 00:00:00 UTC.</p>
+<p><strong>Maintaining actual calendar date/time</strong>: This requires a
+Real Time Clock (RTC). On systems with underlying OS (including some
+RTOS), an RTC may be implicit. Setting and maintaining actual calendar
+time is responsibility of OS/RTOS and is done outside of MicroPython,
+it just uses OS API to query date/time. On baremetal ports however
+system time depends on <code class="docutils literal notranslate"><span class="pre">machine.RTC()</span></code> object. The current calendar time
+may be set using <code class="docutils literal notranslate"><span class="pre">machine.RTC().datetime(tuple)</span></code> function, and maintained
+by following means:</p>
+<ul class="simple">
+<li><p>By a backup battery (which may be an additional, optional component for
+a particular board).</p></li>
+<li><p>Using networked time protocol (requires setup by a port/user).</p></li>
+<li><p>Set manually by a user on each power-up (many boards then maintain
+RTC time across hard resets, though some may require setting it again
+in such case).</p></li>
+</ul>
+<p>If actual calendar time is not maintained with a system/MicroPython RTC,
+functions below which require reference to current absolute time may
+behave not as expected.</p>
+
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="time.gmtime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">gmtime</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">secs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#time.gmtime" title="Permalink to this definition">¶</a></dt>
+<dt id="time.localtime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">localtime</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">secs</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#time.localtime" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert the time <em>secs</em> expressed in seconds since the Epoch (see above) into an
+8-tuple which contains: <code class="docutils literal notranslate"><span class="pre">(year,</span> <span class="pre">month,</span> <span class="pre">mday,</span> <span class="pre">hour,</span> <span class="pre">minute,</span> <span class="pre">second,</span> <span class="pre">weekday,</span> <span class="pre">yearday)</span></code>
+If <em>secs</em> is not provided or None, then the current time from the RTC is used.</p>
+<p>The <a class="reference internal" href="#time.gmtime" title="time.gmtime"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> function returns a date-time tuple in UTC, and <a class="reference internal" href="#time.localtime" title="time.localtime"><code class="xref any py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> returns a
+date-time tuple in local time.</p>
+<p>The format of the entries in the 8-tuple are:</p>
+<ul class="simple">
+<li><p>year includes the century (for example 2014).</p></li>
+<li><p>month   is 1-12</p></li>
+<li><p>mday    is 1-31</p></li>
+<li><p>hour    is 0-23</p></li>
+<li><p>minute  is 0-59</p></li>
+<li><p>second  is 0-59</p></li>
+<li><p>weekday is 0-6 for Mon-Sun</p></li>
+<li><p>yearday is 1-366</p></li>
+</ul>
+</dd></dl>
+<dl class="function">
+<dt id="time.mktime">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">mktime</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#time.mktime" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is inverse function of localtime. It’s argument is a full 8-tuple
+which expresses a time as per localtime. It returns an integer which is
+the number of seconds since Jan 1, 2000.</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.sleep">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">sleep</code><span class="sig-paren">(</span><em class="sig-param">seconds</em><span class="sig-paren">)</span><a class="headerlink" href="#time.sleep" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sleep for the given number of seconds. Some boards may accept <em>seconds</em> as a
+floating-point number to sleep for a fractional number of seconds. Note that
+other boards may not accept a floating-point argument, for compatibility with
+them use <a class="reference internal" href="#time.sleep_ms" title="time.sleep_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">sleep_ms()</span></code></a> and <a class="reference internal" href="#time.sleep_us" title="time.sleep_us"><code class="xref any py py-func docutils literal notranslate"><span class="pre">sleep_us()</span></code></a> functions.</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.sleep_ms">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">sleep_ms</code><span class="sig-paren">(</span><em class="sig-param">ms</em><span class="sig-paren">)</span><a class="headerlink" href="#time.sleep_ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delay for given number of milliseconds, should be positive or 0.</p>
+<p>This function will delay for at least the given number of milliseconds, but
+may take longer than that if other processing must take place, for example
+interrupt handlers or other threads.  Passing in 0 for <em>ms</em> will still allow
+this other processing to occur.  Use <a class="reference internal" href="#time.sleep_us" title="time.sleep_us"><code class="xref any py py-func docutils literal notranslate"><span class="pre">sleep_us()</span></code></a> for more precise delays.</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.sleep_us">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">sleep_us</code><span class="sig-paren">(</span><em class="sig-param">us</em><span class="sig-paren">)</span><a class="headerlink" href="#time.sleep_us" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delay for given number of microseconds, should be positive or 0.</p>
+<p>This function attempts to provide an accurate delay of at least <em>us</em>
+microseconds, but it may take longer if the system has other higher priority
+processing to perform.</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.ticks_ms">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">ticks_ms</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#time.ticks_ms" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an increasing millisecond counter with an arbitrary reference point, that
+wraps around after some value.</p>
+<p>The wrap-around value is not explicitly exposed, but we will
+refer to it as <em>TICKS_MAX</em> to simplify discussion. Period of the values is
+<em>TICKS_PERIOD = TICKS_MAX + 1</em>. <em>TICKS_PERIOD</em> is guaranteed to be a power of
+two, but otherwise may differ from port to port. The same period value is used
+for all of <a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a>, <a class="reference internal" href="#time.ticks_us" title="time.ticks_us"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_us()</span></code></a>, <a class="reference internal" href="#time.ticks_cpu" title="time.ticks_cpu"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_cpu()</span></code></a> functions (for
+simplicity). Thus, these functions will return a value in range [<em>0</em> ..
+<em>TICKS_MAX</em>], inclusive, total <em>TICKS_PERIOD</em> values. Note that only
+non-negative values are used. For the most part, you should treat values returned
+by these functions as opaque. The only operations available for them are
+<a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a> and <a class="reference internal" href="#time.ticks_add" title="time.ticks_add"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_add()</span></code></a> functions described below.</p>
+<p>Note: Performing standard mathematical operations (+, -) or relational
+operators (&lt;, &lt;=, &gt;, &gt;=) directly on these value will lead to invalid
+result. Performing mathematical operations and then passing their results
+as arguments to <a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a> or <a class="reference internal" href="#time.ticks_add" title="time.ticks_add"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_add()</span></code></a> will also lead to
+invalid results from the latter functions.</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.ticks_us">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">ticks_us</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#time.ticks_us" title="Permalink to this definition">¶</a></dt>
+<dd><p>Just like <a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a> above, but in microseconds.</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.ticks_cpu">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">ticks_cpu</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#time.ticks_cpu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a> and <a class="reference internal" href="#time.ticks_us" title="time.ticks_us"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_us()</span></code></a>, but with the highest possible resolution
+in the system. This is usually CPU clocks, and that’s why the function is named that
+way. But it doesn’t have to be a CPU clock, some other timing source available in a
+system (e.g. high-resolution timer) can be used instead. The exact timing unit
+(resolution) of this function is not specified on <code class="docutils literal notranslate"><span class="pre">time</span></code> module level, but
+documentation for a specific port may provide more specific information. This
+function is intended for very fine benchmarking or very tight real-time loops.
+Avoid using it in portable code.</p>
+<p>Availability: Not every port implements this function.</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.ticks_add">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">ticks_add</code><span class="sig-paren">(</span><em class="sig-param">ticks</em>, <em class="sig-param">delta</em><span class="sig-paren">)</span><a class="headerlink" href="#time.ticks_add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset ticks value by a given number, which can be either positive or negative.
+Given a <em>ticks</em> value, this function allows to calculate ticks value <em>delta</em>
+ticks before or after it, following modular-arithmetic definition of tick values
+(see <a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a> above). <em>ticks</em> parameter must be a direct result of call
+to <a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a>, <a class="reference internal" href="#time.ticks_us" title="time.ticks_us"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_us()</span></code></a>, or <a class="reference internal" href="#time.ticks_cpu" title="time.ticks_cpu"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_cpu()</span></code></a> functions (or from previous
+call to <a class="reference internal" href="#time.ticks_add" title="time.ticks_add"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_add()</span></code></a>). However, <em>delta</em> can be an arbitrary integer number
+or numeric expression. <a class="reference internal" href="#time.ticks_add" title="time.ticks_add"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_add()</span></code></a> is useful for calculating deadlines for
+events/tasks. (Note: you must use <a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a> function to work with
+deadlines.)</p>
+<p>Examples:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Find out what ticks value there was 100ms ago</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ticks_add</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="o">-</span><span class="mi">100</span><span class="p">))</span>
+
+<span class="c1"># Calculate deadline for operation and test for it</span>
+<span class="n">deadline</span> <span class="o">=</span> <span class="n">ticks_add</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">(),</span> <span class="mi">200</span><span class="p">)</span>
+<span class="k">while</span> <span class="n">ticks_diff</span><span class="p">(</span><span class="n">deadline</span><span class="p">,</span> <span class="n">time</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">())</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="n">do_a_little_of_something</span><span class="p">()</span>
+
+<span class="c1"># Find out TICKS_MAX used by this port</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ticks_add</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="function">
+<dt id="time.ticks_diff">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">ticks_diff</code><span class="sig-paren">(</span><em class="sig-param">ticks1</em>, <em class="sig-param">ticks2</em><span class="sig-paren">)</span><a class="headerlink" href="#time.ticks_diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Measure ticks difference between values returned from <a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a>, <a class="reference internal" href="#time.ticks_us" title="time.ticks_us"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_us()</span></code></a>,
+or <a class="reference internal" href="#time.ticks_cpu" title="time.ticks_cpu"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_cpu()</span></code></a> functions, as a signed value which may wrap around.</p>
+<p>The argument order is the same as for subtraction
+operator, <code class="docutils literal notranslate"><span class="pre">ticks_diff(ticks1,</span> <span class="pre">ticks2)</span></code> has the same meaning as <code class="docutils literal notranslate"><span class="pre">ticks1</span> <span class="pre">-</span> <span class="pre">ticks2</span></code>.
+However, values returned by <a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a>, etc. functions may wrap around, so
+directly using subtraction on them will produce incorrect result. That is why
+<a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a> is needed, it implements modular (or more specifically, ring)
+arithmetics to produce correct result even for wrap-around values (as long as they not
+too distant inbetween, see below). The function returns <strong>signed</strong> value in the range
+[<em>-TICKS_PERIOD/2</em> .. <em>TICKS_PERIOD/2-1</em>] (that’s a typical range definition for
+two’s-complement signed binary integers). If the result is negative, it means that
+<em>ticks1</em> occurred earlier in time than <em>ticks2</em>. Otherwise, it means that
+<em>ticks1</em> occurred after <em>ticks2</em>. This holds <strong>only</strong> if <em>ticks1</em> and <em>ticks2</em>
+are apart from each other for no more than <em>TICKS_PERIOD/2-1</em> ticks. If that does
+not hold, incorrect result will be returned. Specifically, if two tick values are
+apart for <em>TICKS_PERIOD/2-1</em> ticks, that value will be returned by the function.
+However, if <em>TICKS_PERIOD/2</em> of real-time ticks has passed between them, the
+function will return <em>-TICKS_PERIOD/2</em> instead, i.e. result value will wrap around
+to the negative range of possible values.</p>
+<p>Informal rationale of the constraints above: Suppose you are locked in a room with no
+means to monitor passing of time except a standard 12-notch clock. Then if you look at
+dial-plate now, and don’t look again for another 13 hours (e.g., if you fall for a
+long sleep), then once you finally look again, it may seem to you that only 1 hour
+has passed. To avoid this mistake, just look at the clock regularly. Your application
+should do the same. “Too long sleep” metaphor also maps directly to application
+behaviour: don’t let your application run any single task for too long. Run tasks
+in steps, and do time-keeping inbetween.</p>
+<p><a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a> is designed to accommodate various usage patterns, among them:</p>
+<ul>
+<li><p>Polling with timeout. In this case, the order of events is known, and you will deal
+only with positive results of <a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Wait for GPIO pin to be asserted, but at most 500us</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">ticks_us</span><span class="p">()</span>
+<span class="k">while</span> <span class="n">pin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">time</span><span class="o">.</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">time</span><span class="o">.</span><span class="n">ticks_us</span><span class="p">(),</span> <span class="n">start</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">500</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TimeoutError</span>
+</pre></div>
+</div>
+</li>
+<li><p>Scheduling events. In this case, <a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a> result may be negative
+if an event is overdue:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># This code snippet is not optimized</span>
+<span class="n">now</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">ticks_ms</span><span class="p">()</span>
+<span class="n">scheduled_time</span> <span class="o">=</span> <span class="n">task</span><span class="o">.</span><span class="n">scheduled_time</span><span class="p">()</span>
+<span class="k">if</span> <span class="n">ticks_diff</span><span class="p">(</span><span class="n">scheduled_time</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Too early, let's nap"</span><span class="p">)</span>
+    <span class="n">sleep_ms</span><span class="p">(</span><span class="n">ticks_diff</span><span class="p">(</span><span class="n">scheduled_time</span><span class="p">,</span> <span class="n">now</span><span class="p">))</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">ticks_diff</span><span class="p">(</span><span class="n">scheduled_time</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Right at time!"</span><span class="p">)</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">()</span>
+<span class="k">elif</span> <span class="n">ticks_diff</span><span class="p">(</span><span class="n">scheduled_time</span><span class="p">,</span> <span class="n">now</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">"Oops, running late, tell task to run faster!"</span><span class="p">)</span>
+    <span class="n">task</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">run_faster</span><span class="o">=</span><span class="n">true</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Note: Do not pass <a class="reference internal" href="#time.time" title="time.time"><code class="xref any py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> values to <a class="reference internal" href="#time.ticks_diff" title="time.ticks_diff"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_diff()</span></code></a>, you should use
+normal mathematical operations on them. But note that <a class="reference internal" href="#time.time" title="time.time"><code class="xref any py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> may (and will)
+also overflow. This is known as <a class="reference external" href="https://en.wikipedia.org/wiki/Year_2038_problem">https://en.wikipedia.org/wiki/Year_2038_problem</a> .</p>
+</dd></dl>
+<dl class="function">
+<dt id="time.time">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">time</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#time.time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of seconds, as an integer, since the Epoch, assuming that
+underlying RTC is set and maintained as described above. If an RTC is not set, this
+function returns number of seconds since a port-specific reference point in time (for
+embedded boards without a battery-backed RTC, usually since power up or reset). If you
+want to develop portable MicroPython application, you should not rely on this function
+to provide higher than second precision.  If you need higher precision, absolute
+timestamps, use <a class="reference internal" href="#time.time_ns" title="time.time_ns"><code class="xref any py py-func docutils literal notranslate"><span class="pre">time_ns()</span></code></a>.  If relative times are acceptable then use the
+<a class="reference internal" href="#time.ticks_ms" title="time.ticks_ms"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_ms()</span></code></a> and <a class="reference internal" href="#time.ticks_us" title="time.ticks_us"><code class="xref any py py-func docutils literal notranslate"><span class="pre">ticks_us()</span></code></a> functions.  If you need calendar time, <a class="reference internal" href="#time.gmtime" title="time.gmtime"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gmtime()</span></code></a> or
+<a class="reference internal" href="#time.localtime" title="time.localtime"><code class="xref any py py-func docutils literal notranslate"><span class="pre">localtime()</span></code></a> without an argument is a better choice.</p>
+<div class="attention admonition">
+<p class="admonition-title">Difference to CPython</p>
+<p>In CPython, this function returns number of
+seconds since Unix epoch, 1970-01-01 00:00 UTC, as a floating-point,
+usually having microsecond precision. With MicroPython, only Unix port
+uses the same Epoch, and if floating-point precision allows,
+returns sub-second precision. Embedded hardware usually doesn’t have
+floating-point precision to represent both long time ranges and subsecond
+precision, so they use integer value with second precision. Some embedded
+hardware also lacks battery-powered RTC, so returns number of seconds
+since last power-up or from other relative, hardware-specific point
+(e.g. reset).</p>
+</div>
+</dd></dl>
+<dl class="function">
+<dt id="time.time_ns">
+<code class="sig-prename descclassname">time.</code><code class="sig-name descname">time_ns</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#time.time_ns" title="Permalink to this definition">¶</a></dt>
+<dd><p>Similar to <a class="reference internal" href="#time.time" title="time.time"><code class="xref any py py-func docutils literal notranslate"><span class="pre">time()</span></code></a> but returns nanoseconds since the Epoch, as an integer (usually
+a big integer, so will allocate on the heap).</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="sys.html" title="sys – system specific functions"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">sys</span></code> – system specific functions </span>
+              </div>
+            </a>
+          
+          
+            <a href="uasyncio.html" title="uasyncio — asynchronous I/O scheduler"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">uasyncio</span></code> — asynchronous I/O scheduler </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

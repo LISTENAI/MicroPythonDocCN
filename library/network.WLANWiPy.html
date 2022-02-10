@@ -1,0 +1,469 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class WLANWiPy – WiPy specific WiFi control &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class CC3K – control CC3000 WiFi modules" href="network.CC3K.html" />
+    <link rel="prev" title="class WLAN – control built-in WiFi interfaces" href="network.WLAN.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/network.WLANWiPy" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class WLANWiPy – WiPy specific WiFi control </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="network.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — network configuration</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-network-wlanwipy--page-root" class="md-nav__link">class WLANWiPy – WiPy specific WiFi control</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/network.WLANWiPy.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="network-wlanwipy"></span><h1 id="library-network-wlanwipy--page-root">class WLANWiPy – WiPy specific WiFi control<a class="headerlink" href="#library-network-wlanwipy--page-root" title="Permalink to this headline">¶</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This class is a non-standard WLAN implementation for the WiPy.
+It is available simply as <code class="docutils literal notranslate"><span class="pre">network.WLAN</span></code> on the WiPy but is named in the
+documentation below as <code class="docutils literal notranslate"><span class="pre">network.WLANWiPy</span></code> to distinguish it from the
+more general <a class="reference internal" href="network.WLAN.html#network-wlan"><span class="std std-ref">network.WLAN</span></a> class.</p>
+</div>
+<p>This class provides a driver for the WiFi network processor in the WiPy. Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">network</span>
+<span class="kn">import</span> <span class="nn">time</span>
+<span class="c1"># setup as a station</span>
+<span class="n">wlan</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">WLAN</span><span class="o">.</span><span class="n">STA</span><span class="p">)</span>
+<span class="n">wlan</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'your-ssid'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">WLAN</span><span class="o">.</span><span class="n">WPA2</span><span class="p">,</span> <span class="s1">'your-key'</span><span class="p">))</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">wlan</span><span class="o">.</span><span class="n">isconnected</span><span class="p">():</span>
+    <span class="n">time</span><span class="o">.</span><span class="n">sleep_ms</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wlan</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">())</span>
+
+<span class="c1"># now use socket as usual</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="network.WLANWiPy">
+<em class="property">class </em><code class="sig-prename descclassname">network.</code><code class="sig-name descname">WLANWiPy</code><span class="sig-paren">(</span><em class="sig-param">id=0</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a WLAN object, and optionally configure it. See <a class="reference internal" href="#network.WLANWiPy.init" title="network.WLANWiPy.init"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">init()</span></code></a> for params of configuration.</p>
+</dd></dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">WLAN</span></code> constructor is special in the sense that if no arguments besides the id are given,
+it will return the already existing <code class="docutils literal notranslate"><span class="pre">WLAN</span></code> instance without re-configuring it. This is
+because <code class="docutils literal notranslate"><span class="pre">WLAN</span></code> is a system feature of the WiPy. If the already existing instance is not
+initialized it will do the same as the other constructors an will initialize it with default
+values.</p>
+</div>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="network.WLANWiPy.init">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">mode</em>, <em class="sig-param">*</em>, <em class="sig-param">ssid</em>, <em class="sig-param">auth</em>, <em class="sig-param">channel</em>, <em class="sig-param">antenna</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set or get the WiFi network processor configuration.</p>
+<p>Arguments are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>mode</em> can be either <code class="docutils literal notranslate"><span class="pre">WLAN.STA</span></code> or <code class="docutils literal notranslate"><span class="pre">WLAN.AP</span></code>.</p></li>
+<li><p><em>ssid</em> is a string with the ssid name. Only needed when mode is <code class="docutils literal notranslate"><span class="pre">WLAN.AP</span></code>.</p></li>
+<li><p><em>auth</em> is a tuple with (sec, key). Security can be <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">WLAN.WEP</span></code>,
+<code class="docutils literal notranslate"><span class="pre">WLAN.WPA</span></code> or <code class="docutils literal notranslate"><span class="pre">WLAN.WPA2</span></code>. The key is a string with the network password.
+If <code class="docutils literal notranslate"><span class="pre">sec</span></code> is <code class="docutils literal notranslate"><span class="pre">WLAN.WEP</span></code> the key must be a string representing hexadecimal
+values (e.g. ‘ABC1DE45BF’). Only needed when mode is <code class="docutils literal notranslate"><span class="pre">WLAN.AP</span></code>.</p></li>
+<li><p><em>channel</em> a number in the range 1-11. Only needed when mode is <code class="docutils literal notranslate"><span class="pre">WLAN.AP</span></code>.</p></li>
+<li><p><em>antenna</em> selects between the internal and the external antenna. Can be either
+<code class="docutils literal notranslate"><span class="pre">WLAN.INT_ANT</span></code> or <code class="docutils literal notranslate"><span class="pre">WLAN.EXT_ANT</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<p>For example, you can do:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># create and configure as an access point</span>
+<span class="n">wlan</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">WLAN</span><span class="o">.</span><span class="n">AP</span><span class="p">,</span> <span class="n">ssid</span><span class="o">=</span><span class="s1">'wipy-wlan'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">WLAN</span><span class="o">.</span><span class="n">WPA2</span><span class="p">,</span><span class="s1">'www.wipy.io'</span><span class="p">),</span> <span class="n">channel</span><span class="o">=</span><span class="mi">7</span><span class="p">,</span> <span class="n">antenna</span><span class="o">=</span><span class="n">WLAN</span><span class="o">.</span><span class="n">INT_ANT</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># configure as an station</span>
+<span class="n">wlan</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">WLAN</span><span class="o">.</span><span class="n">STA</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.connect">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param">ssid</em>, <em class="sig-param">*</em>, <em class="sig-param">auth=None</em>, <em class="sig-param">bssid=None</em>, <em class="sig-param">timeout=None</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to a WiFi access point using the given SSID, and other security
+parameters.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>auth</em> is a tuple with (sec, key). Security can be <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">WLAN.WEP</span></code>,
+<code class="docutils literal notranslate"><span class="pre">WLAN.WPA</span></code> or <code class="docutils literal notranslate"><span class="pre">WLAN.WPA2</span></code>. The key is a string with the network password.
+If <code class="docutils literal notranslate"><span class="pre">sec</span></code> is <code class="docutils literal notranslate"><span class="pre">WLAN.WEP</span></code> the key must be a string representing hexadecimal
+values (e.g. ‘ABC1DE45BF’).</p></li>
+<li><p><em>bssid</em> is the MAC address of the AP to connect to. Useful when there are several
+APs with the same ssid.</p></li>
+<li><p><em>timeout</em> is the maximum time in milliseconds to wait for the connection to succeed.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.scan">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">scan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Performs a network scan and returns a list of named tuples with (ssid, bssid, sec, channel, rssi).
+Note that channel is always <code class="docutils literal notranslate"><span class="pre">None</span></code> since this info is not provided by the WiPy.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.disconnect">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect from the WiFi access point.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.isconnected">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">isconnected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.isconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>In case of STA mode, returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if connected to a WiFi access point and has a valid IP address.
+In AP mode returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when a station is connected, <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.ifconfig">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">ifconfig</code><span class="sig-paren">(</span><em class="sig-param">if_id=0, config=['dhcp' or configtuple]</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.ifconfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>With no parameters given returns a 4-tuple of <em>(ip, subnet_mask, gateway, DNS_server)</em>.</p>
+<p>if <code class="docutils literal notranslate"><span class="pre">'dhcp'</span></code> is passed as a parameter then the DHCP client is enabled and the IP params
+are negotiated with the AP.</p>
+<p>If the 4-tuple config is given then a static IP is configured. For instance:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">wlan</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="p">(</span><span class="s1">'192.168.0.4'</span><span class="p">,</span> <span class="s1">'255.255.255.0'</span><span class="p">,</span> <span class="s1">'192.168.0.1'</span><span class="p">,</span> <span class="s1">'8.8.8.8'</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.mode">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">mode</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">mode</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the WLAN mode.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.ssid">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">ssid</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">ssid</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.ssid" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the SSID when in AP mode.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.auth">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">auth</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">auth</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.auth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the authentication type when in AP mode.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.channel">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">channel</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">channel</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the channel (only applicable in AP mode).</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.antenna">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">antenna</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">antenna</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.antenna" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set the antenna type (external or internal).</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.mac">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">mac</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">mac_addr</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.mac" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get or set a 6-byte long bytes object with the MAC address.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLANWiPy.irq">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">handler</em>, <em class="sig-param">wake</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLANWiPy.irq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a callback to be triggered when a WLAN event occurs during <code class="docutils literal notranslate"><span class="pre">machine.SLEEP</span></code>
+mode. Events are triggered by socket activity or by WLAN connection/disconnection.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>handler</em> is the function that gets called when the IRQ is triggered.</p></li>
+<li><p><em>wake</em> must be <code class="docutils literal notranslate"><span class="pre">machine.SLEEP</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<p>Returns an IRQ object.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="network.WLANWiPy.STA">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">STA</code><a class="headerlink" href="#network.WLANWiPy.STA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="data">
+<dt id="network.WLANWiPy.AP">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">AP</code><a class="headerlink" href="#network.WLANWiPy.AP" title="Permalink to this definition">¶</a></dt>
+<dd><p>selects the WLAN mode</p>
+</dd></dl>
+<dl class="data">
+<dt id="network.WLANWiPy.WEP">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">WEP</code><a class="headerlink" href="#network.WLANWiPy.WEP" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="data">
+<dt id="network.WLANWiPy.WPA">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">WPA</code><a class="headerlink" href="#network.WLANWiPy.WPA" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="data">
+<dt id="network.WLANWiPy.WPA2">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">WPA2</code><a class="headerlink" href="#network.WLANWiPy.WPA2" title="Permalink to this definition">¶</a></dt>
+<dd><p>selects the network security</p>
+</dd></dl>
+<dl class="data">
+<dt id="network.WLANWiPy.INT_ANT">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">INT_ANT</code><a class="headerlink" href="#network.WLANWiPy.INT_ANT" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="data">
+<dt id="network.WLANWiPy.EXT_ANT">
+<code class="sig-prename descclassname">WLANWiPy.</code><code class="sig-name descname">EXT_ANT</code><a class="headerlink" href="#network.WLANWiPy.EXT_ANT" title="Permalink to this definition">¶</a></dt>
+<dd><p>selects the antenna type</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="network.WLAN.html" title="class WLAN – control built-in WiFi interfaces"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class WLAN – control built-in WiFi interfaces </span>
+              </div>
+            </a>
+          
+          
+            <a href="network.CC3K.html" title="class CC3K – control CC3000 WiFi modules"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class CC3K – control CC3000 WiFi modules </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

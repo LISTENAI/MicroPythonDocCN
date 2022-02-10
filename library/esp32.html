@@ -1,0 +1,642 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>esp32 — functionality specific to the ESP32 &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="rp2 — functionality specific to the RP2040" href="rp2.html" />
+    <link rel="prev" title="esp — functions related to the ESP8266 and ESP32" href="esp.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/esp32" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> esp32 — functionality specific to the ESP32 </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-esp32--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">esp32</span></code> — functionality specific to the ESP32</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a>
+        </li>
+        <li class="md-nav__item"><a href="#flash-partitions" class="md-nav__link">Flash partitions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#rmt" class="md-nav__link">RMT</a>
+        </li>
+        <li class="md-nav__item"><a href="#ultra-low-power-co-processor" class="md-nav__link">Ultra-Low-Power co-processor</a>
+        </li>
+        <li class="md-nav__item"><a href="#id1" class="md-nav__link">Constants</a>
+        </li>
+        <li class="md-nav__item"><a href="#non-volatile-storage" class="md-nav__link">Non-Volatile Storage</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/esp32.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="esp32-functionality-specific-to-the-esp32"></span><h1 id="library-esp32--page-root"><a class="reference internal" href="#library-esp32--page-root" title="esp32: functionality specific to the ESP32"><code class="xref py py-mod docutils literal notranslate"><span class="pre">esp32</span></code></a> — functionality specific to the ESP32<a class="headerlink" href="#library-esp32--page-root" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">esp32</span></code> module contains functions and classes specifically aimed at
+controlling ESP32 modules.</p>
+
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="esp32.wake_on_touch">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">wake_on_touch</code><span class="sig-paren">(</span><em class="sig-param">wake</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.wake_on_touch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure whether or not a touch will wake the device from sleep.
+<em>wake</em> should be a boolean value.</p>
+</dd></dl>
+<dl class="function">
+<dt id="esp32.wake_on_ext0">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">wake_on_ext0</code><span class="sig-paren">(</span><em class="sig-param">pin</em>, <em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.wake_on_ext0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure how EXT0 wakes the device from sleep.  <em>pin</em> can be <code class="docutils literal notranslate"><span class="pre">None</span></code>
+or a valid Pin object.  <em>level</em> should be <code class="docutils literal notranslate"><span class="pre">esp32.WAKEUP_ALL_LOW</span></code> or
+<code class="docutils literal notranslate"><span class="pre">esp32.WAKEUP_ANY_HIGH</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="esp32.wake_on_ext1">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">wake_on_ext1</code><span class="sig-paren">(</span><em class="sig-param">pins</em>, <em class="sig-param">level</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.wake_on_ext1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure how EXT1 wakes the device from sleep.  <em>pins</em> can be <code class="docutils literal notranslate"><span class="pre">None</span></code>
+or a tuple/list of valid Pin objects.  <em>level</em> should be <code class="docutils literal notranslate"><span class="pre">esp32.WAKEUP_ALL_LOW</span></code>
+or <code class="docutils literal notranslate"><span class="pre">esp32.WAKEUP_ANY_HIGH</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="esp32.raw_temperature">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">raw_temperature</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.raw_temperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the raw value of the internal temperature sensor, returning an integer.</p>
+</dd></dl>
+<dl class="function">
+<dt id="esp32.hall_sensor">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">hall_sensor</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.hall_sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the raw value of the internal Hall sensor, returning an integer.</p>
+</dd></dl>
+<dl class="function">
+<dt id="esp32.idf_heap_info">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">idf_heap_info</code><span class="sig-paren">(</span><em class="sig-param">capabilities</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.idf_heap_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns information about the ESP-IDF heap memory regions. One of them contains
+the MicroPython heap and the others are used by ESP-IDF, e.g., for network
+buffers and other data. This data is useful to get a sense of how much memory
+is available to ESP-IDF and the networking stack in particular. It may shed
+some light on situations where ESP-IDF operations fail due to allocation failures.
+The information returned is <em>not</em> useful to troubleshoot Python allocation failures,
+use <a class="reference internal" href="micropython.html#micropython.mem_info" title="micropython.mem_info"><code class="xref any py py-func docutils literal notranslate"><span class="pre">micropython.mem_info()</span></code></a> instead.</p>
+<p>The capabilities parameter corresponds to ESP-IDF’s <code class="docutils literal notranslate"><span class="pre">MALLOC_CAP_XXX</span></code> values but the
+two most useful ones are predefined as <a class="reference internal" href="#esp32.HEAP_DATA" title="esp32.HEAP_DATA"><code class="xref any py py-data docutils literal notranslate"><span class="pre">esp32.HEAP_DATA</span></code></a> for data heap regions and
+<a class="reference internal" href="#esp32.HEAP_EXEC" title="esp32.HEAP_EXEC"><code class="xref any py py-data docutils literal notranslate"><span class="pre">esp32.HEAP_EXEC</span></code></a> for executable regions as used by the native code emitter.</p>
+<p>The return value is a list of 4-tuples, where each 4-tuple corresponds to one heap
+and contains: the total bytes, the free bytes, the largest free block, and
+the minimum free seen over time.</p>
+<p>Example after booting:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">esp32</span><span class="p">;</span> <span class="n">esp32</span><span class="o">.</span><span class="n">idf_heap_info</span><span class="p">(</span><span class="n">esp32</span><span class="o">.</span><span class="n">HEAP_DATA</span><span class="p">)</span>
+<span class="go">[(240, 0, 0, 0), (7288, 0, 0, 0), (16648, 4, 4, 4), (79912, 35712, 35512, 35108),</span>
+<span class="go"> (15072, 15036, 15036, 15036), (113840, 0, 0, 0)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+
+<h2 id="flash-partitions">Flash partitions<a class="headerlink" href="#flash-partitions" title="Permalink to this headline">¶</a></h2>
+<p>This class gives access to the partitions in the device’s flash memory and includes
+methods to enable over-the-air (OTA) updates.</p>
+<dl class="class">
+<dt id="esp32.Partition">
+<em class="property">class </em><code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">Partition</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an object representing a partition.  <em>id</em> can be a string which is the label
+of the partition to retrieve, or one of the constants: <code class="docutils literal notranslate"><span class="pre">BOOT</span></code> or <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.find">
+<em class="property">classmethod </em><code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">find</code><span class="sig-paren">(</span><em class="sig-param">type=TYPE_APP</em>, <em class="sig-param">subtype=0xff</em>, <em class="sig-param">label=None</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.find" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a partition specified by <em>type</em>, <em>subtype</em> and <em>label</em>.  Returns a
+(possibly empty) list of Partition objects. Note: <code class="docutils literal notranslate"><span class="pre">subtype=0xff</span></code> matches any subtype
+and <code class="docutils literal notranslate"><span class="pre">label=None</span></code> matches any label.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.info">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a 6-tuple <code class="docutils literal notranslate"><span class="pre">(type,</span> <span class="pre">subtype,</span> <span class="pre">addr,</span> <span class="pre">size,</span> <span class="pre">label,</span> <span class="pre">encrypted)</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.readblocks">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">readblocks</code><span class="sig-paren">(</span><em class="sig-param">block_num</em>, <em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.readblocks" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">readblocks</code><span class="sig-paren">(</span><em class="sig-param">block_num</em>, <em class="sig-param">buf</em>, <em class="sig-param">offset</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.writeblocks">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">writeblocks</code><span class="sig-paren">(</span><em class="sig-param">block_num</em>, <em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.writeblocks" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">writeblocks</code><span class="sig-paren">(</span><em class="sig-param">block_num</em>, <em class="sig-param">buf</em>, <em class="sig-param">offset</em><span class="sig-paren">)</span></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.ioctl">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">ioctl</code><span class="sig-paren">(</span><em class="sig-param">cmd</em>, <em class="sig-param">arg</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.ioctl" title="Permalink to this definition">¶</a></dt>
+<dd><p>These methods implement the simple and <a class="reference internal" href="os.html#block-device-interface"><span class="std std-ref">extended</span></a> block protocol defined by
+<a class="reference internal" href="os.html#os.AbstractBlockDev" title="os.AbstractBlockDev"><code class="xref py py-class docutils literal notranslate"><span class="pre">os.AbstractBlockDev</span></code></a>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.set_boot">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">set_boot</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.set_boot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the partition as the boot partition.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.get_next_update">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">get_next_update</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.get_next_update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the next update partition after this one, and returns a new Partition object.
+Typical usage is <code class="docutils literal notranslate"><span class="pre">Partition(Partition.RUNNING).get_next_update()</span></code>
+which returns the next partition to update given the current running one.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.Partition.mark_app_valid_cancel_rollback">
+<em class="property">classmethod </em><code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">mark_app_valid_cancel_rollback</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.Partition.mark_app_valid_cancel_rollback" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signals that the current boot is considered successful.
+Calling <code class="docutils literal notranslate"><span class="pre">mark_app_valid_cancel_rollback</span></code> is required on the first boot of a new
+partition to avoid an automatic rollback at the next boot.
+This uses the ESP-IDF “app rollback” feature with “CONFIG_BOOTLOADER_APP_ROLLBACK_ENABLE”
+and  an <code class="docutils literal notranslate"><span class="pre">OSError(-261)</span></code> is raised if called on firmware that doesn’t have the
+feature enabled.
+It is OK to call <code class="docutils literal notranslate"><span class="pre">mark_app_valid_cancel_rollback</span></code> on every boot and it is not
+necessary when booting firmare that was loaded using esptool.</p>
+</dd></dl>
+
+<h3 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h3>
+<dl class="data">
+<dt id="esp32.Partition.BOOT">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">BOOT</code><a class="headerlink" href="#esp32.Partition.BOOT" title="Permalink to this definition">¶</a></dt>
+<dt id="esp32.Partition.RUNNING">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">RUNNING</code><a class="headerlink" href="#esp32.Partition.RUNNING" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used in the <a class="reference internal" href="#esp32.Partition" title="esp32.Partition"><code class="xref any py py-class docutils literal notranslate"><span class="pre">Partition</span></code></a> constructor to fetch various partitions: <code class="docutils literal notranslate"><span class="pre">BOOT</span></code> is the
+partition that will be booted at the next reset and <code class="docutils literal notranslate"><span class="pre">RUNNING</span></code> is the currently
+running partition.</p>
+</dd></dl>
+<dl class="data">
+<dt id="esp32.Partition.TYPE_APP">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">TYPE_APP</code><a class="headerlink" href="#esp32.Partition.TYPE_APP" title="Permalink to this definition">¶</a></dt>
+<dt id="esp32.Partition.TYPE_DATA">
+<code class="sig-prename descclassname">Partition.</code><code class="sig-name descname">TYPE_DATA</code><a class="headerlink" href="#esp32.Partition.TYPE_DATA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used in <a class="reference internal" href="#esp32.Partition.find" title="esp32.Partition.find"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">Partition.find</span></code></a> to specify the partition type: <code class="docutils literal notranslate"><span class="pre">APP</span></code> is for bootable
+firmware partitions (typically labelled <code class="docutils literal notranslate"><span class="pre">factory</span></code>, <code class="docutils literal notranslate"><span class="pre">ota_0</span></code>, <code class="docutils literal notranslate"><span class="pre">ota_1</span></code>), and
+<code class="docutils literal notranslate"><span class="pre">DATA</span></code> is for other partitions, e.g. <code class="docutils literal notranslate"><span class="pre">nvs</span></code>, <code class="docutils literal notranslate"><span class="pre">otadata</span></code>, <code class="docutils literal notranslate"><span class="pre">phy_init</span></code>, <code class="docutils literal notranslate"><span class="pre">vfs</span></code>.</p>
+</dd></dl>
+<dl class="data">
+<dt id="esp32.HEAP_DATA">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">HEAP_DATA</code><a class="headerlink" href="#esp32.HEAP_DATA" title="Permalink to this definition">¶</a></dt>
+<dt id="esp32.HEAP_EXEC">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">HEAP_EXEC</code><a class="headerlink" href="#esp32.HEAP_EXEC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Used in <a class="reference internal" href="#esp32.idf_heap_info" title="esp32.idf_heap_info"><code class="xref any py py-func docutils literal notranslate"><span class="pre">idf_heap_info</span></code></a>.</p>
+</dd></dl>
+
+
+
+<span id="esp32-rmt"></span><h2 id="rmt">RMT<a class="headerlink" href="#rmt" title="Permalink to this headline">¶</a></h2>
+<p>The RMT (Remote Control) module, specific to the ESP32, was originally designed
+to send and receive infrared remote control signals. However, due to a flexible
+design and very accurate (as low as 12.5ns) pulse generation, it can also be
+used to transmit or receive many other types of digital signals:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">esp32</span><span class="o">.</span><span class="n">RMT</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pin</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">18</span><span class="p">),</span> <span class="n">clock_div</span><span class="o">=</span><span class="mi">8</span><span class="p">)</span>
+<span class="n">r</span>  <span class="c1"># RMT(channel=0, pin=18, source_freq=80000000, clock_div=8, idle_level=0)</span>
+
+<span class="c1"># To apply a carrier frequency to the high output</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">esp32</span><span class="o">.</span><span class="n">RMT</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">pin</span><span class="o">=</span><span class="n">Pin</span><span class="p">(</span><span class="mi">18</span><span class="p">),</span> <span class="n">clock_div</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">tx_carrier</span><span class="o">=</span><span class="p">(</span><span class="mi">38000</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+<span class="c1"># The channel resolution is 100ns (1/(source_freq/clock_div)).</span>
+<span class="n">r</span><span class="o">.</span><span class="n">write_pulses</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># Send 0 for 100ns, 1 for 2000ns, 0 for 200ns, 1 for 4000ns</span>
+</pre></div>
+</div>
+<p>The input to the RMT module is an 80MHz clock (in the future it may be able to
+configure the input clock but, for now, it’s fixed). <code class="docutils literal notranslate"><span class="pre">clock_div</span></code> <em>divides</em>
+the clock input which determines the resolution of the RMT channel. The
+numbers specified in <code class="docutils literal notranslate"><span class="pre">write_pulses</span></code> are multiplied by the resolution to
+define the pulses.</p>
+<p><code class="docutils literal notranslate"><span class="pre">clock_div</span></code> is an 8-bit divider (0-255) and each pulse can be defined by
+multiplying the resolution by a 15-bit (0-32,768) number. There are eight
+channels (0-7) and each can have a different clock divider.</p>
+<p>So, in the example above, the 80MHz clock is divided by 8. Thus the
+resolution is (1/(80Mhz/8)) 100ns. Since the <code class="docutils literal notranslate"><span class="pre">start</span></code> level is 0 and toggles
+with each number, the bitstream is <code class="docutils literal notranslate"><span class="pre">0101</span></code> with durations of [100ns, 2000ns,
+100ns, 4000ns].</p>
+<p>For more details see Espressif’s <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/rmt.html">ESP-IDF RMT documentation.</a>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The current MicroPython RMT implementation lacks some features, most notably
+receiving pulses. RMT should be considered a
+<em>beta feature</em> and the interface may change in the future.</p>
+</div>
+<dl class="class">
+<dt id="esp32.RMT">
+<em class="property">class </em><code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">RMT</code><span class="sig-paren">(</span><em class="sig-param">channel</em>, <em class="sig-param">*</em>, <em class="sig-param">pin=None</em>, <em class="sig-param">clock_div=8</em>, <em class="sig-param">idle_level=False</em>, <em class="sig-param">tx_carrier=None</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.RMT" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides access to one of the eight RMT channels. <em>channel</em> is
+required and identifies which RMT channel (0-7) will be configured. <em>pin</em>,
+also required, configures which Pin is bound to the RMT channel. <em>clock_div</em>
+is an 8-bit clock divider that divides the source clock (80MHz) to the RMT
+channel allowing the resolution to be specified. <em>idle_level</em> specifies
+what level the output will be when no transmission is in progress and can
+be any value that converts to a boolean, with <code class="docutils literal notranslate"><span class="pre">True</span></code> representing high
+voltage and <code class="docutils literal notranslate"><span class="pre">False</span></code> representing low.</p>
+<p>To enable the transmission carrier feature, <em>tx_carrier</em> should be a tuple
+of three positive integers: carrier frequency, duty percent (<code class="docutils literal notranslate"><span class="pre">0</span></code> to
+<code class="docutils literal notranslate"><span class="pre">100</span></code>) and the output level to apply the carrier to (a boolean as per
+<em>idle_level</em>).</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.RMT.source_freq">
+<code class="sig-prename descclassname">RMT.</code><code class="sig-name descname">source_freq</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.RMT.source_freq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the source clock frequency. Currently the source clock is not
+configurable so this will always return 80MHz.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.RMT.clock_div">
+<code class="sig-prename descclassname">RMT.</code><code class="sig-name descname">clock_div</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.RMT.clock_div" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the clock divider. Note that the channel resolution is
+<code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">(source_freq</span> <span class="pre">/</span> <span class="pre">clock_div)</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.RMT.wait_done">
+<code class="sig-prename descclassname">RMT.</code><code class="sig-name descname">wait_done</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">timeout=0</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.RMT.wait_done" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the channel is idle or <code class="docutils literal notranslate"><span class="pre">False</span></code> if a sequence of
+pulses started with <a class="reference internal" href="#esp32.RMT.write_pulses" title="esp32.RMT.write_pulses"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">RMT.write_pulses</span></code></a> is being transmitted. If the
+<em>timeout</em> keyword argument is given then block for up to this many
+milliseconds for transmission to complete.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.RMT.loop">
+<code class="sig-prename descclassname">RMT.</code><code class="sig-name descname">loop</code><span class="sig-paren">(</span><em class="sig-param">enable_loop</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.RMT.loop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure looping on the channel. <em>enable_loop</em> is bool, set to <code class="docutils literal notranslate"><span class="pre">True</span></code> to
+enable looping on the <em>next</em> call to <a class="reference internal" href="#esp32.RMT.write_pulses" title="esp32.RMT.write_pulses"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">RMT.write_pulses</span></code></a>. If called with
+<code class="docutils literal notranslate"><span class="pre">False</span></code> while a looping sequence is currently being transmitted then the
+current loop iteration will be completed and then transmission will stop.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.RMT.write_pulses">
+<code class="sig-prename descclassname">RMT.</code><code class="sig-name descname">write_pulses</code><span class="sig-paren">(</span><em class="sig-param">duration</em>, <em class="sig-param">data=True</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.RMT.write_pulses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Begin transmitting a sequence. There are three ways to specify this:</p>
+<p><strong>Mode 1:</strong> <em>duration</em> is a list or tuple of durations. The optional <em>data</em>
+argument specifies the initial output level. The output level will toggle
+after each duration.</p>
+<p><strong>Mode 2:</strong> <em>duration</em> is a positive integer and <em>data</em> is a list or tuple
+of output levels. <em>duration</em> specifies a fixed duration for each.</p>
+<p><strong>Mode 3:</strong> <em>duration</em> and <em>data</em> are lists or tuples of equal length,
+specifying individual durations and the output level for each.</p>
+<p>Durations are in integer units of the channel resolution (as described
+above), between 1 and 32767 units. Output levels are any value that can
+be converted to a boolean, with <code class="docutils literal notranslate"><span class="pre">True</span></code> representing high voltage and
+<code class="docutils literal notranslate"><span class="pre">False</span></code> representing low.</p>
+<p>If transmission of an earlier sequence is in progress then this method will
+block until that transmission is complete before beginning the new sequence.</p>
+<p>If looping has been enabled with <a class="reference internal" href="#esp32.RMT.loop" title="esp32.RMT.loop"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">RMT.loop</span></code></a>, the sequence will be
+repeated indefinitely. Further calls to this method will block until the
+end of the current loop iteration before immediately beginning to loop the
+new sequence of pulses. Looping sequences longer than 126 pulses is not
+supported by the hardware.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.RMT.bitstream_channel">
+<em class="property">static </em><code class="sig-prename descclassname">RMT.</code><code class="sig-name descname">bitstream_channel</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.RMT.bitstream_channel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which RMT channel is used by the <a class="reference internal" href="machine.html#machine.bitstream" title="machine.bitstream"><code class="xref any py py-func docutils literal notranslate"><span class="pre">machine.bitstream</span></code></a> implementation.
+<em>value</em> can be <code class="docutils literal notranslate"><span class="pre">None</span></code> or a valid RMT channel number.  The default RMT
+channel is the highest numbered one.</p>
+<p>Passing in <code class="docutils literal notranslate"><span class="pre">None</span></code> disables the use of RMT and instead selects a bit-banging
+implementation for <a class="reference internal" href="machine.html#machine.bitstream" title="machine.bitstream"><code class="xref any py py-func docutils literal notranslate"><span class="pre">machine.bitstream</span></code></a>.</p>
+<p>Passing in no argument will not change the channel.  This function returns
+the current channel number.</p>
+</dd></dl>
+
+
+<h2 id="ultra-low-power-co-processor">Ultra-Low-Power co-processor<a class="headerlink" href="#ultra-low-power-co-processor" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="esp32.ULP">
+<em class="property">class </em><code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">ULP</code><a class="headerlink" href="#esp32.ULP" title="Permalink to this definition">¶</a></dt>
+<dd><p>This class provides access to the Ultra-Low-Power co-processor.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.ULP.set_wakeup_period">
+<code class="sig-prename descclassname">ULP.</code><code class="sig-name descname">set_wakeup_period</code><span class="sig-paren">(</span><em class="sig-param">period_index</em>, <em class="sig-param">period_us</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.ULP.set_wakeup_period" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the wake-up period.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.ULP.load_binary">
+<code class="sig-prename descclassname">ULP.</code><code class="sig-name descname">load_binary</code><span class="sig-paren">(</span><em class="sig-param">load_addr</em>, <em class="sig-param">program_binary</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.ULP.load_binary" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a <em>program_binary</em> into the ULP at the given <em>load_addr</em>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.ULP.run">
+<code class="sig-prename descclassname">ULP.</code><code class="sig-name descname">run</code><span class="sig-paren">(</span><em class="sig-param">entry_point</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.ULP.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start the ULP running at the given <em>entry_point</em>.</p>
+</dd></dl>
+
+
+<h2 id="id1">Constants<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="esp32.esp32.WAKEUP_ALL_LOW">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">WAKEUP_ALL_LOW</code><a class="headerlink" href="#esp32.esp32.WAKEUP_ALL_LOW" title="Permalink to this definition">¶</a></dt>
+<dt id="esp32.esp32.WAKEUP_ANY_HIGH">
+<code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">WAKEUP_ANY_HIGH</code><a class="headerlink" href="#esp32.esp32.WAKEUP_ANY_HIGH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the wake level for pins.</p>
+</dd></dl>
+
+
+<h2 id="non-volatile-storage">Non-Volatile Storage<a class="headerlink" href="#non-volatile-storage" title="Permalink to this headline">¶</a></h2>
+<p>This class gives access to the Non-Volatile storage managed by ESP-IDF. The NVS is partitioned
+into namespaces and each namespace contains typed key-value pairs. The keys are strings and the
+values may be various integer types, strings, and binary blobs. The driver currently only
+supports 32-bit signed integers and blobs.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Changes to NVS need to be committed to flash by calling the commit method. Failure
+to call commit results in changes being lost at the next reset.</p>
+</div>
+<dl class="class">
+<dt id="esp32.NVS">
+<em class="property">class </em><code class="sig-prename descclassname">esp32.</code><code class="sig-name descname">NVS</code><span class="sig-paren">(</span><em class="sig-param">namespace</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.NVS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an object providing access to a namespace (which is automatically created if not
+present).</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.NVS.set_i32">
+<code class="sig-prename descclassname">NVS.</code><code class="sig-name descname">set_i32</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.NVS.set_i32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a 32-bit signed integer value for the specified key. Remember to call <em>commit</em>!</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.NVS.get_i32">
+<code class="sig-prename descclassname">NVS.</code><code class="sig-name descname">get_i32</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.NVS.get_i32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the signed integer value for the specified key. Raises an OSError if the key does not
+exist or has a different type.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.NVS.set_blob">
+<code class="sig-prename descclassname">NVS.</code><code class="sig-name descname">set_blob</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.NVS.set_blob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a binary blob value for the specified key. The value passed in must support the buffer
+protocol, e.g. bytes, bytearray, str. (Note that esp-idf distinguishes blobs and strings, this
+method always writes a blob even if a string is passed in as value.)
+Remember to call <em>commit</em>!</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.NVS.get_blob">
+<code class="sig-prename descclassname">NVS.</code><code class="sig-name descname">get_blob</code><span class="sig-paren">(</span><em class="sig-param">key</em>, <em class="sig-param">buffer</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.NVS.get_blob" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads the value of the blob for the specified key into the buffer, which must be a bytearray.
+Returns the actual length read. Raises an OSError if the key does not exist, has a different
+type, or if the buffer is too small.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.NVS.erase_key">
+<code class="sig-prename descclassname">NVS.</code><code class="sig-name descname">erase_key</code><span class="sig-paren">(</span><em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#esp32.NVS.erase_key" title="Permalink to this definition">¶</a></dt>
+<dd><p>Erases a key-value pair.</p>
+</dd></dl>
+<dl class="method">
+<dt id="esp32.NVS.commit">
+<code class="sig-prename descclassname">NVS.</code><code class="sig-name descname">commit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#esp32.NVS.commit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Commits changes made by <em>set_xxx</em> methods to flash.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="esp.html" title="esp — functions related to the ESP8266 and ESP32"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">esp</span></code> — functions related to the ESP8266 and ESP32 </span>
+              </div>
+            </a>
+          
+          
+            <a href="rp2.html" title="rp2 — functionality specific to the RP2040"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code> — functionality specific to the RP2040 </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

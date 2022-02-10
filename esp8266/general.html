@@ -1,0 +1,481 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>General information about the ESP8266 port &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MicroPython tutorial for ESP8266" href="tutorial/index.html" />
+    <link rel="prev" title="Quick reference for the ESP8266" href="quickref.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#esp8266/general" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> General information about the ESP8266 port </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="quickref.html" class="md-tabs__link">Quick reference for the ESP8266</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#esp8266-general--page-root" class="md-nav__link">General information about the ESP8266 port</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#multitude-of-boards" class="md-nav__link">Multitude of boards</a>
+        </li>
+        <li class="md-nav__item"><a href="#technical-specifications-and-soc-datasheets" class="md-nav__link">Technical specifications and SoC datasheets</a>
+        </li>
+        <li class="md-nav__item"><a href="#scarcity-of-runtime-resources" class="md-nav__link">Scarcity of runtime resources</a>
+        </li>
+        <li class="md-nav__item"><a href="#boot-process" class="md-nav__link">Boot process</a>
+        </li>
+        <li class="md-nav__item"><a href="#known-issues" class="md-nav__link">Known Issues</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#real-time-clock" class="md-nav__link">Real-time clock</a>
+        </li>
+        <li class="md-nav__item"><a href="#simultaneous-operation-of-sta-if-and-ap-if" class="md-nav__link">Simultaneous operation of STA_IF and AP_IF</a>
+        </li>
+        <li class="md-nav__item"><a href="#sockets-and-wifi-buffers-overflow" class="md-nav__link">Sockets and WiFi buffers overflow</a>
+        </li>
+        <li class="md-nav__item"><a href="#ssl-tls-limitations" class="md-nav__link">SSL/TLS limitations</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/esp8266/general.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="esp8266-general"></span><h1 id="esp8266-general--page-root">General information about the ESP8266 port<a class="headerlink" href="#esp8266-general--page-root" title="Permalink to this headline">¶</a></h1>
+<p>ESP8266 is a popular WiFi-enabled System-on-Chip (SoC) by Espressif Systems.</p>
+
+<h2 id="multitude-of-boards">Multitude of boards<a class="headerlink" href="#multitude-of-boards" title="Permalink to this headline">¶</a></h2>
+<p>There is a multitude of modules and boards from different sources which carry
+the ESP8266 chip. MicroPython tries to provide a generic port which would run on
+as many boards/modules as possible, but there may be limitations. Adafruit
+Feather HUZZAH board is taken as a reference board for the port (for example,
+testing is performed on it). If you have another board, please make sure you
+have a datasheet, schematics and other reference materials for your board
+handy to look up various aspects of your board functioning.</p>
+<p>To make a generic ESP8266 port and support as many boards as possible,
+the following design and implementation decision were made:</p>
+<ul class="simple">
+<li><p>GPIO pin numbering is based on ESP8266 chip numbering, not some “logical”
+numbering of a particular board. Please have the manual/pin diagram of your board
+at hand to find correspondence between your board pins and actual ESP8266 pins.
+We also encourage users of various boards to share this mapping via MicroPython
+forum, with the idea to collect community-maintained reference materials
+eventually.</p></li>
+<li><p>All pins which make sense to support, are supported by MicroPython
+(for example, pins which are used to connect SPI flash
+are not exposed, as they’re unlikely useful for anything else, and
+operating on them will lead to board lock-up). However, any particular
+board may expose only subset of pins. Consult your board reference manual.</p></li>
+<li><p>Some boards may lack external pins/internal connectivity to support
+ESP8266 deepsleep mode.</p></li>
+</ul>
+
+
+<h2 id="technical-specifications-and-soc-datasheets">Technical specifications and SoC datasheets<a class="headerlink" href="#technical-specifications-and-soc-datasheets" title="Permalink to this headline">¶</a></h2>
+<p>The datasheets and other reference material for ESP8266 chip are available
+from the vendor site: <a class="reference external" href="http://bbs.espressif.com/viewtopic.php?f=67&amp;t=225">http://bbs.espressif.com/viewtopic.php?f=67&amp;t=225</a> .
+They are the primary reference for the chip technical specifications, capabilities,
+operating modes, internal functioning, etc.</p>
+<p>For your convenience, some of technical specifications are provided below:</p>
+<ul class="simple">
+<li><p>Architecture: Xtensa lx106</p></li>
+<li><p>CPU frequency: 80MHz overclockable to 160MHz</p></li>
+<li><p>Total RAM available: 96KB (part of it reserved for system)</p></li>
+<li><p>BootROM: 64KB</p></li>
+<li><p>Internal FlashROM: None</p></li>
+<li><p>External FlashROM: code and data, via SPI Flash. Normal sizes 512KB-4MB.</p></li>
+<li><p>GPIO: 16 + 1 (GPIOs are multiplexed with other functions, including
+external FlashROM, UART, deep sleep wake-up, etc.)</p></li>
+<li><p>UART: One RX/TX UART (no hardware handshaking), one TX-only UART.</p></li>
+<li><p>SPI: 2 SPI interfaces (one used for FlashROM).</p></li>
+<li><p>I2C: No native external I2C (bitbang implementation available on any pins).</p></li>
+<li><p>I2S: 1.</p></li>
+<li><p>Programming: using BootROM bootloader from UART. Due to external FlashROM
+and always-available BootROM bootloader, ESP8266 is not brickable.</p></li>
+</ul>
+
+
+<h2 id="scarcity-of-runtime-resources">Scarcity of runtime resources<a class="headerlink" href="#scarcity-of-runtime-resources" title="Permalink to this headline">¶</a></h2>
+<p>ESP8266 has very modest resources (first of all, RAM memory). So, please
+avoid allocating too big container objects (lists, dictionaries) and
+buffers. There is also no full-fledged OS to keep track of resources
+and automatically clean them up, so that’s the task of a user/user
+application: please be sure to close open files, sockets, etc. as soon
+as possible after use.</p>
+
+
+<h2 id="boot-process">Boot process<a class="headerlink" href="#boot-process" title="Permalink to this headline">¶</a></h2>
+<p>On boot, MicroPython EPS8266 port executes <code class="docutils literal notranslate"><span class="pre">_boot.py</span></code> script from internal
+frozen modules. It mounts filesystem in FlashROM, or if it’s not available,
+performs first-time setup of the module and creates the filesystem. This
+part of the boot process is considered fixed, and not available for customization
+for end users (even if you build from source, please refrain from changes to
+it; customization of early boot process is available only to advanced users
+and developers, who can diagnose themselves any issues arising from
+modifying the standard process).</p>
+<p>Once the filesystem is mounted, <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> is executed from it. The standard
+version of this file is created during first-time module set up and has
+commands to start a WebREPL daemon (disabled by default, configurable
+with <code class="docutils literal notranslate"><span class="pre">webrepl_setup</span></code> module), etc. This
+file is customizable by end users (for example, you may want to set some
+parameters or add other services which should be run on
+a module start-up). But keep in mind that incorrect modifications to boot.py
+may still lead to boot loops or lock ups, requiring to reflash a module
+from scratch. (In particular, it’s recommended that you use either
+<code class="docutils literal notranslate"><span class="pre">webrepl_setup</span></code> module or manual editing to configure WebREPL, but not
+both).</p>
+<p>As a final step of boot procedure, <code class="docutils literal notranslate"><span class="pre">main.py</span></code> is executed from filesystem,
+if exists. This file is a hook to start up a user application each time
+on boot (instead of going to REPL). For small test applications, you may
+name them directly as <code class="docutils literal notranslate"><span class="pre">main.py</span></code>, and upload to module, but instead it’s
+recommended to keep your application(s) in separate files, and have just
+the following in <code class="docutils literal notranslate"><span class="pre">main.py</span></code>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">my_app</span>
+<span class="n">my_app</span><span class="o">.</span><span class="n">main</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>This will allow to keep the structure of your application clear, as well as
+allow to install multiple applications on a board, and switch among them.</p>
+
+
+<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this headline">¶</a></h2>
+
+<h3 id="real-time-clock">Real-time clock<a class="headerlink" href="#real-time-clock" title="Permalink to this headline">¶</a></h3>
+<p>RTC in ESP8266 has very bad accuracy, drift may be seconds per minute. As
+a workaround, to measure short enough intervals you can use
+<code class="docutils literal notranslate"><span class="pre">time.time()</span></code>, etc. functions, and for wall clock time, synchronize from
+the net using included <code class="docutils literal notranslate"><span class="pre">ntptime.py</span></code> module.</p>
+<p>Due to limitations of the ESP8266 chip the internal real-time clock (RTC)
+will overflow every 7:45h.  If a long-term working RTC time is required then
+<code class="docutils literal notranslate"><span class="pre">time()</span></code> or <code class="docutils literal notranslate"><span class="pre">localtime()</span></code> must be called at least once within 7 hours.
+MicroPython will then handle the overflow.</p>
+
+
+<h3 id="simultaneous-operation-of-sta-if-and-ap-if">Simultaneous operation of STA_IF and AP_IF<a class="headerlink" href="#simultaneous-operation-of-sta-if-and-ap-if" title="Permalink to this headline">¶</a></h3>
+<p>Simultaneous operation of STA_IF and AP_IF interfaces is supported.</p>
+<p>However, due to restrictions of the hardware, there may be performance
+issues in the AP_IF, if the STA_IF is not connected and searching.
+An application should manage these interfaces and for example
+deactivate the STA_IF in environments where only the AP_IF is used.</p>
+
+
+<h3 id="sockets-and-wifi-buffers-overflow">Sockets and WiFi buffers overflow<a class="headerlink" href="#sockets-and-wifi-buffers-overflow" title="Permalink to this headline">¶</a></h3>
+<p>Socket instances remain active until they are explicitly closed. This has two
+consequences. Firstly they occupy RAM, so an application which opens sockets
+without closing them may eventually run out of memory. Secondly not properly
+closed socket can cause the low-level part of the vendor WiFi stack to emit
+<code class="docutils literal notranslate"><span class="pre">Lmac</span></code> errors. This occurs if data comes in for a socket and is not
+processed in a timely manner. This can overflow the WiFi stack input queue
+and lead to a deadlock. The only recovery is by a hard reset.</p>
+<p>The above may also happen after an application terminates and quits to the REPL
+for any reason including an exception. Subsequent arrival of data provokes the
+failure with the above error message repeatedly issued. So, sockets should be
+closed in any case, regardless whether an application terminates successfully
+or by an exception, for example using try/finally:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sock</span> <span class="o">=</span> <span class="n">socket</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="c1"># Use sock</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">sock</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+<h3 id="ssl-tls-limitations">SSL/TLS limitations<a class="headerlink" href="#ssl-tls-limitations" title="Permalink to this headline">¶</a></h3>
+<p>ESP8266 uses <a class="reference external" href="http://axtls.sourceforge.net/">axTLS</a> library, which is one
+of the smallest TLS libraries with compatible licensing. However, it
+also has some known issues/limitations:</p>
+<ol class="arabic simple">
+<li><p>No support for Diffie-Hellman (DH) key exchange and Elliptic-curve
+cryptography (ECC). This means it can’t work with sites which require
+the use of these features (it works ok with the typical sites that use
+RSA certificates).</p></li>
+<li><p>Half-duplex communication nature. axTLS uses a single buffer for both
+sending and receiving, which leads to considerable memory saving and
+works well with protocols like HTTP. But there may be problems with
+protocols which don’t follow classic request-response model.</p></li>
+</ol>
+<p>Besides axTLS’s own limitations, the configuration used for MicroPython is
+highly optimized for code size, which leads to additional limitations
+(these may be lifted in the future):</p>
+<ol class="arabic simple" start="3">
+<li><p>Optimized RSA algorithms are not enabled, which may lead to slow
+SSL handshakes.</p></li>
+<li><p>Session Reuse is not enabled, which means every connection must undergo
+the full, expensive SSL handshake.</p></li>
+</ol>
+<p>Besides axTLS specific limitations described above, there’s another generic
+limitation with usage of TLS on the low-memory devices:</p>
+<ol class="arabic simple" start="5">
+<li><p>The TLS standard specifies the maximum length of the TLS record (unit
+of TLS communication, the entire record must be buffered before it can
+be processed) as 16KB. That’s almost half of the available ESP8266 memory,
+and inside a more or less advanced application would be hard to allocate
+due to memory fragmentation issues. As a compromise, a smaller buffer is
+used, with the idea that the most interesting usage for SSL would be
+accessing various REST APIs, which usually require much smaller messages.
+The buffers size is on the order of 5KB, and is adjusted from time to
+time, taking as a reference being able to access <a class="reference external" href="https://google.com">https://google.com</a> .
+The smaller buffer however means that some sites can’t be accessed using
+it, and it’s not possible to stream large amounts of data. axTLS does
+have support for TLS’s Max Fragment Size extension, but no HTTPS website
+does, so use of the extension is really only effective for local
+communication with other devices.</p></li>
+</ol>
+<p>There are also some not implemented features specifically in MicroPython’s
+<code class="docutils literal notranslate"><span class="pre">ssl</span></code> module based on axTLS:</p>
+<ol class="arabic simple" start="6">
+<li><p>Certificates are not validated (this makes connections susceptible
+to man-in-the-middle attacks).</p></li>
+<li><p>There is no support for client certificates (scheduled to be fixed in
+1.9.4 release).</p></li>
+</ol>
+
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="quickref.html" title="Quick reference for the ESP8266"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Quick reference for the ESP8266 </span>
+              </div>
+            </a>
+          
+          
+            <a href="tutorial/index.html" title="MicroPython tutorial for ESP8266"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> MicroPython tutorial for ESP8266 </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

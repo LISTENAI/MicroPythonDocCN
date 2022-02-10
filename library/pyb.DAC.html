@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class DAC – digital to analog conversion &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class ExtInt – configure I/O pins to interrupt on external events" href="pyb.ExtInt.html" />
+    <link rel="prev" title="class CAN – controller area network communication bus" href="pyb.CAN.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/pyb.DAC" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class DAC – digital to analog conversion </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="pyb.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code> — functions related to the board</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-pyb-dac--page-root" class="md-nav__link">class DAC – digital to analog conversion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/pyb.DAC.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="pyb-dac"></span><h1 id="library-pyb-dac--page-root">class DAC – digital to analog conversion<a class="headerlink" href="#library-pyb-dac--page-root" title="Permalink to this headline">¶</a></h1>
+<p>The DAC is used to output analog values (a specific voltage) on pin X5 or pin X6.
+The voltage will be between 0 and 3.3V.</p>
+<p><em>This module will undergo changes to the API.</em></p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">DAC</span>
+
+<span class="n">dac</span> <span class="o">=</span> <span class="n">DAC</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>            <span class="c1"># create DAC 1 on pin X5</span>
+<span class="n">dac</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span>          <span class="c1"># write a value to the DAC (makes X5 1.65V)</span>
+
+<span class="n">dac</span> <span class="o">=</span> <span class="n">DAC</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>   <span class="c1"># use 12 bit resolution</span>
+<span class="n">dac</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="mi">4095</span><span class="p">)</span>         <span class="c1"># output maximum value, 3.3V</span>
+</pre></div>
+</div>
+<p>To output a continuous sine-wave:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">DAC</span>
+
+<span class="c1"># create a buffer containing a sine-wave</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)):</span>
+    <span class="n">buf</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="mi">128</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="mi">127</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">)))</span>
+
+<span class="c1"># output the sine-wave at 400Hz</span>
+<span class="n">dac</span> <span class="o">=</span> <span class="n">DAC</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dac</span><span class="o">.</span><span class="n">write_timed</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">400</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">DAC</span><span class="o">.</span><span class="n">CIRCULAR</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>To output a continuous sine-wave at 12-bit resolution:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="kn">from</span> <span class="nn">array</span> <span class="kn">import</span> <span class="n">array</span>
+<span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">DAC</span>
+
+<span class="c1"># create a buffer containing a sine-wave, using half-word samples</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="n">array</span><span class="p">(</span><span class="s1">'H'</span><span class="p">,</span> <span class="mi">2048</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="mi">2047</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">i</span> <span class="o">/</span> <span class="mi">128</span><span class="p">))</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">128</span><span class="p">))</span>
+
+<span class="c1"># output the sine-wave at 400Hz</span>
+<span class="n">dac</span> <span class="o">=</span> <span class="n">DAC</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">dac</span><span class="o">.</span><span class="n">write_timed</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">400</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">buf</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">DAC</span><span class="o">.</span><span class="n">CIRCULAR</span><span class="p">)</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyb.pyb.DAC">
+<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">DAC</code><span class="sig-paren">(</span><em class="sig-param">port</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">*</em>, <em class="sig-param">buffering=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.DAC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a new DAC object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">port</span></code> can be a pin object, or an integer (1 or 2).
+DAC(1) is on pin X5 and DAC(2) is on pin X6.</p>
+<p><code class="docutils literal notranslate"><span class="pre">bits</span></code> is an integer specifying the resolution, and can be 8 or 12.
+The maximum value for the write and write_timed methods will be
+2**``bits``-1.</p>
+<p>The <em>buffering</em> parameter selects the behaviour of the DAC op-amp output
+buffer, whose purpose is to reduce the output impedance.  It can be
+<code class="docutils literal notranslate"><span class="pre">None</span></code> to select the default (buffering enabled for <a class="reference internal" href="#pyb.DAC.noise" title="pyb.DAC.noise"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DAC.noise()</span></code></a>,
+<a class="reference internal" href="#pyb.DAC.triangle" title="pyb.DAC.triangle"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DAC.triangle()</span></code></a> and <a class="reference internal" href="#pyb.DAC.write_timed" title="pyb.DAC.write_timed"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DAC.write_timed()</span></code></a>, and disabled for
+<a class="reference internal" href="#pyb.DAC.write" title="pyb.DAC.write"><code class="xref py py-meth docutils literal notranslate"><span class="pre">DAC.write()</span></code></a>), <code class="docutils literal notranslate"><span class="pre">False</span></code> to disable buffering completely, or <code class="docutils literal notranslate"><span class="pre">True</span></code>
+to enable output buffering.</p>
+<p>When buffering is enabled the DAC pin can drive loads down to 5KΩ.
+Otherwise it has an output impedance of 15KΩ maximum: consequently
+to achieve a 1% accuracy without buffering requires the applied load
+to be less than 1.5MΩ.  Using the buffer incurs a penalty in accuracy,
+especially near the extremes of range.</p>
+</dd></dl>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="pyb.DAC.init">
+<code class="sig-prename descclassname">DAC.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">bits=8</em>, <em class="sig-param">*</em>, <em class="sig-param">buffering=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.DAC.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reinitialise the DAC.  <em>bits</em> can be 8 or 12.  <em>buffering</em> can be
+<code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code> or <code class="docutils literal notranslate"><span class="pre">True</span></code>; see above constructor for the meaning
+of this parameter.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.DAC.deinit">
+<code class="sig-prename descclassname">DAC.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.DAC.deinit" title="Permalink to this definition">¶</a></dt>
+<dd><p>De-initialise the DAC making its pin available for other uses.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.DAC.noise">
+<code class="sig-prename descclassname">DAC.</code><code class="sig-name descname">noise</code><span class="sig-paren">(</span><em class="sig-param">freq</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.DAC.noise" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a pseudo-random noise signal.  A new random sample is written
+to the DAC output at the given frequency.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.DAC.triangle">
+<code class="sig-prename descclassname">DAC.</code><code class="sig-name descname">triangle</code><span class="sig-paren">(</span><em class="sig-param">freq</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.DAC.triangle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a triangle wave.  The value on the DAC output changes at the given
+frequency and ramps through the full 12-bit range (up and down). Therefore
+the frequency of the repeating triangle wave itself is 8192 times smaller.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.DAC.write">
+<code class="sig-prename descclassname">DAC.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.DAC.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Direct access to the DAC output.  The minimum value is 0.  The maximum
+value is 2**``bits``-1, where <code class="docutils literal notranslate"><span class="pre">bits</span></code> is set when creating the DAC
+object or by using the <code class="docutils literal notranslate"><span class="pre">init</span></code> method.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.DAC.write_timed">
+<code class="sig-prename descclassname">DAC.</code><code class="sig-name descname">write_timed</code><span class="sig-paren">(</span><em class="sig-param">data</em>, <em class="sig-param">freq</em>, <em class="sig-param">*</em>, <em class="sig-param">mode=DAC.NORMAL</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.DAC.write_timed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initiates a burst of RAM to DAC using a DMA transfer.
+The input data is treated as an array of bytes in 8-bit mode, and
+an array of unsigned half-words (array typecode ‘H’) in 12-bit mode.</p>
+<p><code class="docutils literal notranslate"><span class="pre">freq</span></code> can be an integer specifying the frequency to write the DAC
+samples at, using Timer(6).  Or it can be an already-initialised
+Timer object which is used to trigger the DAC sample.  Valid timers
+are 2, 4, 5, 6, 7 and 8.</p>
+<p><code class="docutils literal notranslate"><span class="pre">mode</span></code> can be <code class="docutils literal notranslate"><span class="pre">DAC.NORMAL</span></code> or <code class="docutils literal notranslate"><span class="pre">DAC.CIRCULAR</span></code>.</p>
+<p>Example using both DACs at the same time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dac1</span> <span class="o">=</span> <span class="n">DAC</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">dac2</span> <span class="o">=</span> <span class="n">DAC</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">dac1</span><span class="o">.</span><span class="n">write_timed</span><span class="p">(</span><span class="n">buf1</span><span class="p">,</span> <span class="n">pyb</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">DAC</span><span class="o">.</span><span class="n">CIRCULAR</span><span class="p">)</span>
+<span class="n">dac2</span><span class="o">.</span><span class="n">write_timed</span><span class="p">(</span><span class="n">buf2</span><span class="p">,</span> <span class="n">pyb</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mi">7</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">200</span><span class="p">),</span> <span class="n">mode</span><span class="o">=</span><span class="n">DAC</span><span class="o">.</span><span class="n">CIRCULAR</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="pyb.CAN.html" title="class CAN – controller area network communication bus"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class CAN – controller area network communication bus </span>
+              </div>
+            </a>
+          
+          
+            <a href="pyb.ExtInt.html" title="class ExtInt – configure I/O pins to interrupt on external events"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class ExtInt – configure I/O pins to interrupt on external events </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,425 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class ADC – analog to digital conversion &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class CAN – controller area network communication bus" href="pyb.CAN.html" />
+    <link rel="prev" title="class Accel – accelerometer control" href="pyb.Accel.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/pyb.ADC" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class ADC – analog to digital conversion </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="pyb.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code> — functions related to the board</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-pyb-adc--page-root" class="md-nav__link">class ADC – analog to digital conversion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-adcall-object" class="md-nav__link">The ADCAll Object</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/pyb.ADC.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="pyb-adc"></span><h1 id="library-pyb-adc--page-root">class ADC – analog to digital conversion<a class="headerlink" href="#library-pyb-adc--page-root" title="Permalink to this headline">¶</a></h1>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyb</span>
+
+<span class="n">adc</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">pin</span><span class="p">)</span>                  <span class="c1"># create an analog object from a pin</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>                    <span class="c1"># read an analog value</span>
+
+<span class="n">adc</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADCAll</span><span class="p">(</span><span class="n">resolution</span><span class="p">)</span>        <span class="c1"># create an ADCAll object</span>
+<span class="n">adc</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADCAll</span><span class="p">(</span><span class="n">resolution</span><span class="p">,</span> <span class="n">mask</span><span class="p">)</span>  <span class="c1"># create an ADCAll object for selected analog channels</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">read_channel</span><span class="p">(</span><span class="n">channel</span><span class="p">)</span>     <span class="c1"># read the given channel</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">read_core_temp</span><span class="p">()</span>          <span class="c1"># read MCU temperature</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">read_core_vbat</span><span class="p">()</span>          <span class="c1"># read MCU VBAT</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">read_core_vref</span><span class="p">()</span>          <span class="c1"># read MCU VREF</span>
+<span class="n">val</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">read_vref</span><span class="p">()</span>               <span class="c1"># read MCU supply voltage</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyb.pyb.ADC">
+<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">ADC</code><span class="sig-paren">(</span><em class="sig-param">pin</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.ADC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an ADC object associated with the given pin.
+This allows you to then read analog values on that pin.</p>
+</dd></dl>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="pyb.ADC.read">
+<code class="sig-prename descclassname">ADC.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.ADC.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read the value on the analog pin and return it.  The returned value
+will be between 0 and 4095.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.ADC.read_timed">
+<code class="sig-prename descclassname">ADC.</code><code class="sig-name descname">read_timed</code><span class="sig-paren">(</span><em class="sig-param">buf</em>, <em class="sig-param">timer</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.ADC.read_timed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read analog values into <code class="docutils literal notranslate"><span class="pre">buf</span></code> at a rate set by the <code class="docutils literal notranslate"><span class="pre">timer</span></code> object.</p>
+<p><code class="docutils literal notranslate"><span class="pre">buf</span></code> can be bytearray or array.array for example.  The ADC values have
+12-bit resolution and are stored directly into <code class="docutils literal notranslate"><span class="pre">buf</span></code> if its element size is
+16 bits or greater.  If <code class="docutils literal notranslate"><span class="pre">buf</span></code> has only 8-bit elements (eg a bytearray) then
+the sample resolution will be reduced to 8 bits.</p>
+<p><code class="docutils literal notranslate"><span class="pre">timer</span></code> should be a Timer object, and a sample is read each time the timer
+triggers.  The timer must already be initialised and running at the desired
+sampling frequency.</p>
+<p>To support previous behaviour of this function, <code class="docutils literal notranslate"><span class="pre">timer</span></code> can also be an
+integer which specifies the frequency (in Hz) to sample at.  In this case
+Timer(6) will be automatically configured to run at the given frequency.</p>
+<p>Example using a Timer object (preferred way):</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adc</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">pyb</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">X19</span><span class="p">)</span>    <span class="c1"># create an ADC on pin X19</span>
+<span class="n">tim</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>         <span class="c1"># create a timer running at 10Hz</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>                <span class="c1"># creat a buffer to store the samples</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">read_timed</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">tim</span><span class="p">)</span>            <span class="c1"># sample 100 values, taking 10s</span>
+</pre></div>
+</div>
+<p>Example using an integer for the frequency:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adc</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">pyb</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">X19</span><span class="p">)</span>    <span class="c1"># create an ADC on pin X19</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>                <span class="c1"># create a buffer of 100 bytes</span>
+<span class="n">adc</span><span class="o">.</span><span class="n">read_timed</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>             <span class="c1"># read analog values into buf at 10Hz</span>
+                                    <span class="c1">#   this will take 10 seconds to finish</span>
+<span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">buf</span><span class="p">:</span>                     <span class="c1"># loop over all values</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">val</span><span class="p">)</span>                      <span class="c1"># print the value out</span>
+</pre></div>
+</div>
+<p>This function does not allocate any heap memory. It has blocking behaviour:
+it does not return to the calling program until the buffer is full.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.ADC.read_timed_multi">
+<code class="sig-prename descclassname">ADC.</code><code class="sig-name descname">read_timed_multi</code><span class="sig-paren">(</span><em class="sig-param">(adcx</em>, <em class="sig-param">adcy</em>, <em class="sig-param">...)</em>, <em class="sig-param">(bufx</em>, <em class="sig-param">bufy</em>, <em class="sig-param">...)</em>, <em class="sig-param">timer</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.ADC.read_timed_multi" title="Permalink to this definition">¶</a></dt>
+<dd><p>This is a static method. It can be used to extract relative timing or
+phase data from multiple ADC’s.</p>
+<p>It reads analog values from multiple ADC’s into buffers at a rate set by
+the <em>timer</em> object. Each time the timer triggers a sample is rapidly
+read from each ADC in turn.</p>
+<p>ADC and buffer instances are passed in tuples with each ADC having an
+associated buffer. All buffers must be of the same type and length and
+the number of buffers must equal the number of ADC’s.</p>
+<p>Buffers can be <code class="docutils literal notranslate"><span class="pre">bytearray</span></code> or <code class="docutils literal notranslate"><span class="pre">array.array</span></code> for example. The ADC values
+have 12-bit resolution and are stored directly into the buffer if its element
+size is 16 bits or greater.  If buffers have only 8-bit elements (eg a
+<code class="docutils literal notranslate"><span class="pre">bytearray</span></code>) then the sample resolution will be reduced to 8 bits.</p>
+<p><em>timer</em> must be a Timer object. The timer must already be initialised
+and running at the desired sampling frequency.</p>
+<p>Example reading 3 ADC’s:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adc0</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">pyb</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">X1</span><span class="p">)</span>    <span class="c1"># Create ADC's</span>
+<span class="n">adc1</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">pyb</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">X2</span><span class="p">)</span>
+<span class="n">adc2</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADC</span><span class="p">(</span><span class="n">pyb</span><span class="o">.</span><span class="n">Pin</span><span class="o">.</span><span class="n">board</span><span class="o">.</span><span class="n">X3</span><span class="p">)</span>
+<span class="n">tim</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>        <span class="c1"># Create timer</span>
+<span class="n">rx0</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">'H'</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)))</span> <span class="c1"># ADC buffers of</span>
+<span class="n">rx1</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">'H'</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)))</span> <span class="c1"># 100 16-bit words</span>
+<span class="n">rx2</span> <span class="o">=</span> <span class="n">array</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="s1">'H'</span><span class="p">,</span> <span class="p">(</span><span class="mi">0</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)))</span>
+<span class="c1"># read analog values into buffers at 100Hz (takes one second)</span>
+<span class="n">pyb</span><span class="o">.</span><span class="n">ADC</span><span class="o">.</span><span class="n">read_timed_multi</span><span class="p">((</span><span class="n">adc0</span><span class="p">,</span> <span class="n">adc1</span><span class="p">,</span> <span class="n">adc2</span><span class="p">),</span> <span class="p">(</span><span class="n">rx0</span><span class="p">,</span> <span class="n">rx1</span><span class="p">,</span> <span class="n">rx2</span><span class="p">),</span> <span class="n">tim</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">rx0</span><span class="p">)):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">rx0</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">rx1</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">rx2</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>This function does not allocate any heap memory. It has blocking behaviour:
+it does not return to the calling program until the buffers are full.</p>
+<p>The function returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if all samples were acquired with correct
+timing. At high sample rates the time taken to acquire a set of samples
+can exceed the timer period. In this case the function returns <code class="docutils literal notranslate"><span class="pre">False</span></code>,
+indicating a loss of precision in the sample interval. In extreme cases
+samples may be missed.</p>
+<p>The maximum rate depends on factors including the data width and the
+number of ADC’s being read. In testing two ADC’s were sampled at a timer
+rate of 210kHz without overrun. Samples were missed at 215kHz.  For three
+ADC’s the limit is around 140kHz, and for four it is around 110kHz.
+At high sample rates disabling interrupts for the duration can reduce the
+risk of sporadic data loss.</p>
+</dd></dl>
+
+
+<h2 id="the-adcall-object">The ADCAll Object<a class="headerlink" href="#the-adcall-object" title="Permalink to this headline">¶</a></h2>
+<p>Instantiating this changes all masked ADC pins to analog inputs. The preprocessed MCU temperature,
+VREF and VBAT data can be accessed on ADC channels 16, 17 and 18 respectively.
+Appropriate scaling is handled according to reference voltage used (usually 3.3V).
+The temperature sensor on the chip is factory calibrated and allows to read the die temperature
+to +/- 1 degree centigrade. Although this sounds pretty accurate, don’t forget that the MCU’s internal
+temperature is measured. Depending on processing loads and I/O subsystems active the die temperature
+may easily be tens of degrees above ambient temperature. On the other hand a pyboard woken up after a
+long standby period will show correct ambient temperature within limits mentioned above.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">ADCAll</span></code> <code class="docutils literal notranslate"><span class="pre">read_core_vbat()</span></code>, <code class="docutils literal notranslate"><span class="pre">read_vref()</span></code> and <code class="docutils literal notranslate"><span class="pre">read_core_vref()</span></code> methods read
+the backup battery voltage, reference voltage and the (1.21V nominal) reference voltage using the
+actual supply as a reference. All results are floating point numbers giving direct voltage values.</p>
+<p><code class="docutils literal notranslate"><span class="pre">read_core_vbat()</span></code> returns the voltage of the backup battery. This voltage is also adjusted according
+to the actual supply voltage. To avoid analog input overload the battery voltage is measured
+via a voltage divider and scaled according to the divider value. To prevent excessive loads
+to the backup battery, the voltage divider is only active during ADC conversion.</p>
+<p><code class="docutils literal notranslate"><span class="pre">read_vref()</span></code> is evaluated by measuring the internal voltage reference and backscale it using
+factory calibration value of the internal voltage reference. In most cases the reading would be close
+to 3.3V. If the pyboard is operated from a battery, the supply voltage may drop to values below 3.3V.
+The pyboard will still operate fine as long as the operating conditions are met. With proper settings
+of MCU clock, flash access speed and programming mode it is possible to run the pyboard down to
+2 V and still get useful ADC conversion.</p>
+<p>It is very important to make sure analog input voltages never exceed actual supply voltage.</p>
+<p>Other analog input channels (0..15) will return unscaled integer values according to the selected
+precision.</p>
+<p>To avoid unwanted activation of analog inputs (channel 0..15) a second parameter can be specified.
+This parameter is a binary pattern where each requested analog input has the corresponding bit set.
+The default value is 0xffffffff which means all analog inputs are active. If just the internal
+channels (16..18) are required, the mask value should be 0x70000.</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">adcall</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">ADCAll</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mh">0x70000</span><span class="p">)</span> <span class="c1"># 12 bit resolution, internal channels</span>
+<span class="n">temp</span> <span class="o">=</span> <span class="n">adcall</span><span class="o">.</span><span class="n">read_core_temp</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="pyb.Accel.html" title="class Accel – accelerometer control"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class Accel – accelerometer control </span>
+              </div>
+            </a>
+          
+          
+            <a href="pyb.CAN.html" title="class CAN – controller area network communication bus"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class CAN – controller area network communication bus </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

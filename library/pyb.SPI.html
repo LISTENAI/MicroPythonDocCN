@@ -1,0 +1,416 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class SPI – a controller-driven serial protocol &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class Switch – switch object" href="pyb.Switch.html" />
+    <link rel="prev" title="class Servo – 3-wire hobby servo driver" href="pyb.Servo.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/pyb.SPI" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class SPI – a controller-driven serial protocol </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="pyb.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code> — functions related to the board</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-pyb-spi--page-root" class="md-nav__link">class SPI – a controller-driven serial protocol</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/pyb.SPI.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="pyb-spi"></span><h1 id="library-pyb-spi--page-root">class SPI – a controller-driven serial protocol<a class="headerlink" href="#library-pyb-spi--page-root" title="Permalink to this headline">¶</a></h1>
+<p>SPI is a serial protocol that is driven by a controller.  At the physical level
+there are 3 lines: SCK, MOSI, MISO.</p>
+<p>See usage model of I2C; SPI is very similar.  Main difference is
+parameters to init the SPI bus:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="kn">import</span> <span class="n">SPI</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">SPI</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">SPI</span><span class="o">.</span><span class="n">CONTROLLER</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">600000</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">crc</span><span class="o">=</span><span class="mh">0x7</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Only required parameter is mode, SPI.CONTROLLER or SPI.PERIPHERAL.  Polarity can be
+0 or 1, and is the level the idle clock line sits at.  Phase can be 0 or 1
+to sample data on the first or second clock edge respectively.  Crc can be
+None for no CRC, or a polynomial specifier.</p>
+<p>Additional methods for SPI:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">send_recv</span><span class="p">(</span><span class="sa">b</span><span class="s1">'1234'</span><span class="p">)</span>        <span class="c1"># send 4 bytes and receive 4 bytes</span>
+<span class="n">buf</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">send_recv</span><span class="p">(</span><span class="sa">b</span><span class="s1">'1234'</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>          <span class="c1"># send 4 bytes and receive 4 into buf</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">send_recv</span><span class="p">(</span><span class="n">buf</span><span class="p">,</span> <span class="n">buf</span><span class="p">)</span>              <span class="c1"># send/recv 4 bytes from/to buf</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="pyb.pyb.SPI">
+<em class="property">class </em><code class="sig-prename descclassname">pyb.</code><code class="sig-name descname">SPI</code><span class="sig-paren">(</span><em class="sig-param">bus</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.SPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an SPI object on the given bus.  <code class="docutils literal notranslate"><span class="pre">bus</span></code> can be 1 or 2, or
+‘X’ or ‘Y’. With no additional parameters, the SPI object is created but
+not initialised (it has the settings from the last initialisation of
+the bus, if any).  If extra arguments are given, the bus is initialised.
+See <code class="docutils literal notranslate"><span class="pre">init</span></code> for parameters of initialisation.</p>
+<p>The physical pins of the SPI buses are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">SPI(1)</span></code> is on the X position: <code class="docutils literal notranslate"><span class="pre">(NSS,</span> <span class="pre">SCK,</span> <span class="pre">MISO,</span> <span class="pre">MOSI)</span> <span class="pre">=</span> <span class="pre">(X5,</span> <span class="pre">X6,</span> <span class="pre">X7,</span> <span class="pre">X8)</span> <span class="pre">=</span> <span class="pre">(PA4,</span> <span class="pre">PA5,</span> <span class="pre">PA6,</span> <span class="pre">PA7)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SPI(2)</span></code> is on the Y position: <code class="docutils literal notranslate"><span class="pre">(NSS,</span> <span class="pre">SCK,</span> <span class="pre">MISO,</span> <span class="pre">MOSI)</span> <span class="pre">=</span> <span class="pre">(Y5,</span> <span class="pre">Y6,</span> <span class="pre">Y7,</span> <span class="pre">Y8)</span> <span class="pre">=</span> <span class="pre">(PB12,</span> <span class="pre">PB13,</span> <span class="pre">PB14,</span> <span class="pre">PB15)</span></code></p></li>
+</ul>
+</div></blockquote>
+<p>At the moment, the NSS pin is not used by the SPI driver and is free
+for other use.</p>
+</dd></dl>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="pyb.SPI.deinit">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.deinit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn off the SPI bus.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.SPI.init">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">mode</em>, <em class="sig-param">baudrate=328125</em>, <em class="sig-param">*</em>, <em class="sig-param">prescaler</em>, <em class="sig-param">polarity=1</em>, <em class="sig-param">phase=0</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">firstbit=SPI.MSB</em>, <em class="sig-param">ti=False</em>, <em class="sig-param">crc=None</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise the SPI bus with the given parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">mode</span></code> must be either <code class="docutils literal notranslate"><span class="pre">SPI.CONTROLLER</span></code> or <code class="docutils literal notranslate"><span class="pre">SPI.PERIPHERAL</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">baudrate</span></code> is the SCK clock rate (only sensible for a controller).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">prescaler</span></code> is the prescaler to use to derive SCK from the APB bus frequency;
+use of <code class="docutils literal notranslate"><span class="pre">prescaler</span></code> overrides <code class="docutils literal notranslate"><span class="pre">baudrate</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">polarity</span></code> can be 0 or 1, and is the level the idle clock line sits at.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phase</span></code> can be 0 or 1 to sample data on the first or second clock edge
+respectively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bits</span></code> can be 8 or 16, and is the number of bits in each transferred word.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">firstbit</span></code> can be <code class="docutils literal notranslate"><span class="pre">SPI.MSB</span></code> or <code class="docutils literal notranslate"><span class="pre">SPI.LSB</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ti</span></code> True indicates Texas Instruments, as opposed to Motorola, signal conventions.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">crc</span></code> can be None for no CRC, or a polynomial specifier.</p></li>
+</ul>
+</div></blockquote>
+<p>Note that the SPI clock frequency will not always be the requested baudrate.
+The hardware only supports baudrates that are the APB bus frequency
+(see <a class="reference internal" href="pyb.html#pyb.freq" title="pyb.freq"><code class="xref py py-meth docutils literal notranslate"><span class="pre">pyb.freq()</span></code></a>) divided by a prescaler, which can be 2, 4, 8, 16, 32,
+64, 128 or 256.  SPI(1) is on AHB2, and SPI(2) is on AHB1.  For precise
+control over the SPI clock frequency, specify <code class="docutils literal notranslate"><span class="pre">prescaler</span></code> instead of
+<code class="docutils literal notranslate"><span class="pre">baudrate</span></code>.</p>
+<p>Printing the SPI object will show you the computed baudrate and the chosen
+prescaler.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.SPI.recv">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">recv</code><span class="sig-paren">(</span><em class="sig-param">recv</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Receive data on the bus:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">recv</span></code> can be an integer, which is the number of bytes to receive,
+or a mutable buffer, which will be filled with received bytes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the timeout in milliseconds to wait for the receive.</p></li>
+</ul>
+</div></blockquote>
+<p>Return value: if <code class="docutils literal notranslate"><span class="pre">recv</span></code> is an integer then a new buffer of the bytes received,
+otherwise the same buffer that was passed in to <code class="docutils literal notranslate"><span class="pre">recv</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.SPI.send">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">send</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send data on the bus:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">send</span></code> is the data to send (an integer to send, or a buffer object).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the timeout in milliseconds to wait for the send.</p></li>
+</ul>
+</div></blockquote>
+<p>Return value: <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="pyb.SPI.send_recv">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">send_recv</code><span class="sig-paren">(</span><em class="sig-param">send</em>, <em class="sig-param">recv=None</em>, <em class="sig-param">*</em>, <em class="sig-param">timeout=5000</em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.SPI.send_recv" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send and receive data on the bus at the same time:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">send</span></code> is the data to send (an integer to send, or a buffer object).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">recv</span></code> is a mutable buffer which will be filled with received bytes.
+It can be the same as <code class="docutils literal notranslate"><span class="pre">send</span></code>, or omitted.  If omitted, a new buffer will
+be created.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">timeout</span></code> is the timeout in milliseconds to wait for the receive.</p></li>
+</ul>
+</div></blockquote>
+<p>Return value: the buffer with the received bytes.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="pyb.SPI.CONTROLLER">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">CONTROLLER</code><a class="headerlink" href="#pyb.SPI.CONTROLLER" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="data">
+<dt id="pyb.SPI.PERIPHERAL">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">PERIPHERAL</code><a class="headerlink" href="#pyb.SPI.PERIPHERAL" title="Permalink to this definition">¶</a></dt>
+<dd><p>for initialising the SPI bus to controller or peripheral mode</p>
+</dd></dl>
+<dl class="data">
+<dt id="pyb.SPI.LSB">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">LSB</code><a class="headerlink" href="#pyb.SPI.LSB" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="data">
+<dt id="pyb.SPI.MSB">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">MSB</code><a class="headerlink" href="#pyb.SPI.MSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the first bit to be the least or most significant bit</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="pyb.Servo.html" title="class Servo – 3-wire hobby servo driver"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class Servo – 3-wire hobby servo driver </span>
+              </div>
+            </a>
+          
+          
+            <a href="pyb.Switch.html" title="class Switch – switch object"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class Switch – switch object </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

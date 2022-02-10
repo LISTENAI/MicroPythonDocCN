@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class UART – duplex serial communication bus &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class SPI – a Serial Peripheral Interface bus protocol (controller side)" href="machine.SPI.html" />
+    <link rel="prev" title="class PWM – pulse width modulation" href="machine.PWM.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/machine.UART" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class UART – duplex serial communication bus </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-machine-uart--page-root" class="md-nav__link">class UART – duplex serial communication bus</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/machine.UART.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="machine-uart"></span><h1 id="library-machine-uart--page-root">class UART – duplex serial communication bus<a class="headerlink" href="#library-machine-uart--page-root" title="Permalink to this headline">¶</a></h1>
+<p>UART implements the standard UART/USART duplex serial communications protocol.  At
+the physical level it consists of 2 lines: RX and TX.  The unit of communication
+is a character (not to be confused with a string character) which can be 8 or 9
+bits wide.</p>
+<p>UART objects can be created and initialised using:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">UART</span>
+
+<span class="n">uart</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9600</span><span class="p">)</span>                         <span class="c1"># init with given baudrate</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">init</span><span class="p">(</span><span class="mi">9600</span><span class="p">,</span> <span class="n">bits</span><span class="o">=</span><span class="mi">8</span><span class="p">,</span> <span class="n">parity</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">stop</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># init with given parameters</span>
+</pre></div>
+</div>
+<p>Supported parameters differ on a board:</p>
+<p>Pyboard: Bits can be 7, 8 or 9. Stop can be 1 or 2. With <em>parity=None</em>,
+only 8 and 9 bits are supported.  With parity enabled, only 7 and 8 bits
+are supported.</p>
+<p>WiPy/CC3200: Bits can be 5, 6, 7, 8. Stop can be 1 or 2.</p>
+<p>A UART object acts like a <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">stream</span></code></a> object and reading and writing is done
+using the standard stream methods:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">uart</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>       <span class="c1"># read 10 characters, returns a bytes object</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>         <span class="c1"># read all available characters</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>     <span class="c1"># read a line</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">buf</span><span class="p">)</span>  <span class="c1"># read and store into the given buffer</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'abc'</span><span class="p">)</span>   <span class="c1"># write the 3 characters</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="machine.UART">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">UART</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a UART object of the given id.</p>
+</dd></dl>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="machine.UART.init">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">baudrate=9600</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">parity=None</em>, <em class="sig-param">stop=1</em>, <em class="sig-param">*</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise the UART bus with the given parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>baudrate</em> is the clock rate.</p></li>
+<li><p><em>bits</em> is the number of bits per character, 7, 8 or 9.</p></li>
+<li><p><em>parity</em> is the parity, <code class="docutils literal notranslate"><span class="pre">None</span></code>, 0 (even) or 1 (odd).</p></li>
+<li><p><em>stop</em> is the number of stop bits, 1 or 2.</p></li>
+</ul>
+</div></blockquote>
+<p>Additional keyword-only parameters that may be supported by a port are:</p>
+<blockquote>
+<div><ul>
+<li><p><em>tx</em> specifies the TX pin to use.</p></li>
+<li><p><em>rx</em> specifies the RX pin to use.</p></li>
+<li><p><em>rts</em> specifies the RTS (output) pin to use for hardware receive flow control.</p></li>
+<li><p><em>cts</em> specifies the CTS (input) pin to use for hardware transmit flow control.</p></li>
+<li><p><em>txbuf</em> specifies the length in characters of the TX buffer.</p></li>
+<li><p><em>rxbuf</em> specifies the length in characters of the RX buffer.</p></li>
+<li><p><em>timeout</em> specifies the time to wait for the first character (in ms).</p></li>
+<li><p><em>timeout_char</em> specifies the time to wait between characters (in ms).</p></li>
+<li><p><em>invert</em> specifies which lines to invert.</p></li>
+<li><p><em>flow</em> specifies which hardware flow control signals to use. The value
+is a bitmask.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">0</span></code> will ignore hardware flow control signals.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UART.RTS</span></code> will enable receive flow control by using the RTS output pin to
+signal if the receive FIFO has sufficient space to accept more data.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UART.CTS</span></code> will enable transmit flow control by pausing transmission when the
+CTS input pin signals that the receiver is running low on buffer space.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">UART.RTS</span> <span class="pre">|</span> <span class="pre">UART.CTS</span></code> will enable both, for full hardware flow control.</p></li>
+</ul>
+</div></blockquote>
+</li>
+</ul>
+</div></blockquote>
+<p>On the WiPy only the following keyword-only parameter is supported:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>pins</em> is a 4 or 2 item list indicating the TX, RX, RTS and CTS pins (in that order).
+Any of the pins can be None if one wants the UART to operate with limited functionality.
+If the RTS pin is given the the RX pin must be given as well. The same applies to CTS.
+When no pins are given, then the default set of TX and RX pins is taken, and hardware
+flow control will be disabled. If <em>pins</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, no pin assignment will be made.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.deinit">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.deinit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn off the UART bus.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.any">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">any</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.any" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns an integer counting the number of characters that can be read without
+blocking.  It will return 0 if there are no characters available and a positive
+number if there are characters.  The method may return 1 even if there is more
+than one character available for reading.</p>
+<p>For more sophisticated querying of available characters use select.poll:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">poll</span> <span class="o">=</span> <span class="n">select</span><span class="o">.</span><span class="n">poll</span><span class="p">()</span>
+<span class="n">poll</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">uart</span><span class="p">,</span> <span class="n">select</span><span class="o">.</span><span class="n">POLLIN</span><span class="p">)</span>
+<span class="n">poll</span><span class="o">.</span><span class="n">poll</span><span class="p">(</span><span class="n">timeout</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.read">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">nbytes</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read characters.  If <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> is specified then read at most that many bytes,
+otherwise read as much data as possible. It may return sooner if a timeout
+is reached. The timeout is configurable in the constructor.</p>
+<p>Return value: a bytes object containing the bytes read in.  Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>
+on timeout.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.readinto">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="optional">[</span>, <em class="sig-param">nbytes</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read bytes into the <code class="docutils literal notranslate"><span class="pre">buf</span></code>.  If <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> is specified then read at most
+that many bytes.  Otherwise, read at most <code class="docutils literal notranslate"><span class="pre">len(buf)</span></code> bytes. It may return sooner if a timeout
+is reached. The timeout is configurable in the constructor.</p>
+<p>Return value: number of bytes read and stored into <code class="docutils literal notranslate"><span class="pre">buf</span></code> or <code class="docutils literal notranslate"><span class="pre">None</span></code> on
+timeout.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.readline">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">readline</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.readline" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a line, ending in a newline character. It may return sooner if a timeout
+is reached. The timeout is configurable in the constructor.</p>
+<p>Return value: the line read or <code class="docutils literal notranslate"><span class="pre">None</span></code> on timeout.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.write">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the buffer of bytes to the bus.</p>
+<p>Return value: number of bytes written or <code class="docutils literal notranslate"><span class="pre">None</span></code> on timeout.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.sendbreak">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">sendbreak</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.sendbreak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a break condition on the bus. This drives the bus low for a duration
+longer than required for a normal transmission of a character.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.UART.irq">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">trigger</em>, <em class="sig-param">priority=1</em>, <em class="sig-param">handler=None</em>, <em class="sig-param">wake=machine.IDLE</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.UART.irq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a callback to be triggered when data is received on the UART.</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>trigger</em> can only be <code class="docutils literal notranslate"><span class="pre">UART.RX_ANY</span></code></p></li>
+<li><p><em>priority</em> level of the interrupt. Can take values in the range 1-7.
+Higher values represent higher priorities.</p></li>
+<li><p><em>handler</em> an optional function to be called when new characters arrive.</p></li>
+<li><p><em>wake</em> can only be <code class="docutils literal notranslate"><span class="pre">machine.IDLE</span></code>.</p></li>
+</ul>
+</div></blockquote>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The handler will be called whenever any of the following two conditions are met:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>8 new characters have been received.</p></li>
+<li><p>At least 1 new character is waiting in the Rx buffer and the Rx line has been
+silent for the duration of 1 complete frame.</p></li>
+</ul>
+</div></blockquote>
+<p>This means that when the handler function is called there will be between 1 to 8
+characters waiting.</p>
+</div>
+<p>Returns an irq object.</p>
+<p>Availability: WiPy.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="machine.UART.RX_ANY">
+<code class="sig-prename descclassname">UART.</code><code class="sig-name descname">RX_ANY</code><a class="headerlink" href="#machine.UART.RX_ANY" title="Permalink to this definition">¶</a></dt>
+<dd><p>IRQ trigger sources</p>
+<p>Availability: WiPy.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="machine.PWM.html" title="class PWM – pulse width modulation"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class PWM – pulse width modulation </span>
+              </div>
+            </a>
+          
+          
+            <a href="machine.SPI.html" title="class SPI – a Serial Peripheral Interface bus protocol (controller side)"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class SPI – a Serial Peripheral Interface bus protocol (controller side) </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

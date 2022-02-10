@@ -1,0 +1,467 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>framebuf — frame buffer manipulation &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="machine — functions related to the hardware" href="machine.html" />
+    <link rel="prev" title="cryptolib – cryptographic ciphers" href="cryptolib.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/framebuf" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> framebuf — frame buffer manipulation </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-framebuf--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">framebuf</span></code> — frame buffer manipulation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#class-framebuffer" class="md-nav__link">class FrameBuffer</a>
+        </li>
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#drawing-primitive-shapes" class="md-nav__link">Drawing primitive shapes</a>
+        </li>
+        <li class="md-nav__item"><a href="#drawing-text" class="md-nav__link">Drawing text</a>
+        </li>
+        <li class="md-nav__item"><a href="#other-methods" class="md-nav__link">Other methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/framebuf.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="framebuf-frame-buffer-manipulation"></span><h1 id="library-framebuf--page-root"><a class="reference internal" href="#library-framebuf--page-root" title="framebuf: Frame buffer manipulation"><code class="xref py py-mod docutils literal notranslate"><span class="pre">framebuf</span></code></a> — frame buffer manipulation<a class="headerlink" href="#library-framebuf--page-root" title="Permalink to this headline">¶</a></h1>
+<p>This module provides a general frame buffer which can be used to create
+bitmap images, which can then be sent to a display.</p>
+
+<h2 id="class-framebuffer">class FrameBuffer<a class="headerlink" href="#class-framebuffer" title="Permalink to this headline">¶</a></h2>
+<p>The FrameBuffer class provides a pixel buffer which can be drawn upon with
+pixels, lines, rectangles, text and even other FrameBuffer’s. It is useful
+when generating output for displays.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">framebuf</span>
+
+<span class="c1"># FrameBuffer needs 2 bytes for every RGB565 pixel</span>
+<span class="n">fbuf</span> <span class="o">=</span> <span class="n">framebuf</span><span class="o">.</span><span class="n">FrameBuffer</span><span class="p">(</span><span class="nb">bytearray</span><span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="mi">10</span> <span class="o">*</span> <span class="mi">2</span><span class="p">),</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">framebuf</span><span class="o">.</span><span class="n">RGB565</span><span class="p">)</span>
+
+<span class="n">fbuf</span><span class="o">.</span><span class="n">fill</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">fbuf</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="s1">'MicroPython!'</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span>
+<span class="n">fbuf</span><span class="o">.</span><span class="n">hline</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">96</span><span class="p">,</span> <span class="mh">0xffff</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="framebuf.FrameBuffer">
+<em class="property">class </em><code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">FrameBuffer</code><span class="sig-paren">(</span><em class="sig-param">buffer</em>, <em class="sig-param">width</em>, <em class="sig-param">height</em>, <em class="sig-param">format</em>, <em class="sig-param">stride=width</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a FrameBuffer object.  The parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>buffer</em> is an object with a buffer protocol which must be large
+enough to contain every pixel defined by the width, height and
+format of the FrameBuffer.</p></li>
+<li><p><em>width</em> is the width of the FrameBuffer in pixels</p></li>
+<li><p><em>height</em> is the height of the FrameBuffer in pixels</p></li>
+<li><p><em>format</em> specifies the type of pixel used in the FrameBuffer;
+permissible values are listed under Constants below. These set the
+number of bits used to encode a color value and the layout of these
+bits in <em>buffer</em>.
+Where a color value c is passed to a method, c is a small integer
+with an encoding that is dependent on the format of the FrameBuffer.</p></li>
+<li><p><em>stride</em> is the number of pixels between each horizontal line
+of pixels in the FrameBuffer. This defaults to <em>width</em> but may
+need adjustments when implementing a FrameBuffer within another
+larger FrameBuffer or screen. The <em>buffer</em> size must accommodate
+an increased step size.</p></li>
+</ul>
+</div></blockquote>
+<p>One must specify valid <em>buffer</em>, <em>width</em>, <em>height</em>, <em>format</em> and
+optionally <em>stride</em>.  Invalid <em>buffer</em> size or dimensions may lead to
+unexpected errors.</p>
+</dd></dl>
+
+
+<h2 id="drawing-primitive-shapes">Drawing primitive shapes<a class="headerlink" href="#drawing-primitive-shapes" title="Permalink to this headline">¶</a></h2>
+<p>The following methods draw shapes onto the FrameBuffer.</p>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.fill">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">fill</code><span class="sig-paren">(</span><em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fill the entire FrameBuffer with the specified color.</p>
+</dd></dl>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.pixel">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">pixel</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="optional">[</span>, <em class="sig-param">c</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.pixel" title="Permalink to this definition">¶</a></dt>
+<dd><p>If <em>c</em> is not given, get the color value of the specified pixel.
+If <em>c</em> is given, set the specified pixel to the given color.</p>
+</dd></dl>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.hline">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">hline</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.hline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.vline">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">vline</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">h</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.vline" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.line">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">line</code><span class="sig-paren">(</span><em class="sig-param">x1</em>, <em class="sig-param">y1</em>, <em class="sig-param">x2</em>, <em class="sig-param">y2</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.line" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a line from a set of coordinates using the given color and
+a thickness of 1 pixel. The <a class="reference internal" href="#framebuf.FrameBuffer.line" title="framebuf.FrameBuffer.line"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">line</span></code></a> method draws the line up to
+a second set of coordinates whereas the <a class="reference internal" href="#framebuf.FrameBuffer.hline" title="framebuf.FrameBuffer.hline"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">hline</span></code></a> and <a class="reference internal" href="#framebuf.FrameBuffer.vline" title="framebuf.FrameBuffer.vline"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">vline</span></code></a>
+methods draw horizontal and vertical lines respectively up to
+a given length.</p>
+</dd></dl>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.rect">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">rect</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.rect" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.fill_rect">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">fill_rect</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">w</em>, <em class="sig-param">h</em>, <em class="sig-param">c</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.fill_rect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw a rectangle at the given location, size and color. The <a class="reference internal" href="#framebuf.FrameBuffer.rect" title="framebuf.FrameBuffer.rect"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">rect</span></code></a>
+method draws only a 1 pixel outline whereas the <a class="reference internal" href="#framebuf.FrameBuffer.fill_rect" title="framebuf.FrameBuffer.fill_rect"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">fill_rect</span></code></a> method
+draws both the outline and interior.</p>
+</dd></dl>
+
+
+<h2 id="drawing-text">Drawing text<a class="headerlink" href="#drawing-text" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.text">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">text</code><span class="sig-paren">(</span><em class="sig-param">s</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em><span class="optional">[</span>, <em class="sig-param">c</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write text to the FrameBuffer using the the coordinates as the upper-left
+corner of the text. The color of the text can be defined by the optional
+argument but is otherwise a default value of 1. All characters have
+dimensions of 8x8 pixels and there is currently no way to change the font.</p>
+</dd></dl>
+
+
+<h2 id="other-methods">Other methods<a class="headerlink" href="#other-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.scroll">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">scroll</code><span class="sig-paren">(</span><em class="sig-param">xstep</em>, <em class="sig-param">ystep</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.scroll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shift the contents of the FrameBuffer by the given vector. This may
+leave a footprint of the previous colors in the FrameBuffer.</p>
+</dd></dl>
+<dl class="method">
+<dt id="framebuf.FrameBuffer.blit">
+<code class="sig-prename descclassname">FrameBuffer.</code><code class="sig-name descname">blit</code><span class="sig-paren">(</span><em class="sig-param">fbuf</em>, <em class="sig-param">x</em>, <em class="sig-param">y</em>, <em class="sig-param">key=-1</em>, <em class="sig-param">palette=None</em><span class="sig-paren">)</span><a class="headerlink" href="#framebuf.FrameBuffer.blit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Draw another FrameBuffer on top of the current one at the given coordinates.
+If <em>key</em> is specified then it should be a color integer and the
+corresponding color will be considered transparent: all pixels with that
+color value will not be drawn.</p>
+<p>The <em>palette</em> argument enables blitting between FrameBuffers with differing
+formats. Typical usage is to render a monochrome or grayscale glyph/icon to
+a color display. The <em>palette</em> is a FrameBuffer instance whose format is
+that of the current FrameBuffer. The <em>palette</em> height is one pixel and its
+pixel width is the number of colors in the source FrameBuffer. The <em>palette</em>
+for an N-bit source needs 2**N pixels; the <em>palette</em> for a monochrome source
+would have 2 pixels representing background and foreground colors. The
+application assigns a color to each pixel in the <em>palette</em>. The color of the
+current pixel will be that of that <em>palette</em> pixel whose x position is the
+color of the corresponding source pixel.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="framebuf.framebuf.MONO_VLSB">
+<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">MONO_VLSB</code><a class="headerlink" href="#framebuf.framebuf.MONO_VLSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Monochrome (1-bit) color format
+This defines a mapping where the bits in a byte are vertically mapped with
+bit 0 being nearest the top of the screen. Consequently each byte occupies
+8 vertical pixels. Subsequent bytes appear at successive horizontal
+locations until the rightmost edge is reached. Further bytes are rendered
+at locations starting at the leftmost edge, 8 pixels lower.</p>
+</dd></dl>
+<dl class="data">
+<dt id="framebuf.framebuf.MONO_HLSB">
+<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">MONO_HLSB</code><a class="headerlink" href="#framebuf.framebuf.MONO_HLSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Monochrome (1-bit) color format
+This defines a mapping where the bits in a byte are horizontally mapped.
+Each byte occupies 8 horizontal pixels with bit 7 being the leftmost.
+Subsequent bytes appear at successive horizontal locations until the
+rightmost edge is reached. Further bytes are rendered on the next row, one
+pixel lower.</p>
+</dd></dl>
+<dl class="data">
+<dt id="framebuf.framebuf.MONO_HMSB">
+<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">MONO_HMSB</code><a class="headerlink" href="#framebuf.framebuf.MONO_HMSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Monochrome (1-bit) color format
+This defines a mapping where the bits in a byte are horizontally mapped.
+Each byte occupies 8 horizontal pixels with bit 0 being the leftmost.
+Subsequent bytes appear at successive horizontal locations until the
+rightmost edge is reached. Further bytes are rendered on the next row, one
+pixel lower.</p>
+</dd></dl>
+<dl class="data">
+<dt id="framebuf.framebuf.RGB565">
+<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">RGB565</code><a class="headerlink" href="#framebuf.framebuf.RGB565" title="Permalink to this definition">¶</a></dt>
+<dd><p>Red Green Blue (16-bit, 5+6+5) color format</p>
+</dd></dl>
+<dl class="data">
+<dt id="framebuf.framebuf.GS2_HMSB">
+<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">GS2_HMSB</code><a class="headerlink" href="#framebuf.framebuf.GS2_HMSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grayscale (2-bit) color format</p>
+</dd></dl>
+<dl class="data">
+<dt id="framebuf.framebuf.GS4_HMSB">
+<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">GS4_HMSB</code><a class="headerlink" href="#framebuf.framebuf.GS4_HMSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grayscale (4-bit) color format</p>
+</dd></dl>
+<dl class="data">
+<dt id="framebuf.framebuf.GS8">
+<code class="sig-prename descclassname">framebuf.</code><code class="sig-name descname">GS8</code><a class="headerlink" href="#framebuf.framebuf.GS8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Grayscale (8-bit) color format</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="cryptolib.html" title="cryptolib – cryptographic ciphers"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">cryptolib</span></code> – cryptographic ciphers </span>
+              </div>
+            </a>
+          
+          
+            <a href="machine.html" title="machine — functions related to the hardware"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

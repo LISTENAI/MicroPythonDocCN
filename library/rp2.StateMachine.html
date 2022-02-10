@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class StateMachine – access to the RP2040’s programmable I/O interface &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="zephyr — functionality specific to the Zephyr port" href="zephyr.html" />
+    <link rel="prev" title="class PIO – advanced PIO usage" href="rp2.PIO.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/rp2.StateMachine" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class StateMachine – access to the RP2040’s programmable I/O interface </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="rp2.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code> — functionality specific to the RP2040</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-rp2-statemachine--page-root" class="md-nav__link">class StateMachine – access to the RP2040’s programmable I/O interface</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/rp2.StateMachine.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="rp2-statemachine"></span><h1 id="library-rp2-statemachine--page-root">class StateMachine – access to the RP2040’s programmable I/O interface<a class="headerlink" href="#library-rp2-statemachine--page-root" title="Permalink to this headline">¶</a></h1>
+<p>The <a class="reference internal" href="#rp2.StateMachine" title="rp2.StateMachine"><code class="xref py py-class docutils literal notranslate"><span class="pre">StateMachine</span></code></a> class gives access to the RP2040’s PIO (programmable
+I/O) interface.</p>
+<p>For assembling PIO programs, see <a class="reference internal" href="rp2.html#rp2.asm_pio" title="rp2.asm_pio"><code class="xref py py-func docutils literal notranslate"><span class="pre">rp2.asm_pio()</span></code></a>.</p>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="rp2.StateMachine">
+<em class="property">class </em><code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">StateMachine</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="optional">[</span>, <em class="sig-param">program</em>, <em class="sig-param">...</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the state machine numbered <em>id</em>. The RP2040 has two identical PIO
+instances, each with 4 state machines: so there are 8 state machines in
+total, numbered 0 to 7.</p>
+<p>Optionally initialize it with the given program <em>program</em>: see
+<a class="reference internal" href="#rp2.StateMachine.init" title="rp2.StateMachine.init"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.init</span></code></a>.</p>
+</dd></dl>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="rp2.StateMachine.init">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">program</em>, <em class="sig-param">freq=-1</em>, <em class="sig-param">*</em>, <em class="sig-param">in_base=None</em>, <em class="sig-param">out_base=None</em>, <em class="sig-param">set_base=None</em>, <em class="sig-param">jmp_pin=None</em>, <em class="sig-param">sideset_base=None</em>, <em class="sig-param">in_shiftdir=None</em>, <em class="sig-param">out_shiftdir=None</em>, <em class="sig-param">push_thresh=None</em>, <em class="sig-param">pull_thresh=None</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Configure the state machine instance to run the given <em>program</em>.</p>
+<p>The program is added to the instruction memory of this PIO instance. If the
+instruction memory already contains this program, then its offset is
+re-used so as to save on instruction memory.</p>
+<ul>
+<li><p><em>freq</em> is the frequency in Hz to run the state machine at. Defaults to
+the system clock frequency.</p>
+<p>The clock divider is computed as <code class="docutils literal notranslate"><span class="pre">system</span> <span class="pre">clock</span> <span class="pre">frequency</span> <span class="pre">/</span> <span class="pre">freq</span></code>, so
+there can be slight rounding errors.</p>
+<p>The minimum possible clock divider is one 65536th of the system clock: so
+at the default system clock frequency of 125MHz, the minimum value of
+<em>freq</em> is <code class="docutils literal notranslate"><span class="pre">1908</span></code>. To run state machines at slower frequencies, you’ll
+need to reduce the system clock speed with <a class="reference internal" href="machine.html#machine.freq" title="machine.freq"><code class="xref any py py-func docutils literal notranslate"><span class="pre">machine.freq()</span></code></a>.</p>
+</li>
+<li><p><em>in_base</em> is the first pin to use for <code class="docutils literal notranslate"><span class="pre">in()</span></code> instructions.</p></li>
+<li><p><em>out_base</em> is the first pin to use for <code class="docutils literal notranslate"><span class="pre">out()</span></code> instructions.</p></li>
+<li><p><em>set_base</em> is the first pin to use for <code class="docutils literal notranslate"><span class="pre">set()</span></code> instructions.</p></li>
+<li><p><em>jmp_pin</em> is the first pin to use for <code class="docutils literal notranslate"><span class="pre">jmp(pin,</span> <span class="pre">...)</span></code> instructions.</p></li>
+<li><p><em>sideset_base</em> is the first pin to use for side-setting.</p></li>
+<li><p><em>in_shiftdir</em> is the direction the ISR will shift, either
+<a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_LEFT" title="rp2.PIO.SHIFT_LEFT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_LEFT</span></code></a> or <a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_RIGHT" title="rp2.PIO.SHIFT_RIGHT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_RIGHT</span></code></a>.</p></li>
+<li><p><em>out_shiftdir</em> is the direction the OSR will shift, either
+<a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_LEFT" title="rp2.PIO.SHIFT_LEFT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_LEFT</span></code></a> or <a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_RIGHT" title="rp2.PIO.SHIFT_RIGHT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_RIGHT</span></code></a>.</p></li>
+<li><p><em>push_thresh</em> is the threshold in bits before auto-push or conditional
+re-pushing is triggered.</p></li>
+<li><p><em>pull_thresh</em> is the threshold in bits before auto-push or conditional
+re-pushing is triggered.</p></li>
+</ul>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.active">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">active</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">value</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets or sets whether the state machine is currently running.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sm</span><span class="o">.</span><span class="n">active</span><span class="p">()</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sm</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="go">False</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.restart">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">restart</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.restart" title="Permalink to this definition">¶</a></dt>
+<dd><p>Restarts the state machine and jumps to the beginning of the program.</p>
+<p>This method clears the state machine’s internal state using the RP2040’s
+<code class="docutils literal notranslate"><span class="pre">SM_RESTART</span></code> register. This includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>input and output shift counters</p></li>
+<li><p>the contents of the input shift register</p></li>
+<li><p>the delay counter</p></li>
+<li><p>the waiting-on-IRQ state</p></li>
+<li><p>a stalled instruction run using <a class="reference internal" href="#rp2.StateMachine.exec" title="rp2.StateMachine.exec"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.exec()</span></code></a></p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.exec">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">exec</code><span class="sig-paren">(</span><em class="sig-param">instr</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.exec" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a single PIO instruction. Uses <a class="reference internal" href="rp2.html#rp2.asm_pio_encode" title="rp2.asm_pio_encode"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio_encode</span></code></a> to encode the
+instruction from the given string <em>instr</em>.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">sm</span><span class="o">.</span><span class="n">exec</span><span class="p">(</span><span class="s2">"set(0, 1)"</span><span class="p">)</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.get">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">get</code><span class="sig-paren">(</span><em class="sig-param">buf=None</em>, <em class="sig-param">shift=0</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pull a word from the state machine’s RX FIFO.</p>
+<p>If the FIFO is empty, it blocks until data arrives (i.e. the state machine
+pushes a word).</p>
+<p>The value is shifted right by <em>shift</em> bits before returning, i.e. the
+return value is <code class="docutils literal notranslate"><span class="pre">word</span> <span class="pre">&gt;&gt;</span> <span class="pre">shift</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.put">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">put</code><span class="sig-paren">(</span><em class="sig-param">value</em>, <em class="sig-param">shift=0</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.put" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push a word onto the state machine’s TX FIFO.</p>
+<p>If the FIFO is full, it blocks until there is space (i.e. the state machine
+pulls a word).</p>
+<p>The value is first shifted left by <em>shift</em> bits, i.e. the state machine
+receives <code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">&lt;&lt;</span> <span class="pre">shift</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.rx_fifo">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">rx_fifo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.rx_fifo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of words in the state machine’s RX FIFO. A value of 0
+indicates the FIFO is empty.</p>
+<p>Useful for checking if data is waiting to be read, before calling
+<a class="reference internal" href="#rp2.StateMachine.get" title="rp2.StateMachine.get"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.get()</span></code></a>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.tx_fifo">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">tx_fifo</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.tx_fifo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of words in the state machine’s TX FIFO. A value of 0
+indicates the FIFO is empty.</p>
+<p>Useful for checking if there is space to push another word using
+<a class="reference internal" href="#rp2.StateMachine.put" title="rp2.StateMachine.put"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.put()</span></code></a>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="rp2.StateMachine.irq">
+<code class="sig-prename descclassname">StateMachine.</code><code class="sig-name descname">irq</code><span class="sig-paren">(</span><em class="sig-param">handler=None</em>, <em class="sig-param">trigger=0|1</em>, <em class="sig-param">hard=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.StateMachine.irq" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the IRQ object for the given StateMachine.</p>
+<p>Optionally configure it.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="rp2.PIO.html" title="class PIO – advanced PIO usage"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class PIO – advanced PIO usage </span>
+              </div>
+            </a>
+          
+          
+            <a href="zephyr.html" title="zephyr — functionality specific to the Zephyr port"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

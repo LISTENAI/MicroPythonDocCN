@@ -1,0 +1,430 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class SPI – a Serial Peripheral Interface bus protocol (controller side) &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class I2C – a two-wire serial protocol" href="machine.I2C.html" />
+    <link rel="prev" title="class UART – duplex serial communication bus" href="machine.UART.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/machine.SPI" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class SPI – a Serial Peripheral Interface bus protocol (controller side) </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-machine-spi--page-root" class="md-nav__link">class SPI – a Serial Peripheral Interface bus protocol (controller side)</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/machine.SPI.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="machine-spi"></span><h1 id="library-machine-spi--page-root">class SPI – a Serial Peripheral Interface bus protocol (controller side)<a class="headerlink" href="#library-machine-spi--page-root" title="Permalink to this headline">¶</a></h1>
+<p>SPI is a synchronous serial protocol that is driven by a controller. At the
+physical level, a bus consists of 3 lines: SCK, MOSI, MISO. Multiple devices
+can share the same bus. Each device should have a separate, 4th signal,
+CS (Chip Select), to select a particular device on a bus with which
+communication takes place. Management of a CS signal should happen in
+user code (via machine.Pin class).</p>
+<p>Both hardware and software SPI implementations exist via the
+<a class="reference internal" href="#machine-spi"><span class="std std-ref">machine.SPI</span></a> and <a class="reference internal" href="#machine.SoftSPI" title="machine.SoftSPI"><code class="xref any py py-class docutils literal notranslate"><span class="pre">machine.SoftSPI</span></code></a> classes.  Hardware SPI uses underlying
+hardware support of the system to perform the reads/writes and is usually
+efficient and fast but may have restrictions on which pins can be used.
+Software SPI is implemented by bit-banging and can be used on any pin but
+is not as efficient.  These classes have the same methods available and
+differ primarily in the way they are constructed.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">SPI</span><span class="p">,</span> <span class="n">Pin</span>
+
+<span class="n">spi</span> <span class="o">=</span> <span class="n">SPI</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">400000</span><span class="p">)</span>           <span class="c1"># Create SPI peripheral 0 at frequency of 400kHz.</span>
+                                        <span class="c1"># Depending on the use case, extra parameters may be required</span>
+                                        <span class="c1"># to select the bus characteristics and/or pins to use.</span>
+<span class="n">cs</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>      <span class="c1"># Create chip-select on pin 4.</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                               <span class="c1"># Select peripheral.</span>
+    <span class="n">spi</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">b</span><span class="s2">"12345678"</span><span class="p">)</span>              <span class="c1"># Write 8 bytes, and don't care about received data.</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                               <span class="c1"># Deselect peripheral.</span>
+
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                               <span class="c1"># Select peripheral.</span>
+    <span class="n">rxdata</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">)</span>          <span class="c1"># Read 8 bytes while writing 0x42 for each byte.</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                               <span class="c1"># Deselect peripheral.</span>
+
+<span class="n">rxdata</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                               <span class="c1"># Select peripheral.</span>
+    <span class="n">spi</span><span class="o">.</span><span class="n">readinto</span><span class="p">(</span><span class="n">rxdata</span><span class="p">,</span> <span class="mh">0x42</span><span class="p">)</span>          <span class="c1"># Read 8 bytes inplace while writing 0x42 for each byte.</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                               <span class="c1"># Deselect peripheral.</span>
+
+<span class="n">txdata</span> <span class="o">=</span> <span class="sa">b</span><span class="s2">"12345678"</span>
+<span class="n">rxdata</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">txdata</span><span class="p">))</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>                               <span class="c1"># Select peripheral.</span>
+    <span class="n">spi</span><span class="o">.</span><span class="n">write_readinto</span><span class="p">(</span><span class="n">txdata</span><span class="p">,</span> <span class="n">rxdata</span><span class="p">)</span>  <span class="c1"># Simultaneously write and read bytes.</span>
+<span class="k">finally</span><span class="p">:</span>
+    <span class="n">cs</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>                               <span class="c1"># Deselect peripheral.</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="machine.SPI">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SPI</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">...</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct an SPI object on the given bus, <em>id</em>. Values of <em>id</em> depend
+on a particular port and its hardware. Values 0, 1, etc. are commonly used
+to select hardware SPI block #0, #1, etc.</p>
+<p>With no additional parameters, the SPI object is created but not
+initialised (it has the settings from the last initialisation of
+the bus, if any).  If extra arguments are given, the bus is initialised.
+See <code class="docutils literal notranslate"><span class="pre">init</span></code> for parameters of initialisation.</p>
+</dd></dl>
+<span class="target" id="machine-softspi"></span><dl class="class">
+<dt id="machine.SoftSPI">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SoftSPI</code><span class="sig-paren">(</span><em class="sig-param">baudrate=500000</em>, <em class="sig-param">*</em>, <em class="sig-param">polarity=0</em>, <em class="sig-param">phase=0</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">firstbit=MSB</em>, <em class="sig-param">sck=None</em>, <em class="sig-param">mosi=None</em>, <em class="sig-param">miso=None</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SoftSPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a new software SPI object.  Additional parameters must be
+given, usually at least <em>sck</em>, <em>mosi</em> and <em>miso</em>, and these are used
+to initialise the bus.  See <a class="reference internal" href="#machine.SPI.init" title="machine.SPI.init"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">SPI.init</span></code></a> for a description of the parameters.</p>
+</dd></dl>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="machine.SPI.init">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">baudrate=1000000</em>, <em class="sig-param">*</em>, <em class="sig-param">polarity=0</em>, <em class="sig-param">phase=0</em>, <em class="sig-param">bits=8</em>, <em class="sig-param">firstbit=SPI.MSB</em>, <em class="sig-param">sck=None</em>, <em class="sig-param">mosi=None</em>, <em class="sig-param">miso=None</em>, <em class="sig-param">pins=(SCK</em>, <em class="sig-param">MOSI</em>, <em class="sig-param">MISO)</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise the SPI bus with the given parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">baudrate</span></code> is the SCK clock rate.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">polarity</span></code> can be 0 or 1, and is the level the idle clock line sits at.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phase</span></code> can be 0 or 1 to sample data on the first or second clock edge
+respectively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bits</span></code> is the width in bits of each transfer. Only 8 is guaranteed to be supported by all hardware.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">firstbit</span></code> can be <code class="docutils literal notranslate"><span class="pre">SPI.MSB</span></code> or <code class="docutils literal notranslate"><span class="pre">SPI.LSB</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sck</span></code>, <code class="docutils literal notranslate"><span class="pre">mosi</span></code>, <code class="docutils literal notranslate"><span class="pre">miso</span></code> are pins (machine.Pin) objects to use for bus signals. For most
+hardware SPI blocks (as selected by <code class="docutils literal notranslate"><span class="pre">id</span></code> parameter to the constructor), pins are fixed
+and cannot be changed. In some cases, hardware blocks allow 2-3 alternative pin sets for
+a hardware SPI block. Arbitrary pin assignments are possible only for a bitbanging SPI driver
+(<code class="docutils literal notranslate"><span class="pre">id</span></code> = -1).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pins</span></code> - WiPy port doesn’t <code class="docutils literal notranslate"><span class="pre">sck</span></code>, <code class="docutils literal notranslate"><span class="pre">mosi</span></code>, <code class="docutils literal notranslate"><span class="pre">miso</span></code> arguments, and instead allows to
+specify them as a tuple of <code class="docutils literal notranslate"><span class="pre">pins</span></code> parameter.</p></li>
+</ul>
+</div></blockquote>
+<p>In the case of hardware SPI the actual clock frequency may be lower than the
+requested baudrate. This is dependant on the platform hardware. The actual
+rate may be determined by printing the SPI object.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.SPI.deinit">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.deinit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn off the SPI bus.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.SPI.read">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">read</code><span class="sig-paren">(</span><em class="sig-param">nbytes</em>, <em class="sig-param">write=0x00</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.read" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read a number of bytes specified by <code class="docutils literal notranslate"><span class="pre">nbytes</span></code> while continuously writing
+the single byte given by <code class="docutils literal notranslate"><span class="pre">write</span></code>.
+Returns a <code class="docutils literal notranslate"><span class="pre">bytes</span></code> object with the data that was read.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.SPI.readinto">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em>, <em class="sig-param">write=0x00</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read into the buffer specified by <code class="docutils literal notranslate"><span class="pre">buf</span></code> while continuously writing the
+single byte given by <code class="docutils literal notranslate"><span class="pre">write</span></code>.
+Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Note: on WiPy this function returns the number of bytes read.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.SPI.write">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the bytes contained in <code class="docutils literal notranslate"><span class="pre">buf</span></code>.
+Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Note: on WiPy this function returns the number of bytes written.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.SPI.write_readinto">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">write_readinto</code><span class="sig-paren">(</span><em class="sig-param">write_buf</em>, <em class="sig-param">read_buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.write_readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the bytes from <code class="docutils literal notranslate"><span class="pre">write_buf</span></code> while reading into <code class="docutils literal notranslate"><span class="pre">read_buf</span></code>.  The
+buffers can be the same or different, but both buffers must have the
+same length.
+Returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Note: on WiPy this function returns the number of bytes written.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="machine.SPI.CONTROLLER">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">CONTROLLER</code><a class="headerlink" href="#machine.SPI.CONTROLLER" title="Permalink to this definition">¶</a></dt>
+<dd><p>for initialising the SPI bus to controller; this is only used for the WiPy</p>
+</dd></dl>
+<dl class="data">
+<dt id="machine.SPI.MSB">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">MSB</code><a class="headerlink" href="#machine.SPI.MSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the first bit to be the most significant bit</p>
+</dd></dl>
+<dl class="data">
+<dt id="machine.SPI.LSB">
+<code class="sig-prename descclassname">SPI.</code><code class="sig-name descname">LSB</code><a class="headerlink" href="#machine.SPI.LSB" title="Permalink to this definition">¶</a></dt>
+<dd><p>set the first bit to be the least significant bit</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="machine.UART.html" title="class UART – duplex serial communication bus"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class UART – duplex serial communication bus </span>
+              </div>
+            </a>
+          
+          
+            <a href="machine.I2C.html" title="class I2C – a two-wire serial protocol"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class I2C – a two-wire serial protocol </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,372 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>stm — functionality specific to STM32 MCUs &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="lcd160cr — control of LCD160CR display" href="lcd160cr.html" />
+    <link rel="prev" title="class USB_VCP – USB virtual comm port" href="pyb.USB_VCP.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/stm" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> stm — functionality specific to STM32 MCUs </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-stm--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stm</span></code> — functionality specific to STM32 MCUs</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#memory-access" class="md-nav__link">Memory access</a>
+        </li>
+        <li class="md-nav__item"><a href="#peripheral-register-constants" class="md-nav__link">Peripheral register constants</a>
+        </li>
+        <li class="md-nav__item"><a href="#functions-specific-to-stm32wbxx-mcus" class="md-nav__link">Functions specific to STM32WBxx MCUs</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/stm.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="stm-functionality-specific-to-stm32-mcus"></span><h1 id="library-stm--page-root"><a class="reference internal" href="#library-stm--page-root" title="stm: functionality specific to STM32 MCUs"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stm</span></code></a> — functionality specific to STM32 MCUs<a class="headerlink" href="#library-stm--page-root" title="Permalink to this headline">¶</a></h1>
+<p>This module provides functionality specific to STM32 microcontrollers, including
+direct access to peripheral registers.</p>
+
+<h2 id="memory-access">Memory access<a class="headerlink" href="#memory-access" title="Permalink to this headline">¶</a></h2>
+<p>The module exposes three objects used for raw memory access.</p>
+<dl class="data">
+<dt id="stm.mem8">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">mem8</code><a class="headerlink" href="#stm.mem8" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read/write 8 bits of memory.</p>
+</dd></dl>
+<dl class="data">
+<dt id="stm.mem16">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">mem16</code><a class="headerlink" href="#stm.mem16" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read/write 16 bits of memory.</p>
+</dd></dl>
+<dl class="data">
+<dt id="stm.mem32">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">mem32</code><a class="headerlink" href="#stm.mem32" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read/write 32 bits of memory.</p>
+</dd></dl>
+<p>Use subscript notation <code class="docutils literal notranslate"><span class="pre">[...]</span></code> to index these objects with the address of
+interest.</p>
+<p>These memory objects can be used in combination with the peripheral register
+constants to read and write registers of the MCU hardware peripherals, as well
+as all other areas of address space.</p>
+
+
+<h2 id="peripheral-register-constants">Peripheral register constants<a class="headerlink" href="#peripheral-register-constants" title="Permalink to this headline">¶</a></h2>
+<p>The module defines constants for registers which are generated from CMSIS header
+files, and the constants available depend on the microcontroller series that is
+being compiled for.  Examples of some constants include:</p>
+<dl class="data">
+<dt id="stm.GPIOA">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIOA</code><a class="headerlink" href="#stm.GPIOA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base address of the GPIOA peripheral.</p>
+</dd></dl>
+<dl class="data">
+<dt id="stm.GPIOB">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIOB</code><a class="headerlink" href="#stm.GPIOB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Base address of the GPIOB peripheral.</p>
+</dd></dl>
+<dl class="data">
+<dt id="stm.GPIO_BSRR">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIO_BSRR</code><a class="headerlink" href="#stm.GPIO_BSRR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset of the GPIO bit set/reset register.</p>
+</dd></dl>
+<dl class="data">
+<dt id="stm.GPIO_IDR">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIO_IDR</code><a class="headerlink" href="#stm.GPIO_IDR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset of the GPIO input data register.</p>
+</dd></dl>
+<dl class="data">
+<dt id="stm.GPIO_ODR">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">GPIO_ODR</code><a class="headerlink" href="#stm.GPIO_ODR" title="Permalink to this definition">¶</a></dt>
+<dd><p>Offset of the GPIO output data register.</p>
+</dd></dl>
+<p>Constants that are named after a peripheral, like <code class="docutils literal notranslate"><span class="pre">GPIOA</span></code>, are the absolute
+address of that peripheral.  Constants that have a prefix which is the name of a
+peripheral, like <code class="docutils literal notranslate"><span class="pre">GPIO_BSRR</span></code>, are relative offsets of the register.  Accessing
+peripheral registers requires adding the absolute base address of the peripheral
+and the relative register offset.  For example <code class="docutils literal notranslate"><span class="pre">GPIOA</span> <span class="pre">+</span> <span class="pre">GPIO_BSRR</span></code> is the
+full, absolute address of the <code class="docutils literal notranslate"><span class="pre">GPIOA-&gt;BSRR</span></code> register.</p>
+<p>Example use:</p>
+<div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># set PA2 high</span>
+<span class="n">stm</span><span class="o">.</span><span class="n">mem32</span><span class="p">[</span><span class="n">stm</span><span class="o">.</span><span class="n">GPIOA</span> <span class="o">+</span> <span class="n">stm</span><span class="o">.</span><span class="n">GPIO_BSRR</span><span class="p">]</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+
+<span class="c1"># read PA3</span>
+<span class="n">value</span> <span class="o">=</span> <span class="p">(</span><span class="n">stm</span><span class="o">.</span><span class="n">mem32</span><span class="p">[</span><span class="n">stm</span><span class="o">.</span><span class="n">GPIOA</span> <span class="o">+</span> <span class="n">stm</span><span class="o">.</span><span class="n">GPIO_IDR</span><span class="p">]</span> <span class="o">&gt;&gt;</span> <span class="mi">3</span><span class="p">)</span> <span class="o">&amp;</span> <span class="mi">1</span>
+</pre></div>
+</div>
+
+
+<h2 id="functions-specific-to-stm32wbxx-mcus">Functions specific to STM32WBxx MCUs<a class="headerlink" href="#functions-specific-to-stm32wbxx-mcus" title="Permalink to this headline">¶</a></h2>
+<p>These functions are available on STM32WBxx microcontrollers, and interact with
+the second CPU, the RF core.</p>
+<dl class="function">
+<dt id="stm.rfcore_status">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">rfcore_status</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the status of the second CPU as an integer (the first word of device
+info table).</p>
+</dd></dl>
+<dl class="function">
+<dt id="stm.rfcore_fw_version">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">rfcore_fw_version</code><span class="sig-paren">(</span><em class="sig-param">id</em><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_fw_version" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the version of the firmware running on the second CPU.  Pass in 0 for
+<em>id</em> to get the FUS version, and 1 to get the WS version.</p>
+<p>Returns a 5-tuple with the full version number.</p>
+</dd></dl>
+<dl class="function">
+<dt id="stm.rfcore_sys_hci">
+<code class="sig-prename descclassname">stm.</code><code class="sig-name descname">rfcore_sys_hci</code><span class="sig-paren">(</span><em class="sig-param">ogf</em>, <em class="sig-param">ocf</em>, <em class="sig-param">data</em>, <em class="sig-param">timeout_ms=0</em><span class="sig-paren">)</span><a class="headerlink" href="#stm.rfcore_sys_hci" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute a HCI command on the SYS channel.  The execution is synchronous.</p>
+<p>Returns a bytes object with the result of the SYS command.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="pyb.USB_VCP.html" title="class USB_VCP – USB virtual comm port"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class USB_VCP – USB virtual comm port </span>
+              </div>
+            </a>
+          
+          
+            <a href="lcd160cr.html" title="lcd160cr — control of LCD160CR display"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code> — control of LCD160CR display </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

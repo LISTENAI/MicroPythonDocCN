@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Memory Management &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Implementing a Module" href="library.html" />
+    <link rel="prev" title="The Compiler" href="compiler.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#develop/memorymgt" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> Memory Management </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython Internals</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#develop-memorymgt--page-root" class="md-nav__link">Memory Management</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#the-object-model" class="md-nav__link">The object model</a>
+        </li>
+        <li class="md-nav__item"><a href="#allocation-of-objects" class="md-nav__link">Allocation of objects</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/develop/memorymgt.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="memorymanagement"></span><h1 id="develop-memorymgt--page-root">Memory Management<a class="headerlink" href="#develop-memorymgt--page-root" title="Permalink to this headline">¶</a></h1>
+<p>Unlike programming languages such as C/C++, MicroPython hides memory management
+details from the developer by supporting automatic memory management.
+Automatic memory management is a technique used by operating systems or applications to automatically manage
+the allocation and deallocation of memory. This eliminates challenges such as forgetting to
+free the memory allocated to an object. Automatic memory management also avoids the critical issue of using memory
+that is already released. Automatic memory management takes many forms, one of them being
+garbage collection (GC).</p>
+<p>The garbage collector usually has two responsibilities;</p>
+<ol class="arabic simple">
+<li><p>Allocate new objects in available memory.</p></li>
+<li><p>Free unused memory.</p></li>
+</ol>
+<p>There are many GC algorithms but MicroPython uses the
+<a class="reference external" href="https://en.wikipedia.org/wiki/Tracing_garbage_collection#Basic_algorithm">Mark and Sweep</a>
+policy for managing memory. This algorithm has a mark phase that traverses the heap marking all
+live objects while the sweep phase goes through the heap reclaiming all unmarked objects.</p>
+<p>Garbage collection functionality in MicroPython is available through the <code class="docutils literal notranslate"><span class="pre">gc</span></code> built-in
+module:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; <span class="nv">x</span> <span class="o">=</span> <span class="m">5</span>
+&gt;&gt;&gt; x
+<span class="m">5</span>
+&gt;&gt;&gt; import gc
+&gt;&gt;&gt; gc.enable<span class="o">()</span>
+&gt;&gt;&gt; gc.mem_alloc<span class="o">()</span>
+<span class="m">1312</span>
+&gt;&gt;&gt; gc.mem_free<span class="o">()</span>
+<span class="m">2071392</span>
+&gt;&gt;&gt; gc.collect<span class="o">()</span>
+<span class="m">19</span>
+&gt;&gt;&gt; gc.disable<span class="o">()</span>
+&gt;&gt;&gt;
+</pre></div>
+</div>
+<p>Even when <code class="docutils literal notranslate"><span class="pre">gc.disable()</span></code> is invoked, collection can be triggered with <code class="docutils literal notranslate"><span class="pre">gc.collect()</span></code>.</p>
+
+<h2 id="the-object-model">The object model<a class="headerlink" href="#the-object-model" title="Permalink to this headline">¶</a></h2>
+<p>All MicroPython objects are referred to by the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> data type.
+This is usually word-sized (i.e. the same size as a pointer on the target architecture),
+and can be typically 32-bit (STM32, nRF, ESP32, Unix x86) or 64-bit (Unix x64).
+It can also be greater than a word-size for certain object representations, for
+example <code class="docutils literal notranslate"><span class="pre">OBJ_REPR_D</span></code> has a 64-bit sized <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> on a 32-bit architecture.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> represents a MicroPython object, for example an integer, float, type, dict or
+class instance. Some objects, like booleans and small integers, have their value stored directly
+in the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> value and do not require additional memory. Other objects have their value
+store elsewhere in memory (for example on the garbage-collected heap) and their <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> contains
+a pointer to that memory. A portion of <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> is the tag which tells what type of object it is.</p>
+<p>See <code class="docutils literal notranslate"><span class="pre">py/mpconfig.h</span></code> for the specific details of the available representations.</p>
+<p><strong>Pointer tagging</strong></p>
+<p>Because pointers are word-aligned, when they are stored in an <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> the
+lower bits of this object handle will be zero.  For example on a 32-bit architecture
+the lower 2 bits will be zero:</p>
+<p><code class="docutils literal notranslate"><span class="pre">********|********|********|******00</span></code></p>
+<p>These bits are reserved for purposes of storing a tag. The tag stores extra information as
+opposed to introducing a new field to store that information in the object, which may be
+inefficient.  In MicroPython the tag tells if we are dealing with a small integer, interned
+(small) string or a concrete object, and different semantics apply to each of these.</p>
+<p>For small integers the mapping is this:</p>
+<p><code class="docutils literal notranslate"><span class="pre">********|********|********|*******1</span></code></p>
+<p>Where the asterisks hold the actual integer value.  For an interned string or an immediate
+object (e.g. <code class="docutils literal notranslate"><span class="pre">True</span></code>) the layout of the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> value is, respectively:</p>
+<p><code class="docutils literal notranslate"><span class="pre">********|********|********|*****010</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">********|********|********|*****110</span></code></p>
+<p>While a concrete object that is none of the above takes the form:</p>
+<p><code class="docutils literal notranslate"><span class="pre">********|********|********|******00</span></code></p>
+<p>The stars here correspond to the address of the concrete object in memory.</p>
+
+
+<h2 id="allocation-of-objects">Allocation of objects<a class="headerlink" href="#allocation-of-objects" title="Permalink to this headline">¶</a></h2>
+<p>The value of a small integer is stored directly in the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> and will be
+allocated in-place, not on the heap or elsewhere.  As such, creation of small
+integers does not affect the heap.  Similarly for interned strings that already have
+their textual data stored elsewhere, and immediate values like <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>
+and <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
+<p>Everything else which is a concrete object is allocated on the heap and its object structure is such that
+a field is reserved in the object header to store the type of the object.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+++++++++++
++         +
++ <span class="nb">type</span>    + object header
++         +
++++++++++++
++         + object items
++         +
++         +
++++++++++++
+</pre></div>
+</div>
+<p>The heap’s smallest unit of allocation is a block, which is four machine words in
+size (16 bytes on a 32-bit machine, 32 bytes on a 64-bit machine).
+Another structure also allocated on the heap tracks the allocation of
+objects in each block. This structure is called a <em>bitmap</em>.</p>
+<img alt="../_images/bitmap.png" src="../_images/bitmap.png"/>
+<p>The bitmap tracks whether a block is “free” or “in use” and use two bits to track this state
+for each block.</p>
+<p>The mark-sweep garbage collector manages the objects allocated on the heap, and also
+utilises the bitmap to mark objects that are still in use.
+See <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/gc.c">py/gc.c</a>
+for the full implementation of these details.</p>
+<p><strong>Allocation: heap layout</strong></p>
+<p>The heap is arranged such that it consists of blocks in pools. A block
+can have different properties:</p>
+<ul class="simple">
+<li><p><em>ATB(allocation table byte):</em> If set, then the block is a normal block</p></li>
+<li><p><em>FREE:</em> Free block</p></li>
+<li><p><em>HEAD:</em> Head of a chain of blocks</p></li>
+<li><p><em>TAIL:</em> In the tail of a chain of blocks</p></li>
+<li><p><em>MARK :</em> Marked head block</p></li>
+<li><p><em>FTB(finaliser table byte):</em> If set, then the block has a finaliser</p></li>
+</ul>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="compiler.html" title="The Compiler"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> The Compiler </span>
+              </div>
+            </a>
+          
+          
+            <a href="library.html" title="Implementing a Module"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Implementing a Module </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

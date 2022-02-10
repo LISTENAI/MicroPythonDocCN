@@ -1,0 +1,493 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>math – mathematical functions &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="os – basic “operating system” services" href="os.html" />
+    <link rel="prev" title="json – JSON encoding and decoding" href="json.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/math" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> math – mathematical functions </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-math--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code> – mathematical functions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/math.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="math-mathematical-functions"></span><h1 id="library-math--page-root"><a class="reference internal" href="#library-math--page-root" title="math: mathematical functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">math</span></code></a> – mathematical functions<a class="headerlink" href="#library-math--page-root" title="Permalink to this headline">¶</a></h1>
+<p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-cpython"><span class="xref std std-term">CPython</span></a> <em>module,
+as described below. For more information, refer to the original
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/math.html#module-math" title="(in Python v3.5)"><code class="docutils literal notranslate"><span class="pre">math</span></code></a>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">math</span></code> module provides some basic mathematical functions for
+working with floating-point numbers.</p>
+<p><em>Note:</em> On the pyboard, floating-point numbers have 32-bit precision.</p>
+<p>Availability: not available on WiPy. Floating point support required
+for this module.</p>
+
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<dl class="function">
+<dt id="math.acos">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">acos</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.acos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the inverse cosine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.acosh">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">acosh</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.acosh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the inverse hyperbolic cosine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.asin">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">asin</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.asin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the inverse sine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.asinh">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">asinh</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.asinh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the inverse hyperbolic sine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.atan">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">atan</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.atan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the inverse tangent of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.atan2">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">atan2</code><span class="sig-paren">(</span><em class="sig-param">y</em>, <em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.atan2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the principal value of the inverse tangent of <code class="docutils literal notranslate"><span class="pre">y/x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.atanh">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">atanh</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.atanh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the inverse hyperbolic tangent of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.ceil">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">ceil</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.ceil" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an integer, being <code class="docutils literal notranslate"><span class="pre">x</span></code> rounded towards positive infinity.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.copysign">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">copysign</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#math.copysign" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">x</span></code> with the sign of <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.cos">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">cos</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.cos" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the cosine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.cosh">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">cosh</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.cosh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hyperbolic cosine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.degrees">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">degrees</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.degrees" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return radians <code class="docutils literal notranslate"><span class="pre">x</span></code> converted to degrees.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.erf">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">erf</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.erf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the error function of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.erfc">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">erfc</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.erfc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the complementary error function of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.exp">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">exp</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the exponential of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.expm1">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">expm1</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.expm1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">exp(x)</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.fabs">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">fabs</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.fabs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the absolute value of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.floor">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">floor</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.floor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an integer, being <code class="docutils literal notranslate"><span class="pre">x</span></code> rounded towards negative infinity.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.fmod">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">fmod</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#math.fmod" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the remainder of <code class="docutils literal notranslate"><span class="pre">x/y</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.frexp">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">frexp</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.frexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Decomposes a floating-point number into its mantissa and exponent.
+The returned value is the tuple <code class="docutils literal notranslate"><span class="pre">(m,</span> <span class="pre">e)</span></code> such that <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">m</span> <span class="pre">*</span> <span class="pre">2**e</span></code>
+exactly.  If <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">==</span> <span class="pre">0</span></code> then the function returns <code class="docutils literal notranslate"><span class="pre">(0.0,</span> <span class="pre">0)</span></code>, otherwise
+the relation <code class="docutils literal notranslate"><span class="pre">0.5</span> <span class="pre">&lt;=</span> <span class="pre">abs(m)</span> <span class="pre">&lt;</span> <span class="pre">1</span></code> holds.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.gamma">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">gamma</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.gamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the gamma function of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.isfinite">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">isfinite</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.isfinite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is finite.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.isinf">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">isinf</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.isinf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is infinite.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.isnan">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">isnan</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.isnan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">True</span></code> if <code class="docutils literal notranslate"><span class="pre">x</span></code> is not-a-number</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.ldexp">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">ldexp</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">exp</em><span class="sig-paren">)</span><a class="headerlink" href="#math.ldexp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">*</span> <span class="pre">(2**exp)</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.lgamma">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">lgamma</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.lgamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the natural logarithm of the gamma function of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.log">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">log</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the natural logarithm of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.log10">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">log10</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.log10" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the base-10 logarithm of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.log2">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">log2</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.log2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the base-2 logarithm of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.modf">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">modf</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.modf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return a tuple of two floats, being the fractional and integral parts of
+<code class="docutils literal notranslate"><span class="pre">x</span></code>.  Both return values have the same sign as <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.pow">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">pow</code><span class="sig-paren">(</span><em class="sig-param">x</em>, <em class="sig-param">y</em><span class="sig-paren">)</span><a class="headerlink" href="#math.pow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns <code class="docutils literal notranslate"><span class="pre">x</span></code> to the power of <code class="docutils literal notranslate"><span class="pre">y</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.radians">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">radians</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.radians" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return degrees <code class="docutils literal notranslate"><span class="pre">x</span></code> converted to radians.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.sin">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">sin</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.sin" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the sine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.sinh">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">sinh</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.sinh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hyperbolic sine of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.sqrt">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">sqrt</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.sqrt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the square root of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.tan">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">tan</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.tan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the tangent of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.tanh">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">tanh</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.tanh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the hyperbolic tangent of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+</dd></dl>
+<dl class="function">
+<dt id="math.trunc">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">trunc</code><span class="sig-paren">(</span><em class="sig-param">x</em><span class="sig-paren">)</span><a class="headerlink" href="#math.trunc" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return an integer, being <code class="docutils literal notranslate"><span class="pre">x</span></code> rounded towards 0.</p>
+</dd></dl>
+
+
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this headline">¶</a></h2>
+<dl class="data">
+<dt id="math.e">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">e</code><a class="headerlink" href="#math.e" title="Permalink to this definition">¶</a></dt>
+<dd><p>base of the natural logarithm</p>
+</dd></dl>
+<dl class="data">
+<dt id="math.pi">
+<code class="sig-prename descclassname">math.</code><code class="sig-name descname">pi</code><a class="headerlink" href="#math.pi" title="Permalink to this definition">¶</a></dt>
+<dd><p>the ratio of a circle’s circumference to its diameter</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="json.html" title="json – JSON encoding and decoding"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">json</span></code> – JSON encoding and decoding </span>
+              </div>
+            </a>
+          
+          
+            <a href="os.html" title="os – basic “operating system” services"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span></code> – basic “operating system” services </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

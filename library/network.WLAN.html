@@ -1,0 +1,446 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class WLAN – control built-in WiFi interfaces &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class WLANWiPy – WiPy specific WiFi control" href="network.WLANWiPy.html" />
+    <link rel="prev" title="network — network configuration" href="network.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/network.WLAN" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class WLAN – control built-in WiFi interfaces </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="network.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — network configuration</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-network-wlan--page-root" class="md-nav__link">class WLAN – control built-in WiFi interfaces</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/network.WLAN.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="network-wlan"></span><h1 id="library-network-wlan--page-root">class WLAN – control built-in WiFi interfaces<a class="headerlink" href="#library-network-wlan--page-root" title="Permalink to this headline">¶</a></h1>
+<p>This class provides a driver for WiFi network processors.  Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">network</span>
+<span class="c1"># enable station interface and connect to WiFi access point</span>
+<span class="n">nic</span> <span class="o">=</span> <span class="n">network</span><span class="o">.</span><span class="n">WLAN</span><span class="p">(</span><span class="n">network</span><span class="o">.</span><span class="n">STA_IF</span><span class="p">)</span>
+<span class="n">nic</span><span class="o">.</span><span class="n">active</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">nic</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">'your-ssid'</span><span class="p">,</span> <span class="s1">'your-password'</span><span class="p">)</span>
+<span class="c1"># now use sockets as usual</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="network.WLAN">
+<em class="property">class </em><code class="sig-prename descclassname">network.</code><code class="sig-name descname">WLAN</code><span class="sig-paren">(</span><em class="sig-param">interface_id</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<p>Create a WLAN network interface object. Supported interfaces are
+<code class="docutils literal notranslate"><span class="pre">network.STA_IF</span></code> (station aka client, connects to upstream WiFi access
+points) and <code class="docutils literal notranslate"><span class="pre">network.AP_IF</span></code> (access point, allows other WiFi clients to
+connect). Availability of the methods below depends on interface type.
+For example, only STA interface may <a class="reference internal" href="#network.WLAN.connect" title="network.WLAN.connect"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">WLAN.connect()</span></code></a> to an access point.</p>
+
+
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="network.WLAN.active">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">active</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">is_active</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.active" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activate (“up”) or deactivate (“down”) network interface, if boolean
+argument is passed. Otherwise, query current state if no argument is
+provided. Most other methods require active interface.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLAN.connect">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">connect</code><span class="sig-paren">(</span><em class="sig-param">ssid=None</em>, <em class="sig-param">password=None</em>, <em class="sig-param">*</em>, <em class="sig-param">bssid=None</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the specified wireless network, using the specified password.
+If <em>bssid</em> is given then the connection will be restricted to the
+access-point with that MAC address (the <em>ssid</em> must also be specified
+in this case).</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLAN.disconnect">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">disconnect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.disconnect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Disconnect from the currently connected wireless network.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLAN.scan">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">scan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan for the available wireless networks.
+Hidden networks – where the SSID is not broadcast – will also be scanned
+if the WLAN interface allows it.</p>
+<p>Scanning is only possible on STA interface. Returns list of tuples with
+the information about WiFi access points:</p>
+<blockquote>
+<div><p>(ssid, bssid, channel, RSSI, authmode, hidden)</p>
+</div></blockquote>
+<p><em>bssid</em> is hardware address of an access point, in binary form, returned as
+bytes object. You can use <a class="reference internal" href="binascii.html#binascii.hexlify" title="binascii.hexlify"><code class="xref any py py-func docutils literal notranslate"><span class="pre">binascii.hexlify()</span></code></a> to convert it to ASCII form.</p>
+<p>There are five values for authmode:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 – open</p></li>
+<li><p>1 – WEP</p></li>
+<li><p>2 – WPA-PSK</p></li>
+<li><p>3 – WPA2-PSK</p></li>
+<li><p>4 – WPA/WPA2-PSK</p></li>
+</ul>
+</div></blockquote>
+<p>and two for hidden:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>0 – visible</p></li>
+<li><p>1 – hidden</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLAN.status">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">status</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">param</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.status" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current status of the wireless connection.</p>
+<p>When called with no argument the return value describes the network link status.
+The possible statuses are defined as constants:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_IDLE</span></code> – no connection and no activity,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_CONNECTING</span></code> – connecting in progress,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_WRONG_PASSWORD</span></code> – failed due to incorrect password,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_NO_AP_FOUND</span></code> – failed because no access point replied,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_CONNECT_FAIL</span></code> – failed due to other problems,</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">STAT_GOT_IP</span></code> – connection successful.</p></li>
+</ul>
+</div></blockquote>
+<p>When called with one argument <em>param</em> should be a string naming the status
+parameter to retrieve.  Supported parameters in WiFI STA mode are: <code class="docutils literal notranslate"><span class="pre">'rssi'</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLAN.isconnected">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">isconnected</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.isconnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>In case of STA mode, returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if connected to a WiFi access
+point and has a valid IP address.  In AP mode returns <code class="docutils literal notranslate"><span class="pre">True</span></code> when a
+station is connected. Returns <code class="docutils literal notranslate"><span class="pre">False</span></code> otherwise.</p>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLAN.ifconfig">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">ifconfig</code><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param">(ip</em>, <em class="sig-param">subnet</em>, <em class="sig-param">gateway</em>, <em class="sig-param">dns)</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.ifconfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get/set IP-level network interface parameters: IP address, subnet mask,
+gateway and DNS server. When called with no arguments, this method returns
+a 4-tuple with the above information. To set the above values, pass a
+4-tuple with the required information.  For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">nic</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">((</span><span class="s1">'192.168.0.4'</span><span class="p">,</span> <span class="s1">'255.255.255.0'</span><span class="p">,</span> <span class="s1">'192.168.0.1'</span><span class="p">,</span> <span class="s1">'8.8.8.8'</span><span class="p">))</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="method">
+<dt id="network.WLAN.config">
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param">'param'</em><span class="sig-paren">)</span><a class="headerlink" href="#network.WLAN.config" title="Permalink to this definition">¶</a></dt>
+<dt>
+<code class="sig-prename descclassname">WLAN.</code><code class="sig-name descname">config</code><span class="sig-paren">(</span><em class="sig-param">param=value</em>, <em class="sig-param">...</em><span class="sig-paren">)</span></dt>
+<dd><p>Get or set general network interface parameters. These methods allow to work
+with additional parameters beyond standard IP configuration (as dealt with by
+<a class="reference internal" href="#network.WLAN.ifconfig" title="network.WLAN.ifconfig"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">WLAN.ifconfig()</span></code></a>). These include network-specific and hardware-specific
+parameters. For setting parameters, keyword argument syntax should be used,
+multiple parameters can be set at once. For querying, parameters name should
+be quoted as a string, and only one parameter can be queries at time:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set WiFi access point name (formally known as ESSID) and WiFi channel</span>
+<span class="n">ap</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="n">essid</span><span class="o">=</span><span class="s1">'My AP'</span><span class="p">,</span> <span class="n">channel</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="c1"># Query params one by one</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s1">'essid'</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ap</span><span class="o">.</span><span class="n">config</span><span class="p">(</span><span class="s1">'channel'</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Following are commonly supported parameters (availability of a specific parameter
+depends on network technology type, driver, and <a class="reference internal" href="../reference/glossary.html#term-micropython-port"><span class="xref std std-term">MicroPython port</span></a>).</p>
+<table>
+<colgroup>
+<col style="width: 16%"/>
+<col style="width: 84%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Parameter</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>mac</p></td>
+<td><p>MAC address (bytes)</p></td>
+</tr>
+<tr class="row-odd"><td><p>essid</p></td>
+<td><p>WiFi access point name (string)</p></td>
+</tr>
+<tr class="row-even"><td><p>channel</p></td>
+<td><p>WiFi channel (integer)</p></td>
+</tr>
+<tr class="row-odd"><td><p>hidden</p></td>
+<td><p>Whether ESSID is hidden (boolean)</p></td>
+</tr>
+<tr class="row-even"><td><p>authmode</p></td>
+<td><p>Authentication mode supported (enumeration, see module constants)</p></td>
+</tr>
+<tr class="row-odd"><td><p>password</p></td>
+<td><p>Access password (string)</p></td>
+</tr>
+<tr class="row-even"><td><p>dhcp_hostname</p></td>
+<td><p>The DHCP hostname to use</p></td>
+</tr>
+<tr class="row-odd"><td><p>reconnects</p></td>
+<td><p>Number of reconnect attempts to make (integer, 0=none, -1=unlimited)</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="network.html" title="network — network configuration"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code> — network configuration </span>
+              </div>
+            </a>
+          
+          
+            <a href="network.WLANWiPy.html" title="class WLANWiPy – WiPy specific WiFi control"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class WLANWiPy – WiPy specific WiFi control </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

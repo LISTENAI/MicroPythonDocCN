@@ -1,0 +1,368 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Quick reference for the UNIX and Windows ports &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Quick reference for the Zephyr port" href="../zephyr/quickref.html" />
+    <link rel="prev" title="6. Reset and boot modes" href="../wipy/tutorial/reset.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#unix/quickref" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> Quick reference for the UNIX and Windows ports </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#unix-quickref--page-root" class="md-nav__link">Quick reference for the UNIX and Windows ports</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#command-line-options" class="md-nav__link">Command line options</a>
+        </li>
+        <li class="md-nav__item"><a href="#environment-variables" class="md-nav__link">Environment variables</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/unix/quickref.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="unix-quickref"></span><h1 id="unix-quickref--page-root">Quick reference for the UNIX and Windows ports<a class="headerlink" href="#unix-quickref--page-root" title="Permalink to this headline">¶</a></h1>
+
+<h2 id="command-line-options">Command line options<a class="headerlink" href="#command-line-options" title="Permalink to this headline">¶</a></h2>
+<p>Usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micropython</span> <span class="p">[</span> <span class="o">-</span><span class="n">h</span> <span class="p">]</span> <span class="p">[</span> <span class="o">-</span><span class="n">i</span> <span class="p">]</span> <span class="p">[</span> <span class="o">-</span><span class="n">O</span><span class="o">&lt;</span><span class="n">level</span><span class="o">&gt;</span> <span class="p">]</span> <span class="p">[</span> <span class="o">-</span><span class="n">v</span> <span class="p">]</span> <span class="p">[</span> <span class="o">-</span><span class="n">X</span> <span class="o">&lt;</span><span class="n">option</span><span class="o">&gt;</span> <span class="p">]</span> <span class="p">[</span> <span class="o">-</span><span class="n">c</span> <span class="o">&lt;</span><span class="n">command</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">-</span><span class="n">m</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span> <span class="o">|</span> <span class="o">&lt;</span><span class="n">script</span><span class="o">&gt;</span> <span class="p">]</span> <span class="p">[</span> <span class="o">&lt;</span><span class="n">args</span><span class="o">&gt;</span> <span class="p">]</span>
+</pre></div>
+</div>
+<p>Invocation options:</p>
+<dl class="option">
+<dt id="cmdoption-c">
+<code class="sig-name descname">-c</code><code class="sig-prename descclassname"> &lt;command&gt;</code><a class="headerlink" href="#cmdoption-c" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the code in <code class="docutils literal notranslate"><span class="pre">&lt;command&gt;</span></code>. The code can be one or more Python statements.</p>
+</dd></dl>
+<dl class="option">
+<dt id="cmdoption-m">
+<code class="sig-name descname">-m</code><code class="sig-prename descclassname"> &lt;module&gt;</code><a class="headerlink" href="#cmdoption-m" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the module <code class="docutils literal notranslate"><span class="pre">&lt;module&gt;</span></code>. The module must be in <code class="docutils literal notranslate"><span class="pre">sys.path</span></code>.</p>
+</dd></dl>
+<dl class="option">
+<dt id="cmdoption-arg-script">
+<code class="sig-name descname">&lt;script&gt;</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the file <code class="docutils literal notranslate"><span class="pre">&lt;script&gt;</span></code>. The script must be a valid MicroPython source
+code file.</p>
+</dd></dl>
+<p>If none of the 3 options above are given, then MicroPython is run in an
+interactive REPL mode.</p>
+<dl class="option">
+<dt id="cmdoption-arg-args">
+<code class="sig-name descname">&lt;args&gt;</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-arg-args" title="Permalink to this definition">¶</a></dt>
+<dd><p>Any additional arguments after the module or script will be passed to
+<code class="docutils literal notranslate"><span class="pre">sys.argv</span></code> (not supported with the <a class="reference internal" href="#cmdoption-c"><code class="xref std std-option docutils literal notranslate"><span class="pre">-c</span></code></a> option).</p>
+</dd></dl>
+<p>General options:</p>
+<dl class="option">
+<dt id="cmdoption-h">
+<code class="sig-name descname">-h</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-h" title="Permalink to this definition">¶</a></dt>
+<dd><p>Prints a help message containing the command line usage and exits.</p>
+</dd></dl>
+<dl class="option">
+<dt id="cmdoption-i">
+<code class="sig-name descname">-i</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-i" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables inspection. When this flag is set, MicroPython will enter the
+interactive REPL mode after the command, module or script has finished.
+This can be useful for debugging the state after an unhandled exception.
+Also see the <span class="target" id="index-0"></span><a class="reference internal" href="#envvar-MICROPYINSPECT"><code class="xref std std-envvar docutils literal notranslate"><span class="pre">MICROPYINSPECT</span></code></a> environment variable.</p>
+</dd></dl>
+<dl class="option">
+<dt id="cmdoption-o">
+<code class="sig-name descname">-O</code><code class="sig-prename descclassname"> | -O&lt;level&gt; | -OO...</code><a class="headerlink" href="#cmdoption-o" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the optimization level. The <code class="docutils literal notranslate"><span class="pre">O</span></code> can be followed by a number or can
+be repeated multiple times to indicate the level. E.g. <code class="docutils literal notranslate"><span class="pre">-O3</span></code> is the same
+as <code class="docutils literal notranslate"><span class="pre">-OOO</span></code>.</p>
+</dd></dl>
+<dl class="option">
+<dt id="cmdoption-v">
+<code class="sig-name descname">-v</code><code class="sig-prename descclassname"></code><a class="headerlink" href="#cmdoption-v" title="Permalink to this definition">¶</a></dt>
+<dd><p>Increases the verbosity level. This option can be given multiple times.
+This option only has an effect if <code class="docutils literal notranslate"><span class="pre">MICROPY_DEBUG_PRINTERS</span></code> was enabled
+when MicroPython itself was compiled.</p>
+</dd></dl>
+<dl class="option">
+<dt id="cmdoption-x">
+<code class="sig-name descname">-X</code><code class="sig-prename descclassname"> &lt;option&gt;</code><a class="headerlink" href="#cmdoption-x" title="Permalink to this definition">¶</a></dt>
+<dd><p>Specifies additional implementation-specific options. Possible options are:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">-X</span> <span class="pre">compile-only</span></code> compiles the command, module or script but does not
+run it.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-X</span> <span class="pre">emit={bytecode,native,viper}</span></code> sets the default code emitter. Native
+emitters may not be available depending on the settings when MicroPython
+itself was compiled.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-X</span> <span class="pre">heapsize=&lt;n&gt;[w][K|M]</span></code> sets the heap size for the garbage collector.
+The suffix <code class="docutils literal notranslate"><span class="pre">w</span></code> means words instead of bytes. <code class="docutils literal notranslate"><span class="pre">K</span></code> means x1024 and <code class="docutils literal notranslate"><span class="pre">M</span></code>
+means x1024x1024.</p></li>
+</ul>
+</dd></dl>
+
+
+<h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this headline">¶</a></h2>
+<dl class="envvar">
+<dt id="envvar-MICROPYPATH">
+<code class="sig-name descname">MICROPYPATH</code><a class="headerlink" href="#envvar-MICROPYPATH" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overrides the default search path for MicroPython libraries. <code class="docutils literal notranslate"><span class="pre">MICROPYPATH</span></code>
+should be set to a colon (semicolon for Windows port) separated list of
+directories. If <code class="docutils literal notranslate"><span class="pre">MICROPYPATH</span></code> is not defined, the search path will be
+<code class="docutils literal notranslate"><span class="pre">~/.micropython/lib:/usr/lib/micropython</span></code> (<code class="docutils literal notranslate"><span class="pre">~/.micropython/lib</span></code> for Windows port)
+or the value of the <code class="docutils literal notranslate"><span class="pre">MICROPY_PY_SYS_PATH_DEFAULT</span></code> option if it was set
+when MicroPython itself was compiled.</p>
+</dd></dl>
+<dl class="envvar">
+<dt id="envvar-MICROPYINSPECT">
+<code class="sig-name descname">MICROPYINSPECT</code><a class="headerlink" href="#envvar-MICROPYINSPECT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables inspection. If <code class="docutils literal notranslate"><span class="pre">MICROPYINSPECT</span></code> is set to a non-empty string, it
+has the same effect as setting the <a class="reference internal" href="#cmdoption-i"><code class="xref std std-option docutils literal notranslate"><span class="pre">-i</span></code></a> command line option.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../wipy/tutorial/reset.html" title="6. Reset and boot modes"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <span class="section-number">6. </span>Reset and boot modes </span>
+              </div>
+            </a>
+          
+          
+            <a href="../zephyr/quickref.html" title="Quick reference for the Zephyr port"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> Quick reference for the Zephyr port </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>Quick reference for the WiPy &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="General information about the WiPy" href="general.html" />
+    <link rel="prev" title="Programmable IO" href="../rp2/tutorial/pio.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#wipy/quickref" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> Quick reference for the WiPy </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#wipy-quickref--page-root" class="md-nav__link">Quick reference for the WiPy</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#general-board-control-including-sleep-modes" class="md-nav__link">General board control (including sleep modes)</a>
+        </li>
+        <li class="md-nav__item"><a href="#pins-and-gpio" class="md-nav__link">Pins and GPIO</a>
+        </li>
+        <li class="md-nav__item"><a href="#timers" class="md-nav__link">Timers</a>
+        </li>
+        <li class="md-nav__item"><a href="#pwm-pulse-width-modulation" class="md-nav__link">PWM (pulse width modulation)</a>
+        </li>
+        <li class="md-nav__item"><a href="#adc-analog-to-digital-conversion" class="md-nav__link">ADC (analog to digital conversion)</a>
+        </li>
+        <li class="md-nav__item"><a href="#uart-serial-bus" class="md-nav__link">UART (serial bus)</a>
+        </li>
+        <li class="md-nav__item"><a href="#spi-bus" class="md-nav__link">SPI bus</a>
+        </li>
+        <li class="md-nav__item"><a href="#i2c-bus" class="md-nav__link">I2C bus</a>
+        </li>
+        <li class="md-nav__item"><a href="#watchdog-timer-wdt" class="md-nav__link">Watchdog timer (WDT)</a>
+        </li>
+        <li class="md-nav__item"><a href="#real-time-clock-rtc" class="md-nav__link">Real time clock (RTC)</a>
+        </li>
+        <li class="md-nav__item"><a href="#sd-card" class="md-nav__link">SD card</a>
+        </li>
+        <li class="md-nav__item"><a href="#wlan-wifi" class="md-nav__link">WLAN (WiFi)</a>
+        </li>
+        <li class="md-nav__item"><a href="#telnet-and-ftp-server" class="md-nav__link">Telnet and FTP server</a>
+        </li>
+        <li class="md-nav__item"><a href="#heart-beat-led" class="md-nav__link">Heart beat LED</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/wipy/quickref.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="wipy-quickref"></span><h1 id="wipy-quickref--page-root">Quick reference for the WiPy<a class="headerlink" href="#wipy-quickref--page-root" title="Permalink to this headline">¶</a></h1>
+<a class="reference internal image-reference" href="https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png"><img alt="WiPy pinout and alternate functions table" src="https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png" style="width: 800px;"/></a>
+<p>Below is a quick reference for CC3200/WiPy.  If it is your first time
+working with this board please consider reading the following sections first:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="general.html">General information about the WiPy</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">WiPy tutorials and examples</a></li>
+</ul>
+</div>
+
+<h2 id="general-board-control-including-sleep-modes">General board control (including sleep modes)<a class="headerlink" href="#general-board-control-including-sleep-modes" title="Permalink to this headline">¶</a></h2>
+<p>See the <a class="reference internal" href="../library/machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> module:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+
+<span class="n">help</span><span class="p">(</span><span class="n">machine</span><span class="p">)</span> <span class="c1"># display all members from the machine module</span>
+<span class="n">machine</span><span class="o">.</span><span class="n">freq</span><span class="p">()</span> <span class="c1"># get the CPU frequency</span>
+<span class="n">machine</span><span class="o">.</span><span class="n">unique_id</span><span class="p">()</span> <span class="c1"># return the 6-byte unique id of the board (the WiPy's MAC address)</span>
+
+<span class="n">machine</span><span class="o">.</span><span class="n">idle</span><span class="p">()</span>        <span class="c1"># average current decreases to (~12mA), any interrupts wake it up</span>
+<span class="n">machine</span><span class="o">.</span><span class="n">lightsleep</span><span class="p">()</span>  <span class="c1"># everything except for WLAN is powered down (~950uA avg. current)</span>
+                      <span class="c1"># wakes from Pin, RTC or WLAN</span>
+<span class="n">machine</span><span class="o">.</span><span class="n">deepsleep</span><span class="p">()</span>   <span class="c1"># deepest sleep mode, MCU starts from reset. Wakes from Pin and RTC.</span>
+</pre></div>
+</div>
+
+
+<h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+
+<span class="c1"># initialize GP2 in gpio mode (alt=0) and make it an output</span>
+<span class="n">p_out</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'GP2'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">p_out</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">p_out</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">p_out</span><span class="o">.</span><span class="n">toggle</span><span class="p">()</span>
+<span class="n">p_out</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># make GP1 an input with the pull-up enabled</span>
+<span class="n">p_in</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'GP1'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">IN</span><span class="p">,</span> <span class="n">pull</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">PULL_UP</span><span class="p">)</span>
+<span class="n">p_in</span><span class="p">()</span> <span class="c1"># get value, 0 or 1</span>
+</pre></div>
+</div>
+
+
+<h2 id="timers">Timers<a class="headerlink" href="#timers" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.TimerWiPy.html#machine-timerwipy"><span class="std std-ref">machine.TimerWiPy</span></a> and <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a>.
+Timer <code class="docutils literal notranslate"><span class="pre">id</span></code>’s take values from 0 to 3.:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Timer</span>
+<span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Pin</span>
+
+<span class="n">tim</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">PERIODIC</span><span class="p">)</span>
+<span class="n">tim_a</span> <span class="o">=</span> <span class="n">tim</span><span class="o">.</span><span class="n">channel</span><span class="p">(</span><span class="n">Timer</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1000</span><span class="p">)</span>
+<span class="n">tim_a</span><span class="o">.</span><span class="n">freq</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># 5 Hz</span>
+
+<span class="n">p_out</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">(</span><span class="s1">'GP2'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
+<span class="n">tim_a</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">TIMEOUT</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="n">p_out</span><span class="o">.</span><span class="n">toggle</span><span class="p">())</span>
+</pre></div>
+</div>
+
+
+<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> and <a class="reference internal" href="../library/machine.Timer.html#machine-timer"><span class="std std-ref">machine.Timer</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">Timer</span>
+
+<span class="c1"># timer 1 in PWM mode and width must be 16 buts</span>
+<span class="n">tim</span> <span class="o">=</span> <span class="n">Timer</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Timer</span><span class="o">.</span><span class="n">PWM</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">16</span><span class="p">)</span>
+
+<span class="c1"># enable channel A @1KHz with a 50.55% duty cycle</span>
+<span class="n">tim_a</span> <span class="o">=</span> <span class="n">tim</span><span class="o">.</span><span class="n">channel</span><span class="p">(</span><span class="n">Timer</span><span class="o">.</span><span class="n">A</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">1000</span><span class="p">,</span> <span class="n">duty_cycle</span><span class="o">=</span><span class="mi">5055</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.ADCWiPy.html#machine-adcwipy"><span class="std std-ref">machine.ADCWiPy</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">ADC</span>
+
+<span class="n">adc</span> <span class="o">=</span> <span class="n">ADC</span><span class="p">()</span>
+<span class="n">apin</span> <span class="o">=</span> <span class="n">adc</span><span class="o">.</span><span class="n">channel</span><span class="p">(</span><span class="n">pin</span><span class="o">=</span><span class="s1">'GP3'</span><span class="p">)</span>
+<span class="n">apin</span><span class="p">()</span> <span class="c1"># read value, 0-4095</span>
+</pre></div>
+</div>
+
+
+<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.UART.html#machine-uart"><span class="std std-ref">machine.UART</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">UART</span>
+<span class="n">uart</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">9600</span><span class="p">)</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<span class="n">uart</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># read up to 5 bytes</span>
+</pre></div>
+</div>
+
+
+<h2 id="spi-bus">SPI bus<a class="headerlink" href="#spi-bus" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.SPI.html#machine-spi"><span class="std std-ref">machine.SPI</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">SPI</span>
+
+<span class="c1"># configure the SPI controller @ 2MHz</span>
+<span class="n">spi</span> <span class="o">=</span> <span class="n">SPI</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">SPI</span><span class="o">.</span><span class="n">CONTROLLER</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">2_000_000</span><span class="p">,</span> <span class="n">polarity</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">phase</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span> <span class="c1"># receive 5 bytes on the bus</span>
+<span class="n">rbuf</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">spi</span><span class="o">.</span><span class="n">write_readinto</span><span class="p">(</span><span class="s1">'hello'</span><span class="p">,</span> <span class="n">rbuf</span><span class="p">)</span> <span class="c1"># send and receive 5 bytes</span>
+</pre></div>
+</div>
+
+
+<h2 id="i2c-bus">I2C bus<a class="headerlink" href="#i2c-bus" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.I2C.html#machine-i2c"><span class="std std-ref">machine.I2C</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">I2C</span>
+<span class="c1"># configure the I2C bus</span>
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="n">baudrate</span><span class="o">=</span><span class="mi">100000</span><span class="p">)</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span> <span class="c1"># returns list of peripheral addresses</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="s1">'hello'</span><span class="p">)</span> <span class="c1"># send 5 bytes to peripheral with address 0x42</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">readfrom</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span> <span class="c1"># receive 5 bytes from peripheral</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">readfrom_mem</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="c1"># read 2 bytes from peripheral 0x42, peripheral memory 0x10</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">writeto_mem</span><span class="p">(</span><span class="mh">0x42</span><span class="p">,</span> <span class="mh">0x10</span><span class="p">,</span> <span class="s1">'xy'</span><span class="p">)</span> <span class="c1"># write 2 bytes to peripheral 0x42, peripheral memory 0x10</span>
+</pre></div>
+</div>
+
+
+<h2 id="watchdog-timer-wdt">Watchdog timer (WDT)<a class="headerlink" href="#watchdog-timer-wdt" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.WDT.html#machine-wdt"><span class="std std-ref">machine.WDT</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">WDT</span>
+
+<span class="c1"># enable the WDT with a timeout of 5s (1s is the minimum)</span>
+<span class="n">wdt</span> <span class="o">=</span> <span class="n">WDT</span><span class="p">(</span><span class="n">timeout</span><span class="o">=</span><span class="mi">5000</span><span class="p">)</span>
+<span class="n">wdt</span><span class="o">.</span><span class="n">feed</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+<h2 id="real-time-clock-rtc">Real time clock (RTC)<a class="headerlink" href="#real-time-clock-rtc" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.RTC.html#machine-rtc"><span class="std std-ref">machine.RTC</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">RTC</span>
+
+<span class="n">rtc</span> <span class="o">=</span> <span class="n">RTC</span><span class="p">()</span> <span class="c1"># init with default time and date</span>
+<span class="n">rtc</span> <span class="o">=</span> <span class="n">RTC</span><span class="p">(</span><span class="n">datetime</span><span class="o">=</span><span class="p">(</span><span class="mi">2015</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">29</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="kc">None</span><span class="p">))</span> <span class="c1"># init with a specific time and date</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">rtc</span><span class="o">.</span><span class="n">now</span><span class="p">())</span>
+
+<span class="k">def</span> <span class="nf">alarm_handler</span> <span class="p">(</span><span class="n">rtc_o</span><span class="p">):</span>
+    <span class="k">pass</span>
+    <span class="c1"># do some non blocking operations</span>
+    <span class="c1"># warning printing on an irq via telnet is not</span>
+    <span class="c1"># possible, only via UART</span>
+
+<span class="c1"># create a RTC alarm that expires after 5 seconds</span>
+<span class="n">rtc</span><span class="o">.</span><span class="n">alarm</span><span class="p">(</span><span class="n">time</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">repeat</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># enable RTC interrupts</span>
+<span class="n">rtc_i</span> <span class="o">=</span> <span class="n">rtc</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">RTC</span><span class="o">.</span><span class="n">ALARM0</span><span class="p">,</span> <span class="n">handler</span><span class="o">=</span><span class="n">alarm_handler</span><span class="p">,</span> <span class="n">wake</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">SLEEP</span><span class="p">)</span>
+
+<span class="c1"># go into suspended mode waiting for the RTC alarm to expire and wake us up</span>
+<span class="n">machine</span><span class="o">.</span><span class="n">lightsleep</span><span class="p">()</span>
+</pre></div>
+</div>
+
+
+<h2 id="sd-card">SD card<a class="headerlink" href="#sd-card" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/machine.SD.html#machine-sd"><span class="std std-ref">machine.SD</span></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">SD</span>
+<span class="kn">import</span> <span class="nn">os</span>
+
+<span class="c1"># clock pin, cmd pin, data0 pin</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">SD</span><span class="p">(</span><span class="n">pins</span><span class="o">=</span><span class="p">(</span><span class="s1">'GP10'</span><span class="p">,</span> <span class="s1">'GP11'</span><span class="p">,</span> <span class="s1">'GP15'</span><span class="p">))</span>
+<span class="c1"># or use default ones for the expansion board</span>
+<span class="n">sd</span> <span class="o">=</span> <span class="n">SD</span><span class="p">()</span>
+<span class="n">os</span><span class="o">.</span><span class="n">mount</span><span class="p">(</span><span class="n">sd</span><span class="p">,</span> <span class="s1">'/sd'</span><span class="p">)</span>
+</pre></div>
+</div>
+
+
+<h2 id="wlan-wifi">WLAN (WiFi)<a class="headerlink" href="#wlan-wifi" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/network.WLAN.html#network-wlan"><span class="std std-ref">network.WLAN</span></a> and <a class="reference internal" href="../library/machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
+<span class="kn">from</span> <span class="nn">network</span> <span class="kn">import</span> <span class="n">WLAN</span>
+
+<span class="c1"># configure the WLAN subsystem in station mode (the default is AP)</span>
+<span class="n">wlan</span> <span class="o">=</span> <span class="n">WLAN</span><span class="p">(</span><span class="n">mode</span><span class="o">=</span><span class="n">WLAN</span><span class="o">.</span><span class="n">STA</span><span class="p">)</span>
+<span class="c1"># go for fixed IP settings</span>
+<span class="n">wlan</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">(</span><span class="n">config</span><span class="o">=</span><span class="p">(</span><span class="s1">'192.168.0.107'</span><span class="p">,</span> <span class="s1">'255.255.255.0'</span><span class="p">,</span> <span class="s1">'192.168.0.1'</span><span class="p">,</span> <span class="s1">'8.8.8.8'</span><span class="p">))</span>
+<span class="n">wlan</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>     <span class="c1"># scan for available networks</span>
+<span class="n">wlan</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ssid</span><span class="o">=</span><span class="s1">'mynetwork'</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">WLAN</span><span class="o">.</span><span class="n">WPA2</span><span class="p">,</span> <span class="s1">'mynetworkkey'</span><span class="p">))</span>
+<span class="k">while</span> <span class="ow">not</span> <span class="n">wlan</span><span class="o">.</span><span class="n">isconnected</span><span class="p">():</span>
+    <span class="k">pass</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">wlan</span><span class="o">.</span><span class="n">ifconfig</span><span class="p">())</span>
+<span class="c1"># enable wake on WLAN</span>
+<span class="n">wlan</span><span class="o">.</span><span class="n">irq</span><span class="p">(</span><span class="n">trigger</span><span class="o">=</span><span class="n">WLAN</span><span class="o">.</span><span class="n">ANY_EVENT</span><span class="p">,</span> <span class="n">wake</span><span class="o">=</span><span class="n">machine</span><span class="o">.</span><span class="n">SLEEP</span><span class="p">)</span>
+<span class="c1"># go to sleep</span>
+<span class="n">machine</span><span class="o">.</span><span class="n">lightsleep</span><span class="p">()</span>
+<span class="c1"># now, connect to the FTP or the Telnet server and the WiPy will wake-up</span>
+</pre></div>
+</div>
+
+
+<h2 id="telnet-and-ftp-server">Telnet and FTP server<a class="headerlink" href="#telnet-and-ftp-server" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="general.html#network.Server" title="network.Server"><code class="xref py py-class docutils literal notranslate"><span class="pre">network.Server</span></code></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">network</span> <span class="kn">import</span> <span class="n">Server</span>
+
+<span class="c1"># init with new user, password and seconds timeout</span>
+<span class="n">server</span> <span class="o">=</span> <span class="n">Server</span><span class="p">(</span><span class="n">login</span><span class="o">=</span><span class="p">(</span><span class="s1">'user'</span><span class="p">,</span> <span class="s1">'password'</span><span class="p">),</span> <span class="n">timeout</span><span class="o">=</span><span class="mi">60</span><span class="p">)</span>
+<span class="n">server</span><span class="o">.</span><span class="n">timeout</span><span class="p">(</span><span class="mi">300</span><span class="p">)</span> <span class="c1"># change the timeout</span>
+<span class="n">server</span><span class="o">.</span><span class="n">timeout</span><span class="p">()</span> <span class="c1"># get the timeout</span>
+<span class="n">server</span><span class="o">.</span><span class="n">isrunning</span><span class="p">()</span> <span class="c1"># check whether the server is running or not</span>
+</pre></div>
+</div>
+
+
+<h2 id="heart-beat-led">Heart beat LED<a class="headerlink" href="#heart-beat-led" title="Permalink to this headline">¶</a></h2>
+<p>See <a class="reference internal" href="../library/wipy.html#module-wipy" title="wipy: WiPy specific features"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wipy</span></code></a>.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wipy</span>
+
+<span class="n">wipy</span><span class="o">.</span><span class="n">heartbeat</span><span class="p">(</span><span class="kc">False</span><span class="p">)</span>  <span class="c1"># disable the heartbeat LED</span>
+<span class="n">wipy</span><span class="o">.</span><span class="n">heartbeat</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>   <span class="c1"># enable the heartbeat LED</span>
+<span class="n">wipy</span><span class="o">.</span><span class="n">heartbeat</span><span class="p">()</span>       <span class="c1"># get the heartbeat state</span>
+</pre></div>
+</div>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="../rp2/tutorial/pio.html" title="Programmable IO"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> Programmable IO </span>
+              </div>
+            </a>
+          
+          
+            <a href="general.html" title="General information about the WiPy"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> General information about the WiPy </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

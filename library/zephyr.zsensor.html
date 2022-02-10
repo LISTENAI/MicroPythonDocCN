@@ -1,0 +1,413 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>zsensor — Zephyr sensor bindings &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="MicroPython language and implementation" href="../reference/index.html" />
+    <link rel="prev" title="class FlashArea – access to built-in flash storage" href="zephyr.FlashArea.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/zephyr.zsensor" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> zsensor — Zephyr sensor bindings </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="zephyr.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-zephyr-zsensor--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code> — Zephyr sensor bindings</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#class-sensor-sensor-control-for-the-zephyr-port" class="md-nav__link">class Sensor — sensor control for the Zephyr port</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructor" class="md-nav__link">Constructor</a>
+        </li>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#channels" class="md-nav__link">Channels</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/zephyr.zsensor.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="zsensor-zephyr-sensor-bindings"></span><h1 id="library-zephyr-zsensor--page-root"><a class="reference internal" href="#library-zephyr-zsensor--page-root" title="zsensor: zephyr sensor bindings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code></a> — Zephyr sensor bindings<a class="headerlink" href="#library-zephyr-zsensor--page-root" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">zsensor</span></code> module contains a class for using sensors with Zephyr.</p>
+
+<span id="zsensor-sensor"></span><h2 id="class-sensor-sensor-control-for-the-zephyr-port">class Sensor — sensor control for the Zephyr port<a class="headerlink" href="#class-sensor-sensor-control-for-the-zephyr-port" title="Permalink to this headline">¶</a></h2>
+<p>Use this class to access data from sensors on your board.
+See Zephyr documentation for sensor usage here: <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html?highlight=sensor#sensors">Sensors</a>.</p>
+<p>Sensors are defined in the Zephyr devicetree for each board. The quantities that a given sensor can
+measure are called a sensor channels. Sensors can have multiple channels to represent different axes
+of one property or different properties a sensor can measure. See <a class="reference internal" href="#channels">Channels</a> below for defined sensor
+channels.</p>
+
+<h3 id="constructor">Constructor<a class="headerlink" href="#constructor" title="Permalink to this headline">¶</a></h3>
+<dl class="class">
+<dt id="zsensor.Sensor">
+<em class="property">class </em><code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">Sensor</code><span class="sig-paren">(</span><em class="sig-param">device_name</em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Device names are defined in the devicetree for your board.
+For example, the device name for the accelerometer in the FRDM-k64f board is “FXOS8700”.</p>
+</dd></dl>
+
+
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
+<dl class="method">
+<dt id="zsensor.Sensor.measure">
+<code class="sig-prename descclassname">Sensor.</code><code class="sig-name descname">measure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.measure" title="Permalink to this definition">¶</a></dt>
+<dd><p>Obtains a measurement sample from the sensor device using Zephyr sensor_sample_fetch and
+stores it in an internal driver buffer as a useful value, a pair of (integer part of value,
+fractional part of value in 1-millionths).
+Returns none if successful or OSError value if failure.</p>
+</dd></dl>
+<dl class="method">
+<dt id="zsensor.Sensor.get_float">
+<code class="sig-prename descclassname">Sensor.</code><code class="sig-name descname">get_float</code><span class="sig-paren">(</span><em class="sig-param">sensor_channel</em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_float" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the sensor measurement sample as a float.</p>
+</dd></dl>
+<dl class="method">
+<dt id="zsensor.Sensor.get_micros">
+<code class="sig-prename descclassname">Sensor.</code><code class="sig-name descname">get_micros</code><span class="sig-paren">(</span><em class="sig-param">sensor_channel</em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_micros" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of the sensor measurement sample in millionths.
+(Ex. value of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> returns as <code class="docutils literal notranslate"><span class="pre">1500000</span></code>)</p>
+</dd></dl>
+<dl class="method">
+<dt id="zsensor.Sensor.get_millis">
+<code class="sig-prename descclassname">Sensor.</code><code class="sig-name descname">get_millis</code><span class="sig-paren">(</span><em class="sig-param">sensor_channel</em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_millis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the value of sensor measurement sample in thousandths.
+(Ex. value of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> returns as <code class="docutils literal notranslate"><span class="pre">1500</span></code>)</p>
+</dd></dl>
+<dl class="method">
+<dt id="zsensor.Sensor.get_int">
+<code class="sig-prename descclassname">Sensor.</code><code class="sig-name descname">get_int</code><span class="sig-paren">(</span><em class="sig-param">sensor_channel</em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_int" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns only the integer value of the measurement sample.
+(Ex. value of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> returns as <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p>
+</dd></dl>
+
+
+<h3 id="channels">Channels<a class="headerlink" href="#channels" title="Permalink to this headline">¶</a></h3>
+<dl class="data">
+<dt id="zsensor.ACCEL_X">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">ACCEL_X</code><a class="headerlink" href="#zsensor.ACCEL_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acceleration on the X axis, in m/s^2.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.ACCEL_Y">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">ACCEL_Y</code><a class="headerlink" href="#zsensor.ACCEL_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acceleration on the Y axis, in m/s^2.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.ACCEL_Z">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">ACCEL_Z</code><a class="headerlink" href="#zsensor.ACCEL_Z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Acceleration on the Z axis, in m/s^2.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.GYRO_X">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">GYRO_X</code><a class="headerlink" href="#zsensor.GYRO_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angular velocity around the X axis, in radians/s.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.GYRO_Y">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">GYRO_Y</code><a class="headerlink" href="#zsensor.GYRO_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angular velocity around the Y axis, in radians/s.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.GYRO_Z">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">GYRO_Z</code><a class="headerlink" href="#zsensor.GYRO_Z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Angular velocity around the Z axis, in radians/s.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.MAGN_X">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">MAGN_X</code><a class="headerlink" href="#zsensor.MAGN_X" title="Permalink to this definition">¶</a></dt>
+<dd><p>Magnetic field on the X axis, in Gauss.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.MAGN_Y">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">MAGN_Y</code><a class="headerlink" href="#zsensor.MAGN_Y" title="Permalink to this definition">¶</a></dt>
+<dd><p>Magnetic field on the Y axis, in Gauss.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.MAGN_Z">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">MAGN_Z</code><a class="headerlink" href="#zsensor.MAGN_Z" title="Permalink to this definition">¶</a></dt>
+<dd><p>Magnetic field on the Z axis, in Gauss.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.DIE_TEMP">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">DIE_TEMP</code><a class="headerlink" href="#zsensor.DIE_TEMP" title="Permalink to this definition">¶</a></dt>
+<dd><p>Device die temperature in degrees Celsius.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.PRESS">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">PRESS</code><a class="headerlink" href="#zsensor.PRESS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pressure in kilopascal.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.PROX">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">PROX</code><a class="headerlink" href="#zsensor.PROX" title="Permalink to this definition">¶</a></dt>
+<dd><p>Proximity. Dimensionless. A value of 1 indicates that an object is close.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.HUMIDITY">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">HUMIDITY</code><a class="headerlink" href="#zsensor.HUMIDITY" title="Permalink to this definition">¶</a></dt>
+<dd><p>Humidity, in percent.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.LIGHT">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">LIGHT</code><a class="headerlink" href="#zsensor.LIGHT" title="Permalink to this definition">¶</a></dt>
+<dd><p>Illuminance in visible spectrum, in lux.</p>
+</dd></dl>
+<dl class="data">
+<dt id="zsensor.ALTITUDE">
+<code class="sig-prename descclassname">zsensor.</code><code class="sig-name descname">ALTITUDE</code><a class="headerlink" href="#zsensor.ALTITUDE" title="Permalink to this definition">¶</a></dt>
+<dd><p>Altitude, in meters.</p>
+</dd></dl>
+
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="zephyr.FlashArea.html" title="class FlashArea – access to built-in flash storage"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class FlashArea – access to built-in flash storage </span>
+              </div>
+            </a>
+          
+          
+            <a href="../reference/index.html" title="MicroPython language and implementation"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> MicroPython language and implementation </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

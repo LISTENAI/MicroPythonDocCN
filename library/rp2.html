@@ -1,0 +1,502 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>rp2 — functionality specific to the RP2040 &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class Flash – access to built-in flash storage" href="rp2.Flash.html" />
+    <link rel="prev" title="esp32 — functionality specific to the ESP32" href="esp32.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/rp2" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> rp2 — functionality specific to the RP2040 </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-rp2--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code> — functionality specific to the RP2040</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#pio-related-functions" class="md-nav__link">PIO related functions</a>
+        </li>
+        <li class="md-nav__item"><a href="#pio-assembly-language-instructions" class="md-nav__link">PIO assembly language instructions</a>
+        </li>
+        <li class="md-nav__item"><a href="#classes" class="md-nav__link">Classes</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/rp2.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="rp2-functionality-specific-to-the-rp2040"></span><h1 id="library-rp2--page-root"><a class="reference internal" href="#library-rp2--page-root" title="rp2: functionality specific to the RP2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code></a> — functionality specific to the RP2040<a class="headerlink" href="#library-rp2--page-root" title="Permalink to this headline">¶</a></h1>
+<p>The <code class="docutils literal notranslate"><span class="pre">rp2</span></code> module contains functions and classes specific to the RP2040, as
+used in the Raspberry Pi Pico.</p>
+<p>See the <a class="reference external" href="https://datasheets.raspberrypi.org/pico/raspberry-pi-pico-python-sdk.pdf">RP2040 Python datasheet</a>
+for more information, and <a class="reference external" href="https://github.com/raspberrypi/pico-micropython-examples/tree/master/pio">pico-micropython-examples</a>
+for example code.</p>
+
+<h2 id="pio-related-functions">PIO related functions<a class="headerlink" href="#pio-related-functions" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">rp2</span></code> module includes functions for assembling PIO programs.</p>
+<p>For running PIO programs, see <a class="reference internal" href="rp2.StateMachine.html#rp2.StateMachine" title="rp2.StateMachine"><code class="xref py py-class docutils literal notranslate"><span class="pre">rp2.StateMachine</span></code></a>.</p>
+<dl class="function">
+<dt id="rp2.asm_pio">
+<code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">asm_pio</code><span class="sig-paren">(</span><em class="sig-param">*</em>, <em class="sig-param">out_init=None</em>, <em class="sig-param">set_init=None</em>, <em class="sig-param">sideset_init=None</em>, <em class="sig-param">in_shiftdir=0</em>, <em class="sig-param">out_shiftdir=0</em>, <em class="sig-param">autopush=False</em>, <em class="sig-param">autopull=False</em>, <em class="sig-param">push_thresh=32</em>, <em class="sig-param">pull_thresh=32</em>, <em class="sig-param">fifo_join=PIO.JOIN_NONE</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.asm_pio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assemble a PIO program.</p>
+<p>The following parameters control the initial state of the GPIO pins, as one
+of <a class="reference internal" href="rp2.PIO.html#rp2.PIO.IN_LOW" title="rp2.PIO.IN_LOW"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.IN_LOW</span></code></a>, <a class="reference internal" href="rp2.PIO.html#rp2.PIO.IN_HIGH" title="rp2.PIO.IN_HIGH"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.IN_HIGH</span></code></a>, <a class="reference internal" href="rp2.PIO.html#rp2.PIO.OUT_LOW" title="rp2.PIO.OUT_LOW"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.OUT_LOW</span></code></a> or <a class="reference internal" href="rp2.PIO.html#rp2.PIO.OUT_HIGH" title="rp2.PIO.OUT_HIGH"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.OUT_HIGH</span></code></a>. If the
+program uses more than one pin, provide a tuple, e.g.
+<code class="docutils literal notranslate"><span class="pre">out_init=(PIO.OUT_LOW,</span> <span class="pre">PIO.OUT_LOW)</span></code>.</p>
+<ul class="simple">
+<li><p><em>out_init</em> configures the pins used for <code class="docutils literal notranslate"><span class="pre">out()</span></code> instructions.</p></li>
+<li><p><em>set_init</em> configures the pins used for <code class="docutils literal notranslate"><span class="pre">set()</span></code> instructions. There can
+be at most 5.</p></li>
+<li><p><em>sideset_init</em> configures the pins used side-setting. There can be at
+most 5.</p></li>
+</ul>
+<p>The following parameters are used by default, but can be overridden in
+<a class="reference internal" href="rp2.StateMachine.html#rp2.StateMachine.init" title="rp2.StateMachine.init"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">StateMachine.init()</span></code></a>:</p>
+<ul class="simple">
+<li><p><em>in_shiftdir</em> is the default direction the ISR will shift, either
+<a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_LEFT" title="rp2.PIO.SHIFT_LEFT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_LEFT</span></code></a> or <a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_RIGHT" title="rp2.PIO.SHIFT_RIGHT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_RIGHT</span></code></a>.</p></li>
+<li><p><em>out_shiftdir</em> is the default direction the OSR will shift, either
+<a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_LEFT" title="rp2.PIO.SHIFT_LEFT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_LEFT</span></code></a> or <a class="reference internal" href="rp2.PIO.html#rp2.PIO.SHIFT_RIGHT" title="rp2.PIO.SHIFT_RIGHT"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.SHIFT_RIGHT</span></code></a>.</p></li>
+<li><p><em>push_thresh</em> is the threshold in bits before auto-push or conditional
+re-pushing is triggered.</p></li>
+<li><p><em>pull_thresh</em> is the threshold in bits before auto-push or conditional
+re-pushing is triggered.</p></li>
+</ul>
+<p>The remaining parameters are:</p>
+<ul class="simple">
+<li><p><em>autopush</em> configures whether auto-push is enabled.</p></li>
+<li><p><em>autopull</em> configures whether auto-pull is enabled.</p></li>
+<li><p><em>fifo_join</em> configures whether the 4-word TX and RX FIFOs should be
+combined into a single 8-word FIFO for one direction only. The options
+are <a class="reference internal" href="rp2.PIO.html#rp2.PIO.JOIN_NONE" title="rp2.PIO.JOIN_NONE"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.JOIN_NONE</span></code></a>, <a class="reference internal" href="rp2.PIO.html#rp2.PIO.JOIN_RX" title="rp2.PIO.JOIN_RX"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.JOIN_RX</span></code></a> and <a class="reference internal" href="rp2.PIO.html#rp2.PIO.JOIN_TX" title="rp2.PIO.JOIN_TX"><code class="xref any py py-data docutils literal notranslate"><span class="pre">PIO.JOIN_TX</span></code></a>.</p></li>
+</ul>
+</dd></dl>
+<dl class="function">
+<dt id="rp2.asm_pio_encode">
+<code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">asm_pio_encode</code><span class="sig-paren">(</span><em class="sig-param">instr</em>, <em class="sig-param">sideset_count</em>, <em class="sig-param">sideset_opt=False</em><span class="sig-paren">)</span><a class="headerlink" href="#rp2.asm_pio_encode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Assemble a single PIO instruction. You usually want to use <a class="reference internal" href="#rp2.asm_pio" title="rp2.asm_pio"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio()</span></code></a>
+instead.</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">rp2</span><span class="o">.</span><span class="n">asm_pio_encode</span><span class="p">(</span><span class="s2">"set(0, 1)"</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="go">57345</span>
+</pre></div>
+</div>
+</dd></dl>
+<dl class="class">
+<dt id="rp2.PIOASMError">
+<em class="property">class </em><code class="sig-prename descclassname">rp2.</code><code class="sig-name descname">PIOASMError</code><a class="headerlink" href="#rp2.PIOASMError" title="Permalink to this definition">¶</a></dt>
+<dd><p>This exception is raised from <a class="reference internal" href="#rp2.asm_pio" title="rp2.asm_pio"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio()</span></code></a> or <a class="reference internal" href="#rp2.asm_pio_encode" title="rp2.asm_pio_encode"><code class="xref any py py-func docutils literal notranslate"><span class="pre">asm_pio_encode()</span></code></a> if there is
+an error assembling a PIO program.</p>
+</dd></dl>
+
+
+<h2 id="pio-assembly-language-instructions">PIO assembly language instructions<a class="headerlink" href="#pio-assembly-language-instructions" title="Permalink to this headline">¶</a></h2>
+<p>PIO state machines are programmed in a custom assembly language with nine core
+PIO-machine instructions.  In MicroPython, PIO assembly routines are written as
+a Python function with the decorator <code class="docutils literal notranslate"><span class="pre">@rp2.asm_pio()</span></code>, and they use Python
+syntax.  Such routines support standard Python variables and arithmetic, as well
+as the following custom functions that encode PIO instructions and direct the
+assembler.  See sec 3.4 of the RP2040 datasheet for further details.</p>
+<dl>
+<dt>wrap_target()</dt><dd><p>Specify the location where execution continues after program wrapping.
+By default this is the start of the PIO routine.</p>
+</dd>
+<dt>wrap()</dt><dd><p>Specify the location where the program finishes and wraps around.
+If this directive is not used then it is added automatically at the end of
+the PIO routine.  Wrapping does not cost any execution cycles.</p>
+</dd>
+<dt>label(label)</dt><dd><p>Define a label called <em>label</em> at the current location.  <em>label</em> can be a
+string or integer.</p>
+</dd>
+<dt>word(instr, label=None)</dt><dd><p>Insert an arbitrary 16-bit word in the assembled output.</p>
+<ul class="simple">
+<li><p><em>instr</em>: the 16-bit value</p></li>
+<li><p><em>label</em>: if given, look up the label and logical-or the label’s value with
+<em>instr</em></p></li>
+</ul>
+</dd>
+<dt>jmp(…)</dt><dd><p>This instruction takes two forms:</p>
+<dl>
+<dt>jmp(label)</dt><dd><ul class="simple">
+<li><p><em>label</em>: label to jump to unconditionally</p></li>
+</ul>
+</dd>
+<dt>jmp(cond, label)</dt><dd><ul>
+<li><p><em>cond</em>: the condition to check, one of:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">not_x</span></code>, <code class="docutils literal notranslate"><span class="pre">not_y</span></code>: true if register is zero</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x_dec</span></code>, <code class="docutils literal notranslate"><span class="pre">y_dec</span></code>: true if register is non-zero, and do post
+decrement</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">x_not_y</span></code>: true if X is not equal to Y</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">pin</span></code>: true if the input pin is set</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">not_osre</span></code>: true if OSR is not empty (hasn’t reached its
+threshold)</p></li>
+</ul>
+</div></blockquote>
+</li>
+<li><p><em>label</em>: label to jump to if condition is true</p></li>
+</ul>
+</dd>
+</dl>
+</dd>
+<dt>wait(polarity, src, index)</dt><dd><p>Block, waiting for high/low on a pin or IRQ line.</p>
+<ul class="simple">
+<li><p><em>polarity</em>: 0 or 1, whether to wait for a low or high value</p></li>
+<li><p><em>src</em>: one of: <code class="docutils literal notranslate"><span class="pre">gpio</span></code> (absolute pin), <code class="docutils literal notranslate"><span class="pre">pin</span></code> (pin relative to
+StateMachine’s <code class="docutils literal notranslate"><span class="pre">in_base</span></code> argument), <code class="docutils literal notranslate"><span class="pre">irq</span></code></p></li>
+<li><p><em>index</em>: 0-31, the index for <em>src</em></p></li>
+</ul>
+</dd>
+<dt>in_(src, bit_count)</dt><dd><p>Shift data in from <em>src</em> to ISR.</p>
+<ul class="simple">
+<li><p><em>src</em>: one of: <code class="docutils literal notranslate"><span class="pre">pins</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">null</span></code>, <code class="docutils literal notranslate"><span class="pre">isr</span></code>, <code class="docutils literal notranslate"><span class="pre">osr</span></code></p></li>
+<li><p><em>bit_count</em>: number of bits to shift in (1-32)</p></li>
+</ul>
+</dd>
+<dt>out(dest, bit_count)</dt><dd><p>Shift data out from OSR to <em>dest</em>.</p>
+<ul class="simple">
+<li><p><em>dest</em>: one of: <code class="docutils literal notranslate"><span class="pre">pins</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">pindirs</span></code>, <code class="docutils literal notranslate"><span class="pre">pc</span></code>, <code class="docutils literal notranslate"><span class="pre">isr</span></code>,
+<code class="docutils literal notranslate"><span class="pre">exec</span></code></p></li>
+<li><p><em>bit_count</em>: number of bits to shift out (1-32)</p></li>
+</ul>
+</dd>
+<dt>push(…)</dt><dd><p>Push ISR to the RX FIFO, then clear ISR to zero.
+This instruction takes the following forms:</p>
+<ul class="simple">
+<li><p>push()</p></li>
+<li><p>push(block)</p></li>
+<li><p>push(noblock)</p></li>
+<li><p>push(iffull)</p></li>
+<li><p>push(iffull, block)</p></li>
+<li><p>push(iffull, noblock)</p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">block</span></code> is used then the instruction stalls if the RX FIFO is full.
+The default is to block.  If <code class="docutils literal notranslate"><span class="pre">iffull</span></code> is used then it only pushes if the
+input shift count has reached its threshold.</p>
+</dd>
+<dt>pull(…)</dt><dd><p>Pull from the TX FIFO into OSR.
+This instruction takes the following forms:</p>
+<ul class="simple">
+<li><p>pull()</p></li>
+<li><p>pull(block)</p></li>
+<li><p>pull(noblock)</p></li>
+<li><p>pull(ifempty)</p></li>
+<li><p>pull(ifempty, block)</p></li>
+<li><p>pull(ifempty, noblock)</p></li>
+</ul>
+<p>If <code class="docutils literal notranslate"><span class="pre">block</span></code> is used then the instruction stalls if the TX FIFO is empty.
+The default is to block.  If <code class="docutils literal notranslate"><span class="pre">ifempty</span></code> is used then it only pulls if the
+output shift count has reached its threshold.</p>
+</dd>
+<dt>mov(dest, src)</dt><dd><p>Move into <em>dest</em> the value from <em>src</em>.</p>
+<ul class="simple">
+<li><p><em>dest</em>: one of: <code class="docutils literal notranslate"><span class="pre">pins</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">exec</span></code>, <code class="docutils literal notranslate"><span class="pre">pc</span></code>, <code class="docutils literal notranslate"><span class="pre">isr</span></code>, <code class="docutils literal notranslate"><span class="pre">osr</span></code></p></li>
+<li><p><em>src</em>: one of: <code class="docutils literal notranslate"><span class="pre">pins</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">null</span></code>, <code class="docutils literal notranslate"><span class="pre">status</span></code>, <code class="docutils literal notranslate"><span class="pre">isr</span></code>,
+<code class="docutils literal notranslate"><span class="pre">osr</span></code>; this argument can be optionally modified by wrapping it in
+<code class="docutils literal notranslate"><span class="pre">invert()</span></code> or <code class="docutils literal notranslate"><span class="pre">reverse()</span></code> (but not both together)</p></li>
+</ul>
+</dd>
+<dt>irq(…)</dt><dd><p>Set or clear an IRQ flag.
+This instruction takes two forms:</p>
+<dl class="simple">
+<dt>irq(index)</dt><dd><ul class="simple">
+<li><p><em>index</em>: 0-7, or <code class="docutils literal notranslate"><span class="pre">rel(0)</span></code> to <code class="docutils literal notranslate"><span class="pre">rel(7)</span></code></p></li>
+</ul>
+</dd>
+<dt>irq(mode, index)</dt><dd><ul class="simple">
+<li><p><em>mode</em>: one of: <code class="docutils literal notranslate"><span class="pre">block</span></code>, <code class="docutils literal notranslate"><span class="pre">clear</span></code></p></li>
+<li><p><em>index</em>: 0-7, or <code class="docutils literal notranslate"><span class="pre">rel(0)</span></code> to <code class="docutils literal notranslate"><span class="pre">rel(7)</span></code></p></li>
+</ul>
+</dd>
+</dl>
+<p>If <code class="docutils literal notranslate"><span class="pre">block</span></code> is used then the instruction stalls until the flag is cleared
+by another entity.  If <code class="docutils literal notranslate"><span class="pre">clear</span></code> is used then the flag is cleared instead of
+being set.  Relative IRQ indices add the state machine ID to the IRQ index
+with modulo-4 addition.  IRQs 0-3 are visible from to the processor, 4-7 are
+internal to the state machines.</p>
+</dd>
+<dt>set(dest, data)</dt><dd><p>Set <em>dest</em> with the value <em>data</em>.</p>
+<ul class="simple">
+<li><p><em>dest</em>: <code class="docutils literal notranslate"><span class="pre">pins</span></code>, <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">pindirs</span></code></p></li>
+<li><p><em>data</em>: value (0-31)</p></li>
+</ul>
+</dd>
+<dt>nop()</dt><dd><p>This is a pseudoinstruction that assembles to <code class="docutils literal notranslate"><span class="pre">mov(y,</span> <span class="pre">y)</span></code> and has no side
+effect.</p>
+</dd>
+<dt>.side(value)</dt><dd><p>This is a modifier which can be applied to any instruction, and is used to
+control side-set pin values.</p>
+<ul class="simple">
+<li><p><em>value</em>: the value (bits) to output on the side-set pins</p></li>
+</ul>
+</dd>
+<dt>.delay(value)</dt><dd><p>This is a modifier which can be applied to any instruction, and specifies
+how many cycles to delay for after the instruction executes.</p>
+<ul class="simple">
+<li><p><em>value</em>: cycles to delay, 0-31 (maximum value reduced if side-set pins are
+used)</p></li>
+</ul>
+</dd>
+<dt>[value]</dt><dd><p>This is a modifier and is equivalent to <code class="docutils literal notranslate"><span class="pre">.delay(value)</span></code>.</p>
+</dd>
+</dl>
+
+
+<h2 id="classes">Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="rp2.Flash.html">class Flash – access to built-in flash storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rp2.PIO.html">class PIO – advanced PIO usage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="rp2.StateMachine.html">class StateMachine – access to the RP2040’s programmable I/O interface</a></li>
+</ul>
+</div>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="esp32.html" title="esp32 — functionality specific to the ESP32"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> <code class="xref py py-mod docutils literal notranslate"><span class="pre">esp32</span></code> — functionality specific to the ESP32 </span>
+              </div>
+            </a>
+          
+          
+            <a href="rp2.Flash.html" title="class Flash – access to built-in flash storage"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class Flash – access to built-in flash storage </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>

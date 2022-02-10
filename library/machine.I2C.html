@@ -1,0 +1,487 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="lang:clipboard.copy" content="Copy to clipboard">
+  <meta name="lang:clipboard.copied" content="Copied to clipboard">
+  <meta name="lang:search.language" content="en">
+  <meta name="lang:search.pipeline.stopwords" content="True">
+  <meta name="lang:search.pipeline.trimmer" content="True">
+  <meta name="lang:search.result.none" content="No matching documents">
+  <meta name="lang:search.result.one" content="1 matching document">
+  <meta name="lang:search.result.other" content="# matching documents">
+  <meta name="lang:search.tokenizer" content="[\s\-]+">
+
+  
+    <link href="https://fonts.gstatic.com/" rel="preconnect" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700|Roboto:300,400,400i,700&display=fallback" rel="stylesheet">
+
+    <style>
+      body,
+      input {
+        font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif
+      }
+
+      code,
+      kbd,
+      pre {
+        font-family: "Roboto Mono", "Courier New", Courier, monospace
+      }
+    </style>
+  
+
+  <link rel="stylesheet" href="../_static/stylesheets/application.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-palette.css"/>
+  <link rel="stylesheet" href="../_static/stylesheets/application-fixes.css"/>
+  
+  <link rel="stylesheet" href="../_static/fonts/material-icons.css"/>
+  
+  <meta name="theme-color" content="#3f51b5">
+  <script src="../_static/javascripts/modernizr.js"></script>
+  
+  
+  
+    <title>class I2C – a two-wire serial protocol &#8212; MicroPython 1.18 documentation</title>
+    <link rel="stylesheet" href="../_static/material.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="class I2S – Inter-IC Sound bus protocol" href="machine.I2S.html" />
+    <link rel="prev" title="class SPI – a Serial Peripheral Interface bus protocol (controller side)" href="machine.SPI.html" />
+  
+   
+
+  </head>
+  <body dir=ltr
+        data-md-color-primary=blue-grey data-md-color-accent=blue>
+  
+  <svg class="md-svg">
+    <defs data-children-count="0">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+      
+    </defs>
+  </svg>
+  
+  <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer">
+  <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search">
+  <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+  <a href="#library/machine.I2C" tabindex="1" class="md-skip"> Skip to content </a>
+  <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex navheader">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../index.html" title="MicroPython 1.18 documentation"
+           class="md-header-nav__button md-logo">
+          
+            &nbsp;
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          <span class="md-header-nav__topic">MicroPython 1.18 documentation</span>
+          <span class="md-header-nav__topic"> class I2C – a two-wire serial protocol </span>
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+        
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" action="../search.html" method="get" name="search">
+      <input type="text" class="md-search__input" name="q" placeholder="Search"
+             autocapitalize="off" autocomplete="off" spellcheck="false"
+             data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+      
+  
+  <script src="../_static/javascripts/version_dropdown.js"></script>
+  <script>
+    var json_loc = "../"versions.json"",
+        target_loc = "../../",
+        text = "Versions";
+    $( document ).ready( add_version_dropdown(json_loc, target_loc, text));
+  </script>
+  
+
+    </div>
+  </nav>
+</header>
+
+  
+  <div class="md-container">
+    
+    
+    
+  <nav class="md-tabs" data-md-component="tabs">
+    <div class="md-tabs__inner md-grid">
+      <ul class="md-tabs__list">
+          <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 documentation</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="machine.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code> — functions related to the hardware</a></li>
+      </ul>
+    </div>
+  </nav>
+    <main class="md-main">
+      <div class="md-main__inner md-grid" data-md-component="container">
+        
+          <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../index.html" title="MicroPython 1.18 documentation" class="md-nav__button md-logo">
+      
+        <img src="../_static/" alt=" logo" width="48" height="48">
+      
+    </a>
+    <a href="../index.html"
+       title="MicroPython 1.18 documentation">MicroPython 1.18 documentation</a>
+  </label>
+  
+
+</nav>
+              </div>
+            </div>
+          </div>
+          <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+            <div class="md-sidebar__scrollwrap">
+              <div class="md-sidebar__inner">
+                
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-machine-i2c--page-root" class="md-nav__link">class I2C – a two-wire serial protocol</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#general-methods" class="md-nav__link">General Methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#primitive-i2c-operations" class="md-nav__link">Primitive I2C operations</a>
+        </li>
+        <li class="md-nav__item"><a href="#standard-bus-operations" class="md-nav__link">Standard bus operations</a>
+        </li>
+        <li class="md-nav__item"><a href="#memory-operations" class="md-nav__link">Memory operations</a>
+        </li></ul>
+            </nav>
+        </li>
+    
+<li class="md-nav__item"><a class="md-nav__extra_link" href="../_sources/library/machine.I2C.rst.txt">Show Source</a> </li>
+
+<li id="searchbox" class="md-nav__item"></li>
+
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        
+        <div class="md-content">
+          <article class="md-content__inner md-typeset" role="main">
+            
+  
+<span id="machine-i2c"></span><h1 id="library-machine-i2c--page-root">class I2C – a two-wire serial protocol<a class="headerlink" href="#library-machine-i2c--page-root" title="Permalink to this headline">¶</a></h1>
+<p>I2C is a two-wire protocol for communicating between devices.  At the physical
+level it consists of 2 wires: SCL and SDA, the clock and data lines respectively.</p>
+<p>I2C objects are created attached to a specific bus.  They can be initialised
+when created, or initialised later on.</p>
+<p>Printing the I2C object gives you information about its configuration.</p>
+<p>Both hardware and software I2C implementations exist via the
+<a class="reference internal" href="#machine-i2c"><span class="std std-ref">machine.I2C</span></a> and <a class="reference internal" href="#machine.SoftI2C" title="machine.SoftI2C"><code class="xref any py py-class docutils literal notranslate"><span class="pre">machine.SoftI2C</span></code></a> classes.  Hardware I2C uses
+underlying hardware support of the system to perform the reads/writes and is
+usually efficient and fast but may have restrictions on which pins can be used.
+Software I2C is implemented by bit-banging and can be used on any pin but is not
+as efficient.  These classes have the same methods available and differ primarily
+in the way they are constructed.</p>
+<p>Example usage:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="kn">import</span> <span class="n">I2C</span>
+
+<span class="n">i2c</span> <span class="o">=</span> <span class="n">I2C</span><span class="p">(</span><span class="n">freq</span><span class="o">=</span><span class="mi">400000</span><span class="p">)</span>          <span class="c1"># create I2C peripheral at frequency of 400kHz</span>
+                                <span class="c1"># depending on the port, extra parameters may be required</span>
+                                <span class="c1"># to select the peripheral and/or pins to use</span>
+
+<span class="n">i2c</span><span class="o">.</span><span class="n">scan</span><span class="p">()</span>                      <span class="c1"># scan for peripherals, returning a list of 7-bit addresses</span>
+
+<span class="n">i2c</span><span class="o">.</span><span class="n">writeto</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="sa">b</span><span class="s1">'123'</span><span class="p">)</span>         <span class="c1"># write 3 bytes to peripheral with 7-bit address 42</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">readfrom</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>             <span class="c1"># read 4 bytes from peripheral with 7-bit address 42</span>
+
+<span class="n">i2c</span><span class="o">.</span><span class="n">readfrom_mem</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>      <span class="c1"># read 3 bytes from memory of peripheral 42,</span>
+                                <span class="c1">#   starting at memory-address 8 in the peripheral</span>
+<span class="n">i2c</span><span class="o">.</span><span class="n">writeto_mem</span><span class="p">(</span><span class="mi">42</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="sa">b</span><span class="s1">'</span><span class="se">\x10</span><span class="s1">'</span><span class="p">)</span> <span class="c1"># write 1 byte to memory of peripheral 42</span>
+                                <span class="c1">#   starting at address 2 in the peripheral</span>
+</pre></div>
+</div>
+
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="machine.I2C">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">I2C</code><span class="sig-paren">(</span><em class="sig-param">id</em>, <em class="sig-param">*</em>, <em class="sig-param">scl</em>, <em class="sig-param">sda</em>, <em class="sig-param">freq=400000</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct and return a new I2C object using the following parameters:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>id</em> identifies a particular I2C peripheral.  Allowed values for
+depend on the particular port/board</p></li>
+<li><p><em>scl</em> should be a pin object specifying the pin to use for SCL.</p></li>
+<li><p><em>sda</em> should be a pin object specifying the pin to use for SDA.</p></li>
+<li><p><em>freq</em> should be an integer which sets the maximum frequency
+for SCL.</p></li>
+</ul>
+</div></blockquote>
+<p>Note that some ports/boards will have default values of <em>scl</em> and <em>sda</em>
+that can be changed in this constructor.  Others will have fixed values
+of <em>scl</em> and <em>sda</em> that cannot be changed.</p>
+</dd></dl>
+<span class="target" id="machine-softi2c"></span><dl class="class">
+<dt id="machine.SoftI2C">
+<em class="property">class </em><code class="sig-prename descclassname">machine.</code><code class="sig-name descname">SoftI2C</code><span class="sig-paren">(</span><em class="sig-param">scl</em>, <em class="sig-param">sda</em>, <em class="sig-param">*</em>, <em class="sig-param">freq=400000</em>, <em class="sig-param">timeout=255</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SoftI2C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Construct a new software I2C object.  The parameters are:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>scl</em> should be a pin object specifying the pin to use for SCL.</p></li>
+<li><p><em>sda</em> should be a pin object specifying the pin to use for SDA.</p></li>
+<li><p><em>freq</em> should be an integer which sets the maximum frequency
+for SCL.</p></li>
+<li><p><em>timeout</em> is the maximum time in microseconds to wait for clock
+stretching (SCL held low by another device on the bus), after
+which an <code class="docutils literal notranslate"><span class="pre">OSError(ETIMEDOUT)</span></code> exception is raised.</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+
+
+<h2 id="general-methods">General Methods<a class="headerlink" href="#general-methods" title="Permalink to this headline">¶</a></h2>
+<dl class="method">
+<dt id="machine.I2C.init">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">scl</em>, <em class="sig-param">sda</em>, <em class="sig-param">*</em>, <em class="sig-param">freq=400000</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.init" title="Permalink to this definition">¶</a></dt>
+<dd><p>Initialise the I2C bus with the given arguments:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><em>scl</em> is a pin object for the SCL line</p></li>
+<li><p><em>sda</em> is a pin object for the SDA line</p></li>
+<li><p><em>freq</em> is the SCL clock rate</p></li>
+</ul>
+</div></blockquote>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.deinit">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">deinit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.deinit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn off the I2C bus.</p>
+<p>Availability: WiPy.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.scan">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">scan</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.scan" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scan all I2C addresses between 0x08 and 0x77 inclusive and return a list of
+those that respond.  A device responds if it pulls the SDA line low after
+its address (including a write bit) is sent on the bus.</p>
+</dd></dl>
+
+
+<h2 id="primitive-i2c-operations">Primitive I2C operations<a class="headerlink" href="#primitive-i2c-operations" title="Permalink to this headline">¶</a></h2>
+<p>The following methods implement the primitive I2C controller bus operations and can
+be combined to make any I2C transaction.  They are provided if you need more
+control over the bus, otherwise the standard methods (see below) can be used.</p>
+<p>These methods are only available on the <a class="reference internal" href="#machine.SoftI2C" title="machine.SoftI2C"><code class="xref any py py-class docutils literal notranslate"><span class="pre">machine.SoftI2C</span></code></a> class.</p>
+<dl class="method">
+<dt id="machine.I2C.start">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">start</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.start" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a START condition on the bus (SDA transitions to low while SCL is high).</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.stop">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">stop</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Generate a STOP condition on the bus (SDA transitions to high while SCL is high).</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.readinto">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">readinto</code><span class="sig-paren">(</span><em class="sig-param">buf</em>, <em class="sig-param">nack=True</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.readinto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads bytes from the bus and stores them into <em>buf</em>.  The number of bytes
+read is the length of <em>buf</em>.  An ACK will be sent on the bus after
+receiving all but the last byte.  After the last byte is received, if <em>nack</em>
+is true then a NACK will be sent, otherwise an ACK will be sent (and in this
+case the peripheral assumes more bytes are going to be read in a later call).</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.write">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">write</code><span class="sig-paren">(</span><em class="sig-param">buf</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.write" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the bytes from <em>buf</em> to the bus.  Checks that an ACK is received
+after each byte and stops transmitting the remaining bytes if a NACK is
+received.  The function returns the number of ACKs that were received.</p>
+</dd></dl>
+
+
+<h2 id="standard-bus-operations">Standard bus operations<a class="headerlink" href="#standard-bus-operations" title="Permalink to this headline">¶</a></h2>
+<p>The following methods implement the standard I2C controller read and write
+operations that target a given peripheral device.</p>
+<dl class="method">
+<dt id="machine.I2C.readfrom">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">readfrom</code><span class="sig-paren">(</span><em class="sig-param">addr</em>, <em class="sig-param">nbytes</em>, <em class="sig-param">stop=True</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.readfrom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read <em>nbytes</em> from the peripheral specified by <em>addr</em>.
+If <em>stop</em> is true then a STOP condition is generated at the end of the transfer.
+Returns a <a class="reference internal" href="builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> object with the data read.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.readfrom_into">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">readfrom_into</code><span class="sig-paren">(</span><em class="sig-param">addr</em>, <em class="sig-param">buf</em>, <em class="sig-param">stop=True</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.readfrom_into" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read into <em>buf</em> from the peripheral specified by <em>addr</em>.
+The number of bytes read will be the length of <em>buf</em>.
+If <em>stop</em> is true then a STOP condition is generated at the end of the transfer.</p>
+<p>The method returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.writeto">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">writeto</code><span class="sig-paren">(</span><em class="sig-param">addr</em>, <em class="sig-param">buf</em>, <em class="sig-param">stop=True</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.writeto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the bytes from <em>buf</em> to the peripheral specified by <em>addr</em>.  If a
+NACK is received following the write of a byte from <em>buf</em> then the
+remaining bytes are not sent.  If <em>stop</em> is true then a STOP condition is
+generated at the end of the transfer, even if a NACK is received.
+The function returns the number of ACKs that were received.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.writevto">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">writevto</code><span class="sig-paren">(</span><em class="sig-param">addr</em>, <em class="sig-param">vector</em>, <em class="sig-param">stop=True</em>, <em class="sig-param">/</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.writevto" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write the bytes contained in <em>vector</em> to the peripheral specified by <em>addr</em>.
+<em>vector</em> should be a tuple or list of objects with the buffer protocol.
+The <em>addr</em> is sent once and then the bytes from each object in <em>vector</em>
+are written out sequentially.  The objects in <em>vector</em> may be zero bytes
+in length in which case they don’t contribute to the output.</p>
+<p>If a NACK is received following the write of a byte from one of the
+objects in <em>vector</em> then the remaining bytes, and any remaining objects,
+are not sent.  If <em>stop</em> is true then a STOP condition is generated at
+the end of the transfer, even if a NACK is received.  The function
+returns the number of ACKs that were received.</p>
+</dd></dl>
+
+
+<h2 id="memory-operations">Memory operations<a class="headerlink" href="#memory-operations" title="Permalink to this headline">¶</a></h2>
+<p>Some I2C devices act as a memory device (or set of registers) that can be read
+from and written to.  In this case there are two addresses associated with an
+I2C transaction: the peripheral address and the memory address.  The following
+methods are convenience functions to communicate with such devices.</p>
+<dl class="method">
+<dt id="machine.I2C.readfrom_mem">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">readfrom_mem</code><span class="sig-paren">(</span><em class="sig-param">addr</em>, <em class="sig-param">memaddr</em>, <em class="sig-param">nbytes</em>, <em class="sig-param">*</em>, <em class="sig-param">addrsize=8</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.readfrom_mem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read <em>nbytes</em> from the peripheral specified by <em>addr</em> starting from the memory
+address specified by <em>memaddr</em>.
+The argument <em>addrsize</em> specifies the address size in bits.
+Returns a <a class="reference internal" href="builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> object with the data read.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.readfrom_mem_into">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">readfrom_mem_into</code><span class="sig-paren">(</span><em class="sig-param">addr</em>, <em class="sig-param">memaddr</em>, <em class="sig-param">buf</em>, <em class="sig-param">*</em>, <em class="sig-param">addrsize=8</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.readfrom_mem_into" title="Permalink to this definition">¶</a></dt>
+<dd><p>Read into <em>buf</em> from the peripheral specified by <em>addr</em> starting from the
+memory address specified by <em>memaddr</em>.  The number of bytes read is the
+length of <em>buf</em>.
+The argument <em>addrsize</em> specifies the address size in bits (on ESP8266
+this argument is not recognised and the address size is always 8 bits).</p>
+<p>The method returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+<dl class="method">
+<dt id="machine.I2C.writeto_mem">
+<code class="sig-prename descclassname">I2C.</code><code class="sig-name descname">writeto_mem</code><span class="sig-paren">(</span><em class="sig-param">addr</em>, <em class="sig-param">memaddr</em>, <em class="sig-param">buf</em>, <em class="sig-param">*</em>, <em class="sig-param">addrsize=8</em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.writeto_mem" title="Permalink to this definition">¶</a></dt>
+<dd><p>Write <em>buf</em> to the peripheral specified by <em>addr</em> starting from the
+memory address specified by <em>memaddr</em>.
+The argument <em>addrsize</em> specifies the address size in bits (on ESP8266
+this argument is not recognised and the address size is always 8 bits).</p>
+<p>The method returns <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+</dd></dl>
+
+
+
+
+          </article>
+        </div>
+      </div>
+    </main>
+  </div>
+  <footer class="md-footer">
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+          
+            <a href="machine.SPI.html" title="class SPI – a Serial Peripheral Interface bus protocol (controller side)"
+               class="md-flex md-footer-nav__link md-footer-nav__link--prev"
+               rel="prev">
+              <div class="md-flex__cell md-flex__cell--shrink">
+                <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+              </div>
+              <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+                <span class="md-flex__ellipsis">
+                  <span
+                      class="md-footer-nav__direction"> Previous </span> class SPI – a Serial Peripheral Interface bus protocol (controller side) </span>
+              </div>
+            </a>
+          
+          
+            <a href="machine.I2S.html" title="class I2S – Inter-IC Sound bus protocol"
+               class="md-flex md-footer-nav__link md-footer-nav__link--next"
+               rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
+                class="md-flex__ellipsis"> <span
+                class="md-footer-nav__direction"> Next </span> class I2S – Inter-IC Sound bus protocol </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink"><i
+                class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          
+        </a>
+        
+      </nav>
+    </div>
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-footer-copyright">
+          <div class="md-footer-copyright__highlight">
+              &#169; Copyright - The MicroPython Documentation is Copyright © 2014-2022, Damien P. George, Paul Sokolovsky, and contributors.
+              
+          </div>
+            Last updated on
+              10 Feb 2022.
+            <br/>
+            Created using
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 2.4.4.
+             and
+            <a href="https://github.com/bashtage/sphinx-material/">Material for
+              Sphinx</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../_static/javascripts/application.js"></script>
+  <script>app.initialize({version: "1.0.4", url: {base: ".."}})</script>
+  </body>
+</html>
