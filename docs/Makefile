@@ -3,7 +3,7 @@
 
 # You can set these variables from the command line.
 PYTHON        = python3
-SPHINXOPTS    = 
+SPHINXOPTS    = -Dlanguage='zh_CN'
 SPHINXBUILD   = sphinx-build
 PAPER         =
 BUILDDIR      = build/$(MICROPY_PORT)
