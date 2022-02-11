@@ -309,5 +309,7 @@ gettext_compact = False     # optional.
 
 html_theme = 'sphinx_material'
 html_theme_options = {
-  "globaltoc_depth": 4,
+    'globaltoc_depth': 4,
+    'color_primary': 'blue',
+    'color_accent': 'light-blue',
 }
