@@ -185,8 +185,6 @@ html_sidebars = {
     "**": ["logo-text.html", "globaltoc.html", "localtoc.html", "searchbox.html"]
 }
 
-html_show_sourcelink = False
-
 # Additional templates that should be rendered to pages, maps page names to
 # template names.
 html_additional_pages = {"index": "topindex.html"}
@@ -201,7 +199,7 @@ html_additional_pages = {"index": "topindex.html"}
 #html_split_index = False
 
 # If true, links to the reST sources are added to the pages.
-#html_show_sourcelink = True
+html_show_sourcelink = False
 
 # If true, "Created using Sphinx" is shown in the HTML footer. Default is True.
 #html_show_sphinx = True
@@ -310,3 +308,6 @@ locale_dirs = ['locale/']   # path is example but recommended.
 gettext_compact = False     # optional.
 
 html_theme = 'sphinx_material'
+html_theme_options = {
+  "globaltoc_depth": 4,
+}

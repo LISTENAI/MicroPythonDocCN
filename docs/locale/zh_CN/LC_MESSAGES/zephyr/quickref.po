@@ -21,18 +21,18 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:4
 msgid "Quick reference for the Zephyr port"
-msgstr ""
+msgstr "Zephyr 适配的快速参考"
 
 #: ../../zephyr/quickref.rst:6
 msgid ""
 "Below is a quick reference for the Zephyr port. If it is your first time "
 "working with this port please consider reading the following sections "
 "first:"
-msgstr ""
+msgstr "以下是 Zephyr 适配的快速参考。如果这是你第一次用这个适配来工作的话，请考虑先阅读以下章节"
 
 #: ../../zephyr/quickref.rst:15
 msgid "Running MicroPython"
-msgstr ""
+msgstr "运行 MicroPython"
 
 #: ../../zephyr/quickref.rst:17
 msgid "See the corresponding section of the tutorial: :ref:`intro`."
@@ -40,7 +40,7 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:20
 msgid "Delay and timing"
-msgstr ""
+msgstr "延迟与计时"
 
 #: ../../zephyr/quickref.rst:22
 msgid "Use the :mod:`time <utime>` module::"
@@ -48,7 +48,7 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:33
 msgid "Pins and GPIO"
-msgstr ""
+msgstr "Pins 与 GPIO"
 
 #: ../../zephyr/quickref.rst:35
 msgid "Use the :ref:`machine.Pin <machine.Pin>` class::"
@@ -56,7 +56,7 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:60
 msgid "Hardware I2C bus"
-msgstr ""
+msgstr "硬件 I2C 总线"
 
 #: ../../zephyr/quickref.rst:62
 msgid "Hardware I2C is accessed via the :ref:`machine.I2C <machine.I2C>` class::"
@@ -64,7 +64,7 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:81
 msgid "Hardware SPI bus"
-msgstr ""
+msgstr "硬件 SPI 总线"
 
 #: ../../zephyr/quickref.rst:83
 msgid "Hardware SPI is accessed via the :ref:`machine.SPI <machine.SPI>` class::"
@@ -72,7 +72,7 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:108
 msgid "Disk Access"
-msgstr ""
+msgstr "存储访问"
 
 #: ../../zephyr/quickref.rst:110
 msgid ""
@@ -82,7 +82,7 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:125
 msgid "Flash Area"
-msgstr ""
+msgstr "Flash 空间"
 
 #: ../../zephyr/quickref.rst:127
 msgid ""
@@ -92,7 +92,7 @@ msgstr ""
 
 #: ../../zephyr/quickref.rst:142
 msgid "Sensor"
-msgstr ""
+msgstr "传感器"
 
 #: ../../zephyr/quickref.rst:144
 msgid ""

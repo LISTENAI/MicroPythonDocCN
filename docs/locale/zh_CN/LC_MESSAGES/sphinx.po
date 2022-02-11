@@ -23,6 +23,10 @@ msgstr ""
 msgid "Overview"
 msgstr "概览"
 
+#: ../../templates/topindex.html:5
+msgid "MicroPython documentation"
+msgstr "MicroPython 文档"
+
 #: ../../templates/topindex.html:8
 msgid "Welcome! This is the documentation for MicroPython"
 msgstr "欢迎！这里是 MicroPython 的文档"
@@ -31,3 +35,163 @@ msgstr "欢迎！这里是 MicroPython 的文档"
 msgid "last updated"
 msgstr "最近更新"
 
+#: ../../templates/topindex.html:13
+msgid ""
+"MicroPython runs on a variety of systems and hardware platforms.  Here you can read "
+"the general documentation which applies to all systems, as well as specific information "
+"about the various platforms - "
+"also known as <a id="reference_glossary">ports</a>"
+"- that MicroPython runs on."
+msgstr "MicroPython 能在各种系统和硬件平台上运行。在这里你可以阅读适用于所有系统的通用文档，以及有关各种平台特有的信息，也称之为 MicroPython 可运行的 <a id="reference_glossary">适配（ports）</a>"
+
+#: ../../templates/topindex.html:20
+msgid "General documentation for MicroPython"
+msgstr "MicroPython 文档概要"
+
+#: ../../templates/topindex.html:25
+msgid "Library Reference"
+msgstr "库参考"
+
+#: ../../templates/topindex.html:26
+msgid "MicroPython libraries and modules"
+msgstr "MicroPython 可用的库和模块"
+
+#: ../../templates/topindex.html:29
+msgid "MicroPython Differences"
+msgstr "MicroPython 的不同之处"
+
+#: ../../templates/topindex.html:30
+msgid "MicroPython operations which differ from CPython"
+msgstr "MicroPython 中与 CPython 不同的做法"
+
+#: ../../templates/topindex.html:35
+msgid "Language Reference"
+msgstr "语言特性参考"
+
+#: ../../templates/topindex.html:36
+msgid "information about MicroPython specific language features"
+msgstr "关于 MicroPython 特有的语言特性参考"
+
+#: ../../templates/topindex.html:40
+msgid "MicroPython license information"
+msgstr "MicroPython 开源协议"
+
+#: ../../templates/topindex.html:45
+msgid "References and tutorials for specific platforms"
+msgstr "特定平台的参考与指南"
+
+#: ../../templates/topindex.html:54
+msgid "Quick reference for the pyboard"
+msgstr "pyboard 的快速参考"
+
+#: ../../templates/topindex.html:55
+msgid "pinout for the pyboard, snippets of useful code, and a tutorial"
+msgstr "pyboard 的引脚分配、有用的代码片段和教程"
+
+#: ../../templates/topindex.html:58
+msgid "Quick reference for the ESP8266"
+msgstr "ESP8266 的快速参考"
+
+#: ../../templates/topindex.html:59
+msgid "pinout for ESP8266-based boards, snippets of useful code, and a tutorial"
+msgstr "基于 ESP8266 开发板的引脚分配、有用的代码片段和教程"
+
+#: ../../templates/topindex.html:62
+msgid "Quick reference for the ESP32"
+msgstr "ESP32 的快速参考"
+
+#: ../../templates/topindex.html:63
+msgid "pinout for ESP32-based boards, snippets of useful code, and a tutorial"
+msgstr "基于 ESP32 开发板的引脚分配、有用的代码片段和教程"
+
+#: ../../templates/topindex.html:66
+msgid "Quick reference for the Raspberry Pi RP2xxx"
+msgstr "树莓派 RP2xxx 系的快速参考"
+
+#: ../../templates/topindex.html:67
+msgid "pinout for rp2xxx-based boards, snippets of useful code, and a tutorial"
+msgstr "基于 RP2xxx 系列开发板的引脚分配、有用的代码片段和教程"
+
+#: ../../templates/topindex.html:70
+msgid "Quick reference for the WiPy/CC3200"
+msgstr "WiPy/CC3200 的快速参考"
+
+#: ../../templates/topindex.html:71
+msgid "pinout for the WiPy/CC3200, snippets of useful code, and a tutorial"
+msgstr "基于 WiPy/CC3200 系列开发板的引脚分配、有用的代码片段和教程"
+
+#: ../../templates/topindex.html:74
+msgid "Quick reference for UNIX and Windows"
+msgstr "UNIX 和 Windows 的快速参考"
+
+#: ../../templates/topindex.html:75
+msgid "command-line reference"
+msgstr "命令行工具使用参考"
+
+#: ../../templates/topindex.html:78
+msgid "Quick reference for the Zephyr port"
+msgstr "Zephyr 适配的快速参考"
+
+#: ../../templates/topindex.html:79
+msgid "snippets of useful code and a tutorial"
+msgstr "一些有用的代码片段和教程"
+
+#: ../../templates/topindex.html:84
+msgid "Indices and tables"
+msgstr "索引与清单"
+
+#: ../../templates/topindex.html:89
+msgid "Module index"
+msgstr "模块索引"
+
+#: ../../templates/topindex.html:93
+msgid "Full index"
+msgstr "全量索引"
+
+#: ../../templates/topindex.html:94
+msgid "all functions, classes, constants"
+msgstr "查看所有的函数、类、常量定义"
+
+#: ../../templates/topindex.html:99
+msgid "Glossary"
+msgstr "术语概述"
+
+#: ../../templates/topindex.html:100
+msgid "MicroPython terms explained"
+msgstr "MicroPython 术语解释"
+
+#: ../../templates/topindex.html:103
+msgid "Table of contents"
+msgstr "目录"
+
+#: ../../templates/topindex.html:104
+msgid "a list of all sections and subsections"
+msgstr "所有章节及子章节的列表"
+
+#: ../../templates/topindex.html:109
+msgid "External links"
+msgstr "外链"
+
+#: ../../templates/topindex.html:114
+msgid "MicroPython homepage"
+msgstr "MicroPython 主页"
+
+#: ../../templates/topindex.html:115
+msgid "the official MicroPython site"
+msgstr "MicroPython 官方网站"
+
+#: ../../templates/topindex.html:118
+msgid "MicroPython forum"
+msgstr "MicroPython 论坛"
+
+#: ../../templates/topindex.html:119
+msgid "community discussion for all things related to MicroPython"
+msgstr "有关 MicroPython 一切的社区讨论"
+
+#: ../../templates/topindex.html:120
+msgid "MicroPython on GitHub"
+msgstr "在 GitHub 上访问 MicroPython"
+
+#: ../../templates/topindex.html:121
+msgid "contribute to the source code on GitHub"
+msgstr "在 GitHub 上贡献源代码"

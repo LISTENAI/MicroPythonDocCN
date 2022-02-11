@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../zephyr/general.rst:4
 msgid "General information about the Zephyr port"
-msgstr "Zephyr 适配的通用信息"
+msgstr "Zephyr 适配信息概要"
 
 #: ../../zephyr/general.rst:6
 msgid ""
@@ -29,11 +29,11 @@ msgid ""
 "It’s an open source collaborative effort uniting developers and users in "
 "building a small, scalable, real-time operating system (RTOS) optimized "
 "for resource-constrained devices, across multiple architectures."
-msgstr ""
+msgstr "Zephyr 项目是一个 Linux 基金会托管的协作项目。它是由开发人员和用户联合起来，通过开源协作，构建出来的一个小型、可扩展的实时操作系统 (RTOS)，该操作系统针对资源受限的设备进行了优化，跨越多个架构。"
 
 #: ../../zephyr/general.rst:12
 msgid "Multitude of boards"
-msgstr ""
+msgstr "大量开发板"
 
 #: ../../zephyr/general.rst:14
 msgid ""
@@ -45,11 +45,11 @@ msgid ""
 "board, please make sure you have a datasheet, schematics and other "
 "reference materials for your board handy to look up various aspects of "
 "your board functioning."
-msgstr ""
+msgstr "Zephyr OS 支持了大量的、来自不同源头的模块和开发板。Zephyr 支持的所有开发板（即实现了标准特性，例如 UART 控制台等）都应当可以与 MicroPython 一起工作（但并不是每一个都经过测试）。 FRDM-K64f 开发板作为本适配文档的一个参考板子。如果你有其他的开发板，请确保你拥有使用于你的开发板的 datasheet 、原理图和其他参考材料，以便于你查找开发板功能的各个方面的信息。"
 
 #: ../../zephyr/general.rst:22
 msgid ""
 "For a full list of Zephyr supported boards click `here (external link) "
 "<https://docs.zephyrproject.org/latest/boards/index.html#boards>`_"
-msgstr ""
+msgstr "点击 `这里 (外部链接) <https://docs.zephyrproject.org/latest/boards/index.html#boards>`_ 查看 Zephyr 支持开发板的完整列表"
 

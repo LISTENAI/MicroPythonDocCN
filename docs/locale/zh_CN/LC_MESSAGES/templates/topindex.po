@@ -1,4 +1,0 @@
-
-#: ../../template/topindex.html:26
-msgid "MicroPython libraries and modules"
-msgstr "MicroPython 库与模块"
