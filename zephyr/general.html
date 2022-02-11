@@ -47,7 +47,7 @@
   
   
   
-    <title>Zephyr 适配的通用信息 &#8212; MicroPython 1.18 文档</title>
+    <title>Zephyr 适配信息概要 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -60,13 +60,13 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython tutorial for the Zephyr port" href="tutorial/index.html" />
-    <link rel="prev" title="Quick reference for the Zephyr port" href="quickref.html" />
+    <link rel="prev" title="Zephyr 适配的快速参考" href="quickref.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Zephyr 适配的通用信息 </span>
+          <span class="md-header-nav__topic"> Zephyr 适配信息概要 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -154,7 +154,7 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
-          <li class="md-tabs__item"><a href="quickref.html" class="md-tabs__link">Quick reference for the Zephyr port</a></li>
+          <li class="md-tabs__item"><a href="quickref.html" class="md-tabs__link">Zephyr 适配的快速参考</a></li>
       </ul>
     </div>
   </nav>
@@ -258,8 +258,101 @@
     <li class="md-nav__item">
     
     
-      <a href="quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Zephyr 适配信息概要 </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Zephyr 适配信息概要</a>
       
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#zephyr-general--page-root" class="md-nav__link">Zephyr 适配信息概要</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#multitude-of-boards" class="md-nav__link">大量开发板</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#multitude-of-boards" class="md-nav__link">大量开发板</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial/index.html" class="md-nav__link">MicroPython tutorial for the Zephyr port</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#running-micropython" class="md-nav__link">运行 MicroPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#delay-and-timing" class="md-nav__link">延迟与计时</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#pins-and-gpio" class="md-nav__link">Pins 与 GPIO</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#hardware-i2c-bus" class="md-nav__link">硬件 I2C 总线</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#hardware-spi-bus" class="md-nav__link">硬件 SPI 总线</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#disk-access" class="md-nav__link">存储访问</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#flash-area" class="md-nav__link">Flash 空间</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#sensor" class="md-nav__link">传感器</a>
+      
+    
+    </li></ul>
     
     </li>
   </ul>
@@ -276,9 +369,9 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#zephyr-general--page-root" class="md-nav__link">Zephyr 适配的通用信息</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#zephyr-general--page-root" class="md-nav__link">Zephyr 适配信息概要</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#multitude-of-boards" class="md-nav__link">Multitude of boards</a>
+        <li class="md-nav__item"><a href="#multitude-of-boards" class="md-nav__link">大量开发板</a>
         </li></ul>
             </nav>
         </li>
@@ -292,21 +385,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="general-information-about-the-zephyr-port">
-<span id="zephyr-general"></span><h1 id="zephyr-general--page-root">Zephyr 适配的通用信息<a class="headerlink" href="#zephyr-general--page-root" title="永久链接至标题">¶</a></h1>
-<p>The Zephyr Project is a Linux Foundation hosted Collaboration Project. It’s an open
-source collaborative effort uniting developers and users in building a
-small, scalable, real-time operating system (RTOS) optimized for resource-constrained
-devices, across multiple architectures.</p>
+<span id="zephyr-general"></span><h1 id="zephyr-general--page-root">Zephyr 适配信息概要<a class="headerlink" href="#zephyr-general--page-root" title="永久链接至标题">¶</a></h1>
+<p>Zephyr 项目是一个 Linux 基金会托管的协作项目。它是由开发人员和用户联合起来，通过开源协作，构建出来的一个小型、可扩展的实时操作系统 (RTOS)，该操作系统针对资源受限的设备进行了优化，跨越多个架构。</p>
 <section id="multitude-of-boards">
-<h2 id="multitude-of-boards">Multitude of boards<a class="headerlink" href="#multitude-of-boards" title="永久链接至标题">¶</a></h2>
-<p>There is a multitude of modules and boards from different sources that are supported
-by the Zephyr OS. All boards supported by Zephyr (with standard level of features
-support, like UART console) should work with MicroPython (but not all were tested).
-The FRDM-K64f board is taken as a reference board for the port for this documentation.
-If you have another board, please make sure you have a datasheet, schematics and other
-reference materials for your board handy to look up various aspects of your board
-functioning.</p>
-<p>For a full list of Zephyr supported boards click <a class="reference external" href="https://docs.zephyrproject.org/latest/boards/index.html#boards">here (external link)</a></p>
+<h2 id="multitude-of-boards">大量开发板<a class="headerlink" href="#multitude-of-boards" title="永久链接至标题">¶</a></h2>
+<p>Zephyr OS 支持了大量的、来自不同源头的模块和开发板。Zephyr 支持的所有开发板（即实现了标准特性，例如 UART 控制台等）都应当可以与 MicroPython 一起工作（但并不是每一个都经过测试）。 FRDM-K64f 开发板作为本适配文档的一个参考板子。如果你有其他的开发板，请确保你拥有使用于你的开发板的 datasheet 、原理图和其他参考材料，以便于你查找开发板功能的各个方面的信息。</p>
+<p>点击 <a class="reference external" href="https://docs.zephyrproject.org/latest/boards/index.html#boards">这里 (外部链接)</a> 查看 Zephyr 支持开发板的完整列表</p>
 </section>
 </section>
 
@@ -320,7 +404,7 @@ functioning.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="quickref.html" title="Quick reference for the Zephyr port"
+            <a href="quickref.html" title="Zephyr 适配的快速参考"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -329,7 +413,7 @@ functioning.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Quick reference for the Zephyr port </span>
+                      class="md-footer-nav__direction"> Previous </span> Zephyr 适配的快速参考 </span>
               </div>
             </a>
           
@@ -357,7 +441,7 @@ functioning.</p>
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

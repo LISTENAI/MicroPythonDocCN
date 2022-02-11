@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -196,7 +196,301 @@
     
     
       <a href="index.html" class="md-nav__link">MicroPython differences from CPython</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_35.html" class="md-nav__link">Python 3.5</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_36.html" class="md-nav__link">Python 3.6</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_37.html" class="md-nav__link">Python 3.7</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_38.html" class="md-nav__link">Python 3.8</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_39.html" class="md-nav__link">Python 3.9</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="syntax.html" class="md-nav__link">Syntax</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Core language </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Core language</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#genrst-core-language--page-root" class="md-nav__link">Core language</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#f-strings-don-t-support-concatenation-with-adjacent-literals-if-the-adjacent-literals-contain-braces-or-are-f-strings" class="md-nav__link">f-strings don’t support concatenation with adjacent literals if the adjacent literals contain braces or are f-strings</a>
+        </li>
+        <li class="md-nav__item"><a href="#f-strings-cannot-support-expressions-that-require-parsing-to-resolve-unbalanced-nested-braces-and-brackets" class="md-nav__link">f-strings cannot support expressions that require parsing to resolve unbalanced nested braces and brackets</a>
+        </li>
+        <li class="md-nav__item"><a href="#raw-f-strings-are-not-supported" class="md-nav__link">Raw f-strings are not supported</a>
+        </li>
+        <li class="md-nav__item"><a href="#f-strings-don-t-support-the-r-s-and-a-conversions" class="md-nav__link">f-strings don’t support the !r, !s, and !a conversions</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#classes" class="md-nav__link">Classes</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#special-method-del-not-implemented-for-user-defined-classes" class="md-nav__link">Special method __del__ not implemented for user-defined classes</a>
+        </li>
+        <li class="md-nav__item"><a href="#method-resolution-order-mro-is-not-compliant-with-cpython" class="md-nav__link">Method Resolution Order (MRO) is not compliant with CPython</a>
+        </li>
+        <li class="md-nav__item"><a href="#when-inheriting-from-multiple-classes-super-only-calls-one-class" class="md-nav__link">When inheriting from multiple classes super() only calls one class</a>
+        </li>
+        <li class="md-nav__item"><a href="#calling-super-getter-property-in-subclass-will-return-a-property-object-not-the-value" class="md-nav__link">Calling super() getter property in subclass will return a property object, not the value</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#error-messages-for-methods-may-display-unexpected-argument-counts" class="md-nav__link">Error messages for methods may display unexpected argument counts</a>
+        </li>
+        <li class="md-nav__item"><a href="#function-objects-do-not-have-the-module-attribute" class="md-nav__link">Function objects do not have the <code class="docutils literal notranslate"><span class="pre">__module__</span></code> attribute</a>
+        </li>
+        <li class="md-nav__item"><a href="#user-defined-attributes-for-functions-are-not-supported" class="md-nav__link">User-defined attributes for functions are not supported</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#generator" class="md-nav__link">Generator</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#context-manager-exit-not-called-in-a-generator-which-does-not-run-to-completion" class="md-nav__link">Context manager __exit__() not called in a generator which does not run to completion</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#runtime" class="md-nav__link">Runtime</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#local-variables-aren-t-included-in-locals-result" class="md-nav__link">Local variables aren’t included in locals() result</a>
+        </li>
+        <li class="md-nav__item"><a href="#code-running-in-eval-function-doesn-t-have-access-to-local-variables" class="md-nav__link">Code running in eval() function doesn’t have access to local variables</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#import" class="md-nav__link">import</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#all-is-unsupported-in-init-py-in-micropython" class="md-nav__link">__all__ is unsupported in __init__.py in MicroPython.</a>
+        </li>
+        <li class="md-nav__item"><a href="#path-attribute-of-a-package-has-a-different-type-single-string-instead-of-list-of-strings-in-micropython" class="md-nav__link">__path__ attribute of a package has a different type (single string instead of list of strings) in MicroPython</a>
+        </li>
+        <li class="md-nav__item"><a href="#failed-to-load-modules-are-still-registered-as-loaded" class="md-nav__link">Failed to load modules are still registered as loaded</a>
+        </li>
+        <li class="md-nav__item"><a href="#micropython-does-t-support-namespace-packages-split-across-filesystem" class="md-nav__link">MicroPython does’t support namespace packages split across filesystem.</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#f-strings-don-t-support-concatenation-with-adjacent-literals-if-the-adjacent-literals-contain-braces-or-are-f-strings" class="md-nav__link">f-strings don’t support concatenation with adjacent literals if the adjacent literals contain braces or are f-strings</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#f-strings-cannot-support-expressions-that-require-parsing-to-resolve-unbalanced-nested-braces-and-brackets" class="md-nav__link">f-strings cannot support expressions that require parsing to resolve unbalanced nested braces and brackets</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#raw-f-strings-are-not-supported" class="md-nav__link">Raw f-strings are not supported</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#f-strings-don-t-support-the-r-s-and-a-conversions" class="md-nav__link">f-strings don’t support the !r, !s, and !a conversions</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#classes" class="md-nav__link">Classes</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#special-method-del-not-implemented-for-user-defined-classes" class="md-nav__link">Special method __del__ not implemented for user-defined classes</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#method-resolution-order-mro-is-not-compliant-with-cpython" class="md-nav__link">Method Resolution Order (MRO) is not compliant with CPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#when-inheriting-from-multiple-classes-super-only-calls-one-class" class="md-nav__link">When inheriting from multiple classes super() only calls one class</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#calling-super-getter-property-in-subclass-will-return-a-property-object-not-the-value" class="md-nav__link">Calling super() getter property in subclass will return a property object, not the value</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#functions" class="md-nav__link">Functions</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#error-messages-for-methods-may-display-unexpected-argument-counts" class="md-nav__link">Error messages for methods may display unexpected argument counts</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#function-objects-do-not-have-the-module-attribute" class="md-nav__link">Function objects do not have the <code class="docutils literal notranslate"><span class="pre">__module__</span></code> attribute</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#user-defined-attributes-for-functions-are-not-supported" class="md-nav__link">User-defined attributes for functions are not supported</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#generator" class="md-nav__link">Generator</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#context-manager-exit-not-called-in-a-generator-which-does-not-run-to-completion" class="md-nav__link">Context manager __exit__() not called in a generator which does not run to completion</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#runtime" class="md-nav__link">Runtime</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#local-variables-aren-t-included-in-locals-result" class="md-nav__link">Local variables aren’t included in locals() result</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#code-running-in-eval-function-doesn-t-have-access-to-local-variables" class="md-nav__link">Code running in eval() function doesn’t have access to local variables</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#import" class="md-nav__link">import</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#all-is-unsupported-in-init-py-in-micropython" class="md-nav__link">__all__ is unsupported in __init__.py in MicroPython.</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#path-attribute-of-a-package-has-a-different-type-single-string-instead-of-list-of-strings-in-micropython" class="md-nav__link">__path__ attribute of a package has a different type (single string instead of list of strings) in MicroPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#failed-to-load-modules-are-still-registered-as-loaded" class="md-nav__link">Failed to load modules are still registered as loaded</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#micropython-does-t-support-namespace-packages-split-across-filesystem" class="md-nav__link">MicroPython does’t support namespace packages split across filesystem.</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="builtin_types.html" class="md-nav__link">Builtin types</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="modules.html" class="md-nav__link">Modules</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -258,7 +552,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -347,7 +641,7 @@
             
   <section id="core-language">
 <h1 id="genrst-core-language--page-root">Core language<a class="headerlink" href="#genrst-core-language--page-root" title="永久链接至标题">¶</a></h1>
-<p>Generated Thu 10 Feb 2022 10:18:47 UTC</p>
+<p>Generated Fri 11 Feb 2022 10:54:31 UTC</p>
 <section id="f-strings-don-t-support-concatenation-with-adjacent-literals-if-the-adjacent-literals-contain-braces-or-are-f-strings">
 <span id="cpydiff-core-fstring-concat"></span><h2 id="f-strings-don-t-support-concatenation-with-adjacent-literals-if-the-adjacent-literals-contain-braces-or-are-f-strings">f-strings don’t support concatenation with adjacent literals if the adjacent literals contain braces or are f-strings<a class="headerlink" href="#f-strings-don-t-support-concatenation-with-adjacent-literals-if-the-adjacent-literals-contain-braces-or-are-f-strings" title="永久链接至标题">¶</a></h2>
 <p><strong>Cause:</strong> MicroPython is optimised for code space.</p>
@@ -1081,7 +1375,7 @@
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

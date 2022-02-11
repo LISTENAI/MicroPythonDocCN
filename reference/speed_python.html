@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -189,7 +189,235 @@
     
     
       <a href="index.html" class="md-nav__link">MicroPython language and implementation</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="glossary.html" class="md-nav__link">Glossary</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="repl.html" class="md-nav__link">The MicroPython Interactive Interpreter Mode (aka REPL)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="mpremote.html" class="md-nav__link">MicroPython remote control: mpremote</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="mpyfiles.html" class="md-nav__link">MicroPython .mpy files</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="isr_rules.html" class="md-nav__link">Writing interrupt handlers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Maximising MicroPython speed </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Maximising MicroPython speed</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#reference-speed-python--page-root" class="md-nav__link">Maximising MicroPython speed</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#designing-for-speed" class="md-nav__link">Designing for speed</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#algorithms" class="md-nav__link">Algorithms</a>
+        </li>
+        <li class="md-nav__item"><a href="#ram-allocation" class="md-nav__link">RAM allocation</a>
+        </li>
+        <li class="md-nav__item"><a href="#buffers" class="md-nav__link">Buffers</a>
+        </li>
+        <li class="md-nav__item"><a href="#floating-point" class="md-nav__link">Floating point</a>
+        </li>
+        <li class="md-nav__item"><a href="#arrays" class="md-nav__link">Arrays</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#identifying-the-slowest-section-of-code" class="md-nav__link">Identifying the slowest section of code</a>
+        </li>
+        <li class="md-nav__item"><a href="#micropython-code-improvements" class="md-nav__link">MicroPython code improvements</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#the-const-declaration" class="md-nav__link">The const() declaration</a>
+        </li>
+        <li class="md-nav__item"><a href="#caching-object-references" class="md-nav__link">Caching object references</a>
+        </li>
+        <li class="md-nav__item"><a href="#controlling-garbage-collection" class="md-nav__link">Controlling garbage collection</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#the-native-code-emitter" class="md-nav__link">The Native code emitter</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-viper-code-emitter" class="md-nav__link">The Viper code emitter</a>
+        </li>
+        <li class="md-nav__item"><a href="#accessing-hardware-directly" class="md-nav__link">Accessing hardware directly</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#designing-for-speed" class="md-nav__link">Designing for speed</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#algorithms" class="md-nav__link">Algorithms</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#ram-allocation" class="md-nav__link">RAM allocation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#buffers" class="md-nav__link">Buffers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#floating-point" class="md-nav__link">Floating point</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#arrays" class="md-nav__link">Arrays</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#identifying-the-slowest-section-of-code" class="md-nav__link">Identifying the slowest section of code</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#micropython-code-improvements" class="md-nav__link">MicroPython code improvements</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#the-const-declaration" class="md-nav__link">The const() declaration</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#caching-object-references" class="md-nav__link">Caching object references</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#controlling-garbage-collection" class="md-nav__link">Controlling garbage collection</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#the-native-code-emitter" class="md-nav__link">The Native code emitter</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#the-viper-code-emitter" class="md-nav__link">The Viper code emitter</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#accessing-hardware-directly" class="md-nav__link">Accessing hardware directly</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="constrained.html" class="md-nav__link">MicroPython on microcontrollers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="manifest.html" class="md-nav__link">MicroPython manifest files</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="packages.html" class="md-nav__link">Distribution packages, package management, and deploying applications</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="asm_thumb2_index.html" class="md-nav__link">Inline assembler for Thumb2 architectures</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="filesystem.html" class="md-nav__link">Working with filesystems</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="pyboard.py.html" class="md-nav__link">The pyboard.py tool</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -258,7 +486,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -698,7 +926,7 @@ can be performed as follows:</p>
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

@@ -47,7 +47,7 @@
   
   
   
-    <title>Quick reference for the Zephyr port &#8212; MicroPython 1.18 文档</title>
+    <title>Zephyr 适配的快速参考 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -59,14 +59,14 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="Zephyr 适配的通用信息" href="general.html" />
+    <link rel="next" title="Zephyr 适配信息概要" href="general.html" />
     <link rel="prev" title="Quick reference for the UNIX and Windows ports" href="../unix/quickref.html" />
   
    
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Quick reference for the Zephyr port </span>
+          <span class="md-header-nav__topic"> Zephyr 适配的快速参考 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -258,37 +258,107 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Quick reference for the Zephyr port </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Zephyr 适配的快速参考 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Quick reference for the Zephyr port</a>
+      <a href="#" class="md-nav__link md-nav__link--active">Zephyr 适配的快速参考</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#zephyr-quickref--page-root" class="md-nav__link">Quick reference for the Zephyr port</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#zephyr-quickref--page-root" class="md-nav__link">Zephyr 适配的快速参考</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#running-micropython" class="md-nav__link">Running MicroPython</a>
+        <li class="md-nav__item"><a href="#running-micropython" class="md-nav__link">运行 MicroPython</a>
         </li>
-        <li class="md-nav__item"><a href="#delay-and-timing" class="md-nav__link">Delay and timing</a>
+        <li class="md-nav__item"><a href="#delay-and-timing" class="md-nav__link">延迟与计时</a>
         </li>
-        <li class="md-nav__item"><a href="#pins-and-gpio" class="md-nav__link">Pins and GPIO</a>
+        <li class="md-nav__item"><a href="#pins-and-gpio" class="md-nav__link">Pins 与 GPIO</a>
         </li>
-        <li class="md-nav__item"><a href="#hardware-i2c-bus" class="md-nav__link">Hardware I2C bus</a>
+        <li class="md-nav__item"><a href="#hardware-i2c-bus" class="md-nav__link">硬件 I2C 总线</a>
         </li>
-        <li class="md-nav__item"><a href="#hardware-spi-bus" class="md-nav__link">Hardware SPI bus</a>
+        <li class="md-nav__item"><a href="#hardware-spi-bus" class="md-nav__link">硬件 SPI 总线</a>
         </li>
-        <li class="md-nav__item"><a href="#disk-access" class="md-nav__link">Disk Access</a>
+        <li class="md-nav__item"><a href="#disk-access" class="md-nav__link">存储访问</a>
         </li>
-        <li class="md-nav__item"><a href="#flash-area" class="md-nav__link">Flash Area</a>
+        <li class="md-nav__item"><a href="#flash-area" class="md-nav__link">Flash 空间</a>
         </li>
-        <li class="md-nav__item"><a href="#sensor" class="md-nav__link">Sensor</a>
+        <li class="md-nav__item"><a href="#sensor" class="md-nav__link">传感器</a>
         </li></ul>
             </nav>
         </li>
   </ul>
 </nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="general.html" class="md-nav__link">Zephyr 适配信息概要</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial/index.html" class="md-nav__link">MicroPython tutorial for the Zephyr port</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#running-micropython" class="md-nav__link">运行 MicroPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#delay-and-timing" class="md-nav__link">延迟与计时</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#pins-and-gpio" class="md-nav__link">Pins 与 GPIO</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#hardware-i2c-bus" class="md-nav__link">硬件 I2C 总线</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#hardware-spi-bus" class="md-nav__link">硬件 SPI 总线</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#disk-access" class="md-nav__link">存储访问</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#flash-area" class="md-nav__link">Flash 空间</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#sensor" class="md-nav__link">传感器</a>
+      
+    
+    </li></ul>
     
     </li>
   </ul>
@@ -305,23 +375,23 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#zephyr-quickref--page-root" class="md-nav__link">Quick reference for the Zephyr port</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#zephyr-quickref--page-root" class="md-nav__link">Zephyr 适配的快速参考</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#running-micropython" class="md-nav__link">Running MicroPython</a>
+        <li class="md-nav__item"><a href="#running-micropython" class="md-nav__link">运行 MicroPython</a>
         </li>
-        <li class="md-nav__item"><a href="#delay-and-timing" class="md-nav__link">Delay and timing</a>
+        <li class="md-nav__item"><a href="#delay-and-timing" class="md-nav__link">延迟与计时</a>
         </li>
-        <li class="md-nav__item"><a href="#pins-and-gpio" class="md-nav__link">Pins and GPIO</a>
+        <li class="md-nav__item"><a href="#pins-and-gpio" class="md-nav__link">Pins 与 GPIO</a>
         </li>
-        <li class="md-nav__item"><a href="#hardware-i2c-bus" class="md-nav__link">Hardware I2C bus</a>
+        <li class="md-nav__item"><a href="#hardware-i2c-bus" class="md-nav__link">硬件 I2C 总线</a>
         </li>
-        <li class="md-nav__item"><a href="#hardware-spi-bus" class="md-nav__link">Hardware SPI bus</a>
+        <li class="md-nav__item"><a href="#hardware-spi-bus" class="md-nav__link">硬件 SPI 总线</a>
         </li>
-        <li class="md-nav__item"><a href="#disk-access" class="md-nav__link">Disk Access</a>
+        <li class="md-nav__item"><a href="#disk-access" class="md-nav__link">存储访问</a>
         </li>
-        <li class="md-nav__item"><a href="#flash-area" class="md-nav__link">Flash Area</a>
+        <li class="md-nav__item"><a href="#flash-area" class="md-nav__link">Flash 空间</a>
         </li>
-        <li class="md-nav__item"><a href="#sensor" class="md-nav__link">Sensor</a>
+        <li class="md-nav__item"><a href="#sensor" class="md-nav__link">传感器</a>
         </li></ul>
             </nav>
         </li>
@@ -335,20 +405,20 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="quick-reference-for-the-zephyr-port">
-<span id="zephyr-quickref"></span><h1 id="zephyr-quickref--page-root">Quick reference for the Zephyr port<a class="headerlink" href="#zephyr-quickref--page-root" title="永久链接至标题">¶</a></h1>
-<p>Below is a quick reference for the Zephyr port. If it is your first time working with this port please consider reading the following sections first:</p>
+<span id="zephyr-quickref"></span><h1 id="zephyr-quickref--page-root">Zephyr 适配的快速参考<a class="headerlink" href="#zephyr-quickref--page-root" title="永久链接至标题">¶</a></h1>
+<p>以下是 Zephyr 适配的快速参考。如果这是你第一次用这个适配来工作的话，请考虑先阅读以下章节</p>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="general.html">Zephyr 适配的通用信息</a></li>
+<li class="toctree-l1"><a class="reference internal" href="general.html">Zephyr 适配信息概要</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tutorial/index.html">MicroPython tutorial for the Zephyr port</a></li>
 </ul>
 </div>
 <section id="running-micropython">
-<h2 id="running-micropython">Running MicroPython<a class="headerlink" href="#running-micropython" title="永久链接至标题">¶</a></h2>
+<h2 id="running-micropython">运行 MicroPython<a class="headerlink" href="#running-micropython" title="永久链接至标题">¶</a></h2>
 <p>See the corresponding section of the tutorial: <a class="reference internal" href="../esp8266/tutorial/intro.html#intro"><span class="std std-ref">Getting started with MicroPython on the ESP8266</span></a>.</p>
 </section>
 <section id="delay-and-timing">
-<h2 id="delay-and-timing">Delay and timing<a class="headerlink" href="#delay-and-timing" title="永久链接至标题">¶</a></h2>
+<h2 id="delay-and-timing">延迟与计时<a class="headerlink" href="#delay-and-timing" title="永久链接至标题">¶</a></h2>
 <p>Use the <code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
@@ -361,7 +431,7 @@
 </div>
 </section>
 <section id="pins-and-gpio">
-<h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="永久链接至标题">¶</a></h2>
+<h2 id="pins-and-gpio">Pins 与 GPIO<a class="headerlink" href="#pins-and-gpio" title="永久链接至标题">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
@@ -388,7 +458,7 @@
 </div>
 </section>
 <section id="hardware-i2c-bus">
-<h2 id="hardware-i2c-bus">Hardware I2C bus<a class="headerlink" href="#hardware-i2c-bus" title="永久链接至标题">¶</a></h2>
+<h2 id="hardware-i2c-bus">硬件 I2C 总线<a class="headerlink" href="#hardware-i2c-bus" title="永久链接至标题">¶</a></h2>
 <p>Hardware I2C is accessed via the <a class="reference internal" href="../library/machine.I2C.html#machine-i2c"><span class="std std-ref">machine.I2C</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">I2C</span>
 
@@ -409,7 +479,7 @@
 </div>
 </section>
 <section id="hardware-spi-bus">
-<h2 id="hardware-spi-bus">Hardware SPI bus<a class="headerlink" href="#hardware-spi-bus" title="永久链接至标题">¶</a></h2>
+<h2 id="hardware-spi-bus">硬件 SPI 总线<a class="headerlink" href="#hardware-spi-bus" title="永久链接至标题">¶</a></h2>
 <p>Hardware SPI is accessed via the <a class="reference internal" href="../library/machine.SPI.html#machine-spi"><span class="std std-ref">machine.SPI</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">SPI</span>
 
@@ -436,7 +506,7 @@
 </div>
 </section>
 <section id="disk-access">
-<h2 id="disk-access">Disk Access<a class="headerlink" href="#disk-access" title="永久链接至标题">¶</a></h2>
+<h2 id="disk-access">存储访问<a class="headerlink" href="#disk-access" title="永久链接至标题">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/zephyr.DiskAccess.html#zephyr-diskaccess"><span class="std std-ref">zephyr.DiskAccess</span></a> class to support filesystem:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">zephyr</span> <span class="k">import</span> <span class="n">DiskAccess</span>
@@ -453,7 +523,7 @@
 </div>
 </section>
 <section id="flash-area">
-<h2 id="flash-area">Flash Area<a class="headerlink" href="#flash-area" title="永久链接至标题">¶</a></h2>
+<h2 id="flash-area">Flash 空间<a class="headerlink" href="#flash-area" title="永久链接至标题">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/zephyr.FlashArea.html#zephyr-flasharea"><span class="std std-ref">zephyr.FlashArea</span></a> class to support filesystem:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">zephyr</span> <span class="k">import</span> <span class="n">FlashArea</span>
@@ -470,7 +540,7 @@
 </div>
 </section>
 <section id="sensor">
-<h2 id="sensor">Sensor<a class="headerlink" href="#sensor" title="永久链接至标题">¶</a></h2>
+<h2 id="sensor">传感器<a class="headerlink" href="#sensor" title="永久链接至标题">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/zephyr.zsensor.html#zsensor-sensor"><span class="std std-ref">zsensor.Sensor</span></a> class to access sensor data:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zsensor</span>
 <span class="kn">from</span> <span class="nn">zsensor</span> <span class="k">import</span> <span class="n">Sensor</span>
@@ -513,12 +583,12 @@
             </a>
           
           
-            <a href="general.html" title="Zephyr 适配的通用信息"
+            <a href="general.html" title="Zephyr 适配信息概要"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> Zephyr 适配的通用信息 </span>
+                class="md-footer-nav__direction"> Next </span> Zephyr 适配信息概要 </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
@@ -536,7 +606,7 @@
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

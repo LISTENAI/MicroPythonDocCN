@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -217,7 +217,224 @@
     
     
       <a href="quickref.html" class="md-nav__link">Quick reference for the pyboard</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> General information about the pyboard </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">General information about the pyboard</a>
       
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#pyboard-general--page-root" class="md-nav__link">General information about the pyboard</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#local-filesystem-and-sd-card" class="md-nav__link">Local filesystem and SD card</a>
+        </li>
+        <li class="md-nav__item"><a href="#boot-modes" class="md-nav__link">Boot modes</a>
+        </li>
+        <li class="md-nav__item"><a href="#errors-flashing-leds" class="md-nav__link">Errors: flashing LEDs</a>
+        </li>
+        <li class="md-nav__item"><a href="#guide-for-using-the-pyboard-with-windows" class="md-nav__link">Guide for using the pyboard with Windows</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-pyboard-hardware" class="md-nav__link">The pyboard hardware</a>
+        </li>
+        <li class="md-nav__item"><a href="#datasheets-for-the-components-on-the-pyboard" class="md-nav__link">Datasheets for the components on the pyboard</a>
+        </li>
+        <li class="md-nav__item"><a href="#datasheets-for-other-components" class="md-nav__link">Datasheets for other components</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#local-filesystem-and-sd-card" class="md-nav__link">Local filesystem and SD card</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#boot-modes" class="md-nav__link">Boot modes</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#errors-flashing-leds" class="md-nav__link">Errors: flashing LEDs</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#guide-for-using-the-pyboard-with-windows" class="md-nav__link">Guide for using the pyboard with Windows</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#the-pyboard-hardware" class="md-nav__link">The pyboard hardware</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#datasheets-for-the-components-on-the-pyboard" class="md-nav__link">Datasheets for the components on the pyboard</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#datasheets-for-other-components" class="md-nav__link">Datasheets for other components</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="tutorial/index.html" class="md-nav__link">MicroPython tutorial for the pyboard</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#general-board-control" class="md-nav__link">General board control</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#delay-and-timing" class="md-nav__link">Delay and timing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#internal-leds" class="md-nav__link">Internal LEDs</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#internal-switch" class="md-nav__link">Internal switch</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#pins-and-gpio" class="md-nav__link">Pins and GPIO</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#servo-control" class="md-nav__link">Servo control</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#external-interrupts" class="md-nav__link">External interrupts</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#timers" class="md-nav__link">Timers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#rtc-real-time-clock" class="md-nav__link">RTC (real time clock)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#pwm-pulse-width-modulation" class="md-nav__link">PWM (pulse width modulation)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#adc-analog-to-digital-conversion" class="md-nav__link">ADC (analog to digital conversion)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#dac-digital-to-analog-conversion" class="md-nav__link">DAC (digital to analog conversion)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#uart-serial-bus" class="md-nav__link">UART (serial bus)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#spi-bus" class="md-nav__link">SPI bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#i2c-bus" class="md-nav__link">I2C bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#i2s-bus" class="md-nav__link">I2S bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#can-bus-controller-area-network" class="md-nav__link">CAN bus (controller area network)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="quickref.html#internal-accelerometer" class="md-nav__link">Internal accelerometer</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -258,7 +475,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -480,7 +697,7 @@ DFU programming:
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

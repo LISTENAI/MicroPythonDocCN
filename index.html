@@ -63,7 +63,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -254,7 +254,7 @@
     <li class="md-nav__item">
     
     
-      <a href="zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -281,123 +281,123 @@
           <article class="md-content__inner md-typeset" role="main">
             
 
-  <h1>MicroPython documentation</h1>
+  <h1>MicroPython 文档</h1>
 
   <p>
     欢迎！这里是 MicroPython 的文档
-    v1.18, 最近更新 10 2月 2022.
+    v1.18, 最近更新 11 2月 2022.
   </p>
 
   <p>
-    MicroPython runs on a variety of systems and hardware platforms.  Here you can read
-    the general documentation which applies to all systems, as well as specific information
-    about the various platforms -
-    also known as <a href="reference/glossary.html#term-micropython-port">ports</a>
-    - that MicroPython runs on.
+    MicroPython 能在各种系统和硬件平台上运行。在这里你可以阅读适用于所有系统的通用文档，以及有关各种平台特有的信息，也称之为 MicroPython 可运行的 <a id="reference_glossary">适配（ports）</a>
   </p>
+  <script>
+    const refer = document.querySelector('a#reference_glossary');
+    refer.href='reference/glossary.html#term-micropython-port';
+  </script>
 
-  <p><strong>General documentation for MicroPython:</strong></p>
+  <p><strong>MicroPython 文档概要:</strong></p>
 
   <table class="contentstable"><tr>
     <td width="40%" style="padding-left:2em;">
       <p class="biglink">
-        <a class="biglink" href="library/index.html">Library Reference</a><br/>
-        <span class="linkdescr">MicroPython libraries and modules</span>
+        <a class="biglink" href="library/index.html">库参考</a><br/>
+        <span class="linkdescr">MicroPython 可用的库和模块</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="genrst/index.html">MicroPython Differences</a><br/>
-        <span class="linkdescr">MicroPython operations which differ from CPython</span>
+        <a class="biglink" href="genrst/index.html">MicroPython 的不同之处</a><br/>
+        <span class="linkdescr">MicroPython 中与 CPython 不同的做法</span>
       </p>
     </td>
     <td width="40%" style="padding-left:2em;">
       <p class="biglink">
-        <a class="biglink" href="reference/index.html">Language Reference</a><br/>
-        <span class="linkdescr">information about MicroPython specific language features</span>
+        <a class="biglink" href="reference/index.html">语言特性参考</a><br/>
+        <span class="linkdescr">关于 MicroPython 特有的语言特性参考</span>
       </p>
       <p class="biglink">
         <a class="biglink" href="license.html">License</a><br/>
-        <span class="linkdescr">MicroPython license information</span>
+        <span class="linkdescr">MicroPython 开源协议</span>
       </p>
     </td>
   </tr></table>
 
-  <p><strong>References and tutorials for specific platforms:</strong></p>
+  <p><strong>特定平台的参考与指南:</strong></p>
 
   <table class="contentstable"><tr>
     <td width="40%" style="padding-left:2em;">
       <p class="biglink">
-        <a class="biglink" href="pyboard/quickref.html">Quick reference for the pyboard</a><br/>
-        <span class="linkdescr">pinout for the pyboard, snippets of useful code, and a tutorial</span>
+        <a class="biglink" href="pyboard/quickref.html">pyboard 的快速参考</a><br/>
+        <span class="linkdescr">pyboard 的引脚分配、有用的代码片段和教程</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="esp8266/quickref.html">Quick reference for the ESP8266</a><br/>
-        <span class="linkdescr">pinout for ESP8266-based boards, snippets of useful code, and a tutorial</span>
+        <a class="biglink" href="esp8266/quickref.html">ESP8266 的快速参考</a><br/>
+        <span class="linkdescr">基于 ESP8266 开发板的引脚分配、有用的代码片段和教程</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="esp32/quickref.html">Quick reference for the ESP32</a><br/>
-        <span class="linkdescr">pinout for ESP32-based boards, snippets of useful code, and a tutorial</span>
+        <a class="biglink" href="esp32/quickref.html">ESP32 的快速参考</a><br/>
+        <span class="linkdescr">基于 ESP32 开发板的引脚分配、有用的代码片段和教程</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="rp2/quickref.html">Quick reference for the Raspberry Pi RP2xxx</a><br/>
-        <span class="linkdescr">pinout for rp2xxx-based boards, snippets of useful code, and a tutorial</span>
+        <a class="biglink" href="rp2/quickref.html">树莓派 RP2xxx 系的快速参考</a><br/>
+        <span class="linkdescr">基于 RP2xxx 系列开发板的引脚分配、有用的代码片段和教程</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="wipy/quickref.html">Quick reference for the WiPy/CC3200</a><br/>
-        <span class="linkdescr">pinout for the WiPy/CC3200, snippets of useful code, and a tutorial</span>
+        <a class="biglink" href="wipy/quickref.html">WiPy/CC3200 的快速参考</a><br/>
+        <span class="linkdescr">基于 WiPy/CC3200 系列开发板的引脚分配、有用的代码片段和教程</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="unix/quickref.html">Quick reference for UNIX and Windows</a><br/>
-        <span class="linkdescr">command-line reference</span>
+        <a class="biglink" href="unix/quickref.html">UNIX 和 Windows 的快速参考</a><br/>
+        <span class="linkdescr">命令行工具使用参考</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="zephyr/quickref.html">Quick reference for the Zephyr port</a><br/>
-        <span class="linkdescr">snippets of useful code and a tutorial</span>
+        <a class="biglink" href="zephyr/quickref.html">Zephyr 适配的快速参考</a><br/>
+        <span class="linkdescr">一些有用的代码片段和教程</span>
       </p>
     </td>
   </tr></table>
 
-  <p><strong>Indices and tables:</strong></p>
+  <p><strong>索引与清单:</strong></p>
 
   <table class="contentstable"><tr>
     <td width="40%" style="padding-left:2em;">
       <p class="biglink">
-        <a class="biglink" href="py-modindex.html">Module index</a><br/>
-        <span class="linkdescr">quick access to all modules</span>
+        <a class="biglink" href="py-modindex.html">模块索引</a><br/>
+        <span class="linkdescr">快速查看所有的模块</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="genindex.html">Full index</a><br/>
-        <span class="linkdescr">all functions, classes, constants</span>
+        <a class="biglink" href="genindex.html">全量索引</a><br/>
+        <span class="linkdescr">查看所有的函数、类、常量定义</span>
       </p>
     </td>
     <td width="40%" style="padding-left:2em;">
       <p class="biglink">
-        <a class="biglink" href="reference/glossary.html">Glossary</a><br/>
-        <span class="linkdescr">MicroPython terms explained</span>
+        <a class="biglink" href="reference/glossary.html">术语概述</a><br/>
+        <span class="linkdescr">MicroPython 术语解释</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="#">Table of contents</a><br/>
-        <span class="linkdescr">a list of all sections and subsections</span>
+        <a class="biglink" href="#">目录</a><br/>
+        <span class="linkdescr">所有章节及子章节的列表</span>
       </p>
     </td></tr>
   </table>
 
-  <p><strong>External links:</strong></p>
+  <p><strong>外链:</strong></p>
 
   <table class="contentstable"><tr>
     <td width="40%" style="padding-left:2em;">
       <p class="biglink">
-      <a class="biglink" href="http://micropython.org">MicroPython homepage</a><br/>
-        <span class="linkdescr">the official MicroPython site</span>
+      <a class="biglink" href="http://micropython.org">MicroPython 主页</a><br/>
+        <span class="linkdescr">MicroPython 官方网站</span>
       </p>
       <p class="biglink">
-        <a class="biglink" href="http://forum.micropython.org">MicroPython forum</a><br/>
-        <span class="linkdescr">community discussion for all things related to MicroPython</span>
+        <a class="biglink" href="http://forum.micropython.org">MicroPython 论坛</a><br/>
+        <span class="linkdescr">有关 MicroPython 一切的社区讨论</span>
       </p>
     </td>
     <td width="40%" style="padding-left:2em;">
       <p class="biglink">
-        <a class="biglink" href="https://github.com/micropython">MicroPython on GitHub</a><br/>
-        <span class="linkdescr">contribute to the source code on GitHub</span>
+        <a class="biglink" href="https://github.com/micropython">在 GitHub 上访问 MicroPython</a><br/>
+        <span class="linkdescr">在 GitHub 上贡献源代码</span>
       </p>
     </td>
   </tr></table>
@@ -425,7 +425,7 @@
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

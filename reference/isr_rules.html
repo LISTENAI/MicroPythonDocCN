@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -189,7 +189,253 @@
     
     
       <a href="index.html" class="md-nav__link">MicroPython language and implementation</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="glossary.html" class="md-nav__link">Glossary</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="repl.html" class="md-nav__link">The MicroPython Interactive Interpreter Mode (aka REPL)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="mpremote.html" class="md-nav__link">MicroPython remote control: mpremote</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="mpyfiles.html" class="md-nav__link">MicroPython .mpy files</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Writing interrupt handlers </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Writing interrupt handlers</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#reference-isr-rules--page-root" class="md-nav__link">Writing interrupt handlers</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#tips-and-recommended-practices" class="md-nav__link">Tips and recommended practices</a>
+        </li>
+        <li class="md-nav__item"><a href="#micropython-issues" class="md-nav__link">MicroPython issues</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#the-emergency-exception-buffer" class="md-nav__link">The emergency exception buffer</a>
+        </li>
+        <li class="md-nav__item"><a href="#simplicity" class="md-nav__link">Simplicity</a>
+        </li>
+        <li class="md-nav__item"><a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">Communication between an ISR and the main program</a>
+        </li>
+        <li class="md-nav__item"><a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">The use of object methods as callbacks</a>
+        </li>
+        <li class="md-nav__item"><a href="#creation-of-python-objects" class="md-nav__link">Creation of Python objects</a>
+        </li>
+        <li class="md-nav__item"><a href="#use-of-python-objects" class="md-nav__link">Use of Python objects</a>
+        </li>
+        <li class="md-nav__item"><a href="#overcoming-the-float-limitation" class="md-nav__link">Overcoming the float limitation</a>
+        </li>
+        <li class="md-nav__item"><a href="#using-micropython-schedule" class="md-nav__link">Using micropython.schedule</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#exceptions" class="md-nav__link">Exceptions</a>
+        </li>
+        <li class="md-nav__item"><a href="#general-issues" class="md-nav__link">General issues</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#interrupt-handler-design" class="md-nav__link">Interrupt handler design</a>
+        </li>
+        <li class="md-nav__item"><a href="#reentrancy" class="md-nav__link">Reentrancy</a>
+        </li>
+        <li class="md-nav__item"><a href="#critical-sections" class="md-nav__link">Critical sections</a>
+        </li>
+        <li class="md-nav__item"><a href="#interrupts-and-the-repl" class="md-nav__link">Interrupts and the REPL</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#tips-and-recommended-practices" class="md-nav__link">Tips and recommended practices</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#micropython-issues" class="md-nav__link">MicroPython issues</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#the-emergency-exception-buffer" class="md-nav__link">The emergency exception buffer</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#simplicity" class="md-nav__link">Simplicity</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">Communication between an ISR and the main program</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">The use of object methods as callbacks</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#creation-of-python-objects" class="md-nav__link">Creation of Python objects</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#use-of-python-objects" class="md-nav__link">Use of Python objects</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#overcoming-the-float-limitation" class="md-nav__link">Overcoming the float limitation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#using-micropython-schedule" class="md-nav__link">Using micropython.schedule</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#exceptions" class="md-nav__link">Exceptions</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#general-issues" class="md-nav__link">General issues</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#interrupt-handler-design" class="md-nav__link">Interrupt handler design</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#reentrancy" class="md-nav__link">Reentrancy</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#critical-sections" class="md-nav__link">Critical sections</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#interrupts-and-the-repl" class="md-nav__link">Interrupts and the REPL</a>
+      
+    
+    </li></ul>
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="speed_python.html" class="md-nav__link">Maximising MicroPython speed</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="constrained.html" class="md-nav__link">MicroPython on microcontrollers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="manifest.html" class="md-nav__link">MicroPython manifest files</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="packages.html" class="md-nav__link">Distribution packages, package management, and deploying applications</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="asm_thumb2_index.html" class="md-nav__link">Inline assembler for Thumb2 architectures</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="filesystem.html" class="md-nav__link">Working with filesystems</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="pyboard.py.html" class="md-nav__link">The pyboard.py tool</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -258,7 +504,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -703,7 +949,7 @@ reset with <code class="docutils literal notranslate"><span class="pre">ctrl</sp
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

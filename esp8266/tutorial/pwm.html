@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -225,7 +225,305 @@
     
     
       <a href="../quickref.html" class="md-nav__link">Quick reference for the ESP8266</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../general.html" class="md-nav__link">General information about the ESP8266 port</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">MicroPython tutorial for ESP8266</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="intro.html" class="md-nav__link">1. Getting started with MicroPython on the ESP8266</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="repl.html" class="md-nav__link">2. Getting a MicroPython REPL prompt</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="filesystem.html" class="md-nav__link">3. The internal filesystem</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="network_basics.html" class="md-nav__link">4. Network basics</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="network_tcp.html" class="md-nav__link">5. Network - TCP sockets</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="pins.html" class="md-nav__link">6. GPIO Pins</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 7. Pulse Width Modulation </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">7. Pulse Width Modulation</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#esp8266-tutorial-pwm--page-root" class="md-nav__link">7. Pulse Width Modulation</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#fading-an-led" class="md-nav__link">7.1. Fading an LED</a>
+        </li>
+        <li class="md-nav__item"><a href="#control-a-hobby-servo" class="md-nav__link">7.2. Control a hobby servo</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#fading-an-led" class="md-nav__link">7.1. Fading an LED</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#control-a-hobby-servo" class="md-nav__link">7.2. Control a hobby servo</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="adc.html" class="md-nav__link">8. Analog to Digital Conversion</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="powerctrl.html" class="md-nav__link">9. Power control</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="onewire.html" class="md-nav__link">10. Controlling 1-wire devices</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="neopixel.html" class="md-nav__link">11. Controlling NeoPixels</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="apa102.html" class="md-nav__link">12. Controlling APA102 LEDs</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="dht.html" class="md-nav__link">13. Temperature and Humidity</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="ssd1306.html" class="md-nav__link">14. Using a SSD1306 OLED display</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="nextsteps.html" class="md-nav__link">15. Next steps</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#installing-micropython" class="md-nav__link">Installing MicroPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#general-board-control" class="md-nav__link">General board control</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#networking" class="md-nav__link">Networking</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#delay-and-timing" class="md-nav__link">Delay and timing</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#timers" class="md-nav__link">Timers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#pins-and-gpio" class="md-nav__link">Pins and GPIO</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#uart-serial-bus" class="md-nav__link">UART (serial bus)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#pwm-pulse-width-modulation" class="md-nav__link">PWM (pulse width modulation)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#adc-analog-to-digital-conversion" class="md-nav__link">ADC (analog to digital conversion)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#software-spi-bus" class="md-nav__link">Software SPI bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#hardware-spi-bus" class="md-nav__link">Hardware SPI bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#i2c-bus" class="md-nav__link">I2C bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#real-time-clock-rtc" class="md-nav__link">Real time clock (RTC)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#wdt-watchdog-timer" class="md-nav__link">WDT (Watchdog timer)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#deep-sleep-mode" class="md-nav__link">Deep-sleep mode</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#onewire-driver" class="md-nav__link">OneWire driver</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#neopixel-driver" class="md-nav__link">NeoPixel driver</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#apa102-driver" class="md-nav__link">APA102 driver</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#dht-driver" class="md-nav__link">DHT driver</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#ssd1306-driver" class="md-nav__link">SSD1306 driver</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#webrepl-web-browser-interactive-prompt" class="md-nav__link">WebREPL (web browser interactive prompt)</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -259,7 +557,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -425,7 +723,7 @@ to pin 12 (other pins will work just as well), you can control the motor using:<
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

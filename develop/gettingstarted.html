@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -203,7 +203,199 @@
     
     
       <a href="index.html" class="md-nav__link">MicroPython Internals</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Getting Started </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Getting Started</a>
       
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#develop-gettingstarted--page-root" class="md-nav__link">Getting Started</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#source-control-with-git" class="md-nav__link">Source control with git</a>
+        </li>
+        <li class="md-nav__item"><a href="#get-the-code" class="md-nav__link">Get the code</a>
+        </li>
+        <li class="md-nav__item"><a href="#compile-and-build-the-code" class="md-nav__link">Compile and build the code</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#required-dependencies" class="md-nav__link">Required dependencies</a>
+        </li>
+        <li class="md-nav__item"><a href="#building-the-micropython-cross-compiler" class="md-nav__link">Building the MicroPython cross-compiler</a>
+        </li>
+        <li class="md-nav__item"><a href="#building-the-unix-port-of-micropython" class="md-nav__link">Building the Unix port of MicroPython</a>
+        </li>
+        <li class="md-nav__item"><a href="#building-the-windows-port" class="md-nav__link">Building the Windows port</a>
+        </li>
+        <li class="md-nav__item"><a href="#building-the-stm32-port" class="md-nav__link">Building the STM32 port</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#building-the-documentation" class="md-nav__link">Building the documentation</a>
+        </li>
+        <li class="md-nav__item"><a href="#running-the-tests" class="md-nav__link">Running the tests</a>
+        </li>
+        <li class="md-nav__item"><a href="#folder-structure" class="md-nav__link">Folder structure</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#source-control-with-git" class="md-nav__link">Source control with git</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#get-the-code" class="md-nav__link">Get the code</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#compile-and-build-the-code" class="md-nav__link">Compile and build the code</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#required-dependencies" class="md-nav__link">Required dependencies</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#building-the-micropython-cross-compiler" class="md-nav__link">Building the MicroPython cross-compiler</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#building-the-unix-port-of-micropython" class="md-nav__link">Building the Unix port of MicroPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#building-the-windows-port" class="md-nav__link">Building the Windows port</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#building-the-stm32-port" class="md-nav__link">Building the STM32 port</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#building-the-documentation" class="md-nav__link">Building the documentation</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#running-the-tests" class="md-nav__link">Running the tests</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#folder-structure" class="md-nav__link">Folder structure</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="writingtests.html" class="md-nav__link">Writing tests</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="compiler.html" class="md-nav__link">The Compiler</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="memorymgt.html" class="md-nav__link">Memory Management</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="library.html" class="md-nav__link">Implementing a Module</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="optimizations.html" class="md-nav__link">Optimizations</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="qstr.html" class="md-nav__link">MicroPython string interning</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="maps.html" class="md-nav__link">Maps and Dictionaries</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="publiccapi.html" class="md-nav__link">The public C API</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="porting.html" class="md-nav__link">Porting MicroPython</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -258,7 +450,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -636,7 +828,7 @@ are. The following is a break down of the top-level folders in the source code.<
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

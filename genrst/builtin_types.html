@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -196,7 +196,390 @@
     
     
       <a href="index.html" class="md-nav__link">MicroPython differences from CPython</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_35.html" class="md-nav__link">Python 3.5</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_36.html" class="md-nav__link">Python 3.6</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_37.html" class="md-nav__link">Python 3.7</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_38.html" class="md-nav__link">Python 3.8</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../differences/python_39.html" class="md-nav__link">Python 3.9</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="syntax.html" class="md-nav__link">Syntax</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="core_language.html" class="md-nav__link">Core language</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Builtin types </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Builtin types</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#genrst-builtin-types--page-root" class="md-nav__link">Builtin types</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#exception" class="md-nav__link">Exception</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror" class="md-nav__link">All exceptions have readable <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">errno</span></code> attributes, not just <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> and <code class="docutils literal notranslate"><span class="pre">OSError</span></code>.</a>
+        </li>
+        <li class="md-nav__item"><a href="#exception-chaining-not-implemented" class="md-nav__link">Exception chaining not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#user-defined-attributes-for-builtin-exceptions-are-not-supported" class="md-nav__link">User-defined attributes for builtin exceptions are not supported</a>
+        </li>
+        <li class="md-nav__item"><a href="#exception-in-while-loop-condition-may-have-unexpected-line-number" class="md-nav__link">Exception in while loop condition may have unexpected line number</a>
+        </li>
+        <li class="md-nav__item"><a href="#exception-init-method-does-not-exist" class="md-nav__link">Exception.__init__ method does not exist.</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#bytearray" class="md-nav__link">bytearray</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#array-slice-assignment-with-unsupported-rhs" class="md-nav__link">Array slice assignment with unsupported RHS</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#bytes" class="md-nav__link">bytes</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#bytes-objects-support-format-method" class="md-nav__link">bytes objects support .format() method</a>
+        </li>
+        <li class="md-nav__item"><a href="#bytes-with-keywords-not-implemented" class="md-nav__link">bytes() with keywords not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#bytes-subscription-with-step-1-not-implemented" class="md-nav__link">Bytes subscription with step != 1 not implemented</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#dict" class="md-nav__link">dict</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#dictionary-keys-view-does-not-behave-as-a-set" class="md-nav__link">Dictionary keys view does not behave as a set.</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#float" class="md-nav__link">float</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#upy-and-cpython-outputs-formats-may-differ" class="md-nav__link">uPy and CPython outputs formats may differ</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#int" class="md-nav__link">int</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#bit-length-method-doesn-t-exist" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">bit_length</span></code> method doesn’t exist.</a>
+        </li>
+        <li class="md-nav__item"><a href="#no-int-conversion-for-int-derived-types-available" class="md-nav__link">No int conversion for int-derived types available</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#list" class="md-nav__link">list</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#list-delete-with-step-1-not-implemented" class="md-nav__link">List delete with step != 1 not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#list-slice-store-with-non-iterable-on-rhs-is-not-implemented" class="md-nav__link">List slice-store with non-iterable on RHS is not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#list-store-with-step-1-not-implemented" class="md-nav__link">List store with step != 1 not implemented</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#str" class="md-nav__link">str</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#start-end-indices-such-as-str-endswith-s-start-not-implemented" class="md-nav__link">Start/end indices such as str.endswith(s, start) not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#attributes-subscr-not-implemented" class="md-nav__link">Attributes/subscr not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#str-with-keywords-not-implemented" class="md-nav__link">str(…) with keywords not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#str-ljust-and-str-rjust-not-implemented" class="md-nav__link">str.ljust() and str.rjust() not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#none-as-first-argument-for-rsplit-such-as-str-rsplit-none-n-not-implemented" class="md-nav__link">None as first argument for rsplit such as str.rsplit(None, n) not implemented</a>
+        </li>
+        <li class="md-nav__item"><a href="#subscript-with-step-1-is-not-yet-implemented" class="md-nav__link">Subscript with step != 1 is not yet implemented</a>
+        </li></ul>
+            </nav>
+        </li>
+        <li class="md-nav__item"><a href="#tuple" class="md-nav__link">tuple</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#tuple-load-with-step-1-not-implemented" class="md-nav__link">Tuple load with step != 1 not implemented</a>
+        </li></ul>
+            </nav>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#exception" class="md-nav__link">Exception</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror" class="md-nav__link">All exceptions have readable <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">errno</span></code> attributes, not just <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> and <code class="docutils literal notranslate"><span class="pre">OSError</span></code>.</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#exception-chaining-not-implemented" class="md-nav__link">Exception chaining not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#user-defined-attributes-for-builtin-exceptions-are-not-supported" class="md-nav__link">User-defined attributes for builtin exceptions are not supported</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#exception-in-while-loop-condition-may-have-unexpected-line-number" class="md-nav__link">Exception in while loop condition may have unexpected line number</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#exception-init-method-does-not-exist" class="md-nav__link">Exception.__init__ method does not exist.</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#bytearray" class="md-nav__link">bytearray</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#array-slice-assignment-with-unsupported-rhs" class="md-nav__link">Array slice assignment with unsupported RHS</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#bytes" class="md-nav__link">bytes</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#bytes-objects-support-format-method" class="md-nav__link">bytes objects support .format() method</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#bytes-with-keywords-not-implemented" class="md-nav__link">bytes() with keywords not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#bytes-subscription-with-step-1-not-implemented" class="md-nav__link">Bytes subscription with step != 1 not implemented</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#dict" class="md-nav__link">dict</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#dictionary-keys-view-does-not-behave-as-a-set" class="md-nav__link">Dictionary keys view does not behave as a set.</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#float" class="md-nav__link">float</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#upy-and-cpython-outputs-formats-may-differ" class="md-nav__link">uPy and CPython outputs formats may differ</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#int" class="md-nav__link">int</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#bit-length-method-doesn-t-exist" class="md-nav__link"><code class="docutils literal notranslate"><span class="pre">bit_length</span></code> method doesn’t exist.</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#no-int-conversion-for-int-derived-types-available" class="md-nav__link">No int conversion for int-derived types available</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#list" class="md-nav__link">list</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#list-delete-with-step-1-not-implemented" class="md-nav__link">List delete with step != 1 not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#list-slice-store-with-non-iterable-on-rhs-is-not-implemented" class="md-nav__link">List slice-store with non-iterable on RHS is not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#list-store-with-step-1-not-implemented" class="md-nav__link">List store with step != 1 not implemented</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#str" class="md-nav__link">str</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#start-end-indices-such-as-str-endswith-s-start-not-implemented" class="md-nav__link">Start/end indices such as str.endswith(s, start) not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#attributes-subscr-not-implemented" class="md-nav__link">Attributes/subscr not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#str-with-keywords-not-implemented" class="md-nav__link">str(…) with keywords not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#str-ljust-and-str-rjust-not-implemented" class="md-nav__link">str.ljust() and str.rjust() not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#none-as-first-argument-for-rsplit-such-as-str-rsplit-none-n-not-implemented" class="md-nav__link">None as first argument for rsplit such as str.rsplit(None, n) not implemented</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#subscript-with-step-1-is-not-yet-implemented" class="md-nav__link">Subscript with step != 1 is not yet implemented</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#tuple" class="md-nav__link">tuple</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#tuple-load-with-step-1-not-implemented" class="md-nav__link">Tuple load with step != 1 not implemented</a>
+      
+    
+    </li></ul>
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="modules.html" class="md-nav__link">Modules</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -258,7 +641,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -373,7 +756,7 @@
             
   <section id="builtin-types">
 <h1 id="genrst-builtin-types--page-root">Builtin types<a class="headerlink" href="#genrst-builtin-types--page-root" title="永久链接至标题">¶</a></h1>
-<p>Generated Thu 10 Feb 2022 10:18:47 UTC</p>
+<p>Generated Fri 11 Feb 2022 10:54:31 UTC</p>
 <section id="exception">
 <h2 id="exception">Exception<a class="headerlink" href="#exception" title="永久链接至标题">¶</a></h2>
 <section id="all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror">
@@ -1144,7 +1527,7 @@
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

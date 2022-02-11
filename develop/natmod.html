@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -204,7 +204,166 @@
     
     
       <a href="index.html" class="md-nav__link">MicroPython Internals</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="gettingstarted.html" class="md-nav__link">Getting Started</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="writingtests.html" class="md-nav__link">Writing tests</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="compiler.html" class="md-nav__link">The Compiler</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="memorymgt.html" class="md-nav__link">Memory Management</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="library.html" class="md-nav__link">Implementing a Module</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="optimizations.html" class="md-nav__link">Optimizations</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="qstr.html" class="md-nav__link">MicroPython string interning</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="maps.html" class="md-nav__link">Maps and Dictionaries</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="publiccapi.html" class="md-nav__link">The public C API</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="cmodules.html" class="md-nav__link">MicroPython external C modules</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> Native machine code in .mpy files </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">Native machine code in .mpy files</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#develop-natmod--page-root" class="md-nav__link">Native machine code in .mpy files</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#supported-features-and-limitations" class="md-nav__link">Supported features and limitations</a>
+        </li>
+        <li class="md-nav__item"><a href="#defining-a-native-module" class="md-nav__link">Defining a native module</a>
+        </li>
+        <li class="md-nav__item"><a href="#minimal-example" class="md-nav__link">Minimal example</a>
+        </li>
+        <li class="md-nav__item"><a href="#compiling-the-module" class="md-nav__link">Compiling the module</a>
+        </li>
+        <li class="md-nav__item"><a href="#module-usage-in-micropython" class="md-nav__link">Module usage in MicroPython</a>
+        </li>
+        <li class="md-nav__item"><a href="#further-examples" class="md-nav__link">Further examples</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#supported-features-and-limitations" class="md-nav__link">Supported features and limitations</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#defining-a-native-module" class="md-nav__link">Defining a native module</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#minimal-example" class="md-nav__link">Minimal example</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#compiling-the-module" class="md-nav__link">Compiling the module</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#module-usage-in-micropython" class="md-nav__link">Module usage in MicroPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#further-examples" class="md-nav__link">Further examples</a>
+      
+    
+    </li></ul>
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="porting.html" class="md-nav__link">Porting MicroPython</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -259,7 +418,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -557,7 +716,7 @@ features of native .mpy modules.  Such features include:</p>
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

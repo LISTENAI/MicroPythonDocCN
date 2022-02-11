@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -154,7 +154,7 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
-          <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Quick reference for the Zephyr port</a></li>
+          <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Zephyr 适配的快速参考</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for the Zephyr port</a></li>
       </ul>
     </div>
@@ -259,8 +259,138 @@
     <li class="md-nav__item">
     
     
-      <a href="../quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../general.html" class="md-nav__link">Zephyr 适配信息概要</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">MicroPython tutorial for the Zephyr port</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="intro.html" class="md-nav__link">1. Getting started with MicroPython on the Zephyr port</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="repl.html" class="md-nav__link">2. Getting a MicroPython REPL prompt</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 3. Filesystems and Storage </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">3. Filesystems and Storage</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#zephyr-tutorial-storage--page-root" class="md-nav__link">3. Filesystems and Storage</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#disk-access" class="md-nav__link">3.1. Disk Access</a>
+        </li>
+        <li class="md-nav__item"><a href="#flash-area" class="md-nav__link">3.2. Flash Area</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#disk-access" class="md-nav__link">3.1. Disk Access</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#flash-area" class="md-nav__link">3.2. Flash Area</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="pins.html" class="md-nav__link">4. GPIO Pins</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#running-micropython" class="md-nav__link">运行 MicroPython</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#delay-and-timing" class="md-nav__link">延迟与计时</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#pins-and-gpio" class="md-nav__link">Pins 与 GPIO</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#hardware-i2c-bus" class="md-nav__link">硬件 I2C 总线</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#hardware-spi-bus" class="md-nav__link">硬件 SPI 总线</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#disk-access" class="md-nav__link">存储访问</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#flash-area" class="md-nav__link">Flash 空间</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#sensor" class="md-nav__link">传感器</a>
+      
+    
+    </li></ul>
     
     </li>
   </ul>
@@ -389,7 +519,7 @@ partition, use the scratch partition by replacing <code class="docutils literal 
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

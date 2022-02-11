@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -182,7 +182,127 @@
     
     
       <a href="index.html" class="md-nav__link">MicroPython libraries</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#python-standard-libraries-and-micro-libraries" class="md-nav__link">Python standard libraries and micro-libraries</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#micropython-specific-libraries" class="md-nav__link">MicroPython-specific libraries</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#port-specific-libraries" class="md-nav__link">Port-specific libraries</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#libraries-specific-to-the-pyboard" class="md-nav__link">Libraries specific to the pyboard</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="pyb.html" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code> — functions related to the board</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="stm.html" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">stm</span></code> — functionality specific to STM32 MCUs</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> <code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code> — control of LCD160CR display </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code> — control of LCD160CR display</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#library-lcd160cr--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code> — control of LCD160CR display</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#class-lcd160cr" class="md-nav__link">class LCD160CR</a>
+        </li>
+        <li class="md-nav__item"><a href="#constructors" class="md-nav__link">Constructors</a>
+        </li>
+        <li class="md-nav__item"><a href="#static-methods" class="md-nav__link">Static methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#instance-members" class="md-nav__link">Instance members</a>
+        </li>
+        <li class="md-nav__item"><a href="#setup-commands" class="md-nav__link">Setup commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#pixel-access-methods" class="md-nav__link">Pixel access methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#drawing-text" class="md-nav__link">Drawing text</a>
+        </li>
+        <li class="md-nav__item"><a href="#drawing-primitive-shapes" class="md-nav__link">Drawing primitive shapes</a>
+        </li>
+        <li class="md-nav__item"><a href="#touch-screen-methods" class="md-nav__link">Touch screen methods</a>
+        </li>
+        <li class="md-nav__item"><a href="#advanced-commands" class="md-nav__link">Advanced commands</a>
+        </li>
+        <li class="md-nav__item"><a href="#constants" class="md-nav__link">Constants</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#libraries-specific-to-the-wipy" class="md-nav__link">Libraries specific to the WiPy</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#libraries-specific-to-the-esp8266-and-esp32" class="md-nav__link">Libraries specific to the ESP8266 and ESP32</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#libraries-specific-to-the-rp2040" class="md-nav__link">Libraries specific to the RP2040</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#libraries-specific-to-zephyr" class="md-nav__link">Libraries specific to Zephyr</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html#extending-built-in-libraries-from-python" class="md-nav__link">Extending built-in libraries from Python</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -258,7 +378,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -828,7 +948,7 @@ seconds.</p>
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.

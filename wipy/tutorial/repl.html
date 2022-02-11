@@ -66,7 +66,7 @@
 
   </head>
   <body dir=ltr
-        data-md-color-primary=blue-grey data-md-color-accent=blue>
+        data-md-color-primary=blue data-md-color-accent=light-blue>
   
   <svg class="md-svg">
     <defs data-children-count="0">
@@ -246,7 +246,220 @@
     
     
       <a href="../quickref.html" class="md-nav__link">Quick reference for the WiPy</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="../general.html" class="md-nav__link">General information about the WiPy</a>
       
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="index.html" class="md-nav__link">WiPy tutorials and examples</a>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="intro.html" class="md-nav__link">1. Introduction to the WiPy</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 2. Getting a MicroPython REPL prompt </label>
+    
+      <a href="#" class="md-nav__link md-nav__link--active">2. Getting a MicroPython REPL prompt</a>
+      
+        
+<nav class="md-nav md-nav--secondary">
+    <label class="md-nav__title" for="__toc">Contents</label>
+  <ul class="md-nav__list" data-md-scrollfix="">
+        <li class="md-nav__item"><a href="#wipy-tutorial-repl--page-root" class="md-nav__link">2. Getting a MicroPython REPL prompt</a><nav class="md-nav">
+              <ul class="md-nav__list">
+        <li class="md-nav__item"><a href="#windows" class="md-nav__link">2.1. Windows</a>
+        </li>
+        <li class="md-nav__item"><a href="#mac-os-x" class="md-nav__link">2.2. Mac OS X</a>
+        </li>
+        <li class="md-nav__item"><a href="#linux" class="md-nav__link">2.3. Linux</a>
+        </li>
+        <li class="md-nav__item"><a href="#using-the-repl-prompt" class="md-nav__link">2.4. Using the REPL prompt</a>
+        </li>
+        <li class="md-nav__item"><a href="#resetting-the-board" class="md-nav__link">2.5. Resetting the board</a>
+        </li></ul>
+            </nav>
+        </li>
+  </ul>
+</nav>
+      <ul class="md-nav__list"> 
+    <li class="md-nav__item">
+    
+    
+      <a href="#windows" class="md-nav__link">2.1. Windows</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#mac-os-x" class="md-nav__link">2.2. Mac OS X</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#linux" class="md-nav__link">2.3. Linux</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#using-the-repl-prompt" class="md-nav__link">2.4. Using the REPL prompt</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="#resetting-the-board" class="md-nav__link">2.5. Resetting the board</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="blynk.html" class="md-nav__link">3. Getting started with Blynk and the WiPy</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="wlan.html" class="md-nav__link">4. WLAN step by step</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="timer.html" class="md-nav__link">5. Hardware timers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="reset.html" class="md-nav__link">6. Reset and boot modes</a>
+      
+    
+    </li></ul>
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#general-board-control-including-sleep-modes" class="md-nav__link">General board control (including sleep modes)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#pins-and-gpio" class="md-nav__link">Pins and GPIO</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#timers" class="md-nav__link">Timers</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#pwm-pulse-width-modulation" class="md-nav__link">PWM (pulse width modulation)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#adc-analog-to-digital-conversion" class="md-nav__link">ADC (analog to digital conversion)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#uart-serial-bus" class="md-nav__link">UART (serial bus)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#spi-bus" class="md-nav__link">SPI bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#i2c-bus" class="md-nav__link">I2C bus</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#watchdog-timer-wdt" class="md-nav__link">Watchdog timer (WDT)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#real-time-clock-rtc" class="md-nav__link">Real time clock (RTC)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#sd-card" class="md-nav__link">SD card</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#wlan-wifi" class="md-nav__link">WLAN (WiFi)</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#telnet-and-ftp-server" class="md-nav__link">Telnet and FTP server</a>
+      
+    
+    </li>
+    <li class="md-nav__item">
+    
+    
+      <a href="../quickref.html#heart-beat-led" class="md-nav__link">Heart beat LED</a>
+      
+    
+    </li></ul>
     
     </li>
     <li class="md-nav__item">
@@ -259,7 +472,7 @@
     <li class="md-nav__item">
     
     
-      <a href="../../zephyr/quickref.html" class="md-nav__link">Quick reference for the Zephyr port</a>
+      <a href="../../zephyr/quickref.html" class="md-nav__link">Zephyr 适配的快速参考</a>
       
     
     </li>
@@ -463,7 +676,7 @@ your session, disconnecting whatever program that you used to connect to the WiP
               
           </div>
             Last updated on
-              10 2月 2022.
+              11 2月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
