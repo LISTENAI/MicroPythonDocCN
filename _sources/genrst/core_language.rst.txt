@@ -2,7 +2,7 @@
 
 Core language
 =============
-Generated Fri 11 Feb 2022 10:54:31 UTC
+Generated Mon 14 Feb 2022 02:38:34 UTC
 
 .. _cpydiff_core_fstring_concat:
 
