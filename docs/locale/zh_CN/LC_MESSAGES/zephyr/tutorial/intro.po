@@ -21,25 +21,25 @@ msgstr ""
 
 #: ../../zephyr/tutorial/intro.rst:4
 msgid "Getting started with MicroPython on the Zephyr port"
-msgstr ""
+msgstr "MicroPython 的 Zephyr 适配端起手式"
 
 #: ../../zephyr/tutorial/intro.rst:6
 msgid "Let’s get started!"
-msgstr ""
+msgstr "让我们开始吧！"
 
 #: ../../zephyr/tutorial/intro.rst:9
 msgid "Requirements"
-msgstr ""
+msgstr "依赖"
 
 #: ../../zephyr/tutorial/intro.rst:11
 msgid ""
 "To use the MicroPython Zephyr port, you will need a Zephyr supported "
 "board (for a list of acceptable boards see :ref:`zephyr_general`)."
-msgstr ""
+msgstr "要使用 MicroPython 的 Zephyr 适配端，你将会需要一个 Zephyr 支持的开发板（查看 :ref:`zephyr_general` 了解可用的板子列表）。"
 
 #: ../../zephyr/tutorial/intro.rst:15
 msgid "Powering up"
-msgstr ""
+msgstr "上电"
 
 #: ../../zephyr/tutorial/intro.rst:17
 msgid ""
@@ -47,11 +47,11 @@ msgid ""
 "through this when connected to your PC. Otherwise you will need to power "
 "it directly. Please refer to the documentation for your board for further"
 " details."
-msgstr ""
+msgstr "如果您的开发板上有一个 USB 接口，那么它很可能在连接到您的 PC 时通过它供电。否则，你需要直接为其供电。请参阅您的开发板的文档了解供电的详细信息。"
 
 #: ../../zephyr/tutorial/intro.rst:23
 msgid "Getting and deploying the firmware"
-msgstr ""
+msgstr "获取并烧录固件"
 
 #: ../../zephyr/tutorial/intro.rst:25
 msgid ""
@@ -62,11 +62,13 @@ msgid ""
 "MicroPython, it is recommended to start with the stable firmware builds. "
 "If you would like to work on development, you may follow the daily builds"
 " on git."
-msgstr ""
+msgstr "第一步你需要从 `MicroPython 代码仓 <https://github.com/micropython/micropython.git>`_ 克隆项目或者从 `MicroPython 下载页面 "
+"<http://micropython.org/download>`_ 中下载代码。如果你是一个 MicroPython 的最终使用者，那么从稳定版的固件构建版本开始是一个更推荐的选择。"
+"如果你想要在开发版本上工作，那么你可以跟着 git 仓库的日常构建版本来工作。"
 
 #: ../../zephyr/tutorial/intro.rst:30
 msgid ""
 "Next, follow the Zephyr port readme document (``ports/zephyr/README.md``)"
 " to build and run the application on your board."
-msgstr ""
+msgstr "接下来，照着 Zephyr 适配端的 readme 文档 (``ports/zephyr/README.md``) 来编译并在开发板上运行该程序。"
 
