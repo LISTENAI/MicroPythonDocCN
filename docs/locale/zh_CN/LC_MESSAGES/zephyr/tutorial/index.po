@@ -21,9 +21,9 @@ msgstr ""
 
 #: ../../zephyr/tutorial/index.rst:4
 msgid "MicroPython tutorial for the Zephyr port"
-msgstr ""
+msgstr "MicroPython 的 Zephyr 适配端教程"
 
 #: ../../zephyr/tutorial/index.rst:6
 msgid "This tutorial is intended to get you started with the Zephyr port."
-msgstr ""
+msgstr "本教程旨在帮助您开始使用 Zephyr 适配端"
 
