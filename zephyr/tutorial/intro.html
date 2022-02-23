@@ -47,7 +47,7 @@
   
   
   
-    <title>1. Getting started with MicroPython on the Zephyr port &#8212; MicroPython 1.18 文档</title>
+    <title>1. MicroPython 的 Zephyr 适配端起手式 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
@@ -60,7 +60,7 @@
     <link rel="index" title="索引" href="../../genindex.html" />
     <link rel="search" title="搜索" href="../../search.html" />
     <link rel="next" title="2. Getting a MicroPython REPL prompt" href="repl.html" />
-    <link rel="prev" title="MicroPython tutorial for the Zephyr port" href="index.html" />
+    <link rel="prev" title="MicroPython 的 Zephyr 适配端教程" href="index.html" />
   
    
 
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> 1. Getting started with MicroPython on the Zephyr port </span>
+          <span class="md-header-nav__topic"> 1. MicroPython 的 Zephyr 适配端起手式 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -155,7 +155,7 @@
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="../quickref.html" class="md-tabs__link">Zephyr 适配的快速参考</a></li>
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython tutorial for the Zephyr port</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython 的 Zephyr 适配端教程</a></li>
       </ul>
     </div>
   </nav>
@@ -271,27 +271,27 @@
     <li class="md-nav__item">
     
     
-      <a href="index.html" class="md-nav__link">MicroPython tutorial for the Zephyr port</a>
+      <a href="index.html" class="md-nav__link">MicroPython 的 Zephyr 适配端教程</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> 1. Getting started with MicroPython on the Zephyr port </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 1. MicroPython 的 Zephyr 适配端起手式 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">1. Getting started with MicroPython on the Zephyr port</a>
+      <a href="#" class="md-nav__link md-nav__link--active">1. MicroPython 的 Zephyr 适配端起手式</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#zephyr-tutorial-intro--page-root" class="md-nav__link">1. Getting started with MicroPython on the Zephyr port</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#zephyr-tutorial-intro--page-root" class="md-nav__link">1. MicroPython 的 Zephyr 适配端起手式</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#requirements" class="md-nav__link">1.1. Requirements</a>
+        <li class="md-nav__item"><a href="#requirements" class="md-nav__link">1.1. 依赖</a>
         </li>
-        <li class="md-nav__item"><a href="#powering-up" class="md-nav__link">1.2. Powering up</a>
+        <li class="md-nav__item"><a href="#powering-up" class="md-nav__link">1.2. 上电</a>
         </li>
-        <li class="md-nav__item"><a href="#getting-and-deploying-the-firmware" class="md-nav__link">1.3. Getting and deploying the firmware</a>
+        <li class="md-nav__item"><a href="#getting-and-deploying-the-firmware" class="md-nav__link">1.3. 获取并烧录固件</a>
         </li></ul>
             </nav>
         </li>
@@ -301,21 +301,21 @@
     <li class="md-nav__item">
     
     
-      <a href="#requirements" class="md-nav__link">1.1. Requirements</a>
+      <a href="#requirements" class="md-nav__link">1.1. 依赖</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#powering-up" class="md-nav__link">1.2. Powering up</a>
+      <a href="#powering-up" class="md-nav__link">1.2. 上电</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#getting-and-deploying-the-firmware" class="md-nav__link">1.3. Getting and deploying the firmware</a>
+      <a href="#getting-and-deploying-the-firmware" class="md-nav__link">1.3. 获取并烧录固件</a>
       
     
     </li></ul>
@@ -416,13 +416,13 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#zephyr-tutorial-intro--page-root" class="md-nav__link">1. Getting started with MicroPython on the Zephyr port</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#zephyr-tutorial-intro--page-root" class="md-nav__link">1. MicroPython 的 Zephyr 适配端起手式</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#requirements" class="md-nav__link">1.1. Requirements</a>
+        <li class="md-nav__item"><a href="#requirements" class="md-nav__link">1.1. 依赖</a>
         </li>
-        <li class="md-nav__item"><a href="#powering-up" class="md-nav__link">1.2. Powering up</a>
+        <li class="md-nav__item"><a href="#powering-up" class="md-nav__link">1.2. 上电</a>
         </li>
-        <li class="md-nav__item"><a href="#getting-and-deploying-the-firmware" class="md-nav__link">1.3. Getting and deploying the firmware</a>
+        <li class="md-nav__item"><a href="#getting-and-deploying-the-firmware" class="md-nav__link">1.3. 获取并烧录固件</a>
         </li></ul>
             </nav>
         </li>
@@ -436,27 +436,20 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-started-with-micropython-on-the-zephyr-port">
-<span id="intro-zephyr"></span><h1 id="zephyr-tutorial-intro--page-root"><span class="section-number">1. </span>Getting started with MicroPython on the Zephyr port<a class="headerlink" href="#zephyr-tutorial-intro--page-root" title="永久链接至标题">¶</a></h1>
-<p>Let’s get started!</p>
+<span id="intro-zephyr"></span><h1 id="zephyr-tutorial-intro--page-root"><span class="section-number">1. </span>MicroPython 的 Zephyr 适配端起手式<a class="headerlink" href="#zephyr-tutorial-intro--page-root" title="永久链接至标题">¶</a></h1>
+<p>让我们开始吧！</p>
 <section id="requirements">
-<h2 id="requirements"><span class="section-number">1.1. </span>Requirements<a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h2>
-<p>To use the MicroPython Zephyr port, you will need a Zephyr supported board (for a list of acceptable
-boards see <a class="reference internal" href="../general.html#zephyr-general"><span class="std std-ref">Zephyr 适配信息概要</span></a>).</p>
+<h2 id="requirements"><span class="section-number">1.1. </span>依赖<a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h2>
+<p>要使用 MicroPython 的 Zephyr 适配端，你将会需要一个 Zephyr 支持的开发板（查看 <a class="reference internal" href="../general.html#zephyr-general"><span class="std std-ref">Zephyr 适配信息概要</span></a> 了解可用的板子列表）。</p>
 </section>
 <section id="powering-up">
-<h2 id="powering-up"><span class="section-number">1.2. </span>Powering up<a class="headerlink" href="#powering-up" title="永久链接至标题">¶</a></h2>
-<p>If your board has a USB connector on it then most likely it is powered
-through this when connected to your PC. Otherwise you will need to power
-it directly. Please refer to the documentation for your board for
-further details.</p>
+<h2 id="powering-up"><span class="section-number">1.2. </span>上电<a class="headerlink" href="#powering-up" title="永久链接至标题">¶</a></h2>
+<p>如果您的开发板上有一个 USB 接口，那么它很可能在连接到您的 PC 时通过它供电。否则，你需要直接为其供电。请参阅您的开发板的文档了解供电的详细信息。</p>
 </section>
 <section id="getting-and-deploying-the-firmware">
-<h2 id="getting-and-deploying-the-firmware"><span class="section-number">1.3. </span>Getting and deploying the firmware<a class="headerlink" href="#getting-and-deploying-the-firmware" title="永久链接至标题">¶</a></h2>
-<p>The first step you will need to do is either clone the <a class="reference external" href="https://github.com/micropython/micropython.git">MicroPython repository</a>
-or download it from the <a class="reference external" href="http://micropython.org/download">MicroPython downloads page</a>. If you are an end user of MicroPython,
-it is recommended to start with the stable firmware builds. If you would like to work on development, you may follow the daily
-builds on git.</p>
-<p>Next, follow the Zephyr port readme document (<code class="docutils literal notranslate"><span class="pre">ports/zephyr/README.md</span></code>) to build and run the application on your board.</p>
+<h2 id="getting-and-deploying-the-firmware"><span class="section-number">1.3. </span>获取并烧录固件<a class="headerlink" href="#getting-and-deploying-the-firmware" title="永久链接至标题">¶</a></h2>
+<p>第一步你需要从 <a class="reference external" href="https://github.com/micropython/micropython.git">MicroPython 代码仓</a> 克隆项目或者从 <a class="reference external" href="http://micropython.org/download">MicroPython 下载页面</a> 中下载代码。如果你是一个 MicroPython 的最终使用者，那么从稳定版的固件构建版本开始是一个更推荐的选择。如果你想要在开发版本上工作，那么你可以跟着 git 仓库的日常构建版本来工作。</p>
+<p>接下来，照着 Zephyr 适配端的 readme 文档 (<code class="docutils literal notranslate"><span class="pre">ports/zephyr/README.md</span></code>) 来编译并在开发板上运行该程序。</p>
 </section>
 </section>
 
@@ -470,7 +463,7 @@ builds on git.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="index.html" title="MicroPython tutorial for the Zephyr port"
+            <a href="index.html" title="MicroPython 的 Zephyr 适配端教程"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -479,7 +472,7 @@ builds on git.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> MicroPython tutorial for the Zephyr port </span>
+                      class="md-footer-nav__direction"> Previous </span> MicroPython 的 Zephyr 适配端教程 </span>
               </div>
             </a>
           
