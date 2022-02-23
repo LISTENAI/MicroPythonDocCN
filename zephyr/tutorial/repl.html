@@ -47,7 +47,7 @@
   
   
   
-    <title>2. Getting a MicroPython REPL prompt &#8212; MicroPython 1.18 文档</title>
+    <title>2. 在 MicroPython REPL 中交互 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/material.css" />
     <link rel="stylesheet" href="../../_static/customstyle.css" type="text/css" />
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> 2. Getting a MicroPython REPL prompt </span>
+          <span class="md-header-nav__topic"> 2. 在 MicroPython REPL 中交互 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -284,19 +284,19 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> 2. Getting a MicroPython REPL prompt </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 2. 在 MicroPython REPL 中交互 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">2. Getting a MicroPython REPL prompt</a>
+      <a href="#" class="md-nav__link md-nav__link--active">2. 在 MicroPython REPL 中交互</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#zephyr-tutorial-repl--page-root" class="md-nav__link">2. Getting a MicroPython REPL prompt</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#zephyr-tutorial-repl--page-root" class="md-nav__link">2. 在 MicroPython REPL 中交互</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#repl-over-the-serial-port" class="md-nav__link">2.1. REPL over the serial port</a>
+        <li class="md-nav__item"><a href="#repl-over-the-serial-port" class="md-nav__link">2.1. 在串口上的 REPL</a>
         </li>
-        <li class="md-nav__item"><a href="#using-the-repl" class="md-nav__link">2.2. Using the REPL</a>
+        <li class="md-nav__item"><a href="#using-the-repl" class="md-nav__link">2.2. 使用 REPL</a>
         </li></ul>
             </nav>
         </li>
@@ -306,14 +306,14 @@
     <li class="md-nav__item">
     
     
-      <a href="#repl-over-the-serial-port" class="md-nav__link">2.1. REPL over the serial port</a>
+      <a href="#repl-over-the-serial-port" class="md-nav__link">2.1. 在串口上的 REPL</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#using-the-repl" class="md-nav__link">2.2. Using the REPL</a>
+      <a href="#using-the-repl" class="md-nav__link">2.2. 使用 REPL</a>
       
     
     </li></ul>
@@ -407,11 +407,11 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#zephyr-tutorial-repl--page-root" class="md-nav__link">2. Getting a MicroPython REPL prompt</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#zephyr-tutorial-repl--page-root" class="md-nav__link">2. 在 MicroPython REPL 中交互</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#repl-over-the-serial-port" class="md-nav__link">2.1. REPL over the serial port</a>
+        <li class="md-nav__item"><a href="#repl-over-the-serial-port" class="md-nav__link">2.1. 在串口上的 REPL</a>
         </li>
-        <li class="md-nav__item"><a href="#using-the-repl" class="md-nav__link">2.2. Using the REPL</a>
+        <li class="md-nav__item"><a href="#using-the-repl" class="md-nav__link">2.2. 使用 REPL</a>
         </li></ul>
             </nav>
         </li>
@@ -425,49 +425,34 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-a-micropython-repl-prompt">
-<h1 id="zephyr-tutorial-repl--page-root"><span class="section-number">2. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#zephyr-tutorial-repl--page-root" title="永久链接至标题">¶</a></h1>
-<p>REPL stands for Read Evaluate Print Loop, and is the name given to the
-interactive MicroPython prompt that you can access on your board through
-Zephyr. It is recommended to use REPL to test out your code and run commands.</p>
+<h1 id="zephyr-tutorial-repl--page-root"><span class="section-number">2. </span>在 MicroPython REPL 中交互<a class="headerlink" href="#zephyr-tutorial-repl--page-root" title="永久链接至标题">¶</a></h1>
+<p>REPL 是 Read Evaluate Print Loop 的缩写（代表 “读取-求值-输出” 循环，也被称作交互式顶层构件），它是交互式 MicroPython 提示的名称，你可以通过 Zephyr 在开发板上直接使用它。推荐使用 REPL 来测试你的代码和运行命令。</p>
 <section id="repl-over-the-serial-port">
-<h2 id="repl-over-the-serial-port"><span class="section-number">2.1. </span>REPL over the serial port<a class="headerlink" href="#repl-over-the-serial-port" title="永久链接至标题">¶</a></h2>
-<p>The REPL is available on a UART serial peripheral specified for the board by
-the <code class="docutils literal notranslate"><span class="pre">zephyr,console</span></code> devicetree node. The baudrate of the REPL is 115200.
-If your board has a USB-serial convertor on it then you should be able to access
-the REPL directly from your PC.</p>
-<p>To access the prompt over USB-serial you will need to use a terminal emulator
-program. For a Linux or Mac machine, open a terminal and run:</p>
+<h2 id="repl-over-the-serial-port"><span class="section-number">2.1. </span>在串口上的 REPL<a class="headerlink" href="#repl-over-the-serial-port" title="永久链接至标题">¶</a></h2>
+<p>REPL 可以在开发板的设备树上声明的 <code class="docutils literal notranslate"><span class="pre">zephyr,console</span></code> 节点所代表的 UART 串口外设上使用。REPL 的串口波特率为 115200 。如果你的开发板有一个 USB-串口 转换器，那么你可以直接通过它连接到 PC 来使用 REPL</p>
+<p>你需要一个终端模拟器程序来通过 USB-串口 访问 REPL。对于一个 Linux 或 Mac 设备，打开终端并运行：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span> <span class="mi">115200</span>
 </pre></div>
 </div>
-<p>You can also try <code class="docutils literal notranslate"><span class="pre">picocom</span></code> or <code class="docutils literal notranslate"><span class="pre">minicom</span></code> instead of screen. You may have to use
-<code class="docutils literal notranslate"><span class="pre">/dev/ttyACM1</span></code> or a higher number for <code class="docutils literal notranslate"><span class="pre">ttyACM</span></code>. Additional permissions
-may be necessary to access this device (eg group <code class="docutils literal notranslate"><span class="pre">uucp</span></code> or <code class="docutils literal notranslate"><span class="pre">dialout</span></code>, or use sudo).
-For Windows, get a terminal software, such as puTTY and connect via a serial session
-using the proper COM port.</p>
+<p>如果不用 screen 的话，你也可以试试 <code class="docutils literal notranslate"><span class="pre">picocom</span></code> 或 <code class="docutils literal notranslate"><span class="pre">minicom</span></code> 。你可能需要用 <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM1</span></code> 或一个更大的 <code class="docutils literal notranslate"><span class="pre">ttyACM</span></code> 数字。访问此设备可能需要额外的权限 （例如，<code class="docutils literal notranslate"><span class="pre">uucp</span></code> 组或 <code class="docutils literal notranslate"><span class="pre">dialout</span></code> 组，又或者使用 sudo ）。对于 Windows 的话，则应使用一个终端软件，例如 PuTTY 来通过串口会话连接到对应的 COM 端口。</p>
 </section>
 <section id="using-the-repl">
-<h2 id="using-the-repl"><span class="section-number">2.2. </span>Using the REPL<a class="headerlink" href="#using-the-repl" title="永久链接至标题">¶</a></h2>
-<p>With your serial program open (PuTTY, screen, picocom, etc) you may see a
-blank screen with a flashing cursor. Press Enter (or reset the board) and
-you should be presented with the following text:</p>
+<h2 id="using-the-repl"><span class="section-number">2.2. </span>使用 REPL<a class="headerlink" href="#using-the-repl" title="永久链接至标题">¶</a></h2>
+<p>通过你的串口程序（PuTTY, screen, picocom 诸如此类）打开串口后，你应当看到了一个带有闪烁光标的空白屏幕。按下回车（或重启开发板）后，你应该能看到以下内容：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">***</span> <span class="n">Booting</span> <span class="n">Zephyr</span> <span class="n">OS</span> <span class="n">build</span> <span class="n">zephyr</span><span class="o">-</span><span class="n">v2</span><span class="o">.</span><span class="mf">7.0</span>  <span class="o">***</span>
 <span class="n">MicroPython</span> <span class="n">v1</span><span class="o">.</span><span class="mi">17</span><span class="o">-</span><span class="mi">288</span><span class="o">-</span><span class="n">gb695f5a70</span><span class="o">-</span><span class="n">dirty</span> <span class="n">on</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span><span class="p">;</span> <span class="n">zephyr</span><span class="o">-</span><span class="n">frdm_k64f</span> <span class="k">with</span> <span class="n">mk64f12</span>
 <span class="n">Type</span> <span class="s2">"help()"</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span><span class="o">.</span>
 <span class="o">&gt;&gt;&gt;</span>
 </pre></div>
 </div>
-<p>Now you can try running MicroPython code directly on your board.</p>
-<p>Anything you type at the prompt, indicated by <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code>, will be executed after you press
-the Enter key. If there is an error with the text that you enter then an error
-message is printed.</p>
-<p>Start by typing the following at the prompt to make sure it is working:</p>
+<p>现在你可以尝试在你的开发板上直接运行 MicroPython 代码了。</p>
+<p>你在交互过程输入的、跟着 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;`</span></code> 后的任何东西，都会在你按下回车键后执行。如果你输入的内容中包含了错误，那么错误信息也会被打印出来。</p>
+<p>现在开始，先确保以下内容输入后可以正确运行：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">"hello world!"</span><span class="p">)</span>
 <span class="go">hello world!</span>
 </pre></div>
 </div>
-<p>If you already know some python you can now try some basic commands here. For
-example:</p>
+<p>如果你已经了解过一些 python 的知识，那么你可以在这里尝试一些基本的命令了。例如：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 <span class="go">3</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">/</span> <span class="mi">2</span>
@@ -476,7 +461,7 @@ example:</p>
 <span class="go">ZephyrZephyrZephyr</span>
 </pre></div>
 </div>
-<p>If your board has an LED, you can blink it using the following code:</p>
+<p>如果你的开发板有一个 LED 灯，你可以使用以下代码使其闪烁：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;import time</span>
 <span class="go">&gt;&gt;&gt;from machine import Pin</span>
 
@@ -488,10 +473,7 @@ example:</p>
 <span class="gp">... </span>   <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The above code uses an LED location for a FRDM-K64F board (port B, pin 21;
-following Zephyr conventions ports are identified by “GPIO_x”, where <em>x</em>
-starts from 0). You will need to adjust it for another board using the board’s
-reference materials.</p>
+<p>上述代码使用 FRDM-K64F 板的 LED 位置（端口 B，引脚 21；遵循 Zephyr 约定，端口由 “GPIO_x” 标识，其中 <em>x</em> 从 0 开始）。当你使用另一块开发板时，你需要根据对应开发板的参考材料来调整相关引用。</p>
 </section>
 </section>
 
