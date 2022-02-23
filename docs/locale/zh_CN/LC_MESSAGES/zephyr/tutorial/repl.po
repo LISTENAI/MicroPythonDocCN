@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../zephyr/tutorial/repl.rst:2
 msgid "Getting a MicroPython REPL prompt"
-msgstr ""
+msgstr "在 MicroPython REPL 中交互"
 
 #: ../../zephyr/tutorial/repl.rst:4
 msgid ""
@@ -30,10 +30,12 @@ msgid ""
 "Zephyr. It is recommended to use REPL to test out your code and run "
 "commands."
 msgstr ""
+"REPL 是 Read Evaluate Print Loop 的缩写（代表 “读取-求值-输出” 循环，也被称作交互式顶层构件），"
+"它是交互式 MicroPython 提示的名称，你可以通过 Zephyr 在开发板上直接使用它。推荐使用 REPL 来测试你的代码和运行命令。"
 
 #: ../../zephyr/tutorial/repl.rst:9
 msgid "REPL over the serial port"
-msgstr ""
+msgstr "在串口上的 REPL"
 
 #: ../../zephyr/tutorial/repl.rst:11
 msgid ""
@@ -42,12 +44,14 @@ msgid ""
 "115200. If your board has a USB-serial convertor on it then you should be"
 " able to access the REPL directly from your PC."
 msgstr ""
+"REPL 可以在开发板的设备树上声明的 ``zephyr,console`` 节点所代表的 UART 串口外设上使用。"
+"REPL 的串口波特率为 115200 。如果你的开发板有一个 USB-串口 转换器，那么你可以直接通过它连接到 PC 来使用 REPL"
 
 #: ../../zephyr/tutorial/repl.rst:16
 msgid ""
 "To access the prompt over USB-serial you will need to use a terminal "
 "emulator program. For a Linux or Mac machine, open a terminal and run::"
-msgstr ""
+msgstr "你需要一个终端模拟器程序来通过 USB-串口 访问 REPL。对于一个 Linux 或 Mac 设备，打开终端并运行："
 
 #: ../../zephyr/tutorial/repl.rst:21
 msgid ""
@@ -58,10 +62,13 @@ msgid ""
 "software, such as puTTY and connect via a serial session using the proper"
 " COM port."
 msgstr ""
+"如果不用 screen 的话，你也可以试试 ``picocom`` 或 ``minicom`` 。你可能需要用 ``/dev/ttyACM1`` "
+"或一个更大的 ``ttyACM`` 数字。访问此设备可能需要额外的权限 （例如，``uucp`` 组或 ``dialout`` 组，又或者使用 sudo ）。"
+"对于 Windows 的话，则应使用一个终端软件，例如 PuTTY 来通过串口会话连接到对应的 COM 端口。"
 
 #: ../../zephyr/tutorial/repl.rst:28
 msgid "Using the REPL"
-msgstr ""
+msgstr "使用 REPL"
 
 #: ../../zephyr/tutorial/repl.rst:30
 msgid ""
@@ -69,10 +76,13 @@ msgid ""
 " blank screen with a flashing cursor. Press Enter (or reset the board) "
 "and you should be presented with the following text::"
 msgstr ""
+"通过你的串口程序（PuTTY, screen, picocom 诸如此类）打开串口后，"
+"你应当看到了一个带有闪烁光标的空白屏幕。"
+"按下回车（或重启开发板）后，你应该能看到以下内容："
 
 #: ../../zephyr/tutorial/repl.rst:39
 msgid "Now you can try running MicroPython code directly on your board."
-msgstr ""
+msgstr "现在你可以尝试在你的开发板上直接运行 MicroPython 代码了。"
 
 #: ../../zephyr/tutorial/repl.rst:41
 msgid ""
@@ -80,20 +90,24 @@ msgid ""
 "after you press the Enter key. If there is an error with the text that "
 "you enter then an error message is printed."
 msgstr ""
+"你在交互过程输入的、跟着 ``>>>``` 后的任何东西，都会在你按下回车键后执行。"
+"如果你输入的内容中包含了错误，那么错误信息也会被打印出来。"
 
 #: ../../zephyr/tutorial/repl.rst:45
 msgid "Start by typing the following at the prompt to make sure it is working::"
-msgstr ""
+msgstr "现在开始，先确保以下内容输入后可以正确运行："
 
 #: ../../zephyr/tutorial/repl.rst:50
 msgid ""
 "If you already know some python you can now try some basic commands here."
 " For example::"
 msgstr ""
+"如果你已经了解过一些 python 的知识，那么你可以在这里尝试一些基本的命令了。"
+"例如："
 
 #: ../../zephyr/tutorial/repl.rst:60
 msgid "If your board has an LED, you can blink it using the following code::"
-msgstr ""
+msgstr "如果你的开发板有一个 LED 灯，你可以使用以下代码使其闪烁："
 
 #: ../../zephyr/tutorial/repl.rst:72
 msgid ""
@@ -102,4 +116,6 @@ msgid ""
 "where *x* starts from 0). You will need to adjust it for another board "
 "using the board's reference materials."
 msgstr ""
+"上述代码使用 FRDM-K64F 板的 LED 位置（端口 B，引脚 21；遵循 Zephyr 约定，端口由 \"GPIO_x\" 标识，其中 *x* 从 0 开始）。"
+"当你使用另一块开发板时，你需要根据对应开发板的参考材料来调整相关引用。"
 

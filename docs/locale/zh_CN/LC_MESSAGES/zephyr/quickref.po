@@ -36,7 +36,7 @@ msgstr "运行 MicroPython"
 
 #: ../../zephyr/quickref.rst:17
 msgid "See the corresponding section of the tutorial: :ref:`intro`."
-msgstr "请参阅此教程的相应部分: :ref:`intro`"
+msgstr "请参阅此教程的相应部分: :ref:`intro_zephyr`"
 
 #: ../../zephyr/quickref.rst:20
 msgid "Delay and timing"
