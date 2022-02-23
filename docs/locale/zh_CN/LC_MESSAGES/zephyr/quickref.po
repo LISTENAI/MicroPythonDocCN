@@ -36,7 +36,7 @@ msgstr "运行 MicroPython"
 
 #: ../../zephyr/quickref.rst:17
 msgid "See the corresponding section of the tutorial: :ref:`intro`."
-msgstr ""
+msgstr "请参阅此教程的相应部分: :ref:`intro`"
 
 #: ../../zephyr/quickref.rst:20
 msgid "Delay and timing"
@@ -44,7 +44,7 @@ msgstr "延迟与计时"
 
 #: ../../zephyr/quickref.rst:22
 msgid "Use the :mod:`time <utime>` module::"
-msgstr ""
+msgstr "使用 :mod:`time <time>` 模块"
 
 #: ../../zephyr/quickref.rst:33
 msgid "Pins and GPIO"
@@ -52,7 +52,7 @@ msgstr "Pins 与 GPIO"
 
 #: ../../zephyr/quickref.rst:35
 msgid "Use the :ref:`machine.Pin <machine.Pin>` class::"
-msgstr ""
+msgstr "使用 :ref:`machine.Pin <machine.Pin>` 类"
 
 #: ../../zephyr/quickref.rst:60
 msgid "Hardware I2C bus"
@@ -60,7 +60,7 @@ msgstr "硬件 I2C 总线"
 
 #: ../../zephyr/quickref.rst:62
 msgid "Hardware I2C is accessed via the :ref:`machine.I2C <machine.I2C>` class::"
-msgstr ""
+msgstr "硬件 I2C 通过 :ref:`machine.I2C <machine.I2C>` 类访问"
 
 #: ../../zephyr/quickref.rst:81
 msgid "Hardware SPI bus"
@@ -68,7 +68,7 @@ msgstr "硬件 SPI 总线"
 
 #: ../../zephyr/quickref.rst:83
 msgid "Hardware SPI is accessed via the :ref:`machine.SPI <machine.SPI>` class::"
-msgstr ""
+msgstr "硬件 SPI 通过 :ref:`machine.SPI <machine.SPI>` 类访问"
 
 #: ../../zephyr/quickref.rst:108
 msgid "Disk Access"
@@ -78,7 +78,7 @@ msgstr "存储访问"
 msgid ""
 "Use the :ref:`zephyr.DiskAccess <zephyr.DiskAccess>` class to support "
 "filesystem::"
-msgstr ""
+msgstr "使用 :ref:`zephyr.DiskAccess <zephyr.DiskAccess>` 类以支持文件系统操作"
 
 #: ../../zephyr/quickref.rst:125
 msgid "Flash Area"
@@ -88,7 +88,7 @@ msgstr "Flash 空间"
 msgid ""
 "Use the :ref:`zephyr.FlashArea <zephyr.FlashArea>` class to support "
 "filesystem::"
-msgstr ""
+msgstr "使用 :ref:`zephyr.FlashArea <zephyr.FlashArea>` 类以支持文件系统操作"
 
 #: ../../zephyr/quickref.rst:142
 msgid "Sensor"
@@ -98,5 +98,5 @@ msgstr "传感器"
 msgid ""
 "Use the :ref:`zsensor.Sensor <zsensor.Sensor>` class to access sensor "
 "data::"
-msgstr ""
+msgstr "使用 :ref:`zsensor.Sensor <zsensor.Sensor>` 类访问传感器数据"
 
