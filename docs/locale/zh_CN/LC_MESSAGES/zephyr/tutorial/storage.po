@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../zephyr/tutorial/storage.rst:4
 msgid "Filesystems and Storage"
-msgstr ""
+msgstr "文件系统与存储"
 
 #: ../../zephyr/tutorial/storage.rst:6
 msgid ""
@@ -29,17 +29,19 @@ msgid ""
 " backed by either Zephyr DiskAccess or FlashArea (flash map) APIs "
 "depending on which the board supports."
 msgstr ""
+"通过使用开发板支持的 Zephyr DiskAccess 或 FashArea (flash map) 接口，"
+"存储模块支持 FAT 与 littlefs 格式的虚拟文件系统。"
 
 #: ../../zephyr/tutorial/storage.rst:9
 msgid ""
 "See `os Filesystem Mounting "
 "<https://docs.micropython.org/en/latest/library/os.html?highlight=os"
 "#filesystem-mounting>`_."
-msgstr ""
+msgstr "在 :mod:`os 挂载文件系统 <os>` 中查看。"
 
 #: ../../zephyr/tutorial/storage.rst:12
 msgid "Disk Access"
-msgstr ""
+msgstr "磁盘访问（Disk Access）"
 
 #: ../../zephyr/tutorial/storage.rst:14
 msgid ""
@@ -49,6 +51,8 @@ msgid ""
 "<https://docs.zephyrproject.org/latest/reference/storage/disk/access.html>`_"
 " and implements the `os.AbstractBlockDev` protocol."
 msgstr ""
+":ref:`zephyr.DiskAccess <zephyr.DiskAccess>` 类可用于访问存储设备，例如 SD 卡。"
+"它使用 `Zephyr Disk Access API <https://docs.zephyrproject.org/latest/reference/storage/disk/access.html>`_ ，实现了 `os.AbstractBlockDev` 协议。"
 
 #: ../../zephyr/tutorial/storage.rst:18
 msgid ""
@@ -57,14 +61,17 @@ msgid ""
 "boot. Use the disk driver interface and a file system to access SD cards "
 "via disk access (see below)."
 msgstr ""
+"与 SD 卡控制器一起使用时，SD 卡必须在启动时存在且不能移除；"
+"它们将在启动时由文件系统自动检测和初始化。 "
+"访问 SD 卡需要使用磁盘驱动程序接口和文件系统通过磁盘访问（见下文）。"
 
 #: ../../zephyr/tutorial/storage.rst:22
 msgid "Example usage of FatFS with an SD card on the mimxrt1050_evk board::"
-msgstr ""
+msgstr "在 mimxrt1050_evk 开发板上访问一个 FatFS 的 SD 卡使用示例："
 
 #: ../../zephyr/tutorial/storage.rst:35
 msgid "Flash Area"
-msgstr ""
+msgstr "闪存区（Flash Area）"
 
 #: ../../zephyr/tutorial/storage.rst:37
 msgid ""
@@ -73,6 +80,8 @@ msgid ""
 "configurations. To store persistent data on the device, using a higher-"
 "level filesystem API is recommended (see below)."
 msgstr ""
+":ref:`zephyr.FlashArea <zephyr.FlashArea>` 类可用于实现低级存储系统或自定义文件系统配置。 "
+"要在设备上存储持久化数据，推荐使用更高级别的文件系统 API（见下文）。"
 
 #: ../../zephyr/tutorial/storage.rst:41
 msgid ""
@@ -80,12 +89,15 @@ msgid ""
 "<https://docs.zephyrproject.org/latest/reference/storage/flash_map/flash_map.html#>`_"
 " and implements the `os.AbstractBlockDev` protocol."
 msgstr ""
+"它使用 `Zephyr Flash map API "
+"<https://docs.zephyrproject.org/latest/reference/storage/flash_map/flash_map.html#>`_ ，实现了 `os.AbstractBlockDev` 协议。 "
 
 #: ../../zephyr/tutorial/storage.rst:44
 msgid ""
 "Example usage with the internal flash on the reel_board or the "
 "rv32m1_vega_ri5cy board::"
 msgstr ""
+"在 reel_board 或 rv32m1_vega_ri5cy 开发板上的访问内部闪存的使用示例："
 
 #: ../../zephyr/tutorial/storage.rst:55
 msgid ""
@@ -93,4 +105,5 @@ msgid ""
 "spills into the default flash storage partition, use the scratch "
 "partition by replacing ``FlashArea.STORAGE`` with the integer value 4."
 msgstr ""
-
+"对于 MicroPython 应用程序会溢出到默认闪存存储分区的开发板 —— 例如 frdm_k64f 等，"
+"通过将 ``FlashArea.STORAGE`` 替换为整数值 4 来使用暂存分区。"
