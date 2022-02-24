@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../../reference/glossary.rst:2
 msgid "Glossary"
-msgstr ""
+msgstr "词汇表"
 
 #: ../../reference/glossary.rst:5
 msgid "baremetal"
-msgstr ""
+msgstr "baremetal - 裸机"
 
 #: ../../reference/glossary.rst:7
 msgid ""
@@ -34,10 +34,12 @@ msgid ""
 " effectively functions like a small operating system, running user "
 "programs and providing a command interpreter (:term:`REPL`)."
 msgstr ""
+"没有（全特性）操作系统的系统，例如基于 :term:`微控制器 <MCU>` 的系统。"
+"在裸机系统上运行时，MicroPython 可以像小型操作系统一样有效地运行用户程序并提供命令解释器 ( :term:`REPL` )。"
 
 #: ../../reference/glossary.rst:12
 msgid "buffer protocol"
-msgstr ""
+msgstr "buffer protocol - 缓冲协议"
 
 #: ../../reference/glossary.rst:14
 msgid ""
@@ -45,10 +47,12 @@ msgid ""
 " ``bytes``, ``bytearray``, ``memoryview`` and ``str`` objects, which all "
 "implement the \"buffer protocol\"."
 msgstr ""
+"任何可以自动转换为字节的 Python 对象，例如 ``bytes``、 ``bytearray``"
+"、 ``memoryview`` 和 ``str`` 对象，它们都实现了 \"缓冲协议\"。"
 
 #: ../../reference/glossary.rst:17
 msgid "board"
-msgstr ""
+msgstr "board - 开发板"
 
 #: ../../reference/glossary.rst:19
 msgid ""
@@ -58,10 +62,13 @@ msgid ""
 "MCU-specific functionality but also board-level functionality such as "
 "drivers or pin names."
 msgstr ""
+"通常这是指包含 :term:`微控制器 <MCU>` 和支持组件的印制电路板 (PCB)。"
+"MicroPython 固件通常以板为对象提供，因为固件既包含 MCU 特定功能，"
+"也包含开发板级别功能，例如驱动程序或引脚名称。"
 
 #: ../../reference/glossary.rst:24
 msgid "bytecode"
-msgstr ""
+msgstr "bytecode - 字节码"
 
 #: ../../reference/glossary.rst:26
 msgid ""
@@ -72,10 +79,14 @@ msgid ""
 "the format is different. You can also pre-compile source code offline "
 "using the :term:`cross-compiler`."
 msgstr ""
+"通过编译 Python 源代码生成的 Python 程序的精简形态。"
+"实际是由虚拟机执行的。字节码通常在运行时自动生成，对用户不可见。"
+"请注意，虽然 :term:`CPython` 和 MicroPython 都使用字节码，但格式不同。"
+"你还可以使用 :term:`交叉编译器 <cross-compiler>` 离线预编译源代码。"
 
 #: ../../reference/glossary.rst:32
 msgid "callee-owned tuple"
-msgstr ""
+msgstr "callee-owned tuple - 属于被调用者的元组"
 
 #: ../../reference/glossary.rst:34
 msgid ""
@@ -86,6 +97,10 @@ msgid ""
 "references to callee-owned tuples and instead only extract data from them"
 " (or make a copy)."
 msgstr ""
+"这是一个特定于 MicroPython 的构造，"
+"出于效率原因，某些内置函数或方法可能会复用相同的底层元组对象来返回数据。"
+"这一设计避免了必须为每次调用分配一个新的元组，并减少了堆碎片。"
+"程序不应持有对被调用者拥有的元组的引用，而应仅从中提取数据（或拷贝副本）。"
 
 #: ../../reference/glossary.rst:40
 msgid "CircuitPython"
@@ -96,6 +111,7 @@ msgid ""
 "A variant of MicroPython developed by `Adafruit Industries "
 "<https://circuitpython.org>`_."
 msgstr ""
+"`Adafruit Industries <https://circuitpython.org>`_ 开发的 MicroPython 的变体。"
 
 #: ../../reference/glossary.rst:44
 msgid "CPython"
@@ -109,10 +125,13 @@ msgid ""
 "While MicroPython's implementation differs substantially from CPython, it"
 " aims to maintain as much compatibility as possible."
 msgstr ""
+"CPython 是 Python 编程语言最著名的一种的参考实现。"
+"但它也只是众多实现之一（包括 Jython、IronPython、PyPy 和 MicroPython）。"
+"MicroPython 的实现虽然与 CPython 有很大不同，但它的目标是尽可能保持兼容性。"
 
 #: ../../reference/glossary.rst:51
 msgid "cross-compiler"
-msgstr ""
+msgstr "cross-compiler - 交叉编译器"
 
 #: ../../reference/glossary.rst:53
 msgid ""
@@ -122,20 +141,24 @@ msgid ""
 "doesn't have to compile the code), and uses less space on flash (the "
 "bytecode is more space efficient)."
 msgstr ""
+"也称为 ``mpy-cross`` 。该工具在你的 PC 上运行，负责将包含 MicroPython 代码的"
+" :term:`.py 文件 <.py file>` 转换为包含 MicroPython 字节码的 :term:`.mpy 文件 <.mpy file>` 文件 。"
+"这意味着它加载速度更快（开发板无需编译代码），并且在闪存上使用更少的空间（字节码更节省空间）。"
 
 #: ../../reference/glossary.rst:58
 msgid "driver"
-msgstr ""
+msgstr "driver - 驱动"
 
 #: ../../reference/glossary.rst:60
 msgid ""
 "A MicroPython library that implements support for a particular component,"
 " such as a sensor or display."
 msgstr ""
+"实现对特定组件（例如传感器或显示）的支持的 MicroPython 库。"
 
 #: ../../reference/glossary.rst:62
 msgid "FFI"
-msgstr ""
+msgstr "FFI - 外部函数接口"
 
 #: ../../reference/glossary.rst:64
 msgid ""
@@ -143,10 +166,12 @@ msgid ""
 ":term:`MicroPython Unix port` to access operating system functionality. "
 "This is not available on :term:`baremetal` ports."
 msgstr ""
+"Foreign Function Interface 的缩写。 :term:`MicroPython Unix 适配端 <MicroPython Unix port>` 用来访问操作系统功能的一种机制。"
+"这在 :term:`裸机 <baremetal>` 上不可用。"
 
 #: ../../reference/glossary.rst:67
 msgid "filesystem"
-msgstr ""
+msgstr "filesystem - 文件系统"
 
 #: ../../reference/glossary.rst:69
 msgid ""
@@ -155,10 +180,13 @@ msgid ""
 "``open()``. Some boards also make this internal filesystem accessible to "
 "the host via USB mass-storage."
 msgstr ""
+"大多数 MicroPython 适配口和开发板都提供了一个存储在闪存中的文件系统，"
+"用户在代码中可以直接使用 Python 的标准文件 API （例如 ``open()`` ）。"
+"一些板还可以通过作为 USB 大容量存储设备，使主机可以访问内部文件系统。"
 
 #: ../../reference/glossary.rst:73
 msgid "frozen module"
-msgstr ""
+msgstr "frozen module - 冻结模块"
 
 #: ../../reference/glossary.rst:75
 msgid ""
@@ -166,20 +194,23 @@ msgid ""
 "firmware image. This reduces RAM requirements as the code is executed "
 "directly from flash."
 msgstr ""
+"指交叉编译后打包到固件映像中的 Python 模块。"
+"这种操作减少了 RAM 需求，因为代码直接从闪存执行。"
 
 #: ../../reference/glossary.rst:78
 msgid "Garbage Collector"
-msgstr ""
+msgstr "Garbage Collector - 垃圾回收器"
 
 #: ../../reference/glossary.rst:80
 msgid ""
 "A background process that runs in Python (and MicroPython) to reclaim "
 "unused memory in the :term:`heap`."
 msgstr ""
+"在 Python（和 MicroPython）中运行的后台进程，用于回收 :term:`堆 <heap>` 中未使用的内存。"
 
 #: ../../reference/glossary.rst:82
 msgid "GPIO"
-msgstr ""
+msgstr "GPIO - 通用输入输出"
 
 #: ../../reference/glossary.rst:84
 msgid ""
@@ -190,20 +221,25 @@ msgid ""
 "access using the :class:`machine.Pin` and :class:`machine.Signal` "
 "classes."
 msgstr ""
+"General-purpose input/output 的缩写。"
+"控制微控制器上的电信号（通常称为 \"pins\" 引脚）的最简单方法。"
+"GPIO 通常允许引脚作为输入或输出，并设置或获取其数值（逻辑 \"0\" 或 \"1\" ）。"
+"MicroPython 使用 :class:`machine.Pin` 和 :class:`machine.Signal` 类抽象 GPIO 访问。"
 
 #: ../../reference/glossary.rst:90
 msgid "GPIO port"
-msgstr ""
+msgstr "GPIO port - 通用输入输出端口"
 
 #: ../../reference/glossary.rst:92
 msgid ""
 "A group of :term:`GPIO` pins, usually based on hardware properties of "
 "these pins (e.g. controllable by the same register)."
 msgstr ""
+"一组 :term:`GPIO` 引脚，通常基于这些引脚的硬件属性（例如，一组可由同一个寄存器控制的引脚）。"
 
 #: ../../reference/glossary.rst:94
 msgid "heap"
-msgstr ""
+msgstr "heap - 堆"
 
 #: ../../reference/glossary.rst:96
 msgid ""
@@ -212,10 +248,13 @@ msgid ""
 " have vastly different amounts of RAM available for the heap, so this "
 "will affect how complex your program can be."
 msgstr ""
+"MicroPython 存储动态数据的 RAM 区域。"
+"它由垃圾收集器自动管理。"
+"不同的 MCU 和电路板 RAM 中可用于堆的数量大不相同，因此这将影响你的程序的复杂度。"
 
 #: ../../reference/glossary.rst:100
 msgid "interned string"
-msgstr ""
+msgstr "interned string - 暂留字符串"
 
 #: ../../reference/glossary.rst:102
 msgid ""
@@ -225,10 +264,15 @@ msgid ""
 " identifier. It also means that identical strings can be de-duplicated in"
 " memory. String interning is almost always invisible to the user."
 msgstr ""
+"一个 MicroPython 用于提高处理字符串效率的优化。"
+"暂留字符串由其（唯一）标识而不是其地址引用，"
+"因此可以仅通过其标识符进行快速比较。"
+"这也意味着可以在内存中对相同的字符串进行重复数据删除。"
+"字符串的暂留过程对用户几乎总是不可见的。"
 
 #: ../../reference/glossary.rst:108
 msgid "MCU"
-msgstr ""
+msgstr "MCU - 微控制器"
 
 #: ../../reference/glossary.rst:110
 msgid ""
@@ -237,10 +281,14 @@ msgid ""
 "less power. MicroPython is designed to be small and optimized enough to "
 "run on an average modern microcontroller."
 msgstr ""
+"Microprogrammed Control Unit 的缩写，称为微程序控制器，简称微控制器，又简称单片机。"
+"微控制器的资源占用通常比台式机、笔记本电脑或手机少得多，"
+"且更小、更便宜并只需要更少的功率。"
+"MicroPython 设计得足够小并且经过足够的优化，可以在普遍的现代微控制器上运行。"
 
 #: ../../reference/glossary.rst:114
 msgid "micropython-lib"
-msgstr ""
+msgstr "micropython-lib - MicroPython 库"
 
 #: ../../reference/glossary.rst:116
 msgid ""
@@ -251,6 +299,10 @@ msgid ""
 "/micropython-lib>`_ which provides implementations for many modules from "
 "CPython's standard library."
 msgstr ""
+"MicroPython（通常）作为单个可执行/二进制文件分发，"
+"只有几个内置模块。众所周知，没有可与 CPython 相媲美的广泛标准库。"
+"但是， `micropython-lib <https://github.com/micropython"
+"/micropython-lib>`_ 作为一个相关但独立的项目，它实现了许多 CPython 标准库中的模块。"
 
 #: ../../reference/glossary.rst:123
 msgid ""
@@ -260,6 +312,10 @@ msgid ""
 "only be used on the :term:`MicroPython Unix port` (with limited support "
 "for Windows)."
 msgstr ""
+"虽然其中一些模块是用纯 Python 实现的，"
+"并且能够在所有端口上使用。"
+"但是，这些模块中的大多数使用 :term:`FFI` 来访问操作系统功能，"
+"因此只能在 :term:`MicroPython Unix port` 上使用（以及对 Windows 的有限支持）。"
 
 #: ../../reference/glossary.rst:129
 msgid ""
@@ -267,10 +323,11 @@ msgid ""
 "to be installed individually - either using manual copying or using "
 ":term:`upip`."
 msgstr ""
+"与 :term:`CPython` 标准库不同，micropython-lib 模块期望通过使用手动复制或使用 upip 来独立安装。"
 
 #: ../../reference/glossary.rst:132
 msgid "MicroPython port"
-msgstr ""
+msgstr "MicroPython port - MicroPython 适配端"
 
 #: ../../reference/glossary.rst:134
 msgid ""
@@ -285,10 +342,17 @@ msgid ""
 " core functionality, would be described in the separate port-specific "
 "documentation."
 msgstr ""
+"MicroPython 支持不同的 :term:`开发板 <board>` 、RTOS 和操作系统，"
+"并且可以相对容易地适配新系统。"
+"支持特定系统的 MicroPython 被称为该系统的适配端\"port\"。"
+"不同的适配端可能具有大量不同的功能。"
+"本文档旨在作为跨不同适配端口（\"MicroPython 核心\"）可用的通用 API 的参考。"
+"请注意，某些适配端可能出于某些考量（例如，由于资源限制）仍会去掉此处声明的某些 API。"
+"任何此类差异以及超出 MicroPython 核心功能的特定于适配度胺的扩展都将在单独的适配端特定的文档中进行描述。"
 
 #: ../../reference/glossary.rst:144
 msgid "MicroPython Unix port"
-msgstr ""
+msgstr "MicroPython Unix port - MicroPython Unix 适配端"
 
 #: ../../reference/glossary.rst:146
 msgid ""
@@ -300,20 +364,28 @@ msgid ""
 "can also function in a similar way to :term:`CPython`'s ``python`` "
 "executable."
 msgstr ""
+"Unix 适配端口是主要的 :term:`MicroPython 适配端 <MicroPython "
+"port>` 之一。它旨在在 POSIX 兼容的操作系统上运行，"
+"如 Linux、MacOS、FreeBSD、Solaris 等。"
+"它也是 Windows 适配端的基础。"
+"对于快速开发和测试 MicroPython 语言和与机器无关的特性时， Unix 适配端是非常有用的。"
+"它也能以与 :term:`CPython` 的 ``python`` 可执行文件类似的方式运行。"
 
 #: ../../reference/glossary.rst:153
 msgid ".mpy file"
-msgstr ""
+msgstr ".mpy 文件"
 
 #: ../../reference/glossary.rst:155
 msgid ""
 "The output of the :term:`cross-compiler`. A compiled form of a :term:`.py"
 " file` that contains MicroPython bytecode instead of Python source code."
 msgstr ""
+":term:`cross-compiler` 的产物。:term:`.py 文件 <.py file>` 的编译形式， "
+"其中包含 MicroPython 字节码而不是 Python 源代码。"
 
 #: ../../reference/glossary.rst:158
 msgid "native"
-msgstr ""
+msgstr "native - 原生"
 
 #: ../../reference/glossary.rst:160
 msgid ""
@@ -323,24 +395,27 @@ msgid ""
 "code instead of bytecode for that function, which will likely be faster "
 "but use more RAM."
 msgstr ""
+"通常指原生代码 \"native code\"，即目标微控制器（如 ARM Thumb、Xtensa、x86/x64）的机器码。 "
+"``@native`` 装饰器可以应用于 MicroPython 函数以生成原生代码而不是该函数的字节码，这可能会更快但耗费更多 RAM 。"
 
 #: ../../reference/glossary.rst:165
 msgid "port"
-msgstr ""
+msgstr "port - 端"
 
 #: ../../reference/glossary.rst:167
 msgid ""
 "Usually short for :term:`MicroPython port`, but could also refer to "
 ":term:`GPIO port`."
 msgstr ""
+"通常是 :term:`MicroPython port` 的缩写，但也可作为 :term:`GPIO port` 的指代。"
 
 #: ../../reference/glossary.rst:169
 msgid ".py file"
-msgstr ""
+msgstr ".py 文件"
 
 #: ../../reference/glossary.rst:171
 msgid "A file containing Python source code."
-msgstr ""
+msgstr "一个包含 Python 源代码的文件"
 
 #: ../../reference/glossary.rst:172
 msgid "REPL"
@@ -353,10 +428,13 @@ msgid ""
 "Most MicroPython boards make a REPL available over a UART, and this is "
 "typically accessible on a host PC via USB."
 msgstr ""
+"\"Read, Eval, Print, Loop\" 的缩写，即 \"读取、评估、打印、循环\"。"
+"这是交互式 Python 提示，可用于调试或测试短代码片段。"
+"大多数 MicroPython 开发板可通过 UART 提供 REPL 能力，这通常可以通过 USB 连接到主机 PC 上访问。"
 
 #: ../../reference/glossary.rst:178
 msgid "stream"
-msgstr ""
+msgstr "stream - 流式"
 
 #: ../../reference/glossary.rst:180
 msgid ""
@@ -369,10 +447,17 @@ msgid ""
 "consistently and interchangeably in different contexts. For more "
 "information on streams in MicroPython, see the `io` module."
 msgstr ""
+"也称为类文件对象 \"file-like object\" 。"
+"它是一个提供对底层数据的顺序读写访问的 Python 对象。"
+"流对象实现了读写相应的接口，由 ``read()``, ``write()``, ``readinto()``, "
+"``seek()``, ``flush()``, ``close()`` 等方法组成。"
+"流是 MicroPython 中的一个重要概念；"
+"许多 I/O 对象都实现了流接口，因此可以在不同的上下文中一致且可互换地使用。"
+"有关 MicroPython 中流的更多信息，请参阅 `io` 模块。"
 
 #: ../../reference/glossary.rst:188
 msgid "UART"
-msgstr ""
+msgstr "UART - 通用异步接收/发送器"
 
 #: ../../reference/glossary.rst:190
 msgid ""
@@ -381,10 +466,13 @@ msgid ""
 "include a way to make at least one of the UARTs available to a host PC as"
 " a serial port over USB."
 msgstr ""
+"\"Universal Asynchronous Receiver/Transmitter\" 的缩写。"
+"这是一种通过一对引脚（TX 和 RX）发送数据的外设。"
+"许多开发板都包含一种方式，可以使主机 PC 中通过 USB 连接至少一个 UART 作为串口使用。"
 
 #: ../../reference/glossary.rst:194
 msgid "upip"
-msgstr ""
+msgstr "upip - 包管理器"
 
 #: ../../reference/glossary.rst:196
 msgid ""
@@ -394,4 +482,8 @@ msgid ""
 "port>` and on :term:`baremetal` ports which offer filesystem and "
 "networking support."
 msgstr ""
+"（字面意思是 \"micro pip\" ，小型的 pip ）。"
+"MicroPython 的一种包管理器，它受 :term:`CPython` 的 pip 启发，"
+"但更小且功能更少。upip 在 :term:`Unix 适配端 <MicroPython Unix "
+"port>` 和提供文件系统和网络支持的 :term:`裸机 <baremetal>` 适配端上都可以运行。"
 
