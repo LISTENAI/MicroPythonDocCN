@@ -21,11 +21,11 @@ msgstr ""
 
 #: ../../library/index.rst:4
 msgid "MicroPython libraries"
-msgstr ""
+msgstr "MicroPython 库"
 
 #: ../../library/index.rst:8
 msgid "Important summary of this section"
-msgstr ""
+msgstr "本章节的重要概述"
 
 #: ../../library/index.rst:10
 msgid ""
@@ -33,6 +33,8 @@ msgid ""
 "the Python standard library (e.g. :mod:`os`, :mod:`time`), as well as "
 "MicroPython-specific modules (e.g. :mod:`bluetooth`, :mod:`machine`)."
 msgstr ""
+"MicroPython 提供了与 Python 标准库功能一致的内置模块 （例如 :mod:`os`, :mod:`time` ），"
+"以及 MicroPython 特有的模块 （例如 :mod:`bluetooth`, :mod:`machine` ）。"
 
 #: ../../library/index.rst:13
 msgid ""
@@ -40,18 +42,22 @@ msgid ""
 "the equivalent Python module, and in a few cases provide some "
 "MicroPython-specific extensions (e.g. :mod:`array`, :mod:`os`)"
 msgstr ""
+"大多数标准库模块实现了等效 Python 模块功能的子集，"
+"并且在少数情况下提供了一些特定于 MicroPython 的扩展（例如 :mod:`array`, :mod:`os`）"
 
 #: ../../library/index.rst:16
 msgid ""
 "Due to resource constraints or other limitations, some ports or firmware "
 "versions may not include all the functionality documented here."
 msgstr ""
+"由于资源或其他原因限制，某些适配端或固件版本可能在这里没有包含所有功能的文档。"
 
 #: ../../library/index.rst:18
 msgid ""
 "To allow for extensibility, the built-in modules can be extended from "
 "Python code loaded onto the device."
 msgstr ""
+"为了实现可扩展性，内置模块可以从加载到设备上的 Python 代码进行扩展。"
 
 #: ../../library/index.rst:21
 msgid ""
@@ -62,6 +68,9 @@ msgid ""
 "each port to a particular board/embedded system may include only a subset"
 " of the available MicroPython libraries."
 msgstr ""
+"本章描述了 MicroPython 中内置的模块（函数和类库）。 "
+"本文档通常旨在描述在 MicroPython 项目中实现的所有模块和函数/类。 "
+"但是，MicroPython 是高度可配置的，特定板/嵌入式系统的每个适配端可能仅包含可用 MicroPython 库的子集。"
 
 #: ../../library/index.rst:28
 msgid ""
@@ -73,12 +82,16 @@ msgid ""
 "section which contains information pertaining to a specific "
 ":term:`MicroPython port`."
 msgstr ""
+"基于这一点，请注意本文档中描述的模块（甚至整个模块）"
+"中的某些函数/类在特定系统上的特定 MicroPython 构建中 **也许不可用**。 "
+"了解特定功能的可用性/不可用性的最佳位置是包含特定 :term:`MicroPython 适配端 <MicroPython port>` 有关信息的 “信息概要” 内容。"
 
 #: ../../library/index.rst:35
 msgid ""
 "On some ports you are able to discover the available, built-in libraries "
 "that can be imported by entering the following at the :term:`REPL`::"
 msgstr ""
+"在一些适配端你可以通过在 :term:`REPL` 输入以下命令查看可用的内置库："
 
 #: ../../library/index.rst:40
 msgid ""
@@ -86,10 +99,13 @@ msgid ""
 "modules from the Python standard library, as well as further MicroPython "
 "extensions to it, can be found in :term:`micropython-lib`."
 msgstr ""
+"除了本文档中描述的内置库之外，"
+"还可以在 :term:`micropython-lib` 中找到 Python 标准库中的更多模块，"
+"以及它对 MicroPython 的进一步扩展。"
 
 #: ../../library/index.rst:45
 msgid "Python standard libraries and micro-libraries"
-msgstr ""
+msgstr "Python 标注库和微型库"
 
 #: ../../library/index.rst:47
 msgid ""
@@ -98,20 +114,22 @@ msgid ""
 "functionality of that module and are intended to be a drop-in replacement"
 " for the standard Python library."
 msgstr ""
+"以下标准 Python 库已被 “微型化” 以符合 MicroPython 的理念。 "
+"它们提供了其模块的核心功能，旨在成为标准 Python 库的替代品。"
 
 #: ../../library/index.rst:82
 msgid "MicroPython-specific libraries"
-msgstr ""
+msgstr "MicroPython 的特定库"
 
 #: ../../library/index.rst:84
 msgid ""
 "Functionality specific to the MicroPython implementation is available in "
 "the following libraries."
-msgstr ""
+msgstr "以下库中提供了特定于 MicroPython 实现的功能。"
 
 #: ../../library/index.rst:102
 msgid "Port-specific libraries"
-msgstr ""
+msgstr "适配端的特定库"
 
 #: ../../library/index.rst:104
 msgid ""
@@ -120,6 +138,8 @@ msgid ""
 "occurs, the entry in the port specific library exposes hardware "
 "functionality unique to that platform."
 msgstr ""
+"在某些情况下，以下适配端/板特定库具有类似于 :mod:`machine` 库中的功能或类。 "
+"在这种情况下，适配端特定库中的对应项会声明该平台独有的硬件功能。"
 
 #: ../../library/index.rst:109
 msgid ""
@@ -127,52 +147,54 @@ msgid ""
 "module. To access platform-specific hardware use the appropriate library,"
 " e.g. :mod:`pyb` in the case of the Pyboard."
 msgstr ""
+"为了编写可移植代码，请使用 :mod:`machine` 模块中的函数和类。 "
+"要访问特定于平台的硬件时，请使用适当的库，例如在 Pyboard 上使用 :mod:`pyb` 。"
 
 #: ../../library/index.rst:115
 msgid "Libraries specific to the pyboard"
-msgstr ""
+msgstr "pyboard 的特定库"
 
 #: ../../library/index.rst:117
 msgid "The following libraries are specific to the pyboard."
-msgstr ""
+msgstr "下述的库是 pyboard 特有的。"
 
 #: ../../library/index.rst:128
 msgid "Libraries specific to the WiPy"
-msgstr ""
+msgstr "WiPy 的特定库"
 
 #: ../../library/index.rst:130
 msgid "The following libraries and classes are specific to the WiPy."
-msgstr ""
+msgstr "下述的库和类是 WiPy 特有的。"
 
 #: ../../library/index.rst:141
 msgid "Libraries specific to the ESP8266 and ESP32"
-msgstr ""
+msgstr "ESP8266 和 ESP32 的特定库"
 
 #: ../../library/index.rst:143
 msgid "The following libraries are specific to the ESP8266 and ESP32."
-msgstr ""
+msgstr "下述的库是 ESP8266 和 ESP32 特有的。"
 
 #: ../../library/index.rst:153
 msgid "Libraries specific to the RP2040"
-msgstr ""
+msgstr "RP2040 的特定库"
 
 #: ../../library/index.rst:155
 msgid ""
 "The following libraries are specific to the RP2040, as used in the "
 "Raspberry Pi Pico."
-msgstr ""
+msgstr "下述的库和类是 RP2040 特有的，用于树莓派 Pico 板。"
 
 #: ../../library/index.rst:163
 msgid "Libraries specific to Zephyr"
-msgstr ""
+msgstr "Zephyr 的特定库"
 
 #: ../../library/index.rst:165
 msgid "The following libraries are specific to the Zephyr port."
-msgstr ""
+msgstr "下述的库和类是 Zephyr 适配端特有的。"
 
 #: ../../library/index.rst:173
 msgid "Extending built-in libraries from Python"
-msgstr ""
+msgstr "扩展 Python 内置库"
 
 #: ../../library/index.rst:175
 msgid ""
@@ -181,6 +203,9 @@ msgid ""
 "``u`` to the non-``u`` version. However a file (or :term:`frozen module`)"
 " named ``module.py`` will take precedence over this alias."
 msgstr ""
+"在大多数情况下，上述模块实际上命名为 ``umodule`` 而不是 ``module``，"
+"但 MicroPython 会将任何以 ``u`` 为前缀的模块别名为非 ``u`` 版本。 "
+"但是，名为 ``module.py`` 的文件（或 :term:`冻结的 module <frozen module>` ）将优先于此别名。"
 
 #: ../../library/index.rst:180
 msgid ""
@@ -190,6 +215,10 @@ msgid ""
 "functionality by importing ``umodule`` directly. This is used extensively"
 " in :term:`micropython-lib`. See :ref:`packages` for more information."
 msgstr ""
+"该特性允许用户提供内置库的扩展实现（可能提供额外的 CPython 兼容性）。 "
+"用户提供的模块（指 ``module.py`` 中）仍可通过直接导入 ``umodule`` 来使用内置功能。 "
+"这种做法在 :term:`micropython-lib` 中广泛使用。 "
+"有关详细信息，请参阅 :ref:`packages` 。"
 
 #: ../../library/index.rst:186
 msgid ""
@@ -198,6 +227,8 @@ msgid ""
 " ``bluetooth``, etc). The main exception is the port-specific libraries "
 "(``pyb``, ``esp``, etc)."
 msgstr ""
+"这在 Python 标准库（例如 ``os`` 、``time`` 等）和 MicroPython 库（例如 ``machine`` 、 ``bluetooth`` 等）同样适用。 "
+"主要的例外是特定于适配端的库（ ``pyb`` 、 ``esp`` 等）。"
 
 #: ../../library/index.rst:190
 msgid ""
@@ -205,4 +236,4 @@ msgid ""
 "module, we recommend always using ``import module`` rather than ``import "
 "umodule``.*"
 msgstr ""
-
+"*除非你特别想强制使用内置模块，我们推荐始终使用 ``import module`` 而不是 ``import umodule`` 。*"
