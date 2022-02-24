@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../reference/index.rst:2
 msgid "MicroPython language and implementation"
-msgstr ""
+msgstr "MicroPython 语言与实现"
 
 #: ../../reference/index.rst:4
 msgid ""
@@ -31,6 +31,9 @@ msgid ""
 "\"Language Reference\" documentation at `docs.python.org "
 "<https://docs.python.org/3/reference/index.html>`_."
 msgstr ""
+"MicroPython 目标为，在语言语法方面实现 Python 3.4 标准（从更高版本中选择的特性），"
+"并且让 MicroPython 的大部分特性与 `docs.python.org "
+"<https://docs.python.org/3/reference/index.html>`_ 上的 \"Language Reference\" 文档中描述的特性相同。"
 
 #: ../../reference/index.rst:10
 msgid ""
@@ -39,10 +42,14 @@ msgid ""
 "differences between MicroPython and CPython (which mostly concern "
 "standard library and types, but also some language-level features)."
 msgstr ""
+"MicroPython 标准库在 :ref:`对应的章节 "
+"<micropython_lib>` 中进行了描述。"
+"在 :ref:`cpython_diffs` 章节中描述了 MicroPython 和 CPython 之间的区别"
+"（主要涉及标准库和类型，但也涉及一些语言级别的特性）。"
 
 #: ../../reference/index.rst:16
 msgid ""
 "This chapter describes features and peculiarities of MicroPython "
 "implementation and the best practices to use them."
 msgstr ""
-
+"本章阐述了 MicroPython 实现的功能和特性以及使用它们的最佳实践。"
