@@ -76,7 +76,7 @@ msgid ""
 "Finally type ``print(i)``, press RETURN, press BACKSPACE and press RETURN"
 " again:"
 msgstr ""
-"最后键入 ``print(i)``，按 RETURN （回车），按 BACKSPACE （退格）然后再按 RETURN （回车）："
+"最后输入 ``print(i)``，按 RETURN （回车），按 BACKSPACE （退格）然后再按 RETURN （回车）："
 
 #: ../../reference/repl.rst:52
 msgid ""
@@ -100,9 +100,9 @@ msgid ""
 "type ``m`` and press TAB and it should expand to ``machine``. Enter a dot"
 " ``.`` and press TAB again. You should see something like:"
 msgstr ""
-"在 REPL 中键入命令时，如果到当前行输入的内容能对应于某些名称的开头，"
+"在 REPL 中输入命令时，如果到当前行输入的内容能对应于某些名称的开头，"
 "则按 TAB 将显示可能输入的内容。例如，首先通过输入 ``import machine`` 并按 RETURN （回车）来导入机器模块。"
-"然后键入 ``m`` 并按 TAB，它应该能补全为 `machine` 。此时输入一个句点 ``.`` 并再次按 TAB。"
+"然后输入 ``m`` 并按 TAB，它应该能补全为 `machine` 。此时输入一个句点 ``.`` 并再次按 TAB。"
 "你应该会看到如下内容："
 
 #: ../../reference/repl.rst:72
@@ -275,7 +275,7 @@ msgstr "和一般情况一样通过 ctrl-A 输入 Raw REPL"
 
 #: ../../reference/repl.rst:221
 msgid "Write 3 bytes: ``b\"\\x05A\\x01\"`` (ie ctrl-E then \"A\" then ctrl-A)."
-msgstr "写入 3 个字节： ``（b\"\\x05A\\x01\"`` 即 ctrl-E，然后是 \"A\"，在然后是 ctrl-A）。"
+msgstr "写入 3 个字节： ``（b\"\\x05A\\x01\"`` 即 ctrl-E，然后是 \"A\"，再然后是 ctrl-A）。"
 
 #: ../../reference/repl.rst:223
 msgid "Read 2 bytes to determine if the device entered raw-paste mode:"
