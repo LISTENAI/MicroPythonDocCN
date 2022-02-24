@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../library/zephyr.FlashArea.rst:5
 msgid "class FlashArea -- access to built-in flash storage"
-msgstr ""
+msgstr "FlashArea 类 -- 访问内置的 flash 存储"
 
 #: ../../library/zephyr.FlashArea.rst:7
 msgid ""
@@ -29,6 +29,9 @@ msgid ""
 "<https://docs.zephyrproject.org/latest/reference/storage/flash_map/flash_map.html"
 "#flash-map>`_."
 msgstr ""
+"使用 `Zephyr flash map API "
+"<https://docs.zephyrproject.org/latest/reference/storage/flash_map/flash_map.html"
+"#flash-map>`_."
 
 #: ../../library/zephyr.FlashArea.rst:9
 msgid ""
@@ -40,16 +43,24 @@ msgid ""
 "from the device tree is used; however, fixed flash partitioning is not "
 "enforced in MicroPython because MCUBoot is not enabled."
 msgstr ""
+"此类允许访问设备 flash 分区数据。"
+"Flash 区实体由一个全局唯一的 ID 号、"
+"分区所在的 Flash 设备的名称、"
+"起始偏移量（表示为与每个分区的 Flash 存储器起始地址相关）、"
+"以及该设备所代表的分区的大小组成。"
+"对于固定的 flash 分区，来自设备树定义的数据将被使用；"
+"但由于未启用 MCUBoot，在 MicroPython 中未强制执行固定 flash 分区。"
 
 #: ../../library/zephyr.FlashArea.rst:16
 msgid "Constructors"
-msgstr ""
+msgstr "构造器"
 
 #: ../../library/zephyr.FlashArea.rst:20
 msgid ""
 "Gets an object for accessing flash memory at partition specified by "
 "``id`` and with block size of ``block_size``."
 msgstr ""
+"通过指定 ``id`` 和块大小 ``block_size`` 获取一个对象，用于访问 flash 分区中的闪存。"
 
 #: ../../library/zephyr.FlashArea.rst:22
 msgid ""
@@ -63,14 +74,20 @@ msgid ""
 "partitions can be accessed by ID integer values 1, 2, 3, and 4, "
 "respectively."
 msgstr ""
+"``id`` 值是与设备树中定义的固定 flash 分区相关的整数。"
+"一个公用的 flash 存储区域，是在启动时，当 ``FLASH_AREA_LABEL_EXISTS(storage)`` 返回 true 后，"
+"定义为 ``FlashArea.STORAGE`` 。"
+"Zephyr devicetree 中的固定闪存分区为 ``boot_partition`` 、 ``slot0_partition`` 、 "
+"``slot1_partition`` 和 ``scratch_partition`` 。"
+"由于 MicroPython 默认未启用 MCUBoot，因此可以分别通过 ID 整数值 1、2、3 和 4 访问这些固定分区。"
 
 #: ../../library/zephyr.FlashArea.rst:30
 msgid "Methods"
-msgstr ""
+msgstr "函数"
 
 #: ../../library/zephyr.FlashArea.rst:38
 msgid ""
 "These methods implement the simple and extended :ref:`block protocol "
 "<block-device-interface>` defined by :class:`uos.AbstractBlockDev`."
 msgstr ""
-
+"这些函数实现了简单和扩展的 :ref:`块协议 <block-device-interface>` （在 :class:`uos.AbstractBlockDev` 中定义） 。"

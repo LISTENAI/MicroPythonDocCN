@@ -21,22 +21,23 @@ msgstr ""
 
 #: ../../library/array.rst:2
 msgid ":mod:`array` -- arrays of numeric data"
-msgstr ""
+msgstr ":mod:`array` -- 数值数据数组"
 
 #: ../../library/array.rst:7
 msgid "|see_cpython_module| :mod:`python:array`."
-msgstr ""
+msgstr "|see_cpython_module_zh_cn| :mod:`python:array`."
 
 #: ../../library/array.rst:9
 msgid ""
 "Supported format codes: ``b``, ``B``, ``h``, ``H``, ``i``, ``I``, ``l``, "
 "``L``, ``q``, ``Q``, ``f``, ``d`` (the latter 2 depending on the "
 "floating-point support)."
-msgstr ""
+msgstr "支持的格式码： ``b``, ``B``, ``h``, ``H``, ``i``, ``I``, ``l``, "
+"``L``, ``q``, ``Q``, ``f``, ``d`` （最后两种取决于浮点型适配）"
 
 #: ../../library/array.rst:14
 msgid "Classes"
-msgstr ""
+msgstr "类"
 
 #: ../../library/array.rst:18
 msgid ""
@@ -44,14 +45,16 @@ msgid ""
 "are given by *iterable*. If it is not provided, an empty array is "
 "created."
 msgstr ""
+"使用给定类型的元素创建数组。数组的初始内容由 *iterable* 提供。否则创建一个空数组。"
 
 #: ../../library/array.rst:24
 msgid "Append new element *val* to the end of array, growing it."
-msgstr ""
+msgstr "将新元素 *val* 附加到数组的末尾以增长数组。"
 
 #: ../../library/array.rst:28
 msgid ""
 "Append new elements as contained in *iterable* to the end of array, "
 "growing it."
 msgstr ""
+"将 *iterable* 中包含的新元素附加到数组的末尾以增长数组。"
 

@@ -21,21 +21,22 @@ msgstr ""
 
 #: ../../library/zephyr.rst:4
 msgid ":mod:`zephyr` --- functionality specific to the Zephyr port"
-msgstr ""
+msgstr ":mod:`zephyr` --- 特定于 Zephyr 适配端的功能"
 
 #: ../../library/zephyr.rst:9
 msgid ""
 "The ``zephyr`` module contains functions and classes specific to the "
 "Zephyr port."
 msgstr ""
+"该 ``zephyr`` 模块包含特定于 Zephyr 适配端的函数和类。"
 
 #: ../../library/zephyr.rst:12
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../library/zephyr.rst:16
 msgid "Returns true if the current thread is a preemptible thread."
-msgstr ""
+msgstr "如果当前线程是可抢占线程，则返回 true 。"
 
 #: ../../library/zephyr.rst:18
 msgid ""
@@ -43,18 +44,22 @@ msgid ""
 "(low priority levels), which therefore, can be supplanted as soon as a "
 "higher or equal priority thread becomes ready."
 msgstr ""
+"Zephyr 可抢占线程是那些具有非负优先级值（低优先级）的线程，"
+"因此，一旦更高或相等优先级的线程准备就绪，就可以将其替换。"
 
 #: ../../library/zephyr.rst:23
 msgid ""
 "Returns the thread id of the current thread, which is used to reference "
 "the thread."
 msgstr ""
+"返回当前线程的线程 id，用于引用线程。"
 
 #: ../../library/zephyr.rst:27
 msgid ""
 "Runs the Zephyr debug thread analyzer on the current thread and prints "
 "stack size statistics in the format:"
 msgstr ""
+"在当前线程上运行 Zephyr 调试线程分析器并以以下格式打印堆栈大小统计信息："
 
 #: ../../library/zephyr.rst:29
 msgid ""
@@ -68,6 +73,7 @@ msgid ""
 "*CPU utilization is only printed if runtime statistics are configured via"
 " the ``CONFIG_THREAD_RUNTIME_STATS`` kconfig*"
 msgstr ""
+"*仅当启用* ``CONFIG_THREAD_RUNTIME_STATS`` *kconfig 配置运行时统计信息时才会打印 CPU 利用率*"
 
 #: ../../library/zephyr.rst:34
 msgid ""
@@ -77,6 +83,10 @@ msgid ""
 "<https://docs.zephyrproject.org/latest/guides/debug_tools/thread-"
 "analyzer.html#thread-analyzer>`_."
 msgstr ""
+"此功能只有在 ``zephyr/prj.conf`` 中配置了 ``CONFIG_THREAD_ANALYZER`` 后才能访问  。"
+"有关更多信息，请参阅 Zephyr `线程分析器 "
+"<https://docs.zephyrproject.org/latest/guides/debug_tools/thread-"
+"analyzer.html#thread-analyzer>`_ 的文档。"
 
 #: ../../library/zephyr.rst:40
 msgid ""
@@ -84,6 +94,8 @@ msgid ""
 "accessed if ``CONFIG_SHELL_BACKEND_SERIAL`` is configured for the port in"
 " ``zephyr/prj.conf``."
 msgstr ""
+"在 UART 后端执行给定的命令。"
+"此功能只有在 ``zephyr/prj.conf`` 中配置了 ``CONFIG_SHELL_BACKEND_SERIAL`` 后才能访问。"
 
 #: ../../library/zephyr.rst:43
 msgid ""
@@ -91,12 +103,14 @@ msgid ""
 "`shell commands "
 "<https://docs.zephyrproject.org/latest/reference/shell/index.html?highlight=shell_execute_cmd#commands>`_."
 msgstr ""
+"可以在 Zephyr `shell 命令 <https://docs.zephyrproject.org/latest/reference/shell/index.html?highlight=shell_execute_cmd#commands>`_ "
+"的文档中找到可用的命令列表。"
 
 #: ../../library/zephyr.rst:46
 msgid "Classes"
-msgstr ""
+msgstr "类"
 
 #: ../../library/zephyr.rst:55
 msgid "Additional Modules"
-msgstr ""
+msgstr "附加模块"
 

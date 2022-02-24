@@ -21,13 +21,15 @@ msgstr ""
 
 #: ../../library/zephyr.DiskAccess.rst:5
 msgid "class DiskAccess -- access to disk storage"
-msgstr ""
+msgstr "DiskAccess 类 —- 访问磁盘存储"
 
 #: ../../library/zephyr.DiskAccess.rst:7
 msgid ""
 "Uses `Zephyr Disk Access API "
 "<https://docs.zephyrproject.org/latest/reference/storage/disk/access.html>`_."
 msgstr ""
+"使用 `Zephyr Disk Access API "
+"<https://docs.zephyrproject.org/latest/reference/storage/disk/access.html>`_ 。"
 
 #: ../../library/zephyr.DiskAccess.rst:9
 msgid ""
@@ -36,6 +38,8 @@ msgid ""
 "devices are automatically detected and initialized on boot using Zephyr "
 "devicetree data."
 msgstr ""
+"此类允许访问开发板上的存储设备，例如对 SD 卡控制器和通过 SPI 连接的 SD 卡的支持。"
+"设备通过使用 Zephyr 设备树数据在启动引导时自动检测和初始化磁盘设备。"
 
 #: ../../library/zephyr.DiskAccess.rst:13
 msgid ""
@@ -45,10 +49,14 @@ msgid ""
 "many blocks as necessary to fill the buffer, so the number of sectors to "
 "read is found by dividing the buffer length by block size of the disk."
 msgstr ""
+"在给定磁盘名称、缓冲区、起始磁盘块和要读取的扇区数的情况下，"
+"Zephyr 磁盘访问类允许在磁盘设备和可访问内存缓冲区之间传输数据。"
+"MicroPython 会根据需要读取尽可能多的块来填充缓冲区，"
+"因此要读取的扇区数是通过将缓冲区长度除以磁盘的块大小来找到的。"
 
 #: ../../library/zephyr.DiskAccess.rst:18
 msgid "Constructors"
-msgstr ""
+msgstr "构造器"
 
 #: ../../library/zephyr.DiskAccess.rst:22
 msgid ""
@@ -57,14 +65,18 @@ msgid ""
 "``SDHC``. See board documentation and devicetree for usable disk names "
 "for your board (ex. RT boards use style USDHC#)."
 msgstr ""
+"获取用于访问特定磁盘的磁盘内存的对象。"
+"例如在 mimxrt1050_evk 开发板上要访问 SD 卡， ``disk_name`` 将是 ``SDHC`` 。 "
+"请参阅开发板文档和设备树获取在你的开发板上有用的磁盘名称（例如 RT 系列开发板使用样式形如 USDHC# ）。"
 
 #: ../../library/zephyr.DiskAccess.rst:27
 msgid "Methods"
-msgstr ""
+msgstr "函数"
 
 #: ../../library/zephyr.DiskAccess.rst:35
 msgid ""
 "These methods implement the simple and extended :ref:`block protocol "
 "<block-device-interface>` defined by :class:`uos.AbstractBlockDev`."
 msgstr ""
+"这些函数实现了简单和扩展的 :ref:`块协议 <block-device-interface>` （在 :class:`uos.AbstractBlockDev` 中定义） 。"
 

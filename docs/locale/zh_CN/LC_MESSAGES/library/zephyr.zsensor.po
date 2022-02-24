@@ -21,15 +21,15 @@ msgstr ""
 
 #: ../../library/zephyr.zsensor.rst:4
 msgid ":mod:`zsensor` --- Zephyr sensor bindings"
-msgstr ""
+msgstr ":mod:`zsensor` --- Zephyr 传感器绑定"
 
 #: ../../library/zephyr.zsensor.rst:9
 msgid "The ``zsensor`` module contains a class for using sensors with Zephyr."
-msgstr ""
+msgstr "``zsensor`` 模块包含一个用于在 Zephyr 中使用传感器的类。"
 
 #: ../../library/zephyr.zsensor.rst:14
 msgid "class Sensor --- sensor control for the Zephyr port"
-msgstr ""
+msgstr "Sensor 类 --- Zephyr 适配端的传感器控制"
 
 #: ../../library/zephyr.zsensor.rst:16
 msgid ""
@@ -37,6 +37,8 @@ msgid ""
 "documentation for sensor usage here: `Sensors "
 "<https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html?highlight=sensor#sensors>`_."
 msgstr ""
+"这个类用于在你的开发板上访问传感器的数据。请参阅 Zephyr 文档以了解此处的传感器用法： `传感器 "
+"<https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html?highlight=sensor#sensors>`_ 。"
 
 #: ../../library/zephyr.zsensor.rst:20
 msgid ""
@@ -46,10 +48,14 @@ msgid ""
 "property or different properties a sensor can measure. See `Channels`_ "
 "below for defined sensor channels."
 msgstr ""
+"在每个开发板，传感器在 Zephyr 设备树中定义。"
+"一个传感器可以测量的数量，称之为传感器通道。"
+"传感器可以有多个通道来表示一个属性的不同轴，或传感器可测量的不同属性。"
+"有关已定义的传感器通道，请参见下面的 `通道 <Channels>`_。"
 
 #: ../../library/zephyr.zsensor.rst:26
 msgid "Constructor"
-msgstr ""
+msgstr "构造器"
 
 #: ../../library/zephyr.zsensor.rst:30
 msgid ""
@@ -57,10 +63,12 @@ msgid ""
 "the device name for the accelerometer in the FRDM-k64f board is "
 "\"FXOS8700\"."
 msgstr ""
+"设备名称在你的开发板设备树中定义。"
+"例如， FRDM-k64f 开发板中加速度传感器的设备名为 \"FXOS8700\" 。"
 
 #: ../../library/zephyr.zsensor.rst:34
 msgid "Methods"
-msgstr ""
+msgstr "函数"
 
 #: ../../library/zephyr.zsensor.rst:38
 msgid ""
@@ -69,90 +77,94 @@ msgid ""
 "useful value, a pair of (integer part of value, fractional part of value "
 "in 1-millionths). Returns none if successful or OSError value if failure."
 msgstr ""
+"使用 Zephyr sensor_sample_fetch 从传感器设备获取测量样本，"
+"并将其作为有用值存储在内部驱动程序缓冲区中，"
+"该值为一个元组形如（值的整数部分，精确到百万分之一的小数部分）。"
+"如果成功则返回 none，否则返回 OSError 值。"
 
 #: ../../library/zephyr.zsensor.rst:45
 msgid "Returns the value of the sensor measurement sample as a float."
-msgstr ""
+msgstr "以浮点数形式返回传感器测量样本的值。"
 
 #: ../../library/zephyr.zsensor.rst:49
 msgid ""
 "Returns the value of the sensor measurement sample in millionths. (Ex. "
 "value of ``(1, 500000)`` returns as ``1500000``)"
-msgstr ""
+msgstr "以百万分之一为单位，返回传感器测量样本的值。（例如， ``(1, 500000)`` 返回值为 ``1500000`` ）"
 
 #: ../../library/zephyr.zsensor.rst:54
 msgid ""
 "Returns the value of sensor measurement sample in thousandths. (Ex. value"
 " of ``(1, 500000)`` returns as ``1500``)"
-msgstr ""
+msgstr "以千分之一为单位，返回传感器测量样本的值。（例如， ``(1, 500000)`` 返回值为 ``1500`` ）"
 
 #: ../../library/zephyr.zsensor.rst:59
 msgid ""
 "Returns only the integer value of the measurement sample. (Ex. value of "
 "``(1, 500000)`` returns as ``1``)"
-msgstr ""
+msgstr "仅返回测量样本的整数值。（例如， ``(1, 500000)`` 返回值为 ``1`` ）"
 
 #: ../../library/zephyr.zsensor.rst:63
 msgid "Channels"
-msgstr ""
+msgstr "通道"
 
 #: ../../library/zephyr.zsensor.rst:67
 msgid "Acceleration on the X axis, in m/s^2."
-msgstr ""
+msgstr "X 轴上的加速度，单位为米/平方秒 m/s^2。"
 
 #: ../../library/zephyr.zsensor.rst:71
 msgid "Acceleration on the Y axis, in m/s^2."
-msgstr ""
+msgstr "Y 轴上的加速度，单位为米/平方秒 m/s^2。"
 
 #: ../../library/zephyr.zsensor.rst:75
 msgid "Acceleration on the Z axis, in m/s^2."
-msgstr ""
+msgstr "Z 轴上的加速度，单位为米/平方秒 m/s^2。"
 
 #: ../../library/zephyr.zsensor.rst:79
 msgid "Angular velocity around the X axis, in radians/s."
-msgstr ""
+msgstr "绕 X 轴的角速度，单位为弧度/秒 radians/s。"
 
 #: ../../library/zephyr.zsensor.rst:83
 msgid "Angular velocity around the Y axis, in radians/s."
-msgstr ""
+msgstr "绕 Y 轴的角速度，单位为弧度/秒 radians/s。"
 
 #: ../../library/zephyr.zsensor.rst:87
 msgid "Angular velocity around the Z axis, in radians/s."
-msgstr ""
+msgstr "绕 Z 轴的角速度，单位为弧度/秒 radians/s。"
 
 #: ../../library/zephyr.zsensor.rst:91
 msgid "Magnetic field on the X axis, in Gauss."
-msgstr ""
+msgstr "X 轴上的磁场，单位为高斯 Gauss。"
 
 #: ../../library/zephyr.zsensor.rst:95
 msgid "Magnetic field on the Y axis, in Gauss."
-msgstr ""
+msgstr "Y 轴上的磁场，单位为高斯 Gauss。"
 
 #: ../../library/zephyr.zsensor.rst:99
 msgid "Magnetic field on the Z axis, in Gauss."
-msgstr ""
+msgstr "Z 轴上的磁场，单位为高斯 Gauss。"
 
 #: ../../library/zephyr.zsensor.rst:103
 msgid "Device die temperature in degrees Celsius."
-msgstr ""
+msgstr "器件芯片温度，以摄氏度为单位。"
 
 #: ../../library/zephyr.zsensor.rst:107
 msgid "Pressure in kilopascal."
-msgstr ""
+msgstr "压力，单位为千帕 kilopascal。"
 
 #: ../../library/zephyr.zsensor.rst:111
 msgid "Proximity. Dimensionless. A value of 1 indicates that an object is close."
-msgstr ""
+msgstr "距离传感器。无度量单位。值 1 表示对象靠近。"
 
 #: ../../library/zephyr.zsensor.rst:115
 msgid "Humidity, in percent."
-msgstr ""
+msgstr "湿度，百分比。"
 
 #: ../../library/zephyr.zsensor.rst:119
 msgid "Illuminance in visible spectrum, in lux."
-msgstr ""
+msgstr "可见光谱中的照度，单位为勒克斯 lux。"
 
 #: ../../library/zephyr.zsensor.rst:123
 msgid "Altitude, in meters."
-msgstr ""
+msgstr "海拔高度，单位为米 meters。"
 

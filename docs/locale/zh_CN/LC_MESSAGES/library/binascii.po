@@ -21,39 +21,43 @@ msgstr ""
 
 #: ../../library/binascii.rst:2
 msgid ":mod:`binascii` -- binary/ASCII conversions"
-msgstr ""
+msgstr ":mod:`binascii` -- 二进制/ASCII 转换"
 
 #: ../../library/binascii.rst:7
 msgid "|see_cpython_module| :mod:`python:binascii`."
-msgstr ""
+msgstr "|see_cpython_module_zh_cn| :mod:`python:binascii`."
 
 #: ../../library/binascii.rst:9
 msgid ""
 "This module implements conversions between binary data and various "
 "encodings of it in ASCII form (in both directions)."
 msgstr ""
+"该模块实现了在 ASCII 表中的数据在二进制数据及其各种编码的转换（双向）。"
 
 #: ../../library/binascii.rst:13
 msgid "Functions"
-msgstr ""
+msgstr "函数"
 
 #: ../../library/binascii.rst:17
 msgid ""
 "Convert the bytes in the *data* object to a hexadecimal representation. "
 "Returns a bytes object."
 msgstr ""
+"将 *data* 对象中的字节数据转换十六进制表示字符串。返回一个 bytes 对象。"
 
 #: ../../library/binascii.rst:20
 msgid ""
 "If the additional argument *sep* is supplied it is used as a separator "
 "between hexadecimal values."
 msgstr ""
+"若提供了附加参数 *seq* ，则会被用作十六进制值之间的分隔符。"
 
 #: ../../library/binascii.rst:25
 msgid ""
 "Convert hexadecimal data to binary representation. Returns bytes string. "
 "(i.e. inverse of hexlify)"
 msgstr ""
+"将十六进制数据转换为二进制表示。返回 bytes 字符串。（即 hexlify 的反操作）"
 
 #: ../../library/binascii.rst:30
 msgid ""
@@ -62,6 +66,9 @@ msgid ""
 "<https://tools.ietf.org/html/rfc2045#section-6.8>`_. Returns a bytes "
 "object."
 msgstr ""
+"解码 base64 编码的数据，忽略输入中的无效字符。符合 `RFC 2045 s.6.8 "
+"<https://tools.ietf.org/html/rfc2045#section-6.8>`_ 。"
+"返回一个 bytes 对象。"
 
 #: ../../library/binascii.rst:36
 msgid ""
@@ -69,4 +76,7 @@ msgid ""
 "<https://tools.ietf.org/html/rfc3548.html>`_. Returns the encoded data "
 "followed by a newline character, as a bytes object."
 msgstr ""
+"以 base64 格式编码二进制数据，如 `RFC 3548 "
+"<https://tools.ietf.org/html/rfc3548.html>`_ 中所示。"
+"以 bytes 对象的形式返回编码数据，末尾跟着一个换行符。"
 
