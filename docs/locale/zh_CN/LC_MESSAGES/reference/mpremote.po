@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../reference/mpremote.rst:2
 msgid "MicroPython remote control: mpremote"
-msgstr ""
+msgstr "MicroPython 远程控制: mpremote"
 
 #: ../../reference/mpremote.rst:4
 msgid ""
@@ -29,16 +29,19 @@ msgid ""
 "utilities to remotely interact with and automate a MicroPython device "
 "over a serial connection."
 msgstr ""
+"``mpremote`` 命令行工具提供了一组集成的实用功能，"
+"可通过串口连接与 MicroPython 设备进行远程交互和自动化。"
 
 #: ../../reference/mpremote.rst:8
 msgid "To use mpremote install it via ``pip``:"
-msgstr ""
+msgstr "通过 ``pip`` 安装来使用 mpremote ："
 
 #: ../../reference/mpremote.rst:14
 msgid ""
 "The simplest way to use this tool is just by invoking it without any "
 "arguments:"
 msgstr ""
+"使用此工具的最简单方式，就是不带任何参数地调用它"
 
 #: ../../reference/mpremote.rst:20
 msgid ""
@@ -48,10 +51,13 @@ msgid ""
 "``mpremote`` will connect to subsequent serial devices, if any are "
 "available."
 msgstr ""
+"此命令自动检测并连接到第一个可用的串口设备并提供交互式 REPL。"
+"串行端口打开时是独占的，因此运行第二个（或第三个等）实例时，"
+" ``mpremote`` 将连接到后续串行设备（如果有的话）。"
 
 #: ../../reference/mpremote.rst:27
 msgid "Commands"
-msgstr ""
+msgstr "命令"
 
 #: ../../reference/mpremote.rst:29
 msgid ""
@@ -60,30 +66,33 @@ msgid ""
 "at the command line which will perform various actions on remote "
 "MicroPython devices."
 msgstr ""
+"对于访问 REPL ，通常只需要不带任何参数运行 ``mpremote`` 即可。"
+" ``mpremote`` 也支持在命令行中给出的附带命令。"
+"这些命令可远程在 MicroPython 设备上执行各种操作。"
 
 #: ../../reference/mpremote.rst:33
 msgid "The full list of supported commands are:"
-msgstr ""
+msgstr "完整的支持命令的列表："
 
 #: ../../reference/mpremote.rst:35
 msgid "connect to a specified device via a device-name shortcut:"
-msgstr ""
+msgstr "通过设备名简称连接到指定设备："
 
 #: ../../reference/mpremote.rst:41
 msgid "connect to specified device via name:"
-msgstr ""
+msgstr "通过名称连接到指定设备："
 
 #: ../../reference/mpremote.rst:47
 msgid "``<device>`` may be one of:"
-msgstr ""
+msgstr "``<device>`` 处可以是："
 
 #: ../../reference/mpremote.rst:49
 msgid "``list``: list available devices"
-msgstr ""
+msgstr "``list``: 用于列出可用的设备"
 
 #: ../../reference/mpremote.rst:50
 msgid "``auto``: connect to the first available device"
-msgstr ""
+msgstr "``auto``: 连接首个可用的设备"
 
 #: ../../reference/mpremote.rst:51
 msgid ""
@@ -91,98 +100,103 @@ msgid ""
 "``<serial>`` (the second entry in the output from the ``connect list`` "
 "command)"
 msgstr ""
+"id:<serial>：使用 USB 序列号 ``<serial>`` （ ``connect list`` 命令输出中的第二排）连接到设备 "
 
 #: ../../reference/mpremote.rst:54
 msgid "``port:<path>``: connect to the device with the given path"
-msgstr ""
+msgstr "``port:<path>``: 使用给定的路径连接到设备"
 
 #: ../../reference/mpremote.rst:55
 msgid "any valid device name/path, to connect to that device"
-msgstr ""
+msgstr "任意有效的设备名或地址，来连接到设备"
 
 #: ../../reference/mpremote.rst:57
 msgid "disconnect current device:"
-msgstr ""
+msgstr "断开当前设备的链接："
 
 #: ../../reference/mpremote.rst:63
 msgid "enter the REPL on the connected device:"
-msgstr ""
+msgstr "在连接的设备上进入 REPL："
 
 #: ../../reference/mpremote.rst:69
 msgid "Options are:"
-msgstr ""
+msgstr "选项："
 
 #: ../../reference/mpremote.rst:71
 msgid ""
 "``--capture <file>``, to capture output of the REPL session to the given "
 "file"
 msgstr ""
+"``--capture <file>``, 将 REPL 会话的输出捕获到给定的文件中"
 
 #: ../../reference/mpremote.rst:73
 msgid ""
 "``--inject-code <string>``, to specify characters to inject at the REPL "
 "when Ctrl-J is pressed"
 msgstr ""
+"``--inject-code <string>``, 指定在 REPL 中按下 Ctrl-J 时注入的字符"
 
 #: ../../reference/mpremote.rst:75
 msgid ""
 "``--inject-file <file>``, to specify a file to inject at the REPL when "
 "Ctrl-K is pressed"
 msgstr ""
+"``--inject-file <strfileing>``, 指定在 REPL 中按下 Ctrl-K 时注入的文件"
 
 #: ../../reference/mpremote.rst:78
 msgid "evaluate and print the result of a Python expression:"
-msgstr ""
+msgstr "计算并打印 Python 表达式的结果"
 
 #: ../../reference/mpremote.rst:84
 msgid "execute the given Python code:"
-msgstr ""
+msgstr "执行给定的 Python 代码"
 
 #: ../../reference/mpremote.rst:90
 msgid "run a script from the local filesystem:"
-msgstr ""
+msgstr "从本地文件系统运行脚本"
 
 #: ../../reference/mpremote.rst:96
 msgid "execute filesystem commands on the device:"
-msgstr ""
+msgstr "在设备上执行文件系统命令"
 
 #: ../../reference/mpremote.rst:102
 msgid "``<command>`` may be:"
-msgstr ""
+msgstr "``<command>`` 可以是："
 
 #: ../../reference/mpremote.rst:104
 msgid "``cat <file..>`` to show the contents of a file or files on the device"
-msgstr ""
+msgstr "``cat <file..>`` 显示设备上一个或多个文件的内容"
 
 #: ../../reference/mpremote.rst:105
 msgid "``ls`` to list the current directory"
-msgstr ""
+msgstr "``ls`` 列出当前目录"
 
 #: ../../reference/mpremote.rst:106
 msgid "``ls <dirs...>`` to list the given directories"
-msgstr ""
+msgstr "``ls <dirs...>`` 列出给定的目录"
 
 #: ../../reference/mpremote.rst:107
 msgid ""
 "``cp [-r] <src...> <dest>`` to copy files; use \":\" as a prefix to "
 "specify a file on the device"
 msgstr ""
+"``cp [-r] <src...> <dest>`` 复制文件；使用 \":\" 作为前缀来指定设备上的文件"
 
 #: ../../reference/mpremote.rst:109
 msgid "``rm <src...>`` to remove files on the device"
-msgstr ""
+msgstr "``rm <src...>`` 删除设备上的文件"
 
 #: ../../reference/mpremote.rst:110
 msgid "``mkdir <dirs...>`` to create directories on the device"
-msgstr ""
+msgstr "``mkdir <dirs...>`` 在设备上创建目录"
 
 #: ../../reference/mpremote.rst:111
 msgid "``rmdir <dirs...>`` to remove directories on the device"
-msgstr ""
+msgstr "``rmdir <dirs...>`` 删除设备上的目录"
 
 #: ../../reference/mpremote.rst:113
 msgid "mount the local directory on the remote device:"
-msgstr ""
+msgstr "在远程设备上挂载本地目录"
 
 #: ../../reference/mpremote.rst:119
 msgid ""
@@ -192,48 +206,58 @@ msgid ""
 "given.  Automatic connection will search for the first available serial "
 "device. If no action is specified then the REPL will be entered."
 msgstr ""
+"可以指定多个命令，它们将按顺序运行。当未明确给出上述命令时，"
+"连接和断开将在工具执行的开始和结束时自动完成。"
+"自动连接特性将搜索第一个可用的串行设备。"
+"如果未指定任何操作，则将进入 REPL。"
 
 #: ../../reference/mpremote.rst:126
 msgid "Shortcuts"
-msgstr ""
+msgstr "快捷方式"
 
 #: ../../reference/mpremote.rst:128
-msgid "Shortcuts can be defined using the macro system.  Built-in shortcuts are::"
-msgstr ""
+msgid "Shortcuts can be defined using the macro system.  Built-in shortcuts are:"
+msgstr "快捷方式可以使用宏系统定义。内置的快捷方式有："
+
+#: ../../reference/mpremote.rst:132
+msgid "``devs``: list available devices (shortcut for ``connect list``)"
+msgstr "``devs``: 列出所有可用设备 (即 ``connect list`` 的快捷方式)"
 
 #: ../../reference/mpremote.rst:132
 msgid "``a0``, ``a1``, ``a2``, ``a3``: connect to /dev/ttyACM?"
-msgstr ""
+msgstr "``a0``, ``a1``, ``a2``, ``a3``: 连接到 /dev/ttyACM?"
 
 #: ../../reference/mpremote.rst:134
 msgid "``u0``, ``u1``, ``u2``, ``u3``: connect to /dev/ttyUSB?"
-msgstr ""
+msgstr "``u0``, ``u1``, ``u2``, ``u3``: 连接到 /dev/ttyUSB?"
 
 #: ../../reference/mpremote.rst:136
 msgid "``c0``, ``c1``, ``c2``, ``c3``: connect to COM?"
-msgstr ""
+msgstr "``c0``, ``c1``, ``c2``, ``c3``: 连接到 COM?"
 
 #: ../../reference/mpremote.rst:138
 msgid ""
 "``cat``, ``ls``, ``cp``, ``rm``, ``mkdir``, ``rmdir``, ``df``: filesystem"
 " commands"
-msgstr ""
+msgstr "``cat``, ``ls``, ``cp``, ``rm``, ``mkdir``, ``rmdir``, ``df``： 文件系统命令"
 
 #: ../../reference/mpremote.rst:141
 msgid "``reset``: reset the device"
-msgstr ""
+msgstr "``reset``: 软复位设备"
 
 #: ../../reference/mpremote.rst:143
 msgid "``bootloader``: make the device enter its bootloader"
-msgstr ""
+msgstr "``bootloader``: 使设备进入其引导加载程序"
 
 #: ../../reference/mpremote.rst:145
 msgid ""
 "Any user configuration, including user-defined shortcuts, can be placed "
 "in the file ``.config/mpremote/config.py``. For example:"
 msgstr ""
+"用户定义的快捷方式，像所有用户配置一样，"
+"都可以在文件中 ``.config/mpremote/config.py`` 修改替换。例如："
 
 #: ../../reference/mpremote.rst:166
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
