@@ -12,6 +12,8 @@ MicroPython 中文文档
 
 本仓库主要对 MicroPython 通用能力、Zephyr 适配章节进行翻译。
 
+访问链接： [https://listenai.github.io/MicroPythonDocCN/](https://listenai.github.io/MicroPythonDocCN/)
+
 翻译
 --------
 
