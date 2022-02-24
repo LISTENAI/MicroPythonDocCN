@@ -47,7 +47,7 @@
   
   
   
-    <title>MicroPython remote control: mpremote &#8212; MicroPython 1.18 文档</title>
+    <title>MicroPython 远程控制: mpremote &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> MicroPython remote control: mpremote </span>
+          <span class="md-header-nav__topic"> MicroPython 远程控制: mpremote </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -208,21 +208,21 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython remote control: mpremote </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython 远程控制: mpremote </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">MicroPython remote control: mpremote</a>
+      <a href="#" class="md-nav__link md-nav__link--active">MicroPython 远程控制: mpremote</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-mpremote--page-root" class="md-nav__link">MicroPython remote control: mpremote</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-mpremote--page-root" class="md-nav__link">MicroPython 远程控制: mpremote</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#commands" class="md-nav__link">Commands</a>
+        <li class="md-nav__item"><a href="#commands" class="md-nav__link">命令</a>
         </li>
-        <li class="md-nav__item"><a href="#shortcuts" class="md-nav__link">Shortcuts</a>
+        <li class="md-nav__item"><a href="#shortcuts" class="md-nav__link">快捷方式</a>
         </li>
-        <li class="md-nav__item"><a href="#examples" class="md-nav__link">Examples</a>
+        <li class="md-nav__item"><a href="#examples" class="md-nav__link">示例</a>
         </li></ul>
             </nav>
         </li>
@@ -232,21 +232,21 @@
     <li class="md-nav__item">
     
     
-      <a href="#commands" class="md-nav__link">Commands</a>
+      <a href="#commands" class="md-nav__link">命令</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#shortcuts" class="md-nav__link">Shortcuts</a>
+      <a href="#shortcuts" class="md-nav__link">快捷方式</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#examples" class="md-nav__link">Examples</a>
+      <a href="#examples" class="md-nav__link">示例</a>
       
     
     </li></ul>
@@ -401,13 +401,13 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-mpremote--page-root" class="md-nav__link">MicroPython remote control: mpremote</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-mpremote--page-root" class="md-nav__link">MicroPython 远程控制: mpremote</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#commands" class="md-nav__link">Commands</a>
+        <li class="md-nav__item"><a href="#commands" class="md-nav__link">命令</a>
         </li>
-        <li class="md-nav__item"><a href="#shortcuts" class="md-nav__link">Shortcuts</a>
+        <li class="md-nav__item"><a href="#shortcuts" class="md-nav__link">快捷方式</a>
         </li>
-        <li class="md-nav__item"><a href="#examples" class="md-nav__link">Examples</a>
+        <li class="md-nav__item"><a href="#examples" class="md-nav__link">示例</a>
         </li></ul>
             </nav>
         </li>
@@ -421,130 +421,107 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-remote-control-mpremote">
-<h1 id="reference-mpremote--page-root">MicroPython remote control: mpremote<a class="headerlink" href="#reference-mpremote--page-root" title="永久链接至标题">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">mpremote</span></code> command line tool provides an integrated set of utilities to
-remotely interact with and automate a MicroPython device over a serial
-connection.</p>
-<p>To use mpremote install it via <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
+<h1 id="reference-mpremote--page-root">MicroPython 远程控制: mpremote<a class="headerlink" href="#reference-mpremote--page-root" title="永久链接至标题">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">mpremote</span></code> 命令行工具提供了一组集成的实用功能，可通过串口连接与 MicroPython 设备进行远程交互和自动化。</p>
+<p>通过 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 安装来使用 mpremote ：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ pip install mpremote
 </pre></div>
 </div>
-<p>The simplest way to use this tool is just by invoking it without any arguments:</p>
+<p>使用此工具的最简单方式，就是不带任何参数地调用它</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpremote
 </pre></div>
 </div>
-<p>This command automatically detects and connects to the first available serial
-device and provides an interactive REPL.  Serial ports are opened in exclusive
-mode, so running a second (or third, etc) instance of <code class="docutils literal notranslate"><span class="pre">mpremote</span></code> will connect
-to subsequent serial devices, if any are available.</p>
+<p>此命令自动检测并连接到第一个可用的串口设备并提供交互式 REPL。串行端口打开时是独占的，因此运行第二个（或第三个等）实例时， <code class="docutils literal notranslate"><span class="pre">mpremote</span></code> 将连接到后续串行设备（如果有的话）。</p>
 <section id="commands">
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="永久链接至标题">¶</a></h2>
-<p>For REPL access, running <code class="docutils literal notranslate"><span class="pre">mpremote</span></code> without any arguments is usually all that
-is needed.  <code class="docutils literal notranslate"><span class="pre">mpremote</span></code> also supports a set of commands given at the command
-line which will perform various actions on remote MicroPython devices.</p>
-<p>The full list of supported commands are:</p>
+<h2 id="commands">命令<a class="headerlink" href="#commands" title="永久链接至标题">¶</a></h2>
+<p>对于访问 REPL ，通常只需要不带任何参数运行 <code class="docutils literal notranslate"><span class="pre">mpremote</span></code> 即可。 <code class="docutils literal notranslate"><span class="pre">mpremote</span></code> 也支持在命令行中给出的附带命令。这些命令可远程在 MicroPython 设备上执行各种操作。</p>
+<p>完整的支持命令的列表：</p>
 <ul>
-<li><p>connect to a specified device via a device-name shortcut:</p>
+<li><p>通过设备名简称连接到指定设备：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote &lt;device-shortcut&gt;
 </pre></div>
 </div>
 </li>
-<li><p>connect to specified device via name:</p>
+<li><p>通过名称连接到指定设备：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote connect &lt;device&gt;
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;device&gt;</span></code> may be one of:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;device&gt;</span></code> 处可以是：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code>: list available devices</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>: connect to the first available device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">id:&lt;serial&gt;</span></code>: connect to the device with USB serial number
-<code class="docutils literal notranslate"><span class="pre">&lt;serial&gt;</span></code> (the second entry in the output from the <code class="docutils literal notranslate"><span class="pre">connect</span> <span class="pre">list</span></code>
-command)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">port:&lt;path&gt;</span></code>: connect to the device with the given path</p></li>
-<li><p>any valid device name/path, to connect to that device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">list</span></code>: 用于列出可用的设备</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">auto</span></code>: 连接首个可用的设备</p></li>
+<li><p>id:&lt;serial&gt;：使用 USB 序列号 <code class="docutils literal notranslate"><span class="pre">&lt;serial&gt;</span></code> （ <code class="docutils literal notranslate"><span class="pre">connect</span> <span class="pre">list</span></code> 命令输出中的第二排）连接到设备</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">port:&lt;path&gt;</span></code>: 使用给定的路径连接到设备</p></li>
+<li><p>任意有效的设备名或地址，来连接到设备</p></li>
 </ul>
 </li>
-<li><p>disconnect current device:</p>
+<li><p>断开当前设备的链接：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote disconnect
 </pre></div>
 </div>
 </li>
-<li><p>enter the REPL on the connected device:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote repl <span class="o">[</span>options<span class="o">]</span>
+<li><p>在连接的设备上进入 REPL：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote repl <span class="o">[</span>options<span class="o">]</span>
 </pre></div>
 </div>
-</div></blockquote>
-<p>Options are:</p>
+<p>选项：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">--capture</span> <span class="pre">&lt;file&gt;</span></code>, to capture output of the REPL session to the given
-file</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--inject-code</span> <span class="pre">&lt;string&gt;</span></code>, to specify characters to inject at the REPL when
-Ctrl-J is pressed</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">--inject-file</span> <span class="pre">&lt;file&gt;</span></code>, to specify a file to inject at the REPL when
-Ctrl-K is pressed</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--capture</span> <span class="pre">&lt;file&gt;</span></code>, 将 REPL 会话的输出捕获到给定的文件中</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--inject-code</span> <span class="pre">&lt;string&gt;</span></code>, 指定在 REPL 中按下 Ctrl-J 时注入的字符</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">--inject-file</span> <span class="pre">&lt;strfileing&gt;</span></code>, 指定在 REPL 中按下 Ctrl-K 时注入的文件</p></li>
 </ul>
 </li>
-<li><p>evaluate and print the result of a Python expression:</p>
+<li><p>计算并打印 Python 表达式的结果</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote <span class="nb">eval</span> &lt;string&gt;
 </pre></div>
 </div>
 </li>
-<li><p>execute the given Python code:</p>
+<li><p>执行给定的 Python 代码</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote <span class="nb">exec</span> &lt;string&gt;
 </pre></div>
 </div>
 </li>
-<li><p>run a script from the local filesystem:</p>
+<li><p>从本地文件系统运行脚本</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote run &lt;file&gt;
 </pre></div>
 </div>
 </li>
-<li><p>execute filesystem commands on the device:</p>
+<li><p>在设备上执行文件系统命令</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote fs &lt;command&gt;
 </pre></div>
 </div>
-<p><code class="docutils literal notranslate"><span class="pre">&lt;command&gt;</span></code> may be:</p>
+<p><code class="docutils literal notranslate"><span class="pre">&lt;command&gt;</span></code> 可以是：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">&lt;file..&gt;</span></code> to show the contents of a file or files on the device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> to list the current directory</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">&lt;dirs...&gt;</span></code> to list the given directories</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">[-r]</span> <span class="pre">&lt;src...&gt;</span> <span class="pre">&lt;dest&gt;</span></code> to copy files; use “:” as a prefix to specify
-a file on the device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">&lt;src...&gt;</span></code> to remove files on the device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;dirs...&gt;</span></code> to create directories on the device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">rmdir</span> <span class="pre">&lt;dirs...&gt;</span></code> to remove directories on the device</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span> <span class="pre">&lt;file..&gt;</span></code> 显示设备上一个或多个文件的内容</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> 列出当前目录</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">&lt;dirs...&gt;</span></code> 列出给定的目录</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">[-r]</span> <span class="pre">&lt;src...&gt;</span> <span class="pre">&lt;dest&gt;</span></code> 复制文件；使用 “:” 作为前缀来指定设备上的文件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">&lt;src...&gt;</span></code> 删除设备上的文件</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">&lt;dirs...&gt;</span></code> 在设备上创建目录</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rmdir</span> <span class="pre">&lt;dirs...&gt;</span></code> 删除设备上的目录</p></li>
 </ul>
 </li>
-<li><p>mount the local directory on the remote device:</p>
+<li><p>在远程设备上挂载本地目录</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ mpremote mount &lt;local-dir&gt;
 </pre></div>
 </div>
 </li>
 </ul>
-<p>Multiple commands can be specified and they will be run sequentially.
-Connection and disconnection will be done automatically at the start and end of
-the execution of the tool, if such commands are not explicitly given.  Automatic
-connection will search for the first available serial device. If no action is
-specified then the REPL will be entered.</p>
+<p>可以指定多个命令，它们将按顺序运行。当未明确给出上述命令时，连接和断开将在工具执行的开始和结束时自动完成。自动连接特性将搜索第一个可用的串行设备。如果未指定任何操作，则将进入 REPL。</p>
 </section>
 <section id="shortcuts">
-<h2 id="shortcuts">Shortcuts<a class="headerlink" href="#shortcuts" title="永久链接至标题">¶</a></h2>
-<p>Shortcuts can be defined using the macro system.  Built-in shortcuts are:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>- ``devs``: list available devices (shortcut for ``connect list``)
-</pre></div>
-</div>
+<h2 id="shortcuts">快捷方式<a class="headerlink" href="#shortcuts" title="永久链接至标题">¶</a></h2>
+<p>快捷方式可以使用宏系统定义。内置的快捷方式有：</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">a0</span></code>, <code class="docutils literal notranslate"><span class="pre">a1</span></code>, <code class="docutils literal notranslate"><span class="pre">a2</span></code>, <code class="docutils literal notranslate"><span class="pre">a3</span></code>: connect to /dev/ttyACM?</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">u0</span></code>, <code class="docutils literal notranslate"><span class="pre">u1</span></code>, <code class="docutils literal notranslate"><span class="pre">u2</span></code>, <code class="docutils literal notranslate"><span class="pre">u3</span></code>: connect to /dev/ttyUSB?</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">c0</span></code>, <code class="docutils literal notranslate"><span class="pre">c1</span></code>, <code class="docutils literal notranslate"><span class="pre">c2</span></code>, <code class="docutils literal notranslate"><span class="pre">c3</span></code>: connect to COM?</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, <code class="docutils literal notranslate"><span class="pre">cp</span></code>, <code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>, <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>, <code class="docutils literal notranslate"><span class="pre">df</span></code>: filesystem
-commands</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">reset</span></code>: reset the device</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">bootloader</span></code>: make the device enter its bootloader</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">devs</span></code>: 列出所有可用设备 (即 <code class="docutils literal notranslate"><span class="pre">connect</span> <span class="pre">list</span></code> 的快捷方式)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">a0</span></code>, <code class="docutils literal notranslate"><span class="pre">a1</span></code>, <code class="docutils literal notranslate"><span class="pre">a2</span></code>, <code class="docutils literal notranslate"><span class="pre">a3</span></code>: 连接到 /dev/ttyACM?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">u0</span></code>, <code class="docutils literal notranslate"><span class="pre">u1</span></code>, <code class="docutils literal notranslate"><span class="pre">u2</span></code>, <code class="docutils literal notranslate"><span class="pre">u3</span></code>: 连接到 /dev/ttyUSB?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c0</span></code>, <code class="docutils literal notranslate"><span class="pre">c1</span></code>, <code class="docutils literal notranslate"><span class="pre">c2</span></code>, <code class="docutils literal notranslate"><span class="pre">c3</span></code>: 连接到 COM?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cat</span></code>, <code class="docutils literal notranslate"><span class="pre">ls</span></code>, <code class="docutils literal notranslate"><span class="pre">cp</span></code>, <code class="docutils literal notranslate"><span class="pre">rm</span></code>, <code class="docutils literal notranslate"><span class="pre">mkdir</span></code>, <code class="docutils literal notranslate"><span class="pre">rmdir</span></code>, <code class="docutils literal notranslate"><span class="pre">df</span></code>： 文件系统命令</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">reset</span></code>: 软复位设备</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">bootloader</span></code>: 使设备进入其引导加载程序</p></li>
 </ul>
-<p>Any user configuration, including user-defined shortcuts, can be placed in the file
-<code class="docutils literal notranslate"><span class="pre">.config/mpremote/config.py</span></code>. For example:</p>
+<p>用户定义的快捷方式，像所有用户配置一样，都可以在文件中 <code class="docutils literal notranslate"><span class="pre">.config/mpremote/config.py</span></code> 修改替换。例如：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">commands</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s2">"c33"</span><span class="p">:</span> <span class="s2">"connect id:334D335C3138"</span><span class="p">,</span>
     <span class="s2">"bl"</span><span class="p">:</span> <span class="s2">"bootloader"</span><span class="p">,</span>
@@ -562,7 +539,7 @@ commands</p></li>
 </div>
 </section>
 <section id="examples">
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
+<h2 id="examples">示例<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mpremote
 
 mpremote a1

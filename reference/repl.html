@@ -59,7 +59,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="MicroPython remote control: mpremote" href="mpremote.html" />
+    <link rel="next" title="MicroPython 远程控制: mpremote" href="mpremote.html" />
     <link rel="prev" title="词汇表" href="glossary.html" />
   
    
@@ -284,7 +284,7 @@
     <li class="md-nav__item">
     
     
-      <a href="mpremote.html" class="md-nav__link">MicroPython remote control: mpremote</a>
+      <a href="mpremote.html" class="md-nav__link">MicroPython 远程控制: mpremote</a>
       
     
     </li>
@@ -646,7 +646,7 @@
 </li>
 <li><p>将所有代码写入设备后，写入 <code class="docutils literal notranslate"><span class="pre">b"\x04"</span></code> 以标识数据结束。</p></li>
 <li><p>从设备读取数据直到收到 <code class="docutils literal notranslate"><span class="pre">b"\x04"</span></code>。此时，设备已经接收到并编译了所有发送的代码，并且开始执行。</p></li>
-<li><p>设备输出执行代码产生的任何字符。当代码结束（如果能）时， <code class="docutils literal notranslate"><span class="pre">b"\x04"</span></code> 将被输出，接着是未捕获的任何异常，再然后是 <code class="docutils literal notranslate"><span class="pre">b"\x04"</span></code>。然后它返回到标准的 Raw REPL 并输出 <code class="xref any docutils literal notranslate"><span class="pre">b"&gt;"`</span></code> 。</p></li>
+<li><p>设备输出执行代码产生的任何字符。当代码结束（如果能）时， <code class="docutils literal notranslate"><span class="pre">b"\x04"</span></code> 将被输出，接着是未捕获的任何异常，再然后是 <code class="docutils literal notranslate"><span class="pre">b"\x04"</span></code>。然后它返回到标准的 Raw REPL 并输出 <code class="docutils literal notranslate"><span class="pre">b"&gt;"</span></code> 。</p></li>
 </ol>
 <p>例如，在正常（友好） REPL 的新一行中，如果你写：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sa">b</span><span class="s2">"</span><span class="se">\x01\x05</span><span class="s2">A</span><span class="se">\x01</span><span class="s2">print(123)</span><span class="se">\x04</span><span class="s2">"</span>
@@ -702,12 +702,12 @@
             </a>
           
           
-            <a href="mpremote.html" title="MicroPython remote control: mpremote"
+            <a href="mpremote.html" title="MicroPython 远程控制: mpremote"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> MicroPython remote control: mpremote </span>
+                class="md-footer-nav__direction"> Next </span> MicroPython 远程控制: mpremote </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>

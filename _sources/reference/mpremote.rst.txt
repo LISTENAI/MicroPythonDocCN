@@ -62,7 +62,7 @@ The full list of supported commands are:
 
 - enter the REPL on the connected device:
 
-   .. code-block:: bash
+  .. code-block:: bash
 
       $ mpremote repl [options]
 
@@ -125,7 +125,7 @@ specified then the REPL will be entered.
 Shortcuts
 ---------
 
-Shortcuts can be defined using the macro system.  Built-in shortcuts are::
+Shortcuts can be defined using the macro system.  Built-in shortcuts are:
 
 - ``devs``: list available devices (shortcut for ``connect list``)
 
