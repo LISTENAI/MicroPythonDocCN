@@ -47,7 +47,7 @@
   
   
   
-    <title>zsensor — Zephyr sensor bindings &#8212; MicroPython 1.18 文档</title>
+    <title>zsensor — Zephyr 传感器绑定 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -60,7 +60,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="MicroPython language and implementation" href="../reference/index.html" />
-    <link rel="prev" title="class FlashArea – access to built-in flash storage" href="zephyr.FlashArea.html" />
+    <link rel="prev" title="FlashArea 类 – 访问内置的 flash 存储" href="zephyr.FlashArea.html" />
   
    
 
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> zsensor — Zephyr sensor bindings </span>
+          <span class="md-header-nav__topic"> zsensor — Zephyr 传感器绑定 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -154,8 +154,8 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
-          <li class="md-tabs__item"><a href="zephyr.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython 库</a></li>
+          <li class="md-tabs__item"><a href="zephyr.html" class="md-tabs__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — 特定于 Zephyr 适配端的功能</a></li>
       </ul>
     </div>
   </nav>
@@ -182,64 +182,64 @@
     <li class="md-nav__item">
     
     
-      <a href="index.html" class="md-nav__link">MicroPython libraries</a>
+      <a href="index.html" class="md-nav__link">MicroPython 库</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="index.html#python-standard-libraries-and-micro-libraries" class="md-nav__link">Python standard libraries and micro-libraries</a>
+      <a href="index.html#python-standard-libraries-and-micro-libraries" class="md-nav__link">Python 标注库和微型库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#micropython-specific-libraries" class="md-nav__link">MicroPython-specific libraries</a>
+      <a href="index.html#micropython-specific-libraries" class="md-nav__link">MicroPython 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#port-specific-libraries" class="md-nav__link">Port-specific libraries</a>
+      <a href="index.html#port-specific-libraries" class="md-nav__link">适配端的特定库</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-pyboard" class="md-nav__link">Libraries specific to the pyboard</a>
+      <a href="index.html#libraries-specific-to-the-pyboard" class="md-nav__link">pyboard 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-wipy" class="md-nav__link">Libraries specific to the WiPy</a>
+      <a href="index.html#libraries-specific-to-the-wipy" class="md-nav__link">WiPy 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-esp8266-and-esp32" class="md-nav__link">Libraries specific to the ESP8266 and ESP32</a>
+      <a href="index.html#libraries-specific-to-the-esp8266-and-esp32" class="md-nav__link">ESP8266 和 ESP32 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-rp2040" class="md-nav__link">Libraries specific to the RP2040</a>
+      <a href="index.html#libraries-specific-to-the-rp2040" class="md-nav__link">RP2040 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-zephyr" class="md-nav__link">Libraries specific to Zephyr</a>
+      <a href="index.html#libraries-specific-to-zephyr" class="md-nav__link">Zephyr 的特定库</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="zephyr.html" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port</a>
+      <a href="zephyr.html" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — 特定于 Zephyr 适配端的功能</a>
       
     
     </li></ul>
@@ -250,7 +250,7 @@
     <li class="md-nav__item">
     
     
-      <a href="index.html#extending-built-in-libraries-from-python" class="md-nav__link">Extending built-in libraries from Python</a>
+      <a href="index.html#extending-built-in-libraries-from-python" class="md-nav__link">扩展 Python 内置库</a>
       
     
     </li></ul>
@@ -347,15 +347,15 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#library-zephyr-zsensor--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code> — Zephyr sensor bindings</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#library-zephyr-zsensor--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code> — Zephyr 传感器绑定</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#class-sensor-sensor-control-for-the-zephyr-port" class="md-nav__link">class Sensor — sensor control for the Zephyr port</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#class-sensor-sensor-control-for-the-zephyr-port" class="md-nav__link">Sensor 类 — Zephyr 适配端的传感器控制</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#constructor" class="md-nav__link">Constructor</a>
+        <li class="md-nav__item"><a href="#constructor" class="md-nav__link">构造器</a>
         </li>
-        <li class="md-nav__item"><a href="#methods" class="md-nav__link">Methods</a>
+        <li class="md-nav__item"><a href="#methods" class="md-nav__link">函数</a>
         </li>
-        <li class="md-nav__item"><a href="#channels" class="md-nav__link">Channels</a>
+        <li class="md-nav__item"><a href="#channels" class="md-nav__link">通道</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -371,135 +371,124 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="module-zsensor">
-<span id="zsensor-zephyr-sensor-bindings"></span><h1 id="library-zephyr-zsensor--page-root"><a class="reference internal" href="#library-zephyr-zsensor--page-root" title="zsensor: zephyr sensor bindings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code></a> — Zephyr sensor bindings<a class="headerlink" href="#library-zephyr-zsensor--page-root" title="永久链接至标题">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">zsensor</span></code> module contains a class for using sensors with Zephyr.</p>
+<span id="zsensor-zephyr-sensor-bindings"></span><h1 id="library-zephyr-zsensor--page-root"><a class="reference internal" href="#library-zephyr-zsensor--page-root" title="zsensor: zephyr sensor bindings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code></a> — Zephyr 传感器绑定<a class="headerlink" href="#library-zephyr-zsensor--page-root" title="永久链接至标题">¶</a></h1>
+<p><code class="docutils literal notranslate"><span class="pre">zsensor</span></code> 模块包含一个用于在 Zephyr 中使用传感器的类。</p>
 <section id="class-sensor-sensor-control-for-the-zephyr-port">
-<span id="zsensor-sensor"></span><h2 id="class-sensor-sensor-control-for-the-zephyr-port">class Sensor — sensor control for the Zephyr port<a class="headerlink" href="#class-sensor-sensor-control-for-the-zephyr-port" title="永久链接至标题">¶</a></h2>
-<p>Use this class to access data from sensors on your board.
-See Zephyr documentation for sensor usage here: <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html?highlight=sensor#sensors">Sensors</a>.</p>
-<p>Sensors are defined in the Zephyr devicetree for each board. The quantities that a given sensor can
-measure are called a sensor channels. Sensors can have multiple channels to represent different axes
-of one property or different properties a sensor can measure. See <a class="reference internal" href="#channels">Channels</a> below for defined sensor
-channels.</p>
+<span id="zsensor-sensor"></span><h2 id="class-sensor-sensor-control-for-the-zephyr-port">Sensor 类 — Zephyr 适配端的传感器控制<a class="headerlink" href="#class-sensor-sensor-control-for-the-zephyr-port" title="永久链接至标题">¶</a></h2>
+<p>这个类用于在你的开发板上访问传感器的数据。请参阅 Zephyr 文档以了解此处的传感器用法： <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html?highlight=sensor#sensors">传感器</a> 。</p>
+<p>在每个开发板，传感器在 Zephyr 设备树中定义。一个传感器可以测量的数量，称之为传感器通道。传感器可以有多个通道来表示一个属性的不同轴，或传感器可测量的不同属性。有关已定义的传感器通道，请参见下面的 <a class="reference external" href="Channels">通道</a>。</p>
 <section id="constructor">
-<h3 id="constructor">Constructor<a class="headerlink" href="#constructor" title="永久链接至标题">¶</a></h3>
+<h3 id="constructor">构造器<a class="headerlink" href="#constructor" title="永久链接至标题">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="zsensor.Sensor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">Sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor" title="永久链接至目标">¶</a></dt>
-<dd><p>Device names are defined in the devicetree for your board.
-For example, the device name for the accelerometer in the FRDM-k64f board is “FXOS8700”.</p>
+<dd><p>设备名称在你的开发板设备树中定义。例如， FRDM-k64f 开发板中加速度传感器的设备名为 “FXOS8700” 。</p>
 </dd></dl>
 </section>
 <section id="methods">
-<h3 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h3>
+<h3 id="methods">函数<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="zsensor.Sensor.measure">
 <span class="sig-prename descclassname"><span class="pre">Sensor.</span></span><span class="sig-name descname"><span class="pre">measure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.measure" title="永久链接至目标">¶</a></dt>
-<dd><p>Obtains a measurement sample from the sensor device using Zephyr sensor_sample_fetch and
-stores it in an internal driver buffer as a useful value, a pair of (integer part of value,
-fractional part of value in 1-millionths).
-Returns none if successful or OSError value if failure.</p>
+<dd><p>使用 Zephyr sensor_sample_fetch 从传感器设备获取测量样本，并将其作为有用值存储在内部驱动程序缓冲区中，该值为一个元组形如（值的整数部分，精确到百万分之一的小数部分）。如果成功则返回 none，否则返回 OSError 值。</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="zsensor.Sensor.get_float">
 <span class="sig-prename descclassname"><span class="pre">Sensor.</span></span><span class="sig-name descname"><span class="pre">get_float</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_float" title="永久链接至目标">¶</a></dt>
-<dd><p>Returns the value of the sensor measurement sample as a float.</p>
+<dd><p>以浮点数形式返回传感器测量样本的值。</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="zsensor.Sensor.get_micros">
 <span class="sig-prename descclassname"><span class="pre">Sensor.</span></span><span class="sig-name descname"><span class="pre">get_micros</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_micros" title="永久链接至目标">¶</a></dt>
-<dd><p>Returns the value of the sensor measurement sample in millionths.
-(Ex. value of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> returns as <code class="docutils literal notranslate"><span class="pre">1500000</span></code>)</p>
+<dd><p>以百万分之一为单位，返回传感器测量样本的值。（例如， <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> 返回值为 <code class="docutils literal notranslate"><span class="pre">1500000</span></code> ）</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="zsensor.Sensor.get_millis">
 <span class="sig-prename descclassname"><span class="pre">Sensor.</span></span><span class="sig-name descname"><span class="pre">get_millis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_millis" title="永久链接至目标">¶</a></dt>
-<dd><p>Returns the value of sensor measurement sample in thousandths.
-(Ex. value of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> returns as <code class="docutils literal notranslate"><span class="pre">1500</span></code>)</p>
+<dd><p>以千分之一为单位，返回传感器测量样本的值。（例如， <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> 返回值为 <code class="docutils literal notranslate"><span class="pre">1500</span></code> ）</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="zsensor.Sensor.get_int">
 <span class="sig-prename descclassname"><span class="pre">Sensor.</span></span><span class="sig-name descname"><span class="pre">get_int</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_channel</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.get_int" title="永久链接至目标">¶</a></dt>
-<dd><p>Returns only the integer value of the measurement sample.
-(Ex. value of <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> returns as <code class="docutils literal notranslate"><span class="pre">1</span></code>)</p>
+<dd><p>仅返回测量样本的整数值。（例如， <code class="docutils literal notranslate"><span class="pre">(1,</span> <span class="pre">500000)</span></code> 返回值为 <code class="docutils literal notranslate"><span class="pre">1</span></code> ）</p>
 </dd></dl>
 </section>
 <section id="channels">
-<h3 id="channels">Channels<a class="headerlink" href="#channels" title="永久链接至标题">¶</a></h3>
+<h3 id="channels">通道<a class="headerlink" href="#channels" title="永久链接至标题">¶</a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.ACCEL_X">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">ACCEL_X</span></span><a class="headerlink" href="#zsensor.ACCEL_X" title="永久链接至目标">¶</a></dt>
-<dd><p>Acceleration on the X axis, in m/s^2.</p>
+<dd><p>X 轴上的加速度，单位为米/平方秒 m/s^2。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.ACCEL_Y">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">ACCEL_Y</span></span><a class="headerlink" href="#zsensor.ACCEL_Y" title="永久链接至目标">¶</a></dt>
-<dd><p>Acceleration on the Y axis, in m/s^2.</p>
+<dd><p>Y 轴上的加速度，单位为米/平方秒 m/s^2。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.ACCEL_Z">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">ACCEL_Z</span></span><a class="headerlink" href="#zsensor.ACCEL_Z" title="永久链接至目标">¶</a></dt>
-<dd><p>Acceleration on the Z axis, in m/s^2.</p>
+<dd><p>Z 轴上的加速度，单位为米/平方秒 m/s^2。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.GYRO_X">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">GYRO_X</span></span><a class="headerlink" href="#zsensor.GYRO_X" title="永久链接至目标">¶</a></dt>
-<dd><p>Angular velocity around the X axis, in radians/s.</p>
+<dd><p>绕 X 轴的角速度，单位为弧度/秒 radians/s。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.GYRO_Y">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">GYRO_Y</span></span><a class="headerlink" href="#zsensor.GYRO_Y" title="永久链接至目标">¶</a></dt>
-<dd><p>Angular velocity around the Y axis, in radians/s.</p>
+<dd><p>绕 Y 轴的角速度，单位为弧度/秒 radians/s。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.GYRO_Z">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">GYRO_Z</span></span><a class="headerlink" href="#zsensor.GYRO_Z" title="永久链接至目标">¶</a></dt>
-<dd><p>Angular velocity around the Z axis, in radians/s.</p>
+<dd><p>绕 Z 轴的角速度，单位为弧度/秒 radians/s。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.MAGN_X">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">MAGN_X</span></span><a class="headerlink" href="#zsensor.MAGN_X" title="永久链接至目标">¶</a></dt>
-<dd><p>Magnetic field on the X axis, in Gauss.</p>
+<dd><p>X 轴上的磁场，单位为高斯 Gauss。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.MAGN_Y">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">MAGN_Y</span></span><a class="headerlink" href="#zsensor.MAGN_Y" title="永久链接至目标">¶</a></dt>
-<dd><p>Magnetic field on the Y axis, in Gauss.</p>
+<dd><p>Y 轴上的磁场，单位为高斯 Gauss。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.MAGN_Z">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">MAGN_Z</span></span><a class="headerlink" href="#zsensor.MAGN_Z" title="永久链接至目标">¶</a></dt>
-<dd><p>Magnetic field on the Z axis, in Gauss.</p>
+<dd><p>Z 轴上的磁场，单位为高斯 Gauss。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.DIE_TEMP">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">DIE_TEMP</span></span><a class="headerlink" href="#zsensor.DIE_TEMP" title="永久链接至目标">¶</a></dt>
-<dd><p>Device die temperature in degrees Celsius.</p>
+<dd><p>器件芯片温度，以摄氏度为单位。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.PRESS">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">PRESS</span></span><a class="headerlink" href="#zsensor.PRESS" title="永久链接至目标">¶</a></dt>
-<dd><p>Pressure in kilopascal.</p>
+<dd><p>压力，单位为千帕 kilopascal。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.PROX">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">PROX</span></span><a class="headerlink" href="#zsensor.PROX" title="永久链接至目标">¶</a></dt>
-<dd><p>Proximity. Dimensionless. A value of 1 indicates that an object is close.</p>
+<dd><p>距离传感器。无度量单位。值 1 表示对象靠近。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.HUMIDITY">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">HUMIDITY</span></span><a class="headerlink" href="#zsensor.HUMIDITY" title="永久链接至目标">¶</a></dt>
-<dd><p>Humidity, in percent.</p>
+<dd><p>湿度，百分比。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.LIGHT">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">LIGHT</span></span><a class="headerlink" href="#zsensor.LIGHT" title="永久链接至目标">¶</a></dt>
-<dd><p>Illuminance in visible spectrum, in lux.</p>
+<dd><p>可见光谱中的照度，单位为勒克斯 lux。</p>
 </dd></dl>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.ALTITUDE">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">ALTITUDE</span></span><a class="headerlink" href="#zsensor.ALTITUDE" title="永久链接至目标">¶</a></dt>
-<dd><p>Altitude, in meters.</p>
+<dd><p>海拔高度，单位为米 meters。</p>
 </dd></dl>
 </section>
 </section>
@@ -515,7 +504,7 @@ Returns none if successful or OSError value if failure.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="zephyr.FlashArea.html" title="class FlashArea – access to built-in flash storage"
+            <a href="zephyr.FlashArea.html" title="FlashArea 类 – 访问内置的 flash 存储"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -524,7 +513,7 @@ Returns none if successful or OSError value if failure.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> class FlashArea – access to built-in flash storage </span>
+                      class="md-footer-nav__direction"> Previous </span> FlashArea 类 – 访问内置的 flash 存储 </span>
               </div>
             </a>
           

@@ -47,7 +47,7 @@
   
   
   
-    <title>zephyr — functionality specific to the Zephyr port &#8212; MicroPython 1.18 文档</title>
+    <title>zephyr — 特定于 Zephyr 适配端的功能 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -59,7 +59,7 @@
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
-    <link rel="next" title="class DiskAccess – access to disk storage" href="zephyr.DiskAccess.html" />
+    <link rel="next" title="DiskAccess 类 —- 访问磁盘存储" href="zephyr.DiskAccess.html" />
     <link rel="prev" title="class StateMachine – access to the RP2040’s programmable I/O interface" href="rp2.StateMachine.html" />
   
    
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> zephyr — functionality specific to the Zephyr port </span>
+          <span class="md-header-nav__topic"> zephyr — 特定于 Zephyr 适配端的功能 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -154,7 +154,7 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython libraries</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython 库</a></li>
       </ul>
     </div>
   </nav>
@@ -181,79 +181,79 @@
     <li class="md-nav__item">
     
     
-      <a href="index.html" class="md-nav__link">MicroPython libraries</a>
+      <a href="index.html" class="md-nav__link">MicroPython 库</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="index.html#python-standard-libraries-and-micro-libraries" class="md-nav__link">Python standard libraries and micro-libraries</a>
+      <a href="index.html#python-standard-libraries-and-micro-libraries" class="md-nav__link">Python 标注库和微型库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#micropython-specific-libraries" class="md-nav__link">MicroPython-specific libraries</a>
+      <a href="index.html#micropython-specific-libraries" class="md-nav__link">MicroPython 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#port-specific-libraries" class="md-nav__link">Port-specific libraries</a>
+      <a href="index.html#port-specific-libraries" class="md-nav__link">适配端的特定库</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-pyboard" class="md-nav__link">Libraries specific to the pyboard</a>
+      <a href="index.html#libraries-specific-to-the-pyboard" class="md-nav__link">pyboard 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-wipy" class="md-nav__link">Libraries specific to the WiPy</a>
+      <a href="index.html#libraries-specific-to-the-wipy" class="md-nav__link">WiPy 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-esp8266-and-esp32" class="md-nav__link">Libraries specific to the ESP8266 and ESP32</a>
+      <a href="index.html#libraries-specific-to-the-esp8266-and-esp32" class="md-nav__link">ESP8266 和 ESP32 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-the-rp2040" class="md-nav__link">Libraries specific to the RP2040</a>
+      <a href="index.html#libraries-specific-to-the-rp2040" class="md-nav__link">RP2040 的特定库</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="index.html#libraries-specific-to-zephyr" class="md-nav__link">Libraries specific to Zephyr</a>
+      <a href="index.html#libraries-specific-to-zephyr" class="md-nav__link">Zephyr 的特定库</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> <code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> <code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — 特定于 Zephyr 适配端的功能 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port</a>
+      <a href="#" class="md-nav__link md-nav__link--active"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — 特定于 Zephyr 适配端的功能</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#library-zephyr--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#library-zephyr--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — 特定于 Zephyr 适配端的功能</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a>
+        <li class="md-nav__item"><a href="#functions" class="md-nav__link">函数</a>
         </li>
-        <li class="md-nav__item"><a href="#classes" class="md-nav__link">Classes</a>
+        <li class="md-nav__item"><a href="#classes" class="md-nav__link">类</a>
         </li>
-        <li class="md-nav__item"><a href="#additional-modules" class="md-nav__link">Additional Modules</a>
+        <li class="md-nav__item"><a href="#additional-modules" class="md-nav__link">附加模块</a>
         </li></ul>
             </nav>
         </li>
@@ -269,7 +269,7 @@
     <li class="md-nav__item">
     
     
-      <a href="index.html#extending-built-in-libraries-from-python" class="md-nav__link">Extending built-in libraries from Python</a>
+      <a href="index.html#extending-built-in-libraries-from-python" class="md-nav__link">扩展 Python 内置库</a>
       
     
     </li></ul>
@@ -366,13 +366,13 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#library-zephyr--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — functionality specific to the Zephyr port</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#library-zephyr--page-root" class="md-nav__link"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code> — 特定于 Zephyr 适配端的功能</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#functions" class="md-nav__link">Functions</a>
+        <li class="md-nav__item"><a href="#functions" class="md-nav__link">函数</a>
         </li>
-        <li class="md-nav__item"><a href="#classes" class="md-nav__link">Classes</a>
+        <li class="md-nav__item"><a href="#classes" class="md-nav__link">类</a>
         </li>
-        <li class="md-nav__item"><a href="#additional-modules" class="md-nav__link">Additional Modules</a>
+        <li class="md-nav__item"><a href="#additional-modules" class="md-nav__link">附加模块</a>
         </li></ul>
             </nav>
         </li>
@@ -386,58 +386,55 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="module-zephyr">
-<span id="zephyr-functionality-specific-to-the-zephyr-port"></span><h1 id="library-zephyr--page-root"><a class="reference internal" href="#library-zephyr--page-root" title="zephyr: functionality specific to Zephyr"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code></a> — functionality specific to the Zephyr port<a class="headerlink" href="#library-zephyr--page-root" title="永久链接至标题">¶</a></h1>
-<p>The <code class="docutils literal notranslate"><span class="pre">zephyr</span></code> module contains functions and classes specific to the Zephyr port.</p>
+<span id="zephyr-functionality-specific-to-the-zephyr-port"></span><h1 id="library-zephyr--page-root"><a class="reference internal" href="#library-zephyr--page-root" title="zephyr: functionality specific to Zephyr"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zephyr</span></code></a> — 特定于 Zephyr 适配端的功能<a class="headerlink" href="#library-zephyr--page-root" title="永久链接至标题">¶</a></h1>
+<p>该 <code class="docutils literal notranslate"><span class="pre">zephyr</span></code> 模块包含特定于 Zephyr 适配端的函数和类。</p>
 <section id="functions">
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
+<h2 id="functions">函数<a class="headerlink" href="#functions" title="永久链接至标题">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="zephyr.is_preempt_thread">
 <span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">is_preempt_thread</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.is_preempt_thread" title="永久链接至目标">¶</a></dt>
-<dd><p>Returns true if the current thread is a preemptible thread.</p>
-<p>Zephyr preemptible threads are those with non-negative priority values (low priority levels), which therefore,
-can be supplanted as soon as a higher or equal priority thread becomes ready.</p>
+<dd><p>如果当前线程是可抢占线程，则返回 true 。</p>
+<p>Zephyr 可抢占线程是那些具有非负优先级值（低优先级）的线程，因此，一旦更高或相等优先级的线程准备就绪，就可以将其替换。</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="zephyr.current_tid">
 <span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">current_tid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.current_tid" title="永久链接至目标">¶</a></dt>
-<dd><p>Returns the thread id of the current thread, which is used to reference the thread.</p>
+<dd><p>返回当前线程的线程 id，用于引用线程。</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="zephyr.thread_analyze">
 <span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">thread_analyze</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.thread_analyze" title="永久链接至目标">¶</a></dt>
-<dd><p>Runs the Zephyr debug thread analyzer on the current thread and prints stack size statistics in the format:</p>
+<dd><p>在当前线程上运行 Zephyr 调试线程分析器并以以下格式打印堆栈大小统计信息：</p>
 <blockquote>
 <div><p>“<code class="docutils literal notranslate"><span class="pre">thread_name</span></code>-20s: STACK: unused <code class="docutils literal notranslate"><span class="pre">available_stack_space</span></code> usage <code class="docutils literal notranslate"><span class="pre">stack_space_used</span></code>
 / <code class="docutils literal notranslate"><span class="pre">stack_size</span></code> (<code class="docutils literal notranslate"><span class="pre">percent_stack_space_used</span></code> %); CPU: <code class="docutils literal notranslate"><span class="pre">cpu_utilization</span></code> %”</p>
 <ul class="simple">
-<li><p><em>CPU utilization is only printed if runtime statistics are configured via the ``CONFIG_THREAD_RUNTIME_STATS`` kconfig</em></p></li>
+<li><p><em>仅当启用</em> <code class="docutils literal notranslate"><span class="pre">CONFIG_THREAD_RUNTIME_STATS</span></code> <em>kconfig 配置运行时统计信息时才会打印 CPU 利用率</em></p></li>
 </ul>
 </div></blockquote>
-<p>This function can only be accessed if <code class="docutils literal notranslate"><span class="pre">CONFIG_THREAD_ANALYZER</span></code> is configured for the port in <code class="docutils literal notranslate"><span class="pre">zephyr/prj.conf</span></code>.
-For more infomation, see documentation for Zephyr <a class="reference external" href="https://docs.zephyrproject.org/latest/guides/debug_tools/thread-analyzer.html#thread-analyzer">thread analyzer</a>.</p>
+<p>此功能只有在 <code class="docutils literal notranslate"><span class="pre">zephyr/prj.conf</span></code> 中配置了 <code class="docutils literal notranslate"><span class="pre">CONFIG_THREAD_ANALYZER</span></code> 后才能访问  。有关更多信息，请参阅 Zephyr <a class="reference external" href="https://docs.zephyrproject.org/latest/guides/debug_tools/thread-analyzer.html#thread-analyzer">线程分析器</a> 的文档。</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="zephyr.shell_exec">
 <span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">shell_exec</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_in</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.shell_exec" title="永久链接至目标">¶</a></dt>
-<dd><p>Executes the given command on an UART backend. This function can only be accessed if <code class="docutils literal notranslate"><span class="pre">CONFIG_SHELL_BACKEND_SERIAL</span></code>
-is configured for the port in <code class="docutils literal notranslate"><span class="pre">zephyr/prj.conf</span></code>.</p>
-<p>A list of possible commands can be found in the documentation for Zephyr <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/shell/index.html?highlight=shell_execute_cmd#commands">shell commands</a>.</p>
+<dd><p>在 UART 后端执行给定的命令。此功能只有在 <code class="docutils literal notranslate"><span class="pre">zephyr/prj.conf</span></code> 中配置了 <code class="docutils literal notranslate"><span class="pre">CONFIG_SHELL_BACKEND_SERIAL</span></code> 后才能访问。</p>
+<p>可以在 Zephyr <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/shell/index.html?highlight=shell_execute_cmd#commands">shell 命令</a> 的文档中找到可用的命令列表。</p>
 </dd></dl>
 </section>
 <section id="classes">
-<h2 id="classes">Classes<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
+<h2 id="classes">类<a class="headerlink" href="#classes" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="zephyr.DiskAccess.html">class DiskAccess – access to disk storage</a></li>
-<li class="toctree-l1"><a class="reference internal" href="zephyr.FlashArea.html">class FlashArea – access to built-in flash storage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zephyr.DiskAccess.html">DiskAccess 类 —- 访问磁盘存储</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zephyr.FlashArea.html">FlashArea 类 – 访问内置的 flash 存储</a></li>
 </ul>
 </div>
 </section>
 <section id="additional-modules">
-<h2 id="additional-modules">Additional Modules<a class="headerlink" href="#additional-modules" title="永久链接至标题">¶</a></h2>
+<h2 id="additional-modules">附加模块<a class="headerlink" href="#additional-modules" title="永久链接至标题">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="zephyr.zsensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code> — Zephyr sensor bindings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="zephyr.zsensor.html"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code> — Zephyr 传感器绑定</a></li>
 </ul>
 </div>
 </section>
@@ -467,12 +464,12 @@ is configured for the port in <code class="docutils literal notranslate"><span c
             </a>
           
           
-            <a href="zephyr.DiskAccess.html" title="class DiskAccess – access to disk storage"
+            <a href="zephyr.DiskAccess.html" title="DiskAccess 类 —- 访问磁盘存储"
                class="md-flex md-footer-nav__link md-footer-nav__link--next"
                rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title"><span
                 class="md-flex__ellipsis"> <span
-                class="md-footer-nav__direction"> Next </span> class DiskAccess – access to disk storage </span>
+                class="md-footer-nav__direction"> Next </span> DiskAccess 类 —- 访问磁盘存储 </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink"><i
                 class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
