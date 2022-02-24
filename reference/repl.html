@@ -488,7 +488,7 @@
 <span class="gp">... </span>    <span class="n">_</span>
 </pre></div>
 </div>
-<p>最后键入 <code class="docutils literal notranslate"><span class="pre">print(i)</span></code>，按 RETURN （回车），按 BACKSPACE （退格）然后再按 RETURN （回车）：</p>
+<p>最后输入 <code class="docutils literal notranslate"><span class="pre">print(i)</span></code>，按 RETURN （回车），按 BACKSPACE （退格）然后再按 RETURN （回车）：</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
 <span class="gp">... </span>    <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;</span> <span class="mi">3</span><span class="p">:</span>
 <span class="gp">... </span>        <span class="k">break</span>
@@ -505,7 +505,7 @@
 </section>
 <section id="auto-completion">
 <h2 id="auto-completion">自动补全<a class="headerlink" href="#auto-completion" title="永久链接至标题">¶</a></h2>
-<p>在 REPL 中键入命令时，如果到当前行输入的内容能对应于某些名称的开头，则按 TAB 将显示可能输入的内容。例如，首先通过输入 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">machine</span></code> 并按 RETURN （回车）来导入机器模块。然后键入 <code class="docutils literal notranslate"><span class="pre">m</span></code> 并按 TAB，它应该能补全为 <a class="reference internal" href="../library/machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> 。此时输入一个句点 <code class="docutils literal notranslate"><span class="pre">.</span></code> 并再次按 TAB。你应该会看到如下内容：</p>
+<p>在 REPL 中输入命令时，如果到当前行输入的内容能对应于某些名称的开头，则按 TAB 将显示可能输入的内容。例如，首先通过输入 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">machine</span></code> 并按 RETURN （回车）来导入机器模块。然后输入 <code class="docutils literal notranslate"><span class="pre">m</span></code> 并按 TAB，它应该能补全为 <a class="reference internal" href="../library/machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> 。此时输入一个句点 <code class="docutils literal notranslate"><span class="pre">.</span></code> 并再次按 TAB。你应该会看到如下内容：</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">machine</span><span class="o">.</span>
 <span class="go">__name__        info            unique_id       reset</span>
 <span class="go">bootloader      freq            rng             idle</span>
@@ -628,7 +628,7 @@
 <p>Raw 粘贴模式使用以下协议：</p>
 <ol class="arabic simple">
 <li><p>和一般情况一样通过 ctrl-A 输入 Raw REPL</p></li>
-<li><p>写入 3 个字节： <code class="docutils literal notranslate"><span class="pre">（b"\x05A\x01"</span></code> 即 ctrl-E，然后是 “A”，在然后是 ctrl-A）。</p></li>
+<li><p>写入 3 个字节： <code class="docutils literal notranslate"><span class="pre">（b"\x05A\x01"</span></code> 即 ctrl-E，然后是 “A”，再然后是 ctrl-A）。</p></li>
 <li><p>读取 2 个字节以确定设备是否进入 Raw 粘贴模式：</p>
 <ul class="simple">
 <li><p>如果结果是 <code class="docutils literal notranslate"><span class="pre">b"R\x00"</span></code> ，则说明设备理解命令但不支持 Raw 粘贴模式。</p></li>
