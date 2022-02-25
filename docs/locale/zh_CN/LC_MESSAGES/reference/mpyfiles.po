@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:4
 msgid "MicroPython .mpy files"
-msgstr ""
+msgstr "MicroPython .mpy 文件"
 
 #: ../../reference/mpyfiles.rst:6
 msgid ""
@@ -35,6 +35,10 @@ msgid ""
 "for, then the search continues in the next directory if neither is found."
 "  As such, ``foo.py`` will take precedence over ``foo.mpy``."
 msgstr ""
+"在 MicroPython 的定义中，.mpy 文件是一种包含预编译代码的二进制容器文件格式，导入它就与像普通的 .py 模块一样。"
+"一个 ``foo.mpy`` 文件，只要可以在机器上以正常的方式找到，就能通过 ``import foo`` 来导入。"
+"通常，``sys.path`` 列出的每个目录会依次查找。当在一个目录中查找时，会先查是否存在 ``foo.py``，再查找 ``foo.mpy`` ，如果都没有找到则继续查下一个目录。"
+"因此， ``foo.py`` 将比 ``foo.mpy`` 优先级更高。"
 
 #: ../../reference/mpyfiles.rst:16
 msgid ""
@@ -43,22 +47,26 @@ msgid ""
 "architectures an .mpy file can also contain native machine code, which "
 "can be generated in a variety of ways, most notably from C source code."
 msgstr ""
+"这些包含字节码的 .mpy 文件通常可以通过 ``mpy-cross`` 程序从 Python 源码文件 （ .py 文件）来生成。"
+"对于某些体系结构，一个 .mpy 文件也可以包含原生机器码，机器码可以通过多种方式来生成，尤其是从 C 源码。"
 
 #: ../../reference/mpyfiles.rst:22
 msgid "Versioning and compatibility of .mpy files"
-msgstr ""
+msgstr ".mpy 文件的版本控制和兼容性"
 
 #: ../../reference/mpyfiles.rst:24
 msgid ""
 "A given .mpy file may or may not be compatible with a given MicroPython "
 "system. Compatibility is based on the following:"
 msgstr ""
+"一个 .mpy 文件与一个 MicroPython 版本是否兼容取决于："
 
 #: ../../reference/mpyfiles.rst:27
 msgid ""
 "Version of the .mpy file: the version of the file must match the version "
 "supported by the system loading it."
 msgstr ""
+".mpy 文件的版本：文件版本必须符合加载它的系统支持的版本。"
 
 #: ../../reference/mpyfiles.rst:30
 msgid ""
@@ -66,6 +74,7 @@ msgid ""
 "which must match between the file and the system: unicode support and "
 "inline caching of map lookups in the bytecode."
 msgstr ""
+".mpy 文件中使用的字节码特征：文件和系统之间必须符合两个字节码特性：支持 Unicode 、字节码可内联缓存查找。"
 
 #: ../../reference/mpyfiles.rst:34
 msgid ""
@@ -73,6 +82,7 @@ msgid ""
 "in a small integer and the system loading it must support at least this "
 "many bits."
 msgstr ""
+"小整型位：.mpy 文件要求一个小整型的位中的最小数字，系统加载它必须至少支持这么多位。"
 
 #: ../../reference/mpyfiles.rst:38
 msgid ""
@@ -80,13 +90,14 @@ msgid ""
 " size for qstr decompression and the system loading it must have a window"
 " greater or equal to this size."
 msgstr ""
+"Qstr 压缩窗口尺寸：.mpy 文件需要一个最小的窗口尺寸用于解压 qstr，并且系统加载它必须有一个大于或等于此尺寸的窗口。"
 
 #: ../../reference/mpyfiles.rst:42
 msgid ""
 "Native architecture: if the .mpy file contains native machine code then "
 "it will specify the architecture of that machine code and the system "
 "loading it must support execution of that architecture's code."
-msgstr ""
+msgstr "原生架构：如果 .mpy 文件包含原生机器代码，那么它将制定机器代码的架构，并且加载它的系统必须支持该架构代码的执行。"
 
 #: ../../reference/mpyfiles.rst:46
 msgid ""
@@ -94,6 +105,7 @@ msgid ""
 "``sys.implementation.mpy`` field will exist and return an integer which "
 "encodes the version (lower 8 bits), features and native architecture."
 msgstr ""
+"如果一个 MicroPython 系统支持导入 .mpy 文件，那么调用 ``sys.implementation.mpy`` 将会返回由版本号（低于 8 位）、特性和原生架构编码而成的整型数字。"
 
 #: ../../reference/mpyfiles.rst:50
 msgid ""
@@ -102,16 +114,19 @@ msgid ""
 ".mpy file that fails the native architecture test (if it contains native "
 "machine code) will raise ``ValueError('incompatible .mpy arch')``."
 msgstr ""
+"如果尝试导入一个 .mpy 文件未通过上述点中的前四个要求，将会抛出 ``ValueError('incompatible .mpy file')``。"
+"尝试导入一个未通过原生架构测试的 .mpy 文件（如果包含原生机器代码），将会抛出 ``ValueError('incompatible .mpy arch')``。"
 
 #: ../../reference/mpyfiles.rst:55
 msgid "If importing an .mpy file fails then try the following:"
-msgstr ""
+msgstr "如果导入 .mpy 文件失败，请尝试以下操作："
 
 #: ../../reference/mpyfiles.rst:57
 msgid ""
 "Determine the .mpy version and flags supported by your MicroPython system"
 " by executing::"
 msgstr ""
+"通过执行以下命令确定 MicroPython 系统支持的 .mpy 版本和标志："
 
 #: ../../reference/mpyfiles.rst:73
 msgid ""
@@ -120,6 +135,11 @@ msgid ""
 "will be the version number, which should match the system version from "
 "above. If it doesn't match then rebuild the .mpy file."
 msgstr ""
+"通过校验 .mpy 文件的前两个字节，可以确认文件的有效性。"
+"第一个字节应该是大写的 'M'；"
+"第二个字节是版本号，"
+"它应该与上述的系统版本相匹配。"
+"如果发现不匹配，那么应当重新构建出 .mpy 文件。"
 
 #: ../../reference/mpyfiles.rst:78
 msgid ""
@@ -129,6 +149,8 @@ msgid ""
 "Git repository checked out at the tag (or hash) reported by ``mpy-cross "
 "--version``."
 msgstr ""
+"检查系统的 .mpy 版本与 ``mpy-cross`` 提交的、用于编译 .mpy 文件的版本是否一致。"
+"如果发现不一致，那么应当从 git 仓库中检出 ``mpy-cross --version`` 指定的 tag （或提交的 hash），重新编译 ``mpy-cross`` 。"
 
 #: ../../reference/mpyfiles.rst:83
 msgid ""
@@ -136,24 +158,28 @@ msgid ""
 "code above, or by inspecting the ``MPY_CROSS_FLAGS`` Makefile variable "
 "for the port that you are using."
 msgstr ""
+"确保你正在使用的是正确的 ``mpy-cross`` 的标志，"
+"``mpy-cross`` 标志可通过上述代码获取，"
+"也可以在你使用的适配端的 Makefile 中查找 ``MPY_CROSS_FLAGS`` 变量。"
 
 #: ../../reference/mpyfiles.rst:87
 msgid ""
 "The following table shows the correspondence between MicroPython release "
 "and .mpy version."
 msgstr ""
+"下表展示了 MicroPython 版本和 .mpy 版本之间的对应关系。"
 
 #: ../../reference/mpyfiles.rst:91
 msgid "MicroPython release"
-msgstr ""
+msgstr "MicroPython 发布版本"
 
 #: ../../reference/mpyfiles.rst:91
 msgid ".mpy version"
-msgstr ""
+msgstr ".mpy 版本"
 
 #: ../../reference/mpyfiles.rst:93
 msgid "v1.12 and up"
-msgstr ""
+msgstr "v1.12 及更高版本"
 
 #: ../../reference/mpyfiles.rst:93
 msgid "5"
@@ -196,6 +222,7 @@ msgid ""
 "For completeness, the next table shows the Git commit of the main "
 "MicroPython repository at which the .mpy version was changed."
 msgstr ""
+"为了完整起见，下表展示当 .mpy 版本更改时，对应的主 MicroPython 存储库的 Git 提交"
 
 #: ../../reference/mpyfiles.rst:104
 msgid ".mpy version change"
@@ -207,7 +234,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:106
 msgid "4 to 5"
-msgstr ""
+msgstr "4 到 5"
 
 #: ../../reference/mpyfiles.rst:106
 msgid "5716c5cf65e9b2cb46c2906f40302401bdd27517"
@@ -215,7 +242,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:107
 msgid "3 to 4"
-msgstr ""
+msgstr "3 到 4"
 
 #: ../../reference/mpyfiles.rst:107
 msgid "9a5f92ea72754c01cc03e5efcdfe94021120531e"
@@ -223,7 +250,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:108
 msgid "2 to 3"
-msgstr ""
+msgstr "2 到 3"
 
 #: ../../reference/mpyfiles.rst:108
 msgid "ff93fd4f50321c6190e1659b19e64fef3045a484"
@@ -231,7 +258,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:109
 msgid "1 to 2"
-msgstr ""
+msgstr "1 到 2"
 
 #: ../../reference/mpyfiles.rst:109
 msgid "dd11af209d226b7d18d5148b239662e30ed60bad"
@@ -239,7 +266,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:110
 msgid "0 to 1"
-msgstr ""
+msgstr "0 到 1"
 
 #: ../../reference/mpyfiles.rst:110
 msgid "6a11048af1d01c78bdacddadd1b72dc7ba7c6478"
@@ -247,7 +274,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:111
 msgid "initial version 0"
-msgstr ""
+msgstr "初始版本 0"
 
 #: ../../reference/mpyfiles.rst:111
 msgid "d8c834c95d506db979ec871417de90b7951edc30"
@@ -255,7 +282,7 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:115
 msgid "Binary encoding of .mpy files"
-msgstr ""
+msgstr ".mpy 文件的二进制编码"
 
 #: ../../reference/mpyfiles.rst:117
 msgid ""
@@ -267,36 +294,41 @@ msgid ""
 "(MSB) set if one or more bytes follow.  The bits of the unsigned integer "
 "are stored in the vuint in LSB form."
 msgstr ""
+"MicroPython .mpy 文件是一种可将代码对象存储在嵌套层级结构中的二进制容器格式。"
+"为了让文件保持在较小尺寸的同时，仍然提供大范围的可能值，它在许多地方都使用了可变编码无符号整数（vuint）概念。"
+"与 utf-8 编码类似，这种编码每个字节存储 7 位，若其后仍有一个或多个字节，则设置第 8 位 （MSB）。无符号整数的位以 LSB 形式存储在 vuint 中。"
 
 #: ../../reference/mpyfiles.rst:125
 msgid "The top-level of an .mpy file consists of two parts:"
-msgstr ""
+msgstr ".mpy 文件的最顶层由两部分组成"
 
 #: ../../reference/mpyfiles.rst:127
 msgid "The header."
-msgstr ""
+msgstr "头。"
 
 #: ../../reference/mpyfiles.rst:129
 msgid ""
 "The raw-code for the outer scope of the module. This outer scope is "
 "executed when the .mpy file is imported."
 msgstr ""
+"模块外部范围的原始代码。"
+"这个外部作用域在 .mpy 文件被导入时被执行。"
 
 #: ../../reference/mpyfiles.rst:133
 msgid "The header"
-msgstr ""
+msgstr "头"
 
 #: ../../reference/mpyfiles.rst:135
 msgid "The .mpy header is:"
-msgstr ""
+msgstr ".mpy 的头为"
 
 #: ../../reference/mpyfiles.rst:138 ../../reference/mpyfiles.rst:154
 msgid "size"
-msgstr ""
+msgstr "大小"
 
 #: ../../reference/mpyfiles.rst:138 ../../reference/mpyfiles.rst:154
 msgid "field"
-msgstr ""
+msgstr "值"
 
 #: ../../reference/mpyfiles.rst:140 ../../reference/mpyfiles.rst:141
 #: ../../reference/mpyfiles.rst:142 ../../reference/mpyfiles.rst:143
@@ -305,19 +337,19 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:140
 msgid "value 0x4d (ASCII 'M')"
-msgstr ""
+msgstr "0x4d （对应 ASCII 'M'）"
 
 #: ../../reference/mpyfiles.rst:141
 msgid ".mpy version number"
-msgstr ""
+msgstr ".mpy 版本号"
 
 #: ../../reference/mpyfiles.rst:142
 msgid "feature flags"
-msgstr ""
+msgstr "特性标志"
 
 #: ../../reference/mpyfiles.rst:143
 msgid "number of bits in a small int"
-msgstr ""
+msgstr "小整型中的位个数"
 
 #: ../../reference/mpyfiles.rst:144 ../../reference/mpyfiles.rst:156
 #: ../../reference/mpyfiles.rst:158 ../../reference/mpyfiles.rst:159
@@ -326,21 +358,22 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:144
 msgid "size of qstr window"
-msgstr ""
+msgstr "qstr 的窗口尺寸"
 
 #: ../../reference/mpyfiles.rst:148
 msgid "Raw code elements"
-msgstr ""
+msgstr "原始代码元素"
 
 #: ../../reference/mpyfiles.rst:150
 msgid ""
 "A raw-code element contains code, either bytecode or native machine code."
 "  Its contents are:"
 msgstr ""
+"原始代码元素包含代码，可能是字节码或原生机器代码。它的内容是："
 
 #: ../../reference/mpyfiles.rst:156
 msgid "type and size"
-msgstr ""
+msgstr "类型与大小"
 
 #: ../../reference/mpyfiles.rst:157 ../../reference/mpyfiles.rst:160
 #: ../../reference/mpyfiles.rst:161
@@ -349,23 +382,23 @@ msgstr ""
 
 #: ../../reference/mpyfiles.rst:157
 msgid "code (bytecode or machine code)"
-msgstr ""
+msgstr "代码（字节码或机器代码）"
 
 #: ../../reference/mpyfiles.rst:158
 msgid "number of constant objects"
-msgstr ""
+msgstr "常量对象的数量"
 
 #: ../../reference/mpyfiles.rst:159
 msgid "number of sub-raw-code elements"
-msgstr ""
+msgstr "子原始代码元素的数量"
 
 #: ../../reference/mpyfiles.rst:160
 msgid "constant objects"
-msgstr ""
+msgstr "常量对象"
 
 #: ../../reference/mpyfiles.rst:161
 msgid "sub-raw-code elements"
-msgstr ""
+msgstr "子原始代码元素"
 
 #: ../../reference/mpyfiles.rst:164
 msgid ""
@@ -373,24 +406,28 @@ msgid ""
 "this element (the two least-significant bits), and the decompressed "
 "length of the code (the amount of RAM to allocate for it)."
 msgstr ""
+"原始代码元素中的第一个 vuint 值是该元素中的代码类型（两个最低有效位）和代码的解压缩长度（为其分配的 RAM 量）编码而成的。"
 
 #: ../../reference/mpyfiles.rst:168
 msgid ""
 "Following the vuint comes the code itself.  In the case of bytecode it "
 "also contains compressed qstr values."
 msgstr ""
+"在此 vuint 之后是代码本身。如果是字节码的情况下，它还包含压缩过的 qstr 值。"
 
 #: ../../reference/mpyfiles.rst:171
 msgid ""
 "Following the code comes a vuint counting the number of constant objects,"
 " and another vuint counting the number of sub-raw-code elements."
 msgstr ""
+"代码后面是一个代表常量对象的数量的 vuint 值，"
+"以及一个代表子原始代码元素的数量的 vuint 值。"
 
 #: ../../reference/mpyfiles.rst:174
 msgid "The constant objects are then stored next."
-msgstr ""
+msgstr "然后接下来存储常量对象。"
 
 #: ../../reference/mpyfiles.rst:176
 msgid "Finally any sub-raw-code elements are stored, recursively."
-msgstr ""
+msgstr "最后，任何子原始代码元素都被递归地存储下来。"
 
