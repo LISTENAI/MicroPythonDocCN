@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../reference/packages.rst:4
 msgid "Distribution packages, package management, and deploying applications"
-msgstr ""
+msgstr "分发包、包管理和部署应用程序"
 
 #: ../../reference/packages.rst:6
 msgid ""
@@ -30,22 +30,27 @@ msgid ""
 "user's environment. This chapter discusses how these actions are "
 "achieved. Some familiarity with Python packaging is recommended."
 msgstr ""
+"就像 “大” Python 一样， MicroPython支持创建、分发、"
+"并可以很轻松地在每个用户的环境中安装 ”第三方“ 包。本章讨论如何实现这些操作。"
+"我们推荐你熟悉一些 Python 的包管理知识。"
 
 #: ../../reference/packages.rst:12
 msgid "Overview"
-msgstr ""
+msgstr "概述"
 
 #: ../../reference/packages.rst:14
 msgid ""
 "Steps below represent a high-level workflow when creating and consuming "
 "packages:"
 msgstr ""
+"下述步骤代表了创建和使用包的高级工作流程："
 
 #: ../../reference/packages.rst:17
 msgid ""
 "Python modules and packages are turned into distribution package "
 "archives, and published at the Python Package Index (PyPI)."
 msgstr ""
+"Python 模块和包被转换成分发包归档，并在 Python 包索引 (PyPI) 上发布。"
 
 #: ../../reference/packages.rst:19
 msgid ""
@@ -53,6 +58,7 @@ msgid ""
 "package on a :term:`MicroPython port` with networking capabilities (for "
 "example, on the Unix port)."
 msgstr ""
+":term:`upip` 包管理器可用于在具备网络功能的 :term:`MicroPython 适配端 <MicroPython port>` （例如在 Unix 适配端上）上安装分发包。"
 
 #: ../../reference/packages.rst:22
 msgid ""
@@ -60,6 +66,7 @@ msgid ""
 "be prepared on the Unix port, and transferred to a device by suitable "
 "means."
 msgstr ""
+"对于没有网络功能的适配端，可以在 Unix 适配端上准备一个 “安装镜像”，并通过适当的方式传输到设备上。"
 
 #: ../../reference/packages.rst:25
 msgid ""
@@ -67,14 +74,15 @@ msgid ""
 "bytecode into MicroPython executable, thus minimizing the memory storage "
 "overheads."
 msgstr ""
+"对于低内存适配端，可以将安装镜像冻结为 MicroPython 可执行模块，从而最大限度地减少内存开销。"
 
 #: ../../reference/packages.rst:29
 msgid "The sections below describe this process in details."
-msgstr ""
+msgstr "下面的章节详细描述了这个过程。"
 
 #: ../../reference/packages.rst:32
 msgid "Distribution packages"
-msgstr ""
+msgstr "分发包"
 
 #: ../../reference/packages.rst:34
 msgid ""
@@ -84,6 +92,9 @@ msgid ""
 "*distribution packages* (to differentiate them from Python packages "
 "(means to organize Python source code))."
 msgstr ""
+"Python 模块和包可以被打包成适合在系统之间传输的归档，"
+"并存储在知名的地方（PyPI），实现可按需下载后部署。"
+"这些归档称之为 “分发包”（以将它们与 Python 包（用于组织 Python 源代码）区分）。"
 
 #: ../../reference/packages.rst:40
 msgid ""
@@ -100,6 +111,11 @@ msgid ""
 "achieving some compression while being able to uncompressed even by the "
 "smallest devices."
 msgstr ""
+"MicroPython 分发包的格式是众所周知的 tar.gz 格式，但有一些调整。"
+"因为用于 tar 归档的外部包装器是 Gzip 压缩器，默认使用 32KB 字典大小，这意味着需要分配 32KB 连续的内存用于解压压缩流。"
+"这个要求可能在低内存设备上无法满足，因为这些设备可能拥极少的内存，以至于连这些连续的内存块都难以分配。"
+"为了解决这些限制，MicroPython 分发包所使用的 Gzip 压缩，只使用 4K 字典大小，这应该是一个合适的折中方案，"
+"使得在内存较小的设备上仍然可以解压。"
 
 #: ../../reference/packages.rst:53
 msgid ""
@@ -110,6 +126,10 @@ msgid ""
 "installation (see below), and thus that file is not included in the "
 "archive."
 msgstr ""
+"除了减小了压缩字典大小，MicroPython 分发包还有其他优化，"
+"比如移除归档中不用于安装过程的任何文件。"
+"例如常见地，upip 包管理器在安装过程中并不执行 setup.py（详见下文），"
+"因此不会包含在归档中。"
 
 #: ../../reference/packages.rst:59
 msgid ""
@@ -117,12 +137,14 @@ msgid ""
 "packages not compatible with :term:`CPython`'s package manager, ``pip``. "
 "This isn't considered a big problem, because:"
 msgstr ""
+"与此同时，这些优化使得 MicroPython 分发包与 :term:`CPython` 的包管理器 ``pip`` 不兼容。因为："
 
 #: ../../reference/packages.rst:63
 msgid ""
 "Packages can be installed with :term:`upip`, and then can be used with "
 "CPython (if they are compatible with it)."
 msgstr ""
+"可以使用 upip 安装的包，也可以用于 CPython（如果它们与 CPython 兼容）。"
 
 #: ../../reference/packages.rst:65
 msgid ""
@@ -130,6 +152,8 @@ msgid ""
 "incompatible with MicroPython by various reasons, first of all, the "
 "reliance on features not implemented by MicroPython."
 msgstr ""
+"但另一方面，大多数 CPython 包都是不兼容 MicroPython 的，"
+"首当其冲的问题就是它们所依赖的一些特性在 MicroPython 并未实现。"
 
 #: ../../reference/packages.rst:69
 msgid ""
@@ -137,10 +161,12 @@ msgid ""
 "optimized for MicroPython's target environments, which are highly "
 "resource constrained devices."
 msgstr ""
+"总而言之，MicroPython 分发包针对 MicroPython 目标环境"
+"（资源高度受限的设备）进行了高度的优化。"
 
 #: ../../reference/packages.rst:75
 msgid "``upip`` package manager"
-msgstr ""
+msgstr "``upip`` 包管理器"
 
 #: ../../reference/packages.rst:77
 msgid ""
@@ -150,12 +176,16 @@ msgid ""
 ":term:`MicroPython ports <MicroPython port>`. At the very least, "
 ":term:`upip` is available in the :term:`MicroPython Unix port`."
 msgstr ""
+"MicroPython 分发包旨在通过 :term:`upip` 包管理器安装。"
+":term:`upip` 是一个 Python 应用程序，通常用于网络可用的 :term:`MicroPython 适配端 <MicroPython port>` 上分发（作为冻结字节码）。"
+"至少，:term:`upip` 在 :term:`MicroPython Unix 适配端 <MicroPython Unix port>` 上是可用的。"
 
 #: ../../reference/packages.rst:83
 msgid ""
 "On any :term:`MicroPython port` providing :term:`upip`, it can be "
 "accessed as following::"
 msgstr ""
+"在任何 :term:`upip` 可用的 :term:`MicroPython 适配端 <MicroPython port>` 上，可以通过如下方式访问："
 
 #: ../../reference/packages.rst:90
 msgid ""
@@ -164,10 +194,13 @@ msgid ""
 "*path* parameter specifies filesystem location to install under and "
 "defaults to the standard library location (see below)."
 msgstr ""
+"其中， *package_or_package_list* 是要安装的分发包的名称，"
+"或者一个包含分发包名称的列表用于安装多个分发包。"
+" *path* 参数是可选的，表示指定安装的文件系统位置，默认为标准库位置（详见下文）。"
 
 #: ../../reference/packages.rst:96
 msgid "An example of installing a specific package and then using it::"
-msgstr ""
+msgstr "安装指定的分发包后，如何使用它："
 
 #: ../../reference/packages.rst:104
 msgid ""
@@ -180,6 +213,11 @@ msgid ""
 "Python module or package named ``foo``, the distribution package name is "
 "``micropython-foo``."
 msgstr ""
+"请注意，一般情况下同样功能的 Python 包和 MicroPython 分发包的名称在不一定相同，且通常不相同，"
+"因为 PyPI 提供了所有不同 Python 实现和版本的中心包库，"
+"因此分发包名称可能需要在特定实现下指定命名空间。"
+"例如，所有来自 ``micropython-lib`` 的包都遵循这样的命名规则："
+"对于名为 ``foo`` 的 Python 模块或包，MicroPython 分发包名称为 ``micropython-foo``。"
 
 #: ../../reference/packages.rst:113
 msgid ""
@@ -188,14 +226,16 @@ msgid ""
 "from the command line instead of MicroPython's own REPL. The commands "
 "which corresponds to the example above are::"
 msgstr ""
+"对于可从操作系统命令提示符中运行 MicroPython 的适配端（如 Unix 适配端），"
+"`upip` 也可以通过命令行运行而不是 MicroPython 的自带 REPL，这些命令对于上述的例子是："
 
 #: ../../reference/packages.rst:122
 msgid "[TODO: Describe installation path.]"
-msgstr ""
+msgstr "[TODO: 描述安装路径。]"
 
 #: ../../reference/packages.rst:126
 msgid "Cross-installing packages"
-msgstr ""
+msgstr "跨平台安装包"
 
 #: ../../reference/packages.rst:128
 msgid ""
@@ -204,12 +244,16 @@ msgid ""
 "them into a \"directory image\" using the :term:`MicroPython Unix port`, "
 "and then transferring this image to a device by suitable means."
 msgstr ""
+"对于没有网络功能的 :term:`MicroPython 适配端 <MicroPython port>`，"
+"建议的安装过程是：在 :term:`MicroPython Unix 适配端 <MicroPython Unix port>` 中 \"跨平台安装\" 到一个 \"目录镜像\"，"
+"然后通过适当的方式将这个映像传输到设备中。"
 
 #: ../../reference/packages.rst:133
 msgid ""
 "Installing to a directory image involves using ``-p`` switch to "
 ":term:`upip`::"
 msgstr ""
+"安装到一个目录镜像需要在使用 :term:`upip` 时添加 ``-p`` 参数："
 
 #: ../../reference/packages.rst:137
 msgid ""
@@ -220,10 +264,13 @@ msgid ""
 "it can be found by the Python ``import`` statement (see discussion of the"
 " :term:`upip` installation path above)."
 msgstr ""
+"执行此命令后，包内容（以及所有依赖的包的内容）将在 ``install_dir/`` 子目录中可见。"
+"你需要将这个目录（不包含 ``install_dir/`` 前缀）的内容传输到设备的适当位置，"
+"使得这些内容可以通过 Python ``import`` 语句找到（请参阅上述的 :term:`upip` 安装路径讨论）。"
 
 #: ../../reference/packages.rst:146
 msgid "Cross-installing packages with freezing"
-msgstr ""
+msgstr "跨平台安装包（使用冻结）"
 
 #: ../../reference/packages.rst:148
 msgid ""
@@ -236,24 +283,29 @@ msgid ""
 "Moreover, the process above requires presence of the filesystem on a "
 "device, and the most resource-constrained devices may not even have it."
 msgstr ""
+"对于低内存的 :term:`MicroPython 适配端 <MicroPython port>`，"
+"上述的安装过程不提供最有效的资源使用，因为包在源码中安装，因此需要在每次导入时编译，"
+"这需要 RAM，编译后的字节码也存储在 RAM 中，这样会减少存储应用数据的可用空间。"
+"此外，上述的安装过程需要设备上存在文件系统，而最资源紧张的设备可能不具备。"
 
 #: ../../reference/packages.rst:157
 msgid ""
 "The bytecode freezing is a process which resolves all the issues "
 "mentioned above:"
 msgstr ""
+"字节码的冻结是一个解决上述所有问题的过程："
 
 #: ../../reference/packages.rst:160
 msgid "The source code is pre-compiled into bytecode and store as such."
-msgstr ""
+msgstr "源代码被预编译为字节码并存储。"
 
 #: ../../reference/packages.rst:161
 msgid "The bytecode is stored in ROM, not RAM."
-msgstr ""
+msgstr "字节码存储在 ROM 中，而不是 RAM 中。"
 
 #: ../../reference/packages.rst:162
 msgid "Filesystem is not required for frozen packages."
-msgstr ""
+msgstr "冻结包不需要文件系统。"
 
 #: ../../reference/packages.rst:164
 msgid ""
@@ -261,6 +313,8 @@ msgid ""
 "given :term:`MicroPython port` from the C source code. Consequently, the "
 "process is:"
 msgstr ""
+"使用冻结字节码需要从 C 源代码中构建一个特定的 :term:`MicroPython 适配端 <MicroPython port>` 的可执行文件（固件）。"
+"因此，这个过程是："
 
 #: ../../reference/packages.rst:168
 msgid ""
@@ -270,16 +324,21 @@ msgid ""
 "the port and deploy the resulting executable/firmware successfully before"
 " proceeding to the next steps."
 msgstr ""
+"根据阅读特定适配端的说明，设置工具链和构建适配端，例如，对于 ESP8266 适配端，"
+"请阅读 ``ports/esp8266/README.md`` 中的相关描述跟着做。"
+"在进行下一步之前，请确保你可以成功构建适配端并部署可执行文件/固件。"
 
 #: ../../reference/packages.rst:173
 msgid ""
 "Build :term:`MicroPython Unix port` and make sure it is in your PATH and "
 "you can execute ``micropython``."
 msgstr ""
+"构建 :term:`MicroPython Unix 适配端 <MicroPython Unix port>`，并确保它在你的 PATH 中且可执行 ``micropython``。"
 
 #: ../../reference/packages.rst:175
 msgid "Change to port's directory (e.g. ``ports/esp8266/`` for ESP8266)."
 msgstr ""
+"切换到适配端的目录（例如，对于 ESP8266，切换到 ``ports/esp8266/``）。"
 
 #: ../../reference/packages.rst:176
 msgid ""
@@ -287,30 +346,34 @@ msgid ""
 " were installed for freezing (consequently, you need to skip this step to"
 " add additional modules, instead of starting from scratch)."
 msgstr ""
+"执行 ``make clean-frozen``。这一步会清除以前安装的冻结包"
+"（因此，如果你只是添加额外的模块，而不是从头开始，则可以跳过这一步）。"
 
 #: ../../reference/packages.rst:180
 msgid ""
 "Run ``micropython -m upip install -p modules <packages>...`` to install "
 "packages you want to freeze."
 msgstr ""
+"执行 ``micropython -m upip install -p modules <packages>...`` 安装你想冻结的包。"
 
 #: ../../reference/packages.rst:182
 msgid "Run ``make clean``."
-msgstr ""
+msgstr "执行 ``make clean``。"
 
 #: ../../reference/packages.rst:183
 msgid "Run ``make``."
-msgstr ""
+msgstr "执行 ``make``。"
 
 #: ../../reference/packages.rst:185
 msgid ""
 "After this, you should have the executable/firmware with modules as the "
 "bytecode inside, which you can deploy the usual way."
 msgstr ""
+"这一步之后，你应当得到了一个包含了冻结包的字节码的可执行文件/固件，你可以像一般情况下对其进行部署。"
 
 #: ../../reference/packages.rst:188
 msgid "Few notes:"
-msgstr ""
+msgstr "一些注意事项："
 
 #: ../../reference/packages.rst:190
 msgid ""
@@ -320,6 +383,9 @@ msgid ""
 "directory. (Note that upip does not support installing from e.g. version "
 "control repositories)."
 msgstr ""
+"上面的步骤 5 假设可以从 PyPI 中获取到发行版包。"
+"若非如此，你需要手动将 Python 源代码文件复制到适配端的 ``modules/`` 子目录中。"
+"（注意，upip 不支持从版本控制仓库中安装）。"
 
 #: ../../reference/packages.rst:195
 msgid ""
@@ -331,10 +397,15 @@ msgid ""
 " situation, as an initial step, you may want to decrease the amount of "
 "frozen modules included."
 msgstr ""
+"对于裸机设备，通常会有大小限制，因此添加太多的冻结包可能会导致溢出。"
+"通常，如果这种情况发生，你会收到一个链接错误。"
+"然而，在某些情况下，可能仍会生成一个镜像，但该镜像在设备上不可运行。"
+"这种情况通常是一个 bug，应当被报告并进一步调查验证。"
+"如果你遇到这种情况，作为一个初始步骤，你可能需要减少冻结包的数量。"
 
 #: ../../reference/packages.rst:205
 msgid "Creating distribution packages"
-msgstr ""
+msgstr "创建发行包"
 
 #: ../../reference/packages.rst:207
 msgid ""
@@ -349,6 +420,13 @@ msgid ""
 "setuptools, the user just needs to override ``sdist`` command "
 "implementation by passing the appropriate argument to ``setup()`` call::"
 msgstr ""
+"MicroPython 的发行包的创建与 CPython 或其他 Python 实现的创建方式相同，"
+"参见本章末尾的参考资料。"
+"应当使用 setuptools（而不是 distutils），因为 distutils 不支持依赖和其他特性。"
+"“源码发行 Source distribution” (``sdist``) 格式是用于打包过程。"
+"上文提到的后处理（及下一章节要讨论的前处理）是通过使用自定义的 ``sdist`` 命令来实现的。"
+"因此，打包步骤仍然保持了与标准 setuptools 相同，"
+"用户只需要通过传递适当的参数来覆盖 ``sdist`` 命令的实现调用 ``setup()``："
 
 #: ../../reference/packages.rst:226
 msgid ""
@@ -356,10 +434,13 @@ msgid ""
 "`micropython-lib`: https://github.com/micropython/micropython-"
 "lib/blob/master/sdist_upip.py"
 msgstr ""
+"上文提及的 sdist_upip.py 模块可以在 "
+"`micropython-lib` 中找到: https://github.com/micropython/micropython-"
+"lib/blob/master/sdist_upip.py"
 
 #: ../../reference/packages.rst:232
 msgid "Application resources"
-msgstr ""
+msgstr "应用资源"
 
 #: ../../reference/packages.rst:234
 msgid ""
@@ -369,6 +450,9 @@ msgid ""
 " those data files in the filesystem at some location and use the normal "
 "file access functions."
 msgstr ""
+"一个完整的应用，除了源代码之外，通常还包括数据文件，例如网页模板、游戏图片等。"
+"当应用被手动安装时如何处理这些内容是非常明确的 —— 你只需要将这些数据文件放到文件系统中的某个位置，"
+"并使用标准文件访问函数即可。"
 
 #: ../../reference/packages.rst:240
 msgid ""
@@ -377,6 +461,9 @@ msgid ""
 "more advanced approach to accessing data files. This approach is treating"
 " the data files as \"resources\", and abstracting away access to them."
 msgstr ""
+"当从发行包部署应用时，情况就不同了 —— 这是更高级的、更简单的、更灵活的方式，"
+"但也需要更高级的方法来访问数据文件。"
+"这种方式认为数据文件是“资源”，并且抽象对它们的访问。"
 
 #: ../../reference/packages.rst:245
 msgid ""
@@ -391,6 +478,11 @@ msgid ""
 "``resource_stream()`` emulates interface of the standard `open()` "
 "function."
 msgstr ""
+"通过使用 ``pkg_resources`` 模块， Python 支持通过它的 \"setuptools\" 库来访问资源。"
+"MicroPython 按照一贯的做法，实现了这个模块的子集功能，"
+"特别是 ``pkg_resources.resource_stream(package, resource)`` 函数。"
+"这个思路是，应用程序调用这个函数，传递一个资源标识符，代表在指定的包（通常是顶层应用程序包）中的数据文件的相对路径。"
+"然后通过 ``resource_stream()``返回一个流对象，使用标准的 `open()` 来访问资源内容。"
 
 #: ../../reference/packages.rst:256
 msgid ""
@@ -401,6 +493,10 @@ msgid ""
 "extra intermediate step when packaging application - creation of \"Python"
 " resource module\"."
 msgstr ""
+"实现方面，如果发行包安装在文件系统中，"
+" ``resource_stream()`` 在底层使用文件操作实现。"
+"但是，也支持不依赖文件系统的功能，例如，如果发行包被冻结为字节码。"
+"这种情况下，打包应用程序时需要一个额外的中间步骤 —— 创建 \"Python 资源模块\"。"
 
 #: ../../reference/packages.rst:263
 msgid ""
@@ -409,18 +505,23 @@ msgid ""
 "This conversion is done automatically using overridden ``sdist`` command "
 "described in the previous section."
 msgstr ""
+"这个模块的思路是将二进制数据转换为 Python 字节对象，并将其放入字典中，"
+"根据资源名称索引。这个转换是通过重写在前面的部分描述的 ``sdist`` 命令自动完成。"
 
 #: ../../reference/packages.rst:268
 msgid ""
 "Let's trace the complete process using the following example. Suppose "
 "your application has the following structure::"
 msgstr ""
+"我们通过下面的示例来纵观完整的过程。"
+"假设你的应用程序有如下结构："
 
 #: ../../reference/packages.rst:278
 msgid ""
 "``__main__.py`` and ``utils.py`` should access resources using the "
 "following calls::"
 msgstr ""
+"``__main__.py`` 和 ``utils.py`` 应该使用如下的调用来访问资源："
 
 #: ../../reference/packages.rst:286
 msgid ""
@@ -429,6 +530,8 @@ msgid ""
 " overridden \"sdist\" command from sdist_upip.py module as described in "
 "the previous section."
 msgstr ""
+"你可以像往常一样使用 :term:`MicroPython Unix 适配端 <MicroPython Unix port>` 正常开发和调试。"
+"当到了制作发行包的时候，使用在上文提到的 sdist_upip.py 模块中重写的 \"sdist\" 命令。"
 
 #: ../../reference/packages.rst:291
 msgid ""
@@ -437,16 +540,21 @@ msgid ""
 "file will be considered a resource and added to ``R.py``) - before "
 "proceeding with the normal packaging steps."
 msgstr ""
+"这将创建一个名为 ``R.py`` 的 Python 资源模块，"
+"基于在 ``MANIFEST`` 或 ``MANIFEST.in`` 文件中声明的文件"
+"（任何非 ``.py`` 文件都将被认作资源并加入到 ``R.py`` 中），"
+"然后，继续正常的打包步骤。"
 
 #: ../../reference/packages.rst:296
 msgid ""
 "Prepared like this, your application will work both when deployed to "
 "filesystem and as frozen bytecode."
 msgstr ""
+"像这样准备好之后，你的应用程序将在文件系统中部署或冻结字节码都能正常工作。"
 
 #: ../../reference/packages.rst:299
 msgid "If you would like to debug ``R.py`` creation, you can run::"
-msgstr ""
+msgstr "如果你想调试 ``R.py`` 的创建过程，你可以运行："
 
 #: ../../reference/packages.rst:303
 msgid ""
@@ -454,20 +562,22 @@ msgid ""
 "MicroPython distribution, in which can you will need to pass paths to all"
 " resource files::"
 msgstr ""
+"另外，你也可以使用 MicroPython 发行版中的 tools/mpy_bin2res.py 脚本，"
+"在这里你可以需要传进所有资源文件的路径："
 
 #: ../../reference/packages.rst:310
 msgid "References"
-msgstr ""
+msgstr "参考"
 
 #: ../../reference/packages.rst:312
 msgid "Python Packaging User Guide: https://packaging.python.org/"
-msgstr ""
+msgstr "Python 包管理用户指引：https://packaging.python.org/"
 
 #: ../../reference/packages.rst:313
 msgid "Setuptools documentation: https://setuptools.readthedocs.io/"
-msgstr ""
+msgstr "Setuptools 文档：https://setuptools.readthedocs.io/"
 
 #: ../../reference/packages.rst:314
 msgid "Distutils documentation: https://docs.python.org/3/library/distutils.html"
-msgstr ""
+msgstr "Distutils 文档：https://docs.python.org/3/library/distutils.html"
 
