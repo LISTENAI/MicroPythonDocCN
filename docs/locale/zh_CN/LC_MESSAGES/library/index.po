@@ -105,7 +105,7 @@ msgstr ""
 
 #: ../../library/index.rst:45
 msgid "Python standard libraries and micro-libraries"
-msgstr "Python 标注库和微型库"
+msgstr "Python 标准库和微型库"
 
 #: ../../library/index.rst:47
 msgid ""
