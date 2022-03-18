@@ -47,7 +47,7 @@
   
   
   
-    <title>MicroPython manifest files &#8212; MicroPython 1.18 文档</title>
+    <title>MicroPython 清单文件 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> MicroPython manifest files </span>
+          <span class="md-header-nav__topic"> MicroPython 清单文件 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -243,21 +243,21 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython manifest files </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython 清单文件 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">MicroPython manifest files</a>
+      <a href="#" class="md-nav__link md-nav__link--active">MicroPython 清单文件</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-manifest--page-root" class="md-nav__link">MicroPython manifest files</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-manifest--page-root" class="md-nav__link">MicroPython 清单文件</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#freezing-source-code" class="md-nav__link">Freezing source code</a>
+        <li class="md-nav__item"><a href="#freezing-source-code" class="md-nav__link">冻结源代码</a>
         </li>
-        <li class="md-nav__item"><a href="#including-other-manifest-files" class="md-nav__link">Including other manifest files</a>
+        <li class="md-nav__item"><a href="#including-other-manifest-files" class="md-nav__link">包含其它的 manifest 文件</a>
         </li>
-        <li class="md-nav__item"><a href="#examples" class="md-nav__link">Examples</a>
+        <li class="md-nav__item"><a href="#examples" class="md-nav__link">示例</a>
         </li></ul>
             </nav>
         </li>
@@ -267,21 +267,21 @@
     <li class="md-nav__item">
     
     
-      <a href="#freezing-source-code" class="md-nav__link">Freezing source code</a>
+      <a href="#freezing-source-code" class="md-nav__link">冻结源代码</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#including-other-manifest-files" class="md-nav__link">Including other manifest files</a>
+      <a href="#including-other-manifest-files" class="md-nav__link">包含其它的 manifest 文件</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#examples" class="md-nav__link">Examples</a>
+      <a href="#examples" class="md-nav__link">示例</a>
       
     
     </li></ul>
@@ -401,13 +401,13 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-manifest--page-root" class="md-nav__link">MicroPython manifest files</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-manifest--page-root" class="md-nav__link">MicroPython 清单文件</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#freezing-source-code" class="md-nav__link">Freezing source code</a>
+        <li class="md-nav__item"><a href="#freezing-source-code" class="md-nav__link">冻结源代码</a>
         </li>
-        <li class="md-nav__item"><a href="#including-other-manifest-files" class="md-nav__link">Including other manifest files</a>
+        <li class="md-nav__item"><a href="#including-other-manifest-files" class="md-nav__link">包含其它的 manifest 文件</a>
         </li>
-        <li class="md-nav__item"><a href="#examples" class="md-nav__link">Examples</a>
+        <li class="md-nav__item"><a href="#examples" class="md-nav__link">示例</a>
         </li></ul>
             </nav>
         </li>
@@ -421,92 +421,62 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-manifest-files">
-<h1 id="reference-manifest--page-root">MicroPython manifest files<a class="headerlink" href="#reference-manifest--page-root" title="永久链接至标题">¶</a></h1>
-<p>When building firmware for a device the following components are included in
-the compilation process:</p>
+<h1 id="reference-manifest--page-root">MicroPython 清单文件<a class="headerlink" href="#reference-manifest--page-root" title="永久链接至标题">¶</a></h1>
+<p>当为设备编译固件时，以下组件将被包含在编译过程中:</p>
 <ul class="simple">
-<li><p>the core MicroPython virtual machine and runtime</p></li>
-<li><p>port-specific system code and drivers to interface with the
-microcontroller/device that the firmware is targeting</p></li>
-<li><p>standard built-in modules, like <code class="docutils literal notranslate"><span class="pre">sys</span></code></p></li>
-<li><p>extended built-in modules, like <code class="docutils literal notranslate"><span class="pre">json</span></code> and <code class="docutils literal notranslate"><span class="pre">machine</span></code></p></li>
-<li><p>extra modules written in C/C++</p></li>
-<li><p>extra modules written in Python</p></li>
+<li><p>核心 MicroPython 虚拟机和运行时</p></li>
+<li><p>固件中指定的微处理器/设备接口的特定适配的系统代码和驱动程序</p></li>
+<li><p>标准内置模块，如 <code class="docutils literal notranslate"><span class="pre">sys</span></code></p></li>
+<li><p>扩展内置模块，如 <code class="docutils literal notranslate"><span class="pre">json</span></code> 和 <code class="docutils literal notranslate"><span class="pre">machine</span></code></p></li>
+<li><p>C/C++ 编写的额外模块</p></li>
+<li><p>Python 编写的额外模块</p></li>
 </ul>
-<p>All the modules included in the firmware are available via <code class="docutils literal notranslate"><span class="pre">import</span></code> from
-Python code.  The extra modules written in Python that are included in a build
-(the last point above) are called <em>frozen modules</em>, and are specified by a
-<code class="docutils literal notranslate"><span class="pre">manifest.py</span></code> file.  Changing this manifest requires rebuilding the firmware.</p>
-<p>It’s also possible to add additional modules to the filesystem of the device
-once it is up and running.  Adding and removing modules to/from the filesystem
-does not require rebuilding the firmware so is a simpler process than rebuilding
-firmware.  The benefit of using a manifest is that frozen modules are more
-efficient: they are faster to import and take up less RAM once imported.</p>
-<p>MicroPython manifest files are Python files and can contain arbitrary Python
-code.  There are also a set of commands (predefined functions) which are used
-to specify the Python source files to include.  These commands are described
-below.</p>
+<p>所有在固件中包含的模块都可以通过 Python 代码中的 <code class="docutils literal notranslate"><span class="pre">import</span></code> 语句来使用。在编译过程中编写的 Python 额外模块（上述最后一项）称为 <em>冻结模块</em>，并在 <code class="docutils literal notranslate"><span class="pre">manifest.py</span></code> 文件中指定。修改此清单文件要求重新编译固件。</p>
+<p>你也可以在设备运行时向文件系统中添加额外的模块。在文件系统添加和删除模块不需要重新编译固件，因此它是一个更简单的方式。使用清单文件是优势是，冻结模块更高效：它们在导入时更快，而且占用的内存更少。</p>
+<p>MicroPython 清单文件是 Python 文件，可以包含任意的 Python 代码。其中还有一组命令（预定义的函数）用于指定要包含的 Python 源文件。这些命令在下面描述。</p>
 <section id="freezing-source-code">
-<h2 id="freezing-source-code">Freezing source code<a class="headerlink" href="#freezing-source-code" title="永久链接至标题">¶</a></h2>
+<h2 id="freezing-source-code">冻结源代码<a class="headerlink" href="#freezing-source-code" title="永久链接至标题">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="freeze">
 <span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#freeze" title="永久链接至目标">¶</a></dt>
-<dd><p>Freeze the input specified by <em>path</em>, automatically determining its type.  A
-<code class="docutils literal notranslate"><span class="pre">.py</span></code> script will be compiled to a <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> first then frozen, and a
-<code class="docutils literal notranslate"><span class="pre">.mpy</span></code> file will be frozen directly.</p>
-<p><em>path</em> must be a directory, which is the base directory to begin searching
-for files.  When importing the resulting frozen modules, the name of the
-module will start after <em>path</em>, i.e. <em>path</em> is excluded from the module
-name.</p>
-<p>If <em>path</em> is relative, it is resolved to the current <code class="docutils literal notranslate"><span class="pre">manifest.py</span></code>.  Use
-<code class="docutils literal notranslate"><span class="pre">$(MPY_DIR)</span></code>, <code class="docutils literal notranslate"><span class="pre">$(MPY_LIB_DIR)</span></code>, <code class="docutils literal notranslate"><span class="pre">$(PORT_DIR)</span></code>, <code class="docutils literal notranslate"><span class="pre">$(BOARD_DIR)</span></code> if you
-need to access specific paths.</p>
-<p>If <em>script</em> is None, all files in <em>path</em> will be frozen.</p>
-<p>If <em>script</em> is an iterable then <code class="docutils literal notranslate"><span class="pre">freeze()</span></code> is called on all items of the
-iterable (with the same <em>path</em> and <em>opt</em> passed through).</p>
-<p>If <em>script</em> is a string then it specifies the file or directory to freeze,
-and can include extra directories before the file or last directory.  The
-file or directory will be searched for in <em>path</em>.  If <em>script</em> is a
-directory then all files in that directory will be frozen.</p>
-<p><em>opt</em> is the optimisation level to pass to mpy-cross when compiling <code class="docutils literal notranslate"><span class="pre">.py</span></code>
-to <code class="docutils literal notranslate"><span class="pre">.mpy</span></code>.</p>
+<dd><p>冻结的入参通过 <em>path</em> 指定后，自动确定其类型。一个 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 脚本将会被编译为 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 再冻结，而一个 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 文件则可直接冻结。</p>
+<p><em>path</em> 必须是一个目录，代表要搜索文件的基础目录。导入指定的冻结模块时，模块的名称将从 <em>path</em> 后开始，即 <em>path</em> 不会包含在模块名称中。</p>
+<p>如果 <em>path</em> 是相对路径，则会被解析到当前的 <code class="docutils literal notranslate"><span class="pre">manifest.py</span></code> 的相对路径。如果需要访问特定的路径，请使用 <code class="docutils literal notranslate"><span class="pre">$(MPY_DIR)</span></code>、<code class="docutils literal notranslate"><span class="pre">$(MPY_LIB_DIR)</span></code>、<code class="docutils literal notranslate"><span class="pre">$(PORT_DIR)</span></code>、<code class="docutils literal notranslate"><span class="pre">$(BOARD_DIR)</span></code>。</p>
+<p>如果 <em>script</em> 是 None，则 <em>path</em> 下的所有文件都会被冻结。</p>
+<p>如果 <em>script</em> 是一个可遍历的集合，则会调用 <code class="docutils literal notranslate"><span class="pre">freeze()</span></code> 函数对可遍历集合中的所有项进行冻结（传递相同的 <em>path</em> 和 <em>opt</em> 参数）。</p>
+<p>如果 <em>script</em> 是一个字符串，则代表指定要冻结的文件或目录，并可以在文件或最后一个目录之前包含额外的目录。 <em>path</em> 下的文件或目录都会被搜索。如果 <em>script</em> 是一个目录，则该目录下的所有文件都会被冻结。</p>
+<p>传递给 mpy-cross 的 <em>opt</em> 参数用于指定编译 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 到 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 的优化级别。</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="freeze_as_str">
 <span class="sig-name descname"><span class="pre">freeze_as_str</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#freeze_as_str" title="永久链接至目标">¶</a></dt>
-<dd><p>Freeze the given <em>path</em> and all <code class="docutils literal notranslate"><span class="pre">.py</span></code> scripts within it as a string, which
-will be compiled upon import.</p>
+<dd><p>将指定的 <em>path</em> 和其中所有的 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 脚本冻结为字符串，这些脚本将会在导入时被编译。</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="freeze_as_mpy">
 <span class="sig-name descname"><span class="pre">freeze_as_mpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#freeze_as_mpy" title="永久链接至目标">¶</a></dt>
-<dd><p>Freeze the input by first compiling the <code class="docutils literal notranslate"><span class="pre">.py</span></code> scripts to <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> files,
-then freezing the resulting <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> files.  See <code class="docutils literal notranslate"><span class="pre">freeze()</span></code> for further
-details on the arguments.</p>
+<dd><p>首先将 <code class="docutils literal notranslate"><span class="pre">.py</span></code> 脚本编译为 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 文件，然后冻结这些 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 文件。详细信息请参考 <code class="docutils literal notranslate"><span class="pre">freeze()</span></code> 函数的说明。</p>
 </dd></dl>
 <dl class="py function">
 <dt class="sig sig-object py" id="freeze_mpy">
 <span class="sig-name descname"><span class="pre">freeze_mpy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#freeze_mpy" title="永久链接至目标">¶</a></dt>
-<dd><p>Freeze the input, which must be <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> files that are frozen directly.
-See <code class="docutils literal notranslate"><span class="pre">freeze()</span></code> for further details on the arguments.</p>
+<dd><p>冻结输入内容，输入必须是可直接冻结的 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 文件。</p>
 </dd></dl>
 </section>
 <section id="including-other-manifest-files">
-<h2 id="including-other-manifest-files">Including other manifest files<a class="headerlink" href="#including-other-manifest-files" title="永久链接至标题">¶</a></h2>
+<h2 id="including-other-manifest-files">包含其它的 manifest 文件<a class="headerlink" href="#including-other-manifest-files" title="永久链接至标题">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="include">
 <span class="sig-name descname"><span class="pre">include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#include" title="永久链接至目标">¶</a></dt>
-<dd><p>Include another manifest.</p>
-<p>The <em>manifest</em> argument can be a string (filename) or an iterable of
-strings.</p>
-<p>Relative paths are resolved with respect to the current manifest file.</p>
-<p>Optional <em>kwargs</em> can be provided which will be available to the included
-script via the <em>options</em> variable.</p>
-<p>For example:</p>
+<dd><p>包含另一个 manifest 文件。</p>
+<p><em>manifest</em> 参数可以是一个字符串（文件名）或者一个可遍历的字符串集合。</p>
+<p>相对路径会被解析为当前 manifest 文件的相对路径。</p>
+<p>可选的 <em>kwargs</em> 参数可以提供给通过 <em>options</em> 配置被包含的脚本。</p>
+<p>例如：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s2">"path.py"</span><span class="p">,</span> <span class="n">extra_features</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>then in path.py:</p>
+<p>然后在 path.py 中：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">options</span><span class="o">.</span><span class="n">defaults</span><span class="p">(</span><span class="n">standard_features</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="c1"># freeze minimal modules.</span>
 <span class="k">if</span> <span class="n">options</span><span class="o">.</span><span class="n">standard_features</span><span class="p">:</span>
@@ -518,17 +488,16 @@ script via the <em>options</em> variable.</p>
 </dd></dl>
 </section>
 <section id="examples">
-<h2 id="examples">Examples<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
-<p>To freeze a single file which is available as <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mydriver</span></code>, use:</p>
+<h2 id="examples">示例<a class="headerlink" href="#examples" title="永久链接至标题">¶</a></h2>
+<p>要冻结一个可以通过 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mydriver</span></code> 进行导入的单个文件，请使用：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">freeze</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"mydriver.py"</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To freeze a set of files which are available as <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">test1</span></code> and
-<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">test2</span></code>, and which are compiled with optimisation level 3, use:</p>
+<p>要冻结一个可以通过 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">test1</span></code> 和 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">test2</span></code> 进行导入的文件集合，并且这些文件会被编译为优化级别为 3 的文件，请使用：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">freeze</span><span class="p">(</span><span class="s2">"/path/to/tests"</span><span class="p">,</span> <span class="p">(</span><span class="s2">"test1.py"</span><span class="p">,</span> <span class="s2">"test2.py"</span><span class="p">),</span> <span class="n">opt</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>To freeze a module which can be imported as <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mymodule</span></code>, use:</p>
+<p>要冻结一个可以通过 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mymodule</span></code> 进行导入的模块，请使用：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">freeze</span><span class="p">(</span>
     <span class="s2">"../relative/path"</span><span class="p">,</span>
     <span class="p">(</span>
@@ -539,7 +508,7 @@ script via the <em>options</em> variable.</p>
 <span class="p">)</span>
 </pre></div>
 </div>
-<p>To include a manifest from the MicroPython repository, use:</p>
+<p>要包含来自 MicroPython 代码仓中的 manifest 文件，请使用：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">include</span><span class="p">(</span><span class="s2">"$(MPY_DIR)/extmod/uasyncio/manifest.py"</span><span class="p">)</span>
 </pre></div>
 </div>
