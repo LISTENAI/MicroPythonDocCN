@@ -21,39 +21,41 @@ msgstr ""
 
 #: ../../reference/manifest.rst:2
 msgid "MicroPython manifest files"
-msgstr ""
+msgstr "MicroPython 清单文件"
 
 #: ../../reference/manifest.rst:4
 msgid ""
 "When building firmware for a device the following components are included"
 " in the compilation process:"
 msgstr ""
+"当为设备编译固件时，以下组件将被包含在编译过程中:"
 
 #: ../../reference/manifest.rst:7
 msgid "the core MicroPython virtual machine and runtime"
-msgstr ""
+msgstr "核心 MicroPython 虚拟机和运行时"
 
 #: ../../reference/manifest.rst:8
 msgid ""
 "port-specific system code and drivers to interface with the "
 "microcontroller/device that the firmware is targeting"
 msgstr ""
+"固件中指定的微处理器/设备接口的特定适配的系统代码和驱动程序"
 
 #: ../../reference/manifest.rst:10
 msgid "standard built-in modules, like ``sys``"
-msgstr ""
+msgstr "标准内置模块，如 ``sys``"
 
 #: ../../reference/manifest.rst:11
 msgid "extended built-in modules, like ``json`` and ``machine``"
-msgstr ""
+msgstr "扩展内置模块，如 ``json`` 和 ``machine``"
 
 #: ../../reference/manifest.rst:12
 msgid "extra modules written in C/C++"
-msgstr ""
+msgstr "C/C++ 编写的额外模块"
 
 #: ../../reference/manifest.rst:13
 msgid "extra modules written in Python"
-msgstr ""
+msgstr "Python 编写的额外模块"
 
 #: ../../reference/manifest.rst:15
 msgid ""
@@ -63,6 +65,9 @@ msgid ""
 "specified by a ``manifest.py`` file.  Changing this manifest requires "
 "rebuilding the firmware."
 msgstr ""
+"所有在固件中包含的模块都可以通过 Python 代码中的 ``import`` 语句来使用。"
+"在编译过程中编写的 Python 额外模块（上述最后一项）称为 *冻结模块*，"
+"并在 ``manifest.py`` 文件中指定。修改此清单文件要求重新编译固件。"
 
 #: ../../reference/manifest.rst:20
 msgid ""
@@ -73,6 +78,9 @@ msgid ""
 "that frozen modules are more efficient: they are faster to import and "
 "take up less RAM once imported."
 msgstr ""
+"你也可以在设备运行时向文件系统中添加额外的模块。"
+"在文件系统添加和删除模块不需要重新编译固件，因此它是一个更简单的方式。"
+"使用清单文件是优势是，冻结模块更高效：它们在导入时更快，而且占用的内存更少。"
 
 #: ../../reference/manifest.rst:26
 msgid ""
@@ -81,10 +89,13 @@ msgid ""
 "which are used to specify the Python source files to include.  These "
 "commands are described below."
 msgstr ""
+"MicroPython 清单文件是 Python 文件，可以包含任意的 Python 代码。"
+"其中还有一组命令（预定义的函数）用于指定要包含的 Python 源文件。"
+"这些命令在下面描述。"
 
 #: ../../reference/manifest.rst:32
 msgid "Freezing source code"
-msgstr ""
+msgstr "冻结源代码"
 
 #: ../../reference/manifest.rst:36
 msgid ""
@@ -92,6 +103,8 @@ msgid ""
 "  A ``.py`` script will be compiled to a ``.mpy`` first then frozen, and "
 "a ``.mpy`` file will be frozen directly."
 msgstr ""
+"冻结的入参通过 *path* 指定后，自动确定其类型。"
+"一个 ``.py`` 脚本将会被编译为 ``.mpy`` 再冻结，而一个 ``.mpy`` 文件则可直接冻结。"
 
 #: ../../reference/manifest.rst:40
 msgid ""
@@ -100,6 +113,8 @@ msgid ""
 "name of the module will start after *path*, i.e. *path* is excluded from "
 "the module name."
 msgstr ""
+"*path* 必须是一个目录，代表要搜索文件的基础目录。"
+"导入指定的冻结模块时，模块的名称将从 *path* 后开始，即 *path* 不会包含在模块名称中。"
 
 #: ../../reference/manifest.rst:45
 msgid ""
@@ -107,16 +122,20 @@ msgid ""
 "Use ``$(MPY_DIR)``, ``$(MPY_LIB_DIR)``, ``$(PORT_DIR)``, ``$(BOARD_DIR)``"
 " if you need to access specific paths."
 msgstr ""
+"如果 *path* 是相对路径，则会被解析到当前的 ``manifest.py`` 的相对路径。"
+"如果需要访问特定的路径，请使用 ``$(MPY_DIR)``、``$(MPY_LIB_DIR)``、``$(PORT_DIR)``、``$(BOARD_DIR)``。"
 
 #: ../../reference/manifest.rst:49
 msgid "If *script* is None, all files in *path* will be frozen."
-msgstr ""
+msgstr "如果 *script* 是 None，则 *path* 下的所有文件都会被冻结。"
 
 #: ../../reference/manifest.rst:51
 msgid ""
 "If *script* is an iterable then ``freeze()`` is called on all items of "
 "the iterable (with the same *path* and *opt* passed through)."
 msgstr ""
+"如果 *script* 是一个可遍历的集合，"
+"则会调用 ``freeze()`` 函数对可遍历集合中的所有项进行冻结（传递相同的 *path* 和 *opt* 参数）。"
 
 #: ../../reference/manifest.rst:54
 msgid ""
@@ -125,18 +144,25 @@ msgid ""
 "directory.  The file or directory will be searched for in *path*.  If "
 "*script* is a directory then all files in that directory will be frozen."
 msgstr ""
+"如果 *script* 是一个字符串，则代表指定要冻结的文件或目录，"
+"并可以在文件或最后一个目录之前包含额外的目录。"
+" *path* 下的文件或目录都会被搜索。"
+"如果 *script* 是一个目录，则该目录下的所有文件都会被冻结。"
 
 #: ../../reference/manifest.rst:59
 msgid ""
 "*opt* is the optimisation level to pass to mpy-cross when compiling "
 "``.py`` to ``.mpy``."
 msgstr ""
+"传递给 mpy-cross 的 *opt* 参数用于指定编译 ``.py`` 到 ``.mpy`` 的优化级别。"
 
 #: ../../reference/manifest.rst:64
 msgid ""
 "Freeze the given *path* and all ``.py`` scripts within it as a string, "
 "which will be compiled upon import."
 msgstr ""
+"将指定的 *path* 和其中所有的 ``.py`` 脚本冻结为字符串，"
+"这些脚本将会在导入时被编译。"
 
 #: ../../reference/manifest.rst:69
 msgid ""
@@ -144,64 +170,71 @@ msgid ""
 "files, then freezing the resulting ``.mpy`` files.  See ``freeze()`` for "
 "further details on the arguments."
 msgstr ""
+"首先将 ``.py`` 脚本编译为 ``.mpy`` 文件，然后冻结这些 ``.mpy`` 文件。"
+"详细信息请参考 ``freeze()`` 函数的说明。"
 
 #: ../../reference/manifest.rst:75
 msgid ""
 "Freeze the input, which must be ``.mpy`` files that are frozen directly. "
 "See ``freeze()`` for further details on the arguments."
 msgstr ""
+"冻结输入内容，输入必须是可直接冻结的 ``.mpy`` 文件。"
 
 #: ../../reference/manifest.rst:80
 msgid "Including other manifest files"
-msgstr ""
+msgstr "包含其它的 manifest 文件"
 
 #: ../../reference/manifest.rst:84
 msgid "Include another manifest."
-msgstr ""
+msgstr "包含另一个 manifest 文件。"
 
 #: ../../reference/manifest.rst:86
 msgid ""
 "The *manifest* argument can be a string (filename) or an iterable of "
 "strings."
 msgstr ""
+"*manifest* 参数可以是一个字符串（文件名）或者一个可遍历的字符串集合。"
 
 #: ../../reference/manifest.rst:89
 msgid "Relative paths are resolved with respect to the current manifest file."
-msgstr ""
+msgstr "相对路径会被解析为当前 manifest 文件的相对路径。"
 
 #: ../../reference/manifest.rst:91
 msgid ""
 "Optional *kwargs* can be provided which will be available to the included"
 " script via the *options* variable."
 msgstr ""
+"可选的 *kwargs* 参数可以提供给通过 *options* 配置被包含的脚本。"
 
 #: ../../reference/manifest.rst:94
 msgid "For example:"
-msgstr ""
+msgstr "例如："
 
 #: ../../reference/manifest.rst:100
 msgid "then in path.py:"
-msgstr ""
+msgstr "然后在 path.py 中："
 
 #: ../../reference/manifest.rst:113
 msgid "Examples"
-msgstr ""
+msgstr "示例"
 
 #: ../../reference/manifest.rst:115
 msgid "To freeze a single file which is available as ``import mydriver``, use:"
-msgstr ""
+msgstr "要冻结一个可以通过 ``import mydriver`` 进行导入的单个文件，请使用："
 
 #: ../../reference/manifest.rst:121
 msgid ""
 "To freeze a set of files which are available as ``import test1`` and "
 "``import test2``, and which are compiled with optimisation level 3, use:"
 msgstr ""
+"要冻结一个可以通过 ``import test1`` 和 ``import test2`` 进行导入的文件集合，"
+"并且这些文件会被编译为优化级别为 3 的文件，请使用："
 
 #: ../../reference/manifest.rst:128
 msgid "To freeze a module which can be imported as ``import mymodule``, use:"
-msgstr ""
+msgstr "要冻结一个可以通过 ``import mymodule`` 进行导入的模块，请使用："
 
 #: ../../reference/manifest.rst:141
 msgid "To include a manifest from the MicroPython repository, use:"
-msgstr ""
+msgstr "要包含来自 MicroPython 代码仓中的 manifest 文件，请使用："
 
