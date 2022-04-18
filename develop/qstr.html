@@ -47,7 +47,7 @@
   
   
   
-    <title>MicroPython string interning &#8212; MicroPython 1.18 文档</title>
+    <title>MicroPython 字符串驻留 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -97,7 +97,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> MicroPython string interning </span>
+          <span class="md-header-nav__topic"> MicroPython 字符串驻留 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -250,19 +250,19 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython string interning </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython 字符串驻留 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">MicroPython string interning</a>
+      <a href="#" class="md-nav__link md-nav__link--active">MicroPython 字符串驻留</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-qstr--page-root" class="md-nav__link">MicroPython string interning</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-qstr--page-root" class="md-nav__link">MicroPython 字符串驻留</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#compile-time-qstr-generation" class="md-nav__link">Compile-time QSTR generation</a>
+        <li class="md-nav__item"><a href="#compile-time-qstr-generation" class="md-nav__link">编译时进行的 QSTR 生成</a>
         </li>
-        <li class="md-nav__item"><a href="#run-time-qstr-generation" class="md-nav__link">Run-time QSTR generation</a>
+        <li class="md-nav__item"><a href="#run-time-qstr-generation" class="md-nav__link">运行时进行的 QSTR 生成</a>
         </li></ul>
             </nav>
         </li>
@@ -272,14 +272,14 @@
     <li class="md-nav__item">
     
     
-      <a href="#compile-time-qstr-generation" class="md-nav__link">Compile-time QSTR generation</a>
+      <a href="#compile-time-qstr-generation" class="md-nav__link">编译时进行的 QSTR 生成</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#run-time-qstr-generation" class="md-nav__link">Run-time QSTR generation</a>
+      <a href="#run-time-qstr-generation" class="md-nav__link">运行时进行的 QSTR 生成</a>
       
     
     </li></ul>
@@ -385,11 +385,11 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-qstr--page-root" class="md-nav__link">MicroPython string interning</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-qstr--page-root" class="md-nav__link">MicroPython 字符串驻留</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#compile-time-qstr-generation" class="md-nav__link">Compile-time QSTR generation</a>
+        <li class="md-nav__item"><a href="#compile-time-qstr-generation" class="md-nav__link">编译时进行的 QSTR 生成</a>
         </li>
-        <li class="md-nav__item"><a href="#run-time-qstr-generation" class="md-nav__link">Run-time QSTR generation</a>
+        <li class="md-nav__item"><a href="#run-time-qstr-generation" class="md-nav__link">运行时进行的 QSTR 生成</a>
         </li></ul>
             </nav>
         </li>
@@ -403,99 +403,48 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-string-interning">
-<span id="qstr"></span><h1 id="develop-qstr--page-root">MicroPython string interning<a class="headerlink" href="#develop-qstr--page-root" title="永久链接至标题">¶</a></h1>
-<p>MicroPython uses <a class="reference external" href="https://en.wikipedia.org/wiki/String_interning">string interning</a> to save both RAM and ROM.  This avoids
-having to store duplicate copies of the same string.  Primarily, this applies to
-identifiers in your code, as something like a function or variable name is very
-likely to appear in multiple places in the code.  In MicroPython an interned
-string is called a QSTR (uniQue STRing).</p>
-<p>A QSTR value (with type <code class="docutils literal notranslate"><span class="pre">qstr</span></code>) is a index into a linked list of QSTR pools.
-QSTRs store their length and a hash of their contents for fast comparison during
-the de-duplication process.  All bytecode operations that work with strings use
-a QSTR argument.</p>
+<span id="qstr"></span><h1 id="develop-qstr--page-root">MicroPython 字符串驻留<a class="headerlink" href="#develop-qstr--page-root" title="永久链接至标题">¶</a></h1>
+<p>MicroPython 使用 <a class="reference external" href="https://en.wikipedia.org/wiki/String_interning">string interning</a> （字符串驻留）来节省 RAM 和 ROM 。这样可以避免了对于相同的字符串，存储了重复的引用。主要是因为在你的代码中，某些标识符，比如函数或变量名，很可能会出现在多个地方。在 MicroPython 中，一个驻留的字符串被称为 QSTR （uniQue STRing 的缩写，指唯一字符串）。</p>
+<p>QSTR 值（以 <code class="docutils literal notranslate"><span class="pre">qstr</span></code> 类型存在）是一个链表中的 QSTR 值的索引。QSTR 存储了其长度和内容的哈希值，以便快速的比较。所有与字符串操作相关的 bytecode 操作都使用 QSTR 参数。</p>
 <section id="compile-time-qstr-generation">
-<h2 id="compile-time-qstr-generation">Compile-time QSTR generation<a class="headerlink" href="#compile-time-qstr-generation" title="永久链接至标题">¶</a></h2>
-<p>In the MicroPython C code, any strings that should be interned in the final
-firmware are written as <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code>.  At compile time this will evaluate to
-a <code class="docutils literal notranslate"><span class="pre">qstr</span></code> value that points to the index of <code class="docutils literal notranslate"><span class="pre">"Foo"</span></code> in the QSTR pool.</p>
-<p>A multi-step process in the <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> makes this work.  In summary this
-process has three parts:</p>
+<h2 id="compile-time-qstr-generation">编译时进行的 QSTR 生成<a class="headerlink" href="#compile-time-qstr-generation" title="永久链接至标题">¶</a></h2>
+<p>在 MicroPython C 代码中，任何需要在最终的固件中驻留的字符串，都会写入为 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 。在编译时，这将会将其转换为一个 <code class="docutils literal notranslate"><span class="pre">qstr</span></code> 值，指向 <code class="docutils literal notranslate"><span class="pre">"Foo"</span></code> 在 QSTR 池中的索引。</p>
+<p>这项工作，是通过在 <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> 中定义的多步操作来完成的。总结来说，这个过程有三个部分：</p>
 <ol class="arabic simple">
-<li><p>Find all <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> tokens in the code.</p></li>
-<li><p>Generate a static QSTR pool containing all the string data (including lengths
-and hashes).</p></li>
-<li><p>Replace all <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> (via the preprocessor) with their corresponding
-index.</p></li>
+<li><p>在代码中找到所有的 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 标志。</p></li>
+<li><p>生成一个包含所有字符串数据（包含长度和哈希值）的静态 QSTR 池。</p></li>
+<li><p>将所有的 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> （通过预处理器）替换为他们的对应的索引。</p></li>
 </ol>
-<p><code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> tokens are searched for in two sources:</p>
+<p>搜索 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 标志的操作，会在以下两个来源中进行：</p>
 <ol class="arabic simple">
-<li><p>All files referenced in <code class="docutils literal notranslate"><span class="pre">$(SRC_QSTR)</span></code>.  This is all C code (i.e. <code class="docutils literal notranslate"><span class="pre">py</span></code>,
-<code class="docutils literal notranslate"><span class="pre">extmod</span></code>, <code class="docutils literal notranslate"><span class="pre">ports/stm32</span></code>) but not including third-party code such as
-<code class="docutils literal notranslate"><span class="pre">lib</span></code>.</p></li>
-<li><p>Additional <code class="docutils literal notranslate"><span class="pre">$(QSTR_GLOBAL_DEPENDENCIES)</span></code> (which includes <code class="docutils literal notranslate"><span class="pre">mpconfig*.h</span></code>).</p></li>
+<li><p>所有在 <code class="docutils literal notranslate"><span class="pre">$(SRC_QSTR)</span></code> 中引用的文件。这是所有 C 代码（即 <code class="docutils literal notranslate"><span class="pre">py</span></code>、<code class="docutils literal notranslate"><span class="pre">extmod</span></code>、<code class="docutils literal notranslate"><span class="pre">ports/stm32</span></code>），但不包括第三方代码，比如 <code class="docutils literal notranslate"><span class="pre">lib</span></code> 。</p></li>
+<li><p>额外的 <code class="docutils literal notranslate"><span class="pre">$(QSTR_GLOBAL_DEPENDENCIES)</span></code> （包括 <code class="docutils literal notranslate"><span class="pre">mpconfig*.h</span></code> ）。</p></li>
 </ol>
-<p><em>Note:</em> <code class="docutils literal notranslate"><span class="pre">frozen_mpy.c</span></code> (generated by mpy-tool.py) has its own QSTR generation
-and pool.</p>
-<p>Some additional strings that can’t be expressed using the <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> syntax
-(e.g. they contain non-alphanumeric characters) are explicitly provided in
-<code class="docutils literal notranslate"><span class="pre">qstrdefs.h</span></code> and <code class="docutils literal notranslate"><span class="pre">qstrdefsport.h</span></code> via the <code class="docutils literal notranslate"><span class="pre">$(QSTR_DEFS)</span></code> variable.</p>
-<p>Processing happens in the following stages:</p>
+<p><em>注意：</em> <code class="docutils literal notranslate"><span class="pre">frozen_mpy.c</span></code> （由 mpy-tool.py 生成）有自己的 QSTR 生成和池。</p>
+<p>一些不能用 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 语法表达的字符串，比如它们包含非字母数字字符，则需要在 <code class="docutils literal notranslate"><span class="pre">qstrdefs.h</span></code> 和 <code class="docutils literal notranslate"><span class="pre">qstrdefsport.h</span></code> 中通过 <code class="docutils literal notranslate"><span class="pre">$(QSTR_DEFS)</span></code> 变量进行指定。</p>
+<p>处理过程会在以下阶段进行：</p>
 <ol class="arabic simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">qstr.i.last</span></code> is the concatenation of putting every single input file
-through the C pre-processor.  This means that any conditionally disabled code
-will be removed, and macros expanded.  This means we don’t add strings to the
-pool that won’t be used in the final firmware.  Because at this stage (thanks
-to the <code class="docutils literal notranslate"><span class="pre">NO_QSTR</span></code> macro added by <code class="docutils literal notranslate"><span class="pre">QSTR_GEN_CFLAGS</span></code>) there is no
-definition for <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> it passes through this stage unaffected.  This
-file also includes comments from the preprocessor that include line number
-information.  Note that this step only uses files that have changed, which
-means that <code class="docutils literal notranslate"><span class="pre">qstr.i.last</span></code> will only contain data from files that have
-changed since the last compile.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">qstr.split</span></code> is an empty file created after running <code class="docutils literal notranslate"><span class="pre">makeqstrdefs.py</span> <span class="pre">split</span></code>
-on qstr.i.last. It’s just used as a dependency to indicate that the step ran.
-This script outputs one file per input C file,  <code class="docutils literal notranslate"><span class="pre">genhdr/qstr/...file.c.qstr</span></code>,
-which contains only the matched QSTRs. Each QSTR is printed as <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code>.
-This step is necessary to combine the existing files with the new data
-generated from the incremental update in <code class="docutils literal notranslate"><span class="pre">qstr.i.last</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">qstrdefs.collected.h</span></code> is the output of concatenating <code class="docutils literal notranslate"><span class="pre">genhdr/qstr/*</span></code>
-using <code class="docutils literal notranslate"><span class="pre">makeqstrdefs.py</span> <span class="pre">cat</span></code>.  This is now the full set of <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code>’s
-found in the code, now formatted as <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code>, one-per-line, with duplicates.
-This file is only updated if the set of qstrs has changed.  A hash of the QSTR
-data is written to another file (<code class="docutils literal notranslate"><span class="pre">qstrdefs.collected.h.hash</span></code>) which allows
-it to track changes across builds.</p></li>
-<li><p>Generate an enumeration, each entry of which maps a <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> to it’s corresponding index.
-It concatenates <code class="docutils literal notranslate"><span class="pre">qstrdefs.collected.h</span></code> with <code class="docutils literal notranslate"><span class="pre">qstrdefs*.h</span></code>, then it transforms
-each line from <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code> to <code class="docutils literal notranslate"><span class="pre">"Q(Foo)"</span></code> so they pass through the preprocessor
-unchanged.  Then the preprocessor is used to deal with any conditional
-compilation in <code class="docutils literal notranslate"><span class="pre">qstrdefs*.h</span></code>.  Then the transformation is undone back to
-<code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code>, and saved as <code class="docutils literal notranslate"><span class="pre">qstrdefs.preprocessed.h</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">qstrdefs.generated.h</span></code> is the output of <code class="docutils literal notranslate"><span class="pre">makeqstrdata.py</span></code>.  For each
-<code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code> in qstrdefs.preprocessed.h (plus some extra hard-coded ones), it outputs
-<code class="docutils literal notranslate"><span class="pre">QDEF(MP_QSTR_Foo,</span> <span class="pre">(const</span> <span class="pre">byte*)"hash"</span> <span class="pre">"Foo")</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qstr.i.last</span></code> 是将所有输入文件通过 C 预处理器进行合并的结果。因此，任何不满足条件的代码都会被删除，并且宏会被替换。这意味着我们未添加到池中的字符串，它们在最终的固件中无法被使用。因为在这一阶段（得益于 <code class="docutils literal notranslate"><span class="pre">QSTR_GEN_CFLAGS</span></code> 添加的 <code class="docutils literal notranslate"><span class="pre">NO_QSTR</span></code> 宏）， <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 尚未被定义，所以它会在这一阶段不受影响。这个文件还包含了预处理器中的注释，其中包含行号信息。注意，这一步只使用了文件已经改变的数据，这意味着 <code class="docutils literal notranslate"><span class="pre">qstr.i.last</span></code> 将只包含从上次编译后改变的文件中的数据。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qstr.split</span></code> 是在运行 <code class="docutils literal notranslate"><span class="pre">makeqstrdefs.py</span> <span class="pre">split</span></code> 后创建的空文件。它只是用来作为依赖，表示这一阶段已经运行。这个脚本会输出一个文件，每个输入 C 文件对应一个文件，<code class="docutils literal notranslate"><span class="pre">genhdr/qstr/...file.c.qstr</span></code> ，其中包含只包含匹配的 QSTR 的数据。每个 QSTR 将被输出为 <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code> 。这一步是将现有的文件与新生成的数据从 <code class="docutils literal notranslate"><span class="pre">qstr.i.last</span></code> 中进行增量更新合并的必要步骤。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qstrdefs.collected.h</span></code> 是通过使用 <code class="docutils literal notranslate"><span class="pre">makeqstrdefs.py</span> <span class="pre">cat</span></code> 合并的 <code class="docutils literal notranslate"><span class="pre">genhdr/qstr/*</span></code> 的输出。这是现在所有在代码中找到的 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 的集合，且在这一步格式化为 <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code> ，每行一个，并且有重复。这个文件只有在 QSTR 的集合发生改变时才会更新。QSTR 数据的哈希值已经写入另一个文件（<code class="docutils literal notranslate"><span class="pre">qstrdefs.collected.h.hash</span></code>），用于支撑它跟踪构建之间的更改。</p></li>
+<li><p>生成一个枚举，每个条目都映射一个 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 到它的对应的索引。它将 <code class="docutils literal notranslate"><span class="pre">qstrdefs.collected.h</span></code> 与 <code class="docutils literal notranslate"><span class="pre">qstrdefs*.h</span></code> 合并，然后将每行从 <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code> 转换为 <code class="docutils literal notranslate"><span class="pre">"Q(Foo)"</span></code> ，这样它们就不会受到前置编译器的影响。接着，前置编译器会处理 <code class="docutils literal notranslate"><span class="pre">qstrdefs*.h</span></code> 中的任何带条件判断的编译。然后，将其转换回 <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code> ，并保存为 <code class="docutils literal notranslate"><span class="pre">qstrdefs.preprocessed.h</span></code> 。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">qstrdefs.generated.h</span></code> 是 <code class="docutils literal notranslate"><span class="pre">makeqstrdata.py</span></code> 的输出。对于 qstrdefs.preprocessed.h 中的每个 <code class="docutils literal notranslate"><span class="pre">Q(Foo)</span></code> （加上一些额外的硬编码的），它都会输出 <code class="docutils literal notranslate"><span class="pre">QDEF(MP_QSTR_Foo,</span> <span class="pre">(const</span> <span class="pre">byte*)"hash"</span> <span class="pre">"Foo")</span></code> 。</p></li>
 </ol>
-<p>Then in the main compile, two things happen with <code class="docutils literal notranslate"><span class="pre">qstrdefs.generated.h</span></code>:</p>
+<p>然后，在主编译中，与 <code class="docutils literal notranslate"><span class="pre">qstrdefs.generated.h</span></code> 相关的两件事情发生了：</p>
 <ol class="arabic simple">
-<li><p>In qstr.h, each QDEF becomes an entry in an enum, which makes <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code>
-available to code and equal to the index of that string in the QSTR table.</p></li>
-<li><p>In qstr.c, the actual QSTR data table is generated as elements of the
-<code class="docutils literal notranslate"><span class="pre">mp_qstr_const_pool-&gt;qstrs</span></code>.</p></li>
+<li><p>在 qstr.h 中，每个 QDEF 就会变成一个枚举的条目，这样就使得 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 可用，并且等同于 QSTR 表中该字符串的索引。</p></li>
+<li><p>在 qstr.c 中，实际的 QSTR 数据表就会被生成为 <code class="docutils literal notranslate"><span class="pre">mp_qstr_const_pool-&gt;qstrs</span></code> 的元素。</p></li>
 </ol>
 </section>
 <section id="run-time-qstr-generation">
-<h2 id="run-time-qstr-generation">Run-time QSTR generation<a class="headerlink" href="#run-time-qstr-generation" title="永久链接至标题">¶</a></h2>
-<p>Additional QSTR pools can be created at runtime so that strings can be added to
-them. For example, the code:</p>
+<h2 id="run-time-qstr-generation">运行时进行的 QSTR 生成<a class="headerlink" href="#run-time-qstr-generation" title="永久链接至标题">¶</a></h2>
+<p>可以在运行时创建额外的 QSTR 池，以便将字符串添加到其中。例如，下述代码：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
 </div>
-<p>Will need to create a QSTR for the value of <code class="docutils literal notranslate"><span class="pre">x</span></code> so it can be used by the
-“load attr” bytecode.</p>
-<p>Also, when compiling Python code, identifiers and literals need to have QSTRs
-created.  Note: only literals shorter than 10 characters become QSTRs.  This is
-because a regular string on the heap always takes up a minimum of 16 bytes (one
-GC block), whereas QSTRs allow them to be packed more efficiently into the pool.</p>
-<p>QSTR pools (and the underlying “chunks” that store the string data) are allocated
-on-demand on the heap with a minimum size.</p>
+<p>需要为 <code class="docutils literal notranslate"><span class="pre">x</span></code> 的值创建一个 QSTR，以便它能被 “load attr” 字节码所用。</p>
+<p>同时，当编译 Python 代码时，标识符和字面量需要使用创建好的 QSTR。注意：只有字面量长度小于 10 个字符的字符串才会被转换成 QSTR。这是因为一个普通的字符串在堆上总是最少占用 16 字节（一个 GC 块），而 QSTR 则使它们被更有效地放入池中。</p>
+<p>QSTR 池（和存储字符串数据的基本块 “chunks” ）是在堆上使用最小尺寸按需分配的。</p>
 </section>
 </section>
 
@@ -546,10 +495,10 @@ on-demand on the heap with a minimum size.</p>
               
           </div>
             Last updated on
-              18 3月 2022.
+              18 4月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
