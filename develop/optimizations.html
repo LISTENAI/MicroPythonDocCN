@@ -47,7 +47,7 @@
   
   
   
-    <title>Optimizations &#8212; MicroPython 1.18 文档</title>
+    <title>优化 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Optimizations </span>
+          <span class="md-header-nav__topic"> 优化 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -244,21 +244,21 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Optimizations </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 优化 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Optimizations</a>
+      <a href="#" class="md-nav__link md-nav__link--active">优化</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-optimizations--page-root" class="md-nav__link">Optimizations</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-optimizations--page-root" class="md-nav__link">优化</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#frozen-bytecode" class="md-nav__link">Frozen bytecode</a>
+        <li class="md-nav__item"><a href="#frozen-bytecode" class="md-nav__link">冻结字节码</a>
         </li>
-        <li class="md-nav__item"><a href="#variables" class="md-nav__link">Variables</a>
+        <li class="md-nav__item"><a href="#variables" class="md-nav__link">变量</a>
         </li>
-        <li class="md-nav__item"><a href="#allocation-of-memory" class="md-nav__link">Allocation of memory</a>
+        <li class="md-nav__item"><a href="#allocation-of-memory" class="md-nav__link">内存分配</a>
         </li></ul>
             </nav>
         </li>
@@ -268,21 +268,21 @@
     <li class="md-nav__item">
     
     
-      <a href="#frozen-bytecode" class="md-nav__link">Frozen bytecode</a>
+      <a href="#frozen-bytecode" class="md-nav__link">冻结字节码</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#variables" class="md-nav__link">Variables</a>
+      <a href="#variables" class="md-nav__link">变量</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#allocation-of-memory" class="md-nav__link">Allocation of memory</a>
+      <a href="#allocation-of-memory" class="md-nav__link">内存分配</a>
       
     
     </li></ul>
@@ -395,13 +395,13 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-optimizations--page-root" class="md-nav__link">Optimizations</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-optimizations--page-root" class="md-nav__link">优化</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#frozen-bytecode" class="md-nav__link">Frozen bytecode</a>
+        <li class="md-nav__item"><a href="#frozen-bytecode" class="md-nav__link">冻结字节码</a>
         </li>
-        <li class="md-nav__item"><a href="#variables" class="md-nav__link">Variables</a>
+        <li class="md-nav__item"><a href="#variables" class="md-nav__link">变量</a>
         </li>
-        <li class="md-nav__item"><a href="#allocation-of-memory" class="md-nav__link">Allocation of memory</a>
+        <li class="md-nav__item"><a href="#allocation-of-memory" class="md-nav__link">内存分配</a>
         </li></ul>
             </nav>
         </li>
@@ -415,40 +415,22 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="optimizations">
-<span id="id1"></span><h1 id="develop-optimizations--page-root">Optimizations<a class="headerlink" href="#develop-optimizations--page-root" title="Permalink to this heading">¶</a></h1>
-<p>MicroPython uses several optimizations to save RAM but also ensure the efficient
-execution of programs. This chapter discusses some of these optimizations.</p>
+<span id="id1"></span><h1 id="develop-optimizations--page-root">优化<a class="headerlink" href="#develop-optimizations--page-root" title="Permalink to this heading">¶</a></h1>
+<p>MicroPython 使用多项优化来实现，在节省 RAM 的前提下保证了程序的有效执行。本章节将介绍这些优化。</p>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p><a class="reference internal" href="qstr.html#qstr"><span class="std std-ref">MicroPython 字符串驻留</span></a> and <a class="reference internal" href="maps.html#maps"><span class="std std-ref">映射（Maps）与字典（Dictionaries）</span></a> details other optimizations on strings and
-dictionaries.</p>
+<p><a class="reference internal" href="qstr.html#qstr"><span class="std std-ref">MicroPython 字符串驻留</span></a> 和 <a class="reference internal" href="maps.html#maps"><span class="std std-ref">映射（Maps）与字典（Dictionaries）</span></a> 详细介绍了字符串和字典上的其他优化。</p>
 </div>
 <section id="frozen-bytecode">
-<h2 id="frozen-bytecode">Frozen bytecode<a class="headerlink" href="#frozen-bytecode" title="Permalink to this heading">¶</a></h2>
-<p>When MicroPython loads Python code from the filesystem, it first has to parse the file into
-a temporary in-memory representation, and then generate bytecode for execution, both of which
-are stored in the heap (in RAM). This can lead to significant amounts of memory being used.
-The MicroPython cross compiler can be used to generate
-a <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> file, containing the pre-compiled bytecode for a Python module. This will still
-be loaded into RAM, but it avoids the additional overhead of the parsing stage.</p>
-<p>As a further optimisation, the pre-compiled bytecode from a <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> file can be “frozen”
-into the firmware image as part of the main firmware compilation process, which means that
-the bytecode will be executed from ROM. This can lead to a significant memory saving, and
-reduce heap fragmentation.</p>
+<h2 id="frozen-bytecode">冻结字节码<a class="headerlink" href="#frozen-bytecode" title="Permalink to this heading">¶</a></h2>
+<p>当 MicroPython 从文件系统加载 Python 代码时，它首先必须将文件解析为在内存中的临时表示形式，再生成可执行的字节码，这两者都存储在（在 RAM 中）的堆上。这可能导致大量的内存占用。要解决这一问题， 可使用 MicroPython 交叉编译器生成一个 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 文件，其中包含了一个 Python 模块的预编译字节码，虽然该文件仍会被加载到 RAM 中，但这种方式避免了解析阶段的额外开销。</p>
+<p>作为进一步的优化，一个 <code class="docutils literal notranslate"><span class="pre">.mpy</span></code> 文件中的预编译字节码可以在主固件编译阶段冻结到固件中，这意味着字节码将从 ROM 中执行。这可以显著节省内存，并减少堆碎片。</p>
 </section>
 <section id="variables">
-<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h2>
-<p>MicroPython processes local and global variables differently. Global variables
-are stored and looked up from a global dictionary that is allocated on the heap
-(note that each module has its own separate dict, so separate namespace).
-Local variables on the other hand are are stored on the Python value stack, which may
-live on the C stack or on the heap.  They are accessed directly by their offset
-within the Python stack, which is more efficient than a global lookup in a dict.</p>
-<p>The length of global variable names also affects how much RAM is used as identifiers
-are stored in RAM. The shorter the identifier, the less memory is used.</p>
-<p>The other aspect is that <code class="docutils literal notranslate"><span class="pre">const</span></code> variables that start with an underscore are treated as
-proper constants and are not allocated or added in a dictionary, hence saving some memory.
-These variables use <code class="docutils literal notranslate"><span class="pre">const()</span></code> from the MicroPython library. Therefore:</p>
+<h2 id="variables">变量<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h2>
+<p>在 MicroPython 中，处理局部变量和全局变量的方式是不同的。全局变量从在堆上分配的全局字典中存储和检索（请注意，每个模块都有自己单独的字典，因此需要独立的命名空间）。局部变量则存储在 Python 值栈中，可能存储在 C 的栈或堆中。它们通过在 Python 栈中的偏移量直接访问，这比在字典中全局查找更有效。</p>
+<p>全局变量名称的长度也会影响存储标识符时所占用的内存。标识符越短，则所占用的内存越少。</p>
+<p>另一方面，以下划线开头的 <code class="docutils literal notranslate"><span class="pre">const</span></code> 变量被视为妥善的常量，不会被分配或添加到字典中，因此节省了一部分内存。这些变量需要以 MicroPython 库中的 <code class="docutils literal notranslate"><span class="pre">const()</span></code> 函数创建。因此：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">micropython</span> <span class="kn">import</span> <span class="n">const</span>
 
 <span class="n">X</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
@@ -456,24 +438,22 @@ These variables use <code class="docutils literal notranslate"><span class="pre"
 <span class="n">foo</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">_Y</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Compiles to:</p>
+<p>编译为：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">foo</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="allocation-of-memory">
-<h2 id="allocation-of-memory">Allocation of memory<a class="headerlink" href="#allocation-of-memory" title="Permalink to this heading">¶</a></h2>
-<p>Most of the common MicroPython constructs are not allocated on the heap.
-However the following are:</p>
+<h2 id="allocation-of-memory">内存分配<a class="headerlink" href="#allocation-of-memory" title="Permalink to this heading">¶</a></h2>
+<p>大多数的 MicroPython 的构造都不会分配在堆上。但是以下构造器则会：</p>
 <ul class="simple">
-<li><p>Dynamic data structures like lists, mappings, etc;</p></li>
-<li><p>Functions, classes and object instances;</p></li>
-<li><p>imports; and</p></li>
-<li><p>First-time assignment of global variables (to create the slot in the global dict).</p></li>
+<li><p>动态数据结构，如列表，映射等；</p></li>
+<li><p>函数，类和对象实例；</p></li>
+<li><p>使用 import 导入的模块；</p></li>
+<li><p>全局变量的首次赋值（通过在全局字典中创建槽）。</p></li>
 </ul>
-<p>For a detailed discussion on a more user-centric perspective on optimization,
-see <a class="reference external" href="https://docs.micropython.org/en/latest/reference/speed_python.html">Maximising MicroPython speed</a></p>
+<p>有关更以用户为中心的优化视角的详细讨论，参阅`最大化 MicroPython 速度&lt;<a class="reference external" href="https://docs.micropython.org/en/latest/reference/speed_python.html">https://docs.micropython.org/en/latest/reference/speed_python.html</a>&gt;`_</p>
 </section>
 </section>
 
