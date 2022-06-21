@@ -47,7 +47,7 @@
   
   
   
-    <title>Maximising MicroPython speed &#8212; MicroPython 1.18 文档</title>
+    <title>最大化 MicroPython 速度 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Maximising MicroPython speed </span>
+          <span class="md-header-nav__topic"> 最大化 MicroPython 速度 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -230,47 +230,47 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Maximising MicroPython speed </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 最大化 MicroPython 速度 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Maximising MicroPython speed</a>
+      <a href="#" class="md-nav__link md-nav__link--active">最大化 MicroPython 速度</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-speed-python--page-root" class="md-nav__link">Maximising MicroPython speed</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-speed-python--page-root" class="md-nav__link">最大化 MicroPython 速度</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#designing-for-speed" class="md-nav__link">Designing for speed</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#designing-for-speed" class="md-nav__link">为速度而设计</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#algorithms" class="md-nav__link">Algorithms</a>
+        <li class="md-nav__item"><a href="#algorithms" class="md-nav__link">算法 (Algorithms)</a>
         </li>
-        <li class="md-nav__item"><a href="#ram-allocation" class="md-nav__link">RAM allocation</a>
+        <li class="md-nav__item"><a href="#ram-allocation" class="md-nav__link">内存分配 (RAM allocation)</a>
         </li>
-        <li class="md-nav__item"><a href="#buffers" class="md-nav__link">Buffers</a>
+        <li class="md-nav__item"><a href="#buffers" class="md-nav__link">缓冲区 (Buffers)</a>
         </li>
-        <li class="md-nav__item"><a href="#floating-point" class="md-nav__link">Floating point</a>
+        <li class="md-nav__item"><a href="#floating-point" class="md-nav__link">浮点数 (Floating point)</a>
         </li>
-        <li class="md-nav__item"><a href="#arrays" class="md-nav__link">Arrays</a>
+        <li class="md-nav__item"><a href="#arrays" class="md-nav__link">数组 (Arrays)</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#identifying-the-slowest-section-of-code" class="md-nav__link">Identifying the slowest section of code</a>
+        <li class="md-nav__item"><a href="#identifying-the-slowest-section-of-code" class="md-nav__link">识别代码中最慢的片段</a>
         </li>
-        <li class="md-nav__item"><a href="#micropython-code-improvements" class="md-nav__link">MicroPython code improvements</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#micropython-code-improvements" class="md-nav__link">MicroPython 代码改进</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-const-declaration" class="md-nav__link">The const() declaration</a>
+        <li class="md-nav__item"><a href="#the-const-declaration" class="md-nav__link">const() 声明</a>
         </li>
-        <li class="md-nav__item"><a href="#caching-object-references" class="md-nav__link">Caching object references</a>
+        <li class="md-nav__item"><a href="#caching-object-references" class="md-nav__link">缓存对象的引用</a>
         </li>
-        <li class="md-nav__item"><a href="#controlling-garbage-collection" class="md-nav__link">Controlling garbage collection</a>
+        <li class="md-nav__item"><a href="#controlling-garbage-collection" class="md-nav__link">控制垃圾回收</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#the-native-code-emitter" class="md-nav__link">The Native code emitter</a>
+        <li class="md-nav__item"><a href="#the-native-code-emitter" class="md-nav__link">原生代码生成器</a>
         </li>
-        <li class="md-nav__item"><a href="#the-viper-code-emitter" class="md-nav__link">The Viper code emitter</a>
+        <li class="md-nav__item"><a href="#the-viper-code-emitter" class="md-nav__link">Viper 代码生成器</a>
         </li>
-        <li class="md-nav__item"><a href="#accessing-hardware-directly" class="md-nav__link">Accessing hardware directly</a>
+        <li class="md-nav__item"><a href="#accessing-hardware-directly" class="md-nav__link">直接访问硬件</a>
         </li></ul>
             </nav>
         </li>
@@ -280,40 +280,40 @@
     <li class="md-nav__item">
     
     
-      <a href="#designing-for-speed" class="md-nav__link">Designing for speed</a>
+      <a href="#designing-for-speed" class="md-nav__link">为速度而设计</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="#algorithms" class="md-nav__link">Algorithms</a>
+      <a href="#algorithms" class="md-nav__link">算法 (Algorithms)</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#ram-allocation" class="md-nav__link">RAM allocation</a>
+      <a href="#ram-allocation" class="md-nav__link">内存分配 (RAM allocation)</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#buffers" class="md-nav__link">Buffers</a>
+      <a href="#buffers" class="md-nav__link">缓冲区 (Buffers)</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#floating-point" class="md-nav__link">Floating point</a>
+      <a href="#floating-point" class="md-nav__link">浮点数 (Floating point)</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#arrays" class="md-nav__link">Arrays</a>
+      <a href="#arrays" class="md-nav__link">数组 (Arrays)</a>
       
     
     </li></ul>
@@ -322,33 +322,33 @@
     <li class="md-nav__item">
     
     
-      <a href="#identifying-the-slowest-section-of-code" class="md-nav__link">Identifying the slowest section of code</a>
+      <a href="#identifying-the-slowest-section-of-code" class="md-nav__link">识别代码中最慢的片段</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#micropython-code-improvements" class="md-nav__link">MicroPython code improvements</a>
+      <a href="#micropython-code-improvements" class="md-nav__link">MicroPython 代码改进</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="#the-const-declaration" class="md-nav__link">The const() declaration</a>
+      <a href="#the-const-declaration" class="md-nav__link">const() 声明</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#caching-object-references" class="md-nav__link">Caching object references</a>
+      <a href="#caching-object-references" class="md-nav__link">缓存对象的引用</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#controlling-garbage-collection" class="md-nav__link">Controlling garbage collection</a>
+      <a href="#controlling-garbage-collection" class="md-nav__link">控制垃圾回收</a>
       
     
     </li></ul>
@@ -357,21 +357,21 @@
     <li class="md-nav__item">
     
     
-      <a href="#the-native-code-emitter" class="md-nav__link">The Native code emitter</a>
+      <a href="#the-native-code-emitter" class="md-nav__link">原生代码生成器</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#the-viper-code-emitter" class="md-nav__link">The Viper code emitter</a>
+      <a href="#the-viper-code-emitter" class="md-nav__link">Viper 代码生成器</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#accessing-hardware-directly" class="md-nav__link">Accessing hardware directly</a>
+      <a href="#accessing-hardware-directly" class="md-nav__link">直接访问硬件</a>
       
     
     </li></ul>
@@ -505,39 +505,39 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-speed-python--page-root" class="md-nav__link">Maximising MicroPython speed</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-speed-python--page-root" class="md-nav__link">最大化 MicroPython 速度</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#designing-for-speed" class="md-nav__link">Designing for speed</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#designing-for-speed" class="md-nav__link">为速度而设计</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#algorithms" class="md-nav__link">Algorithms</a>
+        <li class="md-nav__item"><a href="#algorithms" class="md-nav__link">算法 (Algorithms)</a>
         </li>
-        <li class="md-nav__item"><a href="#ram-allocation" class="md-nav__link">RAM allocation</a>
+        <li class="md-nav__item"><a href="#ram-allocation" class="md-nav__link">内存分配 (RAM allocation)</a>
         </li>
-        <li class="md-nav__item"><a href="#buffers" class="md-nav__link">Buffers</a>
+        <li class="md-nav__item"><a href="#buffers" class="md-nav__link">缓冲区 (Buffers)</a>
         </li>
-        <li class="md-nav__item"><a href="#floating-point" class="md-nav__link">Floating point</a>
+        <li class="md-nav__item"><a href="#floating-point" class="md-nav__link">浮点数 (Floating point)</a>
         </li>
-        <li class="md-nav__item"><a href="#arrays" class="md-nav__link">Arrays</a>
+        <li class="md-nav__item"><a href="#arrays" class="md-nav__link">数组 (Arrays)</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#identifying-the-slowest-section-of-code" class="md-nav__link">Identifying the slowest section of code</a>
+        <li class="md-nav__item"><a href="#identifying-the-slowest-section-of-code" class="md-nav__link">识别代码中最慢的片段</a>
         </li>
-        <li class="md-nav__item"><a href="#micropython-code-improvements" class="md-nav__link">MicroPython code improvements</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#micropython-code-improvements" class="md-nav__link">MicroPython 代码改进</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-const-declaration" class="md-nav__link">The const() declaration</a>
+        <li class="md-nav__item"><a href="#the-const-declaration" class="md-nav__link">const() 声明</a>
         </li>
-        <li class="md-nav__item"><a href="#caching-object-references" class="md-nav__link">Caching object references</a>
+        <li class="md-nav__item"><a href="#caching-object-references" class="md-nav__link">缓存对象的引用</a>
         </li>
-        <li class="md-nav__item"><a href="#controlling-garbage-collection" class="md-nav__link">Controlling garbage collection</a>
+        <li class="md-nav__item"><a href="#controlling-garbage-collection" class="md-nav__link">控制垃圾回收</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#the-native-code-emitter" class="md-nav__link">The Native code emitter</a>
+        <li class="md-nav__item"><a href="#the-native-code-emitter" class="md-nav__link">原生代码生成器</a>
         </li>
-        <li class="md-nav__item"><a href="#the-viper-code-emitter" class="md-nav__link">The Viper code emitter</a>
+        <li class="md-nav__item"><a href="#the-viper-code-emitter" class="md-nav__link">Viper 代码生成器</a>
         </li>
-        <li class="md-nav__item"><a href="#accessing-hardware-directly" class="md-nav__link">Accessing hardware directly</a>
+        <li class="md-nav__item"><a href="#accessing-hardware-directly" class="md-nav__link">直接访问硬件</a>
         </li></ul>
             </nav>
         </li>
@@ -551,145 +551,90 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="maximising-micropython-speed">
-<span id="speed-python"></span><h1 id="reference-speed-python--page-root"><a class="toc-backref" href="#reference-speed-python--page-root" role="doc-backlink">Maximising MicroPython speed</a><a class="headerlink" href="#reference-speed-python--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="speed-python"></span><h1 id="reference-speed-python--page-root"><a class="toc-backref" href="#reference-speed-python--page-root" role="doc-backlink">最大化 MicroPython 速度</a><a class="headerlink" href="#reference-speed-python--page-root" title="Permalink to this heading">¶</a></h1>
 <nav class="contents" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="#maximising-micropython-speed" id="id2">Maximising MicroPython speed</a></p>
+<li><p><a class="reference internal" href="#maximising-micropython-speed" id="id2">最大化 MicroPython 速度</a></p>
 <ul>
-<li><p><a class="reference internal" href="#designing-for-speed" id="id3">Designing for speed</a></p>
+<li><p><a class="reference internal" href="#designing-for-speed" id="id3">为速度而设计</a></p>
 <ul>
-<li><p><a class="reference internal" href="#algorithms" id="id4">Algorithms</a></p></li>
-<li><p><a class="reference internal" href="#ram-allocation" id="id5">RAM allocation</a></p></li>
-<li><p><a class="reference internal" href="#buffers" id="id6">Buffers</a></p></li>
-<li><p><a class="reference internal" href="#floating-point" id="id7">Floating point</a></p></li>
-<li><p><a class="reference internal" href="#arrays" id="id8">Arrays</a></p></li>
+<li><p><a class="reference internal" href="#algorithms" id="id4">算法 (Algorithms)</a></p></li>
+<li><p><a class="reference internal" href="#ram-allocation" id="id5">内存分配 (RAM allocation)</a></p></li>
+<li><p><a class="reference internal" href="#buffers" id="id6">缓冲区 (Buffers)</a></p></li>
+<li><p><a class="reference internal" href="#floating-point" id="id7">浮点数 (Floating point)</a></p></li>
+<li><p><a class="reference internal" href="#arrays" id="id8">数组 (Arrays)</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#identifying-the-slowest-section-of-code" id="id9">Identifying the slowest section of code</a></p></li>
-<li><p><a class="reference internal" href="#micropython-code-improvements" id="id10">MicroPython code improvements</a></p>
+<li><p><a class="reference internal" href="#identifying-the-slowest-section-of-code" id="id9">识别代码中最慢的片段</a></p></li>
+<li><p><a class="reference internal" href="#micropython-code-improvements" id="id10">MicroPython 代码改进</a></p>
 <ul>
-<li><p><a class="reference internal" href="#the-const-declaration" id="id11">The const() declaration</a></p></li>
-<li><p><a class="reference internal" href="#caching-object-references" id="id12">Caching object references</a></p></li>
-<li><p><a class="reference internal" href="#controlling-garbage-collection" id="id13">Controlling garbage collection</a></p></li>
+<li><p><a class="reference internal" href="#the-const-declaration" id="id11">const() 声明</a></p></li>
+<li><p><a class="reference internal" href="#caching-object-references" id="id12">缓存对象的引用</a></p></li>
+<li><p><a class="reference internal" href="#controlling-garbage-collection" id="id13">控制垃圾回收</a></p></li>
 </ul>
 </li>
-<li><p><a class="reference internal" href="#the-native-code-emitter" id="id14">The Native code emitter</a></p></li>
-<li><p><a class="reference internal" href="#the-viper-code-emitter" id="id15">The Viper code emitter</a></p></li>
-<li><p><a class="reference internal" href="#accessing-hardware-directly" id="id16">Accessing hardware directly</a></p></li>
+<li><p><a class="reference internal" href="#the-native-code-emitter" id="id14">原生代码生成器</a></p></li>
+<li><p><a class="reference internal" href="#the-viper-code-emitter" id="id15">Viper 代码生成器</a></p></li>
+<li><p><a class="reference internal" href="#accessing-hardware-directly" id="id16">直接访问硬件</a></p></li>
 </ul>
 </li>
 </ul>
 </nav>
-<p>This tutorial describes ways of improving the performance of MicroPython code.
-Optimisations involving other languages are covered elsewhere, namely the use
-of modules written in C and the MicroPython inline assembler.</p>
-<p>The process of developing high performance code comprises the following stages
-which should be performed in the order listed.</p>
+<p>该指南描述了如何提高 MicroPython 代码的性能。关于其他语言的优化都是在其他地方描述，例如使用 C 编写的模块和 MicroPython 内联汇编特性。</p>
+<p>开发高性能代码的过程包括以下几个阶段，应该按照指定的顺序执行。</p>
 <ul class="simple">
-<li><p>Design for speed.</p></li>
-<li><p>Code and debug.</p></li>
+<li><p>为速度而设计。</p></li>
+<li><p>编码与调试。</p></li>
 </ul>
-<p>Optimisation steps:</p>
+<p>优化步骤：</p>
 <ul class="simple">
-<li><p>Identify the slowest section of code.</p></li>
-<li><p>Improve the efficiency of the Python code.</p></li>
-<li><p>Use the native code emitter.</p></li>
-<li><p>Use the viper code emitter.</p></li>
-<li><p>Use hardware-specific optimisations.</p></li>
+<li><p>识别最慢的代码段。</p></li>
+<li><p>提高 Python 代码的效率。</p></li>
+<li><p>使用原生代码生成器。</p></li>
+<li><p>使用 viper 代码生成器。</p></li>
+<li><p>使用特定硬件的优化手段。</p></li>
 </ul>
 <section id="designing-for-speed">
-<h2 id="designing-for-speed"><a class="toc-backref" href="#id3" role="doc-backlink">Designing for speed</a><a class="headerlink" href="#designing-for-speed" title="Permalink to this heading">¶</a></h2>
-<p>Performance issues should be considered at the outset. This involves taking a view
-on the sections of code which are most performance critical and devoting particular
-attention to their design. The process of optimisation begins when the code has
-been tested: if the design is correct at the outset optimisation will be
-straightforward and may actually be unnecessary.</p>
+<h2 id="designing-for-speed"><a class="toc-backref" href="#id3" role="doc-backlink">为速度而设计</a><a class="headerlink" href="#designing-for-speed" title="Permalink to this heading">¶</a></h2>
+<p>性能问题应该在开始阶段就虑。这需要考虑到哪些代码段是效率低下的，并着重注意其代码设计。在代码已经测试过之后，开始进行优化：但如果在开始时就是设计正确的，那么优化将会变得很简单，甚至是非必要的。</p>
 <section id="algorithms">
-<h3 id="algorithms"><a class="toc-backref" href="#id4" role="doc-backlink">Algorithms</a><a class="headerlink" href="#algorithms" title="Permalink to this heading">¶</a></h3>
-<p>The most important aspect of designing any routine for performance is ensuring that
-the best algorithm is employed. This is a topic for textbooks rather than for a
-MicroPython guide but spectacular performance gains can sometimes be achieved
-by adopting algorithms known for their efficiency.</p>
+<h3 id="algorithms"><a class="toc-backref" href="#id4" role="doc-backlink">算法 (Algorithms)</a><a class="headerlink" href="#algorithms" title="Permalink to this heading">¶</a></h3>
+<p>为性能而设计任何例程的最重要一点是，确保使用了当前场景下的最佳算法。这应当属于通用的教材内容而不是 MicroPython 指南的主题，通常情况下使用知名度高的算法可以使得效率获得显著的性能提升。</p>
 </section>
 <section id="ram-allocation">
-<h3 id="ram-allocation"><a class="toc-backref" href="#id5" role="doc-backlink">RAM allocation</a><a class="headerlink" href="#ram-allocation" title="Permalink to this heading">¶</a></h3>
-<p>To design efficient MicroPython code it is necessary to have an understanding of the
-way the interpreter allocates RAM. When an object is created or grows in size
-(for example where an item is appended to a list) the necessary RAM is allocated
-from a block known as the heap. This takes a significant amount of time;
-further it will on occasion trigger a process known as garbage collection which
-can take several milliseconds.</p>
-<p>Consequently the performance of a function or method can be improved if an object is created
-once only and not permitted to grow in size. This implies that the object persists
-for the duration of its use: typically it will be instantiated in a class constructor
-and used in various methods.</p>
-<p>This is covered in further detail <a class="reference internal" href="#controlling-gc"><span class="std std-ref">Controlling garbage collection</span></a> below.</p>
+<h3 id="ram-allocation"><a class="toc-backref" href="#id5" role="doc-backlink">内存分配 (RAM allocation)</a><a class="headerlink" href="#ram-allocation" title="Permalink to this heading">¶</a></h3>
+<p>为了设计有效的 MicroPython 代码，需要先了解解释器如何分配内存。当一个对象被创建或增长大小（例如，在列表中添加一项）时，解释器会从堆中分配内存。这需要一定的时间；这时会触发一次垃圾收集，可能会花费几毫秒钟的时间。</p>
+<p>因此，当一个对象只被创建一次，而且不允许增长大小，则可以提高函数或方法的性能。这意味着这个对象在其使用期间一直存在：通常它会在类构造器中被创建，并在各种方法中使用。</p>
+<p>这将在下文的 <a class="reference internal" href="#controlling-gc"><span class="std std-ref">控制垃圾收集</span></a> 中更详细地介绍。</p>
 </section>
 <section id="buffers">
-<h3 id="buffers"><a class="toc-backref" href="#id6" role="doc-backlink">Buffers</a><a class="headerlink" href="#buffers" title="Permalink to this heading">¶</a></h3>
-<p>An example of the above is the common case where a buffer is required, such as one
-used for communication with a device. A typical driver will create the buffer in the
-constructor and use it in its I/O methods which will be called repeatedly.</p>
-<p>The MicroPython libraries typically provide support for pre-allocated buffers. For
-example, objects which support stream interface (e.g., file or UART) provide <code class="docutils literal notranslate"><span class="pre">read()</span></code>
-method which allocates new buffer for read data, but also a <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> method
-to read data into an existing buffer.</p>
+<h3 id="buffers"><a class="toc-backref" href="#id6" role="doc-backlink">缓冲区 (Buffers)</a><a class="headerlink" href="#buffers" title="Permalink to this heading">¶</a></h3>
+<p>上述例子是通常情况下需要使用缓冲区的一个场景，例如，在与设备通信时使用的缓冲区。一般情况下，一个驱动程序会在构造器中创建缓冲区，并在其 I/O 方法中使用它。</p>
+<p>MicroPython 库通常提供了对预分配缓冲区的支持。例如，支持流式接口（例如文件或 UART ）的对象，提供了 <code class="docutils literal notranslate"><span class="pre">read()</span></code> 方法，它会分配一个新的缓冲区用于读取数据，同时也提供了 <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> 方法则可以将数据读入一个已存在的缓冲区。</p>
 </section>
 <section id="floating-point">
-<h3 id="floating-point"><a class="toc-backref" href="#id7" role="doc-backlink">Floating point</a><a class="headerlink" href="#floating-point" title="Permalink to this heading">¶</a></h3>
-<p>Some MicroPython ports allocate floating point numbers on heap. Some other ports
-may lack dedicated floating-point coprocessor, and perform arithmetic operations
-on them in “software” at considerably lower speed than on integers. Where
-performance is important, use integer operations and restrict the use of floating
-point to sections of the code where performance is not paramount. For example,
-capture ADC readings as integers values to an array in one quick go, and only then
-convert them to floating-point numbers for signal processing.</p>
+<h3 id="floating-point"><a class="toc-backref" href="#id7" role="doc-backlink">浮点数 (Floating point)</a><a class="headerlink" href="#floating-point" title="Permalink to this heading">¶</a></h3>
+<p>在一些 MicroPython 适配端上，浮点数在堆上分配。有些其他的适配端可能没有独立的浮点数处理器，并且在某些场景下进行算术运算时，在“软件”上以比整数更低的速度上进行运算。在性能很重要的地方，使用整数运算并将浮点的使用局限在性能不是最重要的代码部分中进行。例如，快速将 ADC 读数作为整数值捕获到数组中，然后才将它们转换为浮点数以进行信号处理。</p>
 </section>
 <section id="arrays">
-<h3 id="arrays"><a class="toc-backref" href="#id8" role="doc-backlink">Arrays</a><a class="headerlink" href="#arrays" title="Permalink to this heading">¶</a></h3>
-<p>Consider the use of the various types of array classes as an alternative to lists.
-The <a class="reference internal" href="../library/array.html#module-array" title="array: efficient arrays of numeric data"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> module supports various element types with 8-bit elements supported
-by Python’s built in <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> and <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> classes. These data structures all store
-elements in contiguous memory locations. Once again to avoid memory allocation in critical
-code these should be pre-allocated and passed as arguments or as bound objects.</p>
-<p>When passing slices of objects such as <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> instances, Python creates
-a copy which involves allocation of the size proportional to the size of slice.
-This can be alleviated using a <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> object. The <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> itself
-is allocated on the heap, but is a small, fixed-size object, regardless of the size
-of slice it points too. Slicing a <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> creates a new <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a>, so this
-cannot be done in an interrupt service routine. Further, the slice syntax <code class="docutils literal notranslate"><span class="pre">a:b</span></code>
-causes further allocation by instantiating a <code class="docutils literal notranslate"><span class="pre">slice(a,</span> <span class="pre">b)</span></code> object.</p>
+<h3 id="arrays"><a class="toc-backref" href="#id8" role="doc-backlink">数组 (Arrays)</a><a class="headerlink" href="#arrays" title="Permalink to this heading">¶</a></h3>
+<p>考虑使用各种类型的数组类 ( array ) 作为代替列表 ( list )的替代。 <a class="reference internal" href="../library/array.html#module-array" title="array: efficient arrays of numeric data"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> 模块支持各种元素类型，其中 Python 的内建 <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 和 <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> 类用以支持 8 位元数据操作。这些数据结构都存储在连续的内存位置中。为了在关键代码中再次分配内存，这些数据应该预分配并作为参数传递或作为绑定对象。</p>
+<p>当传递诸如 <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> 实例之类的对象切片时， Python 会创建一个副本，其中涉及与切片大小成比例的大小分配。这可以通过使用 <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 对象来缓解。<a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 本身在堆上分配，但是不论切片的大小，它都是一个小且固定尺寸的对象。对 <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 进行切片会创建一个新的 <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a>，因此不能在中断服务程序中进行。此外，切片语法 <code class="docutils literal notranslate"><span class="pre">a:b</span></code> 会导致通过实例化 <code class="docutils literal notranslate"><span class="pre">slice(a,</span> <span class="pre">b)</span></code> 对象进行分配。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ba</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>  <span class="c1"># big array</span>
 <span class="n">func</span><span class="p">(</span><span class="n">ba</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">2000</span><span class="p">])</span>      <span class="c1"># a copy is passed, ~2K new allocation</span>
 <span class="n">mv</span> <span class="o">=</span> <span class="n">memoryview</span><span class="p">(</span><span class="n">ba</span><span class="p">)</span>    <span class="c1"># small object is allocated</span>
 <span class="n">func</span><span class="p">(</span><span class="n">mv</span><span class="p">[</span><span class="mi">30</span><span class="p">:</span><span class="mi">2000</span><span class="p">])</span>      <span class="c1"># a pointer to memory is passed</span>
 </pre></div>
 </div>
-<p>A <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> can only be applied to objects supporting the buffer protocol - this
-includes arrays but not lists. Small caveat is that while memoryview object is live,
-it also keeps alive the original buffer object. So, a memoryview isn’t a universal
-panacea. For instance, in the example above, if you are done with 10K buffer and
-just need those bytes 30:2000 from it, it may be better to make a slice, and let
-the 10K buffer go (be ready for garbage collection), instead of making a
-long-living memoryview and keeping 10K blocked for GC.</p>
-<p>Nonetheless, <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> is indispensable for advanced preallocated buffer
-management. <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> method discussed above puts data at the beginning
-of buffer and fills in entire buffer. What if you need to put data in the
-middle of existing buffer? Just create a memoryview into the needed section
-of buffer and pass it to <code class="docutils literal notranslate"><span class="pre">readinto()</span></code>.</p>
+<p><a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 只能应用于支持缓冲区协议的对象 - 这包括数组 ( array )，但不包括列表 ( list )。要注意的是，当 memoryview 对象存活时，它也会保持对原始缓冲区对象的引用。所以， memoryview 并不是万能的灵丹妙药。例如，在上面的例子中，如果你只需要 10K 的缓冲区的 30:2000 位置的字节，最好是创建一个切片，并且让 10K 的缓冲区消失 ( 以让其做好进行垃圾回收的准备 )， 而不是保持一个长期存在的 memoryview 并为 GC 一直持有 10K 的块。</p>
+<p>不过，<a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 作为高级预分配缓冲区管理是必不可少的。上面提到的 <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> 方法会将数据放在缓冲区的开始处，并填充整个缓冲区。那如果你需要将数据放在现有缓冲区的中间位置怎么做呢？你只需要创建一个 memoryview 到缓冲区中的需要的部分，并将其传递给 <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> 方法即可。</p>
 </section>
 </section>
 <section id="identifying-the-slowest-section-of-code">
-<h2 id="identifying-the-slowest-section-of-code"><a class="toc-backref" href="#id9" role="doc-backlink">Identifying the slowest section of code</a><a class="headerlink" href="#identifying-the-slowest-section-of-code" title="Permalink to this heading">¶</a></h2>
-<p>This is a process known as profiling and is covered in textbooks and
-(for standard Python) supported by various software tools. For the type of
-smaller embedded application likely to be running on MicroPython platforms
-the slowest function or method can usually be established by judicious use
-of the timing <code class="docutils literal notranslate"><span class="pre">ticks</span></code> group of functions documented in <a class="reference internal" href="../library/time.html#module-time" title="time: time related functions"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">time</span></code></a>.
-Code execution time can be measured in ms, us, or CPU cycles.</p>
-<p>The following enables any function or method to be timed by adding an
-<code class="docutils literal notranslate"><span class="pre">@timed_function</span></code> decorator:</p>
+<h2 id="identifying-the-slowest-section-of-code"><a class="toc-backref" href="#id9" role="doc-backlink">识别代码中最慢的片段</a><a class="headerlink" href="#identifying-the-slowest-section-of-code" title="Permalink to this heading">¶</a></h2>
+<p>这一过程我们称为分析，它在许多教材中都提及且（在标准 Python 中）受到各种软件工具的支持。对于小型的嵌入式应用程序，最慢的函数或方法通常可以通过合理的使用 <a class="reference internal" href="../library/time.html#module-time" title="time: time related functions"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> 的 <code class="docutils literal notranslate"><span class="pre">ticks</span></code> 函数来确定。代码执行时间可以用毫秒，微秒或 CPU 周期表示。</p>
+<p>下面的语句允许任何函数或方法被计时，通过添加一个 <code class="docutils literal notranslate"><span class="pre">@timed_function</span></code> 装饰器来实现:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">timed_function</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
     <span class="n">myname</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">f</span><span class="p">)</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">' '</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
     <span class="k">def</span> <span class="nf">new_func</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -703,19 +648,14 @@ Code execution time can be measured in ms, us, or CPU cycles.</p>
 </div>
 </section>
 <section id="micropython-code-improvements">
-<h2 id="micropython-code-improvements"><a class="toc-backref" href="#id10" role="doc-backlink">MicroPython code improvements</a><a class="headerlink" href="#micropython-code-improvements" title="Permalink to this heading">¶</a></h2>
+<h2 id="micropython-code-improvements"><a class="toc-backref" href="#id10" role="doc-backlink">MicroPython 代码改进</a><a class="headerlink" href="#micropython-code-improvements" title="Permalink to this heading">¶</a></h2>
 <section id="the-const-declaration">
-<h3 id="the-const-declaration"><a class="toc-backref" href="#id11" role="doc-backlink">The const() declaration</a><a class="headerlink" href="#the-const-declaration" title="Permalink to this heading">¶</a></h3>
-<p>MicroPython provides a <code class="docutils literal notranslate"><span class="pre">const()</span></code> declaration. This works in a similar way
-to <code class="docutils literal notranslate"><span class="pre">#define</span></code> in C in that when the code is compiled to bytecode the compiler
-substitutes the numeric value for the identifier. This avoids a dictionary
-lookup at runtime. The argument to <code class="docutils literal notranslate"><span class="pre">const()</span></code> may be anything which, at
-compile time, evaluates to an integer e.g. <code class="docutils literal notranslate"><span class="pre">0x100</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">8</span></code>.</p>
+<h3 id="the-const-declaration"><a class="toc-backref" href="#id11" role="doc-backlink">const() 声明</a><a class="headerlink" href="#the-const-declaration" title="Permalink to this heading">¶</a></h3>
+<p>MicroPython 提供了一个 <code class="docutils literal notranslate"><span class="pre">const()</span></code> 声明。这类似于 C 中的 <code class="docutils literal notranslate"><span class="pre">#define</span></code> ，当代码编译为字节码时，编译器会替换该标识符的数值。这样就避免了在运行时进行字典查找。<code class="docutils literal notranslate"><span class="pre">const()</span></code> 函数的参数可以是任何可在编译时计算为整数的值或表达式，例如 <code class="docutils literal notranslate"><span class="pre">0x100</span></code> 或 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">8</span></code> 。</p>
 </section>
 <section id="caching-object-references">
-<span id="caching"></span><h3 id="caching-object-references"><a class="toc-backref" href="#id12" role="doc-backlink">Caching object references</a><a class="headerlink" href="#caching-object-references" title="Permalink to this heading">¶</a></h3>
-<p>Where a function or method repeatedly accesses objects performance is improved
-by caching the object in a local variable:</p>
+<span id="caching"></span><h3 id="caching-object-references"><a class="toc-backref" href="#id12" role="doc-backlink">缓存对象的引用</a><a class="headerlink" href="#caching-object-references" title="Permalink to this heading">¶</a></h3>
+<p>当一个函数或方法频繁访问对象时，可以通过在局部变量中缓存对象来提高性能:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ba</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
@@ -725,89 +665,56 @@ by caching the object in a local variable:</p>
         <span class="c1"># iterative code using these two objects</span>
 </pre></div>
 </div>
-<p>This avoids the need repeatedly to look up <code class="docutils literal notranslate"><span class="pre">self.ba</span></code> and <code class="docutils literal notranslate"><span class="pre">obj_display.framebuffer</span></code>
-in the body of the method <code class="docutils literal notranslate"><span class="pre">bar()</span></code>.</p>
+<p>这样就可以避免在 <code class="docutils literal notranslate"><span class="pre">bar()</span></code> 函数中频繁查找 <code class="docutils literal notranslate"><span class="pre">self.ba</span></code> 和 <code class="docutils literal notranslate"><span class="pre">obj_display.framebuffer</span></code> 。</p>
 </section>
 <section id="controlling-garbage-collection">
-<span id="controlling-gc"></span><h3 id="controlling-garbage-collection"><a class="toc-backref" href="#id13" role="doc-backlink">Controlling garbage collection</a><a class="headerlink" href="#controlling-garbage-collection" title="Permalink to this heading">¶</a></h3>
-<p>When memory allocation is required, MicroPython attempts to locate an adequately
-sized block on the heap. This may fail, usually because the heap is cluttered
-with objects which are no longer referenced by code. If a failure occurs, the
-process known as garbage collection reclaims the memory used by these redundant
-objects and the allocation is then tried again - a process which can take several
-milliseconds.</p>
-<p>There may be benefits in pre-empting this by periodically issuing <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a>.
-Firstly doing a collection before it is actually required is quicker - typically on the
-order of 1ms if done frequently. Secondly you can determine the point in code
-where this time is used rather than have a longer delay occur at random points,
-possibly in a speed critical section. Finally performing collections regularly
-can reduce fragmentation in the heap. Severe fragmentation can lead to
-non-recoverable allocation failures.</p>
+<span id="controlling-gc"></span><h3 id="controlling-garbage-collection"><a class="toc-backref" href="#id13" role="doc-backlink">控制垃圾回收</a><a class="headerlink" href="#controlling-garbage-collection" title="Permalink to this heading">¶</a></h3>
+<p>当需要进行内存分配时， MicroPython 会先尝试定位一个适当大小的堆块。这可能会失败，通常由于堆中的对象没有被代码引用。如果发生了失败，则垃圾回收会被触发，释放这些冗余的对象占用的内存，然后再次尝试分配内存。 —— 这一过程可能需要几毫秒。</p>
+<p>一种有效的做法是，周期性地调用 <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 来预先进行垃圾回收。首先，如果在实际需要前进行垃圾回收是更快的，如果经常这么做的话通常只需 1ms 。第二，可以确定代码中进行垃圾回收的位置，而不是在随机的位置发生长时间的延迟。最后，周期性地进行垃圾回收可以减少堆中的内存分配的碎片化。内存分配碎片化过于严重时，可能导致不可恢复的内存分配失败。</p>
 </section>
 </section>
 <section id="the-native-code-emitter">
-<h2 id="the-native-code-emitter"><a class="toc-backref" href="#id14" role="doc-backlink">The Native code emitter</a><a class="headerlink" href="#the-native-code-emitter" title="Permalink to this heading">¶</a></h2>
-<p>This causes the MicroPython compiler to emit native CPU opcodes rather than
-bytecode. It covers the bulk of the MicroPython functionality, so most functions will require
-no adaptation (but see below). It is invoked by means of a function decorator:</p>
+<h2 id="the-native-code-emitter"><a class="toc-backref" href="#id14" role="doc-backlink">原生代码生成器</a><a class="headerlink" href="#the-native-code-emitter" title="Permalink to this heading">¶</a></h2>
+<p>这使得 MicroPython 编译器生成原生的 CPU 指令代码，而不是字节码。它覆盖了大部分的 MicroPython 功能，因此大多数函数都不需要任何调整（但请参阅下面的内容）。它通过一个函数装饰器来调用:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython.native</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
     <span class="n">buf</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">linebuf</span> <span class="c1"># Cached object</span>
     <span class="c1"># code</span>
 </pre></div>
 </div>
-<p>There are certain limitations in the current implementation of the native code emitter.</p>
+<p>当前的原生代码生成器存在一些限制。</p>
 <ul class="simple">
-<li><p>Context managers are not supported (the <code class="docutils literal notranslate"><span class="pre">with</span></code> statement).</p></li>
-<li><p>Generators are not supported.</p></li>
-<li><p>If <code class="docutils literal notranslate"><span class="pre">raise</span></code> is used an argument must be supplied.</p></li>
+<li><p>上下文管理器是不支持的（即 <code class="docutils literal notranslate"><span class="pre">with</span></code> 语句）。</p></li>
+<li><p>生成器是不支持的。</p></li>
+<li><p>如果使用了 <code class="docutils literal notranslate"><span class="pre">raise</span></code> ，则必须提供一个参数。</p></li>
 </ul>
-<p>The trade-off for the improved performance (roughly twice as fast as bytecode) is an
-increase in compiled code size.</p>
+<p>性能提升（大约是使用字节码的两倍）的代价是编译代码的大小的增加。</p>
 </section>
 <section id="the-viper-code-emitter">
-<h2 id="the-viper-code-emitter"><a class="toc-backref" href="#id15" role="doc-backlink">The Viper code emitter</a><a class="headerlink" href="#the-viper-code-emitter" title="Permalink to this heading">¶</a></h2>
-<p>The optimisations discussed above involve standards-compliant Python code. The
-Viper code emitter is not fully compliant. It supports special Viper native data types
-in pursuit of performance. Integer processing is non-compliant because it uses machine
-words: arithmetic on 32 bit hardware is performed modulo 2**32.</p>
-<p>Like the Native emitter Viper produces machine instructions but further optimisations
-are performed, substantially increasing performance especially for integer arithmetic and
-bit manipulations. It is invoked using a decorator:</p>
+<h2 id="the-viper-code-emitter"><a class="toc-backref" href="#id15" role="doc-backlink">Viper 代码生成器</a><a class="headerlink" href="#the-viper-code-emitter" title="Permalink to this heading">¶</a></h2>
+<p>上面提到的优化包括标准兼容的 Python 代码。Viper 代码生成器不是完全兼容的。它支持特殊的 Viper 原生数据类型，以便提高性能。因为它使用了机器字，整数处理是不兼容的：在 32 位硬件上进行算术运算时，是以 2**32 为模执行的。</p>
+<p>与原生代码生成器类似， Viper 生成了机器指令，但更进一步优化，大大提升了性能。特别是对整数算术和位操作的优化。它通过一个装饰器来调用:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython.viper</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="c1"># code</span>
 </pre></div>
 </div>
-<p>As the above fragment illustrates it is beneficial to use Python type hints to assist the Viper optimiser.
-Type hints provide information on the data types of arguments and of the return value; these
-are a standard Python language feature formally defined here <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP0484</a>.
-Viper supports its own set of types namely <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code> (unsigned integer), <code class="docutils literal notranslate"><span class="pre">ptr</span></code>, <code class="docutils literal notranslate"><span class="pre">ptr8</span></code>,
-<code class="docutils literal notranslate"><span class="pre">ptr16</span></code> and <code class="docutils literal notranslate"><span class="pre">ptr32</span></code>. The <code class="docutils literal notranslate"><span class="pre">ptrX</span></code> types are discussed below. Currently the <code class="docutils literal notranslate"><span class="pre">uint</span></code> type serves
-a single purpose: as a type hint for a function return value. If such a function returns <code class="docutils literal notranslate"><span class="pre">0xffffffff</span></code>
-Python will interpret the result as 2**32 -1 rather than as -1.</p>
-<p>In addition to the restrictions imposed by the native emitter the following constraints apply:</p>
+<p>如上所示，使用 Python 类型提示来辅助 Viper 优化器是有益的。类型提示提供了参数和返回值的数据类型的信息；这是 <a class="reference external" href="https://www.python.org/dev/peps/pep-0484/">PEP0484</a> 中定义标准的 Python 语言特性。 Viper 支持自己的一组类型，即 <code class="docutils literal notranslate"><span class="pre">int</span></code>、<code class="docutils literal notranslate"><span class="pre">uint``（无符号整数）、``ptr</span></code>、<code class="docutils literal notranslate"><span class="pre">ptr8</span></code>、<code class="docutils literal notranslate"><span class="pre">ptr16</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ptr32</span></code>。<code class="docutils literal notranslate"><span class="pre">ptrX</span></code> 类型在下面讨论。目前，<code class="docutils literal notranslate"><span class="pre">uint</span></code> 类型只有一个作用，作为函数返回值的类型提示。如果这个函数返回 <code class="docutils literal notranslate"><span class="pre">0xffffffff</span></code> ， Python 将结果解释为 <code class="docutils literal notranslate"><span class="pre">2**32</span> <span class="pre">-</span> <span class="pre">1</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">-1</span></code> 。</p>
+<p>除了原生代码生成器所约束的限制之外，下面的限制也适用:</p>
 <ul class="simple">
-<li><p>Functions may have up to four arguments.</p></li>
-<li><p>Default argument values are not permitted.</p></li>
-<li><p>Floating point may be used but is not optimised.</p></li>
+<li><p>函数可以有最多 4 个参数。</p></li>
+<li><p>默认参数值不允许使用。</p></li>
+<li><p>可以使用浮点数，但不会被优化。</p></li>
 </ul>
-<p>Viper provides pointer types to assist the optimiser. These comprise</p>
+<p>Viper 提供了指针类型，以便优化器辅助。这些类型包括</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code> Pointer to an object.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ptr8</span></code> Points to a byte.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ptr16</span></code> Points to a 16 bit half-word.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">ptr32</span></code> Points to a 32 bit machine word.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptr</span></code> 指向一个对象。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptr8</span></code> 指向一个字节。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptr16</span></code> 指向一个 16 位半字。</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ptr32</span></code> 指向一个 32 位机器字。</p></li>
 </ul>
-<p>The concept of a pointer may be unfamiliar to Python programmers. It has similarities
-to a Python <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> object in that it provides direct access to data stored in memory.
-Items are accessed using subscript notation, but slices are not supported: a pointer can return
-a single item only. Its purpose is to provide fast random access to data stored in contiguous
-memory locations - such as data stored in objects which support the buffer protocol, and
-memory-mapped peripheral registers in a microcontroller. It should be noted that programming
-using pointers is hazardous: bounds checking is not performed and the compiler does nothing to
-prevent buffer overrun errors.</p>
-<p>Typical usage is to cache variables:</p>
+<p>指针的概念是 Python 程序员们不熟悉的。它与 Python <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 对象的相似性，它提供了直接访问存储在内存中的数据的能力。通过下标访问，但不支持切片：指针只能返回单个项目。它的目的是提供直接访问存储在连续内存位置中的数据。例如，支持缓冲区协议的对象中存储的数据，以及单片机中存储的内存映射外设寄存器的数据。应该注意，使用指针编程是危险的：边界检查不会执行，编译器不会采取任何措施来避免缓冲区溢出错误上。</p>
+<p>典型用法是缓存变量:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython.viper</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="n">buf</span> <span class="o">=</span> <span class="n">ptr8</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">linebuf</span><span class="p">)</span> <span class="c1"># self.linebuf is a bytearray or bytes object</span>
@@ -816,29 +723,18 @@ prevent buffer overrun errors.</p>
         <span class="c1"># code omitted</span>
 </pre></div>
 </div>
-<p>In this instance the compiler “knows” that <code class="docutils literal notranslate"><span class="pre">buf</span></code> is the address of an array of bytes;
-it can emit code to rapidly compute the address of <code class="docutils literal notranslate"><span class="pre">buf[x]</span></code> at runtime. Where casts are
-used to convert objects to Viper native types these should be performed at the start of
-the function rather than in critical timing loops as the cast operation can take several
-microseconds. The rules for casting are as follows:</p>
+<p>在这种情况下，编译器“知道” <code class="docutils literal notranslate"><span class="pre">buf</span></code> 是一个字节数组的地址；它可以在运行时快速计算出 <code class="docutils literal notranslate"><span class="pre">buf[x]</span></code> 的地址。如果将对象转换为 Viper 原生类型，这些应该在函数开始时进行，而不是在关键的时序循环中，因为强制转换操作可能需要几毫秒。转换规则如下：</p>
 <ul class="simple">
-<li><p>Casting operators are currently: <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">bool</span></code>, <code class="docutils literal notranslate"><span class="pre">uint</span></code>, <code class="docutils literal notranslate"><span class="pre">ptr</span></code>, <code class="docutils literal notranslate"><span class="pre">ptr8</span></code>, <code class="docutils literal notranslate"><span class="pre">ptr16</span></code> and <code class="docutils literal notranslate"><span class="pre">ptr32</span></code>.</p></li>
-<li><p>The result of a cast will be a native Viper variable.</p></li>
-<li><p>Arguments to a cast can be a Python object or a native Viper variable.</p></li>
-<li><p>If argument is a native Viper variable, then cast is a no-op (i.e. costs nothing at runtime)
-that just changes the type (e.g. from <code class="docutils literal notranslate"><span class="pre">uint</span></code> to <code class="docutils literal notranslate"><span class="pre">ptr8</span></code>) so that you can then store/load
-using this pointer.</p></li>
-<li><p>If the argument is a Python object and the cast is <code class="docutils literal notranslate"><span class="pre">int</span></code> or <code class="docutils literal notranslate"><span class="pre">uint</span></code>, then the Python object
-must be of integral type and the value of that integral object is returned.</p></li>
-<li><p>The argument to a bool cast must be integral type (boolean or integer); when used as a return
-type the viper function will return True or False objects.</p></li>
-<li><p>If the argument is a Python object and the cast is <code class="docutils literal notranslate"><span class="pre">ptr</span></code>, <code class="docutils literal notranslate"><span class="pre">ptr</span></code>, <code class="docutils literal notranslate"><span class="pre">ptr16</span></code> or <code class="docutils literal notranslate"><span class="pre">ptr32</span></code>,
-then the Python object must either have the buffer protocol (in which case a pointer to the
-start of the buffer is returned) or it must be of integral type (in which case the value of
-that integral object is returned).</p></li>
+<li><p>当前的转换操作符是：<code class="docutils literal notranslate"><span class="pre">int</span></code>、<code class="docutils literal notranslate"><span class="pre">bool</span></code>、<code class="docutils literal notranslate"><span class="pre">uint</span></code>、<code class="docutils literal notranslate"><span class="pre">ptr</span></code>、<code class="docutils literal notranslate"><span class="pre">ptr8</span></code>、<code class="docutils literal notranslate"><span class="pre">ptr16</span></code> 和 <code class="docutils literal notranslate"><span class="pre">ptr32</span></code>。</p></li>
+<li><p>转换结果将是一个原生的 Viper 变量。</p></li>
+<li><p>转换参数可以是一个 Python 对象或一个原生的 Viper 变量。</p></li>
+<li><p>如果参数是一个原生的 Viper 变量，那么转换是一个无操作（即运行时代价为零），只是改变类型（如从 <code class="docutils literal notranslate"><span class="pre">uint</span></code> 到 <code class="docutils literal notranslate"><span class="pre">ptr8</span></code>），这样你就可以直接使用这个指针存储/加载数据了。</p></li>
+<li><p>如果参数是一个 Python 对象，并且转换是 <code class="docutils literal notranslate"><span class="pre">int</span></code> 或 <code class="docutils literal notranslate"><span class="pre">uint</span></code>，那么 Python 对象必须是整数类型，并且该整数对象的值需要被返回。</p></li>
+<li><p>一个 bool 转换的参数必须是整数类型（ 布尔或整数 ）；当作为返回类型时，viper 函数将返回 True 或 False 对象。</p></li>
+<li><p>如果参数是一个 Python 对象，并且转换后是 <code class="docutils literal notranslate"><span class="pre">ptr</span></code>、<code class="docutils literal notranslate"><span class="pre">ptr</span></code>、<code class="docutils literal notranslate"><span class="pre">ptr16</span></code> 或 <code class="docutils literal notranslate"><span class="pre">ptr32</span></code>，那么 Python 对象必须是支持缓冲区协议（ 即返回一个指向缓冲区开始处的指针 ）或者是整数类型（ 即返回该整数对象的值 ）。</p></li>
 </ul>
-<p>Writing to a pointer which points to a read-only object will lead to undefined behaviour.</p>
-<p>The following example illustrates the use of a <code class="docutils literal notranslate"><span class="pre">ptr16</span></code> cast to toggle pin X1 <code class="docutils literal notranslate"><span class="pre">n</span></code> times:</p>
+<p>写入一个指向只读对象的指针将导致未定义的行为。</p>
+<p>下面的示例说明了一个 <code class="docutils literal notranslate"><span class="pre">ptr16</span></code> 转换来对 X1 引脚切换 <code class="docutils literal notranslate"><span class="pre">n</span></code> 次：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">BIT0</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="nd">@micropython.viper</span>
 <span class="k">def</span> <span class="nf">toggle_n</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">int</span><span class="p">):</span>
@@ -847,29 +743,19 @@ that integral object is returned).</p></li>
         <span class="n">odr</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">^=</span> <span class="n">BIT0</span>
 </pre></div>
 </div>
-<p>A detailed technical description of the three code emitters may be found
-on Kickstarter here <a class="reference external" href="https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers/posts/664832">Note 1</a>
-and here <a class="reference external" href="https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers/posts/665145">Note 2</a></p>
+<p>这三个代码生成器的详细技术说明可以在 Kickstarter 的 <a class="reference external" href="https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers/posts/664832">Note 1</a> 和 <a class="reference external" href="https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers/posts/665145">Note 2</a> 中找到。</p>
 </section>
 <section id="accessing-hardware-directly">
-<h2 id="accessing-hardware-directly"><a class="toc-backref" href="#id16" role="doc-backlink">Accessing hardware directly</a><a class="headerlink" href="#accessing-hardware-directly" title="Permalink to this heading">¶</a></h2>
+<h2 id="accessing-hardware-directly"><a class="toc-backref" href="#id16" role="doc-backlink">直接访问硬件</a><a class="headerlink" href="#accessing-hardware-directly" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>Code examples in this section are given for the Pyboard. The techniques
-described however may be applied to other MicroPython ports too.</p>
+<p>本小节的代码示例是基于 Pyboard 提供的。但是这些技巧也可以应用到其他的 MicroPython 适配端上。</p>
 </div>
-<p>This comes into the category of more advanced programming and involves some knowledge
-of the target MCU. Consider the example of toggling an output pin on the Pyboard. The
-standard approach would be to write</p>
+<p>这属于更高级的编程类别，涉及到目标 MCU 的一些知识。参考这一在 Pyboard 上切换输出引脚的示例。标准的写法为</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">mypin</span><span class="o">.</span><span class="n">value</span><span class="p">(</span><span class="n">mypin</span><span class="o">.</span><span class="n">value</span><span class="p">()</span> <span class="o">^</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># mypin was instantiated as an output pin</span>
 </pre></div>
 </div>
-<p>This involves the overhead of two calls to the <a class="reference internal" href="../library/machine.Pin.html#machine.Pin" title="machine.Pin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pin</span></code></a> instance’s <a class="reference internal" href="../library/machine.Pin.html#machine.Pin.value" title="machine.Pin.value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">value()</span></code></a>
-method. This overhead can be eliminated by performing a read/write to the relevant bit
-of the chip’s GPIO port output data register (odr). To facilitate this the <code class="docutils literal notranslate"><span class="pre">stm</span></code>
-module provides a set of constants providing the addresses of the relevant registers.
-A fast toggle of pin <code class="docutils literal notranslate"><span class="pre">P4</span></code> (CPU pin <code class="docutils literal notranslate"><span class="pre">A14</span></code>) - corresponding to the green LED -
-can be performed as follows:</p>
+<p>这涉及对 <a class="reference internal" href="../library/machine.Pin.html#machine.Pin" title="machine.Pin"><code class="xref py py-class docutils literal notranslate"><span class="pre">Pin</span></code></a> 实例的 <a class="reference internal" href="../library/machine.Pin.html#machine.Pin.value" title="machine.Pin.value"><code class="xref py py-meth docutils literal notranslate"><span class="pre">value()</span></code></a> 方法的两次调用的开销。这种开销可以通过直接对芯片的 GPIO 端口输出数据寄存器 ( odr ) 的相关位执行读/写来优化。为此， <code class="docutils literal notranslate"><span class="pre">stm</span></code> 模块提供了一组常量，提供对相关寄存器的地址的访问。对切换引脚 <code class="docutils literal notranslate"><span class="pre">P4</span></code> （ CPU 引脚 <code class="docutils literal notranslate"><span class="pre">A14</span></code> ） —— 对应绿色 LED —— 进行快速切换，可以按如下方式执行：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">import</span> <span class="nn">stm</span>
 
