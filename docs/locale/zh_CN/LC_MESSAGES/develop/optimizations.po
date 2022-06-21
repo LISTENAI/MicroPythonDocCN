@@ -156,6 +156,6 @@ msgid ""
 "<https://docs.micropython.org/en/latest/reference/speed_python.html>`_"
 msgstr ""
 "有关更以用户为中心的优化视角的详细讨论，参阅"
-"`最大化 MicroPython 速度"
-"<https://docs.micropython.org/en/latest/reference/speed_python.html>`_"
+" :ref:`最大化 MicroPython 速度"
+" <speed_python>` 。"
 
