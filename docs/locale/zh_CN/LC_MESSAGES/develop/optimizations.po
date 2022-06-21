@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../develop/optimizations.rst:4
 msgid "Optimizations"
-msgstr ""
+msgstr "优化"
 
 #: ../../develop/optimizations.rst:6
 msgid ""
@@ -29,16 +29,19 @@ msgid ""
 "efficient execution of programs. This chapter discusses some of these "
 "optimizations."
 msgstr ""
+"MicroPython 使用多项优化来实现，在节省 RAM 的前提下保证了程序的有效执行。"
+"本章节将介绍这些优化。"
 
 #: ../../develop/optimizations.rst:10
 msgid ""
 ":ref:`qstr` and :ref:`maps` details other optimizations on strings and "
 "dictionaries."
 msgstr ""
+":ref:`qstr` 和 :ref:`maps` 详细介绍了字符串和字典上的其他优化。"
 
 #: ../../develop/optimizations.rst:14
 msgid "Frozen bytecode"
-msgstr ""
+msgstr "冻结字节码"
 
 #: ../../develop/optimizations.rst:16
 msgid ""
@@ -51,6 +54,11 @@ msgid ""
 " be loaded into RAM, but it avoids the additional overhead of the parsing"
 " stage."
 msgstr ""
+"当 MicroPython 从文件系统加载 Python 代码时，它首先必须将文件解析为在内存中的临时"
+"表示形式，再生成可执行的字节码，这两者都存储在（在 RAM 中）的堆上。"
+"这可能导致大量的内存占用。要解决这一问题， 可使用 MicroPython 交叉编译器生成一个 ``.mpy`` 文件，"
+"其中包含了一个 Python 模块的预编译字节码，虽然该文件仍会被加载到 RAM 中，但"
+"这种方式避免了解析阶段的额外开销。"
 
 #: ../../develop/optimizations.rst:23
 msgid ""
@@ -60,10 +68,13 @@ msgid ""
 "ROM. This can lead to a significant memory saving, and reduce heap "
 "fragmentation."
 msgstr ""
+"作为进一步的优化，一个 ``.mpy`` 文件中的预编译字节码可以在主固件编译"
+"阶段冻结到固件中，这意味着字节码将从 ROM 中执行。"
+"这可以显著节省内存，并减少堆碎片。"
 
 #: ../../develop/optimizations.rst:29
 msgid "Variables"
-msgstr ""
+msgstr "变量"
 
 #: ../../develop/optimizations.rst:31
 msgid ""
@@ -75,6 +86,12 @@ msgid ""
 "  They are accessed directly by their offset within the Python stack, "
 "which is more efficient than a global lookup in a dict."
 msgstr ""
+"在 MicroPython 中，处理局部变量和全局变量的方式是不同的。"
+"全局变量从在堆上分配的全局字典中存储和检索"
+"（请注意，每个模块都有自己单独的字典，因此需要独立的命名空间）。"
+"局部变量则存储在 Python 值栈中，可能存储在 C 的栈或堆中。"
+"它们通过在 Python 栈中的偏移量直接访问，这比在字典中全局查找"
+"更有效。"
 
 #: ../../develop/optimizations.rst:38
 msgid ""
@@ -82,6 +99,8 @@ msgid ""
 "identifiers are stored in RAM. The shorter the identifier, the less "
 "memory is used."
 msgstr ""
+"全局变量名称的长度也会影响存储标识符时所占用的内存。"
+"标识符越短，则所占用的内存越少。"
 
 #: ../../develop/optimizations.rst:41
 msgid ""
@@ -90,38 +109,45 @@ msgid ""
 " in a dictionary, hence saving some memory. These variables use "
 "``const()`` from the MicroPython library. Therefore:"
 msgstr ""
+"另一方面，以下划线开头的 ``const`` 变量被视为妥善的常量，"
+"不会被分配或添加到字典中，因此节省了一部分内存。"
+"这些变量需要以 MicroPython 库中的 ``const()`` 函数创建。"
+"因此："
 
 #: ../../develop/optimizations.rst:53
 msgid "Compiles to:"
-msgstr ""
+msgstr "编译为："
 
 #: ../../develop/optimizations.rst:61
 msgid "Allocation of memory"
-msgstr ""
+msgstr "内存分配"
 
 #: ../../develop/optimizations.rst:63
 msgid ""
 "Most of the common MicroPython constructs are not allocated on the heap. "
 "However the following are:"
 msgstr ""
+"大多数的 MicroPython 的构造都不会分配在堆上。"
+"但是以下构造器则会："
 
 #: ../../develop/optimizations.rst:66
 msgid "Dynamic data structures like lists, mappings, etc;"
-msgstr ""
+msgstr "动态数据结构，如列表，映射等；"
 
 #: ../../develop/optimizations.rst:67
 msgid "Functions, classes and object instances;"
-msgstr ""
+msgstr "函数，类和对象实例；"
 
 #: ../../develop/optimizations.rst:68
 msgid "imports; and"
-msgstr ""
+msgstr "使用 import 导入的模块；"
 
 #: ../../develop/optimizations.rst:69
 msgid ""
 "First-time assignment of global variables (to create the slot in the "
 "global dict)."
 msgstr ""
+"全局变量的首次赋值（通过在全局字典中创建槽）。"
 
 #: ../../develop/optimizations.rst:71
 msgid ""
@@ -129,4 +155,7 @@ msgid ""
 "optimization, see `Maximising MicroPython speed "
 "<https://docs.micropython.org/en/latest/reference/speed_python.html>`_"
 msgstr ""
+"有关更以用户为中心的优化视角的详细讨论，参阅"
+"`最大化 MicroPython 速度"
+"<https://docs.micropython.org/en/latest/reference/speed_python.html>`_"
 
