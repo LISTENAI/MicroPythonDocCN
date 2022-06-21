@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../develop/memorymgt.rst:4
 msgid "Memory Management"
-msgstr ""
+msgstr "内存管理"
 
 #: ../../develop/memorymgt.rst:6
 msgid ""
@@ -35,18 +35,23 @@ msgid ""
 "Automatic memory management takes many forms, one of them being garbage "
 "collection (GC)."
 msgstr ""
+"不像 C/C++ 等编程语言，MicroPython 通过支持自动内存管理的方式向开发者隐藏了内存管理的细节。"
+"自动内存管理是操作系统或应用程序用于自动管理内存分配和释放的一种技术。"
+"这避免了诸如忘记释放分配给对象的内存等问题。"
+"自动内存管理还避免了使用已释放内存的关键问题。"
+"自动内存管理有多种形式，垃圾回收机制（GC）是其中一种。"
 
 #: ../../develop/memorymgt.rst:14
 msgid "The garbage collector usually has two responsibilities;"
-msgstr ""
+msgstr "垃圾回收器通常有两个职责："
 
 #: ../../develop/memorymgt.rst:16
 msgid "Allocate new objects in available memory."
-msgstr ""
+msgstr "分配新的对象到可用内存中。"
 
 #: ../../develop/memorymgt.rst:17
 msgid "Free unused memory."
-msgstr ""
+msgstr "释放未使用的内存。"
 
 #: ../../develop/memorymgt.rst:19
 msgid ""
@@ -56,22 +61,28 @@ msgid ""
 "traverses the heap marking all live objects while the sweep phase goes "
 "through the heap reclaiming all unmarked objects."
 msgstr ""
+"业界存在许多种垃圾回收算法，而 MicroPython 使用 `标记与扫描 <https://en.wikipedia.org/wiki/Tracing_garbage_collection#Basic_algorithm>`_ "
+"算法来管理内存。"
+"该算法的标记阶段遍历堆栈，标记所有活动对象；"
+"扫描阶段遍历堆栈，释放所有未标记的对象。"
 
 #: ../../develop/memorymgt.rst:24
 msgid ""
 "Garbage collection functionality in MicroPython is available through the "
 "``gc`` built-in module:"
 msgstr ""
+"MicroPython 中可通过 ``gc`` 内建模块来访问垃圾回收功能："
 
 #: ../../develop/memorymgt.rst:43
 msgid ""
 "Even when ``gc.disable()`` is invoked, collection can be triggered with "
 "``gc.collect()``."
 msgstr ""
+"即使 ``gc.disable()`` 已被调用，也可以使用 ``gc.collect()`` 触发垃圾回收。"
 
 #: ../../develop/memorymgt.rst:46
 msgid "The object model"
-msgstr ""
+msgstr "对象模型"
 
 #: ../../develop/memorymgt.rst:48
 msgid ""
@@ -82,6 +93,11 @@ msgid ""
 "certain object representations, for example ``OBJ_REPR_D`` has a 64-bit "
 "sized ``mp_obj_t`` on a 32-bit architecture."
 msgstr ""
+"所有 MicroPython 对象在 C 中都是通过 ``mp_obj_t`` 数据类型引用。"
+"它通常是一个字长（即与架构相同大小的指针），"
+"可以是 32-bit (STM32, nRF, ESP32, Unix x86) 或 64-bit (Unix x64)。"
+"对于某些特定对象，它也可以比字长大，例如在 32-bit 架构中 ``OBJ_REPR_D`` 为 64-bit "
+"大小的 ``mp_obj_t``。"
 
 #: ../../develop/memorymgt.rst:54
 msgid ""
@@ -93,16 +109,22 @@ msgid ""
 "heap) and their ``mp_obj_t`` contains a pointer to that memory. A portion"
 " of ``mp_obj_t`` is the tag which tells what type of object it is."
 msgstr ""
+"一个 ``mp_obj_t`` 对象代表一个 MicroPython 对象，例如整数、浮点数、类型、字典或类实例。"
+"某些对象（例如布尔值和小整数）在 ``mp_obj_t`` 中直接存储其值，"
+"不需要额外的内存。其他对象的值存储在其他内存中（例如垃圾回收堆栈），"
+"其 ``mp_obj_t`` 包含一个指向该内存的指针。"
+"``mp_obj_t`` 中的一部分信息用于标识它是什么类型的对象。"
 
 #: ../../develop/memorymgt.rst:60
 msgid ""
 "See ``py/mpconfig.h`` for the specific details of the available "
 "representations."
 msgstr ""
+"参考 ``py/mpconfig.h`` 查看可用的对象表示的具体细节。"
 
 #: ../../develop/memorymgt.rst:62
 msgid "**Pointer tagging**"
-msgstr ""
+msgstr "**指针标记**"
 
 #: ../../develop/memorymgt.rst:64
 msgid ""
@@ -110,6 +132,9 @@ msgid ""
 "``mp_obj_t`` the lower bits of this object handle will be zero.  For "
 "example on a 32-bit architecture the lower 2 bits will be zero:"
 msgstr ""
+"因为指针是字长对齐的，当它们存储在 ``mp_obj_t`` 中时，"
+"这个对象的低位将会被设置为 0。"
+"例如 32-bit 架构下，这个位将会被设置为 0："
 
 #: ../../develop/memorymgt.rst:68 ../../develop/memorymgt.rst:88
 msgid "``********|********|********|******00``"
@@ -123,10 +148,14 @@ msgid ""
 "tag tells if we are dealing with a small integer, interned (small) string"
 " or a concrete object, and different semantics apply to each of these."
 msgstr ""
+"这些位用于存储标记信息。"
+"该标记存储额外的信息，并非低效地在对象中新增一个字段来存储这些信息。"
+"在 MicroPython 中，这一标签告诉我们是在处理小整数、"
+"内部（小）字符串或具体对象，并且不同的语义都可一一对应。"
 
 #: ../../develop/memorymgt.rst:75
 msgid "For small integers the mapping is this:"
-msgstr ""
+msgstr "对于小整数，这一对应关系如下："
 
 #: ../../develop/memorymgt.rst:77
 msgid "``********|********|********|*******1``"
@@ -138,6 +167,9 @@ msgid ""
 "string or an immediate object (e.g. ``True``) the layout of the "
 "``mp_obj_t`` value is, respectively:"
 msgstr ""
+"其中星号表示具体的整数值。"
+"对于内部字符串或具体对象（例如 ``True`` ），``mp_obj_t`` 的值的布局，"
+"分别如下："
 
 #: ../../develop/memorymgt.rst:82
 msgid "``********|********|********|*****010``"
@@ -149,15 +181,15 @@ msgstr ""
 
 #: ../../develop/memorymgt.rst:86
 msgid "While a concrete object that is none of the above takes the form:"
-msgstr ""
+msgstr "当一个具体对象不是上述任何一个时，它的布局如下："
 
 #: ../../develop/memorymgt.rst:90
 msgid "The stars here correspond to the address of the concrete object in memory."
-msgstr ""
+msgstr "这些星号表示具体对象在内存中的地址。"
 
 #: ../../develop/memorymgt.rst:93
 msgid "Allocation of objects"
-msgstr ""
+msgstr "对象分配"
 
 #: ../../develop/memorymgt.rst:95
 msgid ""
@@ -167,6 +199,10 @@ msgid ""
 "interned strings that already have their textual data stored elsewhere, "
 "and immediate values like ``None``, ``False`` and ``True``."
 msgstr ""
+"小整数的值直接存储在 ``mp_obj_t`` 中，而不是堆或其他地方。"
+"因此，小整数的创建不会影响堆内存。"
+"同样地，内部字符串已经存储在其他地方，"
+"以及 ``None``、``False`` 和 ``True`` 等等的即时生效的值也不会影响堆内存。"
 
 #: ../../develop/memorymgt.rst:101
 msgid ""
@@ -174,6 +210,8 @@ msgid ""
 "its object structure is such that a field is reserved in the object "
 "header to store the type of the object."
 msgstr ""
+"所有其他的具体对象都会在堆内存中分配，"
+"并且其对象结构中会保留一个字段来存储对象的类型。"
 
 #: ../../develop/memorymgt.rst:116
 msgid ""
@@ -182,12 +220,18 @@ msgid ""
 "machine). Another structure also allocated on the heap tracks the "
 "allocation of objects in each block. This structure is called a *bitmap*."
 msgstr ""
+"堆内存中最小的分配单位是一个块，它是四个机器字（32 位机器上是 16 字节，"
+"64 位机器上是 32 字节）的大小。"
+"堆内存中还有一个结构跟踪每个块中分配的对象。"
+"这个结构叫做 *位图 bitmap*。"
 
 #: ../../develop/memorymgt.rst:123
 msgid ""
 "The bitmap tracks whether a block is \"free\" or \"in use\" and use two "
 "bits to track this state for each block."
 msgstr ""
+"位图跟踪块是否是 \"空闲\" 或 \"使用\" 的状态，"
+"并且使用两个位来跟踪这个状态。"
 
 #: ../../develop/memorymgt.rst:126
 msgid ""
@@ -197,38 +241,44 @@ msgid ""
 "<https://github.com/micropython/micropython/blob/master/py/gc.c>`_ for "
 "the full implementation of these details."
 msgstr ""
+"「标记-清扫垃圾收集器」会管理堆内存中分配的对象，"
+"并且使用位图来标记对象是否仍然在使用。"
+"请参见 `py/gc.c <https://github.com/micropython/micropython/blob/master/py/gc.c>`_ "
+"查看这些细节的完整实现。"
 
 #: ../../develop/memorymgt.rst:131
 msgid "**Allocation: heap layout**"
-msgstr ""
+msgstr "**分配：堆布局**"
 
 #: ../../develop/memorymgt.rst:133
 msgid ""
 "The heap is arranged such that it consists of blocks in pools. A block "
 "can have different properties:"
 msgstr ""
+"堆内存中的块是池化的，"
+"每个块可以有不同的属性："
 
 #: ../../develop/memorymgt.rst:136
 msgid "*ATB(allocation table byte):* If set, then the block is a normal block"
-msgstr ""
+msgstr "*ATB (allocation table byte 分配表字节):* 如果设置，则该块是一个普通块"
 
 #: ../../develop/memorymgt.rst:137
 msgid "*FREE:* Free block"
-msgstr ""
+msgstr "*FREE:* 空闲块"
 
 #: ../../develop/memorymgt.rst:138
 msgid "*HEAD:* Head of a chain of blocks"
-msgstr ""
+msgstr "*HEAD:* 块链的头部"
 
 #: ../../develop/memorymgt.rst:139
 msgid "*TAIL:* In the tail of a chain of blocks"
-msgstr ""
+msgstr "*TAIL:* 块链的尾部"
 
 #: ../../develop/memorymgt.rst:140
 msgid "*MARK :* Marked head block"
-msgstr ""
+msgstr "*MARK :* 标记的头部块"
 
 #: ../../develop/memorymgt.rst:141
 msgid "*FTB(finaliser table byte):* If set, then the block has a finaliser"
-msgstr ""
+msgstr "*FTB (finaliser table byte 最终化表字节):* 如果设置，则该块有一个最终化"
 
