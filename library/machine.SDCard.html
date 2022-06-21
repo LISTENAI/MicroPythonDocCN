@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -434,7 +435,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-sdcard-secure-digital-memory-card">
-<span id="machine-sdcard"></span><h1 id="library-machine-sdcard--page-root">class SDCard – secure digital memory card<a class="headerlink" href="#library-machine-sdcard--page-root" title="永久链接至标题">¶</a></h1>
+<span id="machine-sdcard"></span><h1 id="library-machine-sdcard--page-root">class SDCard – secure digital memory card<a class="headerlink" href="#library-machine-sdcard--page-root" title="Permalink to this heading">¶</a></h1>
 <p>SD cards are one of the most common small form factor removable storage media.
 SD cards come in a variety of sizes and physical form factors. MMC cards are
 similar removable storage devices while eMMC devices are electrically similar
@@ -479,15 +480,15 @@ unset will select the default interface.</p></li>
 </div></blockquote>
 </dd></dl>
 <section id="implementation-specific-details">
-<h2 id="implementation-specific-details">Implementation-specific details<a class="headerlink" href="#implementation-specific-details" title="永久链接至标题">¶</a></h2>
+<h2 id="implementation-specific-details">Implementation-specific details<a class="headerlink" href="#implementation-specific-details" title="Permalink to this heading">¶</a></h2>
 <p>Different implementations of the <code class="docutils literal notranslate"><span class="pre">SDCard</span></code> class on different hardware support
 varying subsets of the options above.</p>
 <section id="pyboard">
-<h3 id="pyboard">PyBoard<a class="headerlink" href="#pyboard" title="永久链接至标题">¶</a></h3>
+<h3 id="pyboard">PyBoard<a class="headerlink" href="#pyboard" title="Permalink to this heading">¶</a></h3>
 <p>The standard PyBoard has just one slot. No arguments are necessary or supported.</p>
 </section>
 <section id="esp32">
-<h3 id="esp32">ESP32<a class="headerlink" href="#esp32" title="永久链接至标题">¶</a></h3>
+<h3 id="esp32">ESP32<a class="headerlink" href="#esp32" title="Permalink to this heading">¶</a></h3>
 <p>The ESP32 provides two channels of SD/MMC hardware and also supports
 access to SD Cards through either of the two SPI ports that are
 generally available to the user. As a result the <em>slot</em> argument can
@@ -524,13 +525,6 @@ cause problems on some cards.</p>
 <p>The default (and preferred) pin assignment are as follows:</p>
 <blockquote>
 <div><table>
-<colgroup>
-<col style="width: 20%"/>
-<col style="width: 20%"/>
-<col style="width: 20%"/>
-<col style="width: 20%"/>
-<col style="width: 20%"/>
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Slot</p></th>
 <th class="head"><p>0</p></th>
@@ -629,7 +623,7 @@ cause problems on some cards.</p>
 </div></blockquote>
 </section>
 <section id="cc3200">
-<h3 id="cc3200">cc3200<a class="headerlink" href="#cc3200" title="永久链接至标题">¶</a></h3>
+<h3 id="cc3200">cc3200<a class="headerlink" href="#cc3200" title="Permalink to this heading">¶</a></h3>
 <p>You can set the pins used for SPI access by passing a tuple as the
 <em>pins</em> argument.</p>
 <p><em>Note:</em> The current cc3200 SD card implementation names the this class
@@ -685,10 +679,10 @@ cause problems on some cards.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

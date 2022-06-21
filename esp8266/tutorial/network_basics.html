@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -593,7 +594,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="network-basics">
-<h1 id="esp8266-tutorial-network-basics--page-root"><span class="section-number">4. </span>Network basics<a class="headerlink" href="#esp8266-tutorial-network-basics--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="esp8266-tutorial-network-basics--page-root"><span class="section-number">4. </span>Network basics<a class="headerlink" href="#esp8266-tutorial-network-basics--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The network module is used to configure the WiFi connection.  There are two WiFi
 interfaces, one for the station (when the ESP8266 connects to a router) and one
 for the access point (for other devices to connect to the ESP8266).  Create
@@ -617,7 +618,7 @@ instances of these objects using:</p>
 </div>
 <p>The returned values are: IP address, netmask, gateway, DNS.</p>
 <section id="configuration-of-the-wifi">
-<h2 id="configuration-of-the-wifi"><span class="section-number">4.1. </span>Configuration of the WiFi<a class="headerlink" href="#configuration-of-the-wifi" title="永久链接至标题">¶</a></h2>
+<h2 id="configuration-of-the-wifi"><span class="section-number">4.1. </span>Configuration of the WiFi<a class="headerlink" href="#configuration-of-the-wifi" title="Permalink to this heading">¶</a></h2>
 <p>Upon a fresh install the ESP8266 is configured in access point mode, so the
 AP_IF interface is active and the STA_IF interface is inactive.  You can
 configure the module to connect to your own network using the STA_IF interface.</p>
@@ -658,7 +659,7 @@ connect to your WiFi network:</p>
 </div>
 </section>
 <section id="sockets">
-<h2 id="sockets"><span class="section-number">4.2. </span>Sockets<a class="headerlink" href="#sockets" title="永久链接至标题">¶</a></h2>
+<h2 id="sockets"><span class="section-number">4.2. </span>Sockets<a class="headerlink" href="#sockets" title="Permalink to this heading">¶</a></h2>
 <p>Once the WiFi is set up the way to access the network is by using sockets.
 A socket represents an endpoint on a network device, and when two sockets are
 connected together communication can proceed.
@@ -718,10 +719,10 @@ and useful network tasks.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

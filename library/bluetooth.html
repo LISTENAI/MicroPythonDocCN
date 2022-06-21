@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -560,7 +561,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="module-bluetooth">
-<span id="bluetooth-low-level-bluetooth"></span><h1 id="library-bluetooth--page-root"><a class="reference internal" href="#library-bluetooth--page-root" title="bluetooth: Low-level Bluetooth radio functionality"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bluetooth</span></code></a> — low-level Bluetooth<a class="headerlink" href="#library-bluetooth--page-root" title="永久链接至标题">¶</a></h1>
+<span id="bluetooth-low-level-bluetooth"></span><h1 id="library-bluetooth--page-root"><a class="reference internal" href="#library-bluetooth--page-root" title="bluetooth: Low-level Bluetooth radio functionality"><code class="xref py py-mod docutils literal notranslate"><span class="pre">bluetooth</span></code></a> — low-level Bluetooth<a class="headerlink" href="#library-bluetooth--page-root" title="Permalink to this heading">¶</a></h1>
 <p>This module provides an interface to a Bluetooth controller on a board.
 Currently this supports Bluetooth Low Energy (BLE) in Central, Peripheral,
 Broadcaster, and Observer roles, as well as GATT Server and Client and L2CAP
@@ -574,10 +575,10 @@ building-blocks for higher-level abstractions such as specific device types.</p>
 methods and constants are subject to change.</p>
 </div>
 <section id="class-ble">
-<h2 id="class-ble">class BLE<a class="headerlink" href="#class-ble" title="永久链接至标题">¶</a></h2>
+<h2 id="class-ble">class BLE<a class="headerlink" href="#class-ble" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="constructor">
-<h2 id="constructor">Constructor<a class="headerlink" href="#constructor" title="永久链接至标题">¶</a></h2>
+<h2 id="constructor">Constructor<a class="headerlink" href="#constructor" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="bluetooth.BLE">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bluetooth.</span></span><span class="sig-name descname"><span class="pre">BLE</span></span><a class="headerlink" href="#bluetooth.BLE" title="永久链接至目标">¶</a></dt>
@@ -585,7 +586,7 @@ methods and constants are subject to change.</p>
 </dd></dl>
 </section>
 <section id="configuration">
-<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="永久链接至标题">¶</a></h2>
+<h2 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="bluetooth.BLE.active">
 <span class="sig-prename descclassname"><span class="pre">BLE.</span></span><span class="sig-name descname"><span class="pre">active</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">active</span></span></em>, <span class="optional">]</span><em class="sig-param"><span class="n"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.BLE.active" title="永久链接至目标">¶</a></dt>
@@ -655,7 +656,7 @@ false (i.e. allow “Legacy Pairing”).</p></li>
 </dd></dl>
 </section>
 <section id="event-handling">
-<h2 id="event-handling">Event Handling<a class="headerlink" href="#event-handling" title="永久链接至标题">¶</a></h2>
+<h2 id="event-handling">Event Handling<a class="headerlink" href="#event-handling" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="bluetooth.BLE.irq">
 <span class="sig-prename descclassname"><span class="pre">BLE.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">handler</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.BLE.irq" title="永久链接至目标">¶</a></dt>
@@ -850,7 +851,7 @@ used elsewhere in the program.  And to print data from within the IRQ handler,
 program.</p>
 </section>
 <section id="broadcaster-role-advertiser">
-<h2 id="broadcaster-role-advertiser">Broadcaster Role (Advertiser)<a class="headerlink" href="#broadcaster-role-advertiser" title="永久链接至标题">¶</a></h2>
+<h2 id="broadcaster-role-advertiser">Broadcaster Role (Advertiser)<a class="headerlink" href="#broadcaster-role-advertiser" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="bluetooth.BLE.gap_advertise">
 <span class="sig-prename descclassname"><span class="pre">BLE.</span></span><span class="sig-name descname"><span class="pre">gap_advertise</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">interval_us</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">adv_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resp_data</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">connectable</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.BLE.gap_advertise" title="永久链接至目标">¶</a></dt>
@@ -867,7 +868,7 @@ To clear the advertising payload pass an empty <code class="docutils literal not
 </dd></dl>
 </section>
 <section id="observer-role-scanner">
-<h2 id="observer-role-scanner">Observer Role (Scanner)<a class="headerlink" href="#observer-role-scanner" title="永久链接至标题">¶</a></h2>
+<h2 id="observer-role-scanner">Observer Role (Scanner)<a class="headerlink" href="#observer-role-scanner" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="bluetooth.BLE.gap_scan">
 <span class="sig-prename descclassname"><span class="pre">BLE.</span></span><span class="sig-name descname"><span class="pre">gap_scan</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">duration_ms</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">interval_us</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1280000</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">window_us</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">11250</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">active</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.BLE.gap_scan" title="永久链接至目标">¶</a></dt>
@@ -904,7 +905,7 @@ explicitly stopped), the <code class="docutils literal notranslate"><span class=
 </dd></dl>
 </section>
 <section id="central-role">
-<h2 id="central-role">Central Role<a class="headerlink" href="#central-role" title="永久链接至标题">¶</a></h2>
+<h2 id="central-role">Central Role<a class="headerlink" href="#central-role" title="Permalink to this heading">¶</a></h2>
 <p>A central device can connect to peripherals that it has discovered using the observer role (see <a class="reference internal" href="#bluetooth.BLE.gap_scan" title="bluetooth.BLE.gap_scan"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gap_scan</span></code></a>) or with a known address.</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="bluetooth.BLE.gap_connect">
@@ -926,7 +927,7 @@ of power usage.</p>
 </dd></dl>
 </section>
 <section id="peripheral-role">
-<h2 id="peripheral-role">Peripheral Role<a class="headerlink" href="#peripheral-role" title="永久链接至标题">¶</a></h2>
+<h2 id="peripheral-role">Peripheral Role<a class="headerlink" href="#peripheral-role" title="Permalink to this heading">¶</a></h2>
 <p>A peripheral device is expected to send connectable advertisements (see
 <a class="reference internal" href="#bluetooth.BLE.gap_advertise" title="bluetooth.BLE.gap_advertise"><code class="xref py py-meth docutils literal notranslate"><span class="pre">gap_advertise</span></code></a>). It will usually be acting as a GATT
 server, having first registered services and characteristics using
@@ -934,7 +935,7 @@ server, having first registered services and characteristics using
 <p>When a central connects, the <code class="docutils literal notranslate"><span class="pre">_IRQ_CENTRAL_CONNECT</span></code> event will be raised.</p>
 </section>
 <section id="central-peripheral-roles">
-<h2 id="central-peripheral-roles">Central &amp; Peripheral Roles<a class="headerlink" href="#central-peripheral-roles" title="永久链接至标题">¶</a></h2>
+<h2 id="central-peripheral-roles">Central &amp; Peripheral Roles<a class="headerlink" href="#central-peripheral-roles" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="bluetooth.BLE.gap_disconnect">
 <span class="sig-prename descclassname"><span class="pre">BLE.</span></span><span class="sig-name descname"><span class="pre">gap_disconnect</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn_handle</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.BLE.gap_disconnect" title="永久链接至目标">¶</a></dt>
@@ -949,7 +950,7 @@ otherwise.</p>
 </dd></dl>
 </section>
 <section id="gatt-server">
-<h2 id="gatt-server">GATT Server<a class="headerlink" href="#gatt-server" title="永久链接至标题">¶</a></h2>
+<h2 id="gatt-server">GATT Server<a class="headerlink" href="#gatt-server" title="Permalink to this heading">¶</a></h2>
 <p>A GATT server has a set of registered services. Each service may contain
 characteristics, which each have a value. Characteristics can also contain
 descriptors, which themselves have values.</p>
@@ -1068,7 +1069,7 @@ like the Nordic UART Service.</p>
 </dd></dl>
 </section>
 <section id="gatt-client">
-<h2 id="gatt-client">GATT Client<a class="headerlink" href="#gatt-client" title="永久链接至标题">¶</a></h2>
+<h2 id="gatt-client">GATT Client<a class="headerlink" href="#gatt-client" title="Permalink to this heading">¶</a></h2>
 <p>A GATT client can discover and read/write characteristics on a remote GATT server.</p>
 <p>It is more common for a central role device to act as the GATT client, however
 it’s also possible for a peripheral to act as a client in order to discover
@@ -1141,7 +1142,7 @@ peripheral initiating the MTU exchange. NimBLE works for both roles.</p>
 </dd></dl>
 </section>
 <section id="l2cap-connection-oriented-channels">
-<h2 id="l2cap-connection-oriented-channels">L2CAP connection-oriented-channels<a class="headerlink" href="#l2cap-connection-oriented-channels" title="永久链接至标题">¶</a></h2>
+<h2 id="l2cap-connection-oriented-channels">L2CAP connection-oriented-channels<a class="headerlink" href="#l2cap-connection-oriented-channels" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>This feature allows for socket-like data exchange between two BLE devices.
 Once the devices are connected via GAP, either device can listen for the
@@ -1215,7 +1216,7 @@ more channel credits and will be unable to send any more data.</p>
 </dd></dl>
 </section>
 <section id="pairing-and-bonding">
-<h2 id="pairing-and-bonding">Pairing and bonding<a class="headerlink" href="#pairing-and-bonding" title="永久链接至标题">¶</a></h2>
+<h2 id="pairing-and-bonding">Pairing and bonding<a class="headerlink" href="#pairing-and-bonding" title="Permalink to this heading">¶</a></h2>
 <blockquote>
 <div><p>Pairing allows a connection to be encrypted and authenticated via exchange
 of secrets (with optional MITM protection via passkey authentication).</p>
@@ -1256,10 +1257,10 @@ and then respond with either <code class="docutils literal notranslate"><span cl
 </dd></dl>
 </section>
 <section id="class-uuid">
-<h2 id="class-uuid">class UUID<a class="headerlink" href="#class-uuid" title="永久链接至标题">¶</a></h2>
+<h2 id="class-uuid">class UUID<a class="headerlink" href="#class-uuid" title="Permalink to this heading">¶</a></h2>
 </section>
 <section id="id1">
-<h2 id="id1">Constructor<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2 id="id1">Constructor<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="bluetooth.UUID">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">bluetooth.</span></span><span class="sig-name descname"><span class="pre">UUID</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#bluetooth.UUID" title="永久链接至目标">¶</a></dt>
@@ -1320,10 +1321,10 @@ and then respond with either <code class="docutils literal notranslate"><span cl
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

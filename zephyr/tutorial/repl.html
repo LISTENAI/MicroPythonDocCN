@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -425,10 +426,10 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-a-micropython-repl-prompt">
-<h1 id="zephyr-tutorial-repl--page-root"><span class="section-number">2. </span>在 MicroPython REPL 中交互<a class="headerlink" href="#zephyr-tutorial-repl--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="zephyr-tutorial-repl--page-root"><span class="section-number">2. </span>在 MicroPython REPL 中交互<a class="headerlink" href="#zephyr-tutorial-repl--page-root" title="Permalink to this heading">¶</a></h1>
 <p>REPL 是 Read Evaluate Print Loop 的缩写（代表 “读取-求值-输出” 循环，也被称作交互式顶层构件），它是交互式 MicroPython 提示的名称，你可以通过 Zephyr 在开发板上直接使用它。推荐使用 REPL 来测试你的代码和运行命令。</p>
 <section id="repl-over-the-serial-port">
-<h2 id="repl-over-the-serial-port"><span class="section-number">2.1. </span>在串口上的 REPL<a class="headerlink" href="#repl-over-the-serial-port" title="永久链接至标题">¶</a></h2>
+<h2 id="repl-over-the-serial-port"><span class="section-number">2.1. </span>在串口上的 REPL<a class="headerlink" href="#repl-over-the-serial-port" title="Permalink to this heading">¶</a></h2>
 <p>REPL 可以在开发板的设备树上声明的 <code class="docutils literal notranslate"><span class="pre">zephyr,console</span></code> 节点所代表的 UART 串口外设上使用。REPL 的串口波特率为 115200 。如果你的开发板有一个 USB-串口 转换器，那么你可以直接通过它连接到 PC 来使用 REPL</p>
 <p>你需要一个终端模拟器程序来通过 USB-串口 访问 REPL。对于一个 Linux 或 Mac 设备，打开终端并运行：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span> <span class="mi">115200</span>
@@ -437,7 +438,7 @@
 <p>如果不用 screen 的话，你也可以试试 <code class="docutils literal notranslate"><span class="pre">picocom</span></code> 或 <code class="docutils literal notranslate"><span class="pre">minicom</span></code> 。你可能需要用 <code class="docutils literal notranslate"><span class="pre">/dev/ttyACM1</span></code> 或一个更大的 <code class="docutils literal notranslate"><span class="pre">ttyACM</span></code> 数字。访问此设备可能需要额外的权限 （例如，<code class="docutils literal notranslate"><span class="pre">uucp</span></code> 组或 <code class="docutils literal notranslate"><span class="pre">dialout</span></code> 组，又或者使用 sudo ）。对于 Windows 的话，则应使用一个终端软件，例如 PuTTY 来通过串口会话连接到对应的 COM 端口。</p>
 </section>
 <section id="using-the-repl">
-<h2 id="using-the-repl"><span class="section-number">2.2. </span>使用 REPL<a class="headerlink" href="#using-the-repl" title="永久链接至标题">¶</a></h2>
+<h2 id="using-the-repl"><span class="section-number">2.2. </span>使用 REPL<a class="headerlink" href="#using-the-repl" title="Permalink to this heading">¶</a></h2>
 <p>通过你的串口程序（PuTTY, screen, picocom 诸如此类）打开串口后，你应当看到了一个带有闪烁光标的空白屏幕。按下回车（或重启开发板）后，你应该能看到以下内容：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">***</span> <span class="n">Booting</span> <span class="n">Zephyr</span> <span class="n">OS</span> <span class="n">build</span> <span class="n">zephyr</span><span class="o">-</span><span class="n">v2</span><span class="o">.</span><span class="mf">7.0</span>  <span class="o">***</span>
 <span class="n">MicroPython</span> <span class="n">v1</span><span class="o">.</span><span class="mi">17</span><span class="o">-</span><span class="mi">288</span><span class="o">-</span><span class="n">gb695f5a70</span><span class="o">-</span><span class="n">dirty</span> <span class="n">on</span> <span class="mi">2022</span><span class="o">-</span><span class="mi">01</span><span class="o">-</span><span class="mi">03</span><span class="p">;</span> <span class="n">zephyr</span><span class="o">-</span><span class="n">frdm_k64f</span> <span class="k">with</span> <span class="n">mk64f12</span>
@@ -524,10 +525,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -371,14 +372,14 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="module-zsensor">
-<span id="zsensor-zephyr-sensor-bindings"></span><h1 id="library-zephyr-zsensor--page-root"><a class="reference internal" href="#library-zephyr-zsensor--page-root" title="zsensor: zephyr sensor bindings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code></a> — Zephyr 传感器绑定<a class="headerlink" href="#library-zephyr-zsensor--page-root" title="永久链接至标题">¶</a></h1>
+<span id="zsensor-zephyr-sensor-bindings"></span><h1 id="library-zephyr-zsensor--page-root"><a class="reference internal" href="#library-zephyr-zsensor--page-root" title="zsensor: zephyr sensor bindings"><code class="xref py py-mod docutils literal notranslate"><span class="pre">zsensor</span></code></a> — Zephyr 传感器绑定<a class="headerlink" href="#library-zephyr-zsensor--page-root" title="Permalink to this heading">¶</a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">zsensor</span></code> 模块包含一个用于在 Zephyr 中使用传感器的类。</p>
 <section id="class-sensor-sensor-control-for-the-zephyr-port">
-<span id="zsensor-sensor"></span><h2 id="class-sensor-sensor-control-for-the-zephyr-port">Sensor 类 — Zephyr 适配端的传感器控制<a class="headerlink" href="#class-sensor-sensor-control-for-the-zephyr-port" title="永久链接至标题">¶</a></h2>
+<span id="zsensor-sensor"></span><h2 id="class-sensor-sensor-control-for-the-zephyr-port">Sensor 类 — Zephyr 适配端的传感器控制<a class="headerlink" href="#class-sensor-sensor-control-for-the-zephyr-port" title="Permalink to this heading">¶</a></h2>
 <p>这个类用于在你的开发板上访问传感器的数据。请参阅 Zephyr 文档以了解此处的传感器用法： <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html?highlight=sensor#sensors">传感器</a> 。</p>
 <p>在每个开发板，传感器在 Zephyr 设备树中定义。一个传感器可以测量的数量，称之为传感器通道。传感器可以有多个通道来表示一个属性的不同轴，或传感器可测量的不同属性。有关已定义的传感器通道，请参见下面的 <a class="reference external" href="Channels">通道</a>。</p>
 <section id="constructor">
-<h3 id="constructor">构造器<a class="headerlink" href="#constructor" title="永久链接至标题">¶</a></h3>
+<h3 id="constructor">构造器<a class="headerlink" href="#constructor" title="Permalink to this heading">¶</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="zsensor.Sensor">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">Sensor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">device_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor" title="永久链接至目标">¶</a></dt>
@@ -386,7 +387,7 @@
 </dd></dl>
 </section>
 <section id="methods">
-<h3 id="methods">函数<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h3>
+<h3 id="methods">函数<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="zsensor.Sensor.measure">
 <span class="sig-prename descclassname"><span class="pre">Sensor.</span></span><span class="sig-name descname"><span class="pre">measure</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#zsensor.Sensor.measure" title="永久链接至目标">¶</a></dt>
@@ -414,7 +415,7 @@
 </dd></dl>
 </section>
 <section id="channels">
-<h3 id="channels">通道<a class="headerlink" href="#channels" title="永久链接至标题">¶</a></h3>
+<h3 id="channels">通道<a class="headerlink" href="#channels" title="Permalink to this heading">¶</a></h3>
 <dl class="py data">
 <dt class="sig sig-object py" id="zsensor.ACCEL_X">
 <span class="sig-prename descclassname"><span class="pre">zsensor.</span></span><span class="sig-name descname"><span class="pre">ACCEL_X</span></span><a class="headerlink" href="#zsensor.ACCEL_X" title="永久链接至目标">¶</a></dt>
@@ -541,10 +542,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

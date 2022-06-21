@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -229,7 +230,7 @@
     <li class="md-nav__item">
     
     
-      <a href="memorymgt.html" class="md-nav__link">Memory Management</a>
+      <a href="memorymgt.html" class="md-nav__link">内存管理</a>
       
     
     </li>
@@ -440,7 +441,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-external-c-modules">
-<span id="cmodules"></span><h1 id="develop-cmodules--page-root">MicroPython external C modules<a class="headerlink" href="#develop-cmodules--page-root" title="永久链接至标题">¶</a></h1>
+<span id="cmodules"></span><h1 id="develop-cmodules--page-root">MicroPython external C modules<a class="headerlink" href="#develop-cmodules--page-root" title="Permalink to this heading">¶</a></h1>
 <p>When developing modules for use with MicroPython you may find you run into
 limitations with the Python environment, often due to an inability to access
 certain hardware resources or Python speed limitations.</p>
@@ -462,7 +463,7 @@ method of building, either Make or CMake.</p>
 code that is placed in a .mpy file, which can be imported dynamically in to
 a running MicroPython system without the need to recompile the main firmware.</p>
 <section id="structure-of-an-external-c-module">
-<h2 id="structure-of-an-external-c-module">Structure of an external C module<a class="headerlink" href="#structure-of-an-external-c-module" title="永久链接至标题">¶</a></h2>
+<h2 id="structure-of-an-external-c-module">Structure of an external C module<a class="headerlink" href="#structure-of-an-external-c-module" title="Permalink to this heading">¶</a></h2>
 <p>A MicroPython user C module is a directory with the following files:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">*.c</span></code> / <code class="docutils literal notranslate"><span class="pre">*.cpp</span></code> / <code class="docutils literal notranslate"><span class="pre">*.h</span></code> source code files for your module.</p>
@@ -507,7 +508,7 @@ The library should then be linked to the <code class="docutils literal notransla
 </ul>
 </section>
 <section id="basic-example">
-<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="永久链接至标题">¶</a></h2>
+<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permalink to this heading">¶</a></h2>
 <p>This simple module named <code class="docutils literal notranslate"><span class="pre">cexample</span></code> provides a single function
 <code class="docutils literal notranslate"><span class="pre">cexample.add_ints(a,</span> <span class="pre">b)</span></code> which adds the two integer args together and returns
 the result. It can be found in the MicroPython source tree
@@ -528,7 +529,7 @@ works in the same way but shows one way of mixing C and C++ code
 in MicroPython.</p>
 </section>
 <section id="compiling-the-cmodule-into-micropython">
-<h2 id="compiling-the-cmodule-into-micropython">Compiling the cmodule into MicroPython<a class="headerlink" href="#compiling-the-cmodule-into-micropython" title="永久链接至标题">¶</a></h2>
+<h2 id="compiling-the-cmodule-into-micropython">Compiling the cmodule into MicroPython<a class="headerlink" href="#compiling-the-cmodule-into-micropython" title="Permalink to this heading">¶</a></h2>
 <p>To build such a module, compile MicroPython (see <a class="reference external" href="https://github.com/micropython/micropython/wiki/Getting-Started">getting started</a>),
 applying 2 modifications:</p>
 <ol class="arabic simple">
@@ -654,7 +655,7 @@ structures.  If not done correctly it will compile but importing will
 fail to find the module.</p>
 </section>
 <section id="module-usage-in-micropython">
-<h2 id="module-usage-in-micropython">Module usage in MicroPython<a class="headerlink" href="#module-usage-in-micropython" title="永久链接至标题">¶</a></h2>
+<h2 id="module-usage-in-micropython">Module usage in MicroPython<a class="headerlink" href="#module-usage-in-micropython" title="Permalink to this heading">¶</a></h2>
 <p>Once built into your copy of MicroPython, the module
 can now be accessed in Python just like any other builtin module, e.g.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cexample</span>
@@ -712,10 +713,10 @@ can now be accessed in Python just like any other builtin module, e.g.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

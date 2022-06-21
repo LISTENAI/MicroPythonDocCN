@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -465,10 +466,10 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="the-micropython-interactive-interpreter-mode-aka-repl">
-<h1 id="reference-repl--page-root">MicroPython 交互式解释器模式 （又名 REPL）<a class="headerlink" href="#reference-repl--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="reference-repl--page-root">MicroPython 交互式解释器模式 （又名 REPL）<a class="headerlink" href="#reference-repl--page-root" title="Permalink to this heading">¶</a></h1>
 <p>本节介绍 MicroPython 交互式解释器模式的一些特性。一个常用的术语是 REPL (read-eval-print-loop)，它将用来指代这个交互式提示。</p>
 <section id="auto-indent">
-<h2 id="auto-indent">自动缩进<a class="headerlink" href="#auto-indent" title="永久链接至标题">¶</a></h2>
+<h2 id="auto-indent">自动缩进<a class="headerlink" href="#auto-indent" title="Permalink to this heading">¶</a></h2>
 <p>当输入以冒号结尾的 python 语句时（例如 if、for、while），提示符将变为三个点（…），光标将缩进 4 个空格。当你按下回车键时，下一行将在相同缩进或适当的附加缩进后继续。如果你按退格键，那么它将撤消一级缩进。</p>
 <p>如果你的光标一直回到开头，则按 RETURN （回车）将执行您输入的代码。下方显示了输入 for 语句后你会看到的内容（下划线表示光标结束的位置）：</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">30</span><span class="p">):</span>
@@ -504,7 +505,7 @@
 <p>如果前两行都是空格，则不会应用自动缩进。这意味着你可以通过按两次 RETURN （回车）结束输入复合语句，然后按第三次时将结束输入并执行。</p>
 </section>
 <section id="auto-completion">
-<h2 id="auto-completion">自动补全<a class="headerlink" href="#auto-completion" title="永久链接至标题">¶</a></h2>
+<h2 id="auto-completion">自动补全<a class="headerlink" href="#auto-completion" title="Permalink to this heading">¶</a></h2>
 <p>在 REPL 中输入命令时，如果到当前行输入的内容能对应于某些名称的开头，则按 TAB 将显示可能输入的内容。例如，首先通过输入 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">machine</span></code> 并按 RETURN （回车）来导入机器模块。然后输入 <code class="docutils literal notranslate"><span class="pre">m</span></code> 并按 TAB，它应该能补全为 <a class="reference internal" href="../library/machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> 。此时输入一个句点 <code class="docutils literal notranslate"><span class="pre">.</span></code> 并再次按 TAB。你应该会看到如下内容：</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">machine</span><span class="o">.</span>
 <span class="go">__name__        info            unique_id       reset</span>
@@ -521,7 +522,7 @@
 </div>
 </section>
 <section id="interrupting-a-running-program">
-<h2 id="interrupting-a-running-program">中断正在运行的程序<a class="headerlink" href="#interrupting-a-running-program" title="永久链接至标题">¶</a></h2>
+<h2 id="interrupting-a-running-program">中断正在运行的程序<a class="headerlink" href="#interrupting-a-running-program" title="Permalink to this heading">¶</a></h2>
 <p>你可以通过按 Ctrl-C 来中断正在运行的程序。这将引发一个 KeyboardInterrupt ，并它会带你回到 REPL，前提是你的程序不会捕获 KeyboardInterrupt 异常。</p>
 <p>例如：</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1000000</span><span class="p">):</span>
@@ -543,7 +544,7 @@
 </div>
 </section>
 <section id="paste-mode">
-<h2 id="paste-mode">粘贴模式<a class="headerlink" href="#paste-mode" title="永久链接至标题">¶</a></h2>
+<h2 id="paste-mode">粘贴模式<a class="headerlink" href="#paste-mode" title="Permalink to this heading">¶</a></h2>
 <p>如果你想将一些代码粘贴到终端窗口中，自动缩进功能会表现得很糟糕。例如，如果你有以下 python 代码：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">'This is a test to show paste mode'</span><span class="p">)</span>
@@ -577,7 +578,7 @@
 <p>在粘贴模式中，粘贴空白行也是。粘贴的文本实际上作为文件来编译。按下 Ctrl-D 退出粘贴模式时，则启动编译。</p>
 </section>
 <section id="soft-reset">
-<h2 id="soft-reset">软复位<a class="headerlink" href="#soft-reset" title="永久链接至标题">¶</a></h2>
+<h2 id="soft-reset">软复位<a class="headerlink" href="#soft-reset" title="Permalink to this heading">¶</a></h2>
 <p>软复位将重置 python 解释器，但不会重置你连接到 MicroPython 板的方式（例如 USB 串口或 Wifi）。</p>
 <p>你可以通过按 Ctrl-D 从 REPL 执行软复位，或者通过从你的 python 代码执行：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">machine</span><span class="o">.</span><span class="n">soft_reset</span><span class="p">()</span>
@@ -609,7 +610,7 @@
 </div>
 </section>
 <section id="the-special-variable-underscore">
-<h2 id="the-special-variable-underscore">特殊变量 _ （下划线）<a class="headerlink" href="#the-special-variable-underscore" title="永久链接至标题">¶</a></h2>
+<h2 id="the-special-variable-underscore">特殊变量 _ （下划线）<a class="headerlink" href="#the-special-variable-underscore" title="Permalink to this heading">¶</a></h2>
 <p>当你使用 REPL 时，你可以执行计算并查看结果。MicroPython 将前一条语句的结果存储在变量 _（下划线）中。因此，你可以使用下划线将结果保存在变量中。例如：</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">+</span> <span class="mi">5</span>
 <span class="go">15</span>
@@ -621,7 +622,7 @@
 </div>
 </section>
 <section id="raw-mode-and-raw-paste-mode">
-<h2 id="raw-mode-and-raw-paste-mode">Raw 模式和 Raw 粘贴模式<a class="headerlink" href="#raw-mode-and-raw-paste-mode" title="永久链接至标题">¶</a></h2>
+<h2 id="raw-mode-and-raw-paste-mode">Raw 模式和 Raw 粘贴模式<a class="headerlink" href="#raw-mode-and-raw-paste-mode" title="Permalink to this heading">¶</a></h2>
 <p>Raw 模式（也称为 Raw REPL），它并不是人们通常会使用的东西。它旨在用于编写程序，本质上类似于粘贴模式，关闭了输出，并且拥有可选的流控制。</p>
 <p>使用 Ctrl-A 即可进入 Raw 模式。然后发送你的 python 代码，然后按下 Ctrl-D。Ctrl-D 代表 ‘OK’ 确认，接着 python 代码将被编译和执行。任何输出（或错误）都将被发回。按下 Ctrl-B 即可离开原始模式并返回常规（又名友好）的 REPL。</p>
 <p>Raw 粘贴模式是 Raw REPL 中的一种附加模式，它包括流控制，并在收到代码时就对其进行编译。这使得它在将代码高速传输到设备时更加健壮，并且在接收时也使用更少的 RAM，因为它不需要在编译之前逐字存储代码的副本（与标准 raw 模式不同）</p>
@@ -725,10 +726,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

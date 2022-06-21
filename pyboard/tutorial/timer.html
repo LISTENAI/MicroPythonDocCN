@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -569,7 +570,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="the-timers">
-<h1 id="pyboard-tutorial-timer--page-root"><span class="section-number">9. </span>The Timers<a class="headerlink" href="#pyboard-tutorial-timer--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="pyboard-tutorial-timer--page-root"><span class="section-number">9. </span>The Timers<a class="headerlink" href="#pyboard-tutorial-timer--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The pyboard has 14 timers which each consist of an independent counter
 running at a user-defined frequency.  They can be set up to run a function
 at specific intervals.
@@ -603,7 +604,7 @@ numbers are set to make the timer trigger at 10 Hz: the source frequency
 of the timer is 84MHz (found by running <code class="docutils literal notranslate"><span class="pre">tim.source_freq()</span></code>) so we
 get 84MHz / 625 / 13440 = 10Hz.</p>
 <section id="timer-counter">
-<h2 id="timer-counter"><span class="section-number">9.1. </span>Timer counter<a class="headerlink" href="#timer-counter" title="永久链接至标题">¶</a></h2>
+<h2 id="timer-counter"><span class="section-number">9.1. </span>Timer counter<a class="headerlink" href="#timer-counter" title="Permalink to this heading">¶</a></h2>
 <p>So what can we do with our timer?  The most basic thing is to get the
 current value of its counter:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tim</span><span class="o">.</span><span class="n">counter</span><span class="p">()</span>
@@ -613,7 +614,7 @@ current value of its counter:</p>
 <p>This counter will continuously change, and counts up.</p>
 </section>
 <section id="timer-callbacks">
-<h2 id="timer-callbacks"><span class="section-number">9.2. </span>Timer callbacks<a class="headerlink" href="#timer-callbacks" title="永久链接至标题">¶</a></h2>
+<h2 id="timer-callbacks"><span class="section-number">9.2. </span>Timer callbacks<a class="headerlink" href="#timer-callbacks" title="Permalink to this heading">¶</a></h2>
 <p>The next thing we can do is register a callback function for the timer to
 execute when it triggers (see the <a class="reference internal" href="switch.html#pyboard-tutorial-switch"><span class="std std-ref">switch tutorial</span></a>
 for an introduction to callback functions):</p>
@@ -645,7 +646,7 @@ from within the callback function.</p>
 to use the pyboard for other things while these timers are running.</p>
 </section>
 <section id="making-a-microsecond-counter">
-<h2 id="making-a-microsecond-counter"><span class="section-number">9.3. </span>Making a microsecond counter<a class="headerlink" href="#making-a-microsecond-counter" title="永久链接至标题">¶</a></h2>
+<h2 id="making-a-microsecond-counter"><span class="section-number">9.3. </span>Making a microsecond counter<a class="headerlink" href="#making-a-microsecond-counter" title="Permalink to this heading">¶</a></h2>
 <p>You can use a timer to create a microsecond counter, which might be
 useful when you are doing something which requires accurate timing.
 We will use timer 2 for this, since timer 2 has a 32-bit counter (so
@@ -724,10 +725,10 @@ zero.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

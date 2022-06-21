@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -47,13 +47,14 @@
   
   
   
-    <title>Memory Management &#8212; MicroPython 1.18 文档</title>
+    <title>内存管理 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -97,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Memory Management </span>
+          <span class="md-header-nav__topic"> 内存管理 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -229,19 +230,19 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Memory Management </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 内存管理 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Memory Management</a>
+      <a href="#" class="md-nav__link md-nav__link--active">内存管理</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-memorymgt--page-root" class="md-nav__link">Memory Management</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-memorymgt--page-root" class="md-nav__link">内存管理</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-object-model" class="md-nav__link">The object model</a>
+        <li class="md-nav__item"><a href="#the-object-model" class="md-nav__link">对象模型</a>
         </li>
-        <li class="md-nav__item"><a href="#allocation-of-objects" class="md-nav__link">Allocation of objects</a>
+        <li class="md-nav__item"><a href="#allocation-of-objects" class="md-nav__link">对象分配</a>
         </li></ul>
             </nav>
         </li>
@@ -251,14 +252,14 @@
     <li class="md-nav__item">
     
     
-      <a href="#the-object-model" class="md-nav__link">The object model</a>
+      <a href="#the-object-model" class="md-nav__link">对象模型</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#allocation-of-objects" class="md-nav__link">Allocation of objects</a>
+      <a href="#allocation-of-objects" class="md-nav__link">对象分配</a>
       
     
     </li></ul>
@@ -385,11 +386,11 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-memorymgt--page-root" class="md-nav__link">Memory Management</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-memorymgt--page-root" class="md-nav__link">内存管理</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-object-model" class="md-nav__link">The object model</a>
+        <li class="md-nav__item"><a href="#the-object-model" class="md-nav__link">对象模型</a>
         </li>
-        <li class="md-nav__item"><a href="#allocation-of-objects" class="md-nav__link">Allocation of objects</a>
+        <li class="md-nav__item"><a href="#allocation-of-objects" class="md-nav__link">对象分配</a>
         </li></ul>
             </nav>
         </li>
@@ -403,25 +404,15 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="memory-management">
-<span id="memorymanagement"></span><h1 id="develop-memorymgt--page-root">Memory Management<a class="headerlink" href="#develop-memorymgt--page-root" title="永久链接至标题">¶</a></h1>
-<p>Unlike programming languages such as C/C++, MicroPython hides memory management
-details from the developer by supporting automatic memory management.
-Automatic memory management is a technique used by operating systems or applications to automatically manage
-the allocation and deallocation of memory. This eliminates challenges such as forgetting to
-free the memory allocated to an object. Automatic memory management also avoids the critical issue of using memory
-that is already released. Automatic memory management takes many forms, one of them being
-garbage collection (GC).</p>
-<p>The garbage collector usually has two responsibilities;</p>
+<span id="memorymanagement"></span><h1 id="develop-memorymgt--page-root">内存管理<a class="headerlink" href="#develop-memorymgt--page-root" title="Permalink to this heading">¶</a></h1>
+<p>不像 C/C++ 等编程语言，MicroPython 通过支持自动内存管理的方式向开发者隐藏了内存管理的细节。自动内存管理是操作系统或应用程序用于自动管理内存分配和释放的一种技术。这避免了诸如忘记释放分配给对象的内存等问题。自动内存管理还避免了使用已释放内存的关键问题。自动内存管理有多种形式，垃圾回收机制（GC）是其中一种。</p>
+<p>垃圾回收器通常有两个职责：</p>
 <ol class="arabic simple">
-<li><p>Allocate new objects in available memory.</p></li>
-<li><p>Free unused memory.</p></li>
+<li><p>分配新的对象到可用内存中。</p></li>
+<li><p>释放未使用的内存。</p></li>
 </ol>
-<p>There are many GC algorithms but MicroPython uses the
-<a class="reference external" href="https://en.wikipedia.org/wiki/Tracing_garbage_collection#Basic_algorithm">Mark and Sweep</a>
-policy for managing memory. This algorithm has a mark phase that traverses the heap marking all
-live objects while the sweep phase goes through the heap reclaiming all unmarked objects.</p>
-<p>Garbage collection functionality in MicroPython is available through the <code class="docutils literal notranslate"><span class="pre">gc</span></code> built-in
-module:</p>
+<p>业界存在许多种垃圾回收算法，而 MicroPython 使用 <a class="reference external" href="https://en.wikipedia.org/wiki/Tracing_garbage_collection#Basic_algorithm">标记与扫描</a> 算法来管理内存。该算法的标记阶段遍历堆栈，标记所有活动对象；扫描阶段遍历堆栈，释放所有未标记的对象。</p>
+<p>MicroPython 中可通过 <code class="docutils literal notranslate"><span class="pre">gc</span></code> 内建模块来访问垃圾回收功能：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; <span class="nv">x</span> <span class="o">=</span> <span class="m">5</span>
 &gt;&gt;&gt; x
 <span class="m">5</span>
@@ -437,48 +428,29 @@ module:</p>
 &gt;&gt;&gt;
 </pre></div>
 </div>
-<p>Even when <code class="docutils literal notranslate"><span class="pre">gc.disable()</span></code> is invoked, collection can be triggered with <code class="docutils literal notranslate"><span class="pre">gc.collect()</span></code>.</p>
+<p>即使 <code class="docutils literal notranslate"><span class="pre">gc.disable()</span></code> 已被调用，也可以使用 <code class="docutils literal notranslate"><span class="pre">gc.collect()</span></code> 触发垃圾回收。</p>
 <section id="the-object-model">
-<h2 id="the-object-model">The object model<a class="headerlink" href="#the-object-model" title="永久链接至标题">¶</a></h2>
-<p>All MicroPython objects are referred to by the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> data type.
-This is usually word-sized (i.e. the same size as a pointer on the target architecture),
-and can be typically 32-bit (STM32, nRF, ESP32, Unix x86) or 64-bit (Unix x64).
-It can also be greater than a word-size for certain object representations, for
-example <code class="docutils literal notranslate"><span class="pre">OBJ_REPR_D</span></code> has a 64-bit sized <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> on a 32-bit architecture.</p>
-<p>An <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> represents a MicroPython object, for example an integer, float, type, dict or
-class instance. Some objects, like booleans and small integers, have their value stored directly
-in the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> value and do not require additional memory. Other objects have their value
-store elsewhere in memory (for example on the garbage-collected heap) and their <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> contains
-a pointer to that memory. A portion of <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> is the tag which tells what type of object it is.</p>
-<p>See <code class="docutils literal notranslate"><span class="pre">py/mpconfig.h</span></code> for the specific details of the available representations.</p>
-<p><strong>Pointer tagging</strong></p>
-<p>Because pointers are word-aligned, when they are stored in an <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> the
-lower bits of this object handle will be zero.  For example on a 32-bit architecture
-the lower 2 bits will be zero:</p>
+<h2 id="the-object-model">对象模型<a class="headerlink" href="#the-object-model" title="Permalink to this heading">¶</a></h2>
+<p>所有 MicroPython 对象在 C 中都是通过 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 数据类型引用。它通常是一个字长（即与架构相同大小的指针），可以是 32-bit (STM32, nRF, ESP32, Unix x86) 或 64-bit (Unix x64)。对于某些特定对象，它也可以比字长大，例如在 32-bit 架构中 <code class="docutils literal notranslate"><span class="pre">OBJ_REPR_D</span></code> 为 64-bit 大小的 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code>。</p>
+<p>一个 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 对象代表一个 MicroPython 对象，例如整数、浮点数、类型、字典或类实例。某些对象（例如布尔值和小整数）在 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 中直接存储其值，不需要额外的内存。其他对象的值存储在其他内存中（例如垃圾回收堆栈），其 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 包含一个指向该内存的指针。<code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 中的一部分信息用于标识它是什么类型的对象。</p>
+<p>参考 <code class="docutils literal notranslate"><span class="pre">py/mpconfig.h</span></code> 查看可用的对象表示的具体细节。</p>
+<p><strong>指针标记</strong></p>
+<p>因为指针是字长对齐的，当它们存储在 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 中时，这个对象的低位将会被设置为 0。例如 32-bit 架构下，这个位将会被设置为 0：</p>
 <p><code class="docutils literal notranslate"><span class="pre">********|********|********|******00</span></code></p>
-<p>These bits are reserved for purposes of storing a tag. The tag stores extra information as
-opposed to introducing a new field to store that information in the object, which may be
-inefficient.  In MicroPython the tag tells if we are dealing with a small integer, interned
-(small) string or a concrete object, and different semantics apply to each of these.</p>
-<p>For small integers the mapping is this:</p>
+<p>这些位用于存储标记信息。该标记存储额外的信息，并非低效地在对象中新增一个字段来存储这些信息。在 MicroPython 中，这一标签告诉我们是在处理小整数、内部（小）字符串或具体对象，并且不同的语义都可一一对应。</p>
+<p>对于小整数，这一对应关系如下：</p>
 <p><code class="docutils literal notranslate"><span class="pre">********|********|********|*******1</span></code></p>
-<p>Where the asterisks hold the actual integer value.  For an interned string or an immediate
-object (e.g. <code class="docutils literal notranslate"><span class="pre">True</span></code>) the layout of the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> value is, respectively:</p>
+<p>其中星号表示具体的整数值。对于内部字符串或具体对象（例如 <code class="docutils literal notranslate"><span class="pre">True</span></code> ），<code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 的值的布局，分别如下：</p>
 <p><code class="docutils literal notranslate"><span class="pre">********|********|********|*****010</span></code></p>
 <p><code class="docutils literal notranslate"><span class="pre">********|********|********|*****110</span></code></p>
-<p>While a concrete object that is none of the above takes the form:</p>
+<p>当一个具体对象不是上述任何一个时，它的布局如下：</p>
 <p><code class="docutils literal notranslate"><span class="pre">********|********|********|******00</span></code></p>
-<p>The stars here correspond to the address of the concrete object in memory.</p>
+<p>这些星号表示具体对象在内存中的地址。</p>
 </section>
 <section id="allocation-of-objects">
-<h2 id="allocation-of-objects">Allocation of objects<a class="headerlink" href="#allocation-of-objects" title="永久链接至标题">¶</a></h2>
-<p>The value of a small integer is stored directly in the <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> and will be
-allocated in-place, not on the heap or elsewhere.  As such, creation of small
-integers does not affect the heap.  Similarly for interned strings that already have
-their textual data stored elsewhere, and immediate values like <code class="docutils literal notranslate"><span class="pre">None</span></code>, <code class="docutils literal notranslate"><span class="pre">False</span></code>
-and <code class="docutils literal notranslate"><span class="pre">True</span></code>.</p>
-<p>Everything else which is a concrete object is allocated on the heap and its object structure is such that
-a field is reserved in the object header to store the type of the object.</p>
+<h2 id="allocation-of-objects">对象分配<a class="headerlink" href="#allocation-of-objects" title="Permalink to this heading">¶</a></h2>
+<p>小整数的值直接存储在 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 中，而不是堆或其他地方。因此，小整数的创建不会影响堆内存。同样地，内部字符串已经存储在其他地方，以及 <code class="docutils literal notranslate"><span class="pre">None</span></code>、<code class="docutils literal notranslate"><span class="pre">False</span></code> 和 <code class="docutils literal notranslate"><span class="pre">True</span></code> 等等的即时生效的值也不会影响堆内存。</p>
+<p>所有其他的具体对象都会在堆内存中分配，并且其对象结构中会保留一个字段来存储对象的类型。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+++++++++++
 +         +
 + <span class="nb">type</span>    + object header
@@ -490,27 +462,19 @@ a field is reserved in the object header to store the type of the object.</p>
 +++++++++++
 </pre></div>
 </div>
-<p>The heap’s smallest unit of allocation is a block, which is four machine words in
-size (16 bytes on a 32-bit machine, 32 bytes on a 64-bit machine).
-Another structure also allocated on the heap tracks the allocation of
-objects in each block. This structure is called a <em>bitmap</em>.</p>
+<p>堆内存中最小的分配单位是一个块，它是四个机器字（32 位机器上是 16 字节，64 位机器上是 32 字节）的大小。堆内存中还有一个结构跟踪每个块中分配的对象。这个结构叫做 <em>位图 bitmap</em>。</p>
 <img alt="../_images/bitmap.png" src="../_images/bitmap.png"/>
-<p>The bitmap tracks whether a block is “free” or “in use” and use two bits to track this state
-for each block.</p>
-<p>The mark-sweep garbage collector manages the objects allocated on the heap, and also
-utilises the bitmap to mark objects that are still in use.
-See <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/gc.c">py/gc.c</a>
-for the full implementation of these details.</p>
-<p><strong>Allocation: heap layout</strong></p>
-<p>The heap is arranged such that it consists of blocks in pools. A block
-can have different properties:</p>
+<p>位图跟踪块是否是 “空闲” 或 “使用” 的状态，并且使用两个位来跟踪这个状态。</p>
+<p>「标记-清扫垃圾收集器」会管理堆内存中分配的对象，并且使用位图来标记对象是否仍然在使用。请参见 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/gc.c">py/gc.c</a> 查看这些细节的完整实现。</p>
+<p><strong>分配：堆布局</strong></p>
+<p>堆内存中的块是池化的，每个块可以有不同的属性：</p>
 <ul class="simple">
-<li><p><em>ATB(allocation table byte):</em> If set, then the block is a normal block</p></li>
-<li><p><em>FREE:</em> Free block</p></li>
-<li><p><em>HEAD:</em> Head of a chain of blocks</p></li>
-<li><p><em>TAIL:</em> In the tail of a chain of blocks</p></li>
-<li><p><em>MARK :</em> Marked head block</p></li>
-<li><p><em>FTB(finaliser table byte):</em> If set, then the block has a finaliser</p></li>
+<li><p><em>ATB (allocation table byte 分配表字节):</em> 如果设置，则该块是一个普通块</p></li>
+<li><p><em>FREE:</em> 空闲块</p></li>
+<li><p><em>HEAD:</em> 块链的头部</p></li>
+<li><p><em>TAIL:</em> 块链的尾部</p></li>
+<li><p><em>MARK :</em> 标记的头部块</p></li>
+<li><p><em>FTB (finaliser table byte 最终化表字节):</em> 如果设置，则该块有一个最终化</p></li>
 </ul>
 </section>
 </section>
@@ -562,10 +526,10 @@ can have different properties:</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

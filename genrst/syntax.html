@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -445,12 +446,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="syntax">
-<h1 id="genrst-syntax--page-root">Syntax<a class="headerlink" href="#genrst-syntax--page-root" title="永久链接至标题">¶</a></h1>
-<p>Generated Mon 18 Apr 2022 11:09:19 UTC</p>
+<h1 id="genrst-syntax--page-root">Syntax<a class="headerlink" href="#genrst-syntax--page-root" title="Permalink to this heading">¶</a></h1>
+<p>Generated Tue 21 Jun 2022 04:27:16 UTC</p>
 <section id="operators">
-<h2 id="operators">Operators<a class="headerlink" href="#operators" title="永久链接至标题">¶</a></h2>
+<h2 id="operators">Operators<a class="headerlink" href="#operators" title="Permalink to this heading">¶</a></h2>
 <section id="micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror">
-<span id="cpydiff-syntax-assign-expr"></span><h3 id="micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror">MicroPython allows using := to assign to the variable of a comprehension, CPython raises a SyntaxError.<a class="headerlink" href="#micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-syntax-assign-expr"></span><h3 id="micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror">MicroPython allows using := to assign to the variable of a comprehension, CPython raises a SyntaxError.<a class="headerlink" href="#micropython-allows-using-to-assign-to-the-variable-of-a-comprehension-cpython-raises-a-syntaxerror" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is optimised for code size and doesn’t check this case.</p>
 <p><strong>Workaround:</strong> Do not rely on this behaviour if writing CPython compatible code.</p>
 <p>Sample code:</p>
@@ -458,10 +459,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 63%"/>
-<col style="width: 37%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -481,9 +478,9 @@
 </section>
 </section>
 <section id="spaces">
-<h2 id="spaces">Spaces<a class="headerlink" href="#spaces" title="永久链接至标题">¶</a></h2>
+<h2 id="spaces">Spaces<a class="headerlink" href="#spaces" title="Permalink to this heading">¶</a></h2>
 <section id="upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t">
-<span id="cpydiff-syntax-spaces"></span><h3 id="upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t">uPy requires spaces between literal numbers and keywords, CPy doesn’t<a class="headerlink" href="#upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-syntax-spaces"></span><h3 id="upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t">uPy requires spaces between literal numbers and keywords, CPy doesn’t<a class="headerlink" href="#upy-requires-spaces-between-literal-numbers-and-keywords-cpy-doesn-t" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">eval</span><span class="p">(</span><span class="s2">"1and 0"</span><span class="p">))</span>
@@ -500,10 +497,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -524,18 +517,14 @@
 </section>
 </section>
 <section id="unicode">
-<h2 id="unicode">Unicode<a class="headerlink" href="#unicode" title="永久链接至标题">¶</a></h2>
+<h2 id="unicode">Unicode<a class="headerlink" href="#unicode" title="Permalink to this heading">¶</a></h2>
 <section id="unicode-name-escapes-are-not-implemented">
-<span id="cpydiff-syntax-unicode-nameesc"></span><h3 id="unicode-name-escapes-are-not-implemented">Unicode name escapes are not implemented<a class="headerlink" href="#unicode-name-escapes-are-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-syntax-unicode-nameesc"></span><h3 id="unicode-name-escapes-are-not-implemented">Unicode name escapes are not implemented<a class="headerlink" href="#unicode-name-escapes-are-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\N{LATIN SMALL LETTER A}</span><span class="s2">"</span><span class="p">)</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -602,10 +591,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

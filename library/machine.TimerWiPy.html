@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -426,7 +427,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-timerwipy-control-hardware-timers">
-<span id="machine-timerwipy"></span><h1 id="library-machine-timerwipy--page-root">class TimerWiPy – control hardware timers<a class="headerlink" href="#library-machine-timerwipy--page-root" title="永久链接至标题">¶</a></h1>
+<span id="machine-timerwipy"></span><h1 id="library-machine-timerwipy--page-root">class TimerWiPy – control hardware timers<a class="headerlink" href="#library-machine-timerwipy--page-root" title="Permalink to this heading">¶</a></h1>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>This class is a non-standard Timer implementation for the WiPy.
@@ -450,7 +451,7 @@ exceptions raised within a handler don’t give much information.  See
 limitation.</p>
 </div>
 <section id="constructors">
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="machine.TimerWiPy">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">TimerWiPy</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.TimerWiPy" title="永久链接至目标">¶</a></dt>
@@ -459,7 +460,7 @@ virtual timer (if supported by a board).</p>
 </dd></dl>
 </section>
 <section id="methods">
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="machine.TimerWiPy.init">
 <span class="sig-prename descclassname"><span class="pre">TimerWiPy.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">16</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.TimerWiPy.init" title="永久链接至目标">¶</a></dt>
@@ -537,11 +538,11 @@ support PWM functionality are the following:</p>
 </section>
 </section>
 <section id="class-timerchannel-setup-a-channel-for-a-timer">
-<h1 id="class-timerchannel-setup-a-channel-for-a-timer">class TimerChannel — setup a channel for a timer<a class="headerlink" href="#class-timerchannel-setup-a-channel-for-a-timer" title="永久链接至标题">¶</a></h1>
+<h1 id="class-timerchannel-setup-a-channel-for-a-timer">class TimerChannel — setup a channel for a timer<a class="headerlink" href="#class-timerchannel-setup-a-channel-for-a-timer" title="Permalink to this heading">¶</a></h1>
 <p>Timer channels are used to generate/capture a signal using a timer.</p>
 <p>TimerChannel objects are created using the Timer.channel() method.</p>
 <section id="id1">
-<h2 id="id1">Methods<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2 id="id1">Methods<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="machine.timerchannel.irq">
 <span class="sig-prename descclassname"><span class="pre">timerchannel.</span></span><span class="sig-name descname"><span class="pre">irq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trigger</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">priority</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">handler</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.timerchannel.irq" title="永久链接至目标">¶</a></dt>
@@ -589,7 +590,7 @@ where 10000 would represent 100.00, 5050 represents 50.50, and so on.</p>
 </dd></dl>
 </section>
 <section id="constants">
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="machine.TimerWiPy.ONE_SHOT">
 <span class="sig-prename descclassname"><span class="pre">TimerWiPy.</span></span><span class="sig-name descname"><span class="pre">ONE_SHOT</span></span><a class="headerlink" href="#machine.TimerWiPy.ONE_SHOT" title="永久链接至目标">¶</a></dt>
@@ -649,10 +650,10 @@ where 10000 would represent 100.00, 5050 represents 50.50, and so on.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

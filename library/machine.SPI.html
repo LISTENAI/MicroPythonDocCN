@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -430,7 +431,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-spi-a-serial-peripheral-interface-bus-protocol-controller-side">
-<span id="machine-spi"></span><h1 id="library-machine-spi--page-root">class SPI – a Serial Peripheral Interface bus protocol (controller side)<a class="headerlink" href="#library-machine-spi--page-root" title="永久链接至标题">¶</a></h1>
+<span id="machine-spi"></span><h1 id="library-machine-spi--page-root">class SPI – a Serial Peripheral Interface bus protocol (controller side)<a class="headerlink" href="#library-machine-spi--page-root" title="Permalink to this heading">¶</a></h1>
 <p>SPI is a synchronous serial protocol that is driven by a controller. At the
 physical level, a bus consists of 3 lines: SCK, MOSI, MISO. Multiple devices
 can share the same bus. Each device should have a separate, 4th signal,
@@ -481,7 +482,7 @@ differ primarily in the way they are constructed.</p>
 </pre></div>
 </div>
 <section id="constructors">
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="machine.SPI">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">SPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI" title="永久链接至目标">¶</a></dt>
@@ -502,7 +503,7 @@ to initialise the bus.  See <a class="reference internal" href="#machine.SPI.ini
 </dd></dl>
 </section>
 <section id="methods">
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="machine.SPI.init">
 <span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1000000</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">polarity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">firstbit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SPI.MSB</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sck</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mosi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">miso</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pins</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">(SCK,</span> <span class="pre">MOSI,</span> <span class="pre">MISO)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.SPI.init" title="永久链接至目标">¶</a></dt>
@@ -566,7 +567,7 @@ Returns <code class="docutils literal notranslate"><span class="pre">None</span>
 </dd></dl>
 </section>
 <section id="constants">
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="machine.SPI.CONTROLLER">
 <span class="sig-prename descclassname"><span class="pre">SPI.</span></span><span class="sig-name descname"><span class="pre">CONTROLLER</span></span><a class="headerlink" href="#machine.SPI.CONTROLLER" title="永久链接至目标">¶</a></dt>
@@ -632,10 +633,10 @@ Returns <code class="docutils literal notranslate"><span class="pre">None</span>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

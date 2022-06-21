@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -550,8 +551,8 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="maximising-micropython-speed">
-<span id="speed-python"></span><h1 id="reference-speed-python--page-root"><a class="toc-backref" href="#reference-speed-python--page-root">Maximising MicroPython speed</a><a class="headerlink" href="#reference-speed-python--page-root" title="永久链接至标题">¶</a></h1>
-<div class="contents topic" id="id1">
+<span id="speed-python"></span><h1 id="reference-speed-python--page-root"><a class="toc-backref" href="#reference-speed-python--page-root" role="doc-backlink">Maximising MicroPython speed</a><a class="headerlink" href="#reference-speed-python--page-root" title="Permalink to this heading">¶</a></h1>
+<nav class="contents" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
 <li><p><a class="reference internal" href="#maximising-micropython-speed" id="id2">Maximising MicroPython speed</a></p>
@@ -579,7 +580,7 @@
 </ul>
 </li>
 </ul>
-</div>
+</nav>
 <p>This tutorial describes ways of improving the performance of MicroPython code.
 Optimisations involving other languages are covered elsewhere, namely the use
 of modules written in C and the MicroPython inline assembler.</p>
@@ -598,21 +599,21 @@ which should be performed in the order listed.</p>
 <li><p>Use hardware-specific optimisations.</p></li>
 </ul>
 <section id="designing-for-speed">
-<h2 id="designing-for-speed"><a class="toc-backref" href="#id3">Designing for speed</a><a class="headerlink" href="#designing-for-speed" title="永久链接至标题">¶</a></h2>
+<h2 id="designing-for-speed"><a class="toc-backref" href="#id3" role="doc-backlink">Designing for speed</a><a class="headerlink" href="#designing-for-speed" title="Permalink to this heading">¶</a></h2>
 <p>Performance issues should be considered at the outset. This involves taking a view
 on the sections of code which are most performance critical and devoting particular
 attention to their design. The process of optimisation begins when the code has
 been tested: if the design is correct at the outset optimisation will be
 straightforward and may actually be unnecessary.</p>
 <section id="algorithms">
-<h3 id="algorithms"><a class="toc-backref" href="#id4">Algorithms</a><a class="headerlink" href="#algorithms" title="永久链接至标题">¶</a></h3>
+<h3 id="algorithms"><a class="toc-backref" href="#id4" role="doc-backlink">Algorithms</a><a class="headerlink" href="#algorithms" title="Permalink to this heading">¶</a></h3>
 <p>The most important aspect of designing any routine for performance is ensuring that
 the best algorithm is employed. This is a topic for textbooks rather than for a
 MicroPython guide but spectacular performance gains can sometimes be achieved
 by adopting algorithms known for their efficiency.</p>
 </section>
 <section id="ram-allocation">
-<h3 id="ram-allocation"><a class="toc-backref" href="#id5">RAM allocation</a><a class="headerlink" href="#ram-allocation" title="永久链接至标题">¶</a></h3>
+<h3 id="ram-allocation"><a class="toc-backref" href="#id5" role="doc-backlink">RAM allocation</a><a class="headerlink" href="#ram-allocation" title="Permalink to this heading">¶</a></h3>
 <p>To design efficient MicroPython code it is necessary to have an understanding of the
 way the interpreter allocates RAM. When an object is created or grows in size
 (for example where an item is appended to a list) the necessary RAM is allocated
@@ -626,7 +627,7 @@ and used in various methods.</p>
 <p>This is covered in further detail <a class="reference internal" href="#controlling-gc"><span class="std std-ref">Controlling garbage collection</span></a> below.</p>
 </section>
 <section id="buffers">
-<h3 id="buffers"><a class="toc-backref" href="#id6">Buffers</a><a class="headerlink" href="#buffers" title="永久链接至标题">¶</a></h3>
+<h3 id="buffers"><a class="toc-backref" href="#id6" role="doc-backlink">Buffers</a><a class="headerlink" href="#buffers" title="Permalink to this heading">¶</a></h3>
 <p>An example of the above is the common case where a buffer is required, such as one
 used for communication with a device. A typical driver will create the buffer in the
 constructor and use it in its I/O methods which will be called repeatedly.</p>
@@ -636,7 +637,7 @@ method which allocates new buffer for read data, but also a <code class="docutil
 to read data into an existing buffer.</p>
 </section>
 <section id="floating-point">
-<h3 id="floating-point"><a class="toc-backref" href="#id7">Floating point</a><a class="headerlink" href="#floating-point" title="永久链接至标题">¶</a></h3>
+<h3 id="floating-point"><a class="toc-backref" href="#id7" role="doc-backlink">Floating point</a><a class="headerlink" href="#floating-point" title="Permalink to this heading">¶</a></h3>
 <p>Some MicroPython ports allocate floating point numbers on heap. Some other ports
 may lack dedicated floating-point coprocessor, and perform arithmetic operations
 on them in “software” at considerably lower speed than on integers. Where
@@ -646,7 +647,7 @@ capture ADC readings as integers values to an array in one quick go, and only th
 convert them to floating-point numbers for signal processing.</p>
 </section>
 <section id="arrays">
-<h3 id="arrays"><a class="toc-backref" href="#id8">Arrays</a><a class="headerlink" href="#arrays" title="永久链接至标题">¶</a></h3>
+<h3 id="arrays"><a class="toc-backref" href="#id8" role="doc-backlink">Arrays</a><a class="headerlink" href="#arrays" title="Permalink to this heading">¶</a></h3>
 <p>Consider the use of the various types of array classes as an alternative to lists.
 The <a class="reference internal" href="../library/array.html#module-array" title="array: efficient arrays of numeric data"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> module supports various element types with 8-bit elements supported
 by Python’s built in <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> and <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> classes. These data structures all store
@@ -680,7 +681,7 @@ of buffer and pass it to <code class="docutils literal notranslate"><span class=
 </section>
 </section>
 <section id="identifying-the-slowest-section-of-code">
-<h2 id="identifying-the-slowest-section-of-code"><a class="toc-backref" href="#id9">Identifying the slowest section of code</a><a class="headerlink" href="#identifying-the-slowest-section-of-code" title="永久链接至标题">¶</a></h2>
+<h2 id="identifying-the-slowest-section-of-code"><a class="toc-backref" href="#id9" role="doc-backlink">Identifying the slowest section of code</a><a class="headerlink" href="#identifying-the-slowest-section-of-code" title="Permalink to this heading">¶</a></h2>
 <p>This is a process known as profiling and is covered in textbooks and
 (for standard Python) supported by various software tools. For the type of
 smaller embedded application likely to be running on MicroPython platforms
@@ -702,9 +703,9 @@ Code execution time can be measured in ms, us, or CPU cycles.</p>
 </div>
 </section>
 <section id="micropython-code-improvements">
-<h2 id="micropython-code-improvements"><a class="toc-backref" href="#id10">MicroPython code improvements</a><a class="headerlink" href="#micropython-code-improvements" title="永久链接至标题">¶</a></h2>
+<h2 id="micropython-code-improvements"><a class="toc-backref" href="#id10" role="doc-backlink">MicroPython code improvements</a><a class="headerlink" href="#micropython-code-improvements" title="Permalink to this heading">¶</a></h2>
 <section id="the-const-declaration">
-<h3 id="the-const-declaration"><a class="toc-backref" href="#id11">The const() declaration</a><a class="headerlink" href="#the-const-declaration" title="永久链接至标题">¶</a></h3>
+<h3 id="the-const-declaration"><a class="toc-backref" href="#id11" role="doc-backlink">The const() declaration</a><a class="headerlink" href="#the-const-declaration" title="Permalink to this heading">¶</a></h3>
 <p>MicroPython provides a <code class="docutils literal notranslate"><span class="pre">const()</span></code> declaration. This works in a similar way
 to <code class="docutils literal notranslate"><span class="pre">#define</span></code> in C in that when the code is compiled to bytecode the compiler
 substitutes the numeric value for the identifier. This avoids a dictionary
@@ -712,7 +713,7 @@ lookup at runtime. The argument to <code class="docutils literal notranslate"><s
 compile time, evaluates to an integer e.g. <code class="docutils literal notranslate"><span class="pre">0x100</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">8</span></code>.</p>
 </section>
 <section id="caching-object-references">
-<span id="caching"></span><h3 id="caching-object-references"><a class="toc-backref" href="#id12">Caching object references</a><a class="headerlink" href="#caching-object-references" title="永久链接至标题">¶</a></h3>
+<span id="caching"></span><h3 id="caching-object-references"><a class="toc-backref" href="#id12" role="doc-backlink">Caching object references</a><a class="headerlink" href="#caching-object-references" title="Permalink to this heading">¶</a></h3>
 <p>Where a function or method repeatedly accesses objects performance is improved
 by caching the object in a local variable:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -728,7 +729,7 @@ by caching the object in a local variable:</p>
 in the body of the method <code class="docutils literal notranslate"><span class="pre">bar()</span></code>.</p>
 </section>
 <section id="controlling-garbage-collection">
-<span id="controlling-gc"></span><h3 id="controlling-garbage-collection"><a class="toc-backref" href="#id13">Controlling garbage collection</a><a class="headerlink" href="#controlling-garbage-collection" title="永久链接至标题">¶</a></h3>
+<span id="controlling-gc"></span><h3 id="controlling-garbage-collection"><a class="toc-backref" href="#id13" role="doc-backlink">Controlling garbage collection</a><a class="headerlink" href="#controlling-garbage-collection" title="Permalink to this heading">¶</a></h3>
 <p>When memory allocation is required, MicroPython attempts to locate an adequately
 sized block on the heap. This may fail, usually because the heap is cluttered
 with objects which are no longer referenced by code. If a failure occurs, the
@@ -745,7 +746,7 @@ non-recoverable allocation failures.</p>
 </section>
 </section>
 <section id="the-native-code-emitter">
-<h2 id="the-native-code-emitter"><a class="toc-backref" href="#id14">The Native code emitter</a><a class="headerlink" href="#the-native-code-emitter" title="永久链接至标题">¶</a></h2>
+<h2 id="the-native-code-emitter"><a class="toc-backref" href="#id14" role="doc-backlink">The Native code emitter</a><a class="headerlink" href="#the-native-code-emitter" title="Permalink to this heading">¶</a></h2>
 <p>This causes the MicroPython compiler to emit native CPU opcodes rather than
 bytecode. It covers the bulk of the MicroPython functionality, so most functions will require
 no adaptation (but see below). It is invoked by means of a function decorator:</p>
@@ -765,7 +766,7 @@ no adaptation (but see below). It is invoked by means of a function decorator:</
 increase in compiled code size.</p>
 </section>
 <section id="the-viper-code-emitter">
-<h2 id="the-viper-code-emitter"><a class="toc-backref" href="#id15">The Viper code emitter</a><a class="headerlink" href="#the-viper-code-emitter" title="永久链接至标题">¶</a></h2>
+<h2 id="the-viper-code-emitter"><a class="toc-backref" href="#id15" role="doc-backlink">The Viper code emitter</a><a class="headerlink" href="#the-viper-code-emitter" title="Permalink to this heading">¶</a></h2>
 <p>The optimisations discussed above involve standards-compliant Python code. The
 Viper code emitter is not fully compliant. It supports special Viper native data types
 in pursuit of performance. Integer processing is non-compliant because it uses machine
@@ -851,7 +852,7 @@ on Kickstarter here <a class="reference external" href="https://www.kickstarter.
 and here <a class="reference external" href="https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers/posts/665145">Note 2</a></p>
 </section>
 <section id="accessing-hardware-directly">
-<h2 id="accessing-hardware-directly"><a class="toc-backref" href="#id16">Accessing hardware directly</a><a class="headerlink" href="#accessing-hardware-directly" title="永久链接至标题">¶</a></h2>
+<h2 id="accessing-hardware-directly"><a class="toc-backref" href="#id16" role="doc-backlink">Accessing hardware directly</a><a class="headerlink" href="#accessing-hardware-directly" title="Permalink to this heading">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>Code examples in this section are given for the Pyboard. The techniques
@@ -926,10 +927,10 @@ can be performed as follows:</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

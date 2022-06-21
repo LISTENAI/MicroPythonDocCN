@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -618,9 +619,9 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="general-information-about-the-wipy">
-<span id="wipy-general"></span><h1 id="wipy-general--page-root">General information about the WiPy<a class="headerlink" href="#wipy-general--page-root" title="永久链接至标题">¶</a></h1>
+<span id="wipy-general"></span><h1 id="wipy-general--page-root">General information about the WiPy<a class="headerlink" href="#wipy-general--page-root" title="Permalink to this heading">¶</a></h1>
 <section id="no-floating-point-support">
-<h2 id="no-floating-point-support">No floating point support<a class="headerlink" href="#no-floating-point-support" title="永久链接至标题">¶</a></h2>
+<h2 id="no-floating-point-support">No floating point support<a class="headerlink" href="#no-floating-point-support" title="Permalink to this heading">¶</a></h2>
 <p>Due to space reasons, there’s no floating point support, and no math module. This
 means that floating point numbers cannot be used anywhere in the code, and that
 all divisions must be performed using ‘//’ instead of ‘/’. Example:</p>
@@ -630,7 +631,7 @@ all divisions must be performed using ‘//’ instead of ‘/’. Example:</p>
 </div>
 </section>
 <section id="before-applying-power">
-<h2 id="before-applying-power">Before applying power<a class="headerlink" href="#before-applying-power" title="永久链接至标题">¶</a></h2>
+<h2 id="before-applying-power">Before applying power<a class="headerlink" href="#before-applying-power" title="Permalink to this heading">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>The GPIO pins of the WiPy are NOT 5V tolerant, connecting them to voltages higher
@@ -640,7 +641,7 @@ mind when wiring your electronics.</p>
 </div>
 </section>
 <section id="wlan-default-behaviour">
-<h2 id="wlan-default-behaviour">WLAN default behaviour<a class="headerlink" href="#wlan-default-behaviour" title="永久链接至标题">¶</a></h2>
+<h2 id="wlan-default-behaviour">WLAN default behaviour<a class="headerlink" href="#wlan-default-behaviour" title="Permalink to this heading">¶</a></h2>
 <p>When the WiPy boots with the default factory configuration starts in Access Point
 mode with <code class="docutils literal notranslate"><span class="pre">ssid</span></code> that starts with: <code class="docutils literal notranslate"><span class="pre">wipy-wlan</span></code> and <code class="docutils literal notranslate"><span class="pre">key:</span> <span class="pre">www.wipy.io</span></code>.
 Connect to this network and the WiPy will be reachable at <code class="docutils literal notranslate"><span class="pre">192.168.1.1</span></code>. In order
@@ -649,7 +650,7 @@ the default port (23). You will be asked for credentials:
 <code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">micro</span></code> and <code class="docutils literal notranslate"><span class="pre">password:</span> <span class="pre">python</span></code></p>
 </section>
 <section id="telnet-repl">
-<span id="wipy-telnet"></span><h2 id="telnet-repl">Telnet REPL<a class="headerlink" href="#telnet-repl" title="永久链接至标题">¶</a></h2>
+<span id="wipy-telnet"></span><h2 id="telnet-repl">Telnet REPL<a class="headerlink" href="#telnet-repl" title="Permalink to this heading">¶</a></h2>
 <p>Linux stock telnet works like a charm (also on OSX), but other tools like putty
 work quite well too. The default credentials are: <strong>user:</strong> <code class="docutils literal notranslate"><span class="pre">micro</span></code>, <strong>password:</strong> <code class="docutils literal notranslate"><span class="pre">python</span></code>.
 See <a class="reference internal" href="#network.Server" title="network.Server"><code class="xref py py-class docutils literal notranslate"><span class="pre">network.Server</span></code></a> for info on how to change the defaults.
@@ -659,7 +660,7 @@ For instance, on a linux shell (when connected to the WiPy in AP mode):</p>
 </div>
 </section>
 <section id="local-file-system-and-ftp-access">
-<span id="wipy-filesystem"></span><h2 id="local-file-system-and-ftp-access">Local file system and FTP access<a class="headerlink" href="#local-file-system-and-ftp-access" title="永久链接至标题">¶</a></h2>
+<span id="wipy-filesystem"></span><h2 id="local-file-system-and-ftp-access">Local file system and FTP access<a class="headerlink" href="#local-file-system-and-ftp-access" title="Permalink to this heading">¶</a></h2>
 <p>There is a small internal file system (a drive) on the WiPy, called <code class="docutils literal notranslate"><span class="pre">/flash</span></code>,
 which is stored within the external serial flash memory.  If a micro SD card
 is hooked-up and mounted, it will be available as well.</p>
@@ -683,7 +684,7 @@ if using the native unix ftp client, just after logging in do:</p>
 the Filezilla settings section below for more info.</p>
 </section>
 <section id="filezilla-settings">
-<h2 id="filezilla-settings">FileZilla settings<a class="headerlink" href="#filezilla-settings" title="永久链接至标题">¶</a></h2>
+<h2 id="filezilla-settings">FileZilla settings<a class="headerlink" href="#filezilla-settings" title="Permalink to this heading">¶</a></h2>
 <p>Do not use the quick connect button, instead, open the site manager and create a new
 configuration. In the <code class="docutils literal notranslate"><span class="pre">General</span></code> tab make sure that encryption is set to: <code class="docutils literal notranslate"><span class="pre">Only</span> <span class="pre">use</span>
 <span class="pre">plain</span> <span class="pre">FTP</span> <span class="pre">(insecure)</span></code>. In the Transfer Settings tab limit the max number of connections
@@ -692,7 +693,7 @@ and saving files, and for simplicity and to reduce code size, only one command a
 data connections are possible. Other FTP clients might behave in a similar way.</p>
 </section>
 <section id="upgrading-the-firmware-over-the-air">
-<span id="wipy-firmware-upgrade"></span><h2 id="upgrading-the-firmware-over-the-air">Upgrading the firmware Over The Air<a class="headerlink" href="#upgrading-the-firmware-over-the-air" title="永久链接至标题">¶</a></h2>
+<span id="wipy-firmware-upgrade"></span><h2 id="upgrading-the-firmware-over-the-air">Upgrading the firmware Over The Air<a class="headerlink" href="#upgrading-the-firmware-over-the-air" title="Permalink to this heading">¶</a></h2>
 <p>OTA software updates can be performed through the FTP server. Upload the <code class="docutils literal notranslate"><span class="pre">mcuimg.bin</span></code> file
 to: <code class="docutils literal notranslate"><span class="pre">/flash/sys/mcuimg.bin</span></code> it will take around 6s. You won’t see the file being stored
 inside <code class="docutils literal notranslate"><span class="pre">/flash/sys/</span></code> because it’s actually saved bypassing the user file system, so it
@@ -720,7 +721,7 @@ needed for the Over The Air update.</p>
 <a class="reference external" href="https://github.com/wipy/wipy/releases">the releases</a>, go ahead and update your WiPy!</p>
 </section>
 <section id="boot-modes-and-safe-boot">
-<span id="wipy-boot-modes"></span><h2 id="boot-modes-and-safe-boot">Boot modes and safe boot<a class="headerlink" href="#boot-modes-and-safe-boot" title="永久链接至标题">¶</a></h2>
+<span id="wipy-boot-modes"></span><h2 id="boot-modes-and-safe-boot">Boot modes and safe boot<a class="headerlink" href="#boot-modes-and-safe-boot" title="Permalink to this heading">¶</a></h2>
 <p>If you power up normally, or press the reset button, the WiPy will boot
 into standard mode; the <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> file will be executed first, then
 <code class="docutils literal notranslate"><span class="pre">main.py</span></code> will run.</p>
@@ -737,11 +738,6 @@ the factory firmware will be selected, the LED will flash quickly for 1.5 second
 and the WiPy will proceed to boot. The firmware selection mechanism is as follows:</p>
 <p><strong>Safe Boot Pin</strong> <code class="docutils literal notranslate"><span class="pre">GP28</span></code> <strong>released during:</strong></p>
 <table>
-<colgroup>
-<col style="width: 32%"/>
-<col style="width: 32%"/>
-<col style="width: 36%"/>
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>1st 3 secs window</p></th>
 <th class="head"><p>2nd 3 secs window</p></th>
@@ -774,7 +770,7 @@ made during safe boot is not persistent, therefore after the next normal reset
 the latest firmware will run again.</p>
 </section>
 <section id="the-heartbeat-led">
-<h2 id="the-heartbeat-led">The heartbeat LED<a class="headerlink" href="#the-heartbeat-led" title="永久链接至标题">¶</a></h2>
+<h2 id="the-heartbeat-led">The heartbeat LED<a class="headerlink" href="#the-heartbeat-led" title="Permalink to this heading">¶</a></h2>
 <p>By default the heartbeat LED flashes once every 4s to signal that the system is
 alive. This can be overridden through the <a class="reference internal" href="../library/wipy.html#module-wipy" title="wipy: WiPy specific features"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wipy</span></code></a> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">wipy</span>
@@ -790,7 +786,7 @@ recover from this, the only way out is to press the reset switch.</p></li>
 </ol>
 </section>
 <section id="details-on-sleep-modes">
-<h2 id="details-on-sleep-modes">Details on sleep modes<a class="headerlink" href="#details-on-sleep-modes" title="永久链接至标题">¶</a></h2>
+<h2 id="details-on-sleep-modes">Details on sleep modes<a class="headerlink" href="#details-on-sleep-modes" title="Permalink to this heading">¶</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">machine.idle()</span></code>: Power consumption: ~12mA (in WLAN STA mode). Wake sources:
 any hardware interrupt (including systick with period of 1ms), no special
@@ -801,7 +797,7 @@ and <code class="docutils literal notranslate"><span class="pre">WLAN</span></co
 </ul>
 </section>
 <section id="additional-details-for-machine-pin">
-<h2 id="additional-details-for-machine-pin">Additional details for machine.Pin<a class="headerlink" href="#additional-details-for-machine-pin" title="永久链接至标题">¶</a></h2>
+<h2 id="additional-details-for-machine-pin">Additional details for machine.Pin<a class="headerlink" href="#additional-details-for-machine-pin" title="Permalink to this heading">¶</a></h2>
 <p>On the WiPy board the pins are identified by their string id:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="n">g</span> <span class="o">=</span> <span class="n">machine</span><span class="o">.</span><span class="n">Pin</span><span class="p">(</span><span class="s1">'GP9'</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">,</span> <span class="n">pull</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">drive</span><span class="o">=</span><span class="n">Pin</span><span class="o">.</span><span class="n">MED_POWER</span><span class="p">,</span> <span class="n">alt</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
@@ -862,7 +858,7 @@ a tuple of the form: <code class="docutils literal notranslate"><span class="pre
 </dd></dl>
 </section>
 <section id="additional-details-for-machine-i2c">
-<h2 id="additional-details-for-machine-i2c">Additional details for machine.I2C<a class="headerlink" href="#additional-details-for-machine-i2c" title="永久链接至标题">¶</a></h2>
+<h2 id="additional-details-for-machine-i2c">Additional details for machine.I2C<a class="headerlink" href="#additional-details-for-machine-i2c" title="Permalink to this heading">¶</a></h2>
 <p>On the WiPy there is a single hardware I2C peripheral, identified by “0”.  By
 default this is the peripheral that is used when constructing an I2C instance.
 The default pins are GP23 for SCL and GP13 for SDA, and one can create the
@@ -878,9 +874,9 @@ default I2C peripheral simply by doing:</p>
 information.</p>
 </section>
 <section id="known-issues">
-<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="永久链接至标题">¶</a></h2>
+<h2 id="known-issues">Known issues<a class="headerlink" href="#known-issues" title="Permalink to this heading">¶</a></h2>
 <section id="incompatible-way-to-create-ssl-sockets">
-<h3 id="incompatible-way-to-create-ssl-sockets">Incompatible way to create SSL sockets<a class="headerlink" href="#incompatible-way-to-create-ssl-sockets" title="永久链接至标题">¶</a></h3>
+<h3 id="incompatible-way-to-create-ssl-sockets">Incompatible way to create SSL sockets<a class="headerlink" href="#incompatible-way-to-create-ssl-sockets" title="Permalink to this heading">¶</a></h3>
 <p>SSL sockets need to be created the following way before wrapping them with.
 <code class="docutils literal notranslate"><span class="pre">ssl.wrap_socket</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">socket</span>
@@ -914,7 +910,7 @@ and put it in ‘/flash/cert/’. Then do:</p>
 </div>
 </section>
 <section id="incompatibilities-in-hashlib-module">
-<h3 id="incompatibilities-in-hashlib-module">Incompatibilities in hashlib module<a class="headerlink" href="#incompatibilities-in-hashlib-module" title="永久链接至标题">¶</a></h3>
+<h3 id="incompatibilities-in-hashlib-module">Incompatibilities in hashlib module<a class="headerlink" href="#incompatibilities-in-hashlib-module" title="Permalink to this heading">¶</a></h3>
 <p>Due to hardware implementation details of the WiPy, data must be buffered before being
 digested, which would make it impossible to calculate the hash of big blocks of data that
 do not fit in RAM. In this case, since most likely the total size of the data is known
@@ -933,7 +929,7 @@ initial one) is a multiple of 4 bytes.</strong> The last chunk may be of any len
 </div>
 </section>
 <section id="unrelated-function-in-machine-module">
-<h3 id="unrelated-function-in-machine-module">Unrelated function in machine module<a class="headerlink" href="#unrelated-function-in-machine-module" title="永久链接至标题">¶</a></h3>
+<h3 id="unrelated-function-in-machine-module">Unrelated function in machine module<a class="headerlink" href="#unrelated-function-in-machine-module" title="Permalink to this heading">¶</a></h3>
 <dl class="py function">
 <dt class="sig sig-object py" id="main">
 <span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#main" title="永久链接至目标">¶</a></dt>
@@ -943,7 +939,7 @@ this function is not called then the default file main.py will be executed.</p>
 </dd></dl>
 </section>
 <section id="adhoc-way-to-control-telnet-ftp-server-via-network-module">
-<h3 id="adhoc-way-to-control-telnet-ftp-server-via-network-module">Adhoc way to control telnet/FTP server via network module<a class="headerlink" href="#adhoc-way-to-control-telnet-ftp-server-via-network-module" title="永久链接至标题">¶</a></h3>
+<h3 id="adhoc-way-to-control-telnet-ftp-server-via-network-module">Adhoc way to control telnet/FTP server via network module<a class="headerlink" href="#adhoc-way-to-control-telnet-ftp-server-via-network-module" title="Permalink to this heading">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">Server</span></code> class controls the behaviour and the configuration of the FTP and telnet
 services running on the WiPy. Any changes performed using this class’ methods will
 affect both.</p>
@@ -983,7 +979,7 @@ and <code class="docutils literal notranslate"><span class="pre">timeout</span><
 </dd></dl>
 </section>
 <section id="adhoc-vfs-like-support">
-<h3 id="adhoc-vfs-like-support">Adhoc VFS-like support<a class="headerlink" href="#adhoc-vfs-like-support" title="永久链接至标题">¶</a></h3>
+<h3 id="adhoc-vfs-like-support">Adhoc VFS-like support<a class="headerlink" href="#adhoc-vfs-like-support" title="Permalink to this heading">¶</a></h3>
 <p>WiPy doesn’t implement full MicroPython VFS support, instead following
 functions are defined in <code class="docutils literal notranslate"><span class="pre">os</span></code> module:</p>
 <dl class="py function">
@@ -1058,10 +1054,10 @@ being mounted.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

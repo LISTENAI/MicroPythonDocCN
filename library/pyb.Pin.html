@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -389,7 +390,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-pin-control-i-o-pins">
-<span id="pyb-pin"></span><h1 id="library-pyb-pin--page-root">class Pin – control I/O pins<a class="headerlink" href="#library-pyb-pin--page-root" title="永久链接至标题">¶</a></h1>
+<span id="pyb-pin"></span><h1 id="library-pyb-pin--page-root">class Pin – control I/O pins<a class="headerlink" href="#library-pyb-pin--page-root" title="Permalink to this heading">¶</a></h1>
 <p>A pin is the basic object to control I/O pins.  It has methods to set
 the mode of the pin (input, output, etc) and methods to get and set the
 digital logic level. For analog control of a pin, see the ADC class.</p>
@@ -450,7 +451,7 @@ explanation, along with various techniques for debouncing.</p>
 <p>All pin objects go through the pin mapper to come up with one of the
 gpio pins.</p>
 <section id="constructors">
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyb.pyb.Pin">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">Pin</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.Pin" title="永久链接至目标">¶</a></dt>
@@ -459,7 +460,7 @@ they are used to initialise the pin.  See <code class="xref py py-meth docutils 
 </dd></dl>
 </section>
 <section id="class-methods">
-<h2 id="class-methods">Class methods<a class="headerlink" href="#class-methods" title="永久链接至标题">¶</a></h2>
+<h2 id="class-methods">Class methods<a class="headerlink" href="#class-methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyb.Pin.debug">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">debug</span></span><span class="sig-paren">(</span><span class="optional">[</span><em class="sig-param"><span class="n"><span class="pre">state</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.Pin.debug" title="永久链接至目标">¶</a></dt>
@@ -477,7 +478,7 @@ they are used to initialise the pin.  See <code class="xref py py-meth docutils 
 </dd></dl>
 </section>
 <section id="methods">
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyb.Pin.init">
 <span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pull=Pin.PULL_NONE</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">\*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">value=None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt=-1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.Pin.init" title="永久链接至目标">¶</a></dt>
@@ -584,7 +585,7 @@ function.</p>
 </dd></dl>
 </section>
 <section id="constants">
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="永久链接至标题">¶</a></h2>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this heading">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="pyb.Pin.AF_OD">
 <span class="sig-prename descclassname"><span class="pre">Pin.</span></span><span class="sig-name descname"><span class="pre">AF_OD</span></span><a class="headerlink" href="#pyb.Pin.AF_OD" title="永久链接至目标">¶</a></dt>
@@ -633,7 +634,7 @@ function.</p>
 </section>
 </section>
 <section id="class-pinaf-pin-alternate-functions">
-<h1 id="class-pinaf-pin-alternate-functions">class PinAF – Pin Alternate Functions<a class="headerlink" href="#class-pinaf-pin-alternate-functions" title="永久链接至标题">¶</a></h1>
+<h1 id="class-pinaf-pin-alternate-functions">class PinAF – Pin Alternate Functions<a class="headerlink" href="#class-pinaf-pin-alternate-functions" title="Permalink to this heading">¶</a></h1>
 <p>A Pin represents a physical pin on the microprocessor. Each pin
 can have a variety of functions (GPIO, I2C SDA, etc). Each PinAF
 object represents a particular function for a pin.</p>
@@ -660,7 +661,7 @@ is desired.</p>
 </pre></div>
 </div>
 <section id="id1">
-<h2 id="id1">Methods<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2 id="id1">Methods<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyb.pinaf.__str__">
 <span class="sig-prename descclassname"><span class="pre">pinaf.</span></span><span class="sig-name descname"><span class="pre">__str__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pinaf.__str__" title="永久链接至目标">¶</a></dt>
@@ -733,10 +734,10 @@ this would return stm.TIM2</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

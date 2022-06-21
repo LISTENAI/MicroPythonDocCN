@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,13 +54,14 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Optimizations" href="optimizations.html" />
-    <link rel="prev" title="Memory Management" href="memorymgt.html" />
+    <link rel="prev" title="内存管理" href="memorymgt.html" />
   
    
 
@@ -228,7 +229,7 @@
     <li class="md-nav__item">
     
     
-      <a href="memorymgt.html" class="md-nav__link">Memory Management</a>
+      <a href="memorymgt.html" class="md-nav__link">内存管理</a>
       
     
     </li>
@@ -392,7 +393,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="implementing-a-module">
-<span id="internals-library"></span><h1 id="develop-library--page-root">Implementing a Module<a class="headerlink" href="#develop-library--page-root" title="永久链接至标题">¶</a></h1>
+<span id="internals-library"></span><h1 id="develop-library--page-root">Implementing a Module<a class="headerlink" href="#develop-library--page-root" title="Permalink to this heading">¶</a></h1>
 <p>This chapter details how to implement a core module in MicroPython.
 MicroPython modules can be one of the following:</p>
 <ul class="simple">
@@ -414,9 +415,9 @@ See <a class="reference internal" href="extendingmicropython.html#extendingmicro
 For details on port-specific modules, see <a class="reference internal" href="porting.html#porting-to-a-board"><span class="std std-ref">Porting MicroPython</span></a>.</p>
 </div>
 <section id="implementing-a-core-module">
-<h2 id="implementing-a-core-module">Implementing a core module<a class="headerlink" href="#implementing-a-core-module" title="永久链接至标题">¶</a></h2>
+<h2 id="implementing-a-core-module">Implementing a core module<a class="headerlink" href="#implementing-a-core-module" title="Permalink to this heading">¶</a></h2>
 <p>Like CPython, MicroPython has core builtin modules that can be accessed through import statements.
-An example is the <code class="docutils literal notranslate"><span class="pre">gc</span></code> module discussed in <a class="reference internal" href="memorymgt.html#memorymanagement"><span class="std std-ref">Memory Management</span></a>.</p>
+An example is the <code class="docutils literal notranslate"><span class="pre">gc</span></code> module discussed in <a class="reference internal" href="memorymgt.html#memorymanagement"><span class="std std-ref">内存管理</span></a>.</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import gc
 &gt;&gt;&gt; gc.enable<span class="o">()</span>
 &gt;&gt;&gt;
@@ -479,7 +480,7 @@ to do anything.  Similarly, more functions can be added to this new module.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="memorymgt.html" title="Memory Management"
+            <a href="memorymgt.html" title="内存管理"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -488,7 +489,7 @@ to do anything.  Similarly, more functions can be added to this new module.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Memory Management </span>
+                      class="md-footer-nav__direction"> Previous </span> 内存管理 </span>
               </div>
             </a>
           
@@ -516,10 +517,10 @@ to do anything.  Similarly, more functions can be added to this new module.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

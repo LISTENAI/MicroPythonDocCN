@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -434,7 +435,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-i2c-a-two-wire-serial-protocol">
-<span id="machine-i2c"></span><h1 id="library-machine-i2c--page-root">class I2C – a two-wire serial protocol<a class="headerlink" href="#library-machine-i2c--page-root" title="永久链接至标题">¶</a></h1>
+<span id="machine-i2c"></span><h1 id="library-machine-i2c--page-root">class I2C – a two-wire serial protocol<a class="headerlink" href="#library-machine-i2c--page-root" title="Permalink to this heading">¶</a></h1>
 <p>I2C is a two-wire protocol for communicating between devices.  At the physical
 level it consists of 2 wires: SCL and SDA, the clock and data lines respectively.</p>
 <p>I2C objects are created attached to a specific bus.  They can be initialised
@@ -466,7 +467,7 @@ in the way they are constructed.</p>
 </pre></div>
 </div>
 <section id="constructors">
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="machine.I2C">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">machine.</span></span><span class="sig-name descname"><span class="pre">I2C</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sda</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C" title="永久链接至目标">¶</a></dt>
@@ -503,7 +504,7 @@ which an <code class="docutils literal notranslate"><span class="pre">OSError(ET
 </dd></dl>
 </section>
 <section id="general-methods">
-<h2 id="general-methods">General Methods<a class="headerlink" href="#general-methods" title="永久链接至标题">¶</a></h2>
+<h2 id="general-methods">General Methods<a class="headerlink" href="#general-methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="machine.I2C.init">
 <span class="sig-prename descclassname"><span class="pre">I2C.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">scl</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sda</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">400000</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#machine.I2C.init" title="永久链接至目标">¶</a></dt>
@@ -531,7 +532,7 @@ its address (including a write bit) is sent on the bus.</p>
 </dd></dl>
 </section>
 <section id="primitive-i2c-operations">
-<h2 id="primitive-i2c-operations">Primitive I2C operations<a class="headerlink" href="#primitive-i2c-operations" title="永久链接至标题">¶</a></h2>
+<h2 id="primitive-i2c-operations">Primitive I2C operations<a class="headerlink" href="#primitive-i2c-operations" title="Permalink to this heading">¶</a></h2>
 <p>The following methods implement the primitive I2C controller bus operations and can
 be combined to make any I2C transaction.  They are provided if you need more
 control over the bus, otherwise the standard methods (see below) can be used.</p>
@@ -564,7 +565,7 @@ received.  The function returns the number of ACKs that were received.</p>
 </dd></dl>
 </section>
 <section id="standard-bus-operations">
-<h2 id="standard-bus-operations">Standard bus operations<a class="headerlink" href="#standard-bus-operations" title="永久链接至标题">¶</a></h2>
+<h2 id="standard-bus-operations">Standard bus operations<a class="headerlink" href="#standard-bus-operations" title="Permalink to this heading">¶</a></h2>
 <p>The following methods implement the standard I2C controller read and write
 operations that target a given peripheral device.</p>
 <dl class="py method">
@@ -607,7 +608,7 @@ returns the number of ACKs that were received.</p>
 </dd></dl>
 </section>
 <section id="memory-operations">
-<h2 id="memory-operations">Memory operations<a class="headerlink" href="#memory-operations" title="永久链接至标题">¶</a></h2>
+<h2 id="memory-operations">Memory operations<a class="headerlink" href="#memory-operations" title="Permalink to this heading">¶</a></h2>
 <p>Some I2C devices act as a memory device (or set of registers) that can be read
 from and written to.  In this case there are two addresses associated with an
 I2C transaction: the peripheral address and the memory address.  The following
@@ -689,10 +690,10 @@ this argument is not recognised and the address size is always 8 bits).</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

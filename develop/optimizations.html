@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -228,7 +229,7 @@
     <li class="md-nav__item">
     
     
-      <a href="memorymgt.html" class="md-nav__link">Memory Management</a>
+      <a href="memorymgt.html" class="md-nav__link">内存管理</a>
       
     
     </li>
@@ -414,7 +415,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="optimizations">
-<span id="id1"></span><h1 id="develop-optimizations--page-root">Optimizations<a class="headerlink" href="#develop-optimizations--page-root" title="永久链接至标题">¶</a></h1>
+<span id="id1"></span><h1 id="develop-optimizations--page-root">Optimizations<a class="headerlink" href="#develop-optimizations--page-root" title="Permalink to this heading">¶</a></h1>
 <p>MicroPython uses several optimizations to save RAM but also ensure the efficient
 execution of programs. This chapter discusses some of these optimizations.</p>
 <div class="admonition note">
@@ -423,7 +424,7 @@ execution of programs. This chapter discusses some of these optimizations.</p>
 dictionaries.</p>
 </div>
 <section id="frozen-bytecode">
-<h2 id="frozen-bytecode">Frozen bytecode<a class="headerlink" href="#frozen-bytecode" title="永久链接至标题">¶</a></h2>
+<h2 id="frozen-bytecode">Frozen bytecode<a class="headerlink" href="#frozen-bytecode" title="Permalink to this heading">¶</a></h2>
 <p>When MicroPython loads Python code from the filesystem, it first has to parse the file into
 a temporary in-memory representation, and then generate bytecode for execution, both of which
 are stored in the heap (in RAM). This can lead to significant amounts of memory being used.
@@ -436,7 +437,7 @@ the bytecode will be executed from ROM. This can lead to a significant memory sa
 reduce heap fragmentation.</p>
 </section>
 <section id="variables">
-<h2 id="variables">Variables<a class="headerlink" href="#variables" title="永久链接至标题">¶</a></h2>
+<h2 id="variables">Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h2>
 <p>MicroPython processes local and global variables differently. Global variables
 are stored and looked up from a global dictionary that is allocated on the heap
 (note that each module has its own separate dict, so separate namespace).
@@ -462,7 +463,7 @@ These variables use <code class="docutils literal notranslate"><span class="pre"
 </div>
 </section>
 <section id="allocation-of-memory">
-<h2 id="allocation-of-memory">Allocation of memory<a class="headerlink" href="#allocation-of-memory" title="永久链接至标题">¶</a></h2>
+<h2 id="allocation-of-memory">Allocation of memory<a class="headerlink" href="#allocation-of-memory" title="Permalink to this heading">¶</a></h2>
 <p>Most of the common MicroPython constructs are not allocated on the heap.
 However the following are:</p>
 <ul class="simple">
@@ -523,10 +524,10 @@ see <a class="reference external" href="https://docs.micropython.org/en/latest/r
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

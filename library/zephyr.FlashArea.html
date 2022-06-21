@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -365,11 +366,11 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-flasharea-access-to-built-in-flash-storage">
-<span id="zephyr-flasharea"></span><h1 id="library-zephyr-flasharea--page-root">FlashArea 类 – 访问内置的 flash 存储<a class="headerlink" href="#library-zephyr-flasharea--page-root" title="永久链接至标题">¶</a></h1>
+<span id="zephyr-flasharea"></span><h1 id="library-zephyr-flasharea--page-root">FlashArea 类 – 访问内置的 flash 存储<a class="headerlink" href="#library-zephyr-flasharea--page-root" title="Permalink to this heading">¶</a></h1>
 <p>使用 <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/storage/flash_map/flash_map.html#flash-map">Zephyr flash map API</a>.</p>
 <p>此类允许访问设备 flash 分区数据。Flash 区实体由一个全局唯一的 ID 号、分区所在的 Flash 设备的名称、起始偏移量（表示为与每个分区的 Flash 存储器起始地址相关）、以及该设备所代表的分区的大小组成。对于固定的 flash 分区，来自设备树定义的数据将被使用；但由于未启用 MCUBoot，在 MicroPython 中未强制执行固定 flash 分区。</p>
 <section id="constructors">
-<h2 id="constructors">构造器<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<h2 id="constructors">构造器<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="zephyr.FlashArea">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">FlashArea</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">block_size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.FlashArea" title="永久链接至目标">¶</a></dt>
@@ -378,7 +379,7 @@
 </dd></dl>
 </section>
 <section id="methods">
-<h2 id="methods">函数<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<h2 id="methods">函数<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="zephyr.FlashArea.readblocks">
 <span class="sig-prename descclassname"><span class="pre">FlashArea.</span></span><span class="sig-name descname"><span class="pre">readblocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.FlashArea.readblocks" title="永久链接至目标">¶</a></dt>
@@ -446,10 +447,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

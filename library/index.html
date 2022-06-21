@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -721,7 +722,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-libraries">
-<span id="micropython-lib"></span><h1 id="library-index--page-root">MicroPython 库<a class="headerlink" href="#library-index--page-root" title="永久链接至标题">¶</a></h1>
+<span id="micropython-lib"></span><h1 id="library-index--page-root">MicroPython 库<a class="headerlink" href="#library-index--page-root" title="Permalink to this heading">¶</a></h1>
 <div class="admonition warning">
 <p class="admonition-title">警告</p>
 <p>本章节的重要概述</p>
@@ -740,7 +741,7 @@
 </div>
 <p>除了本文档中描述的内置库之外，还可以在 <a class="reference internal" href="../reference/glossary.html#term-micropython-lib"><span class="xref std std-term">micropython-lib</span></a> 中找到 Python 标准库中的更多模块，以及它对 MicroPython 的进一步扩展。</p>
 <section id="python-standard-libraries-and-micro-libraries">
-<h2 id="python-standard-libraries-and-micro-libraries">Python 标准库和微型库<a class="headerlink" href="#python-standard-libraries-and-micro-libraries" title="永久链接至标题">¶</a></h2>
+<h2 id="python-standard-libraries-and-micro-libraries">Python 标准库和微型库<a class="headerlink" href="#python-standard-libraries-and-micro-libraries" title="Permalink to this heading">¶</a></h2>
 <p>以下标准 Python 库已被 “微型化” 以符合 MicroPython 的理念。 它们提供了其模块的核心功能，旨在成为标准 Python 库的替代品。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -772,7 +773,7 @@
 </div>
 </section>
 <section id="micropython-specific-libraries">
-<h2 id="micropython-specific-libraries">MicroPython 的特定库<a class="headerlink" href="#micropython-specific-libraries" title="永久链接至标题">¶</a></h2>
+<h2 id="micropython-specific-libraries">MicroPython 的特定库<a class="headerlink" href="#micropython-specific-libraries" title="Permalink to this heading">¶</a></h2>
 <p>以下库中提供了特定于 MicroPython 实现的功能。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -789,11 +790,11 @@
 </div>
 </section>
 <section id="port-specific-libraries">
-<h2 id="port-specific-libraries">适配端的特定库<a class="headerlink" href="#port-specific-libraries" title="永久链接至标题">¶</a></h2>
+<h2 id="port-specific-libraries">适配端的特定库<a class="headerlink" href="#port-specific-libraries" title="Permalink to this heading">¶</a></h2>
 <p>在某些情况下，以下适配端/板特定库具有类似于 <a class="reference internal" href="machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> 库中的功能或类。 在这种情况下，适配端特定库中的对应项会声明该平台独有的硬件功能。</p>
 <p>为了编写可移植代码，请使用 <a class="reference internal" href="machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> 模块中的函数和类。 要访问特定于平台的硬件时，请使用适当的库，例如在 Pyboard 上使用 <a class="reference internal" href="pyb.html#module-pyb" title="pyb: functions related to the board"><code class="xref py py-mod docutils literal notranslate"><span class="pre">pyb</span></code></a> 。</p>
 <section id="libraries-specific-to-the-pyboard">
-<h3 id="libraries-specific-to-the-pyboard">pyboard 的特定库<a class="headerlink" href="#libraries-specific-to-the-pyboard" title="永久链接至标题">¶</a></h3>
+<h3 id="libraries-specific-to-the-pyboard">pyboard 的特定库<a class="headerlink" href="#libraries-specific-to-the-pyboard" title="Permalink to this heading">¶</a></h3>
 <p>下述的库是 pyboard 特有的。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -830,7 +831,7 @@
 </div>
 </section>
 <section id="libraries-specific-to-the-wipy">
-<h3 id="libraries-specific-to-the-wipy">WiPy 的特定库<a class="headerlink" href="#libraries-specific-to-the-wipy" title="永久链接至标题">¶</a></h3>
+<h3 id="libraries-specific-to-the-wipy">WiPy 的特定库<a class="headerlink" href="#libraries-specific-to-the-wipy" title="Permalink to this heading">¶</a></h3>
 <p>下述的库和类是 WiPy 特有的。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -858,7 +859,7 @@
 </div>
 </section>
 <section id="libraries-specific-to-the-esp8266-and-esp32">
-<h3 id="libraries-specific-to-the-esp8266-and-esp32">ESP8266 和 ESP32 的特定库<a class="headerlink" href="#libraries-specific-to-the-esp8266-and-esp32" title="永久链接至标题">¶</a></h3>
+<h3 id="libraries-specific-to-the-esp8266-and-esp32">ESP8266 和 ESP32 的特定库<a class="headerlink" href="#libraries-specific-to-the-esp8266-and-esp32" title="Permalink to this heading">¶</a></h3>
 <p>下述的库是 ESP8266 和 ESP32 特有的。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -879,7 +880,7 @@
 </div>
 </section>
 <section id="libraries-specific-to-the-rp2040">
-<h3 id="libraries-specific-to-the-rp2040">RP2040 的特定库<a class="headerlink" href="#libraries-specific-to-the-rp2040" title="永久链接至标题">¶</a></h3>
+<h3 id="libraries-specific-to-the-rp2040">RP2040 的特定库<a class="headerlink" href="#libraries-specific-to-the-rp2040" title="Permalink to this heading">¶</a></h3>
 <p>下述的库和类是 RP2040 特有的，用于树莓派 Pico 板。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -893,7 +894,7 @@
 </div>
 </section>
 <section id="libraries-specific-to-zephyr">
-<h3 id="libraries-specific-to-zephyr">Zephyr 的特定库<a class="headerlink" href="#libraries-specific-to-zephyr" title="永久链接至标题">¶</a></h3>
+<h3 id="libraries-specific-to-zephyr">Zephyr 的特定库<a class="headerlink" href="#libraries-specific-to-zephyr" title="Permalink to this heading">¶</a></h3>
 <p>下述的库和类是 Zephyr 适配端特有的。</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -908,7 +909,7 @@
 </section>
 </section>
 <section id="extending-built-in-libraries-from-python">
-<h2 id="extending-built-in-libraries-from-python">扩展 Python 内置库<a class="headerlink" href="#extending-built-in-libraries-from-python" title="永久链接至标题">¶</a></h2>
+<h2 id="extending-built-in-libraries-from-python">扩展 Python 内置库<a class="headerlink" href="#extending-built-in-libraries-from-python" title="Permalink to this heading">¶</a></h2>
 <p>在大多数情况下，上述模块实际上命名为 <code class="docutils literal notranslate"><span class="pre">umodule</span></code> 而不是 <code class="docutils literal notranslate"><span class="pre">module</span></code>，但 MicroPython 会将任何以 <code class="docutils literal notranslate"><span class="pre">u</span></code> 为前缀的模块别名为非 <code class="docutils literal notranslate"><span class="pre">u</span></code> 版本。 但是，名为 <code class="docutils literal notranslate"><span class="pre">module.py</span></code> 的文件（或 <a class="reference internal" href="../reference/glossary.html#term-frozen-module"><span class="xref std std-term">冻结的 module</span></a> ）将优先于此别名。</p>
 <p>该特性允许用户提供内置库的扩展实现（可能提供额外的 CPython 兼容性）。 用户提供的模块（指 <code class="docutils literal notranslate"><span class="pre">module.py</span></code> 中）仍可通过直接导入 <code class="docutils literal notranslate"><span class="pre">umodule</span></code> 来使用内置功能。 这种做法在 <a class="reference internal" href="../reference/glossary.html#term-micropython-lib"><span class="xref std std-term">micropython-lib</span></a> 中广泛使用。 有关详细信息，请参阅 <a class="reference internal" href="../reference/packages.html#packages"><span class="std std-ref">分发包、包管理和部署应用程序</span></a> 。</p>
 <p>这在 Python 标准库（例如 <code class="docutils literal notranslate"><span class="pre">os</span></code> 、<code class="docutils literal notranslate"><span class="pre">time</span></code> 等）和 MicroPython 库（例如 <code class="docutils literal notranslate"><span class="pre">machine</span></code> 、 <code class="docutils literal notranslate"><span class="pre">bluetooth</span></code> 等）同样适用。 主要的例外是特定于适配端的库（ <code class="docutils literal notranslate"><span class="pre">pyb</span></code> 、 <code class="docutils literal notranslate"><span class="pre">esp</span></code> 等）。</p>
@@ -963,10 +964,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

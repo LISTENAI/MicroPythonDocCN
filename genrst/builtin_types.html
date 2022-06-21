@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -755,12 +756,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="builtin-types">
-<h1 id="genrst-builtin-types--page-root">Builtin types<a class="headerlink" href="#genrst-builtin-types--page-root" title="永久链接至标题">¶</a></h1>
-<p>Generated Mon 18 Apr 2022 11:09:19 UTC</p>
+<h1 id="genrst-builtin-types--page-root">Builtin types<a class="headerlink" href="#genrst-builtin-types--page-root" title="Permalink to this heading">¶</a></h1>
+<p>Generated Tue 21 Jun 2022 04:27:16 UTC</p>
 <section id="exception">
-<h2 id="exception">Exception<a class="headerlink" href="#exception" title="永久链接至标题">¶</a></h2>
+<h2 id="exception">Exception<a class="headerlink" href="#exception" title="Permalink to this heading">¶</a></h2>
 <section id="all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror">
-<span id="cpydiff-types-exception-attrs"></span><h3 id="all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror">All exceptions have readable <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">errno</span></code> attributes, not just <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> and <code class="docutils literal notranslate"><span class="pre">OSError</span></code>.<a class="headerlink" href="#all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-exception-attrs"></span><h3 id="all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror">All exceptions have readable <code class="docutils literal notranslate"><span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">errno</span></code> attributes, not just <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> and <code class="docutils literal notranslate"><span class="pre">OSError</span></code>.<a class="headerlink" href="#all-exceptions-have-readable-value-and-errno-attributes-not-just-stopiteration-and-oserror" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is optimised to reduce code size.</p>
 <p><strong>Workaround:</strong> Only use <code class="docutils literal notranslate"><span class="pre">value</span></code> on <code class="docutils literal notranslate"><span class="pre">StopIteration</span></code> exceptions, and <code class="docutils literal notranslate"><span class="pre">errno</span></code> on <code class="docutils literal notranslate"><span class="pre">OSError</span></code> exceptions.  Do not use or rely on these attributes on other exceptions.</p>
 <p>Sample code:</p>
@@ -770,10 +771,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 55%"/>
-<col style="width: 45%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -793,7 +790,7 @@
 </table>
 </section>
 <section id="exception-chaining-not-implemented">
-<span id="cpydiff-types-exception-chaining"></span><h3 id="exception-chaining-not-implemented">Exception chaining not implemented<a class="headerlink" href="#exception-chaining-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-exception-chaining"></span><h3 id="exception-chaining-not-implemented">Exception chaining not implemented<a class="headerlink" href="#exception-chaining-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="k">raise</span> <span class="ne">TypeError</span>
@@ -802,10 +799,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 57%"/>
-<col style="width: 43%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -831,7 +824,7 @@
 </table>
 </section>
 <section id="user-defined-attributes-for-builtin-exceptions-are-not-supported">
-<span id="cpydiff-types-exception-instancevar"></span><h3 id="user-defined-attributes-for-builtin-exceptions-are-not-supported">User-defined attributes for builtin exceptions are not supported<a class="headerlink" href="#user-defined-attributes-for-builtin-exceptions-are-not-supported" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-exception-instancevar"></span><h3 id="user-defined-attributes-for-builtin-exceptions-are-not-supported">User-defined attributes for builtin exceptions are not supported<a class="headerlink" href="#user-defined-attributes-for-builtin-exceptions-are-not-supported" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is highly optimized for memory usage.</p>
 <p><strong>Workaround:</strong> Use user-defined exception subclasses.</p>
 <p>Sample code:</p>
@@ -841,10 +834,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -862,7 +851,7 @@
 </table>
 </section>
 <section id="exception-in-while-loop-condition-may-have-unexpected-line-number">
-<span id="cpydiff-types-exception-loops"></span><h3 id="exception-in-while-loop-condition-may-have-unexpected-line-number">Exception in while loop condition may have unexpected line number<a class="headerlink" href="#exception-in-while-loop-condition-may-have-unexpected-line-number" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-exception-loops"></span><h3 id="exception-in-while-loop-condition-may-have-unexpected-line-number">Exception in while loop condition may have unexpected line number<a class="headerlink" href="#exception-in-while-loop-condition-may-have-unexpected-line-number" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> Condition checks are optimized to happen at the end of loop body, and that line number is reported.</p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"-foo"</span><span class="p">,</span> <span class="s2">"-bar"</span><span class="p">]</span>
@@ -874,10 +863,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 45%"/>
-<col style="width: 55%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -899,7 +884,7 @@
 </table>
 </section>
 <section id="exception-init-method-does-not-exist">
-<span id="cpydiff-types-exception-subclassinit"></span><h3 id="exception-init-method-does-not-exist">Exception.__init__ method does not exist.<a class="headerlink" href="#exception-init-method-does-not-exist" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-exception-subclassinit"></span><h3 id="exception-init-method-does-not-exist">Exception.__init__ method does not exist.<a class="headerlink" href="#exception-init-method-does-not-exist" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> Subclassing native classes is not fully supported in MicroPython.</p>
 <p><strong>Workaround:</strong> Call using <code class="docutils literal notranslate"><span class="pre">super()</span></code> instead:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
@@ -917,10 +902,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -936,9 +917,9 @@
 </section>
 </section>
 <section id="bytearray">
-<h2 id="bytearray">bytearray<a class="headerlink" href="#bytearray" title="永久链接至标题">¶</a></h2>
+<h2 id="bytearray">bytearray<a class="headerlink" href="#bytearray" title="Permalink to this heading">¶</a></h2>
 <section id="array-slice-assignment-with-unsupported-rhs">
-<span id="cpydiff-types-bytearray-sliceassign"></span><h3 id="array-slice-assignment-with-unsupported-rhs">Array slice assignment with unsupported RHS<a class="headerlink" href="#array-slice-assignment-with-unsupported-rhs" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-bytearray-sliceassign"></span><h3 id="array-slice-assignment-with-unsupported-rhs">Array slice assignment with unsupported RHS<a class="headerlink" href="#array-slice-assignment-with-unsupported-rhs" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]</span>
@@ -946,10 +927,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 43%"/>
-<col style="width: 57%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -968,9 +945,9 @@
 </section>
 </section>
 <section id="bytes">
-<h2 id="bytes">bytes<a class="headerlink" href="#bytes" title="永久链接至标题">¶</a></h2>
+<h2 id="bytes">bytes<a class="headerlink" href="#bytes" title="Permalink to this heading">¶</a></h2>
 <section id="bytes-objects-support-format-method">
-<span id="cpydiff-types-bytes-format"></span><h3 id="bytes-objects-support-format-method">bytes objects support .format() method<a class="headerlink" href="#bytes-objects-support-format-method" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-bytes-format"></span><h3 id="bytes-objects-support-format-method">bytes objects support .format() method<a class="headerlink" href="#bytes-objects-support-format-method" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython strives to be a more regular implementation, so if both <a class="reference internal" href="../library/builtins.html#str" title="str"><code class="xref any py py-class docutils literal notranslate"><span class="pre">str</span></code></a> and <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> support <code class="docutils literal notranslate"><span class="pre">__mod__()</span></code> (the % operator), it makes sense to support <code class="docutils literal notranslate"><span class="pre">format()</span></code> for both too. Support for <code class="docutils literal notranslate"><span class="pre">__mod__</span></code> can also be compiled out, which leaves only <code class="docutils literal notranslate"><span class="pre">format()</span></code> for bytes formatting.</p>
 <p><strong>Workaround:</strong> If you are interested in CPython compatibility, don’t use <code class="docutils literal notranslate"><span class="pre">.format()</span></code> on bytes objects.</p>
 <p>Sample code:</p>
@@ -978,10 +955,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 53%"/>
-<col style="width: 47%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1001,17 +974,13 @@
 </table>
 </section>
 <section id="bytes-with-keywords-not-implemented">
-<span id="cpydiff-types-bytes-keywords"></span><h3 id="bytes-with-keywords-not-implemented">bytes() with keywords not implemented<a class="headerlink" href="#bytes-with-keywords-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-bytes-keywords"></span><h3 id="bytes-with-keywords-not-implemented">bytes() with keywords not implemented<a class="headerlink" href="#bytes-with-keywords-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p><strong>Workaround:</strong> Pass the encoding as a positional parameter, e.g. <code class="docutils literal notranslate"><span class="pre">print(bytes('abc',</span> <span class="pre">'utf-8'))</span></code></p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">bytes</span><span class="p">(</span><span class="s2">"abc"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf8"</span><span class="p">))</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1029,7 +998,7 @@
 </table>
 </section>
 <section id="bytes-subscription-with-step-1-not-implemented">
-<span id="cpydiff-types-bytes-subscrstep"></span><h3 id="bytes-subscription-with-step-1-not-implemented">Bytes subscription with step != 1 not implemented<a class="headerlink" href="#bytes-subscription-with-step-1-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-bytes-subscrstep"></span><h3 id="bytes-subscription-with-step-1-not-implemented">Bytes subscription with step != 1 not implemented<a class="headerlink" href="#bytes-subscription-with-step-1-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is highly optimized for memory usage.</p>
 <p><strong>Workaround:</strong> Use explicit loop for this very rare operation.</p>
 <p>Sample code:</p>
@@ -1037,10 +1006,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1059,9 +1024,9 @@
 </section>
 </section>
 <section id="dict">
-<h2 id="dict">dict<a class="headerlink" href="#dict" title="永久链接至标题">¶</a></h2>
+<h2 id="dict">dict<a class="headerlink" href="#dict" title="Permalink to this heading">¶</a></h2>
 <section id="dictionary-keys-view-does-not-behave-as-a-set">
-<span id="cpydiff-types-dict-keys-set"></span><h3 id="dictionary-keys-view-does-not-behave-as-a-set">Dictionary keys view does not behave as a set.<a class="headerlink" href="#dictionary-keys-view-does-not-behave-as-a-set" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-dict-keys-set"></span><h3 id="dictionary-keys-view-does-not-behave-as-a-set">Dictionary keys view does not behave as a set.<a class="headerlink" href="#dictionary-keys-view-does-not-behave-as-a-set" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> Not implemented.</p>
 <p><strong>Workaround:</strong> Explicitly convert keys to a set before using set operations.</p>
 <p>Sample code:</p>
@@ -1069,10 +1034,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1091,18 +1052,14 @@
 </section>
 </section>
 <section id="float">
-<h2 id="float">float<a class="headerlink" href="#float" title="永久链接至标题">¶</a></h2>
+<h2 id="float">float<a class="headerlink" href="#float" title="Permalink to this heading">¶</a></h2>
 <section id="upy-and-cpython-outputs-formats-may-differ">
-<span id="cpydiff-types-float-rounding"></span><h3 id="upy-and-cpython-outputs-formats-may-differ">uPy and CPython outputs formats may differ<a class="headerlink" href="#upy-and-cpython-outputs-formats-may-differ" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-float-rounding"></span><h3 id="upy-and-cpython-outputs-formats-may-differ">uPy and CPython outputs formats may differ<a class="headerlink" href="#upy-and-cpython-outputs-formats-may-differ" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">%.1g</span><span class="s2">"</span> <span class="o">%</span> <span class="o">-</span><span class="mf">9.9</span><span class="p">)</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1121,9 +1078,9 @@
 </section>
 </section>
 <section id="int">
-<h2 id="int">int<a class="headerlink" href="#int" title="永久链接至标题">¶</a></h2>
+<h2 id="int">int<a class="headerlink" href="#int" title="Permalink to this heading">¶</a></h2>
 <section id="bit-length-method-doesn-t-exist">
-<span id="cpydiff-types-int-bit-length"></span><h3 id="bit-length-method-doesn-t-exist"><code class="docutils literal notranslate"><span class="pre">bit_length</span></code> method doesn’t exist.<a class="headerlink" href="#bit-length-method-doesn-t-exist" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-int-bit-length"></span><h3 id="bit-length-method-doesn-t-exist"><code class="docutils literal notranslate"><span class="pre">bit_length</span></code> method doesn’t exist.<a class="headerlink" href="#bit-length-method-doesn-t-exist" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> bit_length method is not implemented.</p>
 <p><strong>Workaround:</strong> Avoid using this method on MicroPython.</p>
 <p>Sample code:</p>
@@ -1132,10 +1089,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 32%"/>
-<col style="width: 68%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1153,7 +1106,7 @@
 </table>
 </section>
 <section id="no-int-conversion-for-int-derived-types-available">
-<span id="cpydiff-types-int-subclassconv"></span><h3 id="no-int-conversion-for-int-derived-types-available">No int conversion for int-derived types available<a class="headerlink" href="#no-int-conversion-for-int-derived-types-available" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-int-subclassconv"></span><h3 id="no-int-conversion-for-int-derived-types-available">No int conversion for int-derived types available<a class="headerlink" href="#no-int-conversion-for-int-derived-types-available" title="Permalink to this heading">¶</a></h3>
 <p><strong>Workaround:</strong> Avoid subclassing builtin types unless really needed. Prefer <a class="reference external" href="https://en.wikipedia.org/wiki/Composition_over_inheritance">https://en.wikipedia.org/wiki/Composition_over_inheritance</a> .</p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">A</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
@@ -1165,10 +1118,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1187,9 +1136,9 @@
 </section>
 </section>
 <section id="list">
-<h2 id="list">list<a class="headerlink" href="#list" title="永久链接至标题">¶</a></h2>
+<h2 id="list">list<a class="headerlink" href="#list" title="Permalink to this heading">¶</a></h2>
 <section id="list-delete-with-step-1-not-implemented">
-<span id="cpydiff-types-list-delete-subscrstep"></span><h3 id="list-delete-with-step-1-not-implemented">List delete with step != 1 not implemented<a class="headerlink" href="#list-delete-with-step-1-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-list-delete-subscrstep"></span><h3 id="list-delete-with-step-1-not-implemented">List delete with step != 1 not implemented<a class="headerlink" href="#list-delete-with-step-1-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p><strong>Workaround:</strong> Use explicit loop for this rare operation.</p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -1198,10 +1147,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1219,7 +1164,7 @@
 </table>
 </section>
 <section id="list-slice-store-with-non-iterable-on-rhs-is-not-implemented">
-<span id="cpydiff-types-list-store-noniter"></span><h3 id="list-slice-store-with-non-iterable-on-rhs-is-not-implemented">List slice-store with non-iterable on RHS is not implemented<a class="headerlink" href="#list-slice-store-with-non-iterable-on-rhs-is-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-list-store-noniter"></span><h3 id="list-slice-store-with-non-iterable-on-rhs-is-not-implemented">List slice-store with non-iterable on RHS is not implemented<a class="headerlink" href="#list-slice-store-with-non-iterable-on-rhs-is-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> RHS is restricted to be a tuple or list</p>
 <p><strong>Workaround:</strong> Use <code class="docutils literal notranslate"><span class="pre">list(&lt;iter&gt;)</span></code> on RHS to convert the iterable to a list</p>
 <p>Sample code:</p>
@@ -1229,10 +1174,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 29%"/>
-<col style="width: 71%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1250,7 +1191,7 @@
 </table>
 </section>
 <section id="list-store-with-step-1-not-implemented">
-<span id="cpydiff-types-list-store-subscrstep"></span><h3 id="list-store-with-step-1-not-implemented">List store with step != 1 not implemented<a class="headerlink" href="#list-store-with-step-1-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-list-store-subscrstep"></span><h3 id="list-store-with-step-1-not-implemented">List store with step != 1 not implemented<a class="headerlink" href="#list-store-with-step-1-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p><strong>Workaround:</strong> Use explicit loop for this rare operation.</p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -1259,10 +1200,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1281,18 +1218,14 @@
 </section>
 </section>
 <section id="str">
-<h2 id="str">str<a class="headerlink" href="#str" title="永久链接至标题">¶</a></h2>
+<h2 id="str">str<a class="headerlink" href="#str" title="Permalink to this heading">¶</a></h2>
 <section id="start-end-indices-such-as-str-endswith-s-start-not-implemented">
-<span id="cpydiff-types-str-endswith"></span><h3 id="start-end-indices-such-as-str-endswith-s-start-not-implemented">Start/end indices such as str.endswith(s, start) not implemented<a class="headerlink" href="#start-end-indices-such-as-str-endswith-s-start-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-str-endswith"></span><h3 id="start-end-indices-such-as-str-endswith-s-start-not-implemented">Start/end indices such as str.endswith(s, start) not implemented<a class="headerlink" href="#start-end-indices-such-as-str-endswith-s-start-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"abc"</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s2">"c"</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1310,16 +1243,12 @@
 </table>
 </section>
 <section id="attributes-subscr-not-implemented">
-<span id="cpydiff-types-str-formatsubscr"></span><h3 id="attributes-subscr-not-implemented">Attributes/subscr not implemented<a class="headerlink" href="#attributes-subscr-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-str-formatsubscr"></span><h3 id="attributes-subscr-not-implemented">Attributes/subscr not implemented<a class="headerlink" href="#attributes-subscr-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="si">{a[0]}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">]))</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1337,17 +1266,13 @@
 </table>
 </section>
 <section id="str-with-keywords-not-implemented">
-<span id="cpydiff-types-str-keywords"></span><h3 id="str-with-keywords-not-implemented">str(…) with keywords not implemented<a class="headerlink" href="#str-with-keywords-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-str-keywords"></span><h3 id="str-with-keywords-not-implemented">str(…) with keywords not implemented<a class="headerlink" href="#str-with-keywords-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p><strong>Workaround:</strong> Input the encoding format directly. eg <code class="docutils literal notranslate"><span class="pre">print(bytes('abc',</span> <span class="pre">'utf-8'))</span></code></p>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="sa">b</span><span class="s2">"abc"</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s2">"utf8"</span><span class="p">))</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1365,7 +1290,7 @@
 </table>
 </section>
 <section id="str-ljust-and-str-rjust-not-implemented">
-<span id="cpydiff-types-str-ljust-rjust"></span><h3 id="str-ljust-and-str-rjust-not-implemented">str.ljust() and str.rjust() not implemented<a class="headerlink" href="#str-ljust-and-str-rjust-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-str-ljust-rjust"></span><h3 id="str-ljust-and-str-rjust-not-implemented">str.ljust() and str.rjust() not implemented<a class="headerlink" href="#str-ljust-and-str-rjust-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p><strong>Cause:</strong> MicroPython is highly optimized for memory usage. Easy workarounds available.</p>
 <p><strong>Workaround:</strong> Instead of <code class="docutils literal notranslate"><span class="pre">s.ljust(10)</span></code> use <code class="docutils literal notranslate"><span class="pre">"%-10s"</span> <span class="pre">%</span> <span class="pre">s</span></code>, instead of <code class="docutils literal notranslate"><span class="pre">s.rjust(10)</span></code> use <code class="docutils literal notranslate"><span class="pre">"%</span> <span class="pre">10s"</span> <span class="pre">%</span> <span class="pre">s</span></code>. Alternatively, <code class="docutils literal notranslate"><span class="pre">"{:&lt;10}".format(s)</span></code> or <code class="docutils literal notranslate"><span class="pre">"{:&gt;10}".format(s)</span></code>.</p>
 <p>Sample code:</p>
@@ -1373,10 +1298,6 @@
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1394,16 +1315,12 @@
 </table>
 </section>
 <section id="none-as-first-argument-for-rsplit-such-as-str-rsplit-none-n-not-implemented">
-<span id="cpydiff-types-str-rsplitnone"></span><h3 id="none-as-first-argument-for-rsplit-such-as-str-rsplit-none-n-not-implemented">None as first argument for rsplit such as str.rsplit(None, n) not implemented<a class="headerlink" href="#none-as-first-argument-for-rsplit-such-as-str-rsplit-none-n-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-str-rsplitnone"></span><h3 id="none-as-first-argument-for-rsplit-such-as-str-rsplit-none-n-not-implemented">None as first argument for rsplit such as str.rsplit(None, n) not implemented<a class="headerlink" href="#none-as-first-argument-for-rsplit-such-as-str-rsplit-none-n-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"a a a"</span><span class="o">.</span><span class="n">rsplit</span><span class="p">(</span><span class="kc">None</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1421,16 +1338,12 @@
 </table>
 </section>
 <section id="subscript-with-step-1-is-not-yet-implemented">
-<span id="cpydiff-types-str-subscrstep"></span><h3 id="subscript-with-step-1-is-not-yet-implemented">Subscript with step != 1 is not yet implemented<a class="headerlink" href="#subscript-with-step-1-is-not-yet-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-str-subscrstep"></span><h3 id="subscript-with-step-1-is-not-yet-implemented">Subscript with step != 1 is not yet implemented<a class="headerlink" href="#subscript-with-step-1-is-not-yet-implemented" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">"abcdefghi"</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">9</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1449,18 +1362,14 @@
 </section>
 </section>
 <section id="tuple">
-<h2 id="tuple">tuple<a class="headerlink" href="#tuple" title="永久链接至标题">¶</a></h2>
+<h2 id="tuple">tuple<a class="headerlink" href="#tuple" title="Permalink to this heading">¶</a></h2>
 <section id="tuple-load-with-step-1-not-implemented">
-<span id="cpydiff-types-tuple-subscrstep"></span><h3 id="tuple-load-with-step-1-not-implemented">Tuple load with step != 1 not implemented<a class="headerlink" href="#tuple-load-with-step-1-not-implemented" title="永久链接至标题">¶</a></h3>
+<span id="cpydiff-types-tuple-subscrstep"></span><h3 id="tuple-load-with-step-1-not-implemented">Tuple load with step != 1 not implemented<a class="headerlink" href="#tuple-load-with-step-1-not-implemented" title="Permalink to this heading">¶</a></h3>
 <p>Sample code:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)[</span><span class="mi">0</span><span class="p">:</span><span class="mi">4</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
 <table>
-<colgroup>
-<col style="width: 19%"/>
-<col style="width: 81%"/>
-</colgroup>
 <tbody>
 <tr class="row-odd"><td><p>CPy output:</p></td>
 <td><p>uPy output:</p></td>
@@ -1527,10 +1436,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

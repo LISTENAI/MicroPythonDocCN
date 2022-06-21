@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -385,7 +386,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-timer-control-internal-timers">
-<span id="pyb-timer"></span><h1 id="library-pyb-timer--page-root">class Timer – control internal timers<a class="headerlink" href="#library-pyb-timer--page-root" title="永久链接至标题">¶</a></h1>
+<span id="pyb-timer"></span><h1 id="library-pyb-timer--page-root">class Timer – control internal timers<a class="headerlink" href="#library-pyb-timer--page-root" title="Permalink to this heading">¶</a></h1>
 <p>Timers can be used for a great variety of tasks.  At the moment, only
 the simplest case is implemented: that of calling a function periodically.</p>
 <p>Each timer consists of a counter that counts up at a certain rate.  The rate
@@ -428,7 +429,7 @@ exceptions raised within a callback don’t give much information.  See
 <a class="reference internal" href="micropython.html#micropython.alloc_emergency_exception_buf" title="micropython.alloc_emergency_exception_buf"><code class="xref py py-func docutils literal notranslate"><span class="pre">micropython.alloc_emergency_exception_buf()</span></code></a> for how to get around this
 limitation.</p>
 <section id="constructors">
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyb.pyb.Timer">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">Timer</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.Timer" title="永久链接至目标">¶</a></dt>
@@ -438,7 +439,7 @@ arguments are given, then the timer is initialised by <code class="docutils lite
 </dd></dl>
 </section>
 <section id="methods">
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyb.Timer.init">
 <span class="sig-prename descclassname"><span class="pre">Timer.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">freq</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">prescaler</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Timer.UP</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">div</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">callback</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">deadtime</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.Timer.init" title="永久链接至目标">¶</a></dt>
@@ -615,11 +616,11 @@ the appropriate timer AF using the Pin API.</p></li>
 </section>
 </section>
 <section id="class-timerchannel-setup-a-channel-for-a-timer">
-<h1 id="class-timerchannel-setup-a-channel-for-a-timer">class TimerChannel — setup a channel for a timer<a class="headerlink" href="#class-timerchannel-setup-a-channel-for-a-timer" title="永久链接至标题">¶</a></h1>
+<h1 id="class-timerchannel-setup-a-channel-for-a-timer">class TimerChannel — setup a channel for a timer<a class="headerlink" href="#class-timerchannel-setup-a-channel-for-a-timer" title="Permalink to this heading">¶</a></h1>
 <p>Timer channels are used to generate/capture a signal using a timer.</p>
 <p>TimerChannel objects are created using the Timer.channel() method.</p>
 <section id="id1">
-<h2 id="id1">Methods<a class="headerlink" href="#id1" title="永久链接至标题">¶</a></h2>
+<h2 id="id1">Methods<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyb.timerchannel.callback">
 <span class="sig-prename descclassname"><span class="pre">timerchannel.</span></span><span class="sig-name descname"><span class="pre">callback</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.timerchannel.callback" title="永久链接至目标">¶</a></dt>
@@ -709,10 +710,10 @@ a duty cycle of 25%.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

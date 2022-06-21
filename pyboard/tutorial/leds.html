@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -558,7 +559,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="turning-on-leds-and-basic-python-concepts">
-<h1 id="pyboard-tutorial-leds--page-root"><span class="section-number">4. </span>Turning on LEDs and basic Python concepts<a class="headerlink" href="#pyboard-tutorial-leds--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="pyboard-tutorial-leds--page-root"><span class="section-number">4. </span>Turning on LEDs and basic Python concepts<a class="headerlink" href="#pyboard-tutorial-leds--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The easiest thing to do on the pyboard is to turn on the LEDs attached to the board. Connect the board, and log in as described in tutorial 1. We will start by turning and LED on in the interpreter, type the following</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">myled</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">myled</span><span class="o">.</span><span class="n">on</span><span class="p">()</span>
@@ -579,7 +580,7 @@
 <p><strong>Exercise: Try changing the time between toggling the led and turning on a different LED.</strong></p>
 <p><strong>Exercise: Connect to the pyboard directly, create a pyb.LED object and turn it on using the on() method.</strong></p>
 <section id="a-disco-on-your-pyboard">
-<h2 id="a-disco-on-your-pyboard"><span class="section-number">4.1. </span>A Disco on your pyboard<a class="headerlink" href="#a-disco-on-your-pyboard" title="永久链接至标题">¶</a></h2>
+<h2 id="a-disco-on-your-pyboard"><span class="section-number">4.1. </span>A Disco on your pyboard<a class="headerlink" href="#a-disco-on-your-pyboard" title="Permalink to this heading">¶</a></h2>
 <p>So far we have only used a single LED but the pyboard has 4 available. Let’s start by creating an object for each LED so we can control each of them. We do that by creating a list of LEDS with a list comprehension.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">leds</span> <span class="o">=</span> <span class="p">[</span><span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)]</span>
 </pre></div>
@@ -612,7 +613,7 @@ Next we will set up an infinite loop that cycles through each of the LEDs turnin
 </div>
 </section>
 <section id="the-special-leds">
-<h2 id="the-special-leds"><span class="section-number">4.2. </span>The Special LEDs<a class="headerlink" href="#the-special-leds" title="永久链接至标题">¶</a></h2>
+<h2 id="the-special-leds"><span class="section-number">4.2. </span>The Special LEDs<a class="headerlink" href="#the-special-leds" title="Permalink to this heading">¶</a></h2>
 <p>The yellow and blue LEDs are special. As well as turning them on and off, you can control their intensity using the intensity() method. This takes a number between 0 and 255 that determines how bright it is. The following script makes the blue LED gradually brighter then turns it off again.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">led</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">intensity</span> <span class="o">=</span> <span class="mi">0</span>
@@ -673,10 +674,10 @@ Next we will set up an infinite loop that cycles through each of the LEDs turnin
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

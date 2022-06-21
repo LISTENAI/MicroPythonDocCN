@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -471,7 +472,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="quick-reference-for-the-wipy">
-<span id="wipy-quickref"></span><h1 id="wipy-quickref--page-root">Quick reference for the WiPy<a class="headerlink" href="#wipy-quickref--page-root" title="永久链接至标题">¶</a></h1>
+<span id="wipy-quickref"></span><h1 id="wipy-quickref--page-root">Quick reference for the WiPy<a class="headerlink" href="#wipy-quickref--page-root" title="Permalink to this heading">¶</a></h1>
 <a class="reference internal image-reference" href="https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png"><img alt="WiPy pinout and alternate functions table" src="https://raw.githubusercontent.com/wipy/wipy/master/docs/PinOUT.png" style="width: 800px;"/></a>
 <p>Below is a quick reference for CC3200/WiPy.  If it is your first time
 working with this board please consider reading the following sections first:</p>
@@ -482,7 +483,7 @@ working with this board please consider reading the following sections first:</p
 </ul>
 </div>
 <section id="general-board-control-including-sleep-modes">
-<h2 id="general-board-control-including-sleep-modes">General board control (including sleep modes)<a class="headerlink" href="#general-board-control-including-sleep-modes" title="永久链接至标题">¶</a></h2>
+<h2 id="general-board-control-including-sleep-modes">General board control (including sleep modes)<a class="headerlink" href="#general-board-control-including-sleep-modes" title="Permalink to this heading">¶</a></h2>
 <p>See the <a class="reference internal" href="../library/machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 
@@ -498,7 +499,7 @@ working with this board please consider reading the following sections first:</p
 </div>
 </section>
 <section id="pins-and-gpio">
-<h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="永久链接至标题">¶</a></h2>
+<h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
@@ -516,7 +517,7 @@ working with this board please consider reading the following sections first:</p
 </div>
 </section>
 <section id="timers">
-<h2 id="timers">Timers<a class="headerlink" href="#timers" title="永久链接至标题">¶</a></h2>
+<h2 id="timers">Timers<a class="headerlink" href="#timers" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.TimerWiPy.html#machine-timerwipy"><span class="std std-ref">machine.TimerWiPy</span></a> and <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a>.
 Timer <code class="docutils literal notranslate"><span class="pre">id</span></code>’s take values from 0 to 3.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Timer</span>
@@ -532,7 +533,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="pwm-pulse-width-modulation">
-<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="永久链接至标题">¶</a></h2>
+<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> and <a class="reference internal" href="../library/machine.Timer.html#machine-timer"><span class="std std-ref">machine.Timer</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Timer</span>
 
@@ -545,7 +546,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="adc-analog-to-digital-conversion">
-<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="永久链接至标题">¶</a></h2>
+<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.ADCWiPy.html#machine-adcwipy"><span class="std std-ref">machine.ADCWiPy</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">ADC</span>
 
@@ -556,7 +557,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="uart-serial-bus">
-<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="永久链接至标题">¶</a></h2>
+<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.UART.html#machine-uart"><span class="std std-ref">machine.UART</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">UART</span>
 <span class="n">uart</span> <span class="o">=</span> <span class="n">UART</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">baudrate</span><span class="o">=</span><span class="mi">9600</span><span class="p">)</span>
@@ -566,7 +567,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="spi-bus">
-<h2 id="spi-bus">SPI bus<a class="headerlink" href="#spi-bus" title="永久链接至标题">¶</a></h2>
+<h2 id="spi-bus">SPI bus<a class="headerlink" href="#spi-bus" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.SPI.html#machine-spi"><span class="std std-ref">machine.SPI</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">SPI</span>
 
@@ -580,7 +581,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="i2c-bus">
-<h2 id="i2c-bus">I2C bus<a class="headerlink" href="#i2c-bus" title="永久链接至标题">¶</a></h2>
+<h2 id="i2c-bus">I2C bus<a class="headerlink" href="#i2c-bus" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.I2C.html#machine-i2c"><span class="std std-ref">machine.I2C</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">I2C</span>
 <span class="c1"># configure the I2C bus</span>
@@ -594,7 +595,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="watchdog-timer-wdt">
-<h2 id="watchdog-timer-wdt">Watchdog timer (WDT)<a class="headerlink" href="#watchdog-timer-wdt" title="永久链接至标题">¶</a></h2>
+<h2 id="watchdog-timer-wdt">Watchdog timer (WDT)<a class="headerlink" href="#watchdog-timer-wdt" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.WDT.html#machine-wdt"><span class="std std-ref">machine.WDT</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">WDT</span>
 
@@ -605,7 +606,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="real-time-clock-rtc">
-<h2 id="real-time-clock-rtc">Real time clock (RTC)<a class="headerlink" href="#real-time-clock-rtc" title="永久链接至标题">¶</a></h2>
+<h2 id="real-time-clock-rtc">Real time clock (RTC)<a class="headerlink" href="#real-time-clock-rtc" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.RTC.html#machine-rtc"><span class="std std-ref">machine.RTC</span></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">RTC</span>
 
@@ -631,7 +632,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="sd-card">
-<h2 id="sd-card">SD card<a class="headerlink" href="#sd-card" title="永久链接至标题">¶</a></h2>
+<h2 id="sd-card">SD card<a class="headerlink" href="#sd-card" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.SD.html#machine-sd"><span class="std std-ref">machine.SD</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">SD</span>
 <span class="kn">import</span> <span class="nn">os</span>
@@ -645,7 +646,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="wlan-wifi">
-<h2 id="wlan-wifi">WLAN (WiFi)<a class="headerlink" href="#wlan-wifi" title="永久链接至标题">¶</a></h2>
+<h2 id="wlan-wifi">WLAN (WiFi)<a class="headerlink" href="#wlan-wifi" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/network.WLAN.html#network-wlan"><span class="std std-ref">network.WLAN</span></a> and <a class="reference internal" href="../library/machine.html#module-machine" title="machine: functions related to the hardware"><code class="xref py py-mod docutils literal notranslate"><span class="pre">machine</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 <span class="kn">from</span> <span class="nn">network</span> <span class="k">import</span> <span class="n">WLAN</span>
@@ -668,7 +669,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="telnet-and-ftp-server">
-<h2 id="telnet-and-ftp-server">Telnet and FTP server<a class="headerlink" href="#telnet-and-ftp-server" title="永久链接至标题">¶</a></h2>
+<h2 id="telnet-and-ftp-server">Telnet and FTP server<a class="headerlink" href="#telnet-and-ftp-server" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="general.html#network.Server" title="network.Server"><code class="xref py py-class docutils literal notranslate"><span class="pre">network.Server</span></code></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">network</span> <span class="k">import</span> <span class="n">Server</span>
 
@@ -681,7 +682,7 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
 </div>
 </section>
 <section id="heart-beat-led">
-<h2 id="heart-beat-led">Heart beat LED<a class="headerlink" href="#heart-beat-led" title="永久链接至标题">¶</a></h2>
+<h2 id="heart-beat-led">Heart beat LED<a class="headerlink" href="#heart-beat-led" title="Permalink to this heading">¶</a></h2>
 <p>See <a class="reference internal" href="../library/wipy.html#module-wipy" title="wipy: WiPy specific features"><code class="xref py py-mod docutils literal notranslate"><span class="pre">wipy</span></code></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">wipy</span>
 
@@ -740,10 +741,10 @@ Timer <code class="docutils literal notranslate"><span class="pre">id</span></co
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

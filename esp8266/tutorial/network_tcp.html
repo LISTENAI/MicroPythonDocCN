@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -604,13 +605,13 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="network-tcp-sockets">
-<h1 id="esp8266-tutorial-network-tcp--page-root"><span class="section-number">5. </span>Network - TCP sockets<a class="headerlink" href="#esp8266-tutorial-network-tcp--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="esp8266-tutorial-network-tcp--page-root"><span class="section-number">5. </span>Network - TCP sockets<a class="headerlink" href="#esp8266-tutorial-network-tcp--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The building block of most of the internet is the TCP socket.  These sockets
 provide a reliable stream of bytes between the connected network devices.
 This part of the tutorial will show how to use TCP sockets in a few different
 cases.</p>
 <section id="star-wars-asciimation">
-<h2 id="star-wars-asciimation"><span class="section-number">5.1. </span>Star Wars Asciimation<a class="headerlink" href="#star-wars-asciimation" title="永久链接至标题">¶</a></h2>
+<h2 id="star-wars-asciimation"><span class="section-number">5.1. </span>Star Wars Asciimation<a class="headerlink" href="#star-wars-asciimation" title="Permalink to this heading">¶</a></h2>
 <p>The simplest thing to do is to download data from the internet.  In this case
 we will use the Star Wars Asciimation service provided by the blinkenlights.nl
 website.  It uses the telnet protocol on port 23 to stream data to anyone that
@@ -651,7 +652,7 @@ interrupt it).</p>
 you want to try it out there.</p>
 </section>
 <section id="http-get-request">
-<h2 id="http-get-request"><span class="section-number">5.2. </span>HTTP GET request<a class="headerlink" href="#http-get-request" title="永久链接至标题">¶</a></h2>
+<h2 id="http-get-request"><span class="section-number">5.2. </span>HTTP GET request<a class="headerlink" href="#http-get-request" title="Permalink to this heading">¶</a></h2>
 <p>The next example shows how to download a webpage.  HTTP uses port 80 and you
 first need to send a “GET” request before you can download anything.  As part
 of the request you need to specify the page to retrieve.</p>
@@ -679,7 +680,7 @@ of the request you need to specify the page to retrieve.</p>
 <p>This should retrieve the webpage and print the HTML to the console.</p>
 </section>
 <section id="simple-http-server">
-<h2 id="simple-http-server"><span class="section-number">5.3. </span>Simple HTTP server<a class="headerlink" href="#simple-http-server" title="永久链接至标题">¶</a></h2>
+<h2 id="simple-http-server"><span class="section-number">5.3. </span>Simple HTTP server<a class="headerlink" href="#simple-http-server" title="Permalink to this heading">¶</a></h2>
 <p>The following code creates an simple HTTP server which serves a single webpage
 that contains a table with the state of all the GPIO pins:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
@@ -768,10 +769,10 @@ that contains a table with the state of all the GPIO pins:</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

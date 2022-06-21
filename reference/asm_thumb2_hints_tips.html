@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -460,14 +461,14 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="hints-and-tips">
-<h1 id="reference-asm-thumb2-hints-tips--page-root"><span class="section-number">1. </span>Hints and tips<a class="headerlink" href="#reference-asm-thumb2-hints-tips--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="reference-asm-thumb2-hints-tips--page-root"><span class="section-number">1. </span>Hints and tips<a class="headerlink" href="#reference-asm-thumb2-hints-tips--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The following are some examples of the use of the inline assembler and some
 information on how to work around its limitations. In this document the term
 “assembler function” refers to a function declared in Python with the
 <code class="docutils literal notranslate"><span class="pre">@micropython.asm_thumb</span></code> decorator, whereas “subroutine” refers to assembler
 code called from within an assembler function.</p>
 <section id="code-branches-and-subroutines">
-<h2 id="code-branches-and-subroutines"><span class="section-number">1.1. </span>Code branches and subroutines<a class="headerlink" href="#code-branches-and-subroutines" title="永久链接至标题">¶</a></h2>
+<h2 id="code-branches-and-subroutines"><span class="section-number">1.1. </span>Code branches and subroutines<a class="headerlink" href="#code-branches-and-subroutines" title="Permalink to this heading">¶</a></h2>
 <p>It is important to appreciate that labels are local to an assembler function.
 There is currently no way for a subroutine defined in one function to be called
 from another.</p>
@@ -524,7 +525,7 @@ along with other registers which the program logic requires to be preserved.</p>
 </div>
 </section>
 <section id="argument-passing-and-return">
-<h2 id="argument-passing-and-return"><span class="section-number">1.2. </span>Argument passing and return<a class="headerlink" href="#argument-passing-and-return" title="永久链接至标题">¶</a></h2>
+<h2 id="argument-passing-and-return"><span class="section-number">1.2. </span>Argument passing and return<a class="headerlink" href="#argument-passing-and-return" title="Permalink to this heading">¶</a></h2>
 <p>The tutorial details the fact that assembler functions can support from zero to
 three arguments, which must (if used) be named <code class="docutils literal notranslate"><span class="pre">r0</span></code>, <code class="docutils literal notranslate"><span class="pre">r1</span></code> and <code class="docutils literal notranslate"><span class="pre">r2</span></code>. When
 the code executes the registers will be initialised to those values.</p>
@@ -544,7 +545,7 @@ passing and return of integers where bits 30 and 31 differ.</p>
 <p>The limitations on the number of arguments and return values can be overcome by means
 of the <code class="docutils literal notranslate"><span class="pre">array</span></code> module which enables any number of values of any type to be accessed.</p>
 <section id="multiple-arguments">
-<h3 id="multiple-arguments"><span class="section-number">1.2.1. </span>Multiple arguments<a class="headerlink" href="#multiple-arguments" title="永久链接至标题">¶</a></h3>
+<h3 id="multiple-arguments"><span class="section-number">1.2.1. </span>Multiple arguments<a class="headerlink" href="#multiple-arguments" title="Permalink to this heading">¶</a></h3>
 <p>If a Python array of integers is passed as an argument to an assembler
 function, the function will receive the address of a contiguous set of integers.
 Thus multiple arguments can be passed as elements of a single array. Similarly a
@@ -570,7 +571,7 @@ populate an integer array with the addresses of other arrays:</p>
 </div>
 </section>
 <section id="non-integer-data-types">
-<h3 id="non-integer-data-types"><span class="section-number">1.2.2. </span>Non-integer data types<a class="headerlink" href="#non-integer-data-types" title="永久链接至标题">¶</a></h3>
+<h3 id="non-integer-data-types"><span class="section-number">1.2.2. </span>Non-integer data types<a class="headerlink" href="#non-integer-data-types" title="Permalink to this heading">¶</a></h3>
 <p>These may be handled by means of arrays of the appropriate data type. For
 example, single precision floating point data may be processed as follows.
 This code example takes an array of floats and replaces its contents with
@@ -598,7 +599,7 @@ instance which may then be passed to the assembler function.</p>
 </section>
 </section>
 <section id="named-constants">
-<h2 id="named-constants"><span class="section-number">1.3. </span>Named constants<a class="headerlink" href="#named-constants" title="永久链接至标题">¶</a></h2>
+<h2 id="named-constants"><span class="section-number">1.3. </span>Named constants<a class="headerlink" href="#named-constants" title="Permalink to this heading">¶</a></h2>
 <p>Assembler code may be made more readable and maintainable by using named
 constants rather than littering code with numbers. This may be achieved
 thus:</p>
@@ -615,7 +616,7 @@ Python scope they can be shared between multiple assembler functions and
 with Python code.</p>
 </section>
 <section id="assembler-code-as-class-methods">
-<h2 id="assembler-code-as-class-methods"><span class="section-number">1.4. </span>Assembler code as class methods<a class="headerlink" href="#assembler-code-as-class-methods" title="永久链接至标题">¶</a></h2>
+<h2 id="assembler-code-as-class-methods"><span class="section-number">1.4. </span>Assembler code as class methods<a class="headerlink" href="#assembler-code-as-class-methods" title="Permalink to this heading">¶</a></h2>
 <p>MicroPython passes the address of the object instance as the first argument
 to class methods. This is normally of little use to an assembler function.
 It can be avoided by declaring the function as a static method thus:</p>
@@ -628,7 +629,7 @@ It can be avoided by declaring the function as a static method thus:</p>
 </div>
 </section>
 <section id="use-of-unsupported-instructions">
-<h2 id="use-of-unsupported-instructions"><span class="section-number">1.5. </span>Use of unsupported instructions<a class="headerlink" href="#use-of-unsupported-instructions" title="永久链接至标题">¶</a></h2>
+<h2 id="use-of-unsupported-instructions"><span class="section-number">1.5. </span>Use of unsupported instructions<a class="headerlink" href="#use-of-unsupported-instructions" title="Permalink to this heading">¶</a></h2>
 <p>These can be coded using the data statement as shown below. While
 <code class="docutils literal notranslate"><span class="pre">push()</span></code> and <code class="docutils literal notranslate"><span class="pre">pop()</span></code> are supported the example below illustrates the
 principle. The necessary machine code may be found in the ARM v7-M
@@ -640,7 +641,7 @@ calls such as</p>
 <p>indicates that each subsequent argument is a two byte quantity.</p>
 </section>
 <section id="overcoming-micropython-s-integer-restriction">
-<h2 id="overcoming-micropython-s-integer-restriction"><span class="section-number">1.6. </span>Overcoming MicroPython’s integer restriction<a class="headerlink" href="#overcoming-micropython-s-integer-restriction" title="永久链接至标题">¶</a></h2>
+<h2 id="overcoming-micropython-s-integer-restriction"><span class="section-number">1.6. </span>Overcoming MicroPython’s integer restriction<a class="headerlink" href="#overcoming-micropython-s-integer-restriction" title="Permalink to this heading">¶</a></h2>
 <p>The Pyboard chip includes a CRC generator. Its use presents a problem in
 MicroPython because the returned values cover the full gamut of 32 bit
 quantities whereas small integers in MicroPython cannot have differing values
@@ -724,10 +725,10 @@ coerce the result into an arbitrary precision unsigned integer.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

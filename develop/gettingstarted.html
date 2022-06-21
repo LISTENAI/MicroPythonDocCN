@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -343,7 +344,7 @@
     <li class="md-nav__item">
     
     
-      <a href="memorymgt.html" class="md-nav__link">Memory Management</a>
+      <a href="memorymgt.html" class="md-nav__link">内存管理</a>
       
     
     </li>
@@ -506,12 +507,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-started">
-<span id="gettingstarted"></span><h1 id="develop-gettingstarted--page-root">Getting Started<a class="headerlink" href="#develop-gettingstarted--page-root" title="永久链接至标题">¶</a></h1>
+<span id="gettingstarted"></span><h1 id="develop-gettingstarted--page-root">Getting Started<a class="headerlink" href="#develop-gettingstarted--page-root" title="Permalink to this heading">¶</a></h1>
 <p>This guide covers a step-by-step process on setting up version control, obtaining and building
 a copy of the source code for a port, building the documentation, running tests, and a description of the
 directory structure of the MicroPython code base.</p>
 <section id="source-control-with-git">
-<h2 id="source-control-with-git">Source control with git<a class="headerlink" href="#source-control-with-git" title="永久链接至标题">¶</a></h2>
+<h2 id="source-control-with-git">Source control with git<a class="headerlink" href="#source-control-with-git" title="Permalink to this heading">¶</a></h2>
 <p>MicroPython is hosted on <a class="reference external" href="https://github.com/micropython/micropython">GitHub</a> and uses
 <a class="reference external" href="https://git-scm.com">Git</a> for source control. The workflow is such that
 code is pulled and pushed to and from the main repository. Install the respective version
@@ -530,7 +531,7 @@ by commits which are only for formatting code but have no functional changes. Se
 </div>
 </section>
 <section id="get-the-code">
-<h2 id="get-the-code">Get the code<a class="headerlink" href="#get-the-code" title="永久链接至标题">¶</a></h2>
+<h2 id="get-the-code">Get the code<a class="headerlink" href="#get-the-code" title="Permalink to this heading">¶</a></h2>
 <p>It is recommended that you maintain a fork of the MicroPython repository for your development purposes.
 The process of obtaining the source code includes the following:</p>
 <ol class="arabic simple">
@@ -570,14 +571,14 @@ to work on a development branch.</p>
 to a different branch.</p>
 </section>
 <section id="compile-and-build-the-code">
-<h2 id="compile-and-build-the-code">Compile and build the code<a class="headerlink" href="#compile-and-build-the-code" title="永久链接至标题">¶</a></h2>
+<h2 id="compile-and-build-the-code">Compile and build the code<a class="headerlink" href="#compile-and-build-the-code" title="Permalink to this heading">¶</a></h2>
 <p>When compiling MicroPython, you compile a specific <a class="reference internal" href="../reference/glossary.html#term-port"><span class="xref std std-term">port</span></a>, usually
 targeting a specific <a class="reference external" href="https://docs.python.org/3.5/glossary.html#glossary" title="(在 Python v3.5)"><span class="xref std std-ref">board</span></a>. Start by installing the required dependencies.
 Then build the MicroPython cross-compiler before you can successfully compile and build.
 This applies specifically when using Linux to compile.
 The Windows instructions are provided in a later section.</p>
 <section id="required-dependencies">
-<span id="id1"></span><h3 id="required-dependencies">Required dependencies<a class="headerlink" href="#required-dependencies" title="永久链接至标题">¶</a></h3>
+<span id="id1"></span><h3 id="required-dependencies">Required dependencies<a class="headerlink" href="#required-dependencies" title="Permalink to this heading">¶</a></h3>
 <p>Install the required dependencies for Linux:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install build-essential libffi-dev git pkg-config
 </pre></div>
@@ -602,7 +603,7 @@ Type <span class="s2">"help"</span>, <span class="s2">"copyright"</span>, <span 
 <a class="reference external" href="https://github.com/micropython/micropython/tree/master/ports">readme files</a>.</p>
 </section>
 <section id="building-the-micropython-cross-compiler">
-<h3 id="building-the-micropython-cross-compiler">Building the MicroPython cross-compiler<a class="headerlink" href="#building-the-micropython-cross-compiler" title="永久链接至标题">¶</a></h3>
+<h3 id="building-the-micropython-cross-compiler">Building the MicroPython cross-compiler<a class="headerlink" href="#building-the-micropython-cross-compiler" title="Permalink to this heading">¶</a></h3>
 <p>Almost all ports require building <code class="docutils literal notranslate"><span class="pre">mpy-cross</span></code> first to perform pre-compilation
 of Python code that will be included in the port firmware:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mpy-cross
@@ -628,7 +629,7 @@ to do <code class="docutils literal notranslate"><span class="pre">cd</span> <sp
 </div>
 </section>
 <section id="building-the-unix-port-of-micropython">
-<h3 id="building-the-unix-port-of-micropython">Building the Unix port of MicroPython<a class="headerlink" href="#building-the-unix-port-of-micropython" title="永久链接至标题">¶</a></h3>
+<h3 id="building-the-unix-port-of-micropython">Building the Unix port of MicroPython<a class="headerlink" href="#building-the-unix-port-of-micropython" title="Permalink to this heading">¶</a></h3>
 <p>The Unix port is a version of MicroPython that runs on Linux, macOS, and other Unix-like operating systems.
 It’s extremely useful for developing MicroPython as it avoids having to deploy your code to a device to test it.
 In many ways, it works a lot like CPython’s python binary.</p>
@@ -666,14 +667,14 @@ hello world
 </div>
 </section>
 <section id="building-the-windows-port">
-<h3 id="building-the-windows-port">Building the Windows port<a class="headerlink" href="#building-the-windows-port" title="永久链接至标题">¶</a></h3>
+<h3 id="building-the-windows-port">Building the Windows port<a class="headerlink" href="#building-the-windows-port" title="Permalink to this heading">¶</a></h3>
 <p>The Windows port includes a Visual Studio project file micropython.vcxproj that you can use to build micropython.exe.
 It can be opened in Visual Studio or built from the command line using msbuild. Alternatively, it can be built using mingw,
 either in Windows with Cygwin, or on Linux.
 See <a class="reference external" href="https://github.com/micropython/micropython/tree/master/ports/windows">windows port documentation</a> for more information.</p>
 </section>
 <section id="building-the-stm32-port">
-<h3 id="building-the-stm32-port">Building the STM32 port<a class="headerlink" href="#building-the-stm32-port" title="永久链接至标题">¶</a></h3>
+<h3 id="building-the-stm32-port">Building the STM32 port<a class="headerlink" href="#building-the-stm32-port" title="Permalink to this heading">¶</a></h3>
 <p>Like the Unix port, you need to install some required dependencies
 as detailed in the <a class="reference internal" href="#required-dependencies"><span class="std std-ref">Required dependencies</span></a> section, then build:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ports/stm32
@@ -700,7 +701,7 @@ for the available boards. e.g. “PYBV11” or “NUCLEO_WB55”.</p>
 </section>
 </section>
 <section id="building-the-documentation">
-<h2 id="building-the-documentation">Building the documentation<a class="headerlink" href="#building-the-documentation" title="永久链接至标题">¶</a></h2>
+<h2 id="building-the-documentation">Building the documentation<a class="headerlink" href="#building-the-documentation" title="Permalink to this heading">¶</a></h2>
 <p>MicroPython documentation is created using <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code>. If you have already
 installed Python, then install <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> using <code class="docutils literal notranslate"><span class="pre">pip</span></code>. It is recommended
 that you use a virtual environment:</p>
@@ -721,7 +722,7 @@ $ pip install sphinx
 documentation on <a class="reference external" href="https://docs.readthedocs.io/en/stable/intro/import-guide.html">importing your documentation</a> to use Read the Docs.</p>
 </section>
 <section id="running-the-tests">
-<h2 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="永久链接至标题">¶</a></h2>
+<h2 id="running-the-tests">Running the tests<a class="headerlink" href="#running-the-tests" title="Permalink to this heading">¶</a></h2>
 <p>To run all tests in the test suite on the Unix port use:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ports/unix
 $ make <span class="nb">test</span>
@@ -735,7 +736,7 @@ $ ./run-tests.py --target minimal --device /dev/ttyACM0
 <p>See also <a class="reference internal" href="writingtests.html#writingtests"><span class="std std-ref">Writing tests</span></a>.</p>
 </section>
 <section id="folder-structure">
-<h2 id="folder-structure">Folder structure<a class="headerlink" href="#folder-structure" title="永久链接至标题">¶</a></h2>
+<h2 id="folder-structure">Folder structure<a class="headerlink" href="#folder-structure" title="Permalink to this heading">¶</a></h2>
 <p>There are a couple of directories to take note of in terms of where certain implementation details
 are. The following is a break down of the top-level folders in the source code.</p>
 <p>py</p>
@@ -828,10 +829,10 @@ are. The following is a break down of the top-level folders in the source code.<
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

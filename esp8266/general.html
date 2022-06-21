@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -568,10 +569,10 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="general-information-about-the-esp8266-port">
-<span id="esp8266-general"></span><h1 id="esp8266-general--page-root">General information about the ESP8266 port<a class="headerlink" href="#esp8266-general--page-root" title="永久链接至标题">¶</a></h1>
+<span id="esp8266-general"></span><h1 id="esp8266-general--page-root">General information about the ESP8266 port<a class="headerlink" href="#esp8266-general--page-root" title="Permalink to this heading">¶</a></h1>
 <p>ESP8266 is a popular WiFi-enabled System-on-Chip (SoC) by Espressif Systems.</p>
 <section id="multitude-of-boards">
-<h2 id="multitude-of-boards">Multitude of boards<a class="headerlink" href="#multitude-of-boards" title="永久链接至标题">¶</a></h2>
+<h2 id="multitude-of-boards">Multitude of boards<a class="headerlink" href="#multitude-of-boards" title="Permalink to this heading">¶</a></h2>
 <p>There is a multitude of modules and boards from different sources which carry
 the ESP8266 chip. MicroPython tries to provide a generic port which would run on
 as many boards/modules as possible, but there may be limitations. Adafruit
@@ -598,7 +599,7 @@ ESP8266 deepsleep mode.</p></li>
 </ul>
 </section>
 <section id="technical-specifications-and-soc-datasheets">
-<h2 id="technical-specifications-and-soc-datasheets">Technical specifications and SoC datasheets<a class="headerlink" href="#technical-specifications-and-soc-datasheets" title="永久链接至标题">¶</a></h2>
+<h2 id="technical-specifications-and-soc-datasheets">Technical specifications and SoC datasheets<a class="headerlink" href="#technical-specifications-and-soc-datasheets" title="Permalink to this heading">¶</a></h2>
 <p>The datasheets and other reference material for ESP8266 chip are available
 from the vendor site: <a class="reference external" href="http://bbs.espressif.com/viewtopic.php?f=67&amp;t=225">http://bbs.espressif.com/viewtopic.php?f=67&amp;t=225</a> .
 They are the primary reference for the chip technical specifications, capabilities,
@@ -622,7 +623,7 @@ and always-available BootROM bootloader, ESP8266 is not brickable.</p></li>
 </ul>
 </section>
 <section id="scarcity-of-runtime-resources">
-<h2 id="scarcity-of-runtime-resources">Scarcity of runtime resources<a class="headerlink" href="#scarcity-of-runtime-resources" title="永久链接至标题">¶</a></h2>
+<h2 id="scarcity-of-runtime-resources">Scarcity of runtime resources<a class="headerlink" href="#scarcity-of-runtime-resources" title="Permalink to this heading">¶</a></h2>
 <p>ESP8266 has very modest resources (first of all, RAM memory). So, please
 avoid allocating too big container objects (lists, dictionaries) and
 buffers. There is also no full-fledged OS to keep track of resources
@@ -631,7 +632,7 @@ application: please be sure to close open files, sockets, etc. as soon
 as possible after use.</p>
 </section>
 <section id="boot-process">
-<h2 id="boot-process">Boot process<a class="headerlink" href="#boot-process" title="永久链接至标题">¶</a></h2>
+<h2 id="boot-process">Boot process<a class="headerlink" href="#boot-process" title="Permalink to this heading">¶</a></h2>
 <p>On boot, MicroPython EPS8266 port executes <code class="docutils literal notranslate"><span class="pre">_boot.py</span></code> script from internal
 frozen modules. It mounts filesystem in FlashROM, or if it’s not available,
 performs first-time setup of the module and creates the filesystem. This
@@ -665,9 +666,9 @@ the following in <code class="docutils literal notranslate"><span class="pre">ma
 allow to install multiple applications on a board, and switch among them.</p>
 </section>
 <section id="known-issues">
-<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="永久链接至标题">¶</a></h2>
+<h2 id="known-issues">Known Issues<a class="headerlink" href="#known-issues" title="Permalink to this heading">¶</a></h2>
 <section id="real-time-clock">
-<h3 id="real-time-clock">Real-time clock<a class="headerlink" href="#real-time-clock" title="永久链接至标题">¶</a></h3>
+<h3 id="real-time-clock">Real-time clock<a class="headerlink" href="#real-time-clock" title="Permalink to this heading">¶</a></h3>
 <p>RTC in ESP8266 has very bad accuracy, drift may be seconds per minute. As
 a workaround, to measure short enough intervals you can use
 <code class="docutils literal notranslate"><span class="pre">time.time()</span></code>, etc. functions, and for wall clock time, synchronize from
@@ -678,7 +679,7 @@ will overflow every 7:45h.  If a long-term working RTC time is required then
 MicroPython will then handle the overflow.</p>
 </section>
 <section id="simultaneous-operation-of-sta-if-and-ap-if">
-<h3 id="simultaneous-operation-of-sta-if-and-ap-if">Simultaneous operation of STA_IF and AP_IF<a class="headerlink" href="#simultaneous-operation-of-sta-if-and-ap-if" title="永久链接至标题">¶</a></h3>
+<h3 id="simultaneous-operation-of-sta-if-and-ap-if">Simultaneous operation of STA_IF and AP_IF<a class="headerlink" href="#simultaneous-operation-of-sta-if-and-ap-if" title="Permalink to this heading">¶</a></h3>
 <p>Simultaneous operation of STA_IF and AP_IF interfaces is supported.</p>
 <p>However, due to restrictions of the hardware, there may be performance
 issues in the AP_IF, if the STA_IF is not connected and searching.
@@ -686,7 +687,7 @@ An application should manage these interfaces and for example
 deactivate the STA_IF in environments where only the AP_IF is used.</p>
 </section>
 <section id="sockets-and-wifi-buffers-overflow">
-<h3 id="sockets-and-wifi-buffers-overflow">Sockets and WiFi buffers overflow<a class="headerlink" href="#sockets-and-wifi-buffers-overflow" title="永久链接至标题">¶</a></h3>
+<h3 id="sockets-and-wifi-buffers-overflow">Sockets and WiFi buffers overflow<a class="headerlink" href="#sockets-and-wifi-buffers-overflow" title="Permalink to this heading">¶</a></h3>
 <p>Socket instances remain active until they are explicitly closed. This has two
 consequences. Firstly they occupy RAM, so an application which opens sockets
 without closing them may eventually run out of memory. Secondly not properly
@@ -708,7 +709,7 @@ or by an exception, for example using try/finally:</p>
 </div>
 </section>
 <section id="ssl-tls-limitations">
-<h3 id="ssl-tls-limitations">SSL/TLS limitations<a class="headerlink" href="#ssl-tls-limitations" title="永久链接至标题">¶</a></h3>
+<h3 id="ssl-tls-limitations">SSL/TLS limitations<a class="headerlink" href="#ssl-tls-limitations" title="Permalink to this heading">¶</a></h3>
 <p>ESP8266 uses <a class="reference external" href="http://axtls.sourceforge.net/">axTLS</a> library, which is one
 of the smallest TLS libraries with compatible licensing. However, it
 also has some known issues/limitations:</p>
@@ -808,10 +809,10 @@ to man-in-the-middle attacks).</p></li>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

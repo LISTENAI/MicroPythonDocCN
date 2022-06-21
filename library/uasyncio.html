@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -588,7 +589,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="module-uasyncio">
-<span id="uasyncio-asynchronous-i-o-scheduler"></span><h1 id="library-uasyncio--page-root"><a class="reference internal" href="#library-uasyncio--page-root" title="uasyncio: asynchronous I/O scheduler for writing concurrent code"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uasyncio</span></code></a> — asynchronous I/O scheduler<a class="headerlink" href="#library-uasyncio--page-root" title="永久链接至标题">¶</a></h1>
+<span id="uasyncio-asynchronous-i-o-scheduler"></span><h1 id="library-uasyncio--page-root"><a class="reference internal" href="#library-uasyncio--page-root" title="uasyncio: asynchronous I/O scheduler for writing concurrent code"><code class="xref py py-mod docutils literal notranslate"><span class="pre">uasyncio</span></code></a> — asynchronous I/O scheduler<a class="headerlink" href="#library-uasyncio--page-root" title="Permalink to this heading">¶</a></h1>
 <p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
 CPython documentation:</em>
@@ -618,7 +619,7 @@ CPython documentation:</em>
 </pre></div>
 </div>
 <section id="core-functions">
-<h2 id="core-functions">Core functions<a class="headerlink" href="#core-functions" title="永久链接至标题">¶</a></h2>
+<h2 id="core-functions">Core functions<a class="headerlink" href="#core-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="uasyncio.create_task">
 <span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">create_task</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coro</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uasyncio.create_task" title="永久链接至目标">¶</a></dt>
@@ -650,7 +651,7 @@ CPython documentation:</em>
 </dd></dl>
 </section>
 <section id="additional-functions">
-<h2 id="additional-functions">Additional functions<a class="headerlink" href="#additional-functions" title="永久链接至标题">¶</a></h2>
+<h2 id="additional-functions">Additional functions<a class="headerlink" href="#additional-functions" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="uasyncio.wait_for">
 <span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">wait_for</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">awaitable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uasyncio.wait_for" title="永久链接至目标">¶</a></dt>
@@ -680,7 +681,7 @@ promoted to tasks.</p>
 </dd></dl>
 </section>
 <section id="class-task">
-<h2 id="class-task">class Task<a class="headerlink" href="#class-task" title="永久链接至标题">¶</a></h2>
+<h2 id="class-task">class Task<a class="headerlink" href="#class-task" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="uasyncio.Task">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">Task</span></span><a class="headerlink" href="#uasyncio.Task" title="永久链接至目标">¶</a></dt>
@@ -698,7 +699,7 @@ ignore this exception.  Cleanup code may be run by trapping it, or via
 </dd></dl>
 </section>
 <section id="class-event">
-<h2 id="class-event">class Event<a class="headerlink" href="#class-event" title="永久链接至标题">¶</a></h2>
+<h2 id="class-event">class Event<a class="headerlink" href="#class-event" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="uasyncio.Event">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">Event</span></span><a class="headerlink" href="#uasyncio.Event" title="永久链接至目标">¶</a></dt>
@@ -731,7 +732,7 @@ immediately.</p>
 </dd></dl>
 </section>
 <section id="class-threadsafeflag">
-<h2 id="class-threadsafeflag">class ThreadSafeFlag<a class="headerlink" href="#class-threadsafeflag" title="永久链接至标题">¶</a></h2>
+<h2 id="class-threadsafeflag">class ThreadSafeFlag<a class="headerlink" href="#class-threadsafeflag" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="uasyncio.ThreadSafeFlag">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">ThreadSafeFlag</span></span><a class="headerlink" href="#uasyncio.ThreadSafeFlag" title="永久链接至目标">¶</a></dt>
@@ -755,7 +756,7 @@ immediately.</p>
 </dd></dl>
 </section>
 <section id="class-lock">
-<h2 id="class-lock">class Lock<a class="headerlink" href="#class-lock" title="永久链接至标题">¶</a></h2>
+<h2 id="class-lock">class Lock<a class="headerlink" href="#class-lock" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="uasyncio.Lock">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">Lock</span></span><a class="headerlink" href="#uasyncio.Lock" title="永久链接至目标">¶</a></dt>
@@ -784,7 +785,7 @@ waiting an the lock becomes unlocked.</p>
 </dd></dl>
 </section>
 <section id="tcp-stream-connections">
-<h2 id="tcp-stream-connections">TCP stream connections<a class="headerlink" href="#tcp-stream-connections" title="永久链接至标题">¶</a></h2>
+<h2 id="tcp-stream-connections">TCP stream connections<a class="headerlink" href="#tcp-stream-connections" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="uasyncio.open_connection">
 <span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">open_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#uasyncio.open_connection" title="永久链接至目标">¶</a></dt>
@@ -886,7 +887,7 @@ in an <code class="docutils literal notranslate"><span class="pre">async</span> 
 </dd></dl>
 </section>
 <section id="event-loop">
-<h2 id="event-loop">Event Loop<a class="headerlink" href="#event-loop" title="永久链接至标题">¶</a></h2>
+<h2 id="event-loop">Event Loop<a class="headerlink" href="#event-loop" title="Permalink to this heading">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="uasyncio.get_event_loop">
 <span class="sig-prename descclassname"><span class="pre">uasyncio.</span></span><span class="sig-name descname"><span class="pre">get_event_loop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#uasyncio.get_event_loop" title="永久链接至目标">¶</a></dt>
@@ -1004,10 +1005,10 @@ is a dictionary containing keys: <code class="docutils literal notranslate"><spa
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

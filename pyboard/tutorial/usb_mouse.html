@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -569,7 +570,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="making-the-pyboard-act-as-a-usb-mouse">
-<h1 id="pyboard-tutorial-usb-mouse--page-root"><span class="section-number">8. </span>Making the pyboard act as a USB mouse<a class="headerlink" href="#pyboard-tutorial-usb-mouse--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="pyboard-tutorial-usb-mouse--page-root"><span class="section-number">8. </span>Making the pyboard act as a USB mouse<a class="headerlink" href="#pyboard-tutorial-usb-mouse--page-root" title="Permalink to this heading">¶</a></h1>
 <p>The pyboard is a USB device, and can configured to act as a mouse instead
 of the default USB flash drive.</p>
 <p>To do this we must first edit the <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> file to change the USB
@@ -601,7 +602,7 @@ USB device when it boots up.</p>
 <p>Eject/unmount the pyboard drive and reset it using the RST switch.
 Your PC should now detect the pyboard as a mouse!</p>
 <section id="sending-mouse-events-by-hand">
-<h2 id="sending-mouse-events-by-hand"><span class="section-number">8.1. </span>Sending mouse events by hand<a class="headerlink" href="#sending-mouse-events-by-hand" title="永久链接至标题">¶</a></h2>
+<h2 id="sending-mouse-events-by-hand"><span class="section-number">8.1. </span>Sending mouse events by hand<a class="headerlink" href="#sending-mouse-events-by-hand" title="Permalink to this heading">¶</a></h2>
 <p>To get the py-mouse to do anything we need to send mouse events to the PC.
 We will first do this manually using the REPL prompt.  Connect to your
 pyboard using your serial program and type the following (no need to type
@@ -629,7 +630,7 @@ playing around with different numbers.</p>
 <p><strong>Exercise: make the mouse go around in a circle.</strong></p>
 </section>
 <section id="making-a-mouse-with-the-accelerometer">
-<h2 id="making-a-mouse-with-the-accelerometer"><span class="section-number">8.2. </span>Making a mouse with the accelerometer<a class="headerlink" href="#making-a-mouse-with-the-accelerometer" title="永久链接至标题">¶</a></h2>
+<h2 id="making-a-mouse-with-the-accelerometer"><span class="section-number">8.2. </span>Making a mouse with the accelerometer<a class="headerlink" href="#making-a-mouse-with-the-accelerometer" title="Permalink to this heading">¶</a></h2>
 <p>Now lets make the mouse move based on the angle of the pyboard, using the
 accelerometer.  The following code can be typed directly at the REPL prompt,
 or put in the <code class="docutils literal notranslate"><span class="pre">main.py</span></code> file.  Here, we’ll put in in <code class="docutils literal notranslate"><span class="pre">main.py</span></code> because to do
@@ -674,7 +675,7 @@ the mouse around.  Try it out, and see if you can make the mouse stand still!</p
 minus sign in front of the y-coordinate in the <code class="docutils literal notranslate"><span class="pre">hid.send()</span></code> line above.</p>
 </section>
 <section id="restoring-your-pyboard-to-normal">
-<h2 id="restoring-your-pyboard-to-normal"><span class="section-number">8.3. </span>Restoring your pyboard to normal<a class="headerlink" href="#restoring-your-pyboard-to-normal" title="永久链接至标题">¶</a></h2>
+<h2 id="restoring-your-pyboard-to-normal"><span class="section-number">8.3. </span>Restoring your pyboard to normal<a class="headerlink" href="#restoring-your-pyboard-to-normal" title="Permalink to this heading">¶</a></h2>
 <p>If you leave your pyboard as-is, it’ll behave as a mouse everytime you plug
 it in.  You probably want to change it back to normal.  To do this you need
 to first enter safe mode (see above), and then edit the <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> file.
@@ -735,10 +736,10 @@ back to normal operating mode.</p>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

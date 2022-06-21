@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -365,12 +366,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-diskaccess-access-to-disk-storage">
-<span id="zephyr-diskaccess"></span><h1 id="library-zephyr-diskaccess--page-root">DiskAccess 类 —- 访问磁盘存储<a class="headerlink" href="#library-zephyr-diskaccess--page-root" title="永久链接至标题">¶</a></h1>
+<span id="zephyr-diskaccess"></span><h1 id="library-zephyr-diskaccess--page-root">DiskAccess 类 —- 访问磁盘存储<a class="headerlink" href="#library-zephyr-diskaccess--page-root" title="Permalink to this heading">¶</a></h1>
 <p>使用 <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/storage/disk/access.html">Zephyr Disk Access API</a> 。</p>
 <p>此类允许访问开发板上的存储设备，例如对 SD 卡控制器和通过 SPI 连接的 SD 卡的支持。设备通过使用 Zephyr 设备树数据在启动引导时自动检测和初始化磁盘设备。</p>
 <p>在给定磁盘名称、缓冲区、起始磁盘块和要读取的扇区数的情况下，Zephyr 磁盘访问类允许在磁盘设备和可访问内存缓冲区之间传输数据。MicroPython 会根据需要读取尽可能多的块来填充缓冲区，因此要读取的扇区数是通过将缓冲区长度除以磁盘的块大小来找到的。</p>
 <section id="constructors">
-<h2 id="constructors">构造器<a class="headerlink" href="#constructors" title="永久链接至标题">¶</a></h2>
+<h2 id="constructors">构造器<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="zephyr.DiskAccess">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">zephyr.</span></span><span class="sig-name descname"><span class="pre">DiskAccess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">disk_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.DiskAccess" title="永久链接至目标">¶</a></dt>
@@ -378,7 +379,7 @@
 </dd></dl>
 </section>
 <section id="methods">
-<h2 id="methods">函数<a class="headerlink" href="#methods" title="永久链接至标题">¶</a></h2>
+<h2 id="methods">函数<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="zephyr.DiskAccess.readblocks">
 <span class="sig-prename descclassname"><span class="pre">DiskAccess.</span></span><span class="sig-name descname"><span class="pre">readblocks</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">block_num</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">buf</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#zephyr.DiskAccess.readblocks" title="永久链接至目标">¶</a></dt>
@@ -446,10 +447,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

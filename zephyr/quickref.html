@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/translations.js"></script>
     <link rel="shortcut icon" href="../_static/favicon.ico"/>
@@ -405,7 +406,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="quick-reference-for-the-zephyr-port">
-<span id="zephyr-quickref"></span><h1 id="zephyr-quickref--page-root">Zephyr 适配的快速参考<a class="headerlink" href="#zephyr-quickref--page-root" title="永久链接至标题">¶</a></h1>
+<span id="zephyr-quickref"></span><h1 id="zephyr-quickref--page-root">Zephyr 适配的快速参考<a class="headerlink" href="#zephyr-quickref--page-root" title="Permalink to this heading">¶</a></h1>
 <p>以下是 Zephyr 适配的快速参考。如果这是你第一次用这个适配来工作的话，请考虑先阅读以下章节</p>
 <div class="toctree-wrapper compound">
 <ul>
@@ -414,11 +415,11 @@
 </ul>
 </div>
 <section id="running-micropython">
-<h2 id="running-micropython">运行 MicroPython<a class="headerlink" href="#running-micropython" title="永久链接至标题">¶</a></h2>
+<h2 id="running-micropython">运行 MicroPython<a class="headerlink" href="#running-micropython" title="Permalink to this heading">¶</a></h2>
 <p>请参阅此教程的相应部分: <a class="reference internal" href="tutorial/intro.html#intro-zephyr"><span class="std std-ref">MicroPython 的 Zephyr 适配端起手式</span></a></p>
 </section>
 <section id="delay-and-timing">
-<h2 id="delay-and-timing">延迟与计时<a class="headerlink" href="#delay-and-timing" title="永久链接至标题">¶</a></h2>
+<h2 id="delay-and-timing">延迟与计时<a class="headerlink" href="#delay-and-timing" title="Permalink to this heading">¶</a></h2>
 <p>使用 <a class="reference internal" href="../library/time.html#module-time" title="time: time related functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> 模块</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
@@ -431,7 +432,7 @@
 </div>
 </section>
 <section id="pins-and-gpio">
-<h2 id="pins-and-gpio">Pins 与 GPIO<a class="headerlink" href="#pins-and-gpio" title="永久链接至标题">¶</a></h2>
+<h2 id="pins-and-gpio">Pins 与 GPIO<a class="headerlink" href="#pins-and-gpio" title="Permalink to this heading">¶</a></h2>
 <p>使用 <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> 类</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
@@ -458,7 +459,7 @@
 </div>
 </section>
 <section id="hardware-i2c-bus">
-<h2 id="hardware-i2c-bus">硬件 I2C 总线<a class="headerlink" href="#hardware-i2c-bus" title="永久链接至标题">¶</a></h2>
+<h2 id="hardware-i2c-bus">硬件 I2C 总线<a class="headerlink" href="#hardware-i2c-bus" title="Permalink to this heading">¶</a></h2>
 <p>硬件 I2C 通过 <a class="reference internal" href="../library/machine.I2C.html#machine-i2c"><span class="std std-ref">machine.I2C</span></a> 类访问</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">I2C</span>
 
@@ -479,7 +480,7 @@
 </div>
 </section>
 <section id="hardware-spi-bus">
-<h2 id="hardware-spi-bus">硬件 SPI 总线<a class="headerlink" href="#hardware-spi-bus" title="永久链接至标题">¶</a></h2>
+<h2 id="hardware-spi-bus">硬件 SPI 总线<a class="headerlink" href="#hardware-spi-bus" title="Permalink to this heading">¶</a></h2>
 <p>硬件 SPI 通过 <a class="reference internal" href="../library/machine.SPI.html#machine-spi"><span class="std std-ref">machine.SPI</span></a> 类访问</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">SPI</span>
 
@@ -506,7 +507,7 @@
 </div>
 </section>
 <section id="disk-access">
-<h2 id="disk-access">存储访问<a class="headerlink" href="#disk-access" title="永久链接至标题">¶</a></h2>
+<h2 id="disk-access">存储访问<a class="headerlink" href="#disk-access" title="Permalink to this heading">¶</a></h2>
 <p>使用 <a class="reference internal" href="../library/zephyr.DiskAccess.html#zephyr-diskaccess"><span class="std std-ref">zephyr.DiskAccess</span></a> 类以支持文件系统操作</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">zephyr</span> <span class="k">import</span> <span class="n">DiskAccess</span>
@@ -523,7 +524,7 @@
 </div>
 </section>
 <section id="flash-area">
-<h2 id="flash-area">Flash 空间<a class="headerlink" href="#flash-area" title="永久链接至标题">¶</a></h2>
+<h2 id="flash-area">Flash 空间<a class="headerlink" href="#flash-area" title="Permalink to this heading">¶</a></h2>
 <p>使用 <a class="reference internal" href="../library/zephyr.FlashArea.html#zephyr-flasharea"><span class="std std-ref">zephyr.FlashArea</span></a> 类以支持文件系统操作</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">zephyr</span> <span class="k">import</span> <span class="n">FlashArea</span>
@@ -540,7 +541,7 @@
 </div>
 </section>
 <section id="sensor">
-<h2 id="sensor">传感器<a class="headerlink" href="#sensor" title="永久链接至标题">¶</a></h2>
+<h2 id="sensor">传感器<a class="headerlink" href="#sensor" title="Permalink to this heading">¶</a></h2>
 <p>使用 <a class="reference internal" href="../library/zephyr.zsensor.html#zsensor-sensor"><span class="std std-ref">zsensor.Sensor</span></a> 类访问传感器数据</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">zsensor</span>
 <span class="kn">from</span> <span class="nn">zsensor</span> <span class="k">import</span> <span class="n">Sensor</span>
@@ -606,10 +607,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

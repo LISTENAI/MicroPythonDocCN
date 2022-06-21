@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -648,7 +649,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-started-with-micropython-on-the-esp8266">
-<span id="intro"></span><h1 id="esp8266-tutorial-intro--page-root"><span class="section-number">1. </span>Getting started with MicroPython on the ESP8266<a class="headerlink" href="#esp8266-tutorial-intro--page-root" title="永久链接至标题">¶</a></h1>
+<span id="intro"></span><h1 id="esp8266-tutorial-intro--page-root"><span class="section-number">1. </span>Getting started with MicroPython on the ESP8266<a class="headerlink" href="#esp8266-tutorial-intro--page-root" title="Permalink to this heading">¶</a></h1>
 <p>Using MicroPython is a great way to get the most of your ESP8266 board.  And
 vice versa, the ESP8266 chip is a great platform for using MicroPython.  This
 tutorial will guide you through setting up MicroPython, getting a prompt, using
@@ -656,7 +657,7 @@ WebREPL, connecting to the network and communicating with the Internet, using
 the hardware peripherals, and controlling some external components.</p>
 <p>Let’s get started!</p>
 <section id="requirements">
-<h2 id="requirements"><span class="section-number">1.1. </span>Requirements<a class="headerlink" href="#requirements" title="永久链接至标题">¶</a></h2>
+<h2 id="requirements"><span class="section-number">1.1. </span>Requirements<a class="headerlink" href="#requirements" title="Permalink to this heading">¶</a></h2>
 <p>The first thing you need is a board with an ESP8266 chip.  The MicroPython
 software supports the ESP8266 chip itself and any board should work.  The main
 characteristic of a board is how much flash it has, how the GPIO pins are
@@ -673,13 +674,13 @@ and it should be straightforward to find which pin this corresponds to on your
 particular board.</p>
 </section>
 <section id="powering-the-board">
-<h2 id="powering-the-board"><span class="section-number">1.2. </span>Powering the board<a class="headerlink" href="#powering-the-board" title="永久链接至标题">¶</a></h2>
+<h2 id="powering-the-board"><span class="section-number">1.2. </span>Powering the board<a class="headerlink" href="#powering-the-board" title="Permalink to this heading">¶</a></h2>
 <p>If your board has a USB connector on it then most likely it is powered through
 this when connected to your PC.  Otherwise you will need to power it directly.
 Please refer to the documentation for your board for further details.</p>
 </section>
 <section id="getting-the-firmware">
-<h2 id="getting-the-firmware"><span class="section-number">1.3. </span>Getting the firmware<a class="headerlink" href="#getting-the-firmware" title="永久链接至标题">¶</a></h2>
+<h2 id="getting-the-firmware"><span class="section-number">1.3. </span>Getting the firmware<a class="headerlink" href="#getting-the-firmware" title="Permalink to this heading">¶</a></h2>
 <p>The first thing you need to do is download the most recent MicroPython firmware
 .bin file to load onto your ESP8266 device. You can download it from the
 <a class="reference external" href="http://micropython.org/download#esp8266">MicroPython downloads page</a>.
@@ -700,7 +701,7 @@ users, it’s recommended to use modules with flash of 1024kb or more. As
 such, only daily builds for 512kb modules are provided.</p>
 </section>
 <section id="deploying-the-firmware">
-<h2 id="deploying-the-firmware"><span class="section-number">1.4. </span>Deploying the firmware<a class="headerlink" href="#deploying-the-firmware" title="永久链接至标题">¶</a></h2>
+<h2 id="deploying-the-firmware"><span class="section-number">1.4. </span>Deploying the firmware<a class="headerlink" href="#deploying-the-firmware" title="Permalink to this heading">¶</a></h2>
 <p>Once you have the MicroPython firmware (compiled code), you need to load it onto
 your ESP8266 device.  There are two main steps to do this: first you
 need to put your device in boot-loader mode, and second you need to copy across
@@ -753,14 +754,14 @@ now and reset the device by again pulling the reset pin to ground for a short
 duration.</p>
 </section>
 <section id="serial-prompt">
-<h2 id="serial-prompt"><span class="section-number">1.5. </span>Serial prompt<a class="headerlink" href="#serial-prompt" title="永久链接至标题">¶</a></h2>
+<h2 id="serial-prompt"><span class="section-number">1.5. </span>Serial prompt<a class="headerlink" href="#serial-prompt" title="Permalink to this heading">¶</a></h2>
 <p>Once you have the firmware on the device you can access the REPL (Python prompt)
 over UART0 (GPIO1=TX, GPIO3=RX), which might be connected to a USB-serial
 convertor, depending on your board.  The baudrate is 115200.  The next part of
 the tutorial will discuss the prompt in more detail.</p>
 </section>
 <section id="wifi">
-<h2 id="wifi"><span class="section-number">1.6. </span>WiFi<a class="headerlink" href="#wifi" title="永久链接至标题">¶</a></h2>
+<h2 id="wifi"><span class="section-number">1.6. </span>WiFi<a class="headerlink" href="#wifi" title="Permalink to this heading">¶</a></h2>
 <p>After a fresh install and boot the device configures itself as a WiFi access
 point (AP) that you can connect to.  The ESSID is of the form MicroPython-xxxxxx
 where the x’s are replaced with part of the MAC address of your device (so will
@@ -770,7 +771,7 @@ will be 192.168.4.1 once you connect to its network.  WiFi configuration will
 be discussed in more detail later in the tutorial.</p>
 </section>
 <section id="troubleshooting-installation-problems">
-<h2 id="troubleshooting-installation-problems"><span class="section-number">1.7. </span>Troubleshooting installation problems<a class="headerlink" href="#troubleshooting-installation-problems" title="永久链接至标题">¶</a></h2>
+<h2 id="troubleshooting-installation-problems"><span class="section-number">1.7. </span>Troubleshooting installation problems<a class="headerlink" href="#troubleshooting-installation-problems" title="Permalink to this heading">¶</a></h2>
 <p>If you experience problems during flashing or with running firmware immediately
 after it, here are troubleshooting recommendations:</p>
 <ul>
@@ -881,10 +882,10 @@ may have a defective FlashROM chip, as explained above.</p></li>
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

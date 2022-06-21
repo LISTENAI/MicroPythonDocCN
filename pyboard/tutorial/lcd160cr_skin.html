@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -595,13 +596,13 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="the-lcd160cr-skin">
-<h1 id="pyboard-tutorial-lcd160cr-skin--page-root"><span class="section-number">5. </span>The LCD160CR skin<a class="headerlink" href="#pyboard-tutorial-lcd160cr-skin--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="pyboard-tutorial-lcd160cr-skin--page-root"><span class="section-number">5. </span>The LCD160CR skin<a class="headerlink" href="#pyboard-tutorial-lcd160cr-skin--page-root" title="Permalink to this heading">¶</a></h1>
 <p>This tutorial shows how to get started using the LCD160CR skin.</p>
 <a class="reference internal image-reference" href="http://micropython.org/resources/LCD160CRv10-positions.jpg"><img alt="LCD160CRv1.0 picture" src="http://micropython.org/resources/LCD160CRv10-positions.jpg" style="width: 800px;"/></a>
 <p>For detailed documentation of the driver for the display see the
 <a class="reference internal" href="../../library/lcd160cr.html#module-lcd160cr" title="lcd160cr: control of LCD160CR display"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code></a> module.</p>
 <section id="plugging-in-the-display">
-<h2 id="plugging-in-the-display"><span class="section-number">5.1. </span>Plugging in the display<a class="headerlink" href="#plugging-in-the-display" title="永久链接至标题">¶</a></h2>
+<h2 id="plugging-in-the-display"><span class="section-number">5.1. </span>Plugging in the display<a class="headerlink" href="#plugging-in-the-display" title="Permalink to this heading">¶</a></h2>
 <p>The display can be plugged directly into a pyboard (all pyboard versions
 are supported).  You plug the display onto the top of the pyboard either
 in the X or Y positions.  The display should cover half of the pyboard.
@@ -609,7 +610,7 @@ See the picture above for how to achieve this; the left half of the picture
 shows the X position, and the right half shows the Y position.</p>
 </section>
 <section id="getting-the-driver">
-<h2 id="getting-the-driver"><span class="section-number">5.2. </span>Getting the driver<a class="headerlink" href="#getting-the-driver" title="永久链接至标题">¶</a></h2>
+<h2 id="getting-the-driver"><span class="section-number">5.2. </span>Getting the driver<a class="headerlink" href="#getting-the-driver" title="Permalink to this heading">¶</a></h2>
 <p>You can control the display directly using a power/enable pin and an I2C
 bus, but it is much more convenient to use the driver provided by the
 <a class="reference internal" href="../../library/lcd160cr.html#module-lcd160cr" title="lcd160cr: control of LCD160CR display"><code class="xref py py-mod docutils literal notranslate"><span class="pre">lcd160cr</span></code></a> module.  This driver is included in recent version of the
@@ -624,7 +625,7 @@ directory).</p>
 </div>
 </section>
 <section id="testing-the-display">
-<h2 id="testing-the-display"><span class="section-number">5.3. </span>Testing the display<a class="headerlink" href="#testing-the-display" title="永久链接至标题">¶</a></h2>
+<h2 id="testing-the-display"><span class="section-number">5.3. </span>Testing the display<a class="headerlink" href="#testing-the-display" title="Permalink to this heading">¶</a></h2>
 <p>There is a test program which you can use to test the features of the display,
 and which also serves as a basis to start creating your own code that uses the
 LCD.  This test program is included in recent versions of the pyboard firmware
@@ -642,7 +643,7 @@ you have the display on position X):</p>
 </div>
 </section>
 <section id="drawing-some-graphics">
-<h2 id="drawing-some-graphics"><span class="section-number">5.4. </span>Drawing some graphics<a class="headerlink" href="#drawing-some-graphics" title="永久链接至标题">¶</a></h2>
+<h2 id="drawing-some-graphics"><span class="section-number">5.4. </span>Drawing some graphics<a class="headerlink" href="#drawing-some-graphics" title="Permalink to this heading">¶</a></h2>
 <p>You must first create an LCD160CR object which will control the display.  Do this
 using:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">lcd160cr</span>
@@ -670,7 +671,7 @@ once you have pasted the text.</p>
 </div>
 </section>
 <section id="using-the-touch-sensor">
-<h2 id="using-the-touch-sensor"><span class="section-number">5.5. </span>Using the touch sensor<a class="headerlink" href="#using-the-touch-sensor" title="永久链接至标题">¶</a></h2>
+<h2 id="using-the-touch-sensor"><span class="section-number">5.5. </span>Using the touch sensor<a class="headerlink" href="#using-the-touch-sensor" title="Permalink to this heading">¶</a></h2>
 <p>The display includes a resistive touch sensor that can report the position (in
 pixels) of a single force-based touch on the screen.  To see if there is a touch
 on the screen use:</p>
@@ -689,7 +690,7 @@ third entries in the tuple being the x and y coordinates of the current (or most
 recent) touch.</p>
 </section>
 <section id="directing-the-micropython-output-to-the-display">
-<h2 id="directing-the-micropython-output-to-the-display"><span class="section-number">5.6. </span>Directing the MicroPython output to the display<a class="headerlink" href="#directing-the-micropython-output-to-the-display" title="永久链接至标题">¶</a></h2>
+<h2 id="directing-the-micropython-output-to-the-display"><span class="section-number">5.6. </span>Directing the MicroPython output to the display<a class="headerlink" href="#directing-the-micropython-output-to-the-display" title="Permalink to this heading">¶</a></h2>
 <p>The display supports input from a UART and implements basic VT100 commands, which
 means it can be used as a simple, general purpose terminal.  Let’s set up the
 pyboard to redirect its output to the display.</p>
@@ -762,10 +763,10 @@ You can adjust the UART baudrate from the default of 115200 using the
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

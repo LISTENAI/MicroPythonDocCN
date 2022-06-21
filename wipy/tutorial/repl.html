@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -514,7 +515,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-a-micropython-repl-prompt">
-<h1 id="wipy-tutorial-repl--page-root"><span class="section-number">2. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#wipy-tutorial-repl--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="wipy-tutorial-repl--page-root"><span class="section-number">2. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#wipy-tutorial-repl--page-root" title="Permalink to this heading">¶</a></h1>
 <p>REPL stands for Read Evaluate Print Loop, and is the name given to the
 interactive MicroPython prompt that you can access on the WiPy.  Using
 the REPL is by far the easiest way to test out your code and run commands.
@@ -532,7 +533,7 @@ do:</p>
 <p>Place this piece of code inside your <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> so that it’s done automatically after
 reset.</p>
 <section id="windows">
-<h2 id="windows"><span class="section-number">2.1. </span>Windows<a class="headerlink" href="#windows" title="永久链接至标题">¶</a></h2>
+<h2 id="windows"><span class="section-number">2.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">¶</a></h2>
 <p>First you need to install the FTDI drivers for the expansion board’s USB to serial
 converter. Then you need a terminal software. The best option is to download the
 free program PuTTY: <a class="reference external" href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html">putty.exe</a>.</p>
@@ -547,7 +548,7 @@ the “Serial” radio button on the right, then enter you COM port (eg COM4) in
 “Serial Line” box.  Finally, click the “Open” button.</p>
 </section>
 <section id="mac-os-x">
-<h2 id="mac-os-x"><span class="section-number">2.2. </span>Mac OS X<a class="headerlink" href="#mac-os-x" title="永久链接至标题">¶</a></h2>
+<h2 id="mac-os-x"><span class="section-number">2.2. </span>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this heading">¶</a></h2>
 <p>Open a terminal and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ telnet 192.168.1.1
 </pre></div>
@@ -564,7 +565,7 @@ the “Serial” radio button on the right, then enter you COM port (eg COM4) in
 <p>This will allow you to quit <code class="docutils literal notranslate"><span class="pre">screen</span></code> by hitting CTRL-A Q.</p>
 </section>
 <section id="linux">
-<h2 id="linux"><span class="section-number">2.3. </span>Linux<a class="headerlink" href="#linux" title="永久链接至标题">¶</a></h2>
+<h2 id="linux"><span class="section-number">2.3. </span>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h2>
 <p>Open a terminal and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ telnet 192.168.1.1
 </pre></div>
@@ -579,7 +580,7 @@ yourself the correct permissions to access this devices (eg group <code class="d
 or use sudo).</p>
 </section>
 <section id="using-the-repl-prompt">
-<h2 id="using-the-repl-prompt"><span class="section-number">2.4. </span>Using the REPL prompt<a class="headerlink" href="#using-the-repl-prompt" title="永久链接至标题">¶</a></h2>
+<h2 id="using-the-repl-prompt"><span class="section-number">2.4. </span>Using the REPL prompt<a class="headerlink" href="#using-the-repl-prompt" title="Permalink to this heading">¶</a></h2>
 <p>Now let’s try running some MicroPython code directly on the WiPy.</p>
 <p>With your serial program open (PuTTY, screen, picocom, etc) you may see a blank
 screen with a flashing cursor.  Press Enter and you should be presented with a
@@ -613,7 +614,7 @@ see below.</p>
 </div>
 </section>
 <section id="resetting-the-board">
-<h2 id="resetting-the-board"><span class="section-number">2.5. </span>Resetting the board<a class="headerlink" href="#resetting-the-board" title="永久链接至标题">¶</a></h2>
+<h2 id="resetting-the-board"><span class="section-number">2.5. </span>Resetting the board<a class="headerlink" href="#resetting-the-board" title="Permalink to this heading">¶</a></h2>
 <p>If something goes wrong, you can reset the board in two ways. The first is to press CTRL-D
 at the MicroPython prompt, which performs a soft reset.  You will see a message something like:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
@@ -676,10 +677,10 @@ your session, disconnecting whatever program that you used to connect to the WiP
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

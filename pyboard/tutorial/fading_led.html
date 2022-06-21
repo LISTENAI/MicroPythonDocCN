@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html lang="zh_CN">
+<html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -54,6 +54,7 @@
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/translations.js"></script>
     <link rel="shortcut icon" href="../../_static/favicon.ico"/>
@@ -595,11 +596,11 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="fading-leds">
-<h1 id="pyboard-tutorial-fading-led--page-root"><span class="section-number">2. </span>Fading LEDs<a class="headerlink" href="#pyboard-tutorial-fading-led--page-root" title="永久链接至标题">¶</a></h1>
+<h1 id="pyboard-tutorial-fading-led--page-root"><span class="section-number">2. </span>Fading LEDs<a class="headerlink" href="#pyboard-tutorial-fading-led--page-root" title="Permalink to this heading">¶</a></h1>
 <p>In addition to turning LEDs on and off, it is also possible to control the brightness of an LED using <a class="reference external" href="http://en.wikipedia.org/wiki/Pulse-width_modulation">Pulse-Width Modulation (PWM)</a>, a common technique for obtaining variable output from a digital pin. This allows us to fade an LED:</p>
 <img alt="http://upload.wikimedia.org/wikipedia/commons/a/a9/Fade.gif" src="http://upload.wikimedia.org/wikipedia/commons/a/a9/Fade.gif"/>
 <section id="components">
-<h2 id="components"><span class="section-number">2.1. </span>Components<a class="headerlink" href="#components" title="永久链接至标题">¶</a></h2>
+<h2 id="components"><span class="section-number">2.1. </span>Components<a class="headerlink" href="#components" title="Permalink to this heading">¶</a></h2>
 <p>You will need:</p>
 <ul class="simple">
 <li><p>Standard 5 or 3 mm LED</p></li>
@@ -609,12 +610,12 @@
 </ul>
 </section>
 <section id="connecting-things-up">
-<h2 id="connecting-things-up"><span class="section-number">2.2. </span>Connecting Things Up<a class="headerlink" href="#connecting-things-up" title="永久链接至标题">¶</a></h2>
+<h2 id="connecting-things-up"><span class="section-number">2.2. </span>Connecting Things Up<a class="headerlink" href="#connecting-things-up" title="Permalink to this heading">¶</a></h2>
 <p>For this tutorial, we will use the <code class="docutils literal notranslate"><span class="pre">X1</span></code> pin. Connect one end of the resistor to <code class="docutils literal notranslate"><span class="pre">X1</span></code>, and the other end to the <strong>anode</strong> of the LED, which is the longer leg. Connect the <strong>cathode</strong> of the LED to ground.</p>
 <img alt="../../_images/fading_leds_breadboard_fritzing.png" src="../../_images/fading_leds_breadboard_fritzing.png"/>
 </section>
 <section id="code">
-<h2 id="code"><span class="section-number">2.3. </span>Code<a class="headerlink" href="#code" title="永久链接至标题">¶</a></h2>
+<h2 id="code"><span class="section-number">2.3. </span>Code<a class="headerlink" href="#code" title="Permalink to this heading">¶</a></h2>
 <p>By examining the <a class="reference internal" href="../quickref.html#pyboard-quickref"><span class="std std-ref">Quick reference for the pyboard</span></a>, we see that <code class="docutils literal notranslate"><span class="pre">X1</span></code> is connected to channel 1 of timer 5 (<code class="docutils literal notranslate"><span class="pre">TIM5</span> <span class="pre">CH1</span></code>). Therefore we will first create a <code class="docutils literal notranslate"><span class="pre">Timer</span></code> object for timer 5, then create a <code class="docutils literal notranslate"><span class="pre">TimerChannel</span></code> object for channel 1:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyb</span> <span class="k">import</span> <span class="n">Timer</span>
 <span class="kn">from</span> <span class="nn">time</span> <span class="k">import</span> <span class="n">sleep</span>
@@ -650,7 +651,7 @@
 </div>
 </section>
 <section id="breathing-effect">
-<h2 id="breathing-effect"><span class="section-number">2.4. </span>Breathing Effect<a class="headerlink" href="#breathing-effect" title="永久链接至标题">¶</a></h2>
+<h2 id="breathing-effect"><span class="section-number">2.4. </span>Breathing Effect<a class="headerlink" href="#breathing-effect" title="Permalink to this heading">¶</a></h2>
 <p>If we want to have a breathing effect, where the LED fades from dim to bright then bright to dim, then we simply need to reverse the sign of <code class="docutils literal notranslate"><span class="pre">wstep</span></code> when we reach maximum brightness, and reverse it again at minimum brightness. To do this we modify the <code class="docutils literal notranslate"><span class="pre">while</span></code> loop to be:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
   <span class="n">tchannel</span><span class="o">.</span><span class="n">pulse_width</span><span class="p">(</span><span class="n">cur_width</span><span class="p">)</span>
@@ -669,12 +670,12 @@
 </div>
 </section>
 <section id="advanced-exercise">
-<h2 id="advanced-exercise"><span class="section-number">2.5. </span>Advanced Exercise<a class="headerlink" href="#advanced-exercise" title="永久链接至标题">¶</a></h2>
+<h2 id="advanced-exercise"><span class="section-number">2.5. </span>Advanced Exercise<a class="headerlink" href="#advanced-exercise" title="Permalink to this heading">¶</a></h2>
 <p>You may have noticed that the LED brightness seems to fade slowly, but increases quickly. This is because our eyes interprets brightness logarithmically (<a class="reference external" href="http://www.telescope-optics.net/eye_intensity_response.htm">Weber’s Law</a>
 ), while the LED’s brightness changes linearly, that is by the same amount each time. How do you solve this problem? (Hint: what is the opposite of the logarithmic function?)</p>
 </section>
 <section id="addendum">
-<h2 id="addendum"><span class="section-number">2.6. </span>Addendum<a class="headerlink" href="#addendum" title="永久链接至标题">¶</a></h2>
+<h2 id="addendum"><span class="section-number">2.6. </span>Addendum<a class="headerlink" href="#addendum" title="Permalink to this heading">¶</a></h2>
 <p>We could have also used the digital-to-analog converter (DAC) to achieve the same effect. The PWM method has the advantage that it drives the LED with the same current each time, but for different lengths of time. This allows better control over the brightness, because LEDs do not necessarily exhibit a linear relationship between the driving current and brightness.</p>
 </section>
 </section>
@@ -726,10 +727,10 @@
               
           </div>
             Last updated on
-              18 4月 2022.
+              21 6月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
