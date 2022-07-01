@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../develop/index.rst:2
 msgid "MicroPython Internals"
-msgstr ""
+msgstr "MicroPython 内部实现"
 
 #: ../../develop/index.rst:4
 msgid ""

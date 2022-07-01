@@ -21,39 +21,41 @@ msgstr ""
 
 #: ../../develop/compiler.rst:4
 msgid "The Compiler"
-msgstr ""
+msgstr "编译器"
 
 #: ../../develop/compiler.rst:6
 msgid "The compilation process in MicroPython involves the following steps:"
-msgstr ""
+msgstr "在 MicroPython 中，编译过程包括以下几个步骤："
 
 #: ../../develop/compiler.rst:8
 msgid ""
 "The lexer converts the stream of text that makes up a MicroPython program"
 " into tokens."
 msgstr ""
+"词法分析器将一个 MicroPython 程序的文本流转换为标记。"
 
 #: ../../develop/compiler.rst:9
 msgid "The parser then converts the tokens into an abstract syntax (parse tree)."
-msgstr ""
+msgstr "语法分析器将标记转换为抽象语法（解析树）。"
 
 #: ../../develop/compiler.rst:10
 msgid "Then bytecode or native code is emitted based on the parse tree."
-msgstr ""
+msgstr "基于解析树生成字节码或者本地代码。"
 
 #: ../../develop/compiler.rst:12
 msgid ""
 "For purposes of this discussion we are going to add a simple language "
 "feature ``add1`` that can be use in Python as:"
 msgstr ""
+"为了验证，我们将添加一个简单的语言特性 ``add1`` ，并让它可在 Python 中使用："
 
 #: ../../develop/compiler.rst:21
 msgid "The ``add1`` statement takes an integer as argument and adds ``1`` to it."
-msgstr ""
+msgstr "该 ``add1`` 语句接受一个整数作为参数，并将其加 1。"
 
 #: ../../develop/compiler.rst:24
 msgid "Adding a grammar rule"
-msgstr ""
+msgstr "添加语法规则"
 
 #: ../../develop/compiler.rst:26
 msgid ""
@@ -63,6 +65,10 @@ msgid ""
 "<https://github.com/micropython/micropython/blob/master/py/grammar.h>`_. "
 "This grammar is what is used to parse MicroPython source files."
 msgstr ""
+"MicroPython 的语法基于 `CPython 语法 "
+"<https://docs.python.org/3.5/reference/grammar.html>`_ ，它在 `py/grammar.h "
+"<https://github.com/micropython/micropython/blob/master/py/grammar.h>`_ 中定义。"
+"这个语法是用来解析 MicroPython 源码文件的。"
 
 #: ../../develop/compiler.rst:30
 msgid ""
@@ -71,12 +77,16 @@ msgid ""
 "rule with an associated compile function, while ``DEF_RULE_NC`` has no "
 "compile (NC) function for it."
 msgstr ""
+"要定义一个语法规则，你需要知道两个宏：``DEF_RULE`` 和 ``DEF_RULE_NC``。"
+"``DEF_RULE`` 允许你定义一个有关联编译函数的规则，"
+"而 ``DEF_RULE_NC`` 则表示不编译( NC 代表 No Compile )函数。"
 
 #: ../../develop/compiler.rst:34
 msgid ""
 "A simple grammar definition with a compile function for our new ``add1`` "
 "statement looks like the following:"
 msgstr ""
+"我们新增的 ``add1`` 语句的简单语法定义如下："
 
 #: ../../develop/compiler.rst:41
 msgid ""
@@ -84,6 +94,8 @@ msgid ""
 "function that should be implemented in ``py/compile.c`` to turn this rule"
 " into executable code."
 msgstr ""
+"第二个参数 ``c(add1_stmt)`` 是对应的编译函数，它应该在 ``py/compile.c`` 中被实现，"
+"以将这个规则转换为可执行代码。"
 
 #: ../../develop/compiler.rst:44
 msgid ""
@@ -95,12 +107,18 @@ msgid ""
 " ``add1`` corresponding to ``KW_ADD1``, and the other for its argument, a"
 " ``testlist`` rule which is the top-level expression rule."
 msgstr ""
+"第三个参数可以是 ``or`` 或 ``and`` 。这指定了一个语句关联的节点数。"
+"例如，在这种情况下，我们的 ``add1`` 语句与汇编语言中的 ADD1 类似。"
+"它只有一个数字参数。因此，``add1_stmt`` 有两个关联的节点。"
+"第一个节点是语句本身，即 ``add1`` 对应 ``KW_ADD1`` ，"
+"第二个节点是它的参数，``testlist`` ，代表顶级表达式规则。"
 
 #: ../../develop/compiler.rst:51
 msgid ""
 "The ``add1`` rule here is just an example and not part of the standard "
 "MicroPython grammar."
 msgstr ""
+"这里的 ``add1`` 规则只是一个示例，并不是标准的 MicroPython 语法。"
 
 #: ../../develop/compiler.rst:54
 msgid ""
@@ -108,12 +126,16 @@ msgid ""
 "rule, ``KW_ADD1``. This token should be defined in the lexer by editing "
 "``py/lexer.h``."
 msgstr ""
+"在这个示例中，第四个参数是该规则对应的标识，``KW_ADD1`` 。"
+"这个标识应该通过修改 ``py/lexer.h`` 来增加声明。"
 
 #: ../../develop/compiler.rst:57
 msgid ""
 "Defining the same rule without a compile function is achieved by using "
 "the ``DEF_RULE_NC`` macro and omitting the compile function argument:"
 msgstr ""
+"使用 ``DEF_RULE_NC`` 宏定义一个忽略编译函数但其他部分相同的规则："
+
 
 #: ../../develop/compiler.rst:64
 msgid ""
@@ -123,6 +145,9 @@ msgid ""
 "of a complicated grammar structure that cannot be expressed in a single "
 "rule."
 msgstr ""
+"这些参数的含义与上文描述相同。"
+"忽略编译函数的规则必须被所有可能有这个规则作为节点的规则处理。"
+"这种 NC 规则通常用于表示复杂的语法结构，不能只用单个规则表示的部分。"
 
 #: ../../develop/compiler.rst:70
 msgid ""
@@ -130,10 +155,13 @@ msgid ""
 "in-depth understanding of supported parameters, see `py/grammar.h "
 "<https://github.com/micropython/micropython/blob/master/py/grammar.h>`_."
 msgstr ""
+"``DEF_RULE`` 和 ``DEF_RULE_NC`` 还可以接受其他参数。"
+"更详细的参数说明请参考 `py/grammar.h "
+"<https://github.com/micropython/micropython/blob/master/py/grammar.h>`_ 。"
 
 #: ../../develop/compiler.rst:74
 msgid "Adding a lexical token"
-msgstr ""
+msgstr "添加词法标记"
 
 #: ../../develop/compiler.rst:76
 msgid ""
@@ -141,26 +169,31 @@ msgid ""
 "that is defined in ``py/lexer.h``. Add this token by editing the "
 "``_mp_token_kind_t`` enum:"
 msgstr ""
+"在语法中定义的每个规则都应该在 ``py/lexer.h`` 中有一个与其关联的标记定义。"
+"通过修改 ``_mp_token_kind_t`` 枚举来增加该标记："
 
 #: ../../develop/compiler.rst:96
 msgid "Then also edit ``py/lexer.c`` to add the new keyword literal text:"
-msgstr ""
+msgstr "然后，在 ``py/lexer.c`` 中增加新的关键字文本："
 
 #: ../../develop/compiler.rst:115
 msgid ""
 "Notice the keyword is named depending on what you want it to be. For "
 "consistency, maintain the naming standard accordingly."
 msgstr ""
+"注意，关键字的名称取决于你想要的名称。"
+"为保持一致性，请遵循统一标准的命名规则。"
 
 #: ../../develop/compiler.rst:119
 msgid ""
 "The order of these keywords in ``py/lexer.c`` must match the order of "
 "tokens in the enum defined in ``py/lexer.h``."
 msgstr ""
+"在 ``py/lexer.c`` 中的这些关键字的顺序必须与 ``py/lexer.h`` 中定义的枚举中的标记顺序一致。"
 
 #: ../../develop/compiler.rst:123
 msgid "Parsing"
-msgstr ""
+msgstr "解析中"
 
 #: ../../develop/compiler.rst:125
 msgid ""
@@ -169,6 +202,10 @@ msgid ""
 "implementation for the parser is defined in `py/parse.c "
 "<https://github.com/micropython/micropython/blob/master/py/parse.c>`_."
 msgstr ""
+"在解析阶段，解析器接受词法分析器产生的标记，"
+"并将其转换为一个抽象语法树（ abstract syntax tree 简称 AST ）或者 *解析树*。"
+"解析器的实现在 `py/parse.c "
+"<https://github.com/micropython/micropython/blob/master/py/parse.c>`_ 中。"
 
 #: ../../develop/compiler.rst:128
 msgid ""
@@ -177,6 +214,10 @@ msgid ""
 "<https://steemit.com/programming/@drifter1/writing-a-simple-compiler-on-"
 "my-own-symbol-table-basic-structure>`_ does."
 msgstr ""
+"解析器还维护一个用于在解析中的不同方面使用的常量表，"
+"与 `符号表 symbol table "
+"<https://steemit.com/programming/@drifter1/writing-a-simple-compiler-on-"
+"my-own-symbol-table-basic-structure>`_ 所承载的能力类似。"
 
 #: ../../develop/compiler.rst:132
 msgid ""
@@ -186,6 +227,10 @@ msgid ""
 "optimizing enhancements on parenthesis around expressions are performed "
 "during this phase, along with some optimizations on strings."
 msgstr ""
+"在解析阶段会进行一些优化，比如对大多数操作（例如逻辑、二进制、单目运算）的整数进行 `常量折叠 "
+"<http://compileroptimizations.com/category/constant_folding.htm>`_ ，"
+"并且会对表达式周围的括号进行优化增强，"
+"同时也会对字符串进行一些优化。"
 
 #: ../../develop/compiler.rst:136
 msgid ""
@@ -194,10 +239,13 @@ msgid ""
 "<https://en.wikipedia.org/wiki/String_interning>`_ are not applied to "
 "*docstrings*."
 msgstr ""
+"值得注意的是，*文档字符串 docstrings* 会被丢弃，并且编译器无法访问。"
+"即使对像 `字符串驻留 "
+"<https://en.wikipedia.org/wiki/String_interning>`_ 这样的特性也不会对文档字符串生效。"
 
 #: ../../develop/compiler.rst:141
 msgid "Compiler passes"
-msgstr ""
+msgstr "编译器步骤"
 
 #: ../../develop/compiler.rst:143
 msgid ""
@@ -207,6 +255,10 @@ msgid ""
 "<https://github.com/micropython/micropython/blob/master/py/compile.c>`_. "
 "The most relevant method you should know about is this:"
 msgstr ""
+"像大多数编译器一样，MicroPython 编译所有代码到 MicroPython 字节码或者原生代码。"
+"这一功能在 `py/compile.c "
+"<https://github.com/micropython/micropython/blob/master/py/compile.c>`_ 中实现。"
+"你应该了解的最直接相关的函数是："
 
 #: ../../develop/compiler.rst:156
 msgid ""
@@ -215,10 +267,14 @@ msgid ""
 "structure, with different things being computed each time based on the "
 "results of the previous pass."
 msgstr ""
+"编译器会进行四步操作：作用域、栈大小、代码大小和发射。"
+"每次编译都会使用相同的 C 代码，"
+"并且使用相同的 AST 数据结构，"
+"每次编译都会使用上一次编译的结果来计算新的结果。"
 
 #: ../../develop/compiler.rst:161
 msgid "First pass"
-msgstr ""
+msgstr "第一步"
 
 #: ../../develop/compiler.rst:163
 msgid ""
@@ -227,10 +283,13 @@ msgid ""
 "the same pass the emitter (bytecode or native code) also computes the "
 "number of labels needed for the emitted code."
 msgstr ""
+"在第一次编译中，编译器会学习到已知的标识符（变量）的作用域，"
+"是全局的、局部的、闭包的等等。"
+"在同一次编译中，编译器（字节码或机器码 ）也会计算出提交的代码所需的标签数量。"
 
 #: ../../develop/compiler.rst:193
 msgid "Second and third passes"
-msgstr ""
+msgstr "第二和第三步"
 
 #: ../../develop/compiler.rst:195
 msgid ""
@@ -238,12 +297,16 @@ msgid ""
 "code size for the bytecode or native code. After the third pass the code "
 "size cannot change, otherwise jump labels will be incorrect."
 msgstr ""
+"第二和第三步都会计算出字节码或机器码的栈大小和代码大小。"
+"第三步之后，代码大小不能变，否则标签的位置会出错。"
 
 #: ../../develop/compiler.rst:215
 msgid ""
 "Just before pass two there is a selection for the type of code to be "
 "emitted, which can either be native or bytecode."
 msgstr ""
+"编译器在第二步之前会选择要编译的代码类型，"
+"可以是原生代码或字节码。"
 
 #: ../../develop/compiler.rst:237
 msgid ""
@@ -252,6 +315,10 @@ msgid ""
 " :ref:`Emitting native code <emitting_native_code>` section for more "
 "details on viper annotations."
 msgstr ""
+"默认情况下，编译器会编译成字节码，"
+"但是有一个特殊的选项是原生代码，"
+"这个选项可以通过 ``VIPER`` 来设置。"
+"请参见 :ref:`发射原生代码 <emitting_native_code>` 小节的详细信息。"
 
 #: ../../develop/compiler.rst:242
 msgid ""
@@ -263,20 +330,28 @@ msgid ""
 "<https://docs.micropython.org/en/latest/pyboard/tutorial/assembler.html"
 "#pyboard-tutorial-assembler>`_ for more details."
 msgstr ""
+"*内联汇编代码* 同样也是支持的，"
+"汇编指令是作为函数调用，"
+"但是会直接发射成对应的机器指令。"
+"这个汇编器只有三步（作用域、代码大小、发射），"
+"并且使用了一个不同的实现，而不是 ``compile_scope`` 函数。"
+"请参考 :ref:`内联汇编编译器 <pyboard_tutorial_assembler>` 章节获取更多详细信息。"
 
 #: ../../develop/compiler.rst:250
 msgid "Fourth pass"
-msgstr ""
+msgstr "第四步"
 
 #: ../../develop/compiler.rst:252
 msgid ""
 "The fourth pass emits the final code that can be executed, either "
 "bytecode in the virtual machine, or native code directly by the CPU."
 msgstr ""
+"第四步会发射最终可以执行的代码，"
+"可以是虚拟机中的字节码，也可以是 CPU 直接支持的原生代码。"
 
 #: ../../develop/compiler.rst:267
 msgid "Emitting bytecode"
-msgstr ""
+msgstr "发射字节码"
 
 #: ../../develop/compiler.rst:269
 msgid ""
@@ -285,12 +360,17 @@ msgid ""
 "add\". Some statements do not emit anything but instead affect other "
 "things like the scope of variables, for example ``global a``."
 msgstr ""
+"Python 代码中的语句通常会对应到发射的字节码，"
+"比如 ``a + b`` 会生成 ``push a`` 和 ``push b`` 然后 ``binary op add``。"
+"某些语句不会发射任何代码，"
+"但是会影响到变量的作用域，比如 ``global a``。"
 
 #: ../../develop/compiler.rst:274
 msgid ""
 "The implementation of a function that emits bytecode looks similar to "
 "this:"
 msgstr ""
+"发出字节码的函数的实现类似于以下内容："
 
 #: ../../develop/compiler.rst:282
 msgid ""
@@ -300,16 +380,21 @@ msgid ""
 "function ``emit_get_cur_to_write_bytecode()`` that all functions must "
 "call to emit bytecode."
 msgstr ""
+"我们使用一元操作符表达式来作为一个例子，"
+"但是实现的细节是相同的。"
+"方法 ``emit_write_bytecode_byte()`` 是一个包装函数，"
+"且所有的函数都必须调用它来发射字节码。"
 
 #: ../../develop/compiler.rst:290
 msgid "Emitting native code"
-msgstr ""
+msgstr "发射原生代码"
 
 #: ../../develop/compiler.rst:292
 msgid ""
 "Similar to how bytecode is generated, there should be a corresponding "
 "function in ``py/emitnative.c`` for each code statement:"
 msgstr ""
+"与字节码一样，原生代码在 ``py/emitnative.c`` 中每个代码语句都应该有一个对应的函数："
 
 #: ../../develop/compiler.rst:310
 msgid ""
@@ -324,4 +409,15 @@ msgid ""
 "example, integers become native integers and can overflow (unlike Python "
 "integers which extend automatically to arbitrary precision)."
 msgstr ""
+"这里的区别是，我们需要处理 *viper 类型* 。"
+"viper 注解允许我们处理不止一种类型的变量。"
+"默认情况下，所有的变量都是 Python 对象，"
+"但是在 viper 中，变量也可以声明为一个机器类型的变量，"
+"比如一个原生的整数或者指针。"
+"viper 可以被认为是 Python 的超集，"
+"其中正常的 Python 对象像往常一样处理，"
+"而在处理机器类型的变量时，我们使用直接的机器指令以优化过的方式处理。"
+"但 viper 类型可能会破坏 Python 的等价性，"
+"比如整数会变成原生的整数，"
+"而且可能会溢出（和 Python 整数不同，它们不会自动扩展到任意精度）。"
 
