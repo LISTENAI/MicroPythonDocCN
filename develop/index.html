@@ -47,7 +47,7 @@
   
   
   
-    <title>MicroPython Internals &#8212; MicroPython 1.18 文档</title>
+    <title>MicroPython 内部实现 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> MicroPython Internals </span>
+          <span class="md-header-nav__topic"> MicroPython 内部实现 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -203,9 +203,9 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython Internals </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython 内部实现 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">MicroPython Internals</a>
+      <a href="#" class="md-nav__link md-nav__link--active">MicroPython 内部实现</a>
       
         
 <nav class="md-nav md-nav--secondary">
@@ -230,7 +230,7 @@
     <li class="md-nav__item">
     
     
-      <a href="compiler.html" class="md-nav__link">The Compiler</a>
+      <a href="compiler.html" class="md-nav__link">编译器</a>
       
     
     </li>
@@ -371,7 +371,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-internals">
-<h1 id="develop-index--page-root">MicroPython Internals<a class="headerlink" href="#develop-index--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="develop-index--page-root">MicroPython 内部实现<a class="headerlink" href="#develop-index--page-root" title="Permalink to this heading">¶</a></h1>
 <p>This chapter covers a tour of MicroPython from the perspective of a developer, contributing
 to MicroPython. It acts as a comprehensive resource on the implementation details of MicroPython
 for both novice and expert contributors.</p>
@@ -398,18 +398,18 @@ MicroPython to a new platform and implementing a core MicroPython library.</p>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="writingtests.html">Writing tests</a></li>
-<li class="toctree-l1"><a class="reference internal" href="compiler.html">The Compiler</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="compiler.html#adding-a-grammar-rule">Adding a grammar rule</a></li>
-<li class="toctree-l2"><a class="reference internal" href="compiler.html#adding-a-lexical-token">Adding a lexical token</a></li>
-<li class="toctree-l2"><a class="reference internal" href="compiler.html#parsing">Parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="compiler.html#compiler-passes">Compiler passes</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="compiler.html#first-pass">First pass</a></li>
-<li class="toctree-l3"><a class="reference internal" href="compiler.html#second-and-third-passes">Second and third passes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="compiler.html#fourth-pass">Fourth pass</a></li>
+<li class="toctree-l1"><a class="reference internal" href="compiler.html">编译器</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html#adding-a-grammar-rule">添加语法规则</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html#adding-a-lexical-token">添加词法标记</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html#parsing">解析中</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html#compiler-passes">编译器步骤</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="compiler.html#first-pass">第一步</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compiler.html#second-and-third-passes">第二和第三步</a></li>
+<li class="toctree-l3"><a class="reference internal" href="compiler.html#fourth-pass">第四步</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="compiler.html#emitting-bytecode">Emitting bytecode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="compiler.html#emitting-native-code">Emitting native code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html#emitting-bytecode">发射字节码</a></li>
+<li class="toctree-l2"><a class="reference internal" href="compiler.html#emitting-native-code">发射原生代码</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="memorymgt.html">内存管理</a><ul>
@@ -516,7 +516,7 @@ MicroPython to a new platform and implementing a core MicroPython library.</p>
               
           </div>
             Last updated on
-              21 6月 2022.
+              01 7月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.

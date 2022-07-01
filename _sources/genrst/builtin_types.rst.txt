@@ -2,7 +2,7 @@
 
 Builtin types
 =============
-Generated Tue 21 Jun 2022 06:54:52 UTC
+Generated Fri 01 Jul 2022 14:31:06 UTC
 
 Exception
 ---------

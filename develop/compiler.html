@@ -47,7 +47,7 @@
   
   
   
-    <title>The Compiler &#8212; MicroPython 1.18 文档</title>
+    <title>编译器 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> The Compiler </span>
+          <span class="md-header-nav__topic"> 编译器 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -155,7 +155,7 @@
     <div class="md-tabs__inner md-grid">
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
-          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython Internals</a></li>
+          <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython 内部实现</a></li>
       </ul>
     </div>
   </nav>
@@ -203,7 +203,7 @@
     <li class="md-nav__item">
     
     
-      <a href="index.html" class="md-nav__link">MicroPython Internals</a>
+      <a href="index.html" class="md-nav__link">MicroPython 内部实现</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
@@ -223,35 +223,35 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> The Compiler </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 编译器 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">The Compiler</a>
+      <a href="#" class="md-nav__link md-nav__link--active">编译器</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-compiler--page-root" class="md-nav__link">The Compiler</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-compiler--page-root" class="md-nav__link">编译器</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#adding-a-grammar-rule" class="md-nav__link">Adding a grammar rule</a>
+        <li class="md-nav__item"><a href="#adding-a-grammar-rule" class="md-nav__link">添加语法规则</a>
         </li>
-        <li class="md-nav__item"><a href="#adding-a-lexical-token" class="md-nav__link">Adding a lexical token</a>
+        <li class="md-nav__item"><a href="#adding-a-lexical-token" class="md-nav__link">添加词法标记</a>
         </li>
-        <li class="md-nav__item"><a href="#parsing" class="md-nav__link">Parsing</a>
+        <li class="md-nav__item"><a href="#parsing" class="md-nav__link">解析中</a>
         </li>
-        <li class="md-nav__item"><a href="#compiler-passes" class="md-nav__link">Compiler passes</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#compiler-passes" class="md-nav__link">编译器步骤</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#first-pass" class="md-nav__link">First pass</a>
+        <li class="md-nav__item"><a href="#first-pass" class="md-nav__link">第一步</a>
         </li>
-        <li class="md-nav__item"><a href="#second-and-third-passes" class="md-nav__link">Second and third passes</a>
+        <li class="md-nav__item"><a href="#second-and-third-passes" class="md-nav__link">第二和第三步</a>
         </li>
-        <li class="md-nav__item"><a href="#fourth-pass" class="md-nav__link">Fourth pass</a>
+        <li class="md-nav__item"><a href="#fourth-pass" class="md-nav__link">第四步</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#emitting-bytecode" class="md-nav__link">Emitting bytecode</a>
+        <li class="md-nav__item"><a href="#emitting-bytecode" class="md-nav__link">发射字节码</a>
         </li>
-        <li class="md-nav__item"><a href="#emitting-native-code" class="md-nav__link">Emitting native code</a>
+        <li class="md-nav__item"><a href="#emitting-native-code" class="md-nav__link">发射原生代码</a>
         </li></ul>
             </nav>
         </li>
@@ -261,47 +261,47 @@
     <li class="md-nav__item">
     
     
-      <a href="#adding-a-grammar-rule" class="md-nav__link">Adding a grammar rule</a>
+      <a href="#adding-a-grammar-rule" class="md-nav__link">添加语法规则</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#adding-a-lexical-token" class="md-nav__link">Adding a lexical token</a>
+      <a href="#adding-a-lexical-token" class="md-nav__link">添加词法标记</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#parsing" class="md-nav__link">Parsing</a>
+      <a href="#parsing" class="md-nav__link">解析中</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#compiler-passes" class="md-nav__link">Compiler passes</a>
+      <a href="#compiler-passes" class="md-nav__link">编译器步骤</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="#first-pass" class="md-nav__link">First pass</a>
+      <a href="#first-pass" class="md-nav__link">第一步</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#second-and-third-passes" class="md-nav__link">Second and third passes</a>
+      <a href="#second-and-third-passes" class="md-nav__link">第二和第三步</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#fourth-pass" class="md-nav__link">Fourth pass</a>
+      <a href="#fourth-pass" class="md-nav__link">第四步</a>
       
     
     </li></ul>
@@ -310,14 +310,14 @@
     <li class="md-nav__item">
     
     
-      <a href="#emitting-bytecode" class="md-nav__link">Emitting bytecode</a>
+      <a href="#emitting-bytecode" class="md-nav__link">发射字节码</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#emitting-native-code" class="md-nav__link">Emitting native code</a>
+      <a href="#emitting-native-code" class="md-nav__link">发射原生代码</a>
       
     
     </li></ul>
@@ -451,27 +451,27 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-compiler--page-root" class="md-nav__link">The Compiler</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-compiler--page-root" class="md-nav__link">编译器</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#adding-a-grammar-rule" class="md-nav__link">Adding a grammar rule</a>
+        <li class="md-nav__item"><a href="#adding-a-grammar-rule" class="md-nav__link">添加语法规则</a>
         </li>
-        <li class="md-nav__item"><a href="#adding-a-lexical-token" class="md-nav__link">Adding a lexical token</a>
+        <li class="md-nav__item"><a href="#adding-a-lexical-token" class="md-nav__link">添加词法标记</a>
         </li>
-        <li class="md-nav__item"><a href="#parsing" class="md-nav__link">Parsing</a>
+        <li class="md-nav__item"><a href="#parsing" class="md-nav__link">解析中</a>
         </li>
-        <li class="md-nav__item"><a href="#compiler-passes" class="md-nav__link">Compiler passes</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#compiler-passes" class="md-nav__link">编译器步骤</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#first-pass" class="md-nav__link">First pass</a>
+        <li class="md-nav__item"><a href="#first-pass" class="md-nav__link">第一步</a>
         </li>
-        <li class="md-nav__item"><a href="#second-and-third-passes" class="md-nav__link">Second and third passes</a>
+        <li class="md-nav__item"><a href="#second-and-third-passes" class="md-nav__link">第二和第三步</a>
         </li>
-        <li class="md-nav__item"><a href="#fourth-pass" class="md-nav__link">Fourth pass</a>
+        <li class="md-nav__item"><a href="#fourth-pass" class="md-nav__link">第四步</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#emitting-bytecode" class="md-nav__link">Emitting bytecode</a>
+        <li class="md-nav__item"><a href="#emitting-bytecode" class="md-nav__link">发射字节码</a>
         </li>
-        <li class="md-nav__item"><a href="#emitting-native-code" class="md-nav__link">Emitting native code</a>
+        <li class="md-nav__item"><a href="#emitting-native-code" class="md-nav__link">发射原生代码</a>
         </li></ul>
             </nav>
         </li>
@@ -485,67 +485,48 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="the-compiler">
-<span id="compiler"></span><h1 id="develop-compiler--page-root">The Compiler<a class="headerlink" href="#develop-compiler--page-root" title="Permalink to this heading">¶</a></h1>
-<p>The compilation process in MicroPython involves the following steps:</p>
+<span id="compiler"></span><h1 id="develop-compiler--page-root">编译器<a class="headerlink" href="#develop-compiler--page-root" title="Permalink to this heading">¶</a></h1>
+<p>在 MicroPython 中，编译过程包括以下几个步骤：</p>
 <ul class="simple">
-<li><p>The lexer converts the stream of text that makes up a MicroPython program into tokens.</p></li>
-<li><p>The parser then converts the tokens into an abstract syntax (parse tree).</p></li>
-<li><p>Then bytecode or native code is emitted based on the parse tree.</p></li>
+<li><p>词法分析器将一个 MicroPython 程序的文本流转换为标记。</p></li>
+<li><p>语法分析器将标记转换为抽象语法（解析树）。</p></li>
+<li><p>基于解析树生成字节码或者本地代码。</p></li>
 </ul>
-<p>For purposes of this discussion we are going to add a simple language feature <code class="docutils literal notranslate"><span class="pre">add1</span></code>
-that can be use in Python as:</p>
+<p>为了验证，我们将添加一个简单的语言特性 <code class="docutils literal notranslate"><span class="pre">add1</span></code> ，并让它可在 Python 中使用：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; add1 <span class="m">3</span>
 <span class="m">4</span>
 &gt;&gt;&gt;
 </pre></div>
 </div>
-<p>The <code class="docutils literal notranslate"><span class="pre">add1</span></code> statement takes an integer as argument and adds <code class="docutils literal notranslate"><span class="pre">1</span></code> to it.</p>
+<p>该 <code class="docutils literal notranslate"><span class="pre">add1</span></code> 语句接受一个整数作为参数，并将其加 1。</p>
 <section id="adding-a-grammar-rule">
-<h2 id="adding-a-grammar-rule">Adding a grammar rule<a class="headerlink" href="#adding-a-grammar-rule" title="Permalink to this heading">¶</a></h2>
-<p>MicroPython’s grammar is based on the <a class="reference external" href="https://docs.python.org/3.5/reference/grammar.html">CPython grammar</a>
-and is defined in <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/grammar.h">py/grammar.h</a>.
-This grammar is what is used to parse MicroPython source files.</p>
-<p>There are two macros you need to know to define a grammar rule: <code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> and <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code>.
-<code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> allows you to define a rule with an associated compile function,
-while <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code> has no compile (NC) function for it.</p>
-<p>A simple grammar definition with a compile function for our new <code class="docutils literal notranslate"><span class="pre">add1</span></code> statement
-looks like the following:</p>
+<h2 id="adding-a-grammar-rule">添加语法规则<a class="headerlink" href="#adding-a-grammar-rule" title="Permalink to this heading">¶</a></h2>
+<p>MicroPython 的语法基于 <a class="reference external" href="https://docs.python.org/3.5/reference/grammar.html">CPython 语法</a> ，它在 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/grammar.h">py/grammar.h</a> 中定义。这个语法是用来解析 MicroPython 源码文件的。</p>
+<p>要定义一个语法规则，你需要知道两个宏：<code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> 和 <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code>。<code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> 允许你定义一个有关联编译函数的规则，而 <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code> 则表示不编译( NC 代表 No Compile )函数。</p>
+<p>我们新增的 <code class="docutils literal notranslate"><span class="pre">add1</span></code> 语句的简单语法定义如下：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">DEF_RULE</span><span class="p">(</span><span class="n">add1_stmt</span><span class="p">,</span> <span class="n">c</span><span class="p">(</span><span class="n">add1_stmt</span><span class="p">),</span> <span class="n">and</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">tok</span><span class="p">(</span><span class="n">KW_ADD1</span><span class="p">),</span> <span class="n">rule</span><span class="p">(</span><span class="n">testlist</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>The second argument <code class="docutils literal notranslate"><span class="pre">c(add1_stmt)</span></code> is the corresponding compile function that should be implemented
-in <code class="docutils literal notranslate"><span class="pre">py/compile.c</span></code> to turn this rule into executable code.</p>
-<p>The third required argument can be <code class="docutils literal notranslate"><span class="pre">or</span></code> or <code class="docutils literal notranslate"><span class="pre">and</span></code>. This specifies the number of nodes associated
-with a statement. For example, in this case, our <code class="docutils literal notranslate"><span class="pre">add1</span></code> statement is similar to ADD1 in assembly
-language. It takes one numeric argument. Therefore, the <code class="docutils literal notranslate"><span class="pre">add1_stmt</span></code> has two nodes associated with it.
-One node is for the statement itself, i.e the literal <code class="docutils literal notranslate"><span class="pre">add1</span></code> corresponding to <code class="docutils literal notranslate"><span class="pre">KW_ADD1</span></code>,
-and the other for its argument, a <code class="docutils literal notranslate"><span class="pre">testlist</span></code> rule which is the top-level expression rule.</p>
+<p>第二个参数 <code class="docutils literal notranslate"><span class="pre">c(add1_stmt)</span></code> 是对应的编译函数，它应该在 <code class="docutils literal notranslate"><span class="pre">py/compile.c</span></code> 中被实现，以将这个规则转换为可执行代码。</p>
+<p>第三个参数可以是 <code class="docutils literal notranslate"><span class="pre">or</span></code> 或 <code class="docutils literal notranslate"><span class="pre">and</span></code> 。这指定了一个语句关联的节点数。例如，在这种情况下，我们的 <code class="docutils literal notranslate"><span class="pre">add1</span></code> 语句与汇编语言中的 ADD1 类似。它只有一个数字参数。因此，<code class="docutils literal notranslate"><span class="pre">add1_stmt</span></code> 有两个关联的节点。第一个节点是语句本身，即 <code class="docutils literal notranslate"><span class="pre">add1</span></code> 对应 <code class="docutils literal notranslate"><span class="pre">KW_ADD1</span></code> ，第二个节点是它的参数，<code class="docutils literal notranslate"><span class="pre">testlist</span></code> ，代表顶级表达式规则。</p>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>The <code class="docutils literal notranslate"><span class="pre">add1</span></code> rule here is just an example and not part of the standard
-MicroPython grammar.</p>
+<p>这里的 <code class="docutils literal notranslate"><span class="pre">add1</span></code> 规则只是一个示例，并不是标准的 MicroPython 语法。</p>
 </div>
-<p>The fourth argument in this example is the token associated with the rule, <code class="docutils literal notranslate"><span class="pre">KW_ADD1</span></code>. This token should be
-defined in the lexer by editing <code class="docutils literal notranslate"><span class="pre">py/lexer.h</span></code>.</p>
-<p>Defining the same rule without a compile function is achieved by using the <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code> macro
-and omitting the compile function argument:</p>
+<p>在这个示例中，第四个参数是该规则对应的标识，<code class="docutils literal notranslate"><span class="pre">KW_ADD1</span></code> 。这个标识应该通过修改 <code class="docutils literal notranslate"><span class="pre">py/lexer.h</span></code> 来增加声明。</p>
+<p>使用 <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code> 宏定义一个忽略编译函数但其他部分相同的规则：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">DEF_RULE_NC</span><span class="p">(</span><span class="n">add1_stmt</span><span class="p">,</span> <span class="n">and</span><span class="p">(</span><span class="mi">2</span><span class="p">),</span> <span class="n">tok</span><span class="p">(</span><span class="n">KW_ADD1</span><span class="p">),</span> <span class="n">rule</span><span class="p">(</span><span class="n">testlist</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>The remaining arguments take on the same meaning. A rule without a compile function must
-be handled explicitly by all rules that may have this rule as a node. Such NC-rules are usually
-used to express sub-parts of a complicated grammar structure that cannot be expressed in a
-single rule.</p>
+<p>这些参数的含义与上文描述相同。忽略编译函数的规则必须被所有可能有这个规则作为节点的规则处理。这种 NC 规则通常用于表示复杂的语法结构，不能只用单个规则表示的部分。</p>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>The macros <code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> and <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code> take other arguments. For an in-depth understanding of
-supported parameters, see <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/grammar.h">py/grammar.h</a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> 和 <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code> 还可以接受其他参数。更详细的参数说明请参考 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/grammar.h">py/grammar.h</a> 。</p>
 </div>
 </section>
 <section id="adding-a-lexical-token">
-<h2 id="adding-a-lexical-token">Adding a lexical token<a class="headerlink" href="#adding-a-lexical-token" title="Permalink to this heading">¶</a></h2>
-<p>Every rule defined in the grammar should have a token associated with it that is defined in <code class="docutils literal notranslate"><span class="pre">py/lexer.h</span></code>.
-Add this token by editing the <code class="docutils literal notranslate"><span class="pre">_mp_token_kind_t</span></code> enum:</p>
+<h2 id="adding-a-lexical-token">添加词法标记<a class="headerlink" href="#adding-a-lexical-token" title="Permalink to this heading">¶</a></h2>
+<p>在语法中定义的每个规则都应该在 <code class="docutils literal notranslate"><span class="pre">py/lexer.h</span></code> 中有一个与其关联的标记定义。通过修改 <code class="docutils literal notranslate"><span class="pre">_mp_token_kind_t</span></code> 枚举来增加该标记：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">enum</span> <span class="n">_mp_token_kind_t</span> <span class="p">{</span>
     <span class="p">...</span>
     <span class="n">MP_TOKEN_KW_OR</span><span class="p">,</span>
@@ -561,7 +542,7 @@ Add this token by editing the <code class="docutils literal notranslate"><span c
 </span><span class="p">}</span> <span class="n">mp_token_kind_t</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>Then also edit <code class="docutils literal notranslate"><span class="pre">py/lexer.c</span></code> to add the new keyword literal text:</p>
+<p>然后，在 <code class="docutils literal notranslate"><span class="pre">py/lexer.c</span></code> 中增加新的关键字文本：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">STATIC</span> <span class="k">const</span> <span class="kt">char</span> <span class="o">*</span><span class="k">const</span> <span class="n">tok_kw</span><span class="p">[]</span> <span class="o">=</span> <span class="p">{</span>
     <span class="p">...</span>
     <span class="s">"or"</span><span class="p">,</span>
@@ -577,33 +558,22 @@ Add this token by editing the <code class="docutils literal notranslate"><span c
 </span><span class="p">};</span>
 </pre></div>
 </div>
-<p>Notice the keyword is named depending on what you want it to be. For consistency, maintain the
-naming standard accordingly.</p>
+<p>注意，关键字的名称取决于你想要的名称。为保持一致性，请遵循统一标准的命名规则。</p>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>The order of these keywords in <code class="docutils literal notranslate"><span class="pre">py/lexer.c</span></code> must match the order of tokens in the enum
-defined in <code class="docutils literal notranslate"><span class="pre">py/lexer.h</span></code>.</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">py/lexer.c</span></code> 中的这些关键字的顺序必须与 <code class="docutils literal notranslate"><span class="pre">py/lexer.h</span></code> 中定义的枚举中的标记顺序一致。</p>
 </div>
 </section>
 <section id="parsing">
-<h2 id="parsing">Parsing<a class="headerlink" href="#parsing" title="Permalink to this heading">¶</a></h2>
-<p>In the parsing stage the parser takes the tokens produced by the lexer and converts them to an abstract syntax tree (AST) or
-<em>parse tree</em>. The implementation for the parser is defined in <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/parse.c">py/parse.c</a>.</p>
-<p>The parser also maintains a table of constants for use in different aspects of parsing, similar to what a
-<a class="reference external" href="https://steemit.com/programming/@drifter1/writing-a-simple-compiler-on-my-own-symbol-table-basic-structure">symbol table</a>
-does.</p>
-<p>Several optimizations like <a class="reference external" href="http://compileroptimizations.com/category/constant_folding.htm">constant folding</a>
-on integers for most operations e.g. logical, binary, unary, etc, and optimizing enhancements on parenthesis
-around expressions are performed during this phase, along with some optimizations on strings.</p>
-<p>It’s worth noting that <em>docstrings</em> are discarded and not accessible to the compiler.
-Even optimizations like <a class="reference external" href="https://en.wikipedia.org/wiki/String_interning">string interning</a> are
-not applied to <em>docstrings</em>.</p>
+<h2 id="parsing">解析中<a class="headerlink" href="#parsing" title="Permalink to this heading">¶</a></h2>
+<p>在解析阶段，解析器接受词法分析器产生的标记，并将其转换为一个抽象语法树（ abstract syntax tree 简称 AST ）或者 <em>解析树</em>。解析器的实现在 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/parse.c">py/parse.c</a> 中。</p>
+<p>解析器还维护一个用于在解析中的不同方面使用的常量表，与 <a class="reference external" href="https://steemit.com/programming/@drifter1/writing-a-simple-compiler-on-my-own-symbol-table-basic-structure">符号表 symbol table</a> 所承载的能力类似。</p>
+<p>在解析阶段会进行一些优化，比如对大多数操作（例如逻辑、二进制、单目运算）的整数进行 <a class="reference external" href="http://compileroptimizations.com/category/constant_folding.htm">常量折叠</a> ，并且会对表达式周围的括号进行优化增强，同时也会对字符串进行一些优化。</p>
+<p>值得注意的是，<em>文档字符串 docstrings</em> 会被丢弃，并且编译器无法访问。即使对像 <a class="reference external" href="https://en.wikipedia.org/wiki/String_interning">字符串驻留</a> 这样的特性也不会对文档字符串生效。</p>
 </section>
 <section id="compiler-passes">
-<h2 id="compiler-passes">Compiler passes<a class="headerlink" href="#compiler-passes" title="Permalink to this heading">¶</a></h2>
-<p>Like many compilers, MicroPython compiles all code to MicroPython bytecode or native code. The functionality
-that achieves this is implemented in <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/compile.c">py/compile.c</a>.
-The most relevant method you should know about is this:</p>
+<h2 id="compiler-passes">编译器步骤<a class="headerlink" href="#compiler-passes" title="Permalink to this heading">¶</a></h2>
+<p>像大多数编译器一样，MicroPython 编译所有代码到 MicroPython 字节码或者原生代码。这一功能在 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/compile.c">py/compile.c</a> 中实现。你应该了解的最直接相关的函数是：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">mp_obj_t</span> <span class="nf">mp_compile</span><span class="p">(</span><span class="n">mp_parse_tree_t</span> <span class="o">*</span><span class="n">parse_tree</span><span class="p">,</span> <span class="n">qstr</span> <span class="n">source_file</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_repl</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Compile the input parse_tree to a raw-code structure.</span>
     <span class="n">mp_raw_code_t</span> <span class="o">*</span><span class="n">rc</span> <span class="o">=</span> <span class="n">mp_compile_to_raw_code</span><span class="p">(</span><span class="n">parse_tree</span><span class="p">,</span> <span class="n">source_file</span><span class="p">,</span> <span class="n">is_repl</span><span class="p">);</span>
@@ -612,15 +582,10 @@ The most relevant method you should know about is this:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The compiler compiles the code in four passes: scope, stack size, code size and emit.
-Each pass runs the same C code over the same AST data structure, with different things
-being computed each time based on the results of the previous pass.</p>
+<p>编译器会进行四步操作：作用域、栈大小、代码大小和发射。每次编译都会使用相同的 C 代码，并且使用相同的 AST 数据结构，每次编译都会使用上一次编译的结果来计算新的结果。</p>
 <section id="first-pass">
-<h3 id="first-pass">First pass<a class="headerlink" href="#first-pass" title="Permalink to this heading">¶</a></h3>
-<p>In the first pass, the compiler learns about the known identifiers (variables) and
-their scope, being global, local, closed over, etc. In the same pass the emitter
-(bytecode or native code) also computes the number of labels needed for the emitted
-code.</p>
+<h3 id="first-pass">第一步<a class="headerlink" href="#first-pass" title="Permalink to this heading">¶</a></h3>
+<p>在第一次编译中，编译器会学习到已知的标识符（变量）的作用域，是全局的、局部的、闭包的等等。在同一次编译中，编译器（字节码或机器码 ）也会计算出提交的代码所需的标签数量。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Compile pass 1.</span>
 <span class="n">comp</span><span class="o">-&gt;</span><span class="n">emit</span> <span class="o">=</span> <span class="n">emit_bc</span><span class="p">;</span>
 <span class="n">comp</span><span class="o">-&gt;</span><span class="n">emit_method_table</span> <span class="o">=</span> <span class="o">&amp;</span><span class="n">emit_bc_method_table</span><span class="p">;</span>
@@ -646,10 +611,8 @@ code.</p>
 </div>
 </section>
 <section id="second-and-third-passes">
-<h3 id="second-and-third-passes">Second and third passes<a class="headerlink" href="#second-and-third-passes" title="Permalink to this heading">¶</a></h3>
-<p>The second and third passes involve computing the Python stack size and code size
-for the bytecode or native code. After the third pass the code size cannot change,
-otherwise jump labels will be incorrect.</p>
+<h3 id="second-and-third-passes">第二和第三步<a class="headerlink" href="#second-and-third-passes" title="Permalink to this heading">¶</a></h3>
+<p>第二和第三步都会计算出字节码或机器码的栈大小和代码大小。第三步之后，代码大小不能变，否则标签的位置会出错。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">scope_t</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">scope_head</span><span class="p">;</span> <span class="n">s</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">compile_error</span> <span class="o">==</span> <span class="n">MP_OBJ_NULL</span><span class="p">;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 
@@ -665,8 +628,7 @@ otherwise jump labels will be incorrect.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>Just before pass two there is a selection for the type of code to be emitted, which can
-either be native or bytecode.</p>
+<p>编译器在第二步之前会选择要编译的代码类型，可以是原生代码或字节码。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Choose the emitter type.</span>
 <span class="k">switch</span> <span class="p">(</span><span class="n">s</span><span class="o">-&gt;</span><span class="n">emit_options</span><span class="p">)</span> <span class="p">{</span>
     <span class="k">case</span> <span class="nl">MP_EMIT_OPT_NATIVE_PYTHON</span><span class="p">:</span>
@@ -685,21 +647,12 @@ either be native or bytecode.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The bytecode option is the default but something unique to note for the native
-code option is that there is another option via <code class="docutils literal notranslate"><span class="pre">VIPER</span></code>. See the
-<a class="reference internal" href="#emitting-native-code"><span class="std std-ref">Emitting native code</span></a> section for more details on
-viper annotations.</p>
-<p>There is also support for <em>inline assembly code</em>, where assembly instructions are
-written as Python function calls but are emitted directly as the corresponding
-machine code. This assembler has only three passes (scope, code size, emit)
-and uses a different implementation, not the <code class="docutils literal notranslate"><span class="pre">compile_scope</span></code> function.
-See the <a class="reference external" href="https://docs.micropython.org/en/latest/pyboard/tutorial/assembler.html#pyboard-tutorial-assembler">inline assembler tutorial</a>
-for more details.</p>
+<p>默认情况下，编译器会编译成字节码，但是有一个特殊的选项是原生代码，这个选项可以通过 <code class="docutils literal notranslate"><span class="pre">VIPER</span></code> 来设置。请参见 <a class="reference internal" href="#emitting-native-code"><span class="std std-ref">发射原生代码</span></a> 小节的详细信息。</p>
+<p><em>内联汇编代码</em> 同样也是支持的，汇编指令是作为函数调用，但是会直接发射成对应的机器指令。这个汇编器只有三步（作用域、代码大小、发射），并且使用了一个不同的实现，而不是 <code class="docutils literal notranslate"><span class="pre">compile_scope</span></code> 函数。请参考 <a class="reference internal" href="../pyboard/tutorial/assembler.html#pyboard-tutorial-assembler"><span class="std std-ref">内联汇编编译器</span></a> 章节获取更多详细信息。</p>
 </section>
 <section id="fourth-pass">
-<h3 id="fourth-pass">Fourth pass<a class="headerlink" href="#fourth-pass" title="Permalink to this heading">¶</a></h3>
-<p>The fourth pass emits the final code that can be executed, either bytecode in
-the virtual machine, or native code directly by the CPU.</p>
+<h3 id="fourth-pass">第四步<a class="headerlink" href="#fourth-pass" title="Permalink to this heading">¶</a></h3>
+<p>第四步会发射最终可以执行的代码，可以是虚拟机中的字节码，也可以是 CPU 直接支持的原生代码。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">scope_t</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">scope_head</span><span class="p">;</span> <span class="n">s</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">compile_error</span> <span class="o">==</span> <span class="n">MP_OBJ_NULL</span><span class="p">;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
 
@@ -713,26 +666,19 @@ the virtual machine, or native code directly by the CPU.</p>
 </section>
 </section>
 <section id="emitting-bytecode">
-<h2 id="emitting-bytecode">Emitting bytecode<a class="headerlink" href="#emitting-bytecode" title="Permalink to this heading">¶</a></h2>
-<p>Statements in Python code usually correspond to emitted bytecode, for example <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>
-generates “push a” then “push b” then “binary op add”. Some statements do not emit
-anything but instead affect other things like the scope of variables, for example
-<code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">a</span></code>.</p>
-<p>The implementation of a function that emits bytecode looks similar to this:</p>
+<h2 id="emitting-bytecode">发射字节码<a class="headerlink" href="#emitting-bytecode" title="Permalink to this heading">¶</a></h2>
+<p>Python 代码中的语句通常会对应到发射的字节码，比如 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> 会生成 <code class="docutils literal notranslate"><span class="pre">push</span> <span class="pre">a</span></code> 和 <code class="docutils literal notranslate"><span class="pre">push</span> <span class="pre">b</span></code> 然后 <code class="docutils literal notranslate"><span class="pre">binary</span> <span class="pre">op</span> <span class="pre">add</span></code>。某些语句不会发射任何代码，但是会影响到变量的作用域，比如 <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">a</span></code>。</p>
+<p>发出字节码的函数的实现类似于以下内容：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">mp_emit_bc_unary_op</span><span class="p">(</span><span class="n">emit_t</span> <span class="o">*</span><span class="n">emit</span><span class="p">,</span> <span class="n">mp_unary_op_t</span> <span class="n">op</span><span class="p">)</span> <span class="p">{</span>
     <span class="n">emit_write_bytecode_byte</span><span class="p">(</span><span class="n">emit</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">MP_BC_UNARY_OP_MULTI</span> <span class="o">+</span> <span class="n">op</span><span class="p">);</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>We use the unary operator expressions for an example here but the implementation
-details are similar for other statements/expressions. The method <code class="docutils literal notranslate"><span class="pre">emit_write_bytecode_byte()</span></code>
-is a wrapper around the main function <code class="docutils literal notranslate"><span class="pre">emit_get_cur_to_write_bytecode()</span></code> that all
-functions must call to emit bytecode.</p>
+<p>我们使用一元操作符表达式来作为一个例子，但是实现的细节是相同的。方法 <code class="docutils literal notranslate"><span class="pre">emit_write_bytecode_byte()</span></code> 是一个包装函数，且所有的函数都必须调用它来发射字节码。</p>
 </section>
 <section id="emitting-native-code">
-<span id="id2"></span><h2 id="emitting-native-code">Emitting native code<a class="headerlink" href="#emitting-native-code" title="Permalink to this heading">¶</a></h2>
-<p>Similar to how bytecode is generated, there should be a corresponding function in <code class="docutils literal notranslate"><span class="pre">py/emitnative.c</span></code> for each
-code statement:</p>
+<span id="id2"></span><h2 id="emitting-native-code">发射原生代码<a class="headerlink" href="#emitting-native-code" title="Permalink to this heading">¶</a></h2>
+<p>与字节码一样，原生代码在 <code class="docutils literal notranslate"><span class="pre">py/emitnative.c</span></code> 中每个代码语句都应该有一个对应的函数：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">STATIC</span> <span class="kt">void</span> <span class="nf">emit_native_unary_op</span><span class="p">(</span><span class="n">emit_t</span> <span class="o">*</span><span class="n">emit</span><span class="p">,</span> <span class="n">mp_unary_op_t</span> <span class="n">op</span><span class="p">)</span> <span class="p">{</span>
      <span class="n">vtype_kind_t</span> <span class="n">vtype</span><span class="p">;</span>
      <span class="n">emit_pre_pop_reg</span><span class="p">(</span><span class="n">emit</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">vtype</span><span class="p">,</span> <span class="n">REG_ARG_2</span><span class="p">);</span>
@@ -747,14 +693,7 @@ code statement:</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>The difference here is that we have to handle <em>viper typing</em>. Viper annotations allow
-us to handle more than one type of variable. By default all variables are Python objects,
-but with viper a variable can also be declared as a machine-typed variable like a native
-integer or pointer. Viper can be thought of as a superset of Python, where normal Python
-objects are handled as usual, while native machine variables are handled in an optimised
-way by using direct machine instructions for the operations. Viper typing may break
-Python equivalence because, for example, integers become native integers and can overflow
-(unlike Python integers which extend automatically to arbitrary precision).</p>
+<p>这里的区别是，我们需要处理 <em>viper 类型</em> 。viper 注解允许我们处理不止一种类型的变量。默认情况下，所有的变量都是 Python 对象，但是在 viper 中，变量也可以声明为一个机器类型的变量，比如一个原生的整数或者指针。viper 可以被认为是 Python 的超集，其中正常的 Python 对象像往常一样处理，而在处理机器类型的变量时，我们使用直接的机器指令以优化过的方式处理。但 viper 类型可能会破坏 Python 的等价性，比如整数会变成原生的整数，而且可能会溢出（和 Python 整数不同，它们不会自动扩展到任意精度）。</p>
 </section>
 </section>
 
@@ -805,7 +744,7 @@ Python equivalence because, for example, integers become native integers and can
               
           </div>
             Last updated on
-              21 6月 2022.
+              01 7月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
