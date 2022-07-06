@@ -21,13 +21,14 @@ msgstr ""
 
 #: ../../develop/writingtests.rst:4
 msgid "Writing tests"
-msgstr ""
+msgstr "编写测试"
 
 #: ../../develop/writingtests.rst:6
 msgid ""
 "Tests in MicroPython are located at the path ``tests/``. The following is"
 " a listing of key directories and the run-tests.py runner script:"
 msgstr ""
+"MicroPython 的测试在 ``tests/`` 目录中。下面列出了关键目录和 run-tests.py 的运行脚本:"
 
 #: ../../develop/writingtests.rst:19
 msgid ""
@@ -36,16 +37,19 @@ msgid ""
 "It's also possible to make custom tests outside this tests folder, which "
 "would be recommended for a custom port."
 msgstr ""
+"这是一些维护分类测试的子目录。可在已有目录中或在新目录中创建一个新测试。"
+"在测试目录外创建自定义测试也是可以的，当为一个自定义的适配端编写测试时更推荐这种方式。"
 
 #: ../../develop/writingtests.rst:23
 msgid ""
 "For example, add the following code in a file ``print.py`` in the "
 "``tests/unix/`` subdirectory:"
 msgstr ""
+"例如，在 ``tests/unix/`` 目录中创建一个文件 ``print.py``，并在其中添加如下代码:"
 
 #: ../../develop/writingtests.rst:32
 msgid "If you run your tests, this test should appear in the test output:"
-msgstr ""
+msgstr "如果运行测试，这个测试应该在输出中显示:"
 
 #: ../../develop/writingtests.rst:46
 msgid ""
@@ -53,6 +57,7 @@ msgid ""
 "output from CPython. So any test should use print statements to indicate "
 "test results."
 msgstr ""
+"测试是通过比较测试目标输出和 CPython 输出来进行的。因此，任何测试都应该使用 print 语句来指示测试结果。"
 
 #: ../../develop/writingtests.rst:49
 msgid ""
@@ -60,18 +65,20 @@ msgid ""
 "functionality), you can provide a ``.py.exp`` file which will be used as "
 "the truth for comparison."
 msgstr ""
+"而对于不能与 CPython 比较的测试（例如 micropython-specific 功能），你可以提供一个 ``.py.exp`` 文件，这个文件将会用于比较。"
 
 #: ../../develop/writingtests.rst:52
 msgid ""
 "The other way to run tests, which is useful when running on targets other"
 " than the Unix port, is:"
 msgstr ""
+"当运行在其他适配端上时，这种运行测试的方式很有用:"
 
 #: ../../develop/writingtests.rst:59
 msgid "Then to run on a board:"
-msgstr ""
+msgstr "然后在一个开发板上运行:"
 
 #: ../../develop/writingtests.rst:65
 msgid "And to run only a certain set of tests (eg a directory):"
-msgstr ""
+msgstr "然后运行指定的测试集（某一个测试子目录）:"
 
