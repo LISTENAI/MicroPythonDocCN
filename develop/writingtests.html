@@ -47,7 +47,7 @@
   
   
   
-    <title>Writing tests &#8212; MicroPython 1.18 文档</title>
+    <title>编写测试 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -61,7 +61,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="编译器" href="compiler.html" />
-    <link rel="prev" title="Getting Started" href="gettingstarted.html" />
+    <link rel="prev" title="快速开始" href="gettingstarted.html" />
   
    
 
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Writing tests </span>
+          <span class="md-header-nav__topic"> 编写测试 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -208,7 +208,7 @@
     <li class="md-nav__item">
     
     
-      <a href="gettingstarted.html" class="md-nav__link">Getting Started</a>
+      <a href="gettingstarted.html" class="md-nav__link">快速开始</a>
       
     
     </li>
@@ -216,9 +216,9 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Writing tests </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 编写测试 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Writing tests</a>
+      <a href="#" class="md-nav__link md-nav__link--active">编写测试</a>
       
         
 <nav class="md-nav md-nav--secondary">
@@ -372,9 +372,8 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="writing-tests">
-<span id="writingtests"></span><h1 id="develop-writingtests--page-root">Writing tests<a class="headerlink" href="#develop-writingtests--page-root" title="Permalink to this heading">¶</a></h1>
-<p>Tests in MicroPython are located at the path <code class="docutils literal notranslate"><span class="pre">tests/</span></code>. The following is a listing of
-key directories and the run-tests.py runner script:</p>
+<span id="writingtests"></span><h1 id="develop-writingtests--page-root">编写测试<a class="headerlink" href="#develop-writingtests--page-root" title="Permalink to this heading">¶</a></h1>
+<p>MicroPython 的测试在 <code class="docutils literal notranslate"><span class="pre">tests/</span></code> 目录中。下面列出了关键目录和 run-tests.py 的运行脚本:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>.
  ├── basics
  ├── extmod
@@ -384,17 +383,15 @@ key directories and the run-tests.py runner script:</p>
  ...
 </pre></div>
 </div>
-<p>There are subfolders maintained to categorize the tests. Add a test by creating a new file in one of the
-existing folders or in a new folder. It’s also possible to make custom tests outside this tests folder,
-which would be recommended for a custom port.</p>
-<p>For example, add the following code in a file <code class="docutils literal notranslate"><span class="pre">print.py</span></code> in the <code class="docutils literal notranslate"><span class="pre">tests/unix/</span></code> subdirectory:</p>
+<p>这是一些维护分类测试的子目录。可在已有目录中或在新目录中创建一个新测试。在测试目录外创建自定义测试也是可以的，当为一个自定义的适配端编写测试时更推荐这种方式。</p>
+<p>例如，在 <code class="docutils literal notranslate"><span class="pre">tests/unix/</span></code> 目录中创建一个文件 <code class="docutils literal notranslate"><span class="pre">print.py</span></code>，并在其中添加如下代码:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_one</span><span class="p">():</span>
     <span class="k">print</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="n">print_one</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>If you run your tests, this test should appear in the test output:</p>
+<p>如果运行测试，这个测试应该在输出中显示:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ports/unix
 $ make tests
 skip  unix/extra_coverage.py
@@ -406,20 +403,18 @@ pass  unix/time.py
 pass  unix/time2.py
 </pre></div>
 </div>
-<p>Tests are run by comparing the output from the test target against the output from CPython.
-So any test should use print statements to indicate test results.</p>
-<p>For tests that can’t be compared to CPython (i.e. micropython-specific functionality),
-you can provide a <code class="docutils literal notranslate"><span class="pre">.py.exp</span></code> file which will be used as the truth for comparison.</p>
-<p>The other way to run tests, which is useful when running on targets other than the Unix port, is:</p>
+<p>测试是通过比较测试目标输出和 CPython 输出来进行的。因此，任何测试都应该使用 print 语句来指示测试结果。</p>
+<p>而对于不能与 CPython 比较的测试（例如 micropython-specific 功能），你可以提供一个 <code class="docutils literal notranslate"><span class="pre">.py.exp</span></code> 文件，这个文件将会用于比较。</p>
+<p>当运行在其他适配端上时，这种运行测试的方式很有用:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> tests
 $ ./run-tests.py
 </pre></div>
 </div>
-<p>Then to run on a board:</p>
+<p>然后在一个开发板上运行:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./run-tests.py --target minimal --device /dev/ttyACM0
 </pre></div>
 </div>
-<p>And to run only a certain set of tests (eg a directory):</p>
+<p>然后运行指定的测试集（某一个测试子目录）:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ ./run-tests.py -d basics
 $ ./run-tests.py float/builtin*.py
 </pre></div>
@@ -436,7 +431,7 @@ $ ./run-tests.py float/builtin*.py
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="gettingstarted.html" title="Getting Started"
+            <a href="gettingstarted.html" title="快速开始"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -445,7 +440,7 @@ $ ./run-tests.py float/builtin*.py
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Getting Started </span>
+                      class="md-footer-nav__direction"> Previous </span> 快速开始 </span>
               </div>
             </a>
           
@@ -473,7 +468,7 @@ $ ./run-tests.py float/builtin*.py
               
           </div>
             Last updated on
-              01 7月 2022.
+              06 7月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
