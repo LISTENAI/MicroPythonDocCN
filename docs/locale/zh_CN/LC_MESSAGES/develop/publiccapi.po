@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../develop/publiccapi.rst:4
 msgid "The public C API"
-msgstr ""
+msgstr "公有 C API"
 
 #: ../../develop/publiccapi.rst:6
 msgid ""
@@ -29,10 +29,12 @@ msgid ""
 " ``py/`` directory. Most of the important core runtime C APIs are exposed"
 " in ``runtime.h`` and ``obj.h``."
 msgstr ""
+"公有 C API 是在 ``py/`` 目录中的所有 C 头文件中定义的函数。大部分重要的核心运行时 C APIs"
+" 暴露在 ``runtime.h`` 和 ``obj.h`` 中。"
 
 #: ../../develop/publiccapi.rst:10
 msgid "The following is an example of public API functions from ``obj.h``:"
-msgstr ""
+msgstr "以下是 ``obj.h`` 中的公有 API 函数的示例："
 
 #: ../../develop/publiccapi.rst:19
 msgid ""
@@ -41,10 +43,13 @@ msgid ""
 "Static inline functions in header files are fine too, such functions will"
 " be inlined in the code when used."
 msgstr ""
+"在核心中，任何头文件中的函数和宏都是公有 API ，可用于访问 MicroPython 的"
+"最底层详细信息。头文件中的静态内联函数也是可以的，这些函数会在使用时被内联到代码中。"
 
 #: ../../develop/publiccapi.rst:24
 msgid ""
 "Header files in the ``ports`` directory are only exposed to the "
 "functionality specific to a given port."
 msgstr ""
+"``ports`` 目录中的头文件只暴露给特定的操作系统。"
 
