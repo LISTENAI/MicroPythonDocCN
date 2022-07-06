@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../develop/gettingstarted.rst:4
 msgid "Getting Started"
-msgstr ""
+msgstr "快速开始"
 
 #: ../../develop/gettingstarted.rst:6
 msgid ""
@@ -30,10 +30,12 @@ msgid ""
 " documentation, running tests, and a description of the directory "
 "structure of the MicroPython code base."
 msgstr ""
+"本文档介绍如何逐步设置版本控制、获取并编译源代码、编译文档、运行测试，以及"
+"包含 MicroPython 代码库的目录结构的描述。"
 
 #: ../../develop/gettingstarted.rst:11
 msgid "Source control with git"
-msgstr ""
+msgstr "使用 git 进行源码控制"
 
 #: ../../develop/gettingstarted.rst:13
 msgid ""
@@ -44,6 +46,11 @@ msgid ""
 " version of Git for your operating system to follow through the rest of "
 "the steps."
 msgstr ""
+"MicroPython 源码托管在 `GitHub "
+"<https://github.com/micropython/micropython>`_ 并使用 `Git <https"
+"://git-scm.com>`_ 进行源码控制。工作流程主要是"
+"从主仓库拉取或推送源码。"
+"先安装与你操作系统相应版本的 Git 再继续接下来的步骤。"
 
 #: ../../develop/gettingstarted.rst:19
 msgid ""
@@ -53,6 +60,10 @@ msgid ""
 "`Git Handbook <https://guides.github.com/introduction/git-handbook/>`_ or"
 " any other sources on the internet."
 msgstr ""
+"如需了解安装说明，请参考 `Git 安装说明 <https://git-scm.com/book/en/v2/Getting-"
+"Started-Installing-Git>`_。"
+"了解 Git 基本命令的基本知识，请参考 `Git 常用命令手册 <https://guides.github.com/introduction/git-handbook/>`_ 或"
+"任何其他在线资源。"
 
 #: ../../develop/gettingstarted.rst:25
 msgid ""
@@ -62,10 +73,13 @@ msgid ""
 "scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revltrevgt>`_"
 " on how to use this."
 msgstr ""
+"源码中已包含一个 .git-blame-ignore-revs 文件，该文件会使得 git blame 输出中忽略格式化代码的提交。"
+"请参考 `git blame 官方文档 <https://git-scm.com/docs/git-blame#Documentation/git-blame.txt---ignore-revltrevgt>`_ "
+"来了解如何使用该文件。"
 
 #: ../../develop/gettingstarted.rst:30
 msgid "Get the code"
-msgstr ""
+msgstr "获取源码"
 
 #: ../../develop/gettingstarted.rst:32
 msgid ""
@@ -73,20 +87,24 @@ msgid ""
 "for your development purposes. The process of obtaining the source code "
 "includes the following:"
 msgstr ""
+"建议你维护一个 MicroPython 代码仓库的 fork ，以便在开发中使用。"
+"获取源码包括以下步骤："
 
 #: ../../develop/gettingstarted.rst:35
 msgid "Fork the repository https://github.com/micropython/micropython"
-msgstr ""
+msgstr "从 https://github.com/micropython/micropython 仓库 fork 到你的账户下。"
 
 #: ../../develop/gettingstarted.rst:36
 msgid ""
 "You will now have a fork at <https://github.com/<your-user-"
 "name>/micropython>."
 msgstr ""
+"你将会有一个托管在 <https://github.com/<your-user-"
+"name>/micropython> 的 fork 。"
 
 #: ../../develop/gettingstarted.rst:37
 msgid "Clone the forked repository using the following command:"
-msgstr ""
+msgstr "使用以下命令 clone 你的 fork ："
 
 #: ../../develop/gettingstarted.rst:43
 msgid ""
@@ -94,10 +112,12 @@ msgid ""
 "/Git-Basics-Working-with-Remotes>`_ to be able to collaborate on the "
 "MicroPython project."
 msgstr ""
+"然后，为项目 `配置远程仓库 <https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes>`_ "
+"以便可以与 MicroPython 主项目的协作。"
 
 #: ../../develop/gettingstarted.rst:46
 msgid "Configure remote upstream:"
-msgstr ""
+msgstr "配置远程 upstream ："
 
 #: ../../develop/gettingstarted.rst:53
 msgid ""
@@ -106,10 +126,13 @@ msgid ""
 " mapping but it is recommended that ``origin`` maps to your fork and "
 "``upstream`` to the main MicroPython repository."
 msgstr ""
+"通常，在 fork 的仓库中配置 ``upstream`` 和 ``origin`` ，以便可以与 "
+"MicroPython 主项目的协作。你可以维护自己的映射，但是建议将 ``origin`` "
+"映射到你的 fork ，并将 ``upstream`` 映射到 MicroPython 主项目。"
 
 #: ../../develop/gettingstarted.rst:58
 msgid "After the above configuration, your setup should be similar to this:"
-msgstr ""
+msgstr "在上述配置完成后，你的项目的远程设置应该类似于这样："
 
 #: ../../develop/gettingstarted.rst:68
 msgid ""
@@ -117,16 +140,19 @@ msgid ""
 "pointing to the master branch. To prepare for further development, it is "
 "recommended to work on a development branch."
 msgstr ""
+"此时你的本地环境应该已经有了源码。默认情况下，你指向了 master 分支。"
+"为了进行后续开发，建议使用开发分支。"
 
 #: ../../develop/gettingstarted.rst:76
 msgid ""
 "You can give it any name. You will have to compile MicroPython whenever "
 "you change to a different branch."
 msgstr ""
+"你可以给它任意名字。当你切换到其他分支时，你需要重新编译 MicroPython 。"
 
 #: ../../develop/gettingstarted.rst:80
 msgid "Compile and build the code"
-msgstr ""
+msgstr "编译和构建源码"
 
 #: ../../develop/gettingstarted.rst:82
 msgid ""
@@ -137,18 +163,21 @@ msgid ""
 "using Linux to compile. The Windows instructions are provided in a later "
 "section."
 msgstr ""
+"编译 MicroPython 时，你需要编译指定的 :term:`port` ，通常需要设定某个指定的 :ref:`board <glossary>` 。"
+"首先，安装相应的依赖库。然后，编译 MicroPython 交叉编译器，以便后续可以成功编译和构建。"
+"下面包含使用 Linux 编译的操作，在 Windows 上进行的指引会在后面的章节中提供。"
 
 #: ../../develop/gettingstarted.rst:91
 msgid "Required dependencies"
-msgstr ""
+msgstr "安装必需的依赖库"
 
 #: ../../develop/gettingstarted.rst:93
 msgid "Install the required dependencies for Linux:"
-msgstr ""
+msgstr "安装 Linux 的必需的依赖库："
 
 #: ../../develop/gettingstarted.rst:99
 msgid "For the stm32 port, the ARM cross-compiler is required:"
-msgstr ""
+msgstr "对于 stm32 的适配端，需要安装 ARM 交叉编译器："
 
 #: ../../develop/gettingstarted.rst:105
 msgid ""
@@ -156,12 +185,16 @@ msgid ""
 "/open-source-software/developer-tools/gnu-toolchain/gnu-rm>`_ for the "
 "latest details."
 msgstr ""
+"参见 `ARM GCC 工具链 <https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-rm>`_ "
+"以获取最新的详细信息。"
 
 #: ../../develop/gettingstarted.rst:109
 msgid ""
 "Python is also required. Python 2 is supported for now, but we recommend "
 "using Python 3. Check that you have Python available on your system:"
 msgstr ""
+"Python 也是必需的。目前虽然仍支持 Python 2 ， 但建议使用 Python 3。"
+"检查你的系统是否有 Python 可用："
 
 #: ../../develop/gettingstarted.rst:120
 msgid ""
@@ -169,26 +202,31 @@ msgid ""
 "respective `readme files "
 "<https://github.com/micropython/micropython/tree/master/ports>`_."
 msgstr ""
+"所有支持的端都有不同的依赖库，参考它们的 `readme 文件 "
+"<https://github.com/micropython/micropython/tree/master/ports>`_."
 
 #: ../../develop/gettingstarted.rst:124
 msgid "Building the MicroPython cross-compiler"
-msgstr ""
+msgstr "编译 MicroPython 交叉编译器"
 
 #: ../../develop/gettingstarted.rst:126
 msgid ""
 "Almost all ports require building ``mpy-cross`` first to perform pre-"
 "compilation of Python code that will be included in the port firmware:"
 msgstr ""
+"大部分端都需要先编译 ``mpy-cross`` ，以便在端的固件中包含 Python 的代码："
 
 #: ../../develop/gettingstarted.rst:135
 msgid ""
 "Note that, ``mpy-cross`` must be built for the host architecture and not "
 "the target architecture."
 msgstr ""
+"注意，``mpy-cross`` 必须编译为主机系统的架构，而不是目标系统的架构。"
 
 #: ../../develop/gettingstarted.rst:138
 msgid "If it built successfully, you should see a message similar to this:"
 msgstr ""
+"如果编译成功，你应该看到这样的信息："
 
 #: ../../develop/gettingstarted.rst:148
 msgid ""
@@ -196,10 +234,11 @@ msgid ""
 "without moving to the ``mpy-cross`` directory otherwise, you will need to"
 " do ``cd ..`` for the next steps."
 msgstr ""
+"可以直接使用一条语句 ``make -C mpy-cross`` 编译交叉编译器，如果你不是这样做的话，需要在下一步之前先 ``cd ..`` 返回上级目录。"
 
 #: ../../develop/gettingstarted.rst:153
 msgid "Building the Unix port of MicroPython"
-msgstr ""
+msgstr "编译 Unix 端的 MicroPython"
 
 #: ../../develop/gettingstarted.rst:155
 msgid ""
@@ -208,6 +247,9 @@ msgid ""
 "MicroPython as it avoids having to deploy your code to a device to test "
 "it. In many ways, it works a lot like CPython's python binary."
 msgstr ""
+"Unix 端是一个运行在 Linux、macOS 和其他 Unix-like 操作系统上的版本。"
+"它非常有用，因为它可以跳过将你的代码部署到目标设备上来测试的过程。"
+"在很多方面，它工作起来和 CPython 的 python 命令行工具差不多。"
 
 #: ../../develop/gettingstarted.rst:159
 msgid ""
@@ -218,18 +260,22 @@ msgid ""
 "for ``gcc`` and ``GNU make``. Ubuntu 20.04 has been used for the example "
 "below but other unixes ought to work with little modification:"
 msgstr ""
+"要编译 Unix 端，请确保所有 Linux 相关依赖库已经安装。参见 "
+":ref:`required_dependencies` 来确保所有依赖库已经安装。"
+"同时，请确保你有一个可用的环境来运行 ``gcc`` 和 ``GNU make``。"
+"下面的例子在 Ubuntu 20.04 是可用的，但其他类 Unix 可能需要一点修改："
 
 #: ../../develop/gettingstarted.rst:179
 msgid "If MicroPython built correctly, you should see the following:"
-msgstr ""
+msgstr "如果 MicroPython 编译成功，你应该看到以下信息："
 
 #: ../../develop/gettingstarted.rst:187
 msgid "Now run it:"
-msgstr ""
+msgstr "现在运行它："
 
 #: ../../develop/gettingstarted.rst:199
 msgid "Building the Windows port"
-msgstr ""
+msgstr "编译 Windows 端的 MicroPython"
 
 #: ../../develop/gettingstarted.rst:201
 msgid ""
@@ -241,16 +287,23 @@ msgid ""
 "<https://github.com/micropython/micropython/tree/master/ports/windows>`_ "
 "for more information."
 msgstr ""
+"Windows 端包含一个 Visual Studio 项目文件 "
+"micropython.vcxproj ，你可以使用 Visual Studio 打开或 msbuild 来编译。"
+"另外，也可以使用 mingw 编译、或 Windows 上的 Cygwin 、抑或在基于 WSL 的 Linux 上。"
+"参见 `windows 适配端文档 "
+"<https://github.com/micropython/micropython/tree/master/ports/windows>`_ "
+"来了解更多信息。"
 
 #: ../../develop/gettingstarted.rst:207
 msgid "Building the STM32 port"
-msgstr ""
+msgstr "编译 STM32 适配端"
 
 #: ../../develop/gettingstarted.rst:209
 msgid ""
 "Like the Unix port, you need to install some required dependencies as "
 "detailed in the :ref:`required_dependencies` section, then build:"
 msgstr ""
+"和 Unix 适配端一样，你需要根据 :ref:`required_dependencies` 中的描述安装一些必要的依赖库，然后进行构建："
 
 #: ../../develop/gettingstarted.rst:218
 msgid ""
@@ -258,6 +311,9 @@ msgid ""
 "<https://github.com/micropython/micropython/tree/master/ports/stm32>`_ "
 "for more details on flashing the firmware."
 msgstr ""
+"请参见 `stm32 适配端文档 "
+"<https://github.com/micropython/micropython/tree/master/ports/stm32>`_ "
+"来了解如何烧录固件。"
 
 #: ../../develop/gettingstarted.rst:222
 msgid ""
@@ -267,10 +323,12 @@ msgid ""
 "CROSS_COMPILE, either by setting the environment variable or in the "
 "``make`` command line arguments."
 msgstr ""
+"参见 :ref:`required_dependencies` 来确保所有依赖库已经安装。"
+"交叉编译器是必须的。 ``arm-none-eabi-gcc`` 应该在 $PATH 中或通过设置 CROSS_COMPILE 环境变量或在 ``make`` 命令行参数中指定。"
 
 #: ../../develop/gettingstarted.rst:226
 msgid "You can also specify which board to use:"
-msgstr ""
+msgstr "你也可以指定使用哪个板子："
 
 #: ../../develop/gettingstarted.rst:234
 msgid ""
@@ -278,10 +336,13 @@ msgid ""
 "<https://github.com/micropython/micropython/tree/master/ports/stm32/boards>`_"
 " for the available boards. e.g. \"PYBV11\" or \"NUCLEO_WB55\"."
 msgstr ""
+"参见 `ports/stm32/boards "
+"<https://github.com/micropython/micropython/tree/master/ports/stm32/boards>`_"
+" 来了解可用的板子。例如，\"PYBV11\" 或 \"NUCLEO_WB55\" 。"
 
 #: ../../develop/gettingstarted.rst:238
 msgid "Building the documentation"
-msgstr ""
+msgstr "编译文档"
 
 #: ../../develop/gettingstarted.rst:240
 msgid ""
@@ -289,14 +350,16 @@ msgid ""
 "already installed Python, then install ``Sphinx`` using ``pip``. It is "
 "recommended that you use a virtual environment:"
 msgstr ""
+"MicroPython 文档是使用 ``Sphinx`` 创建的。如果你已经安装了 Python ，那么就使用 ``pip`` 安装 ``Sphinx``。"
+"推荐在虚拟环境中使用："
 
 #: ../../develop/gettingstarted.rst:250
 msgid "Navigate to the ``docs`` directory:"
-msgstr ""
+msgstr "转到 ``docs`` 目录："
 
 #: ../../develop/gettingstarted.rst:256
 msgid "Build the docs:"
-msgstr ""
+msgstr "编译文档："
 
 #: ../../develop/gettingstarted.rst:262
 msgid ""
@@ -305,26 +368,29 @@ msgid ""
 "<https://docs.readthedocs.io/en/stable/intro/import-guide.html>`_ to use "
 "Read the Docs."
 msgstr ""
+"在浏览器中打开 ``docs/build/html/index.html`` 可以本地浏览文档。 Sphinx 所使用 Read the Docs 的使用参见 "
+"`importing your documentation "
+"<https://docs.readthedocs.io/en/stable/intro/import-guide.html>`_  。"
 
 #: ../../develop/gettingstarted.rst:267
 msgid "Running the tests"
-msgstr ""
+msgstr "运行测试"
 
 #: ../../develop/gettingstarted.rst:269
 msgid "To run all tests in the test suite on the Unix port use:"
-msgstr ""
+msgstr "在 Unix 适配端上运行所有测试用例："
 
 #: ../../develop/gettingstarted.rst:276
 msgid "To run a selection of tests on a board/device connected over USB use:"
-msgstr ""
+msgstr "在连接到 USB 上的开发板上运行一些测试用例："
 
 #: ../../develop/gettingstarted.rst:283
 msgid "See also :ref:`writingtests`."
-msgstr ""
+msgstr "更多内容参见 :ref:`writingtests` 。"
 
 #: ../../develop/gettingstarted.rst:286
 msgid "Folder structure"
-msgstr ""
+msgstr "目录结构"
 
 #: ../../develop/gettingstarted.rst:288
 msgid ""
@@ -332,6 +398,8 @@ msgid ""
 "certain implementation details are. The following is a break down of the "
 "top-level folders in the source code."
 msgstr ""
+"有几个目录需要注意实现细节。"
+"以下是源代码中顶级文件夹的分解说明。"
 
 #: ../../develop/gettingstarted.rst:291
 msgid "py"
@@ -339,7 +407,7 @@ msgstr ""
 
 #: ../../develop/gettingstarted.rst:293
 msgid "Contains the compiler, runtime, and core library implementation."
-msgstr ""
+msgstr "包含编译器、运行时、核心库实现。"
 
 #: ../../develop/gettingstarted.rst:295
 msgid "mpy-cross"
@@ -350,6 +418,7 @@ msgid ""
 "Has the MicroPython cross-compiler which pre-compiles the Python scripts "
 "to bytecode."
 msgstr ""
+"包含 MicroPython 交叉编译器，用于预编译 Python 脚本为字节码。"
 
 #: ../../develop/gettingstarted.rst:299
 msgid "ports"
@@ -357,7 +426,7 @@ msgstr ""
 
 #: ../../develop/gettingstarted.rst:301
 msgid "Code for all the versions of MicroPython for the supported ports."
-msgstr ""
+msgstr "所有支持的适配端的 MicroPython 版本的代码。"
 
 #: ../../develop/gettingstarted.rst:303
 msgid "lib"
@@ -368,6 +437,7 @@ msgid ""
 "Low-level C libraries used by any port which are mostly 3rd-party "
 "libraries."
 msgstr ""
+"所有适配端的底层 C 库，大部分为第三方库。"
 
 #: ../../develop/gettingstarted.rst:307
 msgid "drivers"
@@ -378,6 +448,7 @@ msgid ""
 "Has drivers for specific hardware and intended to work across multiple "
 "ports."
 msgstr ""
+"特定硬件的驱动，可以在跨适配端工作。"
 
 #: ../../develop/gettingstarted.rst:311
 msgid "extmod"
@@ -385,7 +456,7 @@ msgstr ""
 
 #: ../../develop/gettingstarted.rst:313
 msgid "Contains a C implementation of more non-core modules."
-msgstr ""
+msgstr "更多 C 实现的非核心模块。"
 
 #: ../../develop/gettingstarted.rst:315
 msgid "docs"
@@ -393,7 +464,7 @@ msgstr ""
 
 #: ../../develop/gettingstarted.rst:317
 msgid "Has the standard documentation found at https://docs.micropython.org/."
-msgstr ""
+msgstr "可在 https://docs.micropython.org/ 上浏览的标准文档源码。"
 
 #: ../../develop/gettingstarted.rst:319
 msgid "tests"
@@ -401,7 +472,7 @@ msgstr ""
 
 #: ../../develop/gettingstarted.rst:321
 msgid "An implementation of the test suite."
-msgstr ""
+msgstr "测试用例的实现。"
 
 #: ../../develop/gettingstarted.rst:323
 msgid "tools"
@@ -412,6 +483,7 @@ msgid ""
 "Contains helper tools including the ``upip`` and the ``pyboard.py`` "
 "module."
 msgstr ""
+"帮助工具，包括 ``upip`` 和 ``pyboard.py`` 等模块。"
 
 #: ../../develop/gettingstarted.rst:327
 msgid "examples"
@@ -422,4 +494,5 @@ msgid ""
 "Example code for building MicroPython as a library as well as native "
 "modules."
 msgstr ""
+"使用 MicroPython 库和原生模块的示例代码。"
 
