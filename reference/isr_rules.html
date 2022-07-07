@@ -47,7 +47,7 @@
   
   
   
-    <title>Writing interrupt handlers &#8212; MicroPython 1.18 文档</title>
+    <title>编写中断处理程序 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -98,7 +98,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Writing interrupt handlers </span>
+          <span class="md-header-nav__topic"> 编写中断处理程序 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -223,49 +223,49 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Writing interrupt handlers </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 编写中断处理程序 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Writing interrupt handlers</a>
+      <a href="#" class="md-nav__link md-nav__link--active">编写中断处理程序</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-isr-rules--page-root" class="md-nav__link">Writing interrupt handlers</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-isr-rules--page-root" class="md-nav__link">编写中断处理程序</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#tips-and-recommended-practices" class="md-nav__link">Tips and recommended practices</a>
+        <li class="md-nav__item"><a href="#tips-and-recommended-practices" class="md-nav__link">提示和推荐做法</a>
         </li>
-        <li class="md-nav__item"><a href="#micropython-issues" class="md-nav__link">MicroPython issues</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#micropython-issues" class="md-nav__link">MicroPython 议题</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-emergency-exception-buffer" class="md-nav__link">The emergency exception buffer</a>
+        <li class="md-nav__item"><a href="#the-emergency-exception-buffer" class="md-nav__link">紧急异常缓冲区</a>
         </li>
-        <li class="md-nav__item"><a href="#simplicity" class="md-nav__link">Simplicity</a>
+        <li class="md-nav__item"><a href="#simplicity" class="md-nav__link">精简</a>
         </li>
-        <li class="md-nav__item"><a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">Communication between an ISR and the main program</a>
+        <li class="md-nav__item"><a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">ISR 和主程序之间的通信</a>
         </li>
-        <li class="md-nav__item"><a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">The use of object methods as callbacks</a>
+        <li class="md-nav__item"><a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">将对象方法作为回调的使用方式</a>
         </li>
-        <li class="md-nav__item"><a href="#creation-of-python-objects" class="md-nav__link">Creation of Python objects</a>
+        <li class="md-nav__item"><a href="#creation-of-python-objects" class="md-nav__link">创建 Python 对象</a>
         </li>
-        <li class="md-nav__item"><a href="#use-of-python-objects" class="md-nav__link">Use of Python objects</a>
+        <li class="md-nav__item"><a href="#use-of-python-objects" class="md-nav__link">Python 对象的使用</a>
         </li>
-        <li class="md-nav__item"><a href="#overcoming-the-float-limitation" class="md-nav__link">Overcoming the float limitation</a>
+        <li class="md-nav__item"><a href="#overcoming-the-float-limitation" class="md-nav__link">克服浮点限制</a>
         </li>
-        <li class="md-nav__item"><a href="#using-micropython-schedule" class="md-nav__link">Using micropython.schedule</a>
+        <li class="md-nav__item"><a href="#using-micropython-schedule" class="md-nav__link">使用 micropython.schedule</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#exceptions" class="md-nav__link">Exceptions</a>
+        <li class="md-nav__item"><a href="#exceptions" class="md-nav__link">异常</a>
         </li>
-        <li class="md-nav__item"><a href="#general-issues" class="md-nav__link">General issues</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#general-issues" class="md-nav__link">一般问题</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#interrupt-handler-design" class="md-nav__link">Interrupt handler design</a>
+        <li class="md-nav__item"><a href="#interrupt-handler-design" class="md-nav__link">中断处理程序设计</a>
         </li>
-        <li class="md-nav__item"><a href="#reentrancy" class="md-nav__link">Reentrancy</a>
+        <li class="md-nav__item"><a href="#reentrancy" class="md-nav__link">重入</a>
         </li>
-        <li class="md-nav__item"><a href="#critical-sections" class="md-nav__link">Critical sections</a>
+        <li class="md-nav__item"><a href="#critical-sections" class="md-nav__link">临界区</a>
         </li>
-        <li class="md-nav__item"><a href="#interrupts-and-the-repl" class="md-nav__link">Interrupts and the REPL</a>
+        <li class="md-nav__item"><a href="#interrupts-and-the-repl" class="md-nav__link">中断和交互式终端（ REPL ）</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -277,68 +277,68 @@
     <li class="md-nav__item">
     
     
-      <a href="#tips-and-recommended-practices" class="md-nav__link">Tips and recommended practices</a>
+      <a href="#tips-and-recommended-practices" class="md-nav__link">提示和推荐做法</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#micropython-issues" class="md-nav__link">MicroPython issues</a>
+      <a href="#micropython-issues" class="md-nav__link">MicroPython 议题</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="#the-emergency-exception-buffer" class="md-nav__link">The emergency exception buffer</a>
+      <a href="#the-emergency-exception-buffer" class="md-nav__link">紧急异常缓冲区</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#simplicity" class="md-nav__link">Simplicity</a>
+      <a href="#simplicity" class="md-nav__link">精简</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">Communication between an ISR and the main program</a>
+      <a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">ISR 和主程序之间的通信</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">The use of object methods as callbacks</a>
+      <a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">将对象方法作为回调的使用方式</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#creation-of-python-objects" class="md-nav__link">Creation of Python objects</a>
+      <a href="#creation-of-python-objects" class="md-nav__link">创建 Python 对象</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#use-of-python-objects" class="md-nav__link">Use of Python objects</a>
+      <a href="#use-of-python-objects" class="md-nav__link">Python 对象的使用</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#overcoming-the-float-limitation" class="md-nav__link">Overcoming the float limitation</a>
+      <a href="#overcoming-the-float-limitation" class="md-nav__link">克服浮点限制</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#using-micropython-schedule" class="md-nav__link">Using micropython.schedule</a>
+      <a href="#using-micropython-schedule" class="md-nav__link">使用 micropython.schedule</a>
       
     
     </li></ul>
@@ -347,40 +347,40 @@
     <li class="md-nav__item">
     
     
-      <a href="#exceptions" class="md-nav__link">Exceptions</a>
+      <a href="#exceptions" class="md-nav__link">异常</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#general-issues" class="md-nav__link">General issues</a>
+      <a href="#general-issues" class="md-nav__link">一般问题</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="#interrupt-handler-design" class="md-nav__link">Interrupt handler design</a>
+      <a href="#interrupt-handler-design" class="md-nav__link">中断处理程序设计</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#reentrancy" class="md-nav__link">Reentrancy</a>
+      <a href="#reentrancy" class="md-nav__link">重入</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#critical-sections" class="md-nav__link">Critical sections</a>
+      <a href="#critical-sections" class="md-nav__link">临界区</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#interrupts-and-the-repl" class="md-nav__link">Interrupts and the REPL</a>
+      <a href="#interrupts-and-the-repl" class="md-nav__link">中断和交互式终端（ REPL ）</a>
       
     
     </li></ul>
@@ -523,41 +523,41 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-isr-rules--page-root" class="md-nav__link">Writing interrupt handlers</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-isr-rules--page-root" class="md-nav__link">编写中断处理程序</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#tips-and-recommended-practices" class="md-nav__link">Tips and recommended practices</a>
+        <li class="md-nav__item"><a href="#tips-and-recommended-practices" class="md-nav__link">提示和推荐做法</a>
         </li>
-        <li class="md-nav__item"><a href="#micropython-issues" class="md-nav__link">MicroPython issues</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#micropython-issues" class="md-nav__link">MicroPython 议题</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#the-emergency-exception-buffer" class="md-nav__link">The emergency exception buffer</a>
+        <li class="md-nav__item"><a href="#the-emergency-exception-buffer" class="md-nav__link">紧急异常缓冲区</a>
         </li>
-        <li class="md-nav__item"><a href="#simplicity" class="md-nav__link">Simplicity</a>
+        <li class="md-nav__item"><a href="#simplicity" class="md-nav__link">精简</a>
         </li>
-        <li class="md-nav__item"><a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">Communication between an ISR and the main program</a>
+        <li class="md-nav__item"><a href="#communication-between-an-isr-and-the-main-program" class="md-nav__link">ISR 和主程序之间的通信</a>
         </li>
-        <li class="md-nav__item"><a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">The use of object methods as callbacks</a>
+        <li class="md-nav__item"><a href="#the-use-of-object-methods-as-callbacks" class="md-nav__link">将对象方法作为回调的使用方式</a>
         </li>
-        <li class="md-nav__item"><a href="#creation-of-python-objects" class="md-nav__link">Creation of Python objects</a>
+        <li class="md-nav__item"><a href="#creation-of-python-objects" class="md-nav__link">创建 Python 对象</a>
         </li>
-        <li class="md-nav__item"><a href="#use-of-python-objects" class="md-nav__link">Use of Python objects</a>
+        <li class="md-nav__item"><a href="#use-of-python-objects" class="md-nav__link">Python 对象的使用</a>
         </li>
-        <li class="md-nav__item"><a href="#overcoming-the-float-limitation" class="md-nav__link">Overcoming the float limitation</a>
+        <li class="md-nav__item"><a href="#overcoming-the-float-limitation" class="md-nav__link">克服浮点限制</a>
         </li>
-        <li class="md-nav__item"><a href="#using-micropython-schedule" class="md-nav__link">Using micropython.schedule</a>
+        <li class="md-nav__item"><a href="#using-micropython-schedule" class="md-nav__link">使用 micropython.schedule</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#exceptions" class="md-nav__link">Exceptions</a>
+        <li class="md-nav__item"><a href="#exceptions" class="md-nav__link">异常</a>
         </li>
-        <li class="md-nav__item"><a href="#general-issues" class="md-nav__link">General issues</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#general-issues" class="md-nav__link">一般问题</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#interrupt-handler-design" class="md-nav__link">Interrupt handler design</a>
+        <li class="md-nav__item"><a href="#interrupt-handler-design" class="md-nav__link">中断处理程序设计</a>
         </li>
-        <li class="md-nav__item"><a href="#reentrancy" class="md-nav__link">Reentrancy</a>
+        <li class="md-nav__item"><a href="#reentrancy" class="md-nav__link">重入</a>
         </li>
-        <li class="md-nav__item"><a href="#critical-sections" class="md-nav__link">Critical sections</a>
+        <li class="md-nav__item"><a href="#critical-sections" class="md-nav__link">临界区</a>
         </li>
-        <li class="md-nav__item"><a href="#interrupts-and-the-repl" class="md-nav__link">Interrupts and the REPL</a>
+        <li class="md-nav__item"><a href="#interrupts-and-the-repl" class="md-nav__link">中断和交互式终端（ REPL ）</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -573,66 +573,43 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="writing-interrupt-handlers">
-<span id="isr-rules"></span><h1 id="reference-isr-rules--page-root">Writing interrupt handlers<a class="headerlink" href="#reference-isr-rules--page-root" title="Permalink to this heading">¶</a></h1>
-<p>On suitable hardware MicroPython offers the ability to write interrupt handlers in Python. Interrupt handlers
-- also known as interrupt service routines (ISR’s) - are defined as callback functions. These are executed
-in response to an event such as a timer trigger or a voltage change on a pin. Such events can occur at any point
-in the execution of the program code. This carries significant consequences, some specific to the MicroPython
-language. Others are common to all systems capable of responding to real time events. This document covers
-the language specific issues first, followed by a brief introduction to real time programming for those new to it.</p>
-<p>This introduction uses vague terms like “slow” or “as fast as possible”. This is deliberate, as speeds are
-application dependent. Acceptable durations for an ISR are dependent on the rate at which interrupts occur,
-the nature of the main program, and the presence of other concurrent events.</p>
+<span id="isr-rules"></span><h1 id="reference-isr-rules--page-root">编写中断处理程序<a class="headerlink" href="#reference-isr-rules--page-root" title="Permalink to this heading">¶</a></h1>
+<p>在合适的硬件上， MicroPython 提供了用 Python 编写中断处理程序的能力。中断处理程序 - 也称为中断服务例程 ( ISR ) - 作为回调函数被定义。这些程序是响应诸如定时器触发或引脚电压变化等事件触发执行的。此类事件可以在程序代码执行的任何时候发生。这一特性可能会产生严重后果，其中部分是 MicroPython 语言特有的，剩余部分则对于所有能响应实时事件的系统来说都是通用的。本文档首先介绍了特定于语言的议题，然后向新手简要介绍实时编程。</p>
+<p>本介绍使用了一些模糊的术语，例如 “慢” 或 “尽可能快”。但其实这是经过深思熟虑的，因为最终的速度取决于应用程序。 ISR 可接受的持续时间取决于中断发生的速率、主程序的表现以及其他并发事件的发生。</p>
 <section id="tips-and-recommended-practices">
-<h2 id="tips-and-recommended-practices">Tips and recommended practices<a class="headerlink" href="#tips-and-recommended-practices" title="Permalink to this heading">¶</a></h2>
-<p>This summarises the points detailed below and lists the principal recommendations for interrupt handler code.</p>
+<h2 id="tips-and-recommended-practices">提示和推荐做法<a class="headerlink" href="#tips-and-recommended-practices" title="Permalink to this heading">¶</a></h2>
+<p>以下总结了详述的要点，并列出了中断处理程序代码的主要建议。</p>
 <ul class="simple">
-<li><p>Keep the code as short and simple as possible.</p></li>
-<li><p>Avoid memory allocation: no appending to lists or insertion into dictionaries, no floating point.</p></li>
-<li><p>Consider using <code class="docutils literal notranslate"><span class="pre">micropython.schedule</span></code> to work around the above constraint.</p></li>
-<li><p>Where an ISR returns multiple bytes use a pre-allocated <code class="docutils literal notranslate"><span class="pre">bytearray</span></code>. If multiple integers are to be
-shared between an ISR and the main program consider an array (<code class="docutils literal notranslate"><span class="pre">array.array</span></code>).</p></li>
-<li><p>Where data is shared between the main program and an ISR, consider disabling interrupts prior to accessing
-the data in the main program and re-enabling them immediately afterwards (see Critical Sections).</p></li>
-<li><p>Allocate an emergency exception buffer (see below).</p></li>
+<li><p>让代码尽可能的简短。</p></li>
+<li><p>避免内存分配：不对列表附加数据，不对字典插入数据，不使用浮点。</p></li>
+<li><p>需要解决上一痛点时，优先考虑使用 <code class="docutils literal notranslate"><span class="pre">micropython.schedule</span></code> 。</p></li>
+<li><p>如果 ISR 需要返回多个字节，优先使用预分配的 <code class="docutils literal notranslate"><span class="pre">bytearray</span></code>。 如果要在 ISR 和主程序之间共享多个整型，也优先考虑作为一个数组使用 ( <code class="docutils literal notranslate"><span class="pre">array.array</span></code> )。</p></li>
+<li><p>在主程序和 ISR 之间共享数据的情况下，优先考虑在访问主程序中的数据之前禁用中断，并在访问完成后立即重新启用它们（请参阅 临界区 章节）。</p></li>
+<li><p>分配一个紧急异常缓冲区（见下文）。</p></li>
 </ul>
 </section>
 <section id="micropython-issues">
-<h2 id="micropython-issues">MicroPython issues<a class="headerlink" href="#micropython-issues" title="Permalink to this heading">¶</a></h2>
+<h2 id="micropython-issues">MicroPython 议题<a class="headerlink" href="#micropython-issues" title="Permalink to this heading">¶</a></h2>
 <section id="the-emergency-exception-buffer">
-<h3 id="the-emergency-exception-buffer">The emergency exception buffer<a class="headerlink" href="#the-emergency-exception-buffer" title="Permalink to this heading">¶</a></h3>
-<p>If an error occurs in an ISR, MicroPython is unable to produce an error report unless a special buffer is created
-for the purpose. Debugging is simplified if the following code is included in any program using interrupts.</p>
+<h3 id="the-emergency-exception-buffer">紧急异常缓冲区<a class="headerlink" href="#the-emergency-exception-buffer" title="Permalink to this heading">¶</a></h3>
+<p>如果 ISR 中发生错误，MicroPython 是无法生成错误报告的，除非为此创建一个特殊缓冲区。如果以下代码包含在任何使用中断的程序中，那么调试就会简单许多。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">micropython</span>
 <span class="n">micropython</span><span class="o">.</span><span class="n">alloc_emergency_exception_buf</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The emergency exception buffer can only hold one exception stack trace. This means that if a second exception is
-thrown during the handling of an exception while the heap is locked, that second exception’s stack trace will
-replace the original one - even if the second exception is cleanly handled. This can lead to confusing exception
-messages if the buffer is later printed.</p>
+<p>紧急异常缓冲区只能保持一个异常堆栈跟踪。这意味着，如果处于堆被锁定的情况下在处理异常期间，引发了第二个异常，则原始堆栈跟踪将被第二个异常的堆栈跟踪替换 —— 即使第二个异常已被处理干净。这导致如果在这之后打印缓冲区，可能出现令人困惑的异常信息。</p>
 </section>
 <section id="simplicity">
-<h3 id="simplicity">Simplicity<a class="headerlink" href="#simplicity" title="Permalink to this heading">¶</a></h3>
-<p>For a variety of reasons it is important to keep ISR code as short and simple as possible. It should do only what
-has to be done immediately after the event which caused it: operations which can be deferred should be delegated
-to the main program loop. Typically an ISR will deal with the hardware device which caused the interrupt, making
-it ready for the next interrupt to occur. It will communicate with the main loop by updating shared data to indicate
-that the interrupt has occurred, and it will return. An ISR should return control to the main loop as quickly
-as possible. This is not a specific MicroPython issue so is covered in more detail <a class="reference internal" href="#isr"><span class="std std-ref">below</span></a>.</p>
+<h3 id="simplicity">精简<a class="headerlink" href="#simplicity" title="Permalink to this heading">¶</a></h3>
+<p>综合多种因素考量，保持 ISR 代码尽可能简短十分重要。它应该只做在触发它的事件之后必须立即做的事情：如果操作可以推迟，应该委托给主程序循环处理。通常， ISR 将处理导致中断的硬件设备，使其为下一次中断的发生做好准备。它将通过更新共享数据来与主循环通信以指示中断已发生，并返回出去。ISR 应尽快将控制权返回给主循环。这不是一个特定的 MicroPython 议题，因此将在下文的 <a class="reference internal" href="#isr"><span class="std std-ref">中断处理程序设计</span></a> 中更详细地介绍。</p>
 </section>
 <section id="communication-between-an-isr-and-the-main-program">
-<h3 id="communication-between-an-isr-and-the-main-program">Communication between an ISR and the main program<a class="headerlink" href="#communication-between-an-isr-and-the-main-program" title="Permalink to this heading">¶</a></h3>
-<p>Normally an ISR needs to communicate with the main program. The simplest means of doing this is via one or more
-shared data objects, either declared as global or shared via a class (see below). There are various restrictions
-and hazards around doing this, which are covered in more detail below. Integers, <code class="docutils literal notranslate"><span class="pre">bytes</span></code> and <code class="docutils literal notranslate"><span class="pre">bytearray</span></code> objects
-are commonly used for this purpose along with arrays (from the array module) which can store various data types.</p>
+<h3 id="communication-between-an-isr-and-the-main-program">ISR 和主程序之间的通信<a class="headerlink" href="#communication-between-an-isr-and-the-main-program" title="Permalink to this heading">¶</a></h3>
+<p>通常， ISR 需要与主程序通信。最简单的方法是通过一个或多个共享数据对象，例如声明为全局对象，或通过一个类共享（见下文）。但这样做有各种限制和危险，下文将详细介绍。整型、 <code class="docutils literal notranslate"><span class="pre">bytes</span></code> 和 <code class="docutils literal notranslate"><span class="pre">bytearray</span></code> 对象通常会与可以存储各种数据类型的数组（来自 array 模块）一起用于达成此目标。</p>
 </section>
 <section id="the-use-of-object-methods-as-callbacks">
-<h3 id="the-use-of-object-methods-as-callbacks">The use of object methods as callbacks<a class="headerlink" href="#the-use-of-object-methods-as-callbacks" title="Permalink to this heading">¶</a></h3>
-<p>MicroPython supports this powerful technique which enables an ISR to share instance variables with the underlying
-code. It also enables a class implementing a device driver to support multiple device instances. The following
-example causes two LED’s to flash at different rates.</p>
+<h3 id="the-use-of-object-methods-as-callbacks">将对象方法作为回调的使用方式<a class="headerlink" href="#the-use-of-object-methods-as-callbacks" title="Permalink to this heading">¶</a></h3>
+<p>MicroPython 支持这一强大的技术，使得 ISR 能够与底层代码共享实例变量。它还使实现设备驱动程序的类能够支持多个设备实例。以下示例可令两个 LED 以不同的速率闪烁。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyb</span><span class="o">,</span> <span class="nn">micropython</span>
 <span class="n">micropython</span><span class="o">.</span><span class="n">alloc_emergency_exception_buf</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 <span class="k">class</span> <span class="nc">Foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
@@ -646,31 +623,15 @@ example causes two LED’s to flash at different rates.</p>
 <span class="n">green</span> <span class="o">=</span> <span class="n">Foo</span><span class="p">(</span><span class="n">pyb</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mf">0.8</span><span class="p">),</span> <span class="n">pyb</span><span class="o">.</span><span class="n">LED</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-<p>In this example the <code class="docutils literal notranslate"><span class="pre">red</span></code> instance associates timer 4 with LED 1: when a timer 4 interrupt occurs <code class="docutils literal notranslate"><span class="pre">red.cb()</span></code>
-is called causing LED 1 to change state. The <code class="docutils literal notranslate"><span class="pre">green</span></code> instance operates similarly: a timer 2 interrupt
-results in the execution of <code class="docutils literal notranslate"><span class="pre">green.cb()</span></code> and toggles LED 2. The use of instance methods confers two
-benefits. Firstly a single class enables code to be shared between multiple hardware instances. Secondly, as
-a bound method the callback function’s first argument is <code class="docutils literal notranslate"><span class="pre">self</span></code>. This enables the callback to access instance
-data and to save state between successive calls. For example, if the class above had a variable <code class="docutils literal notranslate"><span class="pre">self.count</span></code>
-set to zero in the constructor, <code class="docutils literal notranslate"><span class="pre">cb()</span></code> could increment the counter. The <code class="docutils literal notranslate"><span class="pre">red</span></code> and <code class="docutils literal notranslate"><span class="pre">green</span></code> instances would
-then maintain independent counts of the number of times each LED had changed state.</p>
+<p>在此示例中， <code class="docutils literal notranslate"><span class="pre">red</span></code> 实例将定时器 timer 4 与 LED 1 相关联：当 timer 4 发生中断时，会调用 <code class="docutils literal notranslate"><span class="pre">red.cb()</span></code> 使 LED 1 切换状态。该 <code class="docutils literal notranslate"><span class="pre">green</span></code> 实例的操作也类似：定时器 timer 2 中断导致 <code class="docutils literal notranslate"><span class="pre">green.cb()</span></code> ，并切换 LED 2。使用实例方法有两个好处：首先，使用类来封装，使得代码能够在多个硬件实例之间共享；其次，作为绑定方法，回调函数的第一个参数是 <code class="docutils literal notranslate"><span class="pre">self</span></code> 。 这使回调能够访问实例数据，并在连续调用之间保存状态。例如，如果上面的类在构造函数中将 <code class="docutils literal notranslate"><span class="pre">self.count</span></code> 变量设置为零，则 <code class="docutils literal notranslate"><span class="pre">cb()</span></code> 可以递增计数器。 <code class="docutils literal notranslate"><span class="pre">red</span></code> 和 <code class="docutils literal notranslate"><span class="pre">green</span></code> 实例将维护每个 LED 改变状态的次数的独立计数。</p>
 </section>
 <section id="creation-of-python-objects">
-<h3 id="creation-of-python-objects">Creation of Python objects<a class="headerlink" href="#creation-of-python-objects" title="Permalink to this heading">¶</a></h3>
-<p>ISR’s cannot create instances of Python objects. This is because MicroPython needs to allocate memory for the
-object from a store of free memory block called the heap. This is not permitted in an interrupt handler because
-heap allocation is not re-entrant. In other words the interrupt might occur when the main program is part way
-through performing an allocation - to maintain the integrity of the heap the interpreter disallows memory
-allocations in ISR code.</p>
-<p>A consequence of this is that ISR’s can’t use floating point arithmetic; this is because floats are Python objects. Similarly
-an ISR can’t append an item to a list. In practice it can be hard to determine exactly which code constructs will
-attempt to perform memory allocation and provoke an error message: another reason for keeping ISR code short and simple.</p>
-<p>One way to avoid this issue is for the ISR to use pre-allocated buffers. For example a class constructor
-creates a <code class="docutils literal notranslate"><span class="pre">bytearray</span></code> instance and a boolean flag. The ISR method assigns data to locations in the buffer and sets
-the flag. The memory allocation occurs in the main program code when the object is instantiated rather than in the ISR.</p>
-<p>The MicroPython library I/O methods usually provide an option to use a pre-allocated buffer. For
-example <code class="docutils literal notranslate"><span class="pre">pyb.i2c.recv()</span></code> can accept a mutable buffer as its first argument: this enables its use in an ISR.</p>
-<p>A means of creating an object without employing a class or globals is as follows:</p>
+<h3 id="creation-of-python-objects">创建 Python 对象<a class="headerlink" href="#creation-of-python-objects" title="Permalink to this heading">¶</a></h3>
+<p>在 ISR 中不能创建 Python 对象实例。因为 MicroPython 需要从可用的堆内存块中分配内存，这在中断处理程序中是不被允许的。换言之，中断可能在主程序正在执行内存分配时发生，以确保堆的完整性，解释器不允许在 ISR 中进行内存分配。</p>
+<p>依此还可以得出的一个结论是， ISR 不能使用浮点运算；因为浮点是 Python 对象。同样， ISR 不能将项目附加到列表中。实践中，要确定哪些代码构造将尝试进行内存分配且引发了错误消息，可能会很困难：这也是另一个要保持 ISR 简单并简洁的原因。</p>
+<p>一种解决方法是， ISR 使用预分配的缓冲区。例如，类构造器创建一个 <code class="docutils literal notranslate"><span class="pre">bytearray</span></code> 实例和一个 boolean 标志。ISR 方法将数据分配到缓冲区中的位置，并将标志设置为 true。在创建对象时，主程序代码中的内存分配发生在 ISR 中而不是在主程序中。</p>
+<p>MicroPython 库 I/O 方法通常提供了一个可选的预分配缓冲区选项。例如，<code class="docutils literal notranslate"><span class="pre">pyb.i2c.recv()</span></code> 可以接受一个可变的缓冲区作为其第一个参数：这使其在 ISR 中可用。</p>
+<p>有一种方式，可以创建一个对象而不使用类或全局变量，如下所示：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">set_volume</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">buf</span><span class="o">=</span><span class="nb">bytearray</span><span class="p">(</span><span class="mi">3</span><span class="p">)):</span>
     <span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="mh">0xa5</span>
     <span class="n">buf</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">t</span> <span class="o">&gt;&gt;</span> <span class="mi">4</span>
@@ -678,12 +639,8 @@ example <code class="docutils literal notranslate"><span class="pre">pyb.i2c.rec
     <span class="k">return</span> <span class="n">buf</span>
 </pre></div>
 </div>
-<p>The compiler instantiates the default <code class="docutils literal notranslate"><span class="pre">buf</span></code> argument when the function is
-loaded for the first time (usually when the module it’s in is imported).</p>
-<p>An instance of object creation occurs when a reference to a bound method is
-created. This means that an ISR cannot pass a bound method to a function. One
-solution is to create a reference to the bound method in the class constructor
-and to pass that reference in the ISR. For example:</p>
+<p>编译器在这个函数第一次加载时（通常当模块被导入时）实例化默认的 <code class="docutils literal notranslate"><span class="pre">buf</span></code> 参数。</p>
+<p>一个对象的实例化创建过程发生在一个绑定方法的引用被创建时。这意味着 ISR 不能将绑定方法传递给函数。一种解决方法是在类构造器中创建绑定方法的引用，并在 ISR 中传递该引用。例如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Foo</span><span class="p">():</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">bar_ref</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">bar</span>  <span class="c1"># Allocation occurs here</span>
@@ -701,120 +658,51 @@ and to pass that reference in the ISR. For example:</p>
         <span class="n">micropython</span><span class="o">.</span><span class="n">schedule</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">bar_ref</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Other techniques are to define and instantiate the method in the constructor
-or to pass <code class="xref py py-meth docutils literal notranslate"><span class="pre">Foo.bar()</span></code> with the argument <em>self</em>.</p>
+<p>其他做法是在构造器中定义并实例化方法，或者将 <code class="xref py py-meth docutils literal notranslate"><span class="pre">Foo.bar()</span></code> 传递给参数 <em>self</em>。</p>
 </section>
 <section id="use-of-python-objects">
-<h3 id="use-of-python-objects">Use of Python objects<a class="headerlink" href="#use-of-python-objects" title="Permalink to this heading">¶</a></h3>
-<p>A further restriction on objects arises because of the way Python works. When an <code class="docutils literal notranslate"><span class="pre">import</span></code> statement is executed the
-Python code is compiled to bytecode, with one line of code typically mapping to multiple bytecodes. When the code
-runs the interpreter reads each bytecode and executes it as a series of machine code instructions. Given that an
-interrupt can occur at any time between machine code instructions, the original line of Python code may be only
-partially executed. Consequently a Python object such as a set, list or dictionary modified in the main loop
-may lack internal consistency at the moment the interrupt occurs.</p>
-<p>A typical outcome is as follows. On rare occasions the ISR will run at the precise moment in time when the object
-is partially updated. When the ISR tries to read the object, a crash results. Because such problems typically occur
-on rare, random occasions they can be hard to diagnose. There are ways to circumvent this issue, described in
-<a class="reference internal" href="#critical"><span class="std std-ref">Critical Sections</span></a> below.</p>
-<p>It is important to be clear about what constitutes the modification of an object. An alteration to a built-in type
-such as a dictionary is problematic. Altering the contents of an array or bytearray is not. This is because bytes
-or words are written as a single machine code instruction which is not interruptible: in the parlance of real time
-programming the write is atomic. A user defined object might instantiate an integer, array or bytearray. It is valid
-for both the main loop and the ISR to alter the contents of these.</p>
-<p>MicroPython supports integers of arbitrary precision. Values between 2**30 -1 and -2**30 will be stored in
-a single machine word. Larger values are stored as Python objects. Consequently changes to long integers cannot
-be considered atomic. The use of long integers in ISR’s is unsafe because memory allocation may be
-attempted as the variable’s value changes.</p>
+<h3 id="use-of-python-objects">Python 对象的使用<a class="headerlink" href="#use-of-python-objects" title="Permalink to this heading">¶</a></h3>
+<p>Python 的工作方式导致了对象的另一个限制。当执行一个 <code class="docutils literal notranslate"><span class="pre">import</span></code> 语句时， Python 代码被编译为字节码，其中一行代码通常映射到多个字节码。当代码运行时，解释器读取每个字节码并作为一系列机器代码指令执行它。在机器代码指令间的任何时间发生中断时，原始的 Python 语句可能只执行了其中一部分。因此，一个 Python 对象（如集合、列表或字典）在主循环中被修改时，在断点发生时可能内部会不一致。</p>
+<p>比如这样一个典型的场景。在罕见的情况下， ISR 在对象发生部分更新的瞬间运行。当 ISR 尝试读取对象时，就会发生崩溃。因为这种情况通常发生在罕见的、随机的情况下，它们可能难以诊断。有一些方法可以解决这个问题，详见下文的 <a class="reference internal" href="#critical"><span class="std std-ref">临界区</span></a> 。</p>
+<p>一个非常重要的点是要清楚地表示对象的修改。若一个内建类型被修改，例如字典，这是不可取的。若一个数组或 bytearray 被修改，也不可取。因为字节或字词是写入一个单一的机器代码指令，这个指令不可中断：在实时编程中，写入是原子性的。一个用户定义的对象可能实例化一个整数、数组或 bytearray 。主循环和 ISR 都可以更改它们的内容。</p>
+<p>MicroPython 支持任意精度的整数。大小介于 2**30 -1 和 -2**30 的值将被存储在单个机器字。更大的值将被存储为 Python 对象。因此，更改 long 类型的整数不可视为原子操作。 ISR 中使用 long 类型的整数是不安全的，因为可能会尝试为其分配内存。</p>
 </section>
 <section id="overcoming-the-float-limitation">
-<h3 id="overcoming-the-float-limitation">Overcoming the float limitation<a class="headerlink" href="#overcoming-the-float-limitation" title="Permalink to this heading">¶</a></h3>
-<p>In general it is best to avoid using floats in ISR code: hardware devices normally handle integers and conversion
-to floats is normally done in the main loop. However there are a few DSP algorithms which require floating point.
-On platforms with hardware floating point (such as the Pyboard) the inline ARM Thumb assembler can be used to work
-round this limitation. This is because the processor stores float values in a machine word; values can be shared
-between the ISR and main program code via an array of floats.</p>
+<h3 id="overcoming-the-float-limitation">克服浮点限制<a class="headerlink" href="#overcoming-the-float-limitation" title="Permalink to this heading">¶</a></h3>
+<p>一般来说，在 ISR 代码中不要使用浮点数：硬件设备通常处理整数，并且在主循环中转完成换为浮点数。但是有一些 DSP 算法需要浮点数。在有硬件的浮点数（例如 Pyboard ）的平台上，可以使用内联 ARM Thumb 代码来解决这个问题。这是因为处理器将浮点数存储在一个机器字中；这些值可以通过一个浮点数数组共享给主程序和 ISR 代码。</p>
 </section>
 <section id="using-micropython-schedule">
-<h3 id="using-micropython-schedule">Using micropython.schedule<a class="headerlink" href="#using-micropython-schedule" title="Permalink to this heading">¶</a></h3>
-<p>This function enables an ISR to schedule a callback for execution “very soon”. The callback is queued for
-execution which will take place at a time when the heap is not locked. Hence it can create Python objects
-and use floats. The callback is also guaranteed to run at a time when the main program has completed any
-update of Python objects, so the callback will not encounter partially updated objects.</p>
-<p>Typical usage is to handle sensor hardware. The ISR acquires data from the hardware and enables it to
-issue a further interrupt. It then schedules a callback to process the data.</p>
-<p>Scheduled callbacks should comply with the principles of interrupt handler design outlined below. This is to
-avoid problems resulting from I/O activity and the modification of shared data which can arise in any code
-which pre-empts the main program loop.</p>
-<p>Execution time needs to be considered in relation to the frequency with which interrupts can occur. If an
-interrupt occurs while the previous callback is executing, a further instance of the callback will be queued
-for execution; this will run after the current instance has completed. A sustained high interrupt repetition
-rate therefore carries a risk of unconstrained queue growth and eventual failure with a <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>.</p>
-<p>If the callback to be passed to <a class="reference internal" href="../library/micropython.html#micropython.schedule" title="micropython.schedule"><code class="xref any py py-func docutils literal notranslate"><span class="pre">schedule()</span></code></a> is a bound method, consider the
-note in “Creation of Python objects”.</p>
+<h3 id="using-micropython-schedule">使用 micropython.schedule<a class="headerlink" href="#using-micropython-schedule" title="Permalink to this heading">¶</a></h3>
+<p>这个函数允许 ISR 调度一个回调 “很快” 执行。回调将被置于执行队列，这将发生在堆未锁定的时候。因此，它可以创建 Python 对象和使用浮点数。回调也保证在主程序完成了任何 Python 对象的更新之后执行，因此回调不会遇到部分更新的对象。</p>
+<p>一般用法是用于处理传感器硬件。 ISR 从硬件获取数据，并允许它发出另一个中断。然后它调度一个回调来处理数据。</p>
+<p>调度的回调应遵守以下的中断处理程序设计原则。这是为了避免在 I/O 活动和共享数据的修改可能发生在任何预先抢占主程序循环的代码中。</p>
+<p>执行时间需要根据中断可能发生的频率来考虑。如果在执行中的回调中发生中断，它将会置于执行队列中；这意味着中断将在当前实例执行完成之后执行。因此，高频率的中断重复率会导致队列的增长，并且可能会导致 <code class="docutils literal notranslate"><span class="pre">RuntimeError</span></code>。</p>
+<p>如果传递给 <a class="reference internal" href="../library/micropython.html#micropython.schedule" title="micropython.schedule"><code class="xref any py py-func docutils literal notranslate"><span class="pre">schedule()</span></code></a> 的回调是一个绑定方法，请考虑 “创建 Python 对象” 中的提到的方式。</p>
 </section>
 </section>
 <section id="exceptions">
-<h2 id="exceptions">Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading">¶</a></h2>
-<p>If an ISR raises an exception it will not propagate to the main loop. The interrupt will be disabled unless the
-exception is handled by the ISR code.</p>
+<h2 id="exceptions">异常<a class="headerlink" href="#exceptions" title="Permalink to this heading">¶</a></h2>
+<p>如果 ISR 抛出异常，它不会传递到主循环。如果异常未能由 ISR 代码处理，中断将被禁用。</p>
 </section>
 <section id="general-issues">
-<h2 id="general-issues">General issues<a class="headerlink" href="#general-issues" title="Permalink to this heading">¶</a></h2>
-<p>This is merely a brief introduction to the subject of real time programming. Beginners should note
-that design errors in real time programs can lead to faults which are particularly hard to diagnose. This is because
-they can occur rarely and at intervals which are essentially random. It is crucial to get the initial design right and
-to anticipate issues before they arise. Both interrupt handlers and the main program need to be designed
-with an appreciation of the following issues.</p>
+<h2 id="general-issues">一般问题<a class="headerlink" href="#general-issues" title="Permalink to this heading">¶</a></h2>
+<p>这只是一个简单的介绍实时编程的主题。初学者应该注意到可能由于实时编程中的设计错误导致的故障。这是因为它们可能出现的频率很少，并且间隔是稳定的。这一步是必要的，以便在发生问题之前能够预期到。中断处理程序和主程序都需要设计为聚焦以下问题。</p>
 <section id="interrupt-handler-design">
-<span id="isr"></span><h3 id="interrupt-handler-design">Interrupt handler design<a class="headerlink" href="#interrupt-handler-design" title="Permalink to this heading">¶</a></h3>
-<p>As mentioned above, ISR’s should be designed to be as simple as possible. They should always return in a short,
-predictable period of time. This is important because when the ISR is running, the main loop is not: inevitably
-the main loop experiences pauses in its execution at random points in the code. Such pauses can be a source of hard
-to diagnose bugs particularly if their duration is long or variable. In order to understand the implications of
-ISR run time, a basic grasp of interrupt priorities is required.</p>
-<p>Interrupts are organised according to a priority scheme. ISR code may itself be interrupted by a higher priority
-interrupt. This has implications if the two interrupts share data (see Critical Sections below). If such an interrupt
-occurs it interposes a delay into the ISR code. If a lower priority interrupt occurs while the ISR is running, it
-will be delayed until the ISR is complete: if the delay is too long, the lower priority interrupt may fail. A
-further issue with slow ISR’s is the case where a second interrupt of the same type occurs during its execution.
-The second interrupt will be handled on termination of the first. However if the rate of incoming interrupts
-consistently exceeds the capacity of the ISR to service them the outcome will not be a happy one.</p>
-<p>Consequently looping constructs should be avoided or minimised. I/O to devices other than to the interrupting device
-should normally be avoided: I/O such as disk access, <code class="docutils literal notranslate"><span class="pre">print</span></code> statements and UART access is relatively slow, and
-its duration may vary. A further issue here is that filesystem functions are not reentrant: using filesystem I/O
-in an ISR and the main program would be hazardous. Crucially ISR code should not wait on an event. I/O is acceptable
-if the code can be guaranteed to return in a predictable period, for example toggling a pin or LED. Accessing the
-interrupting device via I2C or SPI may be necessary but the time taken for such accesses should be calculated or
-measured and its impact on the application assessed.</p>
-<p>There is usually a need to share data between the ISR and the main loop. This may be done either through global
-variables or via class or instance variables. Variables are typically integer or boolean types, or integer or byte
-arrays (a pre-allocated integer array offers faster access than a list). Where multiple values are modified by
-the ISR it is necessary to consider the case where the interrupt occurs at a time when the main program has
-accessed some, but not all, of the values. This can lead to inconsistencies.</p>
-<p>Consider the following design. An ISR stores incoming data in a bytearray, then adds the number of bytes
-received to an integer representing total bytes ready for processing. The main program reads the number of bytes,
-processes the bytes, then clears down the number of bytes ready. This will work until an interrupt occurs just
-after the main program has read the number of bytes. The ISR puts the added data into the buffer and updates
-the number received, but the main program has already read the number, so processes the data originally received.
-The newly arrived bytes are lost.</p>
-<p>There are various ways of avoiding this hazard, the simplest being to use a circular buffer. If it is not possible
-to use a structure with inherent thread safety other ways are described below.</p>
+<span id="isr"></span><h3 id="interrupt-handler-design">中断处理程序设计<a class="headerlink" href="#interrupt-handler-design" title="Permalink to this heading">¶</a></h3>
+<p>正如上文所提及到的， ISR 应该被设计为尽可能是最简单的。它们应该总能在一个短的、可预知的时间内返回。这很重要，因为当 ISR 运行时，主循环不运行：主循环不可避免地会在代码中的随机点处遇到暂停。这些暂停可能导致一些难以诊断的故障，特别是如果它们的持续时间很长或可变。为了了解 ISR 的运行时问题的含义，需要知道中断优先级的基本概念。</p>
+<p>中断是按优先级排列的。ISR 代码可以被一个更高优先级的中断打断。如果这两个中断共享数据（参见下文的“临界区”），这会导致 ISR 代码中有一个延迟。如果一个更低优先级的中断发生，则将被延迟，直到 ISR 完成：如果延迟过长，这个更低优先级的中断可能会直接失败。ISR 的运行时间中，如果一个类型的中断发生两次，第二个中断将在第一个中断完成后被处理。然而，如果中断连续性出现的频率超过了 ISR 来处理它们的能力，结果可不会令人舒适。</p>
+<p>因此，循环构造应该被避免或最小化。除了中断中的设备之外，不应该使用 I/O ： I/O 操作如磁盘访问、打印语句和 UART 访问是相对慢的，其耗时可能会变化。最后一个问题是文件系统应当是不可重入的：在 ISR 中使用文件系统 I/O 和主程序是危险的。ISR 代码不应该等待事件。I/O 可以在程序可预知的时间内返回，例如按钮或 LED 的翻转。通过 I2C 或 SPI 访问中断设备虽然是必要的，但是这种访问的耗时应该提前被计算或测量，并评估其对应用程序的影响。</p>
+<p>在 ISR 和主循环间通常需要共享数据。这可以通过全局变量、类或实例变量完成。变量通常是整数或布尔型，或整数或字节数组（预分配的整数数组以提供更快的访问，而不是列表）。如果 ISR 中修改了多个值，则需要考虑在主程序访问了某些值，而不是全部的值时，发生中断的情况。这会导致不一致性。</p>
+<p>考虑以下设计。ISR 将传入的数据存储在字节数组中，然后将接收到的字节数加到一个整数表示总字节数，而后数据则可进行下一步处理。主程序读取字节数组的数量，然后处理这些字节，然后清除已就绪的字节数。这一操作将持续作用，直到主程序读取字节数后发生中断。ISR 将添加的数据放入缓冲区并更新接收到的数字，但主程序已经读取了该数字，因此对最初接收到的数据进行处理。新接收到的字节数将会丢弃。</p>
+<p>避免这种危险的、最简单的方法是使用循环缓冲区。如果是在无法使用具有内在线程安全性的结构，下文中提供更多其他方法。</p>
 </section>
 <section id="reentrancy">
-<h3 id="reentrancy">Reentrancy<a class="headerlink" href="#reentrancy" title="Permalink to this heading">¶</a></h3>
-<p>A potential hazard may occur if a function or method is shared between the main program and one or more ISR’s or
-between multiple ISR’s. The issue here is that the function may itself be interrupted and a further instance of
-that function run. If this is to occur, the function must be designed to be reentrant. How this is done is an
-advanced topic beyond the scope of this tutorial.</p>
+<h3 id="reentrancy">重入<a class="headerlink" href="#reentrancy" title="Permalink to this heading">¶</a></h3>
+<p>如果一个函数或方法在主程序和一个或多个 ISR 之间共享，可能会发生潜在危险。这里的问题是函数可能会被中断，并且可能会再次运行。如果这种情况发生，函数必须设计为可重入的。如何完成这一步是一个高级主题，超出本教程的范围。</p>
 </section>
 <section id="critical-sections">
-<span id="critical"></span><h3 id="critical-sections">Critical sections<a class="headerlink" href="#critical-sections" title="Permalink to this heading">¶</a></h3>
-<p>An example of a critical section of code is one which accesses more than one variable which can be affected by an ISR. If
-the interrupt happens to occur between accesses to the individual variables, their values will be inconsistent. This is
-an instance of a hazard known as a race condition: the ISR and the main program loop race to alter the variables. To
-avoid inconsistency a means must be employed to ensure that the ISR does not alter the values for the duration of
-the critical section. One way to achieve this is to issue <code class="docutils literal notranslate"><span class="pre">pyb.disable_irq()</span></code> before the start of the section, and
-<code class="docutils literal notranslate"><span class="pre">pyb.enable_irq()</span></code> at the end. Here is an example of this approach:</p>
+<span id="critical"></span><h3 id="critical-sections">临界区<a class="headerlink" href="#critical-sections" title="Permalink to this heading">¶</a></h3>
+<p>一个临界区的代码样例是指在一段访问多个变量的代码中，这些变量可能会被一个 ISR 所影响。如果在访问这些变量之间发生中断，则这些变量的值将会不一致。这是一个已知的危险： ISR 和主程序循环之间发生修改变量的竞争。为了避免不一致，必须使用一种方法来确保 ISR 不会在临界区运行期间修改变量的值。这种方法是：在临界区开始前调用 <code class="docutils literal notranslate"><span class="pre">pyb.disable_irq()</span></code>，在临界区结束后调用 <code class="docutils literal notranslate"><span class="pre">pyb.enable_irq()</span></code>。这是达到这一目标的一个示例：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyb</span><span class="o">,</span> <span class="nn">micropython</span><span class="o">,</span> <span class="nn">array</span>
 <span class="n">micropython</span><span class="o">.</span><span class="n">alloc_emergency_exception_buf</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
 
@@ -848,7 +736,7 @@ the critical section. One way to achieve this is to issue <code class="docutils 
 <span class="n">tim4</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span><span class="bp">None</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>A critical section can comprise a single line of code and a single variable. Consider the following code fragment.</p>
+<p>临界区可以由一行代码和一个变量组成。考虑下面的代码片段：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">def</span> <span class="nf">cb</span><span class="p">():</span> <span class="c1"># An interrupt callback</span>
     <span class="n">count</span> <span class="o">+=</span><span class="mi">1</span>
@@ -858,47 +746,22 @@ the critical section. One way to achieve this is to issue <code class="docutils 
         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 </pre></div>
 </div>
-<p>This example illustrates a subtle source of bugs. The line <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">+=</span> <span class="pre">1</span></code> in the main loop carries a specific race
-condition hazard known as a read-modify-write. This is a classic cause of bugs in real time systems. In the main loop
-MicroPython reads the value of <code class="docutils literal notranslate"><span class="pre">t.counter</span></code>, adds 1 to it, and writes it back. On rare occasions the  interrupt occurs
-after the read and before the write. The interrupt modifies <code class="docutils literal notranslate"><span class="pre">t.counter</span></code> but its change is overwritten by the main
-loop when the ISR returns. In a real system this could lead to rare, unpredictable failures.</p>
-<p>As mentioned above, care should be taken if an instance of a Python built in type is modified in the main code and
-that instance is accessed in an ISR. The code performing the modification should be regarded as a critical
-section to ensure that the instance is in a valid state when the ISR runs.</p>
-<p>Particular care needs to be taken if a dataset is shared between different ISR’s. The hazard here is that the higher
-priority interrupt may occur when the lower priority one has partially updated the shared data. Dealing with this
-situation is an advanced topic beyond the scope of this introduction other than to note that mutex objects described
-below can sometimes be used.</p>
-<p>Disabling interrupts for the duration of a critical section is the usual and simplest way to proceed, but it disables
-all interrupts rather than merely the one with the potential to cause problems. It is generally undesirable to disable
-an interrupt for long. In the case of timer interrupts it introduces variability to the time when a callback occurs.
-In the case of device interrupts, it can lead to the device being serviced too late with possible loss of data or
-overrun errors in the device hardware. Like ISR’s, a critical section in the main code should have a short, predictable
-duration.</p>
-<p>An approach to dealing with critical sections which radically reduces the time for which interrupts are disabled is to
-use an object termed a mutex (name derived from the notion of mutual exclusion). The main program locks the mutex
-before running the critical section and unlocks it at the end. The ISR tests whether the mutex is locked. If it is,
-it avoids the critical section and returns. The design challenge is defining what the ISR should do in the event
-that access to the critical variables is denied. A simple example of a mutex may be found
-<a class="reference external" href="https://github.com/peterhinch/micropython-samples.git">here</a>. Note that the mutex code does disable interrupts,
-but only for the duration of eight machine instructions: the benefit of this approach is that other interrupts are
-virtually unaffected.</p>
+<p>这个示例说明了一个潜在的源程序错误。在主循环中的 <code class="docutils literal notranslate"><span class="pre">count</span> <span class="pre">+=</span> <span class="pre">1</span></code> 语句会产生一个特殊的竞争条件危险，常称作 读-修改-写。这是一种经典的源程序错误，在实时系统中常见。在主循环中 MicroPython 会读取 <code class="docutils literal notranslate"><span class="pre">t.counter</span></code> 的值，并且加 1 后写入。在一些罕见的情况下，中断可能会发生在读取之后，并且在写入之前。中断会修改 <code class="docutils literal notranslate"><span class="pre">t.counter</span></code>，但是它的修改会在 ISR 返回时被主循环覆盖。在一个实时系统中，这可能会导致稍微罕见的、难以预知的失败。</p>
+<p>如上文所述，如果在主代码中修改了一个内置类型的实例，并且该实例被 ISR 访问，则应该小心地认真地考虑这个实例在 ISR 中的状态。修改这个实例的代码应该被认为是一个临界区，以确保在 ISR 中访问该实例时，它是一个有效的状态。</p>
+<p>如上文所述，如果一个数据集被多个 ISR 共享，则必须小心地考虑这个数据集在不同的 ISR 之间的共享。这里潜在的危险是，当低优先级的中断部分更新了共享数据时，可能会发生高优先级的中断。处理这种情况是一个超出本介绍范围的高级主题，只是要注意有时可以使用下面描述的互斥对象（ mutex ）。</p>
+<p>在临界区中禁用中断是一种普遍的和最简单的方法，但它禁用所有中断，而不仅仅是可能导致问题的中断。在这种情况下，禁用中断是不可取的。在定时器中断中，它会导致回调发生的时间不确定。在设备中断中，它可能会导致设备的设备硬件被过早地服务，可能会丢失数据或者设备硬件的错误。在主代码中的临界区中，应该像 ISR 一样有一个短而可预知的持续时间。</p>
+<p>一种处理临界区的方法可以从根本上减少中断被禁用的时间，即使用一个称为 mutex 的对象（名称源自互斥的概念）。主程序在运行临界区之前锁定互斥锁并在最后解锁它。 ISR 测试互斥体是否被锁定。如果是，它会避开临界区并返回。该设计的挑战是定义在拒绝访问关键变量的情况下 ISR 应该做什么。可以在 <a class="reference external" href="https://github.com/peterhinch/micropython-samples.git">此处</a> 找到一个简单的互斥锁示例。请注意，互斥代码确实禁用了中断，但仅限于 8 条机器指令的持续时间：这种方法的好处是其他中断几乎不受影响。</p>
 </section>
 <section id="interrupts-and-the-repl">
-<h3 id="interrupts-and-the-repl">Interrupts and the REPL<a class="headerlink" href="#interrupts-and-the-repl" title="Permalink to this heading">¶</a></h3>
-<p>Interrupt handlers, such as those associated with timers, can continue to run
-after a program terminates.  This may produce unexpected results where you might
-have expected the object raising the callback to have gone out of scope.  For
-example on the Pyboard:</p>
+<h3 id="interrupts-and-the-repl">中断和交互式终端（ REPL ）<a class="headerlink" href="#interrupts-and-the-repl" title="Permalink to this heading">¶</a></h3>
+<p>中断处理程序，例如与定时器相关的处理程序，可以在程序终止后继续运行。在你可能期望对象触发一个超出范围的回调时，这可能会产生无法预料的结果。例如在 Pyboard 上：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">bar</span><span class="p">():</span>
     <span class="n">foo</span> <span class="o">=</span> <span class="n">pyb</span><span class="o">.</span><span class="n">Timer</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">callback</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="k">print</span><span class="p">(</span><span class="s1">'.'</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">))</span>
 
 <span class="n">bar</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>This continues to run until the timer is explicitly disabled or the board is
-reset with <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">D</span></code>.</p>
+<p>这将持续运行到计时器被明确禁用、或开发板被 <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">D</span></code> 重置。</p>
 </section>
 </section>
 </section>
@@ -950,7 +813,7 @@ reset with <code class="docutils literal notranslate"><span class="pre">ctrl</sp
               
           </div>
             Last updated on
-              06 7月 2022.
+              07 7月 2022.
             <br/>
             Created using
             <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
