@@ -155,7 +155,7 @@ else:
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-#html_logo = '../../logo/trans-logo.png'
+html_logo = './static/Mlogo_138wh.png'
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -312,4 +312,5 @@ html_theme_options = {
     'globaltoc_depth': 4,
     'color_primary': 'blue',
     'color_accent': 'light-blue',
+    'theme_color': 'blue',
 }
