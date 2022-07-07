@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../reference/isr_rules.rst:4
 msgid "Writing interrupt handlers"
-msgstr ""
+msgstr "编写中断处理程序"
 
 #: ../../reference/isr_rules.rst:6
 msgid ""
@@ -36,6 +36,12 @@ msgid ""
 "specific issues first, followed by a brief introduction to real time "
 "programming for those new to it."
 msgstr ""
+"在合适的硬件上， MicroPython 提供了用 Python 编写中断处理程序的能力。"
+"中断处理程序 - 也称为中断服务例程 ( ISR ) - 作为回调函数被定义。这些程序是响应"
+"诸如定时器触发或引脚电压变化等事件触发执行的。此类事件可以在程序代码执行的"
+"任何时候发生。这一特性可能会产生严重后果，其中部分是 MicroPython 语言特有的，"
+"剩余部分则对于所有能响应实时事件的系统来说都是通用的。本文档首先介绍了特定于语"
+"言的议题，然后向新手简要介绍实时编程。"
 
 #: ../../reference/isr_rules.rst:13
 msgid ""
@@ -45,32 +51,38 @@ msgid ""
 "interrupts occur, the nature of the main program, and the presence of "
 "other concurrent events."
 msgstr ""
+"本介绍使用了一些模糊的术语，例如 \"慢\" 或 \"尽可能快\"。但其实这是经过深思熟虑的，"
+"因为最终的速度取决于应用程序。 ISR 可接受的持续时间取决于中断发生的速率、"
+"主程序的表现以及其他并发事件的发生。"
 
 #: ../../reference/isr_rules.rst:18
 msgid "Tips and recommended practices"
-msgstr ""
+msgstr "提示和推荐做法"
 
 #: ../../reference/isr_rules.rst:20
 msgid ""
 "This summarises the points detailed below and lists the principal "
 "recommendations for interrupt handler code."
 msgstr ""
+"以下总结了详述的要点，并列出了中断处理程序代码的主要建议。"
 
 #: ../../reference/isr_rules.rst:22
 msgid "Keep the code as short and simple as possible."
-msgstr ""
+msgstr "让代码尽可能的简短。"
 
 #: ../../reference/isr_rules.rst:23
 msgid ""
 "Avoid memory allocation: no appending to lists or insertion into "
 "dictionaries, no floating point."
 msgstr ""
+"避免内存分配：不对列表附加数据，不对字典插入数据，不使用浮点。"
 
 #: ../../reference/isr_rules.rst:24
 msgid ""
 "Consider using ``micropython.schedule`` to work around the above "
 "constraint."
 msgstr ""
+"需要解决上一痛点时，优先考虑使用 ``micropython.schedule`` 。"
 
 #: ../../reference/isr_rules.rst:25
 msgid ""
@@ -78,6 +90,8 @@ msgid ""
 " multiple integers are to be shared between an ISR and the main program "
 "consider an array (``array.array``)."
 msgstr ""
+"如果 ISR 需要返回多个字节，优先使用预分配的 ``bytearray``。 "
+"如果要在 ISR 和主程序之间共享多个整型，也优先考虑作为一个数组使用 ( ``array.array`` )。"
 
 #: ../../reference/isr_rules.rst:27
 msgid ""
@@ -85,18 +99,21 @@ msgid ""
 "disabling interrupts prior to accessing the data in the main program and "
 "re-enabling them immediately afterwards (see Critical Sections)."
 msgstr ""
+"在主程序和 ISR 之间共享数据的情况下，"
+"优先考虑在访问主程序中的数据之前禁用中断，"
+"并在访问完成后立即重新启用它们（请参阅 临界区 章节）。"
 
 #: ../../reference/isr_rules.rst:29
 msgid "Allocate an emergency exception buffer (see below)."
-msgstr ""
+msgstr "分配一个紧急异常缓冲区（见下文）。"
 
 #: ../../reference/isr_rules.rst:33
 msgid "MicroPython issues"
-msgstr ""
+msgstr "MicroPython 议题"
 
 #: ../../reference/isr_rules.rst:36
 msgid "The emergency exception buffer"
-msgstr ""
+msgstr "紧急异常缓冲区"
 
 #: ../../reference/isr_rules.rst:38
 msgid ""
@@ -105,6 +122,9 @@ msgid ""
 "simplified if the following code is included in any program using "
 "interrupts."
 msgstr ""
+"如果 ISR 中发生错误，MicroPython 是无法生成错误报告的，"
+"除非为此创建一个特殊缓冲区。"
+"如果以下代码包含在任何使用中断的程序中，那么调试就会简单许多。"
 
 #: ../../reference/isr_rules.rst:46
 msgid ""
@@ -115,10 +135,14 @@ msgid ""
 "handled. This can lead to confusing exception messages if the buffer is "
 "later printed."
 msgstr ""
+"紧急异常缓冲区只能保持一个异常堆栈跟踪。"
+"这意味着，如果处于堆被锁定的情况下在处理异常期间，引发了第二个异常，"
+"则原始堆栈跟踪将被第二个异常的堆栈跟踪替换 —— 即使第二个异常已被处理干净。"
+"这导致如果在这之后打印缓冲区，可能出现令人困惑的异常信息。"
 
 #: ../../reference/isr_rules.rst:52
 msgid "Simplicity"
-msgstr ""
+msgstr "精简"
 
 #: ../../reference/isr_rules.rst:54
 msgid ""
@@ -133,10 +157,17 @@ msgid ""
 "possible. This is not a specific MicroPython issue so is covered in more "
 "detail :ref:`below <ISR>`."
 msgstr ""
+"综合多种因素考量，保持 ISR 代码尽可能简短十分重要。"
+"它应该只做在触发它的事件之后必须立即做的事情："
+"如果操作可以推迟，应该委托给主程序循环处理。"
+"通常， ISR 将处理导致中断的硬件设备，使其为下一次中断的发生做好准备。"
+"它将通过更新共享数据来与主循环通信以指示中断已发生，并返回出去。"
+"ISR 应尽快将控制权返回给主循环。"
+"这不是一个特定的 MicroPython 议题，因此将在下文的 :ref:`中断处理程序设计 <ISR>` 中更详细地介绍。"
 
 #: ../../reference/isr_rules.rst:62
 msgid "Communication between an ISR and the main program"
-msgstr ""
+msgstr "ISR 和主程序之间的通信"
 
 #: ../../reference/isr_rules.rst:64
 msgid ""
@@ -148,10 +179,16 @@ msgid ""
 "used for this purpose along with arrays (from the array module) which can"
 " store various data types."
 msgstr ""
+"通常， ISR 需要与主程序通信。"
+"最简单的方法是通过一个或多个共享数据对象，"
+"例如声明为全局对象，或通过一个类共享（见下文）。"
+"但这样做有各种限制和危险，下文将详细介绍。"
+"整型、 ``bytes`` 和 ``bytearray`` 对象通常会与可以存储各种数据类型的数组"
+"（来自 array 模块）一起用于达成此目标。"
 
 #: ../../reference/isr_rules.rst:70
 msgid "The use of object methods as callbacks"
-msgstr ""
+msgstr "将对象方法作为回调的使用方式"
 
 #: ../../reference/isr_rules.rst:72
 msgid ""
@@ -160,6 +197,10 @@ msgid ""
 "class implementing a device driver to support multiple device instances. "
 "The following example causes two LED's to flash at different rates."
 msgstr ""
+"MicroPython 支持这一强大的技术，"
+"使得 ISR 能够与底层代码共享实例变量。"
+"它还使实现设备驱动程序的类能够支持多个设备实例。"
+"以下示例可令两个 LED 以不同的速率闪烁。"
 
 #: ../../reference/isr_rules.rst:90
 msgid ""
@@ -176,10 +217,18 @@ msgid ""
 "the counter. The ``red`` and ``green`` instances would then maintain "
 "independent counts of the number of times each LED had changed state."
 msgstr ""
+"在此示例中， ``red`` 实例将定时器 timer 4 与 LED 1 相关联："
+"当 timer 4 发生中断时，会调用 ``red.cb()`` 使 LED 1 切换状态。"
+"该 ``green`` 实例的操作也类似：定时器 timer 2 中断导致 ``green.cb()`` ，并切换 LED 2。"
+"使用实例方法有两个好处：首先，使用类来封装，使得代码能够在多个硬件实例之间共享；"
+"其次，作为绑定方法，回调函数的第一个参数是 ``self`` 。 "
+"这使回调能够访问实例数据，并在连续调用之间保存状态。"
+"例如，如果上面的类在构造函数中将 ``self.count`` 变量设置为零，则 ``cb()`` 可以递增计数器。"
+" ``red`` 和 ``green`` 实例将维护每个 LED 改变状态的次数的独立计数。"
 
 #: ../../reference/isr_rules.rst:100
 msgid "Creation of Python objects"
-msgstr ""
+msgstr "创建 Python 对象"
 
 #: ../../reference/isr_rules.rst:102
 msgid ""
@@ -191,6 +240,11 @@ msgid ""
 "performing an allocation - to maintain the integrity of the heap the "
 "interpreter disallows memory allocations in ISR code."
 msgstr ""
+"在 ISR 中不能创建 Python 对象实例。"
+"因为 MicroPython 需要从可用的堆内存块中分配内存，"
+"这在中断处理程序中是不被允许的。"
+"换言之，中断可能在主程序正在执行内存分配时发生，"
+"以确保堆的完整性，解释器不允许在 ISR 中进行内存分配。"
 
 #: ../../reference/isr_rules.rst:108
 msgid ""
@@ -200,6 +254,11 @@ msgid ""
 "code constructs will attempt to perform memory allocation and provoke an "
 "error message: another reason for keeping ISR code short and simple."
 msgstr ""
+"依此还可以得出的一个结论是， ISR 不能使用浮点运算；"
+"因为浮点是 Python 对象。"
+"同样， ISR 不能将项目附加到列表中。"
+"实践中，要确定哪些代码构造将尝试进行内存分配且引发了错误消息，可能会很困难："
+"这也是另一个要保持 ISR 简单并简洁的原因。"
 
 #: ../../reference/isr_rules.rst:112
 msgid ""
@@ -209,6 +268,10 @@ msgid ""
 "sets the flag. The memory allocation occurs in the main program code when"
 " the object is instantiated rather than in the ISR."
 msgstr ""
+"一种解决方法是， ISR 使用预分配的缓冲区。"
+"例如，类构造器创建一个 ``bytearray`` 实例和一个 boolean 标志。"
+"ISR 方法将数据分配到缓冲区中的位置，并将标志设置为 true。"
+"在创建对象时，主程序代码中的内存分配发生在 ISR 中而不是在主程序中。"
 
 #: ../../reference/isr_rules.rst:116
 msgid ""
@@ -216,12 +279,16 @@ msgid ""
 "pre-allocated buffer. For example ``pyb.i2c.recv()`` can accept a mutable"
 " buffer as its first argument: this enables its use in an ISR."
 msgstr ""
+"MicroPython 库 I/O 方法通常提供了一个可选的预分配缓冲区选项。"
+"例如，``pyb.i2c.recv()`` 可以接受一个可变的缓冲区作为其第一个参数："
+"这使其在 ISR 中可用。"
 
 #: ../../reference/isr_rules.rst:119
 msgid ""
 "A means of creating an object without employing a class or globals is as "
 "follows:"
 msgstr ""
+"有一种方式，可以创建一个对象而不使用类或全局变量，如下所示："
 
 #: ../../reference/isr_rules.rst:129
 msgid ""
@@ -229,6 +296,7 @@ msgid ""
 "is loaded for the first time (usually when the module it's in is "
 "imported)."
 msgstr ""
+"编译器在这个函数第一次加载时（通常当模块被导入时）实例化默认的 ``buf`` 参数。"
 
 #: ../../reference/isr_rules.rst:132
 msgid ""
@@ -237,16 +305,22 @@ msgid ""
 "function. One solution is to create a reference to the bound method in "
 "the class constructor and to pass that reference in the ISR. For example:"
 msgstr ""
+"一个对象的实例化创建过程发生在一个绑定方法的引用被创建时。"
+"这意味着 ISR 不能将绑定方法传递给函数。"
+"一种解决方法是在类构造器中创建绑定方法的引用，并在 ISR 中传递该引用。"
+"例如："
 
 #: ../../reference/isr_rules.rst:155
 msgid ""
 "Other techniques are to define and instantiate the method in the "
 "constructor or to pass :meth:`Foo.bar` with the argument *self*."
 msgstr ""
+"其他做法是在构造器中定义并实例化方法，或者将 :meth:`Foo.bar` 传递给参数 *self*。"
 
 #: ../../reference/isr_rules.rst:159
 msgid "Use of Python objects"
 msgstr ""
+"Python 对象的使用"
 
 #: ../../reference/isr_rules.rst:161
 msgid ""
@@ -260,6 +334,12 @@ msgid ""
 "such as a set, list or dictionary modified in the main loop may lack "
 "internal consistency at the moment the interrupt occurs."
 msgstr ""
+"Python 的工作方式导致了对象的另一个限制。"
+"当执行一个 ``import`` 语句时， Python 代码被编译为字节码，"
+"其中一行代码通常映射到多个字节码。"
+"当代码运行时，解释器读取每个字节码并作为一系列机器代码指令执行它。"
+"在机器代码指令间的任何时间发生中断时，原始的 Python 语句可能只执行了其中一部分。"
+"因此，一个 Python 对象（如集合、列表或字典）在主循环中被修改时，在断点发生时可能内部会不一致。"
 
 #: ../../reference/isr_rules.rst:168
 msgid ""
@@ -270,6 +350,11 @@ msgid ""
 "There are ways to circumvent this issue, described in :ref:`Critical "
 "Sections <Critical>` below."
 msgstr ""
+"比如这样一个典型的场景。"
+"在罕见的情况下， ISR 在对象发生部分更新的瞬间运行。"
+"当 ISR 尝试读取对象时，就会发生崩溃。"
+"因为这种情况通常发生在罕见的、随机的情况下，它们可能难以诊断。"
+"有一些方法可以解决这个问题，详见下文的 :ref:`临界区 <Critical>` 。"
 
 #: ../../reference/isr_rules.rst:173
 msgid ""
@@ -282,6 +367,13 @@ msgid ""
 "an integer, array or bytearray. It is valid for both the main loop and "
 "the ISR to alter the contents of these."
 msgstr ""
+"一个非常重要的点是要清楚地表示对象的修改。"
+"若一个内建类型被修改，例如字典，这是不可取的。"
+"若一个数组或 bytearray 被修改，也不可取。"
+"因为字节或字词是写入一个单一的机器代码指令，这个指令不可中断："
+"在实时编程中，写入是原子性的。"
+"一个用户定义的对象可能实例化一个整数、数组或 bytearray 。"
+"主循环和 ISR 都可以更改它们的内容。"
 
 #: ../../reference/isr_rules.rst:179
 msgid ""
@@ -292,10 +384,15 @@ msgid ""
 "is unsafe because memory allocation may be attempted as the variable's "
 "value changes."
 msgstr ""
+"MicroPython 支持任意精度的整数。"
+"大小介于 2**30 -1 和 -2**30 的值将被存储在单个机器字。"
+"更大的值将被存储为 Python 对象。"
+"因此，更改 long 类型的整数不可视为原子操作。"
+" ISR 中使用 long 类型的整数是不安全的，因为可能会尝试为其分配内存。"
 
 #: ../../reference/isr_rules.rst:185
 msgid "Overcoming the float limitation"
-msgstr ""
+msgstr "克服浮点限制"
 
 #: ../../reference/isr_rules.rst:187
 msgid ""
@@ -308,10 +405,14 @@ msgid ""
 "machine word; values can be shared between the ISR and main program code "
 "via an array of floats."
 msgstr ""
+"一般来说，在 ISR 代码中不要使用浮点数：硬件设备通常处理整数，并且在主循环中转完成换为浮点数。"
+"但是有一些 DSP 算法需要浮点数。"
+"在有硬件的浮点数（例如 Pyboard ）的平台上，可以使用内联 ARM Thumb 代码来解决这个问题。"
+"这是因为处理器将浮点数存储在一个机器字中；这些值可以通过一个浮点数数组共享给主程序和 ISR 代码。"
 
 #: ../../reference/isr_rules.rst:194
 msgid "Using micropython.schedule"
-msgstr ""
+msgstr "使用 micropython.schedule"
 
 #: ../../reference/isr_rules.rst:196
 msgid ""
@@ -322,6 +423,10 @@ msgid ""
 "main program has completed any update of Python objects, so the callback "
 "will not encounter partially updated objects."
 msgstr ""
+"这个函数允许 ISR 调度一个回调 \"很快\" 执行。"
+"回调将被置于执行队列，这将发生在堆未锁定的时候。"
+"因此，它可以创建 Python 对象和使用浮点数。"
+"回调也保证在主程序完成了任何 Python 对象的更新之后执行，因此回调不会遇到部分更新的对象。"
 
 #: ../../reference/isr_rules.rst:201
 msgid ""
@@ -329,6 +434,9 @@ msgid ""
 "the hardware and enables it to issue a further interrupt. It then "
 "schedules a callback to process the data."
 msgstr ""
+"一般用法是用于处理传感器硬件。"
+" ISR 从硬件获取数据，并允许它发出另一个中断。"
+"然后它调度一个回调来处理数据。"
 
 #: ../../reference/isr_rules.rst:204
 msgid ""
@@ -337,6 +445,8 @@ msgid ""
 "I/O activity and the modification of shared data which can arise in any "
 "code which pre-empts the main program loop."
 msgstr ""
+"调度的回调应遵守以下的中断处理程序设计原则。"
+"这是为了避免在 I/O 活动和共享数据的修改可能发生在任何预先抢占主程序循环的代码中。"
 
 #: ../../reference/isr_rules.rst:208
 msgid ""
@@ -347,16 +457,20 @@ msgid ""
 "sustained high interrupt repetition rate therefore carries a risk of "
 "unconstrained queue growth and eventual failure with a ``RuntimeError``."
 msgstr ""
+"执行时间需要根据中断可能发生的频率来考虑。"
+"如果在执行中的回调中发生中断，它将会置于执行队列中；这意味着中断将在当前实例执行完成之后执行。"
+"因此，高频率的中断重复率会导致队列的增长，并且可能会导致 ``RuntimeError``。"
 
 #: ../../reference/isr_rules.rst:213
 msgid ""
 "If the callback to be passed to `schedule()` is a bound method, consider "
 "the note in \"Creation of Python objects\"."
 msgstr ""
+"如果传递给 `schedule()` 的回调是一个绑定方法，请考虑 \"创建 Python 对象\" 中的提到的方式。"
 
 #: ../../reference/isr_rules.rst:217
 msgid "Exceptions"
-msgstr ""
+msgstr "异常"
 
 #: ../../reference/isr_rules.rst:219
 msgid ""
@@ -364,10 +478,12 @@ msgid ""
 " interrupt will be disabled unless the exception is handled by the ISR "
 "code."
 msgstr ""
+"如果 ISR 抛出异常，它不会传递到主循环。"
+"如果异常未能由 ISR 代码处理，中断将被禁用。"
 
 #: ../../reference/isr_rules.rst:223
 msgid "General issues"
-msgstr ""
+msgstr "一般问题"
 
 #: ../../reference/isr_rules.rst:225
 msgid ""
@@ -379,10 +495,15 @@ msgid ""
 "issues before they arise. Both interrupt handlers and the main program "
 "need to be designed with an appreciation of the following issues."
 msgstr ""
+"这只是一个简单的介绍实时编程的主题。"
+"初学者应该注意到可能由于实时编程中的设计错误导致的故障。这是因为它们可能出现的频率很少，"
+"并且间隔是稳定的。"
+"这一步是必要的，以便在发生问题之前能够预期到。"
+"中断处理程序和主程序都需要设计为聚焦以下问题。"
 
 #: ../../reference/isr_rules.rst:234
 msgid "Interrupt handler design"
-msgstr ""
+msgstr "中断处理程序设计"
 
 #: ../../reference/isr_rules.rst:236
 msgid ""
@@ -395,6 +516,11 @@ msgid ""
 "understand the implications of ISR run time, a basic grasp of interrupt "
 "priorities is required."
 msgstr ""
+"正如上文所提及到的， ISR 应该被设计为尽可能是最简单的。"
+"它们应该总能在一个短的、可预知的时间内返回。"
+"这很重要，因为当 ISR 运行时，主循环不运行：主循环不可避免地会在代码中的随机点处遇到暂停。"
+"这些暂停可能导致一些难以诊断的故障，特别是如果它们的持续时间很长或可变。"
+"为了了解 ISR 的运行时问题的含义，需要知道中断优先级的基本概念。"
 
 #: ../../reference/isr_rules.rst:242
 msgid ""
@@ -411,6 +537,12 @@ msgid ""
 "the capacity of the ISR to service them the outcome will not be a happy "
 "one."
 msgstr ""
+"中断是按优先级排列的。"
+"ISR 代码可以被一个更高优先级的中断打断。"
+"如果这两个中断共享数据（参见下文的“临界区”），这会导致 ISR 代码中有一个延迟。"
+"如果一个更低优先级的中断发生，则将被延迟，直到 ISR 完成：如果延迟过长，这个更低优先级的中断可能会直接失败。"
+"ISR 的运行时间中，如果一个类型的中断发生两次，第二个中断将在第一个中断完成后被处理。"
+"然而，如果中断连续性出现的频率超过了 ISR 来处理它们的能力，结果可不会令人舒适。"
 
 #: ../../reference/isr_rules.rst:250
 msgid ""
@@ -426,6 +558,13 @@ msgid ""
 " time taken for such accesses should be calculated or measured and its "
 "impact on the application assessed."
 msgstr ""
+"因此，循环构造应该被避免或最小化。"
+"除了中断中的设备之外，不应该使用 I/O ："
+" I/O 操作如磁盘访问、打印语句和 UART 访问是相对慢的，其耗时可能会变化。"
+"最后一个问题是文件系统应当是不可重入的：在 ISR 中使用文件系统 I/O 和主程序是危险的。"
+"ISR 代码不应该等待事件。"
+"I/O 可以在程序可预知的时间内返回，例如按钮或 LED 的翻转。"
+"通过 I2C 或 SPI 访问中断设备虽然是必要的，但是这种访问的耗时应该提前被计算或测量，并评估其对应用程序的影响。"
 
 #: ../../reference/isr_rules.rst:258
 msgid ""
@@ -438,6 +577,11 @@ msgid ""
 "program has accessed some, but not all, of the values. This can lead to "
 "inconsistencies."
 msgstr ""
+"在 ISR 和主循环间通常需要共享数据。"
+"这可以通过全局变量、类或实例变量完成。"
+"变量通常是整数或布尔型，或整数或字节数组（预分配的整数数组以提供更快的访问，而不是列表）。"
+"如果 ISR 中修改了多个值，则需要考虑在主程序访问了某些值，而不是全部的值时，发生中断的情况。"
+"这会导致不一致性。"
 
 #: ../../reference/isr_rules.rst:264
 msgid ""
@@ -451,6 +595,12 @@ msgid ""
 "already read the number, so processes the data originally received. The "
 "newly arrived bytes are lost."
 msgstr ""
+"考虑以下设计。"
+"ISR 将传入的数据存储在字节数组中，然后将接收到的字节数加到一个整数表示总字节数，而后数据则可进行下一步处理。"
+"主程序读取字节数组的数量，然后处理这些字节，然后清除已就绪的字节数。"
+"这一操作将持续作用，直到主程序读取字节数后发生中断。"
+"ISR 将添加的数据放入缓冲区并更新接收到的数字，但主程序已经读取了该数字，因此对最初接收到的数据进行处理。"
+"新接收到的字节数将会丢弃。"
 
 #: ../../reference/isr_rules.rst:271
 msgid ""
@@ -458,10 +608,12 @@ msgid ""
 " a circular buffer. If it is not possible to use a structure with "
 "inherent thread safety other ways are described below."
 msgstr ""
+"避免这种危险的、最简单的方法是使用循环缓冲区。"
+"如果是在无法使用具有内在线程安全性的结构，下文中提供更多其他方法。"
 
 #: ../../reference/isr_rules.rst:275
 msgid "Reentrancy"
-msgstr ""
+msgstr "重入"
 
 #: ../../reference/isr_rules.rst:277
 msgid ""
@@ -472,10 +624,14 @@ msgid ""
 "designed to be reentrant. How this is done is an advanced topic beyond "
 "the scope of this tutorial."
 msgstr ""
+"如果一个函数或方法在主程序和一个或多个 ISR 之间共享，可能会发生潜在危险。"
+"这里的问题是函数可能会被中断，并且可能会再次运行。"
+"如果这种情况发生，函数必须设计为可重入的。"
+"如何完成这一步是一个高级主题，超出本教程的范围。"
 
 #: ../../reference/isr_rules.rst:285
 msgid "Critical sections"
-msgstr ""
+msgstr "临界区"
 
 #: ../../reference/isr_rules.rst:287
 msgid ""
@@ -490,12 +646,21 @@ msgid ""
 "section, and ``pyb.enable_irq()`` at the end. Here is an example of this "
 "approach:"
 msgstr ""
+"一个临界区的代码样例是指在一段访问多个变量的代码中，这些变量可能会被一个 ISR "
+"所影响。如果在访问这些变量之间发生中断，则这些变量的值将会不一致。"
+"这是一个已知的危险： ISR 和主程序循环之间发生修改变量的竞争。"
+"为了避免不一致，必须使用一种方法来确保 ISR 不会在临界区运行期间修改变量的值。"
+"这种方法是：在临界区开始前调用 ``pyb.disable_irq()``，在临界区结束后调用 "
+"``pyb.enable_irq()``。"
+"这是达到这一目标的一个示例："
 
 #: ../../reference/isr_rules.rst:328
 msgid ""
 "A critical section can comprise a single line of code and a single "
 "variable. Consider the following code fragment."
 msgstr ""
+"临界区可以由一行代码和一个变量组成。"
+"考虑下面的代码片段："
 
 #: ../../reference/isr_rules.rst:340
 msgid ""
@@ -508,6 +673,13 @@ msgid ""
 "change is overwritten by the main loop when the ISR returns. In a real "
 "system this could lead to rare, unpredictable failures."
 msgstr ""
+"这个示例说明了一个潜在的源程序错误。"
+"在主循环中的 ``count += 1`` 语句会产生一个特殊的竞争条件危险，"
+"常称作 读-修改-写。这是一种经典的源程序错误，在实时系统中常见。"
+"在主循环中 MicroPython 会读取 ``t.counter`` 的值，并且加 1 后写入。"
+"在一些罕见的情况下，中断可能会发生在读取之后，并且在写入之前。"
+"中断会修改 ``t.counter``，但是它的修改会在 ISR 返回时被主循环覆盖。"
+"在一个实时系统中，这可能会导致稍微罕见的、难以预知的失败。"
 
 #: ../../reference/isr_rules.rst:346
 msgid ""
@@ -517,6 +689,10 @@ msgid ""
 "critical section to ensure that the instance is in a valid state when the"
 " ISR runs."
 msgstr ""
+"如上文所述，如果在主代码中修改了一个内置类型的实例，并且该实例被 ISR 访问，"
+"则应该小心地认真地考虑这个实例在 ISR 中的状态。"
+"修改这个实例的代码应该被认为是一个临界区，以确保在 ISR 中访问该实例时，"
+"它是一个有效的状态。"
 
 #: ../../reference/isr_rules.rst:350
 msgid ""
@@ -527,6 +703,9 @@ msgid ""
 "of this introduction other than to note that mutex objects described "
 "below can sometimes be used."
 msgstr ""
+"如上文所述，如果一个数据集被多个 ISR 共享，则必须小心地考虑这个数据集在不同的 ISR 之间的共享。"
+"这里潜在的危险是，当低优先级的中断部分更新了共享数据时，可能会发生高优先级的中断。"
+"处理这种情况是一个超出本介绍范围的高级主题，只是要注意有时可以使用下面描述的互斥对象（ mutex ）。"
 
 #: ../../reference/isr_rules.rst:355
 msgid ""
@@ -540,6 +719,10 @@ msgid ""
 "device hardware. Like ISR's, a critical section in the main code should "
 "have a short, predictable duration."
 msgstr ""
+"在临界区中禁用中断是一种普遍的和最简单的方法，但它禁用所有中断，而不仅仅是可能导致问题的中断。"
+"在这种情况下，禁用中断是不可取的。在定时器中断中，它会导致回调发生的时间不确定。"
+"在设备中断中，它可能会导致设备的设备硬件被过早地服务，可能会丢失数据或者设备硬件的错误。"
+"在主代码中的临界区中，应该像 ISR 一样有一个短而可预知的持续时间。"
 
 #: ../../reference/isr_rules.rst:362
 msgid ""
@@ -556,10 +739,15 @@ msgid ""
 "machine instructions: the benefit of this approach is that other "
 "interrupts are virtually unaffected."
 msgstr ""
+"一种处理临界区的方法可以从根本上减少中断被禁用的时间，即使用一个称为 mutex 的对象（名称源自互斥的概念）。"
+"主程序在运行临界区之前锁定互斥锁并在最后解锁它。 ISR 测试互斥体是否被锁定。"
+"如果是，它会避开临界区并返回。该设计的挑战是定义在拒绝访问关键变量的情况下 ISR 应该做什么。"
+"可以在 `此处 <https://github.com/peterhinch/micropython-samples.git>`_ 找到一个简单的互斥锁示例。"
+"请注意，互斥代码确实禁用了中断，但仅限于 8 条机器指令的持续时间：这种方法的好处是其他中断几乎不受影响。"
 
 #: ../../reference/isr_rules.rst:372
 msgid "Interrupts and the REPL"
-msgstr ""
+msgstr "中断和交互式终端（ REPL ） "
 
 #: ../../reference/isr_rules.rst:374
 msgid ""
@@ -568,10 +756,12 @@ msgid ""
 "where you might have expected the object raising the callback to have "
 "gone out of scope.  For example on the Pyboard:"
 msgstr ""
+"中断处理程序，例如与定时器相关的处理程序，可以在程序终止后继续运行。"
+"在你可能期望对象触发一个超出范围的回调时，这可能会产生无法预料的结果。例如在 Pyboard 上："
 
 #: ../../reference/isr_rules.rst:386
 msgid ""
 "This continues to run until the timer is explicitly disabled or the board"
 " is reset with ``ctrl D``."
 msgstr ""
-
+"这将持续运行到计时器被明确禁用、或开发板被 ``ctrl D`` 重置。"
