@@ -47,7 +47,7 @@
   
   
   
-    <title>Implementing a Module &#8212; MicroPython 1.18 文档</title>
+    <title>实现一个模块 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -99,7 +99,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> Implementing a Module </span>
+          <span class="md-header-nav__topic"> 实现一个模块 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -238,17 +238,17 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> Implementing a Module </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 实现一个模块 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">Implementing a Module</a>
+      <a href="#" class="md-nav__link md-nav__link--active">实现一个模块</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-library--page-root" class="md-nav__link">Implementing a Module</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-library--page-root" class="md-nav__link">实现一个模块</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#implementing-a-core-module" class="md-nav__link">Implementing a core module</a>
+        <li class="md-nav__item"><a href="#implementing-a-core-module" class="md-nav__link">实现一个核心模块</a>
         </li></ul>
             </nav>
         </li>
@@ -258,7 +258,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#implementing-a-core-module" class="md-nav__link">Implementing a core module</a>
+      <a href="#implementing-a-core-module" class="md-nav__link">实现一个核心模块</a>
       
     
     </li></ul>
@@ -378,9 +378,9 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-library--page-root" class="md-nav__link">Implementing a Module</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-library--page-root" class="md-nav__link">实现一个模块</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#implementing-a-core-module" class="md-nav__link">Implementing a core module</a>
+        <li class="md-nav__item"><a href="#implementing-a-core-module" class="md-nav__link">实现一个核心模块</a>
         </li></ul>
             </nav>
         </li>
@@ -394,40 +394,33 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="implementing-a-module">
-<span id="internals-library"></span><h1 id="develop-library--page-root">Implementing a Module<a class="headerlink" href="#develop-library--page-root" title="Permalink to this heading">¶</a></h1>
-<p>This chapter details how to implement a core module in MicroPython.
-MicroPython modules can be one of the following:</p>
+<span id="internals-library"></span><h1 id="develop-library--page-root">实现一个模块<a class="headerlink" href="#develop-library--page-root" title="Permalink to this heading">¶</a></h1>
+<p>这一章节详细讲解如何在 MicroPython 实现一个核心模块。 MicroPython 模块可以是下列之一：</p>
 <ul class="simple">
-<li><p>Built-in module: A general module that is be part of the MicroPython repository.</p></li>
-<li><p>User module: A module that is useful for your specific project that you maintain
-in your own repository or private codebase.</p></li>
-<li><p>Dynamic module: A module that can be deployed and imported at runtime to your device.</p></li>
+<li><p>内置模块（ Built-in module ）：属于 MicroPython 仓库的核心模块。</p></li>
+<li><p>用户模块（ User module ）：你自己的仓库或私有代码库中特定的项目的有用的模块。</p></li>
+<li><p>动态模块（ Dynamic module ）：可以在运行时部署并导入到你的设备的模块。</p></li>
 </ul>
-<p>A module in MicroPython can be implemented in one of the following locations:</p>
+<p>在 MicroPython 中，模块可以在下列路径中实现：</p>
 <ul class="simple">
-<li><p>py/: A core library that mirrors core CPython functionality.</p></li>
-<li><p>extmod/: A CPython or MicroPython-specific module that is shared across multiple ports.</p></li>
-<li><p>ports/&lt;port&gt;/: A port-specific module.</p></li>
+<li><p>py/：与 CPython 核心库功能完全相同的核心库。</p></li>
+<li><p>extmod/： CPython 或 MicroPython 特定的模块，它在多个适配端之间共享。</p></li>
+<li><p>ports/&lt;port&gt;/：适配端特定的模块。</p></li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>This chapter describes modules implemented in <code class="docutils literal notranslate"><span class="pre">py/</span></code> or core modules.
-See <a class="reference internal" href="extendingmicropython.html#extendingmicropython"><span class="std std-ref">Extending MicroPython in C</span></a> for details on implementing an external module.
-For details on port-specific modules, see <a class="reference internal" href="porting.html#porting-to-a-board"><span class="std std-ref">Porting MicroPython</span></a>.</p>
+<p>这一章节主要描述在 <code class="docutils literal notranslate"><span class="pre">py/</span></code> 或核心模块中实现的模块。 关于实现外部模块的详细信息请参阅 <a class="reference internal" href="extendingmicropython.html#extendingmicropython"><span class="std std-ref">Extending MicroPython in C</span></a> 。 关于适配端特定的模块的详细信息请参阅 <a class="reference internal" href="porting.html#porting-to-a-board"><span class="std std-ref">Porting MicroPython</span></a> 。</p>
 </div>
 <section id="implementing-a-core-module">
-<h2 id="implementing-a-core-module">Implementing a core module<a class="headerlink" href="#implementing-a-core-module" title="Permalink to this heading">¶</a></h2>
-<p>Like CPython, MicroPython has core builtin modules that can be accessed through import statements.
-An example is the <code class="docutils literal notranslate"><span class="pre">gc</span></code> module discussed in <a class="reference internal" href="memorymgt.html#memorymanagement"><span class="std std-ref">内存管理</span></a>.</p>
+<h2 id="implementing-a-core-module">实现一个核心模块<a class="headerlink" href="#implementing-a-core-module" title="Permalink to this heading">¶</a></h2>
+<p>像 CPython 一样， MicroPython 有可以通过 import 语句导入的核心内置模块。 例如，在 <a class="reference internal" href="memorymgt.html#memorymanagement"><span class="std std-ref">内存管理</span></a> 中讨论的 <code class="docutils literal notranslate"><span class="pre">gc</span></code> 模块。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import gc
 &gt;&gt;&gt; gc.enable<span class="o">()</span>
 &gt;&gt;&gt;
 </pre></div>
 </div>
-<p>MicroPython has several other builtin standard/core modules like <code class="docutils literal notranslate"><span class="pre">io</span></code>, <code class="docutils literal notranslate"><span class="pre">array</span></code> etc.
-Adding a new core module involves several modifications.</p>
-<p>First, create the <code class="docutils literal notranslate"><span class="pre">C</span></code> file in the <code class="docutils literal notranslate"><span class="pre">py/</span></code> directory. In this example we are adding a
-hypothetical new module <code class="docutils literal notranslate"><span class="pre">subsystem</span></code> in the file <code class="docutils literal notranslate"><span class="pre">modsubsystem.c</span></code>:</p>
+<p>MicroPython 还有一些其他内置标准/核心模块，如 <code class="docutils literal notranslate"><span class="pre">io</span></code>、<code class="docutils literal notranslate"><span class="pre">array</span></code> 等。</p>
+<p>首先，在 <code class="docutils literal notranslate"><span class="pre">py/</span></code> 目录中创建一个 <code class="docutils literal notranslate"><span class="pre">C</span></code> 代码文件。 在这个例子中，我们假设为系统添加一个新的模块 <code class="docutils literal notranslate"><span class="pre">subsystem</span></code> ，将代码实现在文件 <code class="docutils literal notranslate"><span class="pre">modsubsystem.c</span></code> 中：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">"py/builtin.h"</span><span class="cp"></span>
 <span class="cp">#include</span> <span class="cpf">"py/runtime.h"</span><span class="cp"></span>
 
@@ -455,19 +448,15 @@ hypothetical new module <code class="docutils literal notranslate"><span class="
 <span class="cp">#endif</span>
 </pre></div>
 </div>
-<p>The implementation includes a definition of all functions related to the module and adds the
-functions to the module’s global table in <code class="docutils literal notranslate"><span class="pre">mp_module_subsystem_globals_table</span></code>. It also
-creates the module object with <code class="docutils literal notranslate"><span class="pre">mp_module_subsystem</span></code>.  The module is then registered with
-the wider system via the <code class="docutils literal notranslate"><span class="pre">MP_REGISTER_MODULE</span></code> macro.</p>
-<p>After building and running the modified MicroPython, the module should now be importable:</p>
+<p>模块的实现包括所有与模块相关的函数的定义，并在 <code class="docutils literal notranslate"><span class="pre">mp_module_subsystem_globals_table</span></code> 中将函数添加到模块的全局表中。 它还通过 <code class="docutils literal notranslate"><span class="pre">mp_module_subsystem</span></code> 创建了模块对象，并通过 <code class="docutils literal notranslate"><span class="pre">MP_REGISTER_MODULE</span></code> 宏向更广泛的系统注册该模块。</p>
+<p>在编译并运行修改过的 MicroPython 之后，模块即可被导入：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import subsystem
 &gt;&gt;&gt; subsystem.info<span class="o">()</span>
 <span class="m">42</span>
 &gt;&gt;&gt;
 </pre></div>
 </div>
-<p>Our <code class="docutils literal notranslate"><span class="pre">info()</span></code> function currently returns just a single number but can be extended
-to do anything.  Similarly, more functions can be added to this new module.</p>
+<p>该 <code class="docutils literal notranslate"><span class="pre">info()</span></code> 函数目前只返回一个数字，但本质上可以扩展为任何类型。 举一反三地，还可以为该新模块添加更多的函数。</p>
 </section>
 </section>
 
