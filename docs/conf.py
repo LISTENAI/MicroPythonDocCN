@@ -312,5 +312,5 @@ html_theme_options = {
     'globaltoc_depth': 4,
     'color_primary': 'blue',
     'color_accent': 'light-blue',
-    'theme_color': 'blue',
+    'theme_color': '#2196f3',
 }
