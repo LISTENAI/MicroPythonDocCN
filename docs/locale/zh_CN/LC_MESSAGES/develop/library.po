@@ -21,51 +21,58 @@ msgstr ""
 
 #: ../../develop/library.rst:4
 msgid "Implementing a Module"
-msgstr ""
+msgstr "实现一个模块"
 
 #: ../../develop/library.rst:6
 msgid ""
 "This chapter details how to implement a core module in MicroPython. "
 "MicroPython modules can be one of the following:"
 msgstr ""
+"这一章节详细讲解如何在 MicroPython 实现一个核心模块。 "
+"MicroPython 模块可以是下列之一："
 
 #: ../../develop/library.rst:9
 msgid ""
 "Built-in module: A general module that is be part of the MicroPython "
 "repository."
 msgstr ""
+"内置模块（ Built-in module ）：属于 MicroPython 仓库的核心模块。"
 
 #: ../../develop/library.rst:10
 msgid ""
 "User module: A module that is useful for your specific project that you "
 "maintain in your own repository or private codebase."
 msgstr ""
+"用户模块（ User module ）：你自己的仓库或私有代码库中特定的项目的有用的模块。"
 
 #: ../../develop/library.rst:12
 msgid ""
 "Dynamic module: A module that can be deployed and imported at runtime to "
 "your device."
 msgstr ""
+"动态模块（ Dynamic module ）：可以在运行时部署并导入到你的设备的模块。"
 
 #: ../../develop/library.rst:14
 msgid ""
 "A module in MicroPython can be implemented in one of the following "
 "locations:"
 msgstr ""
+"在 MicroPython 中，模块可以在下列路径中实现："
 
 #: ../../develop/library.rst:16
 msgid "py/: A core library that mirrors core CPython functionality."
-msgstr ""
+msgstr "py/：与 CPython 核心库功能完全相同的核心库。"
 
 #: ../../develop/library.rst:17
 msgid ""
 "extmod/: A CPython or MicroPython-specific module that is shared across "
 "multiple ports."
 msgstr ""
+"extmod/： CPython 或 MicroPython 特定的模块，它在多个适配端之间共享。"
 
 #: ../../develop/library.rst:18
 msgid "ports/<port>/: A port-specific module."
-msgstr ""
+msgstr "ports/<port>/：适配端特定的模块。"
 
 #: ../../develop/library.rst:21
 msgid ""
@@ -74,10 +81,13 @@ msgid ""
 "module. For details on port-specific modules, see "
 ":ref:`porting_to_a_board`."
 msgstr ""
+"这一章节主要描述在 ``py/`` 或核心模块中实现的模块。 "
+"关于实现外部模块的详细信息请参阅 :ref:`extendingmicropython` 。 "
+"关于适配端特定的模块的详细信息请参阅 :ref:`porting_to_a_board` 。"
 
 #: ../../develop/library.rst:26
 msgid "Implementing a core module"
-msgstr ""
+msgstr "实现一个核心模块"
 
 #: ../../develop/library.rst:28
 msgid ""
@@ -85,12 +95,15 @@ msgid ""
 "through import statements. An example is the ``gc`` module discussed in "
 ":ref:`memorymanagement`."
 msgstr ""
+"像 CPython 一样， MicroPython 有可以通过 import 语句导入的核心内置模块。 "
+"例如，在 :ref:`memorymanagement` 中讨论的 ``gc`` 模块。"
 
 #: ../../develop/library.rst:37
 msgid ""
 "MicroPython has several other builtin standard/core modules like ``io``, "
 "``array`` etc. Adding a new core module involves several modifications."
 msgstr ""
+"MicroPython 还有一些其他内置标准/核心模块，如 ``io``、``array`` 等。 "
 
 #: ../../develop/library.rst:40
 msgid ""
@@ -98,6 +111,9 @@ msgid ""
 " are adding a hypothetical new module ``subsystem`` in the file "
 "``modsubsystem.c``:"
 msgstr ""
+"首先，在 ``py/`` 目录中创建一个 ``C`` 代码文件。 "
+"在这个例子中，我们假设为系统添加一个新的模块 ``subsystem`` ，"
+"将代码实现在文件 ``modsubsystem.c`` 中："
 
 #: ../../develop/library.rst:71
 msgid ""
@@ -107,12 +123,17 @@ msgid ""
 "with ``mp_module_subsystem``.  The module is then registered with the "
 "wider system via the ``MP_REGISTER_MODULE`` macro."
 msgstr ""
+"模块的实现包括所有与模块相关的函数的定义，"
+"并在 ``mp_module_subsystem_globals_table`` 中将函数添加到模块的全局表中。 "
+"它还通过 ``mp_module_subsystem`` 创建了模块对象，"
+"并通过 ``MP_REGISTER_MODULE`` 宏向更广泛的系统注册该模块。"
 
 #: ../../develop/library.rst:76
 msgid ""
 "After building and running the modified MicroPython, the module should "
 "now be importable:"
 msgstr ""
+"在编译并运行修改过的 MicroPython 之后，模块即可被导入："
 
 #: ../../develop/library.rst:85
 msgid ""
@@ -120,4 +141,6 @@ msgid ""
 " extended to do anything.  Similarly, more functions can be added to this"
 " new module."
 msgstr ""
+"该 ``info()`` 函数目前只返回一个数字，但本质上可以扩展为任何类型。 "
+"举一反三地，还可以为该新模块添加更多的函数。"
 
