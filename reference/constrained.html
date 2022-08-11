@@ -47,7 +47,7 @@
   
   
   
-    <title>MicroPython on microcontrollers &#8212; MicroPython 1.18 文档</title>
+    <title>微处理器上的 MicroPython &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -99,7 +99,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> MicroPython on microcontrollers </span>
+          <span class="md-header-nav__topic"> 微处理器上的 MicroPython </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -238,41 +238,41 @@
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython on microcontrollers </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> 微处理器上的 MicroPython </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">MicroPython on microcontrollers</a>
+      <a href="#" class="md-nav__link md-nav__link--active">微处理器上的 MicroPython</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-constrained--page-root" class="md-nav__link">MicroPython on microcontrollers</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-constrained--page-root" class="md-nav__link">微处理器上的 MicroPython</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#flash-memory" class="md-nav__link">Flash memory</a>
+        <li class="md-nav__item"><a href="#flash-memory" class="md-nav__link">闪存（ Flash memory ）</a>
         </li>
         <li class="md-nav__item"><a href="#ram" class="md-nav__link">RAM</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#compilation-phase" class="md-nav__link">Compilation phase</a>
+        <li class="md-nav__item"><a href="#compilation-phase" class="md-nav__link">编译阶段</a>
         </li>
-        <li class="md-nav__item"><a href="#execution-phase" class="md-nav__link">Execution phase</a>
+        <li class="md-nav__item"><a href="#execution-phase" class="md-nav__link">执行阶段</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#the-heap" class="md-nav__link">The heap</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#the-heap" class="md-nav__link">堆</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#fragmentation" class="md-nav__link">Fragmentation</a>
+        <li class="md-nav__item"><a href="#fragmentation" class="md-nav__link">碎片化</a>
         </li>
-        <li class="md-nav__item"><a href="#reporting" class="md-nav__link">Reporting</a>
+        <li class="md-nav__item"><a href="#reporting" class="md-nav__link">报告</a>
         </li>
-        <li class="md-nav__item"><a href="#control-of-garbage-collection" class="md-nav__link">Control of garbage collection</a>
+        <li class="md-nav__item"><a href="#control-of-garbage-collection" class="md-nav__link">控制垃圾回收</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#string-operations" class="md-nav__link">String operations</a>
+        <li class="md-nav__item"><a href="#string-operations" class="md-nav__link">字符串操作</a>
         </li>
         <li class="md-nav__item"><a href="#postscript" class="md-nav__link">Postscript</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#footnote-gc-collect-return-value" class="md-nav__link">Footnote: gc.collect() return value</a>
+        <li class="md-nav__item"><a href="#footnote-gc-collect-return-value" class="md-nav__link">注释： gc.collect() 返回值</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -284,7 +284,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#flash-memory" class="md-nav__link">Flash memory</a>
+      <a href="#flash-memory" class="md-nav__link">闪存（ Flash memory ）</a>
       
     
     </li>
@@ -296,14 +296,14 @@
     <li class="md-nav__item">
     
     
-      <a href="#compilation-phase" class="md-nav__link">Compilation phase</a>
+      <a href="#compilation-phase" class="md-nav__link">编译阶段</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#execution-phase" class="md-nav__link">Execution phase</a>
+      <a href="#execution-phase" class="md-nav__link">执行阶段</a>
       
     
     </li></ul>
@@ -312,26 +312,26 @@
     <li class="md-nav__item">
     
     
-      <a href="#the-heap" class="md-nav__link">The heap</a>
+      <a href="#the-heap" class="md-nav__link">堆</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="#fragmentation" class="md-nav__link">Fragmentation</a>
+      <a href="#fragmentation" class="md-nav__link">碎片化</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#reporting" class="md-nav__link">Reporting</a>
+      <a href="#reporting" class="md-nav__link">报告</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#control-of-garbage-collection" class="md-nav__link">Control of garbage collection</a>
+      <a href="#control-of-garbage-collection" class="md-nav__link">控制垃圾回收</a>
       
     
     </li></ul>
@@ -340,7 +340,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#string-operations" class="md-nav__link">String operations</a>
+      <a href="#string-operations" class="md-nav__link">字符串操作</a>
       
     
     </li>
@@ -352,7 +352,7 @@
     <li class="md-nav__item">
     
     
-      <a href="#footnote-gc-collect-return-value" class="md-nav__link">Footnote: gc.collect() return value</a>
+      <a href="#footnote-gc-collect-return-value" class="md-nav__link">注释： gc.collect() 返回值</a>
       
     
     </li></ul>
@@ -481,33 +481,33 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#reference-constrained--page-root" class="md-nav__link">MicroPython on microcontrollers</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#reference-constrained--page-root" class="md-nav__link">微处理器上的 MicroPython</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#flash-memory" class="md-nav__link">Flash memory</a>
+        <li class="md-nav__item"><a href="#flash-memory" class="md-nav__link">闪存（ Flash memory ）</a>
         </li>
         <li class="md-nav__item"><a href="#ram" class="md-nav__link">RAM</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#compilation-phase" class="md-nav__link">Compilation phase</a>
+        <li class="md-nav__item"><a href="#compilation-phase" class="md-nav__link">编译阶段</a>
         </li>
-        <li class="md-nav__item"><a href="#execution-phase" class="md-nav__link">Execution phase</a>
+        <li class="md-nav__item"><a href="#execution-phase" class="md-nav__link">执行阶段</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#the-heap" class="md-nav__link">The heap</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#the-heap" class="md-nav__link">堆</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#fragmentation" class="md-nav__link">Fragmentation</a>
+        <li class="md-nav__item"><a href="#fragmentation" class="md-nav__link">碎片化</a>
         </li>
-        <li class="md-nav__item"><a href="#reporting" class="md-nav__link">Reporting</a>
+        <li class="md-nav__item"><a href="#reporting" class="md-nav__link">报告</a>
         </li>
-        <li class="md-nav__item"><a href="#control-of-garbage-collection" class="md-nav__link">Control of garbage collection</a>
+        <li class="md-nav__item"><a href="#control-of-garbage-collection" class="md-nav__link">控制垃圾回收</a>
         </li></ul>
             </nav>
         </li>
-        <li class="md-nav__item"><a href="#string-operations" class="md-nav__link">String operations</a>
+        <li class="md-nav__item"><a href="#string-operations" class="md-nav__link">字符串操作</a>
         </li>
         <li class="md-nav__item"><a href="#postscript" class="md-nav__link">Postscript</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#footnote-gc-collect-return-value" class="md-nav__link">Footnote: gc.collect() return value</a>
+        <li class="md-nav__item"><a href="#footnote-gc-collect-return-value" class="md-nav__link">注释： gc.collect() 返回值</a>
         </li></ul>
             </nav>
         </li></ul>
@@ -523,83 +523,41 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-on-microcontrollers">
-<span id="constrained"></span><h1 id="reference-constrained--page-root">MicroPython on microcontrollers<a class="headerlink" href="#reference-constrained--page-root" title="此标题的永久链接">¶</a></h1>
-<p>MicroPython is designed to be capable of running on microcontrollers. These
-have hardware limitations which may be unfamiliar to programmers more familiar
-with conventional computers. In particular the amount of RAM and nonvolatile
-“disk” (flash memory) storage is limited. This tutorial offers ways to make
-the most of the limited resources. Because MicroPython runs on controllers
-based on a variety of architectures, the methods presented are generic: in some
-cases it will be necessary to obtain detailed information from platform specific
-documentation.</p>
+<span id="constrained"></span><h1 id="reference-constrained--page-root">微处理器上的 MicroPython<a class="headerlink" href="#reference-constrained--page-root" title="此标题的永久链接">¶</a></h1>
+<p>MicroPython 旨在能够在微处理器上运行。这些处理器具有硬件限制，这对于更熟悉传统计算机的程序员来说可能是较为陌生的。特别是 RAM 和非易失性“磁盘”（闪存）存储的数量是有限的。本教程提供了充分利用有限资源的方法。因为 MicroPython 在基于各种架构的控制器上运行，所以提供的方法在大部分情况下是通用的：但在某些情况下，需要从特定于平台的文档中获取详细信息。</p>
 <section id="flash-memory">
-<h2 id="flash-memory">Flash memory<a class="headerlink" href="#flash-memory" title="此标题的永久链接">¶</a></h2>
-<p>On the Pyboard the simple way to address the limited capacity is to fit a micro
-SD card. In some cases this is impractical, either because the device does not
-have an SD card slot or for reasons of cost or power consumption; hence the
-on-chip flash must be used. The firmware including the MicroPython subsystem is
-stored in the onboard flash. The remaining capacity is available for use. For
-reasons connected with the physical architecture of the flash memory part of
-this capacity may be inaccessible as a filesystem. In such cases this space may
-be employed by incorporating user modules into a firmware build which is then
-flashed to the device.</p>
-<p>There are two ways to achieve this: frozen modules and frozen bytecode. Frozen
-modules store the Python source with the firmware. Frozen bytecode uses the
-cross compiler to convert the source to bytecode which is then stored with the
-firmware. In either case the module may be accessed with an import statement:</p>
+<h2 id="flash-memory">闪存（ Flash memory ）<a class="headerlink" href="#flash-memory" title="此标题的永久链接">¶</a></h2>
+<p>在 Pyboard 上，解决容量有限的简单方法是安装 micro SD 卡。在某些情况下，这是不切实际的，要么是因为设备没有 SD 卡插槽，要么是出于成本或功耗的原因；因此必须使用板载 flash 。包含 MicroPython 子系统的固件存储在板载 flash 中。除固件外的剩余容量可供使用。由于与 flash 的物理架构有关的原因，此容量的一部分可能无法作为文件系统访问。在这种情况下，可以通过将用户模块合并到固件构建中来使用该空间，然后将其闪存到设备中。</p>
+<p>有两种方法可以实现这一点：冻结模块和冻结字节码。冻结的模块将 Python 源代码与固件一起存储。冻结字节码使用交叉编译器将源代码转换为字节码，然后与固件一起存储。在上述任何一种方式中，都可以使用 import 语句访问模块：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">mymodule</span>
 </pre></div>
 </div>
-<p>The procedure for producing frozen modules and bytecode is platform dependent;
-instructions for building the firmware can be found in the README files in the
-relevant part of the source tree.</p>
-<p>In general terms the steps are as follows:</p>
+<p>生成冻结模块和字节码的过程取决于平台；可以在源代码树相关部分的 README 文件中找到构建固件的说明。</p>
+<p>一般情况下，步骤如下：</p>
 <ul class="simple">
-<li><p>Clone the MicroPython <a class="reference external" href="https://github.com/micropython/micropython">repository</a>.</p></li>
-<li><p>Acquire the (platform specific) toolchain to build the firmware.</p></li>
-<li><p>Build the cross compiler.</p></li>
-<li><p>Place the modules to be frozen in a specified directory (dependent on whether
-the module is to be frozen as source or as bytecode).</p></li>
-<li><p>Build the firmware. A specific command may be required to build frozen
-code of either type - see the platform documentation.</p></li>
-<li><p>Flash the firmware to the device.</p></li>
+<li><p>克隆 MicroPython <a class="reference external" href="https://github.com/micropython/micropython">代码仓库</a> 。</p></li>
+<li><p>获取（特定于平台的）工具链来构建固件。</p></li>
+<li><p>构建交叉编译器。</p></li>
+<li><p>将要冻结的模块放在指定的目录（取决于是将模块冻结为源代码，或字节码）。</p></li>
+<li><p>构建固件。构建任一类型的冻结代码可能需要特定命令 - 请参阅平台文档。</p></li>
+<li><p>将固件刷入设备。</p></li>
 </ul>
 </section>
 <section id="ram">
 <h2 id="ram">RAM<a class="headerlink" href="#ram" title="此标题的永久链接">¶</a></h2>
-<p>When reducing RAM usage there are two phases to consider: compilation and
-execution. In addition to memory consumption, there is also an issue known as
-heap fragmentation. In general terms it is best to minimise the repeated
-creation and destruction of objects. The reason for this is covered in the
-section covering the <a class="reference internal" href="#heap">heap</a>.</p>
+<p>要减少 RAM 使用时，需要考虑两个阶段：编译和执行。除了内存消耗之外，还有一个我们称之为堆碎片的问题。一般来说，最好尽量减少对象的重复创建和销毁。其原因在 <a class="reference external" href="#heap">堆</a> 的部分中进行了介绍。</p>
 <section id="compilation-phase">
-<h3 id="compilation-phase">Compilation phase<a class="headerlink" href="#compilation-phase" title="此标题的永久链接">¶</a></h3>
-<p>When a module is imported, MicroPython compiles the code to bytecode which is
-then executed by the MicroPython virtual machine (VM). The bytecode is stored
-in RAM. The compiler itself requires RAM, but this becomes available for use
-when the compilation has completed.</p>
-<p>If a number of modules have already been imported the situation can arise where
-there is insufficient RAM to run the compiler. In this case the import
-statement will produce a memory exception.</p>
-<p>If a module instantiates global objects on import it will consume RAM at the
-time of import, which is then unavailable for the compiler to use on subsequent
-imports. In general it is best to avoid code which runs on import; a better
-approach is to have initialisation code which is run by the application after
-all modules have been imported. This maximises the RAM available to the
-compiler.</p>
-<p>If RAM is still insufficient to compile all modules one solution is to
-precompile modules. MicroPython has a cross compiler capable of compiling Python
-modules to bytecode (see the README in the mpy-cross directory). The resulting
-bytecode file has a .mpy extension; it may be copied to the filesystem and
-imported in the usual way. Alternatively some or all modules may be implemented
-as frozen bytecode: on most platforms this saves even more RAM as the bytecode
-is run directly from flash rather than being stored in RAM.</p>
+<h3 id="compilation-phase">编译阶段<a class="headerlink" href="#compilation-phase" title="此标题的永久链接">¶</a></h3>
+<p>导入模块时， MicroPython 将代码编译为字节码，然后由 MicroPython 虚拟机 (VM) 执行。字节码存储在 RAM 中。编译器本身需要 RAM ，但在编译完成后即可使用。</p>
+<p>如果已经导入了多个模块，则可能会出现 RAM 不足以运行编译器的情况。在这种情况下， import 语句将抛出内存异常。</p>
+<p>如果一个模块在导入时实例化全局对象，它将在导入时就消耗 RAM ，然后编译器无法在后续导入时使用这些 RAM 。一般来说，最好避免在导入时运行的代码；更好的方法是在导入所有模块后让应用程序运行初始化代码。这使编译器可用的 RAM 最大化。</p>
+<p>如果 RAM 仍然不足以编译所有模块，一种解决方案是预编译模块。 MicroPython 有一个交叉编译器，能够将 Python 模块编译为字节码（请参阅 mpy-cross 目录中的 README 文件）。生成的字节码文件具有 .mpy 扩展名；它可以被复制到文件系统并以一般形式导入（即 import 语句）。或者，部分或全部模块可以实现为冻结字节码：在大多数平台上，这可以节省更多 RAM ，因为字节码直接从闪存运行，而无需存储在 RAM 中。</p>
 </section>
 <section id="execution-phase">
-<h3 id="execution-phase">Execution phase<a class="headerlink" href="#execution-phase" title="此标题的永久链接">¶</a></h3>
-<p>There are a number of coding techniques for reducing RAM usage.</p>
-<p><strong>Constants</strong></p>
-<p>MicroPython provides a <code class="docutils literal notranslate"><span class="pre">const</span></code> keyword which may be used as follows:</p>
+<h3 id="execution-phase">执行阶段<a class="headerlink" href="#execution-phase" title="此标题的永久链接">¶</a></h3>
+<p>有一些写代码的技巧可以减少 RAM 占用。</p>
+<p><strong>常量</strong></p>
+<p>MicroPython 提供了 <code class="docutils literal notranslate"><span class="pre">const</span></code> 关键字，可以这样使用：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">micropython</span> <span class="k">import</span> <span class="n">const</span>
 <span class="n">ROWS</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mi">33</span><span class="p">)</span>
 <span class="n">_COLS</span> <span class="o">=</span> <span class="n">const</span><span class="p">(</span><span class="mh">0x10</span><span class="p">)</span>
@@ -607,55 +565,28 @@ is run directly from flash rather than being stored in RAM.</p>
 <span class="n">b</span> <span class="o">=</span> <span class="n">_COLS</span>
 </pre></div>
 </div>
-<p>In both instances where the constant is assigned to a variable the compiler
-will avoid coding a lookup to the name of the constant by substituting its
-literal value. This saves bytecode and hence RAM. However the <code class="docutils literal notranslate"><span class="pre">ROWS</span></code> value
-will occupy at least two machine words, one each for the key and value in the
-globals dictionary. The presence in the dictionary is necessary because another
-module might import or use it. This RAM can be saved by prepending the name
-with an underscore as in <code class="docutils literal notranslate"><span class="pre">_COLS</span></code>: this symbol is not visible outside the
-module so will not occupy RAM.</p>
-<p>The argument to <code class="docutils literal notranslate"><span class="pre">const()</span></code> may be anything which, at compile time, evaluates
-to an integer e.g. <code class="docutils literal notranslate"><span class="pre">0x100</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">8</span></code>. It can even include other const
-symbols that have already been defined, e.g. <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">BIT</span></code>.</p>
-<p><strong>Constant data structures</strong></p>
-<p>Where there is a substantial volume of constant data and the platform supports
-execution from Flash, RAM may be saved as follows. The data should be located in
-Python modules and frozen as bytecode. The data must be defined as <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>
-objects. The compiler ‘knows’ that <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> objects are immutable and ensures
-that the objects remain in flash memory rather than being copied to RAM. The
-<a class="reference internal" href="../library/struct.html#module-struct" title="struct: pack and unpack primitive data types"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> module can assist in converting between <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> types and other
-Python built-in types.</p>
-<p>When considering the implications of frozen bytecode, note that in Python
-strings, floats, bytes, integers and complex numbers are immutable. Accordingly
-these will be frozen into flash. Thus, in the line</p>
+<p>在将常量分配给变量的两种情况下，编译器都会通过替换常量的字面值来避免对常量名称的查找进行编码。这可以节省字节码，从而节省 RAM 。然而， <code class="docutils literal notranslate"><span class="pre">ROWS</span></code> 值将占用至少两个机器字，分别用于全局字典中的键和值。它在字典中的存在是必要的，因为另一个模块可能会导入或使用它。可以通过在名称前加上下划线来保存此 RAM ，如上例中的 <code class="docutils literal notranslate"><span class="pre">_COLS</span></code> ：此符号在模块外部不可见，因此不会占用 RAM。</p>
+<p><code class="docutils literal notranslate"><span class="pre">const()</span></code> 的参数可以是在编译​​时计算为整数的任何值，例如 <code class="docutils literal notranslate"><span class="pre">0x100</span></code> 或 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">8</span></code> 。它甚至可以包含其他已定义的 const 符号，例如 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">BIT</span></code> 。</p>
+<p><strong>常量数据结构</strong></p>
+<p>在有大量常量数据且平台支持从 Flash 执行的情况下， RAM 可以按如下方式保存。数据应位于 Python 模块中并冻结为字节码。数据必须定义为 <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 对象。编译器“知道” <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 对象是不可变的，并确保对象保留在 Flash 中而不是被复制到 RAM 中。 <a class="reference internal" href="../library/struct.html#module-struct" title="struct: pack and unpack primitive data types"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> 模块有助于数据在 <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 类型和其他 Python 内置类型之间进行转换。</p>
+<p>在考虑冻结字节码的影响时，请注意在 Python 字符串中，浮点数、字节、整数和复数是不可变的。因此，这些将被冻结到 flash 中。因此，在此行中</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mystring</span> <span class="o">=</span> <span class="s2">"The quick brown fox"</span>
 </pre></div>
 </div>
-<p>the actual string “The quick brown fox” will reside in flash. At runtime a
-reference to the string is assigned to the <em>variable</em> <code class="docutils literal notranslate"><span class="pre">mystring</span></code>. The reference
-occupies a single machine word. In principle a long integer could be used to
-store constant data:</p>
+<p>实际的字符串 “The quick brown fox” 将驻留在闪存中。在运行时，对字符串的引用被分配给 <em>变量</em> <code class="docutils literal notranslate"><span class="pre">mystring</span></code> 。该引用占用一个机器字。原则上长整数也可以作为常量数据存储：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">bar</span> <span class="o">=</span> <span class="mh">0xDEADBEEF0000DEADBEEF</span>
 </pre></div>
 </div>
-<p>As in the string example, at runtime a reference to the arbitrarily large
-integer is assigned to the variable <code class="docutils literal notranslate"><span class="pre">bar</span></code>. That reference occupies a
-single machine word.</p>
-<p>It might be expected that tuples of integers could be employed for the purpose
-of storing constant data with minimal RAM use. With the current compiler this
-is ineffective (the code works, but RAM is not saved).</p>
+<p>与字符串示例一样，在运行时将任意大整数的引用分配给变量 <code class="docutils literal notranslate"><span class="pre">bar</span></code> 。该引用占用一个机器字。</p>
+<p>据此，似乎可以预估整数元组能以最少的 RAM 占用作为常量数据存储。但对于当前的编译器，这是无效的（代码有效，但没有节省 RAM ）。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>At runtime the tuple will be located in RAM. This may be subject to future
-improvement.</p>
-<p><strong>Needless object creation</strong></p>
-<p>There are a number of situations where objects may unwittingly be created and
-destroyed. This can reduce the usability of RAM through fragmentation. The
-following sections discuss instances of this.</p>
-<p><strong>String concatenation</strong></p>
-<p>Consider the following code fragments which aim to produce constant strings:</p>
+<p>在运行时，元组将位于 RAM 中。这一行为可能会在未来改进。</p>
+<p><strong>无需创建对象</strong></p>
+<p>在许多情况下，对象可能会在不经意间被创建和销毁。这会导致碎片化，而后降低 RAM 的可用性。以下部分讨论了这方面的实例。</p>
+<p><strong>字符串连接</strong></p>
+<p>假设以下代码片段，以生成常量字符串：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s2">"foo"</span> <span class="o">+</span> <span class="s2">"bar"</span>
 <span class="n">var1</span> <span class="o">=</span> <span class="s2">"foo"</span> <span class="s2">"bar"</span>
 <span class="n">var2</span> <span class="o">=</span> <span class="s2">"""</span><span class="se">\</span>
@@ -663,23 +594,14 @@ following sections discuss instances of this.</p>
 <span class="s2">bar"""</span>
 </pre></div>
 </div>
-<p>Each produces the same outcome, however the first needlessly creates two string
-objects at runtime, allocates more RAM for concatenation before producing the
-third. The others perform the concatenation at compile time which is more
-efficient, reducing fragmentation.</p>
-<p>Where strings must be dynamically created before being fed to a stream such as
-a file it will save RAM if this is done in a piecemeal fashion. Rather than
-creating a large string object, create a substring and feed it to the stream
-before dealing with the next.</p>
-<p>The best way to create dynamic strings is by means of the string <code class="docutils literal notranslate"><span class="pre">format()</span></code>
-method:</p>
+<p>其中每一句的效果都相同，但是第一个在运行时不必要地创建了两个字符串对象，在产生结果之前导致分配更多的 RAM 用于连接。其他语句则在编译时执行连接，效率更高，减少了碎片化。</p>
+<p>在将字符串输入到诸如文件之类的流之前，必须动态创建字符串，如果以逐个传入的方式完成，它将节省 RAM 。与其创建一个大字符串对象，不如创建一个子字符串并将其提供给流，然后再处理下一个。</p>
+<p>创建动态字符串的最佳方法，是使用字符串 <code class="docutils literal notranslate"><span class="pre">format()</span></code> 方法：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="s2">"Temperature </span><span class="si">{:5.2f}</span><span class="s2"> Pressure </span><span class="si">{:06d}</span><span class="se">\n</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span> <span class="n">press</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Buffers</strong></p>
-<p>When accessing devices such as instances of UART, I2C and SPI interfaces, using
-pre-allocated buffers avoids the creation of needless objects. Consider these
-two loops:</p>
+<p><strong>缓冲区</strong></p>
+<p>在访问 UART、I2C 和 SPI 接口之类的设备实例时，使用预分配缓冲区可避免创建不必要的对象。假设在这两个循环中：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
     <span class="n">var</span> <span class="o">=</span> <span class="n">spi</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span>
     <span class="c1"># process data</span>
@@ -690,11 +612,9 @@ two loops:</p>
     <span class="c1"># process data in buf</span>
 </pre></div>
 </div>
-<p>The first creates a buffer on each pass whereas the second re-uses a pre-allocated
-buffer; this is both faster and more efficient in terms of memory fragmentation.</p>
-<p><strong>Bytes are smaller than ints</strong></p>
-<p>On most platforms an integer consumes four bytes. Consider the two calls to the
-function <code class="docutils literal notranslate"><span class="pre">foo()</span></code>:</p>
+<p>第一个在每次传递时创建一个缓冲区，而第二个重新使用预先分配的缓冲区；就考虑内存碎片问题而言，后者既更快又更高效。</p>
+<p><strong>字节比整数小</strong></p>
+<p>在大多数平台上，一个整数占用四个字节。假设在这两个 <code class="docutils literal notranslate"><span class="pre">foo()</span></code> 调用中：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="n">bar</span><span class="p">):</span>
     <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">bar</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -702,94 +622,49 @@ function <code class="docutils literal notranslate"><span class="pre">foo()</spa
 <span class="n">foo</span><span class="p">(</span><span class="sa">b</span><span class="s1">'</span><span class="se">\1\2\xff</span><span class="s1">'</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In the first call a tuple of integers is created in RAM. The second efficiently
-creates a <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> object consuming the minimum amount of RAM. If the module
-were frozen as bytecode, the <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> object would reside in flash.</p>
-<p><strong>Strings Versus Bytes</strong></p>
-<p>Python3 introduced Unicode support. This introduced a distinction between a
-string and an array of bytes. MicroPython ensures that Unicode strings take no
-additional space so long as all characters in the string are ASCII (i.e. have
-a value &lt; 126). If values in the full 8-bit range are required <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> and
-<a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> objects can be used to ensure that no additional space will be
-required. Note that most string methods (e.g. <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.strip" title="（在 Python v3.5）"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.strip()</span></code></a>) apply also to <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a>
-instances so the process of eliminating Unicode can be painless.</p>
+<p>在第一个调用中，在 RAM 中创建了一个整数元组。第二个则有效地创建了一个消耗最少 RAM 的 <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 对象。如果模块被冻结为字节码， <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 对象将驻留在闪存中。</p>
+<p><strong>字符串 VS 字节</strong></p>
+<p>Python3 引入了 Unicode 支持。这引入了字符串和字节数组之间的区别。只要 Unicode 字符串中的所有字符都是 ASCII 码（即值 &lt; 126 ）， MicroPython 确保其字符串无需占用额外空间。如果需要完整 8 位范围内的值，则可以使用 <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 和 <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> 对象来确保不需要额外的空间。请注意，大多数字符串方法（例如 <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.strip" title="（在 Python v3.5）"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.strip()</span></code></a> ）也适用于 <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 实例，因此消除 Unicode 的过程可以很轻松。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s1">'the quick brown fox'</span>   <span class="c1"># A string instance</span>
 <span class="n">b</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'the quick brown fox'</span>  <span class="c1"># A bytes instance</span>
 </pre></div>
 </div>
-<p>Where it is necessary to convert between strings and bytes the <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.encode" title="（在 Python v3.5）"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.encode()</span></code></a>
-and the <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#bytes.decode" title="（在 Python v3.5）"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bytes.decode()</span></code></a> methods can be used. Note that both strings and bytes
-are immutable. Any operation which takes as input such an object and produces
-another implies at least one RAM allocation to produce the result. In the
-second line below a new bytes object is allocated. This would also occur if <code class="docutils literal notranslate"><span class="pre">foo</span></code>
-were a string.</p>
+<p>如果需要在字符串和 bytes 之间进行转换，可以使用 <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#str.encode" title="（在 Python v3.5）"><code class="xref py py-meth docutils literal notranslate"><span class="pre">str.encode()</span></code></a> 和 <a class="reference external" href="https://docs.python.org/3.5/library/stdtypes.html#bytes.decode" title="（在 Python v3.5）"><code class="xref py py-meth docutils literal notranslate"><span class="pre">bytes.decode()</span></code></a> 方法。请注意，字符串和 bytes 都是不可变的。任何将这样一个对象作为输入并产生另一个对象的操作，都意味着至少分配一个 RAM 来产生结果。在下面的第二行中，分配了一个新的字节对象。如果 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 是一个字符串，也会发生这种情况。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span> <span class="o">=</span> <span class="sa">b</span><span class="s1">'   empty whitespace'</span>
 <span class="n">foo</span> <span class="o">=</span> <span class="n">foo</span><span class="o">.</span><span class="n">lstrip</span><span class="p">()</span>
 </pre></div>
 </div>
-<p><strong>Runtime compiler execution</strong></p>
-<p>The Python funcitons <a class="reference internal" href="../library/builtins.html#eval" title="eval"><code class="xref any py py-func docutils literal notranslate"><span class="pre">eval</span></code></a> and <a class="reference internal" href="../library/builtins.html#exec" title="exec"><code class="xref any py py-func docutils literal notranslate"><span class="pre">exec</span></code></a> invoke the compiler at runtime, which
-requires significant amounts of RAM. Note that the <code class="docutils literal notranslate"><span class="pre">pickle</span></code> library from
-<a class="reference internal" href="glossary.html#term-micropython-lib"><code class="xref any std std-term docutils literal notranslate"><span class="pre">micropython-lib</span></code></a> employs <a class="reference internal" href="../library/builtins.html#exec" title="exec"><code class="xref any py py-func docutils literal notranslate"><span class="pre">exec</span></code></a>. It may be more RAM efficient to use the
-<a class="reference internal" href="../library/json.html#module-json" title="json: JSON encoding and decoding"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> library for object serialisation.</p>
-<p><strong>Storing strings in flash</strong></p>
-<p>Python strings are immutable hence have the potential to be stored in read only
-memory. The compiler can place in flash strings defined in Python code. As with
-frozen modules it is necessary to have a copy of the source tree on the PC and
-the toolchain to build the firmware. The procedure will work even if the
-modules have not been fully debugged, so long as they can be imported and run.</p>
-<p>After importing the modules, execute:</p>
+<p><strong>运行时编译器执行</strong></p>
+<p>Python 函数 <a class="reference internal" href="../library/builtins.html#eval" title="eval"><code class="xref any py py-func docutils literal notranslate"><span class="pre">eval</span></code></a> 和 <a class="reference internal" href="../library/builtins.html#exec" title="exec"><code class="xref any py py-func docutils literal notranslate"><span class="pre">exec</span></code></a> 在运行时调用编译器，这需要大量 RAM 。请注意，来自 <a class="reference internal" href="glossary.html#term-micropython-lib"><code class="xref any std std-term docutils literal notranslate"><span class="pre">micropython-lib</span></code></a> 的 <code class="docutils literal notranslate"><span class="pre">pickle</span></code> 库使用 <a class="reference internal" href="../library/builtins.html#exec" title="exec"><code class="xref any py py-func docutils literal notranslate"><span class="pre">exec</span></code></a> 。使用 <a class="reference internal" href="../library/json.html#module-json" title="json: JSON encoding and decoding"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">json</span></code></a> 库进行对象序列化可能会提高 RAM 效率。</p>
+<p><strong>存储字符串到 flash 中</strong></p>
+<p>Python 字符串是不可变的，因此有可能存储在只读内存中。编译器可以放置在 Python 代码中定义的 flash 字符串中。与冻结模块一样，需要在 PC 上拥有源代码树的副本以及构建固件的工具链。即使模块尚未完全调试通过，该过程也将起作用，只要它们可以导入和运行。</p>
+<p>导入模块后，执行：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micropython</span><span class="o">.</span><span class="n">qstr_info</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Then copy and paste all the Q(xxx) lines into a text editor. Check for and
-remove lines which are obviously invalid. Open the file qstrdefsport.h which
-will be found in ports/stm32 (or the equivalent directory for the architecture in
-use). Copy and paste the corrected lines at the end of the file. Save the file,
-rebuild and flash the firmware. The outcome can be checked by importing the
-modules and again issuing:</p>
+<p>然后将所有 Q(xxx) 行复制并粘贴到文本编辑器中。检查并删除明显无效的行。打开文件 qstrdefsport.h ，该文件位于 ports/stm32 （或你所用架构的等效目录）中。将更正的行复制并粘贴到文件末尾。保存文件，重新构建并烧录固件。可以通过导入模块，然后再次执行函数检查结果：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micropython</span><span class="o">.</span><span class="n">qstr_info</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The Q(xxx) lines should be gone.</p>
+<p>此时 Q(xxx) 对应的行应该被删除了。</p>
 </section>
 </section>
 <section id="the-heap">
-<span id="heap"></span><h2 id="the-heap">The heap<a class="headerlink" href="#the-heap" title="此标题的永久链接">¶</a></h2>
-<p>When a running program instantiates an object the necessary RAM is allocated
-from a fixed size pool known as the heap. When the object goes out of scope (in
-other words becomes inaccessible to code) the redundant object is known as
-“garbage”. A process known as “garbage collection” (GC) reclaims that memory,
-returning it to the free heap. This process runs automatically, however it can
-be invoked directly by issuing <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a>.</p>
-<p>The discourse on this is somewhat involved. For a ‘quick fix’ issue the
-following periodically:</p>
+<span id="heap"></span><h2 id="the-heap">堆<a class="headerlink" href="#the-heap" title="此标题的永久链接">¶</a></h2>
+<p>当正在运行的程序实例化一个对象时，必要的 RAM 是从固定大小的池中分配的，该池我们称之为堆。当超出对象的作用域（换句话说，代码无法访问）时，冗余对象被称为“垃圾”。一个称为“垃圾回收”（ GC ）的进程回收该内存，将这一内存返回到空闲堆。这个过程自动运行，但是它可以通过直接调用 <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 手动触发。</p>
+<p>这方面的论述有些复杂难懂。出于更“快速解决”问题的角度而言，请定期执行以下操作：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="n">gc</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">gc</span><span class="o">.</span><span class="n">mem_free</span><span class="p">()</span> <span class="o">//</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">gc</span><span class="o">.</span><span class="n">mem_alloc</span><span class="p">())</span>
 </pre></div>
 </div>
 <section id="fragmentation">
-<h3 id="fragmentation">Fragmentation<a class="headerlink" href="#fragmentation" title="此标题的永久链接">¶</a></h3>
-<p>Say a program creates an object <code class="docutils literal notranslate"><span class="pre">foo</span></code>, then an object <code class="docutils literal notranslate"><span class="pre">bar</span></code>. Subsequently
-<code class="docutils literal notranslate"><span class="pre">foo</span></code> goes out of scope but <code class="docutils literal notranslate"><span class="pre">bar</span></code> remains. The RAM used by <code class="docutils literal notranslate"><span class="pre">foo</span></code> will be
-reclaimed by GC. However if <code class="docutils literal notranslate"><span class="pre">bar</span></code> was allocated to a higher address, the
-RAM reclaimed from <code class="docutils literal notranslate"><span class="pre">foo</span></code> will only be of use for objects no bigger than
-<code class="docutils literal notranslate"><span class="pre">foo</span></code>. In a complex or long running program the heap can become fragmented:
-despite there being a substantial amount of RAM available, there is insufficient
-contiguous space to allocate a particular object, and the program fails with a
-memory error.</p>
-<p>The techniques outlined above aim to minimise this. Where large permanent buffers
-or other objects are required it is best to instantiate these early in the
-process of program execution before fragmentation can occur. Further improvements
-may be made by monitoring the state of the heap and by controlling GC; these are
-outlined below.</p>
+<h3 id="fragmentation">碎片化<a class="headerlink" href="#fragmentation" title="此标题的永久链接">¶</a></h3>
+<p>假设一个程序创建了一个对象 <code class="docutils literal notranslate"><span class="pre">foo</span></code> ，然后创建了一个对象 <code class="docutils literal notranslate"><span class="pre">bar</span></code> 。随后 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 超出作用域，但 <code class="docutils literal notranslate"><span class="pre">bar</span></code> 仍然存在。此时 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 使用的 RAM 将被 GC 回收。然而，如果 <code class="docutils literal notranslate"><span class="pre">bar</span></code> 被分配到更高的地址，则从 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 回收的 RAM 将仅适用于分配给不大于 <code class="docutils literal notranslate"><span class="pre">foo</span></code> 的对象。在复杂或长时间运行的程序中，堆可能会变得碎片化，这将导致：尽管有大量可用 RAM ，但没有足够的连续空间来分配特定对象，并且程序会抛出内存错误而失败。</p>
+<p>上述技术旨在最大限度地减少这种情况。在需要大型永久缓冲区或其他对象的情况下，最好在程序执行过程的早期，即出现碎片化之前，实例化它们。可以通过监控堆的状态和控制 GC 来做进一步的改进；这些方式将在下文进行阐述。</p>
 </section>
 <section id="reporting">
-<h3 id="reporting">Reporting<a class="headerlink" href="#reporting" title="此标题的永久链接">¶</a></h3>
-<p>A number of library functions are available to report on memory allocation and
-to control GC. These are to be found in the <a class="reference internal" href="../library/gc.html#module-gc" title="gc: control the garbage collector"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">gc</span></code></a> and <a class="reference internal" href="../library/micropython.html#module-micropython" title="micropython: access and control MicroPython internals"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">micropython</span></code></a> modules.
-The following example may be pasted at the REPL (<code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">e</span></code> to enter paste mode,
-<code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">d</span></code> to run it).</p>
+<h3 id="reporting">报告<a class="headerlink" href="#reporting" title="此标题的永久链接">¶</a></h3>
+<p>MicroPython 中包含许多库函数可用于报告内存分配和控制 GC 。这些函数可以在 <a class="reference internal" href="../library/gc.html#module-gc" title="gc: control the garbage collector"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">gc</span></code></a> 和 <a class="reference internal" href="../library/micropython.html#module-micropython" title="micropython: access and control MicroPython internals"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">micropython</span></code></a> 模块中找到。以下示例可以粘贴到 REPL 中执行（先按下 <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">e</span></code> 进入粘贴模式，然后通过 <code class="docutils literal notranslate"><span class="pre">ctrl</span> <span class="pre">d</span></code> 运行它）。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">gc</span>
 <span class="kn">import</span> <span class="nn">micropython</span>
 <span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
@@ -808,117 +683,81 @@ The following example may be pasted at the REPL (<code class="docutils literal n
 <span class="n">micropython</span><span class="o">.</span><span class="n">mem_info</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Methods employed above:</p>
+<p>以上方法使用：</p>
 <ul class="simple">
-<li><p><a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> Force a garbage collection. See footnote.</p></li>
-<li><p><a class="reference internal" href="../library/micropython.html#micropython.mem_info" title="micropython.mem_info"><code class="xref any py py-func docutils literal notranslate"><span class="pre">micropython.mem_info()</span></code></a> Print a summary of RAM utilisation.</p></li>
-<li><p><a class="reference internal" href="../library/gc.html#gc.mem_free" title="gc.mem_free"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.mem_free()</span></code></a> Return the free heap size in bytes.</p></li>
-<li><p><a class="reference internal" href="../library/gc.html#gc.mem_alloc" title="gc.mem_alloc"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.mem_alloc()</span></code></a> Return the number of bytes currently allocated.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">micropython.mem_info(1)</span></code> Print a table of heap utilisation (detailed below).</p></li>
+<li><p><a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 强制触发一次垃圾回收。返回值可参阅注释</p></li>
+<li><p><a class="reference internal" href="../library/micropython.html#micropython.mem_info" title="micropython.mem_info"><code class="xref any py py-func docutils literal notranslate"><span class="pre">micropython.mem_info()</span></code></a> 打印当前 RAM 利用率的概览</p></li>
+<li><p><a class="reference internal" href="../library/gc.html#gc.mem_free" title="gc.mem_free"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.mem_free()</span></code></a> 返回当前空闲堆大小（以字节为单位）</p></li>
+<li><p><a class="reference internal" href="../library/gc.html#gc.mem_alloc" title="gc.mem_alloc"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.mem_alloc()</span></code></a> 返回当前已分配的字节数</p></li>
+<li><p><code class="xref any docutils literal notranslate"><span class="pre">micropython.mem_info(1)</span></code> 打印堆利用率的详细信息表（详见下文）</p></li>
 </ul>
-<p>The numbers produced are dependent on the platform, but it can be seen that
-declaring the function uses a small amount of RAM in the form of bytecode
-emitted by the compiler (the RAM used by the compiler has been reclaimed).
-Running the function uses over 10KiB, but on return <code class="docutils literal notranslate"><span class="pre">a</span></code> is garbage because it
-is out of scope and cannot be referenced. The final <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> recovers
-that memory.</p>
-<p>The final output produced by <code class="docutils literal notranslate"><span class="pre">micropython.mem_info(1)</span></code> will vary in detail but
-may be interpreted as follows:</p>
+<p>这里生成的数字取决于平台，但可以看出，声明函数使用了少量 RAM ，基于编译器发出的字节码形式（编译器使用的 RAM 已被回收）。运行该函数使用超过 10KiB 的内存，但在返回时 a 已经是垃圾，因为它超出作用并且无法引用。最后，调用 <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 恢复该内存。</p>
+<p><code class="docutils literal notranslate"><span class="pre">micropython.mem_info(1)</span></code> 产生的最终输出可能在细节上有所不同，但基本如下：</p>
 <table>
 <thead>
-<tr class="row-odd"><th class="head"><p>Symbol</p></th>
-<th class="head"><p>Meaning</p></th>
+<tr class="row-odd"><th class="head"><p>符号</p></th>
+<th class="head"><p>含义</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>.</p></td>
-<td><p>free block</p></td>
+<td><p>空闲块</p></td>
 </tr>
 <tr class="row-odd"><td><p>h</p></td>
-<td><p>head block</p></td>
+<td><p>头部块</p></td>
 </tr>
 <tr class="row-even"><td><p>=</p></td>
-<td><p>tail block</p></td>
+<td><p>尾部块</p></td>
 </tr>
 <tr class="row-odd"><td><p>m</p></td>
-<td><p>marked head block</p></td>
+<td><p>标记的头部块</p></td>
 </tr>
 <tr class="row-even"><td><p>T</p></td>
-<td><p>tuple</p></td>
+<td><p>元组</p></td>
 </tr>
 <tr class="row-odd"><td><p>L</p></td>
-<td><p>list</p></td>
+<td><p>列表</p></td>
 </tr>
 <tr class="row-even"><td><p>D</p></td>
-<td><p>dict</p></td>
+<td><p>字典</p></td>
 </tr>
 <tr class="row-odd"><td><p>F</p></td>
-<td><p>float</p></td>
+<td><p>浮点</p></td>
 </tr>
 <tr class="row-even"><td><p>B</p></td>
-<td><p>byte code</p></td>
+<td><p>字节码</p></td>
 </tr>
 <tr class="row-odd"><td><p>M</p></td>
-<td><p>module</p></td>
+<td><p>模块</p></td>
 </tr>
 </tbody>
 </table>
-<p>Each letter represents a single block of memory, a block being 16 bytes. So each
-line of the heap dump represents 0x400 bytes or 1KiB of RAM.</p>
+<p>每个字母代表一个内存块，一个块为 16 个字节。所以堆转储的每一行代表 0x400 字节或 1KiB 的 RAM 。</p>
 </section>
 <section id="control-of-garbage-collection">
-<h3 id="control-of-garbage-collection">Control of garbage collection<a class="headerlink" href="#control-of-garbage-collection" title="此标题的永久链接">¶</a></h3>
-<p>A GC can be demanded at any time by issuing <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a>. It is advantageous
-to do this at intervals, firstly to pre-empt fragmentation and secondly for
-performance. A GC can take several milliseconds but is quicker when there is
-little work to do (about 1ms on the Pyboard). An explicit call can minimise that
-delay while ensuring it occurs at points in the program when it is acceptable.</p>
-<p>Automatic GC is provoked under the following circumstances. When an attempt at
-allocation fails, a GC is performed and the allocation re-tried. Only if this
-fails is an exception raised. Secondly an automatic GC will be triggered if the
-amount of free RAM falls below a threshold. This threshold can be adapted as
-execution progresses:</p>
+<h3 id="control-of-garbage-collection">控制垃圾回收<a class="headerlink" href="#control-of-garbage-collection" title="此标题的永久链接">¶</a></h3>
+<p>可以通过发出 <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 随时触发 GC 。每隔一段时间这样做是有益的，首先是为了预防碎片化，其次是为了提高性能。 GC 可能需要几毫秒，但在几乎没有工作要做的情况下会更快（在 Pyboard 上大约只需 1 毫秒）。显式调用垃圾回收可以最大限度地减少延迟，同时确保它在程序中可接受的时机发生。</p>
+<p>在这些情况下会引发自动 GC ：首先，当尝试分配失败时，将执行 GC 并重新尝试分配。仅当此操作失败时才会引发异常。其次，如果可用 RAM 量低于阈值，将触发自动 GC。这个阈值可以通过以下方式，在执行过程中进行调整：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">gc</span><span class="o">.</span><span class="n">collect</span><span class="p">()</span>
 <span class="n">gc</span><span class="o">.</span><span class="n">threshold</span><span class="p">(</span><span class="n">gc</span><span class="o">.</span><span class="n">mem_free</span><span class="p">()</span> <span class="o">//</span> <span class="mi">4</span> <span class="o">+</span> <span class="n">gc</span><span class="o">.</span><span class="n">mem_alloc</span><span class="p">())</span>
 </pre></div>
 </div>
-<p>This will provoke a GC when more than 25% of the currently free heap becomes
-occupied.</p>
-<p>In general modules should instantiate data objects at runtime using constructors
-or other initialisation functions. The reason is that if this occurs on
-initialisation the compiler may be starved of RAM when subsequent modules are
-imported. If modules do instantiate data on import then <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> issued
-after the import will ameliorate the problem.</p>
+<p>这段代码表示，如果当前空闲堆的 25% 以上被占用，将引发 GC 。</p>
+<p>一般来说，模块应该在运行时使用构造函数或其他初始化函数来实例化数据对象。原因是如果在初始化时发生这种情况，编译器可能会在导入后续模块时不够 RAM 。如果模块确实在导入时实例化数据，那么在导入后调用 <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 将改善此问题。</p>
 </section>
 </section>
 <section id="string-operations">
-<h2 id="string-operations">String operations<a class="headerlink" href="#string-operations" title="此标题的永久链接">¶</a></h2>
-<p>MicroPython handles strings in an efficient manner and understanding this can
-help in designing applications to run on microcontrollers. When a module
-is compiled, strings which occur multiple times are stored once only, a process
-known as string interning. In MicroPython an interned string is known as a <code class="docutils literal notranslate"><span class="pre">qstr</span></code>.
-In a module imported normally that single instance will be located in RAM, but
-as described above, in modules frozen as bytecode it will be located in flash.</p>
-<p>String comparisons are also performed efficiently using hashing rather than
-character by character. The penalty for using strings rather than integers may
-hence be small both in terms of performance and RAM usage - a fact which may
-come as a surprise to C programmers.</p>
+<h2 id="string-operations">字符串操作<a class="headerlink" href="#string-operations" title="此标题的永久链接">¶</a></h2>
+<p>MicroPython 以高效的方式处理字符串，理解这一点有助于设计在微控制器上运行的应用程序。编译模块时，多次出现的字符串只存储一次，这个过程称为字符串驻留。在 MicroPython 中，驻留字符串称为 qstr 。在正常导入的模块中，单个实例将位于 RAM 中，但如上所述，在冻结为字节码的模块中，它将位于 flash 中。</p>
+<p>字符串比较也可以使用 hash 高效执行，而不是逐个字符对比。因此，在性能和 RAM 使用方面，使用字符串而不是整数的代价可能很小 —— 这可能会让 C 程序员感到惊讶。</p>
 </section>
 <section id="postscript">
 <h2 id="postscript">Postscript<a class="headerlink" href="#postscript" title="此标题的永久链接">¶</a></h2>
-<p>MicroPython passes, returns and (by default) copies objects by reference. A
-reference occupies a single machine word so these processes are efficient in
-RAM usage and speed.</p>
-<p>Where variables are required whose size is neither a byte nor a machine word
-there are standard libraries which can assist in storing these efficiently and
-in performing conversions. See the <a class="reference internal" href="../library/array.html#module-array" title="array: efficient arrays of numeric data"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">array</span></code></a>, <a class="reference internal" href="../library/struct.html#module-struct" title="struct: pack and unpack primitive data types"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> and <a class="reference internal" href="../library/uctypes.html#module-uctypes" title="uctypes: access binary data in a structured way"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">uctypes</span></code></a>
-modules.</p>
+<p>MicroPython 通过 <em>引用</em> 传递、返回和（默认情况下）复制对象。一个引用只占用单个机器字，因此这些进程在 RAM 使用和速度方面非常有效。</p>
+<p>在需要大小既不是字节也不是机器字的变量的地方，有标准库可以帮助有效地存储这些变量并执行转换。请参阅 <a class="reference internal" href="../library/array.html#module-array" title="array: efficient arrays of numeric data"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> 、 <a class="reference internal" href="../library/struct.html#module-struct" title="struct: pack and unpack primitive data types"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">struct</span></code></a> 和 <a class="reference internal" href="../library/uctypes.html#module-uctypes" title="uctypes: access binary data in a structured way"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">uctypes</span></code></a> 模块。</p>
 <section id="footnote-gc-collect-return-value">
-<h3 id="footnote-gc-collect-return-value">Footnote: gc.collect() return value<a class="headerlink" href="#footnote-gc-collect-return-value" title="此标题的永久链接">¶</a></h3>
-<p>On Unix and Windows platforms the <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> method returns an integer
-which signifies the number of distinct memory regions that were reclaimed in the
-collection (more precisely, the number of heads that were turned into frees). For
-efficiency reasons bare metal ports do not return this value.</p>
+<h3 id="footnote-gc-collect-return-value">注释： gc.collect() 返回值<a class="headerlink" href="#footnote-gc-collect-return-value" title="此标题的永久链接">¶</a></h3>
+<p>在 Unix 和 Windows 平台上， <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 方法将返回一个整数，表示在集合中回收的不同内存区域的数量（更准确地说，是变成空闲的头部块数量）。由于效率影响，裸机适配端不返回此值。</p>
 </section>
 </section>
 </section>
