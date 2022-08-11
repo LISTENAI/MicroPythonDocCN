@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../develop/cmodules.rst:4
 msgid "MicroPython external C modules"
-msgstr ""
+msgstr "MicroPython 外部 C 模块"
 
 #: ../../develop/cmodules.rst:6
 msgid ""
@@ -29,6 +29,8 @@ msgid ""
 "into limitations with the Python environment, often due to an inability "
 "to access certain hardware resources or Python speed limitations."
 msgstr ""
+"当开发 MicroPython 的模块时，你会发现可能会遇到一些 Python 环境的限制，"
+"这通常是由于无法访问某些硬件资源或 Python 速度限制。"
 
 #: ../../develop/cmodules.rst:10
 msgid ""
@@ -36,6 +38,8 @@ msgid ""
 ":ref:`speed_python`, writing some or all of your module in C (and/or C++ "
 "if implemented for your port) is a viable option."
 msgstr ""
+"如果你的限制无法通过使用 :ref:`speed_python` 中的建议解决的话，"
+"可以尝试使用 C (如果你的适配端支持的话甚至可以是 C++ ) 编写你的模块。"
 
 #: ../../develop/cmodules.rst:14
 msgid ""
@@ -46,6 +50,10 @@ msgid ""
 "it may make more sense to keep this external to the main MicroPython "
 "repository."
 msgstr ""
+"如果你的模块是旨在访问或与常用的硬件或库协作，请考虑在 MicroPython "
+"源码树中内嵌一些相似的模块，并提交 pull request 。"
+"如果你的目标是模糊的或专有的系统，则可能更适合将这个模块保持在 "
+"主 MicroPython 仓库之外。"
 
 #: ../../develop/cmodules.rst:20
 msgid ""
@@ -56,6 +64,10 @@ msgid ""
 " on all ports.  But when compiling a particular port you will only need "
 "to use one method of building, either Make or CMake."
 msgstr ""
+"这一章节描述了如何将这样的外部模块编译到 MicroPython 可执行文件或固件镜像。"
+"不论 Make 和 CMake 的编译工具都是支持的，并且当写一个外部模块时，建议同时为这两个工具添加"
+"的编译配置文件，以便于让这个模块就可在所有的适配端上使用。"
+"但是，当只为一个特定的适配端构建时，你可能只需要使用一种方法来编译，可以是 Make 或 CMake。"
 
 #: ../../develop/cmodules.rst:27
 msgid ""
@@ -64,18 +76,21 @@ msgid ""
 "dynamically in to a running MicroPython system without the need to "
 "recompile the main firmware."
 msgstr ""
+"另一种方法是使用 :ref:`natmod` ，这一方式允许编写自定义的、被放置在 .mpy 文件中的 C 代码，"
+"这些代码可以在运行的 MicroPython 系统中动态导入，"
+"而不需要重新编译主固件。"
 
 #: ../../develop/cmodules.rst:33
 msgid "Structure of an external C module"
-msgstr ""
+msgstr "外部 C 模块的结构"
 
 #: ../../develop/cmodules.rst:35
 msgid "A MicroPython user C module is a directory with the following files:"
-msgstr ""
+msgstr "一个 MicroPython 用户 C 模块是一个具有以下文件的目录："
 
 #: ../../develop/cmodules.rst:37
 msgid "``*.c`` / ``*.cpp`` / ``*.h`` source code files for your module."
-msgstr ""
+msgstr "你的模块的 ``*.c`` / ``*.cpp`` / ``*.h`` 源代码文件。"
 
 #: ../../develop/cmodules.rst:39
 msgid ""
@@ -83,6 +98,7 @@ msgid ""
 "implemented and the MicroPython binding functions to expose the functions"
 " and module(s)."
 msgstr ""
+"这些文件通常包括实现的底层功能和提供给 MicroPython 的、用于暴露这些函数和模块的绑定函数。"
 
 #: ../../develop/cmodules.rst:42
 msgid ""
@@ -90,10 +106,11 @@ msgid ""
 "find similar modules within the MicroPython tree and use them as "
 "examples."
 msgstr ""
+"目前编写这些函数/模块的最佳参考是，在 MicroPython 树中找到相似的模块作为示例。"
 
 #: ../../develop/cmodules.rst:45
 msgid "``micropython.mk`` contains the Makefile fragment for this module."
-msgstr ""
+msgstr "``micropython.mk`` 包含了这个模块的 Makefile 片段。"
 
 #: ../../develop/cmodules.rst:47
 msgid ""
@@ -102,6 +119,9 @@ msgid ""
 "expanded in your ``micropython.mk`` to a local make variable, eg "
 "``EXAMPLE_MOD_DIR := $(USERMOD_DIR)``"
 msgstr ""
+"``$(USERMOD_DIR)`` 在 ``micropython.mk`` 中作为模块目录路径的变量。"
+"它在每个 c 模块中都会重新定义，因此在你的 ``micropython.mk`` 中应该"
+"将它赋值为一个本地 make 变量，例如 ``EXAMPLE_MOD_DIR := $(USERMOD_DIR)``"
 
 #: ../../develop/cmodules.rst:52
 msgid ""
@@ -109,6 +129,9 @@ msgid ""
 "your expanded copy of ``$(USERMOD_DIR)`` to ``SRC_USERMOD``, eg "
 "``SRC_USERMOD += $(EXAMPLE_MOD_DIR)/example.c``"
 msgstr ""
+"你的 ``micropython.mk`` 必须在 ``SRC_USERMOD` `中，添加你的模块源代码，"
+"其路径应当是你赋值的对应 ``SRC_USERMOD`` 的变量的相对路径，例如 "
+"``SRC_USERMOD += $(EXAMPLE_MOD_DIR)/example.c``"
 
 #: ../../develop/cmodules.rst:56
 msgid ""
@@ -116,16 +139,21 @@ msgid ""
 "search for header files), these should be added to ``CFLAGS_USERMOD`` for"
 " C code and to ``CXXFLAGS_USERMOD`` for C++ code."
 msgstr ""
+"如果你有自定义的编译选项（例如 ``-I`` 来添加头文件所在的目录），"
+"则这些选项，为了在 C 代码可用，添加到 ``CFLAGS_USERMOD`` 中；"
+"为了在 C++ 代码可用，配置到 ``CXXFLAGS_USERMOD`` 中。"
 
 #: ../../develop/cmodules.rst:60
 msgid "``micropython.cmake`` contains the CMake configuration for this module."
-msgstr ""
+msgstr "``micropython.cmake`` 包含了这个模块的 CMake 配置。"
 
 #: ../../develop/cmodules.rst:62
 msgid ""
 "In ``micropython.cmake``, you may use ``${CMAKE_CURRENT_LIST_DIR}`` as "
 "the path to the current module."
 msgstr ""
+"在 ``micropython.cmake`` 中，你可以使用 ``${CMAKE_CURRENT_LIST_DIR}`` "
+"作为当前模块的路径。"
 
 #: ../../develop/cmodules.rst:65
 msgid ""
@@ -133,14 +161,16 @@ msgid ""
 "associate your source files, compile definitions and include directories "
 "with it. The library should then be linked to the ``usermod`` target."
 msgstr ""
+"你的 ``micropython.cmake`` 应该定义一个 ``INTERFACE`` 库，并将你的源代码、"
+"编译定义和头文件目录与它关联。这个库应该被链接到 ``usermod`` 目标。"
 
 #: ../../develop/cmodules.rst:84
 msgid "See below for full usage example."
-msgstr ""
+msgstr "在下文参考完整示例。"
 
 #: ../../develop/cmodules.rst:88
 msgid "Basic example"
-msgstr ""
+msgstr "基本示例"
 
 #: ../../develop/cmodules.rst:90
 msgid ""
@@ -152,6 +182,11 @@ msgid ""
 " and has a source file and a Makefile fragment with content as described "
 "above::"
 msgstr ""
+"该简单的模块名为 ``cexample``，用于提供一个函数 ``cexample.add_ints(a, b)`` "
+"，该函数把两个整数相加并返回结果。它可以在 MicroPython 源代码树中的"
+" `examples 目录 "
+"<https://github.com/micropython/micropython/tree/master/examples/usercmodule/cexample>`_"
+" 中找到，其中包含一个源码文件和一个 Makefile 片段内容如上所述。"
 
 #: ../../develop/cmodules.rst:105
 msgid ""
@@ -159,10 +194,13 @@ msgid ""
 "the ``cexample`` module there's also ``cppexample`` which works in the "
 "same way but shows one way of mixing C and C++ code in MicroPython."
 msgstr ""
+"参考这些文件的注释以获取额外的说明。紧接 ``cexample`` 模块的还有 "
+"``cppexample`` 模块，该模块与 ``cexample`` 模块执行相同的行为，但展示了一种方式，"
+"说明在 MicroPython 中如何使用 C 和 C++ 代码混合开发。"
 
 #: ../../develop/cmodules.rst:112
 msgid "Compiling the cmodule into MicroPython"
-msgstr ""
+msgstr "将 c 模块编译到 MicroPython"
 
 #: ../../develop/cmodules.rst:114
 msgid ""
@@ -170,6 +208,9 @@ msgid ""
 "<https://github.com/micropython/micropython/wiki/Getting-Started>`_), "
 "applying 2 modifications:"
 msgstr ""
+"要构建这样的模块，编译 MicroPython (参考 `快速开始 "
+"<https://github.com/micropython/micropython/wiki/Getting-Started>`_ )"
+"，并执行 2 个修改："
 
 #: ../../develop/cmodules.rst:118
 msgid ""
@@ -179,6 +220,10 @@ msgid ""
 "use CMake this variable should be a file which includes the modules to "
 "build.  See below for details."
 msgstr ""
+"将构建时标识 ``USER_C_MODULES`` 指向来你要包含的模块。 "
+"如果使用 Make ，这个变量应该是一个指向自动搜索模块的目录。"
+"如果使用 CMake ，这个变量应该是一个包含要构建的模块的文件。"
+"详情见下文。"
 
 #: ../../develop/cmodules.rst:124
 msgid ""
@@ -186,6 +231,7 @@ msgid ""
 "1.  This is only needed if the modules you are building are not "
 "automatically enabled."
 msgstr ""
+"当且仅当你要构建的模块不被自动启用时，需要将对应的 C 预处理宏设置为 1。"
 
 #: ../../develop/cmodules.rst:128
 msgid ""
@@ -193,12 +239,16 @@ msgid ""
 "``USER_C_MODULES`` to the ``examples/usercmodule`` directory for Make, or"
 " to ``examples/usercmodule/micropython.cmake`` for CMake."
 msgstr ""
+"为了构建和 MicroPython 关联的示例模块，使用 Make 时将 ``USER_C_MODULES`` 设置为 "
+"``examples/usercmodule`` 目录，使用 CMake 时则是 "
+"``examples/usercmodule/micropython.cmake``。"
 
 #: ../../develop/cmodules.rst:132
 msgid ""
 "For example, here's how the to build the unix port with the example "
 "modules:"
 msgstr ""
+"以下示例介绍了如何构建 unix 适配端，并使用示例模块的方法："
 
 #: ../../develop/cmodules.rst:139
 msgid ""
@@ -206,24 +256,31 @@ msgid ""
 "user modules in the build.  The build output will show the modules "
 "found::"
 msgstr ""
+"如果你要在构建时包含新的用户模块，你可能需要在构建开始时运行 ``make clean`` 。"
+"构建时的输出会展示找到的模块："
 
 #: ../../develop/cmodules.rst:147
 msgid ""
 "For a CMake-based port such as rp2, this will look a little different "
 "(note that CMake is actually invoked by ``make``):"
 msgstr ""
+"如果是基于 CMake 构建的适配端，例如树莓派，这种方法会有些不同（请注意 CMake 最终是调用"
+" ``make`` 来完成构建的）："
 
 #: ../../develop/cmodules.rst:155
 msgid ""
 "Again, you may need to run ``make clean`` first for CMake to pick up the "
 "user modules.  The CMake build output lists the modules by name::"
 msgstr ""
+"你需要先为 CMake 再运行一遍 ``make clean`` 来启用用户模块。"
+" CMake 构建时的输出会按名称逐个列出模块："
 
 #: ../../develop/cmodules.rst:163
 msgid ""
 "The contents of the top-level ``micropython.cmake`` can be used to "
 "control which modules are enabled."
 msgstr ""
+"最上层的 ``micropython.cmake`` 文件的内容可以用来控制哪些模块要启用。"
 
 #: ../../develop/cmodules.rst:166
 msgid ""
@@ -231,12 +288,16 @@ msgid ""
 " main MicroPython source tree, so a typical project directory structure "
 "will look like this::"
 msgstr ""
+"对于自己的项目，更方便的是将自定义代码移出 MicroPython 源代码树，"
+"所以通常一个项目目录结构会如下："
 
 #: ../../develop/cmodules.rst:186
 msgid ""
 "When building with Make set ``USER_C_MODULES`` to the "
 "``my_project/modules`` directory.  For example, building the stm32 port:"
 msgstr ""
+"使用 Make 构建时，将 ``USER_C_MODULES`` 设为 ``my_project/modules`` 目录。"
+"例如构建 stm32 适配端使用："
 
 #: ../../develop/cmodules.rst:194
 msgid ""
@@ -244,10 +305,12 @@ msgid ""
 "directly in the ``my_project/modules`` directory -- should ``include`` "
 "all of the modules you want to have available:"
 msgstr ""
+"使用 CMake 构建时，最上层的 ``micropython.cmake`` 文件（可在 "
+"``my_project/modules`` 目录中找到）应该 ``include`` 所有要使用的模块："
 
 #: ../../develop/cmodules.rst:203
 msgid "Then build with:"
-msgstr ""
+msgstr "然后这样构建："
 
 #: ../../develop/cmodules.rst:210
 msgid ""
@@ -255,6 +318,8 @@ msgid ""
 " the location of its main ``CMakeLists.txt`` file.   You can also specify"
 " absolute paths to ``USER_C_MODULES``."
 msgstr ""
+"请注意， esp32 适配端需要额外的 ``..`` 来表示相对路径，因为它的主 "
+"``CMakeLists.txt`` 文件在项目根目录中。你也可以用 ``USER_C_MODULES`` 指定到绝对路径。"
 
 #: ../../develop/cmodules.rst:214
 msgid ""
@@ -265,6 +330,10 @@ msgid ""
 "(this is decided by the developer of the module), in which case there is "
 "nothing more to do than set ``USER_C_MODULES`` as described above."
 msgstr ""
+"所有通过 ``USER_C_MODULES`` 变量指定的模块（使用 Make 时，在这个变量指定的目录中查找；"
+"使用 CMake 时，则通过 ``include`` 添加）都会被编译，但只有启用的模块才会被 "
+"使用。用户模块通常会被默认启用（这是由模块开发者决定的），所以如果你不 "
+"想要某些模块，只需要将 ``USER_C_MODULES`` 变量设为空即可。"
 
 #: ../../develop/cmodules.rst:221
 msgid ""
@@ -277,18 +346,22 @@ msgid ""
 "third argument is just the number 1 then the module is enabled by "
 "default."
 msgstr ""
+"如果模块不默认启用，则必须启用对应的 C 预处理器宏。这个宏名称可以在模块的源代码中搜索到（通常是模块的主源文件最后一行）。"
+"``MP_REGISTER_MODULE`` 的第三个参数是宏名称，这个宏名称必须使用 ``CFLAGS_EXTRA`` 来设置为 1 ，以使模块可用。如果第三个参数是 1 ，则模块默认启用。"
 
 #: ../../develop/cmodules.rst:228
 msgid ""
 "For example, the ``examples/usercmodule/cexample`` module is enabled by "
 "default so has the following line in its source code:"
 msgstr ""
+"例如，``examples/usercmodule/cexample`` 模块默认启用，所以它的源代码中有如下一行："
 
 #: ../../develop/cmodules.rst:235
 msgid ""
 "Alternatively, to make this module disabled by default but selectable "
 "through a preprocessor configuration option, it would be:"
 msgstr ""
+"另外，如果想要使这个模块不默认启用，但通过预处理器配置选项来选择，则是："
 
 #: ../../develop/cmodules.rst:242
 msgid ""
@@ -296,6 +369,7 @@ msgid ""
 "``CFLAGS_EXTRA=-DMODULE_CEXAMPLE_ENABLED=1`` to the ``make`` command, or "
 "editing ``mpconfigport.h`` or ``mpconfigboard.h`` to add"
 msgstr ""
+"这种情况下，若要启用模块，可通过在 ``make`` 命令添加 ``CFLAGS_EXTRA=-DMODULE_CEXAMPLE_ENABLED=1`` ，或者编辑 ``mpconfigport.h`` 或 ``mpconfigboard.h`` 添加以下行"
 
 #: ../../develop/cmodules.rst:249
 msgid ""
@@ -303,14 +377,16 @@ msgid ""
 "structures.  If not done correctly it will compile but importing will "
 "fail to find the module."
 msgstr ""
+"请注意，这种方法取决于适配端，因为不同适配端有不同的结构。如果没有按照正确做法配置，也会加入编译，但导入将失败。"
 
 #: ../../develop/cmodules.rst:255
 msgid "Module usage in MicroPython"
-msgstr ""
+msgstr "在 MicroPython 中使用模块"
 
 #: ../../develop/cmodules.rst:257
 msgid ""
 "Once built into your copy of MicroPython, the module can now be accessed "
 "in Python just like any other builtin module, e.g."
 msgstr ""
+"一旦编译到你的 MicroPython 固件中，模块就可以在 Python 中被直接访问，例如："
 
