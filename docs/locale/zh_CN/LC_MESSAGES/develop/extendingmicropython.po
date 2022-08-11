@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../develop/extendingmicropython.rst:4
 msgid "Extending MicroPython in C"
-msgstr ""
+msgstr "在 C 中扩展 MicroPython"
 
 #: ../../develop/extendingmicropython.rst:6
 msgid ""
@@ -32,6 +32,11 @@ msgid ""
 "accessed from Python. The second approach is for building modules that "
 "can be loaded at runtime."
 msgstr ""
+"本章节描述在来自非主 MicroPython "
+"仓库中写的 C 代码实现额外功能的选项。"
+"第一种可生效的方法是建立自己的自定义固件，其中包含"
+"一些项目特定的附加模块或函数，可以从 Python 中访问。第二种方法"
+"是建立可以在运行时加载的模块。"
 
 #: ../../develop/extendingmicropython.rst:11
 msgid ""
@@ -39,4 +44,6 @@ msgid ""
 "information on building core modules that live in the main MicroPython "
 "repository."
 msgstr ""
+"请参见 :ref:`内部库 <internals_library>` 章节以获取更多关于在 "
+"MicroPython 主仓库中创建的核心模块的信息。"
 
