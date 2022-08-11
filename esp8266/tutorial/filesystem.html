@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -617,12 +617,12 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="the-internal-filesystem">
-<h1 id="esp8266-tutorial-filesystem--page-root"><span class="section-number">3. </span>The internal filesystem<a class="headerlink" href="#esp8266-tutorial-filesystem--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="esp8266-tutorial-filesystem--page-root"><span class="section-number">3. </span>The internal filesystem<a class="headerlink" href="#esp8266-tutorial-filesystem--page-root" title="此标题的永久链接">¶</a></h1>
 <p>If your devices has 1Mbyte or more of storage then it will be set up (upon first
 boot) to contain a filesystem.  This filesystem uses the FAT format and is
 stored in the flash after the MicroPython firmware.</p>
 <section id="creating-and-reading-files">
-<h2 id="creating-and-reading-files"><span class="section-number">3.1. </span>Creating and reading files<a class="headerlink" href="#creating-and-reading-files" title="Permalink to this heading">¶</a></h2>
+<h2 id="creating-and-reading-files"><span class="section-number">3.1. </span>Creating and reading files<a class="headerlink" href="#creating-and-reading-files" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython on the ESP8266 supports the standard way of accessing files in
 Python, using the built-in <code class="docutils literal notranslate"><span class="pre">open()</span></code> function.</p>
 <p>To create a file try:</p>
@@ -646,7 +646,7 @@ open for writing in binary mode, and <code class="docutils literal notranslate">
 mode.</p>
 </section>
 <section id="listing-file-and-more">
-<h2 id="listing-file-and-more"><span class="section-number">3.2. </span>Listing file and more<a class="headerlink" href="#listing-file-and-more" title="Permalink to this heading">¶</a></h2>
+<h2 id="listing-file-and-more"><span class="section-number">3.2. </span>Listing file and more<a class="headerlink" href="#listing-file-and-more" title="此标题的永久链接">¶</a></h2>
 <p>The os module can be used for further control over the filesystem.  First
 import the module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">os</span>
@@ -667,7 +667,7 @@ import the module:</p>
 </div>
 </section>
 <section id="start-up-scripts">
-<h2 id="start-up-scripts"><span class="section-number">3.3. </span>Start up scripts<a class="headerlink" href="#start-up-scripts" title="Permalink to this heading">¶</a></h2>
+<h2 id="start-up-scripts"><span class="section-number">3.3. </span>Start up scripts<a class="headerlink" href="#start-up-scripts" title="此标题的永久链接">¶</a></h2>
 <p>There are two files that are treated specially by the ESP8266 when it starts up:
 boot.py and main.py.  The boot.py script is executed first (if it exists) and
 then once it completes the main.py script is executed.  You can create these
@@ -675,7 +675,7 @@ files yourself and populate them with the code that you want to run when the
 device starts up.</p>
 </section>
 <section id="accessing-the-filesystem-via-webrepl">
-<h2 id="accessing-the-filesystem-via-webrepl"><span class="section-number">3.4. </span>Accessing the filesystem via WebREPL<a class="headerlink" href="#accessing-the-filesystem-via-webrepl" title="Permalink to this heading">¶</a></h2>
+<h2 id="accessing-the-filesystem-via-webrepl"><span class="section-number">3.4. </span>Accessing the filesystem via WebREPL<a class="headerlink" href="#accessing-the-filesystem-via-webrepl" title="此标题的永久链接">¶</a></h2>
 <p>You can access the filesystem over WebREPL using the web client in a browser
 or via the command-line tool. Please refer to Quick Reference and Tutorial
 sections for more information about WebREPL.</p>
@@ -729,10 +729,10 @@ sections for more information about WebREPL.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

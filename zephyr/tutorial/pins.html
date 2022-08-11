@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -415,7 +415,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="gpio-pins">
-<span id="pins-zephyr"></span><h1 id="zephyr-tutorial-pins--page-root"><span class="section-number">4. </span>GPIO 引脚<a class="headerlink" href="#zephyr-tutorial-pins--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="pins-zephyr"></span><h1 id="zephyr-tutorial-pins--page-root"><span class="section-number">4. </span>GPIO 引脚<a class="headerlink" href="#zephyr-tutorial-pins--page-root" title="此标题的永久链接">¶</a></h1>
 <p>使用 <a class="reference internal" href="../../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> 来控制 I/O 引脚。</p>
 <p>对于 Zephyr 而言，引脚是通过用 id 值表示的形如 <code class="docutils literal notranslate"><span class="pre">(\"GPIO_x\",</span> <span class="pre">pin#)</span></code> 的端口号与引脚号的元组来初始化的。以 FRDM-k64 开发板上初始化一个红色 LED 灯的引脚为例：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LED</span> <span class="o">=</span> <span class="n">Pin</span><span class="p">((</span><span class="s2">"GPIO_1"</span><span class="p">,</span> <span class="mi">22</span><span class="p">),</span> <span class="n">Pin</span><span class="o">.</span><span class="n">OUT</span><span class="p">)</span>
@@ -423,7 +423,7 @@
 </div>
 <p>参考你的开发板的 datasheet 或 Zephyr 中的文档获取引脚号的相关信息，更多例子参见下文。</p>
 <table id="id1">
-<caption><span class="caption-text">引脚格式</span><a class="headerlink" href="#id1" title="永久链接至表格">¶</a></caption>
+<caption><span class="caption-text">引脚格式</span><a class="headerlink" href="#id1" title="此表格的永久链接">¶</a></caption>
 <thead>
 <tr class="row-odd"><th class="head"><p>开发板</p></th>
 <th class="head"><p>引脚</p></th>
@@ -446,7 +446,7 @@
 </tbody>
 </table>
 <section id="interrupts">
-<h2 id="interrupts"><span class="section-number">4.1. </span>中断<a class="headerlink" href="#interrupts" title="Permalink to this heading">¶</a></h2>
+<h2 id="interrupts"><span class="section-number">4.1. </span>中断<a class="headerlink" href="#interrupts" title="此标题的永久链接">¶</a></h2>
 <p>Zephyr 适配端还支持使用 <a class="reference internal" href="../../library/machine.Pin.html#machine.Pin.irq" title="machine.Pin.irq"><code class="xref any py py-meth docutils literal notranslate"><span class="pre">machine.Pin.irq()</span></code></a> 对引脚进行中断处理。 运行以下代码可以响应引脚更改 IRQ：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
@@ -499,10 +499,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

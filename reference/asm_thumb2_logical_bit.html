@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -512,9 +512,9 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="logical-bitwise-instructions">
-<h1 id="reference-asm-thumb2-logical-bit--page-root"><span class="section-number">4. </span>Logical &amp; bitwise instructions<a class="headerlink" href="#reference-asm-thumb2-logical-bit--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="reference-asm-thumb2-logical-bit--page-root"><span class="section-number">4. </span>Logical &amp; bitwise instructions<a class="headerlink" href="#reference-asm-thumb2-logical-bit--page-root" title="此标题的永久链接">¶</a></h1>
 <section id="document-conventions">
-<h2 id="document-conventions"><span class="section-number">4.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="Permalink to this heading">¶</a></h2>
+<h2 id="document-conventions"><span class="section-number">4.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="此标题的永久链接">¶</a></h2>
 <p>Notation: <code class="docutils literal notranslate"><span class="pre">Rd,</span> <span class="pre">Rn</span></code> denote ARM registers R0-R7 except in the case of the
 special instructions where R0-R15 may be used. <code class="docutils literal notranslate"><span class="pre">Rn&lt;a-b&gt;</span></code> denotes an ARM register
 whose contents must lie in range <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">&lt;=</span> <span class="pre">contents</span> <span class="pre">&lt;=</span> <span class="pre">b</span></code>. In the case of instructions
@@ -526,7 +526,7 @@ the following will zero R0 (Python <code class="docutils literal notranslate"><s
 <p>These instructions affect the condition flags except where stated.</p>
 </section>
 <section id="logical-instructions">
-<h2 id="logical-instructions"><span class="section-number">4.2. </span>Logical instructions<a class="headerlink" href="#logical-instructions" title="Permalink to this heading">¶</a></h2>
+<h2 id="logical-instructions"><span class="section-number">4.2. </span>Logical instructions<a class="headerlink" href="#logical-instructions" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>and_(Rd, Rn) <code class="docutils literal notranslate"><span class="pre">Rd</span> <span class="pre">&amp;=</span> <span class="pre">Rn</span></code></p></li>
 <li><p>orr(Rd, Rn) <code class="docutils literal notranslate"><span class="pre">Rd</span> <span class="pre">|=</span> <span class="pre">Rn</span></code></p></li>
@@ -537,7 +537,7 @@ the following will zero R0 (Python <code class="docutils literal notranslate"><s
 <p>Note the use of “and_” instead of “and”, because “and” is a reserved keyword in Python.</p>
 </section>
 <section id="shift-and-rotation-instructions">
-<h2 id="shift-and-rotation-instructions"><span class="section-number">4.3. </span>Shift and rotation instructions<a class="headerlink" href="#shift-and-rotation-instructions" title="Permalink to this heading">¶</a></h2>
+<h2 id="shift-and-rotation-instructions"><span class="section-number">4.3. </span>Shift and rotation instructions<a class="headerlink" href="#shift-and-rotation-instructions" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>lsl(Rd, Rn&lt;0-31&gt;) <code class="docutils literal notranslate"><span class="pre">Rd</span> <span class="pre">&lt;&lt;=</span> <span class="pre">Rn</span></code></p></li>
 <li><p>lsr(Rd, Rn&lt;1-32&gt;) <code class="docutils literal notranslate"><span class="pre">Rd</span> <span class="pre">=</span> <span class="pre">(Rd</span> <span class="pre">&amp;</span> <span class="pre">0xffffffff)</span> <span class="pre">&gt;&gt;</span> <span class="pre">Rn</span></code> Logical shift right</p></li>
@@ -548,7 +548,7 @@ the following will zero R0 (Python <code class="docutils literal notranslate"><s
 contains bits <code class="docutils literal notranslate"><span class="pre">b31</span> <span class="pre">b30..b0</span></code> after rotation it will contain <code class="docutils literal notranslate"><span class="pre">b2</span> <span class="pre">b1</span> <span class="pre">b0</span> <span class="pre">b31</span> <span class="pre">b30..b3</span></code></p>
 </section>
 <section id="special-instructions">
-<h2 id="special-instructions"><span class="section-number">4.4. </span>Special instructions<a class="headerlink" href="#special-instructions" title="Permalink to this heading">¶</a></h2>
+<h2 id="special-instructions"><span class="section-number">4.4. </span>Special instructions<a class="headerlink" href="#special-instructions" title="此标题的永久链接">¶</a></h2>
 <p>Condition codes are unaffected by these instructions.</p>
 <ul class="simple">
 <li><p>clz(Rd, Rn) <code class="docutils literal notranslate"><span class="pre">Rd</span> <span class="pre">=</span> <span class="pre">count_leading_zeros(Rn)</span></code></p></li>
@@ -610,10 +610,10 @@ to <code class="docutils literal notranslate"><span class="pre">b0</span> <span 
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

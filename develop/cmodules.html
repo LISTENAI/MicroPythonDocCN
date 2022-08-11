@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -47,7 +47,7 @@
   
   
   
-    <title>MicroPython external C modules &#8212; MicroPython 1.18 文档</title>
+    <title>MicroPython 外部 C 模块 &#8212; MicroPython 1.18 文档</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/material.css" />
     <link rel="stylesheet" href="../_static/customstyle.css" type="text/css" />
@@ -61,7 +61,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Native machine code in .mpy files" href="natmod.html" />
-    <link rel="prev" title="Extending MicroPython in C" href="extendingmicropython.html" />
+    <link rel="prev" title="在 C 中扩展 MicroPython" href="extendingmicropython.html" />
   
    
 
@@ -99,7 +99,7 @@
       <div class="md-flex__cell md-flex__cell--stretch">
         <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
           <span class="md-header-nav__topic">MicroPython 1.18 文档</span>
-          <span class="md-header-nav__topic"> MicroPython external C modules </span>
+          <span class="md-header-nav__topic"> MicroPython 外部 C 模块 </span>
         </div>
       </div>
       <div class="md-flex__cell md-flex__cell--shrink">
@@ -157,7 +157,7 @@
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython 内部实现</a></li>
-          <li class="md-tabs__item"><a href="extendingmicropython.html" class="md-tabs__link">Extending MicroPython in C</a></li>
+          <li class="md-tabs__item"><a href="extendingmicropython.html" class="md-tabs__link">在 C 中扩展 MicroPython</a></li>
       </ul>
     </div>
   </nav>
@@ -273,29 +273,29 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython external C modules </label>
+    <label class="md-nav__link md-nav__link--active" for="__toc"> MicroPython 外部 C 模块 </label>
     
-      <a href="#" class="md-nav__link md-nav__link--active">MicroPython external C modules</a>
+      <a href="#" class="md-nav__link md-nav__link--active">MicroPython 外部 C 模块</a>
       
         
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-cmodules--page-root" class="md-nav__link">MicroPython external C modules</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-cmodules--page-root" class="md-nav__link">MicroPython 外部 C 模块</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#structure-of-an-external-c-module" class="md-nav__link">Structure of an external C module</a>
+        <li class="md-nav__item"><a href="#structure-of-an-external-c-module" class="md-nav__link">外部 C 模块的结构</a>
         </li>
-        <li class="md-nav__item"><a href="#basic-example" class="md-nav__link">Basic example</a>
+        <li class="md-nav__item"><a href="#basic-example" class="md-nav__link">基本示例</a>
         </li>
-        <li class="md-nav__item"><a href="#compiling-the-cmodule-into-micropython" class="md-nav__link">Compiling the cmodule into MicroPython</a>
+        <li class="md-nav__item"><a href="#compiling-the-cmodule-into-micropython" class="md-nav__link">将 c 模块编译到 MicroPython</a>
         </li>
-        <li class="md-nav__item"><a href="#module-usage-in-micropython" class="md-nav__link">Module usage in MicroPython</a>
+        <li class="md-nav__item"><a href="#module-usage-in-micropython" class="md-nav__link">在 MicroPython 中使用模块</a>
         </li></ul>
             </nav>
         </li>
@@ -305,28 +305,28 @@
     <li class="md-nav__item">
     
     
-      <a href="#structure-of-an-external-c-module" class="md-nav__link">Structure of an external C module</a>
+      <a href="#structure-of-an-external-c-module" class="md-nav__link">外部 C 模块的结构</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#basic-example" class="md-nav__link">Basic example</a>
+      <a href="#basic-example" class="md-nav__link">基本示例</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#compiling-the-cmodule-into-micropython" class="md-nav__link">Compiling the cmodule into MicroPython</a>
+      <a href="#compiling-the-cmodule-into-micropython" class="md-nav__link">将 c 模块编译到 MicroPython</a>
       
     
     </li>
     <li class="md-nav__item">
     
     
-      <a href="#module-usage-in-micropython" class="md-nav__link">Module usage in MicroPython</a>
+      <a href="#module-usage-in-micropython" class="md-nav__link">在 MicroPython 中使用模块</a>
       
     
     </li></ul>
@@ -420,15 +420,15 @@
 <nav class="md-nav md-nav--secondary">
     <label class="md-nav__title" for="__toc">Contents</label>
   <ul class="md-nav__list" data-md-scrollfix="">
-        <li class="md-nav__item"><a href="#develop-cmodules--page-root" class="md-nav__link">MicroPython external C modules</a><nav class="md-nav">
+        <li class="md-nav__item"><a href="#develop-cmodules--page-root" class="md-nav__link">MicroPython 外部 C 模块</a><nav class="md-nav">
               <ul class="md-nav__list">
-        <li class="md-nav__item"><a href="#structure-of-an-external-c-module" class="md-nav__link">Structure of an external C module</a>
+        <li class="md-nav__item"><a href="#structure-of-an-external-c-module" class="md-nav__link">外部 C 模块的结构</a>
         </li>
-        <li class="md-nav__item"><a href="#basic-example" class="md-nav__link">Basic example</a>
+        <li class="md-nav__item"><a href="#basic-example" class="md-nav__link">基本示例</a>
         </li>
-        <li class="md-nav__item"><a href="#compiling-the-cmodule-into-micropython" class="md-nav__link">Compiling the cmodule into MicroPython</a>
+        <li class="md-nav__item"><a href="#compiling-the-cmodule-into-micropython" class="md-nav__link">将 c 模块编译到 MicroPython</a>
         </li>
-        <li class="md-nav__item"><a href="#module-usage-in-micropython" class="md-nav__link">Module usage in MicroPython</a>
+        <li class="md-nav__item"><a href="#module-usage-in-micropython" class="md-nav__link">在 MicroPython 中使用模块</a>
         </li></ul>
             </nav>
         </li>
@@ -442,55 +442,28 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-external-c-modules">
-<span id="cmodules"></span><h1 id="develop-cmodules--page-root">MicroPython external C modules<a class="headerlink" href="#develop-cmodules--page-root" title="Permalink to this heading">¶</a></h1>
-<p>When developing modules for use with MicroPython you may find you run into
-limitations with the Python environment, often due to an inability to access
-certain hardware resources or Python speed limitations.</p>
-<p>If your limitations can’t be resolved with suggestions in <a class="reference internal" href="../reference/speed_python.html#speed-python"><span class="std std-ref">最大化 MicroPython 速度</span></a>,
-writing some or all of your module in C (and/or C++ if implemented for your port)
-is a viable option.</p>
-<p>If your module is designed to access or work with commonly available
-hardware or libraries please consider implementing it inside the MicroPython
-source tree alongside similar modules and submitting it as a pull request.
-If however you’re targeting obscure or proprietary systems it may make
-more sense to keep this external to the main MicroPython repository.</p>
-<p>This chapter describes how to compile such external modules into the
-MicroPython executable or firmware image.  Both Make and CMake build
-tools are supported, and when writing an external module it’s a good idea to
-add the build files for both of these tools so the module can be used on all
-ports.  But when compiling a particular port you will only need to use one
-method of building, either Make or CMake.</p>
-<p>An alternative approach is to use <a class="reference internal" href="natmod.html#natmod"><span class="std std-ref">Native machine code in .mpy files</span></a> which allows writing custom C
-code that is placed in a .mpy file, which can be imported dynamically in to
-a running MicroPython system without the need to recompile the main firmware.</p>
+<span id="cmodules"></span><h1 id="develop-cmodules--page-root">MicroPython 外部 C 模块<a class="headerlink" href="#develop-cmodules--page-root" title="此标题的永久链接">¶</a></h1>
+<p>当开发 MicroPython 的模块时，你会发现可能会遇到一些 Python 环境的限制，这通常是由于无法访问某些硬件资源或 Python 速度限制。</p>
+<p>如果你的限制无法通过使用 <a class="reference internal" href="../reference/speed_python.html#speed-python"><span class="std std-ref">最大化 MicroPython 速度</span></a> 中的建议解决的话，可以尝试使用 C (如果你的适配端支持的话甚至可以是 C++ ) 编写你的模块。</p>
+<p>如果你的模块是旨在访问或与常用的硬件或库协作，请考虑在 MicroPython 源码树中内嵌一些相似的模块，并提交 pull request 。如果你的目标是模糊的或专有的系统，则可能更适合将这个模块保持在 主 MicroPython 仓库之外。</p>
+<p>这一章节描述了如何将这样的外部模块编译到 MicroPython 可执行文件或固件镜像。不论 Make 和 CMake 的编译工具都是支持的，并且当写一个外部模块时，建议同时为这两个工具添加的编译配置文件，以便于让这个模块就可在所有的适配端上使用。但是，当只为一个特定的适配端构建时，你可能只需要使用一种方法来编译，可以是 Make 或 CMake。</p>
+<p>另一种方法是使用 <a class="reference internal" href="natmod.html#natmod"><span class="std std-ref">Native machine code in .mpy files</span></a> ，这一方式允许编写自定义的、被放置在 .mpy 文件中的 C 代码，这些代码可以在运行的 MicroPython 系统中动态导入，而不需要重新编译主固件。</p>
 <section id="structure-of-an-external-c-module">
-<h2 id="structure-of-an-external-c-module">Structure of an external C module<a class="headerlink" href="#structure-of-an-external-c-module" title="Permalink to this heading">¶</a></h2>
-<p>A MicroPython user C module is a directory with the following files:</p>
+<h2 id="structure-of-an-external-c-module">外部 C 模块的结构<a class="headerlink" href="#structure-of-an-external-c-module" title="此标题的永久链接">¶</a></h2>
+<p>一个 MicroPython 用户 C 模块是一个具有以下文件的目录：</p>
 <ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">*.c</span></code> / <code class="docutils literal notranslate"><span class="pre">*.cpp</span></code> / <code class="docutils literal notranslate"><span class="pre">*.h</span></code> source code files for your module.</p>
-<p>These will typically include the low level functionality being implemented and
-the MicroPython binding functions to expose the functions and module(s).</p>
-<p>Currently the best reference for writing these functions/modules is
-to find similar modules within the MicroPython tree and use them as examples.</p>
+<li><p>你的模块的 <code class="docutils literal notranslate"><span class="pre">*.c</span></code> / <code class="docutils literal notranslate"><span class="pre">*.cpp</span></code> / <code class="docutils literal notranslate"><span class="pre">*.h</span></code> 源代码文件。</p>
+<p>这些文件通常包括实现的底层功能和提供给 MicroPython 的、用于暴露这些函数和模块的绑定函数。</p>
+<p>目前编写这些函数/模块的最佳参考是，在 MicroPython 树中找到相似的模块作为示例。</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> contains the Makefile fragment for this module.</p>
-<p><code class="docutils literal notranslate"><span class="pre">$(USERMOD_DIR)</span></code> is available in <code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> as the path to your
-module directory. As it’s redefined for each c module, is should be expanded
-in your <code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> to a local make variable,
-eg <code class="docutils literal notranslate"><span class="pre">EXAMPLE_MOD_DIR</span> <span class="pre">:=</span> <span class="pre">$(USERMOD_DIR)</span></code></p>
-<p>Your <code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> must add your modules source files relative to your
-expanded copy of <code class="docutils literal notranslate"><span class="pre">$(USERMOD_DIR)</span></code> to <code class="docutils literal notranslate"><span class="pre">SRC_USERMOD</span></code>, eg
-<code class="docutils literal notranslate"><span class="pre">SRC_USERMOD</span> <span class="pre">+=</span> <span class="pre">$(EXAMPLE_MOD_DIR)/example.c</span></code></p>
-<p>If you have custom compiler options (like <code class="docutils literal notranslate"><span class="pre">-I</span></code> to add directories to search
-for header files), these should be added to <code class="docutils literal notranslate"><span class="pre">CFLAGS_USERMOD</span></code> for C code
-and to <code class="docutils literal notranslate"><span class="pre">CXXFLAGS_USERMOD</span></code> for C++ code.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> 包含了这个模块的 Makefile 片段。</p>
+<p><code class="docutils literal notranslate"><span class="pre">$(USERMOD_DIR)</span></code> 在 <code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> 中作为模块目录路径的变量。它在每个 c 模块中都会重新定义，因此在你的 <code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> 中应该将它赋值为一个本地 make 变量，例如 <code class="docutils literal notranslate"><span class="pre">EXAMPLE_MOD_DIR</span> <span class="pre">:=</span> <span class="pre">$(USERMOD_DIR)</span></code></p>
+<p>你的 <code class="docutils literal notranslate"><span class="pre">micropython.mk</span></code> 必须在 <code class="docutils literal notranslate"><span class="pre">SRC_USERMOD`</span> <span class="pre">`中，添加你的模块源代码，其路径应当是你赋值的对应</span> <span class="pre">``SRC_USERMOD</span></code> 的变量的相对路径，例如 <code class="docutils literal notranslate"><span class="pre">SRC_USERMOD</span> <span class="pre">+=</span> <span class="pre">$(EXAMPLE_MOD_DIR)/example.c</span></code></p>
+<p>如果你有自定义的编译选项（例如 <code class="docutils literal notranslate"><span class="pre">-I</span></code> 来添加头文件所在的目录），则这些选项，为了在 C 代码可用，添加到 <code class="docutils literal notranslate"><span class="pre">CFLAGS_USERMOD</span></code> 中；为了在 C++ 代码可用，配置到 <code class="docutils literal notranslate"><span class="pre">CXXFLAGS_USERMOD</span></code> 中。</p>
 </li>
-<li><p><code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> contains the CMake configuration for this module.</p>
-<p>In <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code>, you may use <code class="docutils literal notranslate"><span class="pre">${CMAKE_CURRENT_LIST_DIR}</span></code> as the path to
-the current module.</p>
-<p>Your <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> should define an <code class="docutils literal notranslate"><span class="pre">INTERFACE</span></code> library and associate
-your source files, compile definitions and include directories with it.
-The library should then be linked to the <code class="docutils literal notranslate"><span class="pre">usermod</span></code> target.</p>
+<li><p><code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> 包含了这个模块的 CMake 配置。</p>
+<p>在 <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> 中，你可以使用 <code class="docutils literal notranslate"><span class="pre">${CMAKE_CURRENT_LIST_DIR}</span></code> 作为当前模块的路径。</p>
+<p>你的 <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> 应该定义一个 <code class="docutils literal notranslate"><span class="pre">INTERFACE</span></code> 库，并将你的源代码、编译定义和头文件目录与它关联。这个库应该被链接到 <code class="docutils literal notranslate"><span class="pre">usermod</span></code> 目标。</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">add_library</span><span class="p">(</span><span class="s">usermod_cexample</span> <span class="s">INTERFACE</span><span class="p">)</span>
 
 <span class="nb">target_sources</span><span class="p">(</span><span class="s">usermod_cexample</span> <span class="s">INTERFACE</span>
@@ -504,17 +477,13 @@ The library should then be linked to the <code class="docutils literal notransla
 <span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">usermod</span> <span class="s">INTERFACE</span> <span class="s">usermod_cexample</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>See below for full usage example.</p>
+<p>在下文参考完整示例。</p>
 </li>
 </ul>
 </section>
 <section id="basic-example">
-<h2 id="basic-example">Basic example<a class="headerlink" href="#basic-example" title="Permalink to this heading">¶</a></h2>
-<p>This simple module named <code class="docutils literal notranslate"><span class="pre">cexample</span></code> provides a single function
-<code class="docutils literal notranslate"><span class="pre">cexample.add_ints(a,</span> <span class="pre">b)</span></code> which adds the two integer args together and returns
-the result. It can be found in the MicroPython source tree
-<a class="reference external" href="https://github.com/micropython/micropython/tree/master/examples/usercmodule/cexample">in the examples directory</a>
-and has a source file and a Makefile fragment with content as described above:</p>
+<h2 id="basic-example">基本示例<a class="headerlink" href="#basic-example" title="此标题的永久链接">¶</a></h2>
+<p>该简单的模块名为 <code class="docutils literal notranslate"><span class="pre">cexample</span></code>，用于提供一个函数 <code class="docutils literal notranslate"><span class="pre">cexample.add_ints(a,</span> <span class="pre">b)</span></code> ，该函数把两个整数相加并返回结果。它可以在 MicroPython 源代码树中的 <a class="reference external" href="https://github.com/micropython/micropython/tree/master/examples/usercmodule/cexample">examples 目录</a> 中找到，其中包含一个源码文件和一个 Makefile 片段内容如上所述。</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>micropython/
 └──examples/
    └──usercmodule/
@@ -524,60 +493,42 @@ and has a source file and a Makefile fragment with content as described above:</
          └── micropython.cmake
 </pre></div>
 </div>
-<p>Refer to the comments in these files for additional explanation.
-Next to the <code class="docutils literal notranslate"><span class="pre">cexample</span></code> module there’s also <code class="docutils literal notranslate"><span class="pre">cppexample</span></code> which
-works in the same way but shows one way of mixing C and C++ code
-in MicroPython.</p>
+<p>参考这些文件的注释以获取额外的说明。紧接 <code class="docutils literal notranslate"><span class="pre">cexample</span></code> 模块的还有 <code class="docutils literal notranslate"><span class="pre">cppexample</span></code> 模块，该模块与 <code class="docutils literal notranslate"><span class="pre">cexample</span></code> 模块执行相同的行为，但展示了一种方式，说明在 MicroPython 中如何使用 C 和 C++ 代码混合开发。</p>
 </section>
 <section id="compiling-the-cmodule-into-micropython">
-<h2 id="compiling-the-cmodule-into-micropython">Compiling the cmodule into MicroPython<a class="headerlink" href="#compiling-the-cmodule-into-micropython" title="Permalink to this heading">¶</a></h2>
-<p>To build such a module, compile MicroPython (see <a class="reference external" href="https://github.com/micropython/micropython/wiki/Getting-Started">getting started</a>),
-applying 2 modifications:</p>
+<h2 id="compiling-the-cmodule-into-micropython">将 c 模块编译到 MicroPython<a class="headerlink" href="#compiling-the-cmodule-into-micropython" title="此标题的永久链接">¶</a></h2>
+<p>要构建这样的模块，编译 MicroPython (参考 <a class="reference external" href="https://github.com/micropython/micropython/wiki/Getting-Started">快速开始</a> )，并执行 2 个修改：</p>
 <ol class="arabic simple">
-<li><p>Set the build-time flag <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> to point to the modules
-you want to include.  For ports that use Make this variable should be a
-directory which is searched automatically for modules.  For ports that
-use CMake this variable should be a file which includes the modules to
-build.  See below for details.</p></li>
-<li><p>Enable the modules by setting the corresponding C preprocessor macro to
-1.  This is only needed if the modules you are building are not
-automatically enabled.</p></li>
+<li><p>将构建时标识 <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> 指向来你要包含的模块。 如果使用 Make ，这个变量应该是一个指向自动搜索模块的目录。如果使用 CMake ，这个变量应该是一个包含要构建的模块的文件。详情见下文。</p></li>
+<li><p>当且仅当你要构建的模块不被自动启用时，需要将对应的 C 预处理宏设置为 1。</p></li>
 </ol>
-<p>For building the example modules which come with MicroPython,
-set <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> to the <code class="docutils literal notranslate"><span class="pre">examples/usercmodule</span></code> directory for Make,
-or to <code class="docutils literal notranslate"><span class="pre">examples/usercmodule/micropython.cmake</span></code> for CMake.</p>
-<p>For example, here’s how the to build the unix port with the example modules:</p>
+<p>为了构建和 MicroPython 关联的示例模块，使用 Make 时将 <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> 设置为 <code class="docutils literal notranslate"><span class="pre">examples/usercmodule</span></code> 目录，使用 CMake 时则是 <code class="docutils literal notranslate"><span class="pre">examples/usercmodule/micropython.cmake</span></code>。</p>
+<p>以下示例介绍了如何构建 unix 适配端，并使用示例模块的方法：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> micropython/ports/unix
 make <span class="nv">USER_C_MODULES</span><span class="o">=</span>../../examples/usercmodule
 </pre></div>
 </div>
-<p>You may need to run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> once at the start when including new
-user modules in the build.  The build output will show the modules found:</p>
+<p>如果你要在构建时包含新的用户模块，你可能需要在构建开始时运行 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> 。构建时的输出会展示找到的模块：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="n">Including</span> <span class="n">User</span> <span class="n">C</span> <span class="n">Module</span> <span class="kn">from</span> <span class="nn">..</span><span class="o">/../</span><span class="n">examples</span><span class="o">/</span><span class="n">usercmodule</span><span class="o">/</span><span class="n">cexample</span>
 <span class="n">Including</span> <span class="n">User</span> <span class="n">C</span> <span class="n">Module</span> <span class="kn">from</span> <span class="nn">..</span><span class="o">/../</span><span class="n">examples</span><span class="o">/</span><span class="n">usercmodule</span><span class="o">/</span><span class="n">cppexample</span>
 <span class="o">...</span>
 </pre></div>
 </div>
-<p>For a CMake-based port such as rp2, this will look a little different (note
-that CMake is actually invoked by <code class="docutils literal notranslate"><span class="pre">make</span></code>):</p>
+<p>如果是基于 CMake 构建的适配端，例如树莓派，这种方法会有些不同（请注意 CMake 最终是调用 <code class="docutils literal notranslate"><span class="pre">make</span></code> 来完成构建的）：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> micropython/ports/rp2
 make <span class="nv">USER_C_MODULES</span><span class="o">=</span>../../examples/usercmodule/micropython.cmake
 </pre></div>
 </div>
-<p>Again, you may need to run <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> first for CMake to pick up the
-user modules.  The CMake build output lists the modules by name:</p>
+<p>你需要先为 CMake 再运行一遍 <code class="docutils literal notranslate"><span class="pre">make</span> <span class="pre">clean</span></code> 来启用用户模块。 CMake 构建时的输出会按名称逐个列出模块：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">...</span>
 <span class="n">Including</span> <span class="n">User</span> <span class="n">C</span> <span class="n">Module</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="kn">from</span> <span class="nn">..</span><span class="o">/../</span><span class="n">examples</span><span class="o">/</span><span class="n">usercmodule</span><span class="o">/</span><span class="n">micropython</span><span class="o">.</span><span class="n">cmake</span>
 <span class="n">Found</span> <span class="n">User</span> <span class="n">C</span> <span class="n">Module</span><span class="p">(</span><span class="n">s</span><span class="p">):</span> <span class="n">usermod_cexample</span><span class="p">,</span> <span class="n">usermod_cppexample</span>
 <span class="o">...</span>
 </pre></div>
 </div>
-<p>The contents of the top-level <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> can be used to control which
-modules are enabled.</p>
-<p>For your own projects it’s more convenient to keep custom code out of the main
-MicroPython source tree, so a typical project directory structure will look
-like this:</p>
+<p>最上层的 <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> 文件的内容可以用来控制哪些模块要启用。</p>
+<p>对于自己的项目，更方便的是将自定义代码移出 MicroPython 源代码树，所以通常一个项目目录结构会如下：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>my_project/
 ├── modules/
 │   ├── example1/
@@ -595,70 +546,49 @@ like this:</p>
       ...
 </pre></div>
 </div>
-<p>When building with Make set <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> to the <code class="docutils literal notranslate"><span class="pre">my_project/modules</span></code>
-directory.  For example, building the stm32 port:</p>
+<p>使用 Make 构建时，将 <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> 设为 <code class="docutils literal notranslate"><span class="pre">my_project/modules</span></code> 目录。例如构建 stm32 适配端使用：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> my_project/micropython/ports/stm32
 make <span class="nv">USER_C_MODULES</span><span class="o">=</span>../../../modules
 </pre></div>
 </div>
-<p>When building with CMake the top level <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> – found directly
-in the <code class="docutils literal notranslate"><span class="pre">my_project/modules</span></code> directory – should <code class="docutils literal notranslate"><span class="pre">include</span></code> all of the modules
-you want to have available:</p>
+<p>使用 CMake 构建时，最上层的 <code class="docutils literal notranslate"><span class="pre">micropython.cmake</span></code> 文件（可在 <code class="docutils literal notranslate"><span class="pre">my_project/modules</span></code> 目录中找到）应该 <code class="docutils literal notranslate"><span class="pre">include</span></code> 所有要使用的模块：</p>
 <blockquote>
 <div><div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nb">include</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_CURRENT_LIST_DIR</span><span class="o">}</span><span class="s">/example1/micropython.cmake</span><span class="p">)</span>
 <span class="nb">include</span><span class="p">(</span><span class="o">${</span><span class="nv">CMAKE_CURRENT_LIST_DIR</span><span class="o">}</span><span class="s">/example2/micropython.cmake</span><span class="p">)</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Then build with:</p>
+<p>然后这样构建：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span> my_project/micropython/ports/esp32
 make <span class="nv">USER_C_MODULES</span><span class="o">=</span>../../../../modules/micropython.cmake
 </pre></div>
 </div>
-<p>Note that the esp32 port needs the extra <code class="docutils literal notranslate"><span class="pre">..</span></code> for relative paths due to the
-location of its main <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> file.   You can also specify absolute
-paths to <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code>.</p>
-<p>All modules specified by the <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> variable (either found in this
-directory when using Make, or added via <code class="docutils literal notranslate"><span class="pre">include</span></code> when using CMake) will be
-compiled, but only those which are enabled will be available for importing.
-User modules are usually enabled by default (this is decided by the developer
-of the module), in which case there is nothing more to do than set <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code>
-as described above.</p>
-<p>If a module is not enabled by default then the corresponding C preprocessor macro
-must be enabled.  This macro name can be found by searching for the <code class="docutils literal notranslate"><span class="pre">MP_REGISTER_MODULE</span></code>
-line in the module’s source code (it usually appears at the end of the main source file).
-The third argument to <code class="docutils literal notranslate"><span class="pre">MP_REGISTER_MODULE</span></code> is the macro name, and this must be set
-to 1 using <code class="docutils literal notranslate"><span class="pre">CFLAGS_EXTRA</span></code> to make the module available.  If the third argument is just
-the number 1 then the module is enabled by default.</p>
-<p>For example, the <code class="docutils literal notranslate"><span class="pre">examples/usercmodule/cexample</span></code> module is enabled by default so
-has the following line in its source code:</p>
+<p>请注意， esp32 适配端需要额外的 <code class="docutils literal notranslate"><span class="pre">..</span></code> 来表示相对路径，因为它的主 <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> 文件在项目根目录中。你也可以用 <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> 指定到绝对路径。</p>
+<p>所有通过 <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> 变量指定的模块（使用 Make 时，在这个变量指定的目录中查找；使用 CMake 时，则通过 <code class="docutils literal notranslate"><span class="pre">include</span></code> 添加）都会被编译，但只有启用的模块才会被 使用。用户模块通常会被默认启用（这是由模块开发者决定的），所以如果你不 想要某些模块，只需要将 <code class="docutils literal notranslate"><span class="pre">USER_C_MODULES</span></code> 变量设为空即可。</p>
+<p>如果模块不默认启用，则必须启用对应的 C 预处理器宏。这个宏名称可以在模块的源代码中搜索到（通常是模块的主源文件最后一行）。<code class="docutils literal notranslate"><span class="pre">MP_REGISTER_MODULE</span></code> 的第三个参数是宏名称，这个宏名称必须使用 <code class="docutils literal notranslate"><span class="pre">CFLAGS_EXTRA</span></code> 来设置为 1 ，以使模块可用。如果第三个参数是 1 ，则模块默认启用。</p>
+<p>例如，<code class="docutils literal notranslate"><span class="pre">examples/usercmodule/cexample</span></code> 模块默认启用，所以它的源代码中有如下一行：</p>
 <blockquote>
 <div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MP_REGISTER_MODULE</span><span class="p">(</span><span class="n">MP_QSTR_cexample</span><span class="p">,</span> <span class="n">example_user_cmodule</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Alternatively, to make this module disabled by default but selectable through
-a preprocessor configuration option, it would be:</p>
+<p>另外，如果想要使这个模块不默认启用，但通过预处理器配置选项来选择，则是：</p>
 <blockquote>
 <div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">MP_REGISTER_MODULE</span><span class="p">(</span><span class="n">MP_QSTR_cexample</span><span class="p">,</span> <span class="n">example_user_cmodule</span><span class="p">,</span> <span class="n">MODULE_CEXAMPLE_ENABLED</span><span class="p">);</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>In this case the module is enabled by adding <code class="docutils literal notranslate"><span class="pre">CFLAGS_EXTRA=-DMODULE_CEXAMPLE_ENABLED=1</span></code>
-to the <code class="docutils literal notranslate"><span class="pre">make</span></code> command, or editing <code class="docutils literal notranslate"><span class="pre">mpconfigport.h</span></code> or <code class="docutils literal notranslate"><span class="pre">mpconfigboard.h</span></code> to add</p>
+<p>这种情况下，若要启用模块，可通过在 <code class="docutils literal notranslate"><span class="pre">make</span></code> 命令添加 <code class="docutils literal notranslate"><span class="pre">CFLAGS_EXTRA=-DMODULE_CEXAMPLE_ENABLED=1</span></code> ，或者编辑 <code class="docutils literal notranslate"><span class="pre">mpconfigport.h</span></code> 或 <code class="docutils literal notranslate"><span class="pre">mpconfigboard.h</span></code> 添加以下行</p>
 <blockquote>
 <div><div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#define MODULE_CEXAMPLE_ENABLED (1)</span>
 </pre></div>
 </div>
 </div></blockquote>
-<p>Note that the exact method depends on the port as they have different
-structures.  If not done correctly it will compile but importing will
-fail to find the module.</p>
+<p>请注意，这种方法取决于适配端，因为不同适配端有不同的结构。如果没有按照正确做法配置，也会加入编译，但导入将失败。</p>
 </section>
 <section id="module-usage-in-micropython">
-<h2 id="module-usage-in-micropython">Module usage in MicroPython<a class="headerlink" href="#module-usage-in-micropython" title="Permalink to this heading">¶</a></h2>
-<p>Once built into your copy of MicroPython, the module
-can now be accessed in Python just like any other builtin module, e.g.</p>
+<h2 id="module-usage-in-micropython">在 MicroPython 中使用模块<a class="headerlink" href="#module-usage-in-micropython" title="此标题的永久链接">¶</a></h2>
+<p>一旦编译到你的 MicroPython 固件中，模块就可以在 Python 中被直接访问，例如：</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cexample</span>
 <span class="k">print</span><span class="p">(</span><span class="n">cexample</span><span class="o">.</span><span class="n">add_ints</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 <span class="c1"># should display 4</span>
@@ -677,7 +607,7 @@ can now be accessed in Python just like any other builtin module, e.g.</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="extendingmicropython.html" title="Extending MicroPython in C"
+            <a href="extendingmicropython.html" title="在 C 中扩展 MicroPython"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -686,7 +616,7 @@ can now be accessed in Python just like any other builtin module, e.g.</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> Extending MicroPython in C </span>
+                      class="md-footer-nav__direction"> Previous </span> 在 C 中扩展 MicroPython </span>
               </div>
             </a>
           
@@ -714,10 +644,10 @@ can now be accessed in Python just like any other builtin module, e.g.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

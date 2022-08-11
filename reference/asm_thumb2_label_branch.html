@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -512,7 +512,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="branch-instructions">
-<h1 id="reference-asm-thumb2-label-branch--page-root"><span class="section-number">7. </span>Branch instructions<a class="headerlink" href="#reference-asm-thumb2-label-branch--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="reference-asm-thumb2-label-branch--page-root"><span class="section-number">7. </span>Branch instructions<a class="headerlink" href="#reference-asm-thumb2-label-branch--page-root" title="此标题的永久链接">¶</a></h1>
 <p>These cause execution to jump to a target location usually specified by a label (see the <code class="docutils literal notranslate"><span class="pre">label</span></code>
 assembler directive). Conditional branches and the <code class="docutils literal notranslate"><span class="pre">it</span></code> and <code class="docutils literal notranslate"><span class="pre">ite</span></code> instructions test
 the Application Program Status Register (APSR) N (negative), Z (zero), C (carry) and V
@@ -522,7 +522,7 @@ there are explicit comparison instructions to enable values to be tested.</p>
 <p>Further detail on the meaning of the condition flags is provided in the section
 describing comparison functions.</p>
 <section id="document-conventions">
-<h2 id="document-conventions"><span class="section-number">7.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="Permalink to this heading">¶</a></h2>
+<h2 id="document-conventions"><span class="section-number">7.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="此标题的永久链接">¶</a></h2>
 <p>Notation: <code class="docutils literal notranslate"><span class="pre">Rm</span></code> denotes ARM registers R0-R15. <code class="docutils literal notranslate"><span class="pre">LABEL</span></code> denotes a label defined with the
 <code class="docutils literal notranslate"><span class="pre">label()</span></code> assembler directive. <code class="docutils literal notranslate"><span class="pre">&lt;condition&gt;</span></code> indicates one of the following condition
 specifiers:</p>
@@ -544,7 +544,7 @@ specifiers:</p>
 </ul>
 </section>
 <section id="branch-to-label">
-<h2 id="branch-to-label"><span class="section-number">7.2. </span>Branch to label<a class="headerlink" href="#branch-to-label" title="Permalink to this heading">¶</a></h2>
+<h2 id="branch-to-label"><span class="section-number">7.2. </span>Branch to label<a class="headerlink" href="#branch-to-label" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>b(LABEL) Unconditional branch</p></li>
 <li><p>beq(LABEL) branch if equal</p></li>
@@ -564,7 +564,7 @@ specifiers:</p>
 </ul>
 </section>
 <section id="long-branches">
-<h2 id="long-branches"><span class="section-number">7.3. </span>Long branches<a class="headerlink" href="#long-branches" title="Permalink to this heading">¶</a></h2>
+<h2 id="long-branches"><span class="section-number">7.3. </span>Long branches<a class="headerlink" href="#long-branches" title="此标题的永久链接">¶</a></h2>
 <p>The code produced by the branch instructions listed above uses a fixed bit width to specify the
 branch destination, which is PC relative. Consequently in long programs where the
 branch instruction is remote from its destination the assembler will produce a “branch not in
@@ -575,7 +575,7 @@ range” error. This can be overcome with the “wide” variants such as</p>
 <p>Wide branches use 4 bytes to encode the instruction (compared with 2 bytes for standard branch instructions).</p>
 </section>
 <section id="subroutines-functions">
-<h2 id="subroutines-functions"><span class="section-number">7.4. </span>Subroutines (functions)<a class="headerlink" href="#subroutines-functions" title="Permalink to this heading">¶</a></h2>
+<h2 id="subroutines-functions"><span class="section-number">7.4. </span>Subroutines (functions)<a class="headerlink" href="#subroutines-functions" title="此标题的永久链接">¶</a></h2>
 <p>When entering a subroutine the processor stores the return address in register r14, also
 known as the link register (lr). Return to the instruction after the subroutine call is
 performed by updating the program counter (r15 or pc) from the link register, This
@@ -641,10 +641,10 @@ inner subroutine calls.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

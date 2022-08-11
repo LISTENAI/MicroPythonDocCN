@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -438,11 +438,11 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-mpy-files">
-<span id="mpy-files"></span><h1 id="reference-mpyfiles--page-root">MicroPython .mpy 文件<a class="headerlink" href="#reference-mpyfiles--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="mpy-files"></span><h1 id="reference-mpyfiles--page-root">MicroPython .mpy 文件<a class="headerlink" href="#reference-mpyfiles--page-root" title="此标题的永久链接">¶</a></h1>
 <p>在 MicroPython 的定义中，.mpy 文件是一种包含预编译代码的二进制容器文件格式，导入它就与像普通的 .py 模块一样。一个 <code class="docutils literal notranslate"><span class="pre">foo.mpy</span></code> 文件，只要可以在机器上以正常的方式找到，就能通过 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">foo</span></code> 来导入。通常，<code class="docutils literal notranslate"><span class="pre">sys.path</span></code> 列出的每个目录会依次查找。当在一个目录中查找时，会先查是否存在 <code class="docutils literal notranslate"><span class="pre">foo.py</span></code>，再查找 <code class="docutils literal notranslate"><span class="pre">foo.mpy</span></code> ，如果都没有找到则继续查下一个目录。因此， <code class="docutils literal notranslate"><span class="pre">foo.py</span></code> 将比 <code class="docutils literal notranslate"><span class="pre">foo.mpy</span></code> 优先级更高。</p>
 <p>这些包含字节码的 .mpy 文件通常可以通过 <code class="docutils literal notranslate"><span class="pre">mpy-cross</span></code> 程序从 Python 源码文件 （ .py 文件）来生成。对于某些体系结构，一个 .mpy 文件也可以包含原生机器码，机器码可以通过多种方式来生成，尤其是从 C 源码。</p>
 <section id="versioning-and-compatibility-of-mpy-files">
-<h2 id="versioning-and-compatibility-of-mpy-files">.mpy 文件的版本控制和兼容性<a class="headerlink" href="#versioning-and-compatibility-of-mpy-files" title="Permalink to this heading">¶</a></h2>
+<h2 id="versioning-and-compatibility-of-mpy-files">.mpy 文件的版本控制和兼容性<a class="headerlink" href="#versioning-and-compatibility-of-mpy-files" title="此标题的永久链接">¶</a></h2>
 <p>一个 .mpy 文件与一个 MicroPython 版本是否兼容取决于：</p>
 <ul class="simple">
 <li><p>.mpy 文件的版本：文件版本必须符合加载它的系统支持的版本。</p></li>
@@ -530,7 +530,7 @@
 </table>
 </section>
 <section id="binary-encoding-of-mpy-files">
-<h2 id="binary-encoding-of-mpy-files">.mpy 文件的二进制编码<a class="headerlink" href="#binary-encoding-of-mpy-files" title="Permalink to this heading">¶</a></h2>
+<h2 id="binary-encoding-of-mpy-files">.mpy 文件的二进制编码<a class="headerlink" href="#binary-encoding-of-mpy-files" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython .mpy 文件是一种可将代码对象存储在嵌套层级结构中的二进制容器格式。为了让文件保持在较小尺寸的同时，仍然提供大范围的可能值，它在许多地方都使用了可变编码无符号整数（vuint）概念。与 utf-8 编码类似，这种编码每个字节存储 7 位，若其后仍有一个或多个字节，则设置第 8 位 （MSB）。无符号整数的位以 LSB 形式存储在 vuint 中。</p>
 <p>.mpy 文件的最顶层由两部分组成</p>
 <ul class="simple">
@@ -538,7 +538,7 @@
 <li><p>模块外部范围的原始代码。这个外部作用域在 .mpy 文件被导入时被执行。</p></li>
 </ul>
 <section id="the-header">
-<h3 id="the-header">头<a class="headerlink" href="#the-header" title="Permalink to this heading">¶</a></h3>
+<h3 id="the-header">头<a class="headerlink" href="#the-header" title="此标题的永久链接">¶</a></h3>
 <p>.mpy 的头为</p>
 <table>
 <thead>
@@ -566,7 +566,7 @@
 </table>
 </section>
 <section id="raw-code-elements">
-<h3 id="raw-code-elements">原始代码元素<a class="headerlink" href="#raw-code-elements" title="Permalink to this heading">¶</a></h3>
+<h3 id="raw-code-elements">原始代码元素<a class="headerlink" href="#raw-code-elements" title="此标题的永久链接">¶</a></h3>
 <p>原始代码元素包含代码，可能是字节码或原生机器代码。它的内容是：</p>
 <table>
 <thead>
@@ -651,10 +651,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

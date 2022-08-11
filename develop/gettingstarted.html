@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -387,7 +387,7 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       
     
     </li>
@@ -508,10 +508,10 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-started">
-<span id="gettingstarted"></span><h1 id="develop-gettingstarted--page-root">快速开始<a class="headerlink" href="#develop-gettingstarted--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="gettingstarted"></span><h1 id="develop-gettingstarted--page-root">快速开始<a class="headerlink" href="#develop-gettingstarted--page-root" title="此标题的永久链接">¶</a></h1>
 <p>本文档介绍如何逐步设置版本控制、获取并编译源代码、编译文档、运行测试，以及包含 MicroPython 代码库的目录结构的描述。</p>
 <section id="source-control-with-git">
-<h2 id="source-control-with-git">使用 git 进行源码控制<a class="headerlink" href="#source-control-with-git" title="Permalink to this heading">¶</a></h2>
+<h2 id="source-control-with-git">使用 git 进行源码控制<a class="headerlink" href="#source-control-with-git" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython 源码托管在 <a class="reference external" href="https://github.com/micropython/micropython">GitHub</a> 并使用 <a class="reference external" href="https://git-scm.com">Git</a> 进行源码控制。工作流程主要是从主仓库拉取或推送源码。先安装与你操作系统相应版本的 Git 再继续接下来的步骤。</p>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
@@ -523,7 +523,7 @@
 </div>
 </section>
 <section id="get-the-code">
-<h2 id="get-the-code">获取源码<a class="headerlink" href="#get-the-code" title="Permalink to this heading">¶</a></h2>
+<h2 id="get-the-code">获取源码<a class="headerlink" href="#get-the-code" title="此标题的永久链接">¶</a></h2>
 <p>建议你维护一个 MicroPython 代码仓库的 fork ，以便在开发中使用。获取源码包括以下步骤：</p>
 <ol class="arabic simple">
 <li><p>从 <a class="reference external" href="https://github.com/micropython/micropython">https://github.com/micropython/micropython</a> 仓库 fork 到你的账户下。</p></li>
@@ -555,10 +555,10 @@ upstream     https://github.com/micropython/micropython <span class="o">(</span>
 <p>你可以给它任意名字。当你切换到其他分支时，你需要重新编译 MicroPython 。</p>
 </section>
 <section id="compile-and-build-the-code">
-<h2 id="compile-and-build-the-code">编译和构建源码<a class="headerlink" href="#compile-and-build-the-code" title="Permalink to this heading">¶</a></h2>
-<p>编译 MicroPython 时，你需要编译指定的 <a class="reference internal" href="../reference/glossary.html#term-port"><span class="xref std std-term">port</span></a> ，通常需要设定某个指定的 <a class="reference external" href="https://docs.python.org/3.5/glossary.html#glossary" title="(在 Python v3.5)"><span class="xref std std-ref">board</span></a> 。首先，安装相应的依赖库。然后，编译 MicroPython 交叉编译器，以便后续可以成功编译和构建。下面包含使用 Linux 编译的操作，在 Windows 上进行的指引会在后面的章节中提供。</p>
+<h2 id="compile-and-build-the-code">编译和构建源码<a class="headerlink" href="#compile-and-build-the-code" title="此标题的永久链接">¶</a></h2>
+<p>编译 MicroPython 时，你需要编译指定的 <a class="reference internal" href="../reference/glossary.html#term-port"><span class="xref std std-term">port</span></a> ，通常需要设定某个指定的 <a class="reference external" href="https://docs.python.org/3.5/glossary.html#glossary" title="（在 Python v3.5）"><span class="xref std std-ref">board</span></a> 。首先，安装相应的依赖库。然后，编译 MicroPython 交叉编译器，以便后续可以成功编译和构建。下面包含使用 Linux 编译的操作，在 Windows 上进行的指引会在后面的章节中提供。</p>
 <section id="required-dependencies">
-<span id="id1"></span><h3 id="required-dependencies">安装必需的依赖库<a class="headerlink" href="#required-dependencies" title="Permalink to this heading">¶</a></h3>
+<span id="id1"></span><h3 id="required-dependencies">安装必需的依赖库<a class="headerlink" href="#required-dependencies" title="此标题的永久链接">¶</a></h3>
 <p>安装 Linux 的必需的依赖库：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ sudo apt-get install build-essential libffi-dev git pkg-config
 </pre></div>
@@ -579,7 +579,7 @@ Type <span class="s2">"help"</span>, <span class="s2">"copyright"</span>, <span 
 <p>所有支持的端都有不同的依赖库，参考它们的 <a class="reference external" href="https://github.com/micropython/micropython/tree/master/ports">readme 文件</a>.</p>
 </section>
 <section id="building-the-micropython-cross-compiler">
-<h3 id="building-the-micropython-cross-compiler">编译 MicroPython 交叉编译器<a class="headerlink" href="#building-the-micropython-cross-compiler" title="Permalink to this heading">¶</a></h3>
+<h3 id="building-the-micropython-cross-compiler">编译 MicroPython 交叉编译器<a class="headerlink" href="#building-the-micropython-cross-compiler" title="此标题的永久链接">¶</a></h3>
 <p>大部分端都需要先编译 <code class="docutils literal notranslate"><span class="pre">mpy-cross</span></code> ，以便在端的固件中包含 Python 的代码：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> mpy-cross
 $ make
@@ -601,7 +601,7 @@ $ make
 </div>
 </section>
 <section id="building-the-unix-port-of-micropython">
-<h3 id="building-the-unix-port-of-micropython">编译 Unix 端的 MicroPython<a class="headerlink" href="#building-the-unix-port-of-micropython" title="Permalink to this heading">¶</a></h3>
+<h3 id="building-the-unix-port-of-micropython">编译 Unix 端的 MicroPython<a class="headerlink" href="#building-the-unix-port-of-micropython" title="此标题的永久链接">¶</a></h3>
 <p>Unix 端是一个运行在 Linux、macOS 和其他 Unix-like 操作系统上的版本。它非常有用，因为它可以跳过将你的代码部署到目标设备上来测试的过程。在很多方面，它工作起来和 CPython 的 python 命令行工具差不多。</p>
 <p>要编译 Unix 端，请确保所有 Linux 相关依赖库已经安装。参见 <a class="reference internal" href="#required-dependencies"><span class="std std-ref">安装必需的依赖库</span></a> 来确保所有依赖库已经安装。同时，请确保你有一个可用的环境来运行 <code class="docutils literal notranslate"><span class="pre">gcc</span></code> 和 <code class="docutils literal notranslate"><span class="pre">GNU</span> <span class="pre">make</span></code>。下面的例子在 Ubuntu 20.04 是可用的，但其他类 Unix 可能需要一点修改：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ gcc --version
@@ -633,11 +633,11 @@ hello world
 </div>
 </section>
 <section id="building-the-windows-port">
-<h3 id="building-the-windows-port">编译 Windows 端的 MicroPython<a class="headerlink" href="#building-the-windows-port" title="Permalink to this heading">¶</a></h3>
+<h3 id="building-the-windows-port">编译 Windows 端的 MicroPython<a class="headerlink" href="#building-the-windows-port" title="此标题的永久链接">¶</a></h3>
 <p>Windows 端包含一个 Visual Studio 项目文件 micropython.vcxproj ，你可以使用 Visual Studio 打开或 msbuild 来编译。另外，也可以使用 mingw 编译、或 Windows 上的 Cygwin 、抑或在基于 WSL 的 Linux 上。参见 <a class="reference external" href="https://github.com/micropython/micropython/tree/master/ports/windows">windows 适配端文档</a> 来了解更多信息。</p>
 </section>
 <section id="building-the-stm32-port">
-<h3 id="building-the-stm32-port">编译 STM32 适配端<a class="headerlink" href="#building-the-stm32-port" title="Permalink to this heading">¶</a></h3>
+<h3 id="building-the-stm32-port">编译 STM32 适配端<a class="headerlink" href="#building-the-stm32-port" title="此标题的永久链接">¶</a></h3>
 <p>和 Unix 适配端一样，你需要根据 <a class="reference internal" href="#required-dependencies"><span class="std std-ref">安装必需的依赖库</span></a> 中的描述安装一些必要的依赖库，然后进行构建：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ports/stm32
 $ make submodules
@@ -659,7 +659,7 @@ $ make <span class="nv">BOARD</span><span class="o">=</span>&lt;board&gt;
 </section>
 </section>
 <section id="building-the-documentation">
-<h2 id="building-the-documentation">编译文档<a class="headerlink" href="#building-the-documentation" title="Permalink to this heading">¶</a></h2>
+<h2 id="building-the-documentation">编译文档<a class="headerlink" href="#building-the-documentation" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython 文档是使用 <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code> 创建的。如果你已经安装了 Python ，那么就使用 <code class="docutils literal notranslate"><span class="pre">pip</span></code> 安装 <code class="docutils literal notranslate"><span class="pre">Sphinx</span></code>。推荐在虚拟环境中使用：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ python3 -m venv env
 $ <span class="nb">source</span> env/bin/activate
@@ -677,7 +677,7 @@ $ pip install sphinx
 <p>在浏览器中打开 <code class="docutils literal notranslate"><span class="pre">docs/build/html/index.html</span></code> 可以本地浏览文档。 Sphinx 所使用 Read the Docs 的使用参见 <a class="reference external" href="https://docs.readthedocs.io/en/stable/intro/import-guide.html">importing your documentation</a>  。</p>
 </section>
 <section id="running-the-tests">
-<h2 id="running-the-tests">运行测试<a class="headerlink" href="#running-the-tests" title="Permalink to this heading">¶</a></h2>
+<h2 id="running-the-tests">运行测试<a class="headerlink" href="#running-the-tests" title="此标题的永久链接">¶</a></h2>
 <p>在 Unix 适配端上运行所有测试用例：</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ports/unix
 $ make <span class="nb">test</span>
@@ -691,7 +691,7 @@ $ ./run-tests.py --target minimal --device /dev/ttyACM0
 <p>更多内容参见 <a class="reference internal" href="writingtests.html#writingtests"><span class="std std-ref">编写测试</span></a> 。</p>
 </section>
 <section id="folder-structure">
-<h2 id="folder-structure">目录结构<a class="headerlink" href="#folder-structure" title="Permalink to this heading">¶</a></h2>
+<h2 id="folder-structure">目录结构<a class="headerlink" href="#folder-structure" title="此标题的永久链接">¶</a></h2>
 <p>有几个目录需要注意实现细节。以下是源代码中顶级文件夹的分解说明。</p>
 <p>py</p>
 <blockquote>
@@ -783,10 +783,10 @@ $ ./run-tests.py --target minimal --device /dev/ttyACM0
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

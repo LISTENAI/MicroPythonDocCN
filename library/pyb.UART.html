@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -391,7 +391,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="class-uart-duplex-serial-communication-bus">
-<span id="pyb-uart"></span><h1 id="library-pyb-uart--page-root">class UART – duplex serial communication bus<a class="headerlink" href="#library-pyb-uart--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="pyb-uart"></span><h1 id="library-pyb-uart--page-root">class UART – duplex serial communication bus<a class="headerlink" href="#library-pyb-uart--page-root" title="此标题的永久链接">¶</a></h1>
 <p>UART implements the standard UART/USART duplex serial communications protocol.  At
 the physical level it consists of 2 lines: RX and TX.  The unit of communication
 is a character (not to be confused with a string character) which can be 8 or 9
@@ -427,7 +427,7 @@ using the standard stream methods:</p>
 <p><em>Note:</em> The stream functions <code class="docutils literal notranslate"><span class="pre">read</span></code>, <code class="docutils literal notranslate"><span class="pre">write</span></code>, etc. are new in MicroPython v1.3.4.
 Earlier versions use <code class="docutils literal notranslate"><span class="pre">uart.send</span></code> and <code class="docutils literal notranslate"><span class="pre">uart.recv</span></code>.</p>
 <section id="constructors">
-<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="Permalink to this heading">¶</a></h2>
+<h2 id="constructors">Constructors<a class="headerlink" href="#constructors" title="此标题的永久链接">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyb.pyb.UART">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyb.</span></span><span class="sig-name descname"><span class="pre">UART</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bus</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">...</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.pyb.UART" title="永久链接至目标">¶</a></dt>
@@ -471,7 +471,7 @@ have <code class="docutils literal notranslate"><span class="pre">UART(1)</span>
 </dd></dl>
 </section>
 <section id="methods">
-<h2 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h2>
+<h2 id="methods">Methods<a class="headerlink" href="#methods" title="此标题的永久链接">¶</a></h2>
 <dl class="py method">
 <dt class="sig sig-object py" id="pyb.UART.init">
 <span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">init</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">baudrate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bits</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">8</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flow</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout_char</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">read_buf_len</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">64</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyb.UART.init" title="永久链接至目标">¶</a></dt>
@@ -568,7 +568,7 @@ Return value: <code class="docutils literal notranslate"><span class="pre">None<
 </dd></dl>
 </section>
 <section id="constants">
-<h2 id="constants">Constants<a class="headerlink" href="#constants" title="Permalink to this heading">¶</a></h2>
+<h2 id="constants">Constants<a class="headerlink" href="#constants" title="此标题的永久链接">¶</a></h2>
 <dl class="py data">
 <dt class="sig sig-object py" id="pyb.UART.RTS">
 <span class="sig-prename descclassname"><span class="pre">UART.</span></span><span class="sig-name descname"><span class="pre">RTS</span></span><a class="headerlink" href="#pyb.UART.RTS" title="永久链接至目标">¶</a></dt>
@@ -578,7 +578,7 @@ Return value: <code class="docutils literal notranslate"><span class="pre">None<
 </dd></dl>
 </section>
 <section id="flow-control">
-<h2 id="flow-control">Flow Control<a class="headerlink" href="#flow-control" title="Permalink to this heading">¶</a></h2>
+<h2 id="flow-control">Flow Control<a class="headerlink" href="#flow-control" title="此标题的永久链接">¶</a></h2>
 <p>On Pyboards V1 and V1.1 <code class="docutils literal notranslate"><span class="pre">UART(2)</span></code> and <code class="docutils literal notranslate"><span class="pre">UART(3)</span></code> support RTS/CTS hardware flow control
 using the following pins:</p>
 <blockquote>
@@ -599,7 +599,7 @@ the UART.</p>
 enabled. To achieve flow control the Pyboard’s <code class="docutils literal notranslate"><span class="pre">nCTS</span></code> signal should be connected
 to the target’s <code class="docutils literal notranslate"><span class="pre">nRTS</span></code> and the Pyboard’s <code class="docutils literal notranslate"><span class="pre">nRTS</span></code> to the target’s <code class="docutils literal notranslate"><span class="pre">nCTS</span></code>.</p>
 <section id="cts-target-controls-pyboard-transmitter">
-<h3 id="cts-target-controls-pyboard-transmitter">CTS: target controls Pyboard transmitter<a class="headerlink" href="#cts-target-controls-pyboard-transmitter" title="Permalink to this heading">¶</a></h3>
+<h3 id="cts-target-controls-pyboard-transmitter">CTS: target controls Pyboard transmitter<a class="headerlink" href="#cts-target-controls-pyboard-transmitter" title="此标题的永久链接">¶</a></h3>
 <p>If CTS flow control is enabled the write behaviour is as follows:</p>
 <p>If the Pyboard’s <code class="docutils literal notranslate"><span class="pre">UART.write(buf)</span></code> method is called, transmission will stall for
 any periods when <code class="docutils literal notranslate"><span class="pre">nCTS</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>. This will result in a timeout if the entire
@@ -612,7 +612,7 @@ out unless the target asserts <code class="docutils literal notranslate"><span c
 will be raised. The character will be transmitted as soon as the target asserts <code class="docutils literal notranslate"><span class="pre">nCTS</span></code>.</p>
 </section>
 <section id="rts-pyboard-controls-target-s-transmitter">
-<h3 id="rts-pyboard-controls-target-s-transmitter">RTS: Pyboard controls target’s transmitter<a class="headerlink" href="#rts-pyboard-controls-target-s-transmitter" title="Permalink to this heading">¶</a></h3>
+<h3 id="rts-pyboard-controls-target-s-transmitter">RTS: Pyboard controls target’s transmitter<a class="headerlink" href="#rts-pyboard-controls-target-s-transmitter" title="此标题的永久链接">¶</a></h3>
 <p>If RTS flow control is enabled, behaviour is as follows:</p>
 <p>If buffered input is used (<code class="docutils literal notranslate"><span class="pre">read_buf_len</span></code> &gt; 0), incoming characters are buffered.
 If the buffer becomes full, the next character to arrive will cause <code class="docutils literal notranslate"><span class="pre">nRTS</span></code> to go
@@ -676,10 +676,10 @@ cause <code class="docutils literal notranslate"><span class="pre">nRTS</span></
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

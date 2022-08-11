@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -295,7 +295,7 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       
     
     </li>
@@ -394,7 +394,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="implementing-a-module">
-<span id="internals-library"></span><h1 id="develop-library--page-root">实现一个模块<a class="headerlink" href="#develop-library--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="internals-library"></span><h1 id="develop-library--page-root">实现一个模块<a class="headerlink" href="#develop-library--page-root" title="此标题的永久链接">¶</a></h1>
 <p>这一章节详细讲解如何在 MicroPython 实现一个核心模块。 MicroPython 模块可以是下列之一：</p>
 <ul class="simple">
 <li><p>内置模块（ Built-in module ）：属于 MicroPython 仓库的核心模块。</p></li>
@@ -409,10 +409,10 @@
 </ul>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
-<p>这一章节主要描述在 <code class="docutils literal notranslate"><span class="pre">py/</span></code> 或核心模块中实现的模块。 关于实现外部模块的详细信息请参阅 <a class="reference internal" href="extendingmicropython.html#extendingmicropython"><span class="std std-ref">Extending MicroPython in C</span></a> 。 关于适配端特定的模块的详细信息请参阅 <a class="reference internal" href="porting.html#porting-to-a-board"><span class="std std-ref">Porting MicroPython</span></a> 。</p>
+<p>这一章节主要描述在 <code class="docutils literal notranslate"><span class="pre">py/</span></code> 或核心模块中实现的模块。 关于实现外部模块的详细信息请参阅 <a class="reference internal" href="extendingmicropython.html#extendingmicropython"><span class="std std-ref">在 C 中扩展 MicroPython</span></a> 。 关于适配端特定的模块的详细信息请参阅 <a class="reference internal" href="porting.html#porting-to-a-board"><span class="std std-ref">Porting MicroPython</span></a> 。</p>
 </div>
 <section id="implementing-a-core-module">
-<h2 id="implementing-a-core-module">实现一个核心模块<a class="headerlink" href="#implementing-a-core-module" title="Permalink to this heading">¶</a></h2>
+<h2 id="implementing-a-core-module">实现一个核心模块<a class="headerlink" href="#implementing-a-core-module" title="此标题的永久链接">¶</a></h2>
 <p>像 CPython 一样， MicroPython 有可以通过 import 语句导入的核心内置模块。 例如，在 <a class="reference internal" href="memorymgt.html#memorymanagement"><span class="std std-ref">内存管理</span></a> 中讨论的 <code class="docutils literal notranslate"><span class="pre">gc</span></code> 模块。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>&gt;&gt;&gt; import gc
 &gt;&gt;&gt; gc.enable<span class="o">()</span>
@@ -507,10 +507,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

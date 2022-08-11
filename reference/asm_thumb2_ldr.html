@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -504,16 +504,16 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="load-register-from-memory">
-<h1 id="reference-asm-thumb2-ldr--page-root"><span class="section-number">2. </span>Load register from memory<a class="headerlink" href="#reference-asm-thumb2-ldr--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="reference-asm-thumb2-ldr--page-root"><span class="section-number">2. </span>Load register from memory<a class="headerlink" href="#reference-asm-thumb2-ldr--page-root" title="此标题的永久链接">¶</a></h1>
 <section id="document-conventions">
-<h2 id="document-conventions"><span class="section-number">2.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="Permalink to this heading">¶</a></h2>
+<h2 id="document-conventions"><span class="section-number">2.1. </span>Document conventions<a class="headerlink" href="#document-conventions" title="此标题的永久链接">¶</a></h2>
 <p>Notation: <code class="docutils literal notranslate"><span class="pre">Rt,</span> <span class="pre">Rn</span></code> denote ARM registers R0-R7 except where stated. <code class="docutils literal notranslate"><span class="pre">immN</span></code> represents an immediate
 value having a width of N bits hence <code class="docutils literal notranslate"><span class="pre">imm5</span></code> is constrained to the range 0-31. <code class="docutils literal notranslate"><span class="pre">[Rn</span> <span class="pre">+</span> <span class="pre">immN]</span></code> is the contents
 of the memory address obtained by adding Rn and the offset <code class="docutils literal notranslate"><span class="pre">immN</span></code>. Offsets are measured in
 bytes. These instructions affect the condition flags.</p>
 </section>
 <section id="register-load">
-<h2 id="register-load"><span class="section-number">2.2. </span>Register Load<a class="headerlink" href="#register-load" title="Permalink to this heading">¶</a></h2>
+<h2 id="register-load"><span class="section-number">2.2. </span>Register Load<a class="headerlink" href="#register-load" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>ldr(Rt, [Rn, imm7]) <code class="docutils literal notranslate"><span class="pre">Rt</span> <span class="pre">=</span> <span class="pre">[Rn</span> <span class="pre">+</span> <span class="pre">imm7]</span></code> Load a 32 bit word</p></li>
 <li><p>ldrb(Rt, [Rn, imm5]) <code class="docutils literal notranslate"><span class="pre">Rt</span> <span class="pre">=</span> <span class="pre">[Rn</span> <span class="pre">+</span> <span class="pre">imm5]</span></code> Load a byte</p></li>
@@ -573,10 +573,10 @@ enables 32 bit word aligned values to be accessed with a maximum offset of 31 wo
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

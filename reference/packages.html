@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -478,10 +478,10 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="distribution-packages-package-management-and-deploying-applications">
-<span id="packages"></span><h1 id="reference-packages--page-root">分发包、包管理和部署应用程序<a class="headerlink" href="#reference-packages--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="packages"></span><h1 id="reference-packages--page-root">分发包、包管理和部署应用程序<a class="headerlink" href="#reference-packages--page-root" title="此标题的永久链接">¶</a></h1>
 <p>就像 “大” Python 一样， MicroPython支持创建、分发、并可以很轻松地在每个用户的环境中安装 ”第三方“ 包。本章讨论如何实现这些操作。我们推荐你熟悉一些 Python 的包管理知识。</p>
 <section id="overview">
-<h2 id="overview">概述<a class="headerlink" href="#overview" title="Permalink to this heading">¶</a></h2>
+<h2 id="overview">概述<a class="headerlink" href="#overview" title="此标题的永久链接">¶</a></h2>
 <p>下述步骤代表了创建和使用包的高级工作流程：</p>
 <ol class="arabic simple">
 <li><p>Python 模块和包被转换成分发包归档，并在 Python 包索引 (PyPI) 上发布。</p></li>
@@ -492,7 +492,7 @@
 <p>下面的章节详细描述了这个过程。</p>
 </section>
 <section id="distribution-packages">
-<h2 id="distribution-packages">分发包<a class="headerlink" href="#distribution-packages" title="Permalink to this heading">¶</a></h2>
+<h2 id="distribution-packages">分发包<a class="headerlink" href="#distribution-packages" title="此标题的永久链接">¶</a></h2>
 <p>Python 模块和包可以被打包成适合在系统之间传输的归档，并存储在知名的地方（PyPI），实现可按需下载后部署。这些归档称之为 “分发包”（以将它们与 Python 包（用于组织 Python 源代码）区分）。</p>
 <p>MicroPython 分发包的格式是众所周知的 tar.gz 格式，但有一些调整。因为用于 tar 归档的外部包装器是 Gzip 压缩器，默认使用 32KB 字典大小，这意味着需要分配 32KB 连续的内存用于解压压缩流。这个要求可能在低内存设备上无法满足，因为这些设备可能拥极少的内存，以至于连这些连续的内存块都难以分配。为了解决这些限制，MicroPython 分发包所使用的 Gzip 压缩，只使用 4K 字典大小，这应该是一个合适的折中方案，使得在内存较小的设备上仍然可以解压。</p>
 <p>除了减小了压缩字典大小，MicroPython 分发包还有其他优化，比如移除归档中不用于安装过程的任何文件。例如常见地，upip 包管理器在安装过程中并不执行 setup.py（详见下文），因此不会包含在归档中。</p>
@@ -504,7 +504,7 @@
 <p>总而言之，MicroPython 分发包针对 MicroPython 目标环境（资源高度受限的设备）进行了高度的优化。</p>
 </section>
 <section id="upip-package-manager">
-<h2 id="upip-package-manager"><code class="docutils literal notranslate"><span class="pre">upip</span></code> 包管理器<a class="headerlink" href="#upip-package-manager" title="Permalink to this heading">¶</a></h2>
+<h2 id="upip-package-manager"><code class="docutils literal notranslate"><span class="pre">upip</span></code> 包管理器<a class="headerlink" href="#upip-package-manager" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython 分发包旨在通过 <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> 包管理器安装。<a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> 是一个 Python 应用程序，通常用于网络可用的 <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython 适配端</span></a> 上分发（作为冻结字节码）。至少，<a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> 在 <a class="reference internal" href="glossary.html#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix 适配端</span></a> 上是可用的。</p>
 <p>在任何 <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> 可用的 <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython 适配端</span></a> 上，可以通过如下方式访问：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">upip</span>
@@ -531,7 +531,7 @@
 <p>[TODO: 描述安装路径。]</p>
 </section>
 <section id="cross-installing-packages">
-<h2 id="cross-installing-packages">跨平台安装包<a class="headerlink" href="#cross-installing-packages" title="Permalink to this heading">¶</a></h2>
+<h2 id="cross-installing-packages">跨平台安装包<a class="headerlink" href="#cross-installing-packages" title="此标题的永久链接">¶</a></h2>
 <p>对于没有网络功能的 <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython 适配端</span></a>，建议的安装过程是：在 <a class="reference internal" href="glossary.html#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix 适配端</span></a> 中 “跨平台安装” 到一个 “目录镜像”，然后通过适当的方式将这个映像传输到设备中。</p>
 <p>安装到一个目录镜像需要在使用 <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> 时添加 <code class="docutils literal notranslate"><span class="pre">-p</span></code> 参数：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">micropython</span> <span class="o">-</span><span class="n">m</span> <span class="n">upip</span> <span class="n">install</span> <span class="o">-</span><span class="n">p</span> <span class="n">install_dir</span> <span class="n">micropython</span><span class="o">-</span><span class="n">pystone_lowmem</span>
@@ -540,7 +540,7 @@
 <p>执行此命令后，包内容（以及所有依赖的包的内容）将在 <code class="docutils literal notranslate"><span class="pre">install_dir/</span></code> 子目录中可见。你需要将这个目录（不包含 <code class="docutils literal notranslate"><span class="pre">install_dir/</span></code> 前缀）的内容传输到设备的适当位置，使得这些内容可以通过 Python <code class="docutils literal notranslate"><span class="pre">import</span></code> 语句找到（请参阅上述的 <a class="reference internal" href="glossary.html#term-upip"><span class="xref std std-term">upip</span></a> 安装路径讨论）。</p>
 </section>
 <section id="cross-installing-packages-with-freezing">
-<h2 id="cross-installing-packages-with-freezing">跨平台安装包（使用冻结）<a class="headerlink" href="#cross-installing-packages-with-freezing" title="Permalink to this heading">¶</a></h2>
+<h2 id="cross-installing-packages-with-freezing">跨平台安装包（使用冻结）<a class="headerlink" href="#cross-installing-packages-with-freezing" title="此标题的永久链接">¶</a></h2>
 <p>对于低内存的 <a class="reference internal" href="glossary.html#term-MicroPython-port"><span class="xref std std-term">MicroPython 适配端</span></a>，上述的安装过程不提供最有效的资源使用，因为包在源码中安装，因此需要在每次导入时编译，这需要 RAM，编译后的字节码也存储在 RAM 中，这样会减少存储应用数据的可用空间。此外，上述的安装过程需要设备上存在文件系统，而最资源紧张的设备可能不具备。</p>
 <p>字节码的冻结是一个解决上述所有问题的过程：</p>
 <ul class="simple">
@@ -566,7 +566,7 @@
 </ol>
 </section>
 <section id="creating-distribution-packages">
-<h2 id="creating-distribution-packages">创建发行包<a class="headerlink" href="#creating-distribution-packages" title="Permalink to this heading">¶</a></h2>
+<h2 id="creating-distribution-packages">创建发行包<a class="headerlink" href="#creating-distribution-packages" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython 的发行包的创建与 CPython 或其他 Python 实现的创建方式相同，参见本章末尾的参考资料。应当使用 setuptools（而不是 distutils），因为 distutils 不支持依赖和其他特性。“源码发行 Source distribution” (<code class="docutils literal notranslate"><span class="pre">sdist</span></code>) 格式是用于打包过程。上文提到的后处理（及下一章节要讨论的前处理）是通过使用自定义的 <code class="docutils literal notranslate"><span class="pre">sdist</span></code> 命令来实现的。因此，打包步骤仍然保持了与标准 setuptools 相同，用户只需要通过传递适当的参数来覆盖 <code class="docutils literal notranslate"><span class="pre">sdist</span></code> 命令的实现调用 <code class="docutils literal notranslate"><span class="pre">setup()</span></code>：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">setuptools</span> <span class="k">import</span> <span class="n">setup</span>
 <span class="kn">import</span> <span class="nn">sdist_upip</span>
@@ -580,7 +580,7 @@
 <p>上文提及的 sdist_upip.py 模块可以在 <a class="reference internal" href="glossary.html#term-micropython-lib"><code class="xref any std std-term docutils literal notranslate"><span class="pre">micropython-lib</span></code></a> 中找到: <a class="reference external" href="https://github.com/micropython/micropython-lib/blob/master/sdist_upip.py">https://github.com/micropython/micropython-lib/blob/master/sdist_upip.py</a></p>
 </section>
 <section id="application-resources">
-<h2 id="application-resources">应用资源<a class="headerlink" href="#application-resources" title="Permalink to this heading">¶</a></h2>
+<h2 id="application-resources">应用资源<a class="headerlink" href="#application-resources" title="此标题的永久链接">¶</a></h2>
 <p>一个完整的应用，除了源代码之外，通常还包括数据文件，例如网页模板、游戏图片等。当应用被手动安装时如何处理这些内容是非常明确的 —— 你只需要将这些数据文件放到文件系统中的某个位置，并使用标准文件访问函数即可。</p>
 <p>当从发行包部署应用时，情况就不同了 —— 这是更高级的、更简单的、更灵活的方式，但也需要更高级的方法来访问数据文件。这种方式认为数据文件是“资源”，并且抽象对它们的访问。</p>
 <p>通过使用 <code class="docutils literal notranslate"><span class="pre">pkg_resources</span></code> 模块， Python 支持通过它的 “setuptools” 库来访问资源。MicroPython 按照一贯的做法，实现了这个模块的子集功能，特别是 <code class="docutils literal notranslate"><span class="pre">pkg_resources.resource_stream(package,</span> <span class="pre">resource)</span></code> 函数。这个思路是，应用程序调用这个函数，传递一个资源标识符，代表在指定的包（通常是顶层应用程序包）中的数据文件的相对路径。然后通过 <a href="#id1"><span class="problematic" id="id2">``</span></a>resource_stream()``返回一个流对象，使用标准的 <a class="reference internal" href="../library/builtins.html#open" title="open"><code class="xref any py py-func docutils literal notranslate"><span class="pre">open()</span></code></a> 来访问资源内容。</p>
@@ -615,7 +615,7 @@
 </div>
 </section>
 <section id="references">
-<h2 id="references">参考<a class="headerlink" href="#references" title="Permalink to this heading">¶</a></h2>
+<h2 id="references">参考<a class="headerlink" href="#references" title="此标题的永久链接">¶</a></h2>
 <ul class="simple">
 <li><p>Python 包管理用户指引：<a class="reference external" href="https://packaging.python.org/">https://packaging.python.org/</a></p></li>
 <li><p>Setuptools 文档：<a class="reference external" href="https://setuptools.readthedocs.io/">https://setuptools.readthedocs.io/</a></p></li>
@@ -671,10 +671,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -272,7 +272,7 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       
     
     </li>
@@ -438,7 +438,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="porting-micropython">
-<span id="porting-to-a-board"></span><h1 id="develop-porting--page-root">Porting MicroPython<a class="headerlink" href="#develop-porting--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="porting-to-a-board"></span><h1 id="develop-porting--page-root">Porting MicroPython<a class="headerlink" href="#develop-porting--page-root" title="此标题的永久链接">¶</a></h1>
 <p>The MicroPython project contains several ports to different microcontroller families and
 architectures. The project repository has a <a class="reference external" href="https://github.com/micropython/micropython/tree/master/ports">ports</a>
 directory containing a subdirectory for each supported port.</p>
@@ -456,7 +456,7 @@ host system and an STM32F4xx MCU.</p>
 <li><p>Implementing the port-specific modules.</p></li>
 </ul>
 <section id="minimal-micropython-firmware">
-<h2 id="minimal-micropython-firmware">Minimal MicroPython firmware<a class="headerlink" href="#minimal-micropython-firmware" title="Permalink to this heading">¶</a></h2>
+<h2 id="minimal-micropython-firmware">Minimal MicroPython firmware<a class="headerlink" href="#minimal-micropython-firmware" title="此标题的永久链接">¶</a></h2>
 <p>The best way to start porting MicroPython to a new board is by integrating a minimal
 MicroPython interpreter.  For this walkthrough, create a subdirectory for the new
 port in the <code class="docutils literal notranslate"><span class="pre">ports</span></code> directory:</p>
@@ -553,7 +553,7 @@ $ mkdir example_port
 <p>Remember to use proper tabs to indent the Makefile.</p>
 </section>
 <section id="micropython-configurations">
-<h2 id="micropython-configurations">MicroPython Configurations<a class="headerlink" href="#micropython-configurations" title="Permalink to this heading">¶</a></h2>
+<h2 id="micropython-configurations">MicroPython Configurations<a class="headerlink" href="#micropython-configurations" title="此标题的永久链接">¶</a></h2>
 <p>After integrating the minimal code above, the next step is to create the MicroPython
 configuration files for the port. The compile-time configurations are specified in
 <code class="docutils literal notranslate"><span class="pre">mpconfigport.h</span></code> and additional hardware-abstraction functions, such as time keeping,
@@ -606,7 +606,7 @@ etc.</p>
 </div>
 </section>
 <section id="support-for-standard-input-output">
-<h2 id="support-for-standard-input-output">Support for standard input/output<a class="headerlink" href="#support-for-standard-input-output" title="Permalink to this heading">¶</a></h2>
+<h2 id="support-for-standard-input-output">Support for standard input/output<a class="headerlink" href="#support-for-standard-input-output" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython requires at least a way to output characters, and to have a REPL it also
 requires a way to input characters. Functions for this can be implemented in the file
 <code class="docutils literal notranslate"><span class="pre">mphalport.c</span></code>, for example:</p>
@@ -632,7 +632,7 @@ requires a way to input characters. Functions for this can be implemented in the
 specific board API. This example uses the standard input/output stream.</p>
 </section>
 <section id="building-and-running">
-<h2 id="building-and-running">Building and running<a class="headerlink" href="#building-and-running" title="Permalink to this heading">¶</a></h2>
+<h2 id="building-and-running">Building and running<a class="headerlink" href="#building-and-running" title="此标题的永久链接">¶</a></h2>
 <p>At this stage the directory of the new port should contain:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ports/example_port/
 ├── main.c
@@ -661,7 +661,7 @@ $ ./build/firmware.elf
 <p>Use Ctrl-D to exit, and then run <code class="docutils literal notranslate"><span class="pre">reset</span></code> to reset the terminal.</p>
 </section>
 <section id="adding-a-module-to-the-port">
-<h2 id="adding-a-module-to-the-port">Adding a module to the port<a class="headerlink" href="#adding-a-module-to-the-port" title="Permalink to this heading">¶</a></h2>
+<h2 id="adding-a-module-to-the-port">Adding a module to the port<a class="headerlink" href="#adding-a-module-to-the-port" title="此标题的永久链接">¶</a></h2>
 <p>To add a custom module like <code class="docutils literal notranslate"><span class="pre">myport</span></code>, first add the module definition in a file
 <code class="docutils literal notranslate"><span class="pre">modmyport.c</span></code>:</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="cp">#include</span> <span class="cpf">"py/runtime.h"</span><span class="cp"></span>
@@ -759,10 +759,10 @@ info about my port
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

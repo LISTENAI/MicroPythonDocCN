@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -304,7 +304,7 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       
     
     </li>
@@ -405,16 +405,16 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="maps-and-dictionaries">
-<span id="maps"></span><h1 id="develop-maps--page-root">映射（Maps）与字典（Dictionaries）<a class="headerlink" href="#develop-maps--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="maps"></span><h1 id="develop-maps--page-root">映射（Maps）与字典（Dictionaries）<a class="headerlink" href="#develop-maps--page-root" title="此标题的永久链接">¶</a></h1>
 <p>MicroPython 字典和映射使用的是被称为开放地址和线性探测的技术。这一章节将详细介绍这两种技术。</p>
 <section id="open-addressing">
-<h2 id="open-addressing">开放寻址<a class="headerlink" href="#open-addressing" title="Permalink to this heading">¶</a></h2>
+<h2 id="open-addressing">开放寻址<a class="headerlink" href="#open-addressing" title="此标题的永久链接">¶</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Open_addressing">开放寻址</a> 是用来解决冲突的一项技术。冲突是非常常见的情况，发生在两个项目的哈希值相同时。例如，给定一个哈希设置如下：</p>
 <img alt="../_images/collision.png" src="../_images/collision.png"/>
 <p>如果请求填充槽 <code class="docutils literal notranslate"><span class="pre">0</span></code> 的值为 <code class="docutils literal notranslate"><span class="pre">70</span></code>，因为槽 <code class="docutils literal notranslate"><span class="pre">0</span></code> 不为空，开放寻址将找到下一个可用的槽来服务这个请求。这种对替代位置的顺序搜索称为 <em>探测</em> 。存在数种用于顺序探测的算法，但 MicroPython 使用的是线性探测，这是在下一节中描述的。</p>
 </section>
 <section id="linear-probing">
-<h2 id="linear-probing">线性探测<a class="headerlink" href="#linear-probing" title="Permalink to this heading">¶</a></h2>
+<h2 id="linear-probing">线性探测<a class="headerlink" href="#linear-probing" title="此标题的永久链接">¶</a></h2>
 <p>线性探测是在字典中找到可用地址或槽的一种方法。在 MicroPython 中，它被用于开放寻址。为了服务上述描述的请求，线性探测假设每次探测的固定的间隔为 <code class="docutils literal notranslate"><span class="pre">1</span></code> 。请求将被放置到下一个能满足需求的空闲槽中，在我们的例子中，即槽 <code class="docutils literal notranslate"><span class="pre">4</span></code> ：</p>
 <img alt="../_images/linprob.png" src="../_images/linprob.png"/>
 <p>在字典中搜索项也是使用同样的方法，即开放寻址和线性探测。假设我们想搜索数据项 <code class="docutils literal notranslate"><span class="pre">33</span></code> 。计算出的哈希值将是 2 。查看槽 2 会显示 <code class="docutils literal notranslate"><span class="pre">33</span></code> ，此时，我们返回 <code class="docutils literal notranslate"><span class="pre">True</span></code> 。搜索 <code class="docutils literal notranslate"><span class="pre">70</span></code> 则展现出非常不同的过程，因为在插入时发生了冲突。因为计算出的哈希值是 <code class="docutils literal notranslate"><span class="pre">0</span></code> ，它当前正在保存着 <code class="docutils literal notranslate"><span class="pre">44</span></code> 。不过，此时我们并不是直接返回 <code class="docutils literal notranslate"><span class="pre">False</span></code> ，而是执行一个顺序搜索，从点 <code class="docutils literal notranslate"><span class="pre">1</span></code> 开始，直到找到项目 <code class="docutils literal notranslate"><span class="pre">70</span></code> 或遇到一个空闲槽。这是一个在哈希中执行搜索的寻常方式：</p>
@@ -491,10 +491,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

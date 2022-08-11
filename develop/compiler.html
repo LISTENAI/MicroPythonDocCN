@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -369,7 +369,7 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       
     
     </li>
@@ -486,7 +486,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="the-compiler">
-<span id="compiler"></span><h1 id="develop-compiler--page-root">编译器<a class="headerlink" href="#develop-compiler--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="compiler"></span><h1 id="develop-compiler--page-root">编译器<a class="headerlink" href="#develop-compiler--page-root" title="此标题的永久链接">¶</a></h1>
 <p>在 MicroPython 中，编译过程包括以下几个步骤：</p>
 <ul class="simple">
 <li><p>词法分析器将一个 MicroPython 程序的文本流转换为标记。</p></li>
@@ -501,7 +501,7 @@
 </div>
 <p>该 <code class="docutils literal notranslate"><span class="pre">add1</span></code> 语句接受一个整数作为参数，并将其加 1。</p>
 <section id="adding-a-grammar-rule">
-<h2 id="adding-a-grammar-rule">添加语法规则<a class="headerlink" href="#adding-a-grammar-rule" title="Permalink to this heading">¶</a></h2>
+<h2 id="adding-a-grammar-rule">添加语法规则<a class="headerlink" href="#adding-a-grammar-rule" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython 的语法基于 <a class="reference external" href="https://docs.python.org/3.5/reference/grammar.html">CPython 语法</a> ，它在 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/grammar.h">py/grammar.h</a> 中定义。这个语法是用来解析 MicroPython 源码文件的。</p>
 <p>要定义一个语法规则，你需要知道两个宏：<code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> 和 <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code>。<code class="docutils literal notranslate"><span class="pre">DEF_RULE</span></code> 允许你定义一个有关联编译函数的规则，而 <code class="docutils literal notranslate"><span class="pre">DEF_RULE_NC</span></code> 则表示不编译( NC 代表 No Compile )函数。</p>
 <p>我们新增的 <code class="docutils literal notranslate"><span class="pre">add1</span></code> 语句的简单语法定义如下：</p>
@@ -526,7 +526,7 @@
 </div>
 </section>
 <section id="adding-a-lexical-token">
-<h2 id="adding-a-lexical-token">添加词法标记<a class="headerlink" href="#adding-a-lexical-token" title="Permalink to this heading">¶</a></h2>
+<h2 id="adding-a-lexical-token">添加词法标记<a class="headerlink" href="#adding-a-lexical-token" title="此标题的永久链接">¶</a></h2>
 <p>在语法中定义的每个规则都应该在 <code class="docutils literal notranslate"><span class="pre">py/lexer.h</span></code> 中有一个与其关联的标记定义。通过修改 <code class="docutils literal notranslate"><span class="pre">_mp_token_kind_t</span></code> 枚举来增加该标记：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">typedef</span> <span class="k">enum</span> <span class="n">_mp_token_kind_t</span> <span class="p">{</span>
     <span class="p">...</span>
@@ -566,14 +566,14 @@
 </div>
 </section>
 <section id="parsing">
-<h2 id="parsing">解析中<a class="headerlink" href="#parsing" title="Permalink to this heading">¶</a></h2>
+<h2 id="parsing">解析中<a class="headerlink" href="#parsing" title="此标题的永久链接">¶</a></h2>
 <p>在解析阶段，解析器接受词法分析器产生的标记，并将其转换为一个抽象语法树（ abstract syntax tree 简称 AST ）或者 <em>解析树</em>。解析器的实现在 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/parse.c">py/parse.c</a> 中。</p>
 <p>解析器还维护一个用于在解析中的不同方面使用的常量表，与 <a class="reference external" href="https://steemit.com/programming/@drifter1/writing-a-simple-compiler-on-my-own-symbol-table-basic-structure">符号表 symbol table</a> 所承载的能力类似。</p>
 <p>在解析阶段会进行一些优化，比如对大多数操作（例如逻辑、二进制、单目运算）的整数进行 <a class="reference external" href="http://compileroptimizations.com/category/constant_folding.htm">常量折叠</a> ，并且会对表达式周围的括号进行优化增强，同时也会对字符串进行一些优化。</p>
 <p>值得注意的是，<em>文档字符串 docstrings</em> 会被丢弃，并且编译器无法访问。即使对像 <a class="reference external" href="https://en.wikipedia.org/wiki/String_interning">字符串驻留</a> 这样的特性也不会对文档字符串生效。</p>
 </section>
 <section id="compiler-passes">
-<h2 id="compiler-passes">编译器步骤<a class="headerlink" href="#compiler-passes" title="Permalink to this heading">¶</a></h2>
+<h2 id="compiler-passes">编译器步骤<a class="headerlink" href="#compiler-passes" title="此标题的永久链接">¶</a></h2>
 <p>像大多数编译器一样，MicroPython 编译所有代码到 MicroPython 字节码或者原生代码。这一功能在 <a class="reference external" href="https://github.com/micropython/micropython/blob/master/py/compile.c">py/compile.c</a> 中实现。你应该了解的最直接相关的函数是：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">mp_obj_t</span> <span class="nf">mp_compile</span><span class="p">(</span><span class="n">mp_parse_tree_t</span> <span class="o">*</span><span class="n">parse_tree</span><span class="p">,</span> <span class="n">qstr</span> <span class="n">source_file</span><span class="p">,</span> <span class="kt">bool</span> <span class="n">is_repl</span><span class="p">)</span> <span class="p">{</span>
     <span class="c1">// Compile the input parse_tree to a raw-code structure.</span>
@@ -585,7 +585,7 @@
 </div>
 <p>编译器会进行四步操作：作用域、栈大小、代码大小和发射。每次编译都会使用相同的 C 代码，并且使用相同的 AST 数据结构，每次编译都会使用上一次编译的结果来计算新的结果。</p>
 <section id="first-pass">
-<h3 id="first-pass">第一步<a class="headerlink" href="#first-pass" title="Permalink to this heading">¶</a></h3>
+<h3 id="first-pass">第一步<a class="headerlink" href="#first-pass" title="此标题的永久链接">¶</a></h3>
 <p>在第一次编译中，编译器会学习到已知的标识符（变量）的作用域，是全局的、局部的、闭包的等等。在同一次编译中，编译器（字节码或机器码 ）也会计算出提交的代码所需的标签数量。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="c1">// Compile pass 1.</span>
 <span class="n">comp</span><span class="o">-&gt;</span><span class="n">emit</span> <span class="o">=</span> <span class="n">emit_bc</span><span class="p">;</span>
@@ -612,7 +612,7 @@
 </div>
 </section>
 <section id="second-and-third-passes">
-<h3 id="second-and-third-passes">第二和第三步<a class="headerlink" href="#second-and-third-passes" title="Permalink to this heading">¶</a></h3>
+<h3 id="second-and-third-passes">第二和第三步<a class="headerlink" href="#second-and-third-passes" title="此标题的永久链接">¶</a></h3>
 <p>第二和第三步都会计算出字节码或机器码的栈大小和代码大小。第三步之后，代码大小不能变，否则标签的位置会出错。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">scope_t</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">scope_head</span><span class="p">;</span> <span class="n">s</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">compile_error</span> <span class="o">==</span> <span class="n">MP_OBJ_NULL</span><span class="p">;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
@@ -652,7 +652,7 @@
 <p><em>内联汇编代码</em> 同样也是支持的，汇编指令是作为函数调用，但是会直接发射成对应的机器指令。这个汇编器只有三步（作用域、代码大小、发射），并且使用了一个不同的实现，而不是 <code class="docutils literal notranslate"><span class="pre">compile_scope</span></code> 函数。请参考 <a class="reference internal" href="../pyboard/tutorial/assembler.html#pyboard-tutorial-assembler"><span class="std std-ref">内联汇编编译器</span></a> 章节获取更多详细信息。</p>
 </section>
 <section id="fourth-pass">
-<h3 id="fourth-pass">第四步<a class="headerlink" href="#fourth-pass" title="Permalink to this heading">¶</a></h3>
+<h3 id="fourth-pass">第四步<a class="headerlink" href="#fourth-pass" title="此标题的永久链接">¶</a></h3>
 <p>第四步会发射最终可以执行的代码，可以是虚拟机中的字节码，也可以是 CPU 直接支持的原生代码。</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="n">scope_t</span> <span class="o">*</span><span class="n">s</span> <span class="o">=</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">scope_head</span><span class="p">;</span> <span class="n">s</span> <span class="o">!=</span> <span class="nb">NULL</span> <span class="o">&amp;&amp;</span> <span class="n">comp</span><span class="o">-&gt;</span><span class="n">compile_error</span> <span class="o">==</span> <span class="n">MP_OBJ_NULL</span><span class="p">;</span> <span class="n">s</span> <span class="o">=</span> <span class="n">s</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">)</span> <span class="p">{</span>
     <span class="p">...</span>
@@ -667,7 +667,7 @@
 </section>
 </section>
 <section id="emitting-bytecode">
-<h2 id="emitting-bytecode">发射字节码<a class="headerlink" href="#emitting-bytecode" title="Permalink to this heading">¶</a></h2>
+<h2 id="emitting-bytecode">发射字节码<a class="headerlink" href="#emitting-bytecode" title="此标题的永久链接">¶</a></h2>
 <p>Python 代码中的语句通常会对应到发射的字节码，比如 <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code> 会生成 <code class="docutils literal notranslate"><span class="pre">push</span> <span class="pre">a</span></code> 和 <code class="docutils literal notranslate"><span class="pre">push</span> <span class="pre">b</span></code> 然后 <code class="docutils literal notranslate"><span class="pre">binary</span> <span class="pre">op</span> <span class="pre">add</span></code>。某些语句不会发射任何代码，但是会影响到变量的作用域，比如 <code class="docutils literal notranslate"><span class="pre">global</span> <span class="pre">a</span></code>。</p>
 <p>发出字节码的函数的实现类似于以下内容：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="kt">void</span> <span class="nf">mp_emit_bc_unary_op</span><span class="p">(</span><span class="n">emit_t</span> <span class="o">*</span><span class="n">emit</span><span class="p">,</span> <span class="n">mp_unary_op_t</span> <span class="n">op</span><span class="p">)</span> <span class="p">{</span>
@@ -678,7 +678,7 @@
 <p>我们使用一元操作符表达式来作为一个例子，但是实现的细节是相同的。方法 <code class="docutils literal notranslate"><span class="pre">emit_write_bytecode_byte()</span></code> 是一个包装函数，且所有的函数都必须调用它来发射字节码。</p>
 </section>
 <section id="emitting-native-code">
-<span id="id2"></span><h2 id="emitting-native-code">发射原生代码<a class="headerlink" href="#emitting-native-code" title="Permalink to this heading">¶</a></h2>
+<span id="id2"></span><h2 id="emitting-native-code">发射原生代码<a class="headerlink" href="#emitting-native-code" title="此标题的永久链接">¶</a></h2>
 <p>与字节码一样，原生代码在 <code class="docutils literal notranslate"><span class="pre">py/emitnative.c</span></code> 中每个代码语句都应该有一个对应的函数：</p>
 <div class="highlight-c notranslate"><div class="highlight"><pre><span></span><span class="n">STATIC</span> <span class="kt">void</span> <span class="nf">emit_native_unary_op</span><span class="p">(</span><span class="n">emit_t</span> <span class="o">*</span><span class="n">emit</span><span class="p">,</span> <span class="n">mp_unary_op_t</span> <span class="n">op</span><span class="p">)</span> <span class="p">{</span>
      <span class="n">vtype_kind_t</span> <span class="n">vtype</span><span class="p">;</span>
@@ -745,10 +745,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

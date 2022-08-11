@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -304,7 +304,7 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       
     
     </li>
@@ -405,11 +405,11 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-string-interning">
-<span id="qstr"></span><h1 id="develop-qstr--page-root">MicroPython 字符串驻留<a class="headerlink" href="#develop-qstr--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="qstr"></span><h1 id="develop-qstr--page-root">MicroPython 字符串驻留<a class="headerlink" href="#develop-qstr--page-root" title="此标题的永久链接">¶</a></h1>
 <p>MicroPython 使用 <a class="reference external" href="https://en.wikipedia.org/wiki/String_interning">string interning</a> （字符串驻留）来节省 RAM 和 ROM 。这样可以避免了对于相同的字符串，存储了重复的引用。主要是因为在你的代码中，某些标识符，比如函数或变量名，很可能会出现在多个地方。在 MicroPython 中，一个驻留的字符串被称为 QSTR （uniQue STRing 的缩写，指唯一字符串）。</p>
 <p>QSTR 值（以 <code class="docutils literal notranslate"><span class="pre">qstr</span></code> 类型存在）是一个链表中的 QSTR 值的索引。QSTR 存储了其长度和内容的哈希值，以便快速的比较。所有与字符串操作相关的 bytecode 操作都使用 QSTR 参数。</p>
 <section id="compile-time-qstr-generation">
-<h2 id="compile-time-qstr-generation">编译时进行的 QSTR 生成<a class="headerlink" href="#compile-time-qstr-generation" title="Permalink to this heading">¶</a></h2>
+<h2 id="compile-time-qstr-generation">编译时进行的 QSTR 生成<a class="headerlink" href="#compile-time-qstr-generation" title="此标题的永久链接">¶</a></h2>
 <p>在 MicroPython C 代码中，任何需要在最终的固件中驻留的字符串，都会写入为 <code class="docutils literal notranslate"><span class="pre">MP_QSTR_Foo</span></code> 。在编译时，这将会将其转换为一个 <code class="docutils literal notranslate"><span class="pre">qstr</span></code> 值，指向 <code class="docutils literal notranslate"><span class="pre">"Foo"</span></code> 在 QSTR 池中的索引。</p>
 <p>这项工作，是通过在 <code class="docutils literal notranslate"><span class="pre">Makefile</span></code> 中定义的多步操作来完成的。总结来说，这个过程有三个部分：</p>
 <ol class="arabic simple">
@@ -439,7 +439,7 @@
 </ol>
 </section>
 <section id="run-time-qstr-generation">
-<h2 id="run-time-qstr-generation">运行时进行的 QSTR 生成<a class="headerlink" href="#run-time-qstr-generation" title="Permalink to this heading">¶</a></h2>
+<h2 id="run-time-qstr-generation">运行时进行的 QSTR 生成<a class="headerlink" href="#run-time-qstr-generation" title="此标题的永久链接">¶</a></h2>
 <p>可以在运行时创建额外的 QSTR 池，以便将字符串添加到其中。例如，下述代码：</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">foo</span><span class="p">[</span><span class="n">x</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>
 </pre></div>
@@ -497,10 +497,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

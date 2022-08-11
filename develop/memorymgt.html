@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -304,7 +304,7 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       
     
     </li>
@@ -405,7 +405,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="memory-management">
-<span id="memorymanagement"></span><h1 id="develop-memorymgt--page-root">内存管理<a class="headerlink" href="#develop-memorymgt--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="memorymanagement"></span><h1 id="develop-memorymgt--page-root">内存管理<a class="headerlink" href="#develop-memorymgt--page-root" title="此标题的永久链接">¶</a></h1>
 <p>与 C/C++ 之类的编程语言不同， MicroPython 通过支持自动内存管理的方式，向开发者隐藏了内存管理的细节。自动内存管理是操作系统或应用程序用于自动管理内存分配和释放的一种技术。它避免了诸如忘记释放分配给对象的内存等问题。自动内存管理还避免了使用已释放内存的关键问题。自动内存管理有多种形式，垃圾回收机制（ GC ）是其中一种。</p>
 <p>垃圾回收器通常有两个职责：</p>
 <ol class="arabic simple">
@@ -431,7 +431,7 @@
 </div>
 <p>即使 <code class="docutils literal notranslate"><span class="pre">gc.disable()</span></code> 已被调用，也可以使用 <code class="docutils literal notranslate"><span class="pre">gc.collect()</span></code> 触发垃圾回收。</p>
 <section id="the-object-model">
-<h2 id="the-object-model">对象模型<a class="headerlink" href="#the-object-model" title="Permalink to this heading">¶</a></h2>
+<h2 id="the-object-model">对象模型<a class="headerlink" href="#the-object-model" title="此标题的永久链接">¶</a></h2>
 <p>所有 MicroPython 对象在 C 中都是通过 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 数据类型引用。它通常是一个字长（即与架构相同大小的指针），可以是 32-bit (STM32, nRF, ESP32, Unix x86) 或 64-bit (Unix x64)。对于某些特定对象，它也可以比字长大，例如在 32-bit 架构中 <code class="docutils literal notranslate"><span class="pre">OBJ_REPR_D</span></code> 为 64-bit 大小的 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code>。</p>
 <p>一个 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 对象代表一个 MicroPython 对象，例如整数、浮点数、类型、字典或类实例。某些对象（例如布尔值和小整数）在 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 中直接存储其值，不需要额外的内存。其他对象的值存储在其他内存中（例如垃圾回收堆栈），其 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 包含一个指向该内存的指针。<code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 中的一部分信息作为标记，声明其对象类型。</p>
 <p>参考 <code class="docutils literal notranslate"><span class="pre">py/mpconfig.h</span></code> 查看可用的对象表示的具体细节。</p>
@@ -449,7 +449,7 @@
 <p>这些星号表示具体对象在内存中的地址。</p>
 </section>
 <section id="allocation-of-objects">
-<h2 id="allocation-of-objects">对象分配<a class="headerlink" href="#allocation-of-objects" title="Permalink to this heading">¶</a></h2>
+<h2 id="allocation-of-objects">对象分配<a class="headerlink" href="#allocation-of-objects" title="此标题的永久链接">¶</a></h2>
 <p>小整数的值直接存储在 <code class="docutils literal notranslate"><span class="pre">mp_obj_t</span></code> 中，而不是堆或其他地方。因此，小整数的创建不会影响堆内存。同样地，内部字符串已经存储在其他地方，以及 <code class="docutils literal notranslate"><span class="pre">None</span></code>、<code class="docutils literal notranslate"><span class="pre">False</span></code> 和 <code class="docutils literal notranslate"><span class="pre">True</span></code> 等等的即时生效的值也不会影响堆内存。</p>
 <p>所有其他的具体对象都会在堆内存中分配，并且其对象结构中会保留一个字段来存储对象的类型。</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>+++++++++++
@@ -527,10 +527,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

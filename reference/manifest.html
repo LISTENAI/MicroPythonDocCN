@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -423,7 +423,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="micropython-manifest-files">
-<h1 id="reference-manifest--page-root">MicroPython 清单文件<a class="headerlink" href="#reference-manifest--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="reference-manifest--page-root">MicroPython 清单文件<a class="headerlink" href="#reference-manifest--page-root" title="此标题的永久链接">¶</a></h1>
 <p>当为设备编译固件时，以下组件将被包含在编译过程中:</p>
 <ul class="simple">
 <li><p>核心 MicroPython 虚拟机和运行时</p></li>
@@ -437,7 +437,7 @@
 <p>你也可以在设备运行时向文件系统中添加额外的模块。在文件系统添加和删除模块不需要重新编译固件，因此它是一个更简单的方式。使用清单文件是优势是，冻结模块更高效：它们在导入时更快，而且占用的内存更少。</p>
 <p>MicroPython 清单文件是 Python 文件，可以包含任意的 Python 代码。其中还有一组命令（预定义的函数）用于指定要包含的 Python 源文件。这些命令在下面描述。</p>
 <section id="freezing-source-code">
-<h2 id="freezing-source-code">冻结源代码<a class="headerlink" href="#freezing-source-code" title="Permalink to this heading">¶</a></h2>
+<h2 id="freezing-source-code">冻结源代码<a class="headerlink" href="#freezing-source-code" title="此标题的永久链接">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="freeze">
 <span class="sig-name descname"><span class="pre">freeze</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">script</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">opt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#freeze" title="永久链接至目标">¶</a></dt>
@@ -466,7 +466,7 @@
 </dd></dl>
 </section>
 <section id="including-other-manifest-files">
-<h2 id="including-other-manifest-files">包含其它的 manifest 文件<a class="headerlink" href="#including-other-manifest-files" title="Permalink to this heading">¶</a></h2>
+<h2 id="including-other-manifest-files">包含其它的 manifest 文件<a class="headerlink" href="#including-other-manifest-files" title="此标题的永久链接">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="include">
 <span class="sig-name descname"><span class="pre">include</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">manifest</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#include" title="永久链接至目标">¶</a></dt>
@@ -490,7 +490,7 @@
 </dd></dl>
 </section>
 <section id="examples">
-<h2 id="examples">示例<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
+<h2 id="examples">示例<a class="headerlink" href="#examples" title="此标题的永久链接">¶</a></h2>
 <p>要冻结一个可以通过 <code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">mydriver</span></code> 进行导入的单个文件，请使用：</p>
 <div class="highlight-python3 notranslate"><div class="highlight"><pre><span></span><span class="n">freeze</span><span class="p">(</span><span class="s2">"."</span><span class="p">,</span> <span class="s2">"mydriver.py"</span><span class="p">)</span>
 </pre></div>
@@ -564,10 +564,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

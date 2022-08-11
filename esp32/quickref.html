@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -583,7 +583,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="quick-reference-for-the-esp32">
-<span id="esp32-quickref"></span><h1 id="esp32-quickref--page-root">Quick reference for the ESP32<a class="headerlink" href="#esp32-quickref--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="esp32-quickref"></span><h1 id="esp32-quickref--page-root">Quick reference for the ESP32<a class="headerlink" href="#esp32-quickref--page-root" title="此标题的永久链接">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/esp32.jpg"><img alt="ESP32 board" src="../_images/esp32.jpg" style="width: 640px;"/></a>
 <p>The Espressif ESP32 Development Board (image attribution: Adafruit).</p>
 <p>Below is a quick reference for ESP32-based boards.  If it is your first time
@@ -595,12 +595,12 @@ working with this board it may be useful to get an overview of the microcontroll
 </ul>
 </div>
 <section id="installing-micropython">
-<h2 id="installing-micropython">Installing MicroPython<a class="headerlink" href="#installing-micropython" title="Permalink to this heading">¶</a></h2>
+<h2 id="installing-micropython">Installing MicroPython<a class="headerlink" href="#installing-micropython" title="此标题的永久链接">¶</a></h2>
 <p>See the corresponding section of tutorial: <a class="reference internal" href="tutorial/intro.html#esp32-intro"><span class="std std-ref">Getting started with MicroPython on the ESP32</span></a>. It also includes
 a troubleshooting subsection.</p>
 </section>
 <section id="general-board-control">
-<h2 id="general-board-control">General board control<a class="headerlink" href="#general-board-control" title="Permalink to this heading">¶</a></h2>
+<h2 id="general-board-control">General board control<a class="headerlink" href="#general-board-control" title="此标题的永久链接">¶</a></h2>
 <p>The MicroPython REPL is on UART0 (GPIO1=TX, GPIO3=RX) at baudrate 115200.
 Tab-completion is useful to find out what methods an object has.
 Paste mode (ctrl-E) is useful to paste a large slab of Python code into
@@ -639,7 +639,7 @@ ambient due to the IC getting warm while it runs.  This effect can be minimised
 by reading the temperature sensor immediately after waking up from sleep.</p>
 </section>
 <section id="networking">
-<h2 id="networking">Networking<a class="headerlink" href="#networking" title="Permalink to this heading">¶</a></h2>
+<h2 id="networking">Networking<a class="headerlink" href="#networking" title="此标题的永久链接">¶</a></h2>
 <p>The <a class="reference internal" href="../library/network.html#module-network" title="network: network configuration"><code class="xref py py-mod docutils literal notranslate"><span class="pre">network</span></code></a> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">network</span>
 
@@ -682,7 +682,7 @@ attempts (0 means it won’t retry, -1 will restore the default behaviour of try
 to reconnect forever).</p>
 </section>
 <section id="delay-and-timing">
-<h2 id="delay-and-timing">Delay and timing<a class="headerlink" href="#delay-and-timing" title="Permalink to this heading">¶</a></h2>
+<h2 id="delay-and-timing">Delay and timing<a class="headerlink" href="#delay-and-timing" title="此标题的永久链接">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/time.html#module-time" title="time: time related functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
@@ -695,7 +695,7 @@ to reconnect forever).</p>
 </div>
 </section>
 <section id="timers">
-<h2 id="timers">Timers<a class="headerlink" href="#timers" title="Permalink to this heading">¶</a></h2>
+<h2 id="timers">Timers<a class="headerlink" href="#timers" title="此标题的永久链接">¶</a></h2>
 <p>The ESP32 port has four hardware timers. Use the <a class="reference internal" href="../library/machine.Timer.html#machine-timer"><span class="std std-ref">machine.Timer</span></a> class
 with a timer ID from 0 to 3 (inclusive):</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Timer</span>
@@ -711,7 +711,7 @@ with a timer ID from 0 to 3 (inclusive):</p>
 <p>Virtual timers are not currently supported on this port.</p>
 </section>
 <section id="pins-and-gpio">
-<span id="id1"></span><h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="Permalink to this heading">¶</a></h2>
+<span id="id1"></span><h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="此标题的永久链接">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
@@ -746,7 +746,7 @@ which can be used to invert a pin. Useful for illuminating active-low LEDs
 using <code class="docutils literal notranslate"><span class="pre">on()</span></code> or <code class="docutils literal notranslate"><span class="pre">value(1)</span></code>.</p>
 </section>
 <section id="uart-serial-bus">
-<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="此标题的永久链接">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.UART.html#machine-uart"><span class="std std-ref">machine.UART</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">UART</span>
 
@@ -785,7 +785,7 @@ pins listed below.</p>
 </table>
 </section>
 <section id="pwm-pulse-width-modulation">
-<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="Permalink to this heading">¶</a></h2>
+<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="此标题的永久链接">¶</a></h2>
 <p>PWM can be enabled on all output-enabled pins. The base frequency can
 range from 1Hz to 40MHz but there is a tradeoff; as the base frequency
 <em>increases</em> the duty resolution <em>decreases</em>. See
@@ -855,7 +855,7 @@ possible at the same frequency.</p>
 <p>See more examples in the <a class="reference internal" href="tutorial/pwm.html#esp32-pwm"><span class="std std-ref">Pulse Width Modulation</span></a> tutorial.</p>
 </section>
 <section id="adc-analog-to-digital-conversion">
-<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="Permalink to this heading">¶</a></h2>
+<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="此标题的永久链接">¶</a></h2>
 <p>On the ESP32 ADC functionality is available on Pins 32-39. Note that, when
 using the default configuration, input voltages on the ADC pin must be between
 0.0v and 1.0v (anything above 1.0v will just read as 4095).  Attenuation must
@@ -914,7 +914,7 @@ and returned during ADC reads. Possible width options are:</p>
 </dd></dl>
 </section>
 <section id="software-spi-bus">
-<h2 id="software-spi-bus">Software SPI bus<a class="headerlink" href="#software-spi-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="software-spi-bus">Software SPI bus<a class="headerlink" href="#software-spi-bus" title="此标题的永久链接">¶</a></h2>
 <p>Software SPI (using bit-banging) works on all pins, and is accessed via the
 <a class="reference internal" href="../library/machine.SPI.html#machine-softspi"><span class="std std-ref">machine.SoftSPI</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">SoftSPI</span>
@@ -947,7 +947,7 @@ initialising Software SPI.</p>
 </div>
 </section>
 <section id="hardware-spi-bus">
-<h2 id="hardware-spi-bus">Hardware SPI bus<a class="headerlink" href="#hardware-spi-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="hardware-spi-bus">Hardware SPI bus<a class="headerlink" href="#hardware-spi-bus" title="此标题的永久链接">¶</a></h2>
 <p>There are two hardware SPI channels that allow faster transmission
 rates (up to 80Mhz). These may be used on any IO pins that support the
 required direction and are otherwise unused (see <a class="reference internal" href="#pins-and-gpio"><span class="std std-ref">Pins and GPIO</span></a>)
@@ -988,7 +988,7 @@ has the same methods as software SPI above:</p>
 </div>
 </section>
 <section id="software-i2c-bus">
-<h2 id="software-i2c-bus">Software I2C bus<a class="headerlink" href="#software-i2c-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="software-i2c-bus">Software I2C bus<a class="headerlink" href="#software-i2c-bus" title="此标题的永久链接">¶</a></h2>
 <p>Software I2C (using bit-banging) works on all output-capable pins, and is
 accessed via the <a class="reference internal" href="../library/machine.I2C.html#machine-softi2c"><span class="std std-ref">machine.SoftI2C</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">SoftI2C</span>
@@ -1006,7 +1006,7 @@ accessed via the <a class="reference internal" href="../library/machine.I2C.html
 </div>
 </section>
 <section id="hardware-i2c-bus">
-<h2 id="hardware-i2c-bus">Hardware I2C bus<a class="headerlink" href="#hardware-i2c-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="hardware-i2c-bus">Hardware I2C bus<a class="headerlink" href="#hardware-i2c-bus" title="此标题的永久链接">¶</a></h2>
 <p>There are two hardware I2C peripherals with identifiers 0 and 1.  Any available
 output-capable pins can be used for SCL and SDA but the defaults are given
 below.</p>
@@ -1038,7 +1038,7 @@ has the same methods as software I2C above:</p>
 </div>
 </section>
 <section id="i2s-bus">
-<h2 id="i2s-bus">I2S bus<a class="headerlink" href="#i2s-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="i2s-bus">I2S bus<a class="headerlink" href="#i2s-bus" title="此标题的永久链接">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.I2S.html#machine-i2s"><span class="std std-ref">machine.I2S</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">I2S</span><span class="p">,</span> <span class="n">Pin</span>
 
@@ -1054,7 +1054,7 @@ users is encouraged.  Based on this feedback, the I2S class API and implementati
 <p>ESP32 has two I2S buses with id=0 and id=1</p>
 </section>
 <section id="real-time-clock-rtc">
-<h2 id="real-time-clock-rtc">Real time clock (RTC)<a class="headerlink" href="#real-time-clock-rtc" title="Permalink to this heading">¶</a></h2>
+<h2 id="real-time-clock-rtc">Real time clock (RTC)<a class="headerlink" href="#real-time-clock-rtc" title="此标题的永久链接">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.RTC.html#machine-rtc"><span class="std std-ref">machine.RTC</span></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">RTC</span>
 
@@ -1065,7 +1065,7 @@ users is encouraged.  Based on this feedback, the I2S class API and implementati
 </div>
 </section>
 <section id="wdt-watchdog-timer">
-<h2 id="wdt-watchdog-timer">WDT (Watchdog timer)<a class="headerlink" href="#wdt-watchdog-timer" title="Permalink to this heading">¶</a></h2>
+<h2 id="wdt-watchdog-timer">WDT (Watchdog timer)<a class="headerlink" href="#wdt-watchdog-timer" title="此标题的永久链接">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.WDT.html#machine-wdt"><span class="std std-ref">machine.WDT</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">WDT</span>
 
@@ -1076,7 +1076,7 @@ users is encouraged.  Based on this feedback, the I2S class API and implementati
 </div>
 </section>
 <section id="deep-sleep-mode">
-<h2 id="deep-sleep-mode">Deep-sleep mode<a class="headerlink" href="#deep-sleep-mode" title="Permalink to this heading">¶</a></h2>
+<h2 id="deep-sleep-mode">Deep-sleep mode<a class="headerlink" href="#deep-sleep-mode" title="此标题的永久链接">¶</a></h2>
 <p>The following code can be used to sleep, wake and check the reset cause:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span>
 
@@ -1107,7 +1107,7 @@ it is an output pin) via:</p>
 </ul>
 </section>
 <section id="sd-card">
-<h2 id="sd-card">SD card<a class="headerlink" href="#sd-card" title="Permalink to this heading">¶</a></h2>
+<h2 id="sd-card">SD card<a class="headerlink" href="#sd-card" title="此标题的永久链接">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.SDCard.html#machine-sdcard"><span class="std std-ref">machine.SDCard</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">machine</span><span class="o">,</span> <span class="nn">os</span>
 
@@ -1122,7 +1122,7 @@ it is an output pin) via:</p>
 </div>
 </section>
 <section id="rmt">
-<h2 id="rmt">RMT<a class="headerlink" href="#rmt" title="Permalink to this heading">¶</a></h2>
+<h2 id="rmt">RMT<a class="headerlink" href="#rmt" title="此标题的永久链接">¶</a></h2>
 <p>The RMT is ESP32-specific and allows generation of accurate digital pulses with
 12.5ns resolution.  See <a class="reference internal" href="../library/esp32.html#esp32-rmt"><span class="std std-ref">esp32.RMT</span></a> for details.  Usage is:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">esp32</span>
@@ -1136,7 +1136,7 @@ it is an output pin) via:</p>
 </div>
 </section>
 <section id="onewire-driver">
-<h2 id="onewire-driver">OneWire driver<a class="headerlink" href="#onewire-driver" title="Permalink to this heading">¶</a></h2>
+<h2 id="onewire-driver">OneWire driver<a class="headerlink" href="#onewire-driver" title="此标题的永久链接">¶</a></h2>
 <p>The OneWire driver is implemented in software and works on all pins:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="kn">import</span> <span class="nn">onewire</span>
@@ -1165,7 +1165,7 @@ the <code class="docutils literal notranslate"><span class="pre">convert_temp()<
 sample the temperature.</p>
 </section>
 <section id="neopixel-and-apa106-driver">
-<h2 id="neopixel-and-apa106-driver">NeoPixel and APA106 driver<a class="headerlink" href="#neopixel-and-apa106-driver" title="Permalink to this heading">¶</a></h2>
+<h2 id="neopixel-and-apa106-driver">NeoPixel and APA106 driver<a class="headerlink" href="#neopixel-and-apa106-driver" title="此标题的永久链接">¶</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">neopixel</span></code> and <code class="docutils literal notranslate"><span class="pre">apa106</span></code> modules:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="kn">from</span> <span class="nn">neopixel</span> <span class="k">import</span> <span class="n">NeoPixel</span>
@@ -1200,7 +1200,7 @@ units. It is possible to use alternative timing to control other (typically
 <p>APA102 (DotStar) uses a different driver as it has an additional clock pin.</p>
 </section>
 <section id="capacitive-touch">
-<h2 id="capacitive-touch">Capacitive touch<a class="headerlink" href="#capacitive-touch" title="Permalink to this heading">¶</a></h2>
+<h2 id="capacitive-touch">Capacitive touch<a class="headerlink" href="#capacitive-touch" title="此标题的永久链接">¶</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">TouchPad</span></code> class in the <code class="docutils literal notranslate"><span class="pre">machine</span></code> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">TouchPad</span><span class="p">,</span> <span class="n">Pin</span>
 
@@ -1228,7 +1228,7 @@ and surrounding composition so some calibration may be required.</p>
 <p>For more details on touchpads refer to <a class="reference external" href="https://docs.espressif.com/projects/esp-idf/en/latest/api-reference/peripherals/touch_pad.html">Espressif Touch Sensor</a>.</p>
 </section>
 <section id="dht-driver">
-<h2 id="dht-driver">DHT driver<a class="headerlink" href="#dht-driver" title="Permalink to this heading">¶</a></h2>
+<h2 id="dht-driver">DHT driver<a class="headerlink" href="#dht-driver" title="此标题的永久链接">¶</a></h2>
 <p>The DHT driver is implemented in software and works on all pins:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">dht</span>
 <span class="kn">import</span> <span class="nn">machine</span>
@@ -1246,7 +1246,7 @@ and surrounding composition so some calibration may be required.</p>
 </div>
 </section>
 <section id="webrepl-web-browser-interactive-prompt">
-<h2 id="webrepl-web-browser-interactive-prompt">WebREPL (web browser interactive prompt)<a class="headerlink" href="#webrepl-web-browser-interactive-prompt" title="Permalink to this heading">¶</a></h2>
+<h2 id="webrepl-web-browser-interactive-prompt">WebREPL (web browser interactive prompt)<a class="headerlink" href="#webrepl-web-browser-interactive-prompt" title="此标题的永久链接">¶</a></h2>
 <p>WebREPL (REPL over WebSockets, accessible via a web browser) is an
 experimental feature available in ESP32 port. Download web client
 from <a class="reference external" href="https://github.com/micropython/webrepl">https://github.com/micropython/webrepl</a> (hosted version available
@@ -1323,10 +1323,10 @@ to transfer files to an ESP32 board.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -513,7 +513,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="working-with-filesystems">
-<span id="filesystem"></span><h1 id="reference-filesystem--page-root"><a class="toc-backref" href="#reference-filesystem--page-root" role="doc-backlink">Working with filesystems</a><a class="headerlink" href="#reference-filesystem--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="filesystem"></span><h1 id="reference-filesystem--page-root"><a class="toc-backref" href="#reference-filesystem--page-root" role="doc-backlink">Working with filesystems</a><a class="headerlink" href="#reference-filesystem--page-root" title="此标题的永久链接">¶</a></h1>
 <nav class="contents" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
@@ -558,7 +558,7 @@ the filesystem on all ports.</p>
 with an operating system (e.g. the Unix port) the filesystem is provided by the
 host OS.</p>
 <section id="vfs">
-<h2 id="vfs"><a class="toc-backref" href="#id4" role="doc-backlink">VFS</a><a class="headerlink" href="#vfs" title="Permalink to this heading">¶</a></h2>
+<h2 id="vfs"><a class="toc-backref" href="#id4" role="doc-backlink">VFS</a><a class="headerlink" href="#vfs" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython implements a Unix-like Virtual File System (VFS) layer. All mounted
 filesystems are combined into a single virtual filesystem, starting at the root
 <code class="docutils literal notranslate"><span class="pre">/</span></code>. Filesystems are mounted into directories in this structure, and at
@@ -569,11 +569,11 @@ the SDCard at <code class="docutils literal notranslate"><span class="pre">/sd</
 <code class="docutils literal notranslate"><span class="pre">/</span></code>.</p>
 </section>
 <section id="block-devices">
-<h2 id="block-devices"><a class="toc-backref" href="#id5" role="doc-backlink">Block devices</a><a class="headerlink" href="#block-devices" title="Permalink to this heading">¶</a></h2>
+<h2 id="block-devices"><a class="toc-backref" href="#id5" role="doc-backlink">Block devices</a><a class="headerlink" href="#block-devices" title="此标题的永久链接">¶</a></h2>
 <p>A block device is an instance of a class that implements the
 <a class="reference internal" href="../library/os.html#os.AbstractBlockDev" title="os.AbstractBlockDev"><code class="xref py py-class docutils literal notranslate"><span class="pre">os.AbstractBlockDev</span></code></a> protocol.</p>
 <section id="built-in-block-devices">
-<h3 id="built-in-block-devices"><a class="toc-backref" href="#id6" role="doc-backlink">Built-in block devices</a><a class="headerlink" href="#built-in-block-devices" title="Permalink to this heading">¶</a></h3>
+<h3 id="built-in-block-devices"><a class="toc-backref" href="#id6" role="doc-backlink">Built-in block devices</a><a class="headerlink" href="#built-in-block-devices" title="此标题的永久链接">¶</a></h3>
 <p>Ports provide built-in block devices to access their primary flash.</p>
 <p>On power-on, MicroPython will attempt to detect the filesystem on the default
 flash and configure and mount it automatically. If no filesystem is found,
@@ -581,7 +581,7 @@ MicroPython will attempt to create a FAT filesystem spanning the entire flash.
 Ports can also provide a mechanism to “factory reset” the primary flash, usually
 by some combination of button presses at power on.</p>
 <section id="stm32-pyboard">
-<h4 id="stm32-pyboard"><a class="toc-backref" href="#id7" role="doc-backlink">STM32 / Pyboard</a><a class="headerlink" href="#stm32-pyboard" title="Permalink to this heading">¶</a></h4>
+<h4 id="stm32-pyboard"><a class="toc-backref" href="#id7" role="doc-backlink">STM32 / Pyboard</a><a class="headerlink" href="#stm32-pyboard" title="此标题的永久链接">¶</a></h4>
 <p>The <a class="reference internal" href="../library/pyb.Flash.html#pyb-flash"><span class="std std-ref">pyb.Flash</span></a> class provides access to the internal flash. On some
 boards which have larger external flash (e.g. Pyboard D), it will use that
 instead. The <code class="docutils literal notranslate"><span class="pre">start</span></code> kwarg should always be specified, i.e.
@@ -592,21 +592,21 @@ virtual device presented to USB MSC (i.e. it includes a virtual partition table
 at the start).</p>
 </section>
 <section id="esp8266">
-<h4 id="esp8266"><a class="toc-backref" href="#id8" role="doc-backlink">ESP8266</a><a class="headerlink" href="#esp8266" title="Permalink to this heading">¶</a></h4>
+<h4 id="esp8266"><a class="toc-backref" href="#id8" role="doc-backlink">ESP8266</a><a class="headerlink" href="#esp8266" title="此标题的永久链接">¶</a></h4>
 <p>The internal flash is exposed as a block device object which is created in the
 <code class="docutils literal notranslate"><span class="pre">flashbdev</span></code> module on start up. This object is by default added as a global
 variable so it can usually be accessed simply as <code class="docutils literal notranslate"><span class="pre">bdev</span></code>. This implements the
 extended interface.</p>
 </section>
 <section id="esp32">
-<h4 id="esp32"><a class="toc-backref" href="#id9" role="doc-backlink">ESP32</a><a class="headerlink" href="#esp32" title="Permalink to this heading">¶</a></h4>
+<h4 id="esp32"><a class="toc-backref" href="#id9" role="doc-backlink">ESP32</a><a class="headerlink" href="#esp32" title="此标题的永久链接">¶</a></h4>
 <p>The <a class="reference internal" href="../library/esp32.html#esp32.Partition" title="esp32.Partition"><code class="xref py py-class docutils literal notranslate"><span class="pre">esp32.Partition</span></code></a> class implements a block device for partitions
 defined for the board. Like ESP8266, there is a global variable <code class="docutils literal notranslate"><span class="pre">bdev</span></code> which
 points to the default partition. This implements the extended interface.</p>
 </section>
 </section>
 <section id="custom-block-devices">
-<h3 id="custom-block-devices"><a class="toc-backref" href="#id10" role="doc-backlink">Custom block devices</a><a class="headerlink" href="#custom-block-devices" title="Permalink to this heading">¶</a></h3>
+<h3 id="custom-block-devices"><a class="toc-backref" href="#id10" role="doc-backlink">Custom block devices</a><a class="headerlink" href="#custom-block-devices" title="此标题的永久链接">¶</a></h3>
 <p>The following class implements a simple block device that stores its data in
 RAM using a <code class="docutils literal notranslate"><span class="pre">bytearray</span></code>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">RAMBlockDev</span><span class="p">:</span>
@@ -688,7 +688,7 @@ normally would be used from Python code, for example:</p>
 </section>
 </section>
 <section id="filesystems">
-<h2 id="filesystems"><a class="toc-backref" href="#id11" role="doc-backlink">Filesystems</a><a class="headerlink" href="#filesystems" title="Permalink to this heading">¶</a></h2>
+<h2 id="filesystems"><a class="toc-backref" href="#id11" role="doc-backlink">Filesystems</a><a class="headerlink" href="#filesystems" title="此标题的永久链接">¶</a></h2>
 <p>MicroPython ports can provide implementations of <a class="reference internal" href="../library/os.html#os.VfsFat" title="os.VfsFat"><code class="xref py py-class docutils literal notranslate"><span class="pre">FAT</span></code></a>,
 <a class="reference internal" href="../library/os.html#os.VfsLfs1" title="os.VfsLfs1"><code class="xref py py-class docutils literal notranslate"><span class="pre">littlefs</span> <span class="pre">v1</span></code></a> and <a class="reference internal" href="../library/os.html#os.VfsLfs2" title="os.VfsLfs2"><code class="xref py py-class docutils literal notranslate"><span class="pre">littlefs</span> <span class="pre">v2</span></code></a>.</p>
 <p>The following table shows which filesystems are included in the firmware by
@@ -731,7 +731,7 @@ enabled in a custom firmware build.</p>
 </tbody>
 </table>
 <section id="fat">
-<h3 id="fat"><a class="toc-backref" href="#id12" role="doc-backlink">FAT</a><a class="headerlink" href="#fat" title="Permalink to this heading">¶</a></h3>
+<h3 id="fat"><a class="toc-backref" href="#id12" role="doc-backlink">FAT</a><a class="headerlink" href="#fat" title="此标题的永久链接">¶</a></h3>
 <p>The main advantage of the FAT filesystem is that it can be accessed over USB MSC
 on supported boards (e.g. STM32) without any additional drivers required on the
 host PC.</p>
@@ -755,7 +755,7 @@ recommended to use littlefs instead.</p>
 </div>
 </section>
 <section id="littlefs">
-<h3 id="littlefs"><a class="toc-backref" href="#id13" role="doc-backlink">Littlefs</a><a class="headerlink" href="#littlefs" title="Permalink to this heading">¶</a></h3>
+<h3 id="littlefs"><a class="toc-backref" href="#id13" role="doc-backlink">Littlefs</a><a class="headerlink" href="#littlefs" title="此标题的永久链接">¶</a></h3>
 <p><a class="reference external" href="https://github.com/littlefs-project/littlefs">Littlefs</a> is a filesystem designed for flash-based devices, and is much more
 resistant to filesystem corruption.</p>
 <div class="admonition note">
@@ -797,7 +797,7 @@ directory.  To get the correct values of <code class="docutils literal notransla
 </div>
 </section>
 <section id="hybrid-stm32">
-<h3 id="hybrid-stm32"><a class="toc-backref" href="#id14" role="doc-backlink">Hybrid (STM32)</a><a class="headerlink" href="#hybrid-stm32" title="Permalink to this heading">¶</a></h3>
+<h3 id="hybrid-stm32"><a class="toc-backref" href="#id14" role="doc-backlink">Hybrid (STM32)</a><a class="headerlink" href="#hybrid-stm32" title="此标题的永久链接">¶</a></h3>
 <p>By using the <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">len</span></code> kwargs to <code class="xref py py-class docutils literal notranslate"><span class="pre">pyb.Flash</span></code>, you can create
 block devices spanning a subset of the flash device.</p>
 <p>For example, to configure the first 256kiB as FAT (and available over USB MSC),
@@ -827,7 +827,7 @@ type automatically detected), but you can add:</p>
 <p>to <code class="docutils literal notranslate"><span class="pre">boot.py</span></code> to mount the data partition.</p>
 </section>
 <section id="hybrid-esp32">
-<h3 id="hybrid-esp32"><a class="toc-backref" href="#id15" role="doc-backlink">Hybrid (ESP32)</a><a class="headerlink" href="#hybrid-esp32" title="Permalink to this heading">¶</a></h3>
+<h3 id="hybrid-esp32"><a class="toc-backref" href="#id15" role="doc-backlink">Hybrid (ESP32)</a><a class="headerlink" href="#hybrid-esp32" title="此标题的永久链接">¶</a></h3>
 <p>On ESP32, if you build custom firmware, you can modify <code class="docutils literal notranslate"><span class="pre">partitions.csv</span></code> to
 define an arbitrary partition layout.</p>
 <p>At boot, the partition named “vfs” will be mounted at <code class="docutils literal notranslate"><span class="pre">/</span></code> by default, but any
@@ -888,10 +888,10 @@ additional partitions can be mounted in your <code class="docutils literal notra
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

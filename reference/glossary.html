@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -380,67 +380,67 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="glossary">
-<h1 id="reference-glossary--page-root">词汇表<a class="headerlink" href="#reference-glossary--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="reference-glossary--page-root">词汇表<a class="headerlink" href="#reference-glossary--page-root" title="此标题的永久链接">¶</a></h1>
 <dl class="glossary">
-<dt id="term-baremetal">baremetal - 裸机<a class="headerlink" href="#term-baremetal" title="Permalink to this term">¶</a></dt><dd><p>没有（全特性）操作系统的系统，例如基于 <a class="reference internal" href="#term-MCU"><span class="xref std std-term">微控制器</span></a> 的系统。在裸机系统上运行时，MicroPython 可以像小型操作系统一样有效地运行用户程序并提供命令解释器 ( <a class="reference internal" href="#term-REPL"><span class="xref std std-term">REPL</span></a> )。</p>
+<dt id="term-baremetal">baremetal - 裸机<a class="headerlink" href="#term-baremetal" title="此术语词汇的永久链接">¶</a></dt><dd><p>没有（全特性）操作系统的系统，例如基于 <a class="reference internal" href="#term-MCU"><span class="xref std std-term">微控制器</span></a> 的系统。在裸机系统上运行时，MicroPython 可以像小型操作系统一样有效地运行用户程序并提供命令解释器 ( <a class="reference internal" href="#term-REPL"><span class="xref std std-term">REPL</span></a> )。</p>
 </dd>
-<dt id="term-buffer-protocol">buffer protocol - 缓冲协议<a class="headerlink" href="#term-buffer-protocol" title="Permalink to this term">¶</a></dt><dd><p>任何可以自动转换为字节的 Python 对象，例如 <code class="docutils literal notranslate"><span class="pre">bytes</span></code>、 <code class="docutils literal notranslate"><span class="pre">bytearray</span></code>、 <code class="docutils literal notranslate"><span class="pre">memoryview</span></code> 和 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象，它们都实现了 “缓冲协议”。</p>
+<dt id="term-buffer-protocol">buffer protocol - 缓冲协议<a class="headerlink" href="#term-buffer-protocol" title="此术语词汇的永久链接">¶</a></dt><dd><p>任何可以自动转换为字节的 Python 对象，例如 <code class="docutils literal notranslate"><span class="pre">bytes</span></code>、 <code class="docutils literal notranslate"><span class="pre">bytearray</span></code>、 <code class="docutils literal notranslate"><span class="pre">memoryview</span></code> 和 <code class="docutils literal notranslate"><span class="pre">str</span></code> 对象，它们都实现了 “缓冲协议”。</p>
 </dd>
-<dt id="term-board">board - 开发板<a class="headerlink" href="#term-board" title="Permalink to this term">¶</a></dt><dd><p>通常这是指包含 <a class="reference internal" href="#term-MCU"><span class="xref std std-term">微控制器</span></a> 和支持组件的印制电路板 (PCB)。MicroPython 固件通常以板为对象提供，因为固件既包含 MCU 特定功能，也包含开发板级别功能，例如驱动程序或引脚名称。</p>
+<dt id="term-board">board - 开发板<a class="headerlink" href="#term-board" title="此术语词汇的永久链接">¶</a></dt><dd><p>通常这是指包含 <a class="reference internal" href="#term-MCU"><span class="xref std std-term">微控制器</span></a> 和支持组件的印制电路板 (PCB)。MicroPython 固件通常以板为对象提供，因为固件既包含 MCU 特定功能，也包含开发板级别功能，例如驱动程序或引脚名称。</p>
 </dd>
-<dt id="term-bytecode">bytecode - 字节码<a class="headerlink" href="#term-bytecode" title="Permalink to this term">¶</a></dt><dd><p>通过编译 Python 源代码生成的 Python 程序的精简形态。实际是由虚拟机执行的。字节码通常在运行时自动生成，对用户不可见。请注意，虽然 <a class="reference internal" href="#term-CPython"><span class="xref std std-term">CPython</span></a> 和 MicroPython 都使用字节码，但格式不同。你还可以使用 <a class="reference internal" href="#term-cross-compiler"><span class="xref std std-term">交叉编译器</span></a> 离线预编译源代码。</p>
+<dt id="term-bytecode">bytecode - 字节码<a class="headerlink" href="#term-bytecode" title="此术语词汇的永久链接">¶</a></dt><dd><p>通过编译 Python 源代码生成的 Python 程序的精简形态。实际是由虚拟机执行的。字节码通常在运行时自动生成，对用户不可见。请注意，虽然 <a class="reference internal" href="#term-CPython"><span class="xref std std-term">CPython</span></a> 和 MicroPython 都使用字节码，但格式不同。你还可以使用 <a class="reference internal" href="#term-cross-compiler"><span class="xref std std-term">交叉编译器</span></a> 离线预编译源代码。</p>
 </dd>
-<dt id="term-callee-owned-tuple">callee-owned tuple - 属于被调用者的元组<a class="headerlink" href="#term-callee-owned-tuple" title="Permalink to this term">¶</a></dt><dd><p>这是一个特定于 MicroPython 的构造，出于效率原因，某些内置函数或方法可能会复用相同的底层元组对象来返回数据。这一设计避免了必须为每次调用分配一个新的元组，并减少了堆碎片。程序不应持有对被调用者拥有的元组的引用，而应仅从中提取数据（或拷贝副本）。</p>
+<dt id="term-callee-owned-tuple">callee-owned tuple - 属于被调用者的元组<a class="headerlink" href="#term-callee-owned-tuple" title="此术语词汇的永久链接">¶</a></dt><dd><p>这是一个特定于 MicroPython 的构造，出于效率原因，某些内置函数或方法可能会复用相同的底层元组对象来返回数据。这一设计避免了必须为每次调用分配一个新的元组，并减少了堆碎片。程序不应持有对被调用者拥有的元组的引用，而应仅从中提取数据（或拷贝副本）。</p>
 </dd>
-<dt id="term-CircuitPython">CircuitPython<a class="headerlink" href="#term-CircuitPython" title="Permalink to this term">¶</a></dt><dd><p><a class="reference external" href="https://circuitpython.org">Adafruit Industries</a> 开发的 MicroPython 的变体。</p>
+<dt id="term-CircuitPython">CircuitPython<a class="headerlink" href="#term-CircuitPython" title="此术语词汇的永久链接">¶</a></dt><dd><p><a class="reference external" href="https://circuitpython.org">Adafruit Industries</a> 开发的 MicroPython 的变体。</p>
 </dd>
-<dt id="term-CPython">CPython<a class="headerlink" href="#term-CPython" title="Permalink to this term">¶</a></dt><dd><p>CPython 是 Python 编程语言最著名的一种的参考实现。但它也只是众多实现之一（包括 Jython、IronPython、PyPy 和 MicroPython）。MicroPython 的实现虽然与 CPython 有很大不同，但它的目标是尽可能保持兼容性。</p>
+<dt id="term-CPython">CPython<a class="headerlink" href="#term-CPython" title="此术语词汇的永久链接">¶</a></dt><dd><p>CPython 是 Python 编程语言最著名的一种的参考实现。但它也只是众多实现之一（包括 Jython、IronPython、PyPy 和 MicroPython）。MicroPython 的实现虽然与 CPython 有很大不同，但它的目标是尽可能保持兼容性。</p>
 </dd>
-<dt id="term-cross-compiler">cross-compiler - 交叉编译器<a class="headerlink" href="#term-cross-compiler" title="Permalink to this term">¶</a></dt><dd><p>也称为 <code class="docutils literal notranslate"><span class="pre">mpy-cross</span></code> 。该工具在你的 PC 上运行，负责将包含 MicroPython 代码的 <a class="reference internal" href="#term-.py-file"><span class="xref std std-term">.py 文件</span></a> 转换为包含 MicroPython 字节码的 <a class="reference internal" href="#term-.mpy-file"><span class="xref std std-term">.mpy 文件</span></a> 文件 。这意味着它加载速度更快（开发板无需编译代码），并且在闪存上使用更少的空间（字节码更节省空间）。</p>
+<dt id="term-cross-compiler">cross-compiler - 交叉编译器<a class="headerlink" href="#term-cross-compiler" title="此术语词汇的永久链接">¶</a></dt><dd><p>也称为 <code class="docutils literal notranslate"><span class="pre">mpy-cross</span></code> 。该工具在你的 PC 上运行，负责将包含 MicroPython 代码的 <a class="reference internal" href="#term-.py-file"><span class="xref std std-term">.py 文件</span></a> 转换为包含 MicroPython 字节码的 <a class="reference internal" href="#term-.mpy-file"><span class="xref std std-term">.mpy 文件</span></a> 文件 。这意味着它加载速度更快（开发板无需编译代码），并且在闪存上使用更少的空间（字节码更节省空间）。</p>
 </dd>
-<dt id="term-driver">driver - 驱动<a class="headerlink" href="#term-driver" title="Permalink to this term">¶</a></dt><dd><p>实现对特定组件（例如传感器或显示）的支持的 MicroPython 库。</p>
+<dt id="term-driver">driver - 驱动<a class="headerlink" href="#term-driver" title="此术语词汇的永久链接">¶</a></dt><dd><p>实现对特定组件（例如传感器或显示）的支持的 MicroPython 库。</p>
 </dd>
-<dt id="term-FFI">FFI - 外部函数接口<a class="headerlink" href="#term-FFI" title="Permalink to this term">¶</a></dt><dd><p>Foreign Function Interface 的缩写。 <a class="reference internal" href="#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix 适配端</span></a> 用来访问操作系统功能的一种机制。这在 <a class="reference internal" href="#term-baremetal"><span class="xref std std-term">裸机</span></a> 上不可用。</p>
+<dt id="term-FFI">FFI - 外部函数接口<a class="headerlink" href="#term-FFI" title="此术语词汇的永久链接">¶</a></dt><dd><p>Foreign Function Interface 的缩写。 <a class="reference internal" href="#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix 适配端</span></a> 用来访问操作系统功能的一种机制。这在 <a class="reference internal" href="#term-baremetal"><span class="xref std std-term">裸机</span></a> 上不可用。</p>
 </dd>
-<dt id="term-filesystem">filesystem - 文件系统<a class="headerlink" href="#term-filesystem" title="Permalink to this term">¶</a></dt><dd><p>大多数 MicroPython 适配口和开发板都提供了一个存储在闪存中的文件系统，用户在代码中可以直接使用 Python 的标准文件 API （例如 <code class="docutils literal notranslate"><span class="pre">open()</span></code> ）。一些板还可以通过作为 USB 大容量存储设备，使主机可以访问内部文件系统。</p>
+<dt id="term-filesystem">filesystem - 文件系统<a class="headerlink" href="#term-filesystem" title="此术语词汇的永久链接">¶</a></dt><dd><p>大多数 MicroPython 适配口和开发板都提供了一个存储在闪存中的文件系统，用户在代码中可以直接使用 Python 的标准文件 API （例如 <code class="docutils literal notranslate"><span class="pre">open()</span></code> ）。一些板还可以通过作为 USB 大容量存储设备，使主机可以访问内部文件系统。</p>
 </dd>
-<dt id="term-frozen-module">frozen module - 冻结模块<a class="headerlink" href="#term-frozen-module" title="Permalink to this term">¶</a></dt><dd><p>指交叉编译后打包到固件映像中的 Python 模块。这种操作减少了 RAM 需求，因为代码直接从闪存执行。</p>
+<dt id="term-frozen-module">frozen module - 冻结模块<a class="headerlink" href="#term-frozen-module" title="此术语词汇的永久链接">¶</a></dt><dd><p>指交叉编译后打包到固件映像中的 Python 模块。这种操作减少了 RAM 需求，因为代码直接从闪存执行。</p>
 </dd>
-<dt id="term-Garbage-Collector">Garbage Collector - 垃圾回收器<a class="headerlink" href="#term-Garbage-Collector" title="Permalink to this term">¶</a></dt><dd><p>在 Python（和 MicroPython）中运行的后台进程，用于回收 <a class="reference internal" href="#term-heap"><span class="xref std std-term">堆</span></a> 中未使用的内存。</p>
+<dt id="term-Garbage-Collector">Garbage Collector - 垃圾回收器<a class="headerlink" href="#term-Garbage-Collector" title="此术语词汇的永久链接">¶</a></dt><dd><p>在 Python（和 MicroPython）中运行的后台进程，用于回收 <a class="reference internal" href="#term-heap"><span class="xref std std-term">堆</span></a> 中未使用的内存。</p>
 </dd>
-<dt id="term-GPIO">GPIO - 通用输入输出<a class="headerlink" href="#term-GPIO" title="Permalink to this term">¶</a></dt><dd><p>General-purpose input/output 的缩写。控制微控制器上的电信号（通常称为 “pins” 引脚）的最简单方法。GPIO 通常允许引脚作为输入或输出，并设置或获取其数值（逻辑 “0” 或 “1” ）。MicroPython 使用 <a class="reference internal" href="../library/machine.Pin.html#machine.Pin" title="machine.Pin"><code class="xref py py-class docutils literal notranslate"><span class="pre">machine.Pin</span></code></a> 和 <a class="reference internal" href="../library/machine.Signal.html#machine.Signal" title="machine.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">machine.Signal</span></code></a> 类抽象 GPIO 访问。</p>
+<dt id="term-GPIO">GPIO - 通用输入输出<a class="headerlink" href="#term-GPIO" title="此术语词汇的永久链接">¶</a></dt><dd><p>General-purpose input/output 的缩写。控制微控制器上的电信号（通常称为 “pins” 引脚）的最简单方法。GPIO 通常允许引脚作为输入或输出，并设置或获取其数值（逻辑 “0” 或 “1” ）。MicroPython 使用 <a class="reference internal" href="../library/machine.Pin.html#machine.Pin" title="machine.Pin"><code class="xref py py-class docutils literal notranslate"><span class="pre">machine.Pin</span></code></a> 和 <a class="reference internal" href="../library/machine.Signal.html#machine.Signal" title="machine.Signal"><code class="xref py py-class docutils literal notranslate"><span class="pre">machine.Signal</span></code></a> 类抽象 GPIO 访问。</p>
 </dd>
-<dt id="term-GPIO-port">GPIO port - 通用输入输出端口<a class="headerlink" href="#term-GPIO-port" title="Permalink to this term">¶</a></dt><dd><p>一组 <a class="reference internal" href="#term-GPIO"><span class="xref std std-term">GPIO</span></a> 引脚，通常基于这些引脚的硬件属性（例如，一组可由同一个寄存器控制的引脚）。</p>
+<dt id="term-GPIO-port">GPIO port - 通用输入输出端口<a class="headerlink" href="#term-GPIO-port" title="此术语词汇的永久链接">¶</a></dt><dd><p>一组 <a class="reference internal" href="#term-GPIO"><span class="xref std std-term">GPIO</span></a> 引脚，通常基于这些引脚的硬件属性（例如，一组可由同一个寄存器控制的引脚）。</p>
 </dd>
-<dt id="term-heap">heap - 堆<a class="headerlink" href="#term-heap" title="Permalink to this term">¶</a></dt><dd><p>MicroPython 存储动态数据的 RAM 区域。它由垃圾收集器自动管理。不同的 MCU 和电路板 RAM 中可用于堆的数量大不相同，因此这将影响你的程序的复杂度。</p>
+<dt id="term-heap">heap - 堆<a class="headerlink" href="#term-heap" title="此术语词汇的永久链接">¶</a></dt><dd><p>MicroPython 存储动态数据的 RAM 区域。它由垃圾收集器自动管理。不同的 MCU 和电路板 RAM 中可用于堆的数量大不相同，因此这将影响你的程序的复杂度。</p>
 </dd>
-<dt id="term-interned-string">interned string - 暂留字符串<a class="headerlink" href="#term-interned-string" title="Permalink to this term">¶</a></dt><dd><p>一个 MicroPython 用于提高处理字符串效率的优化。暂留字符串由其（唯一）标识而不是其地址引用，因此可以仅通过其标识符进行快速比较。这也意味着可以在内存中对相同的字符串进行重复数据删除。字符串的暂留过程对用户几乎总是不可见的。</p>
+<dt id="term-interned-string">interned string - 暂留字符串<a class="headerlink" href="#term-interned-string" title="此术语词汇的永久链接">¶</a></dt><dd><p>一个 MicroPython 用于提高处理字符串效率的优化。暂留字符串由其（唯一）标识而不是其地址引用，因此可以仅通过其标识符进行快速比较。这也意味着可以在内存中对相同的字符串进行重复数据删除。字符串的暂留过程对用户几乎总是不可见的。</p>
 </dd>
-<dt id="term-MCU">MCU - 微控制器<a class="headerlink" href="#term-MCU" title="Permalink to this term">¶</a></dt><dd><p>Microprogrammed Control Unit 的缩写，称为微程序控制器，简称微控制器，又简称单片机。微控制器的资源占用通常比台式机、笔记本电脑或手机少得多，且更小、更便宜并只需要更少的功率。MicroPython 设计得足够小并且经过足够的优化，可以在普遍的现代微控制器上运行。</p>
+<dt id="term-MCU">MCU - 微控制器<a class="headerlink" href="#term-MCU" title="此术语词汇的永久链接">¶</a></dt><dd><p>Microprogrammed Control Unit 的缩写，称为微程序控制器，简称微控制器，又简称单片机。微控制器的资源占用通常比台式机、笔记本电脑或手机少得多，且更小、更便宜并只需要更少的功率。MicroPython 设计得足够小并且经过足够的优化，可以在普遍的现代微控制器上运行。</p>
 </dd>
-<dt id="term-micropython-lib">micropython-lib - MicroPython 库<a class="headerlink" href="#term-micropython-lib" title="Permalink to this term">¶</a></dt><dd><p>MicroPython（通常）作为单个可执行/二进制文件分发，只有几个内置模块。众所周知，没有可与 CPython 相媲美的广泛标准库。但是， <a class="reference external" href="https://github.com/micropython/micropython-lib">micropython-lib</a> 作为一个相关但独立的项目，它实现了许多 CPython 标准库中的模块。</p>
+<dt id="term-micropython-lib">micropython-lib - MicroPython 库<a class="headerlink" href="#term-micropython-lib" title="此术语词汇的永久链接">¶</a></dt><dd><p>MicroPython（通常）作为单个可执行/二进制文件分发，只有几个内置模块。众所周知，没有可与 CPython 相媲美的广泛标准库。但是， <a class="reference external" href="https://github.com/micropython/micropython-lib">micropython-lib</a> 作为一个相关但独立的项目，它实现了许多 CPython 标准库中的模块。</p>
 <p>虽然其中一些模块是用纯 Python 实现的，并且能够在所有端口上使用。但是，这些模块中的大多数使用 <a class="reference internal" href="#term-FFI"><span class="xref std std-term">FFI</span></a> 来访问操作系统功能，因此只能在 <a class="reference internal" href="#term-MicroPython-Unix-port"><span class="xref std std-term">MicroPython Unix port</span></a> 上使用（以及对 Windows 的有限支持）。</p>
 <p>与 <a class="reference internal" href="#term-CPython"><span class="xref std std-term">CPython</span></a> 标准库不同，micropython-lib 模块期望通过使用手动复制或使用 upip 来独立安装。</p>
 </dd>
-<dt id="term-MicroPython-port">MicroPython port - MicroPython 适配端<a class="headerlink" href="#term-MicroPython-port" title="Permalink to this term">¶</a></dt><dd><p>MicroPython 支持不同的 <a class="reference internal" href="#term-board"><span class="xref std std-term">开发板</span></a> 、RTOS 和操作系统，并且可以相对容易地适配新系统。支持特定系统的 MicroPython 被称为该系统的适配端”port”。不同的适配端可能具有大量不同的功能。本文档旨在作为跨不同适配端口（”MicroPython 核心”）可用的通用 API 的参考。请注意，某些适配端可能出于某些考量（例如，由于资源限制）仍会去掉此处声明的某些 API。任何此类差异以及超出 MicroPython 核心功能的特定于适配度胺的扩展都将在单独的适配端特定的文档中进行描述。</p>
+<dt id="term-MicroPython-port">MicroPython port - MicroPython 适配端<a class="headerlink" href="#term-MicroPython-port" title="此术语词汇的永久链接">¶</a></dt><dd><p>MicroPython 支持不同的 <a class="reference internal" href="#term-board"><span class="xref std std-term">开发板</span></a> 、RTOS 和操作系统，并且可以相对容易地适配新系统。支持特定系统的 MicroPython 被称为该系统的适配端”port”。不同的适配端可能具有大量不同的功能。本文档旨在作为跨不同适配端口（”MicroPython 核心”）可用的通用 API 的参考。请注意，某些适配端可能出于某些考量（例如，由于资源限制）仍会去掉此处声明的某些 API。任何此类差异以及超出 MicroPython 核心功能的特定于适配度胺的扩展都将在单独的适配端特定的文档中进行描述。</p>
 </dd>
-<dt id="term-MicroPython-Unix-port">MicroPython Unix port - MicroPython Unix 适配端<a class="headerlink" href="#term-MicroPython-Unix-port" title="Permalink to this term">¶</a></dt><dd><p>Unix 适配端口是主要的 <a class="reference internal" href="#term-MicroPython-port"><span class="xref std std-term">MicroPython 适配端</span></a> 之一。它旨在在 POSIX 兼容的操作系统上运行，如 Linux、MacOS、FreeBSD、Solaris 等。它也是 Windows 适配端的基础。对于快速开发和测试 MicroPython 语言和与机器无关的特性时， Unix 适配端是非常有用的。它也能以与 <a class="reference internal" href="#term-CPython"><span class="xref std std-term">CPython</span></a> 的 <code class="docutils literal notranslate"><span class="pre">python</span></code> 可执行文件类似的方式运行。</p>
+<dt id="term-MicroPython-Unix-port">MicroPython Unix port - MicroPython Unix 适配端<a class="headerlink" href="#term-MicroPython-Unix-port" title="此术语词汇的永久链接">¶</a></dt><dd><p>Unix 适配端口是主要的 <a class="reference internal" href="#term-MicroPython-port"><span class="xref std std-term">MicroPython 适配端</span></a> 之一。它旨在在 POSIX 兼容的操作系统上运行，如 Linux、MacOS、FreeBSD、Solaris 等。它也是 Windows 适配端的基础。对于快速开发和测试 MicroPython 语言和与机器无关的特性时， Unix 适配端是非常有用的。它也能以与 <a class="reference internal" href="#term-CPython"><span class="xref std std-term">CPython</span></a> 的 <code class="docutils literal notranslate"><span class="pre">python</span></code> 可执行文件类似的方式运行。</p>
 </dd>
-<dt id="term-.mpy-file">.mpy 文件<a class="headerlink" href="#term-.mpy-file" title="Permalink to this term">¶</a></dt><dd><p><a class="reference internal" href="#term-cross-compiler"><span class="xref std std-term">cross-compiler</span></a> 的产物。<a class="reference internal" href="#term-.py-file"><span class="xref std std-term">.py 文件</span></a> 的编译形式， 其中包含 MicroPython 字节码而不是 Python 源代码。</p>
+<dt id="term-.mpy-file">.mpy 文件<a class="headerlink" href="#term-.mpy-file" title="此术语词汇的永久链接">¶</a></dt><dd><p><a class="reference internal" href="#term-cross-compiler"><span class="xref std std-term">cross-compiler</span></a> 的产物。<a class="reference internal" href="#term-.py-file"><span class="xref std std-term">.py 文件</span></a> 的编译形式， 其中包含 MicroPython 字节码而不是 Python 源代码。</p>
 </dd>
-<dt id="term-native">native - 原生<a class="headerlink" href="#term-native" title="Permalink to this term">¶</a></dt><dd><p>通常指原生代码 “native code”，即目标微控制器（如 ARM Thumb、Xtensa、x86/x64）的机器码。 <code class="docutils literal notranslate"><span class="pre">@native</span></code> 装饰器可以应用于 MicroPython 函数以生成原生代码而不是该函数的字节码，这可能会更快但耗费更多 RAM 。</p>
+<dt id="term-native">native - 原生<a class="headerlink" href="#term-native" title="此术语词汇的永久链接">¶</a></dt><dd><p>通常指原生代码 “native code”，即目标微控制器（如 ARM Thumb、Xtensa、x86/x64）的机器码。 <code class="docutils literal notranslate"><span class="pre">@native</span></code> 装饰器可以应用于 MicroPython 函数以生成原生代码而不是该函数的字节码，这可能会更快但耗费更多 RAM 。</p>
 </dd>
-<dt id="term-port">port - 端<a class="headerlink" href="#term-port" title="Permalink to this term">¶</a></dt><dd><p>通常是 <a class="reference internal" href="#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a> 的缩写，但也可作为 <a class="reference internal" href="#term-GPIO-port"><span class="xref std std-term">GPIO port</span></a> 的指代。</p>
+<dt id="term-port">port - 端<a class="headerlink" href="#term-port" title="此术语词汇的永久链接">¶</a></dt><dd><p>通常是 <a class="reference internal" href="#term-MicroPython-port"><span class="xref std std-term">MicroPython port</span></a> 的缩写，但也可作为 <a class="reference internal" href="#term-GPIO-port"><span class="xref std std-term">GPIO port</span></a> 的指代。</p>
 </dd>
-<dt id="term-.py-file">.py 文件<a class="headerlink" href="#term-.py-file" title="Permalink to this term">¶</a></dt><dd><p>一个包含 Python 源代码的文件</p>
+<dt id="term-.py-file">.py 文件<a class="headerlink" href="#term-.py-file" title="此术语词汇的永久链接">¶</a></dt><dd><p>一个包含 Python 源代码的文件</p>
 </dd>
-<dt id="term-REPL">REPL<a class="headerlink" href="#term-REPL" title="Permalink to this term">¶</a></dt><dd><p>“Read, Eval, Print, Loop” 的缩写，即 “读取、评估、打印、循环”。这是交互式 Python 提示，可用于调试或测试短代码片段。大多数 MicroPython 开发板可通过 UART 提供 REPL 能力，这通常可以通过 USB 连接到主机 PC 上访问。</p>
+<dt id="term-REPL">REPL<a class="headerlink" href="#term-REPL" title="此术语词汇的永久链接">¶</a></dt><dd><p>“Read, Eval, Print, Loop” 的缩写，即 “读取、评估、打印、循环”。这是交互式 Python 提示，可用于调试或测试短代码片段。大多数 MicroPython 开发板可通过 UART 提供 REPL 能力，这通常可以通过 USB 连接到主机 PC 上访问。</p>
 </dd>
-<dt id="term-stream">stream - 流式<a class="headerlink" href="#term-stream" title="Permalink to this term">¶</a></dt><dd><p>也称为类文件对象 “file-like object” 。它是一个提供对底层数据的顺序读写访问的 Python 对象。流对象实现了读写相应的接口，由 <code class="docutils literal notranslate"><span class="pre">read()</span></code>, <code class="docutils literal notranslate"><span class="pre">write()</span></code>, <code class="docutils literal notranslate"><span class="pre">readinto()</span></code>, <code class="docutils literal notranslate"><span class="pre">seek()</span></code>, <code class="docutils literal notranslate"><span class="pre">flush()</span></code>, <code class="docutils literal notranslate"><span class="pre">close()</span></code> 等方法组成。流是 MicroPython 中的一个重要概念；许多 I/O 对象都实现了流接口，因此可以在不同的上下文中一致且可互换地使用。有关 MicroPython 中流的更多信息，请参阅 <a class="reference internal" href="../library/io.html#module-io" title="io: input/output streams"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> 模块。</p>
+<dt id="term-stream">stream - 流式<a class="headerlink" href="#term-stream" title="此术语词汇的永久链接">¶</a></dt><dd><p>也称为类文件对象 “file-like object” 。它是一个提供对底层数据的顺序读写访问的 Python 对象。流对象实现了读写相应的接口，由 <code class="docutils literal notranslate"><span class="pre">read()</span></code>, <code class="docutils literal notranslate"><span class="pre">write()</span></code>, <code class="docutils literal notranslate"><span class="pre">readinto()</span></code>, <code class="docutils literal notranslate"><span class="pre">seek()</span></code>, <code class="docutils literal notranslate"><span class="pre">flush()</span></code>, <code class="docutils literal notranslate"><span class="pre">close()</span></code> 等方法组成。流是 MicroPython 中的一个重要概念；许多 I/O 对象都实现了流接口，因此可以在不同的上下文中一致且可互换地使用。有关 MicroPython 中流的更多信息，请参阅 <a class="reference internal" href="../library/io.html#module-io" title="io: input/output streams"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">io</span></code></a> 模块。</p>
 </dd>
-<dt id="term-UART">UART - 通用异步接收/发送器<a class="headerlink" href="#term-UART" title="Permalink to this term">¶</a></dt><dd><p>“Universal Asynchronous Receiver/Transmitter” 的缩写。这是一种通过一对引脚（TX 和 RX）发送数据的外设。许多开发板都包含一种方式，可以使主机 PC 中通过 USB 连接至少一个 UART 作为串口使用。</p>
+<dt id="term-UART">UART - 通用异步接收/发送器<a class="headerlink" href="#term-UART" title="此术语词汇的永久链接">¶</a></dt><dd><p>“Universal Asynchronous Receiver/Transmitter” 的缩写。这是一种通过一对引脚（TX 和 RX）发送数据的外设。许多开发板都包含一种方式，可以使主机 PC 中通过 USB 连接至少一个 UART 作为串口使用。</p>
 </dd>
-<dt id="term-upip">upip - 包管理器<a class="headerlink" href="#term-upip" title="Permalink to this term">¶</a></dt><dd><p>（字面意思是 “micro pip” ，小型的 pip ）。MicroPython 的一种包管理器，它受 <a class="reference internal" href="#term-CPython"><span class="xref std std-term">CPython</span></a> 的 pip 启发，但更小且功能更少。upip 在 <a class="reference internal" href="#term-MicroPython-Unix-port"><span class="xref std std-term">Unix 适配端</span></a> 和提供文件系统和网络支持的 <a class="reference internal" href="#term-baremetal"><span class="xref std std-term">裸机</span></a> 适配端上都可以运行。</p>
+<dt id="term-upip">upip - 包管理器<a class="headerlink" href="#term-upip" title="此术语词汇的永久链接">¶</a></dt><dd><p>（字面意思是 “micro pip” ，小型的 pip ）。MicroPython 的一种包管理器，它受 <a class="reference internal" href="#term-CPython"><span class="xref std std-term">CPython</span></a> 的 pip 启发，但更小且功能更少。upip 在 <a class="reference internal" href="#term-MicroPython-Unix-port"><span class="xref std std-term">Unix 适配端</span></a> 和提供文件系统和网络支持的 <a class="reference internal" href="#term-baremetal"><span class="xref std std-term">裸机</span></a> 适配端上都可以运行。</p>
 </dd>
 </dl>
 </section>
@@ -492,10 +492,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

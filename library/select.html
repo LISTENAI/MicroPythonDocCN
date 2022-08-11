@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -532,14 +532,14 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="module-select">
-<span id="select-wait-for-events-on-a-set-of-streams"></span><h1 id="library-select--page-root"><a class="reference internal" href="#library-select--page-root" title="select: wait for events on a set of streams"><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code></a> – wait for events on a set of streams<a class="headerlink" href="#library-select--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="select-wait-for-events-on-a-set-of-streams"></span><h1 id="library-select--page-root"><a class="reference internal" href="#library-select--page-root" title="select: wait for events on a set of streams"><code class="xref py py-mod docutils literal notranslate"><span class="pre">select</span></code></a> – wait for events on a set of streams<a class="headerlink" href="#library-select--page-root" title="此标题的永久链接">¶</a></h1>
 <p><em>This module implements a subset of the corresponding</em> <a class="reference internal" href="../reference/glossary.html#term-CPython"><span class="xref std std-term">CPython</span></a> <em>module,
 as described below. For more information, refer to the original
-CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/select.html#module-select" title="(在 Python v3.5)"><code class="docutils literal notranslate"><span class="pre">select</span></code></a>.</p>
+CPython documentation:</em> <a class="reference external" href="https://docs.python.org/3.5/library/select.html#module-select" title="（在 Python v3.5）"><code class="docutils literal notranslate"><span class="pre">select</span></code></a>.</p>
 <p>This module provides functions to efficiently wait for events on multiple
 <a class="reference internal" href="../reference/glossary.html#term-stream"><code class="xref any std std-term docutils literal notranslate"><span class="pre">streams</span></code></a> (select streams which are ready for operations).</p>
 <section id="functions">
-<h2 id="functions">Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h2>
+<h2 id="functions">Functions<a class="headerlink" href="#functions" title="此标题的永久链接">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="select.poll">
 <span class="sig-prename descclassname"><span class="pre">select.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#select.poll" title="永久链接至目标">¶</a></dt>
@@ -554,9 +554,9 @@ and is not efficient. Usage of <code class="xref py py-class docutils literal no
 </dd></dl>
 </section>
 <section id="class-poll">
-<h2 id="class-poll">class <code class="docutils literal notranslate"><span class="pre">Poll</span></code><a class="headerlink" href="#class-poll" title="Permalink to this heading">¶</a></h2>
+<h2 id="class-poll">class <code class="docutils literal notranslate"><span class="pre">Poll</span></code><a class="headerlink" href="#class-poll" title="此标题的永久链接">¶</a></h2>
 <section id="methods">
-<h3 id="methods">Methods<a class="headerlink" href="#methods" title="Permalink to this heading">¶</a></h3>
+<h3 id="methods">Methods<a class="headerlink" href="#methods" title="此标题的永久链接">¶</a></h3>
 <dl class="py method">
 <dt class="sig sig-object py" id="select.poll.register">
 <span class="sig-prename descclassname"><span class="pre">poll.</span></span><span class="sig-name descname"><span class="pre">register</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">obj</span></span></em><span class="optional">[</span>, <em class="sig-param"><span class="n"><span class="pre">eventmask</span></span></em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#select.poll.register" title="永久链接至目标">¶</a></dt>
@@ -587,7 +587,7 @@ is raised with error of ENOENT.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="select.poll.poll">
-<span class="sig-prename descclassname"><span class="pre">poll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.poll.poll" title="永久链接至目标">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">poll.</span></span><span class="sig-name descname"><span class="pre">poll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.poll.poll" title="永久链接至目标">¶</a></dt>
 <dd><p>Wait for at least one of the registered objects to become ready or have an
 exceptional condition, with optional timeout in milliseconds (if <em>timeout</em>
 arg is not specified or -1, there is no timeout).</p>
@@ -608,7 +608,7 @@ these flags set for this stream again.</p>
 </dd></dl>
 <dl class="py method">
 <dt class="sig sig-object py" id="select.poll.ipoll">
-<span class="sig-prename descclassname"><span class="pre">poll.</span></span><span class="sig-name descname"><span class="pre">ipoll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.poll.ipoll" title="永久链接至目标">¶</a></dt>
+<span class="sig-prename descclassname"><span class="pre">poll.</span></span><span class="sig-name descname"><span class="pre">ipoll</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flags</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#select.poll.ipoll" title="永久链接至目标">¶</a></dt>
 <dd><p>Like <a class="reference internal" href="#select.poll.poll" title="select.poll.poll"><code class="xref py py-meth docutils literal notranslate"><span class="pre">poll.poll()</span></code></a>, but instead returns an iterator which yields a
 <a class="reference internal" href="../reference/glossary.html#term-callee-owned-tuple"><code class="xref any std std-term docutils literal notranslate"><span class="pre">callee-owned</span> <span class="pre">tuple</span></code></a>. This function provides an efficient, allocation-free
 way to poll on streams.</p>
@@ -673,10 +673,10 @@ behaviour is useful for asynchronous I/O schedulers.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

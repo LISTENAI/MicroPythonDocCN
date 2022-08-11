@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -434,7 +434,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="the-pyboard-py-tool">
-<span id="pyboard-py"></span><h1 id="reference-pyboard-py--page-root">The pyboard.py tool<a class="headerlink" href="#reference-pyboard-py--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="pyboard-py"></span><h1 id="reference-pyboard-py--page-root">The pyboard.py tool<a class="headerlink" href="#reference-pyboard-py--page-root" title="此标题的永久链接">¶</a></h1>
 <p>This is a standalone Python tool that runs on your PC that provides a way to:</p>
 <ul class="simple">
 <li><p>Quickly run a Python script or command on a MicroPython device. This is useful
@@ -479,7 +479,7 @@ optional arguments:
 </pre></div>
 </div>
 <section id="running-a-command-on-the-device">
-<h2 id="running-a-command-on-the-device">Running a command on the device<a class="headerlink" href="#running-a-command-on-the-device" title="Permalink to this heading">¶</a></h2>
+<h2 id="running-a-command-on-the-device">Running a command on the device<a class="headerlink" href="#running-a-command-on-the-device" title="此标题的永久链接">¶</a></h2>
 <p>This is useful for testing short snippets of code, or to script an interaction
 with the device.:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pyboard.py --device /dev/ttyACM0 -c 'print(1+1)'
@@ -498,7 +498,7 @@ $ pyboard.py -c 'print(1+1)'
 to set the default for the <code class="docutils literal notranslate"><span class="pre">--baudrate</span></code> option.</p>
 </section>
 <section id="running-a-script-on-the-device">
-<h2 id="running-a-script-on-the-device">Running a script on the device<a class="headerlink" href="#running-a-script-on-the-device" title="Permalink to this heading">¶</a></h2>
+<h2 id="running-a-script-on-the-device">Running a script on the device<a class="headerlink" href="#running-a-script-on-the-device" title="此标题的永久链接">¶</a></h2>
 <p>If you have a script, <code class="docutils literal notranslate"><span class="pre">app.py</span></code> that you want to run on a device, then use:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ pyboard.py --device /dev/ttyACM0 app.py
 </pre></div>
@@ -511,7 +511,7 @@ eg with Ctrl-C. The program <code class="docutils literal notranslate"><span cla
 MicroPython device.</p>
 </section>
 <section id="filesystem-access">
-<h2 id="filesystem-access">Filesystem access<a class="headerlink" href="#filesystem-access" title="Permalink to this heading">¶</a></h2>
+<h2 id="filesystem-access">Filesystem access<a class="headerlink" href="#filesystem-access" title="此标题的永久链接">¶</a></h2>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">-f</span></code> flag, the following filesystem operations are supported:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">src</span> <span class="pre">[src...]</span> <span class="pre">dest</span></code> Copy files to/from the device.</p></li>
@@ -553,7 +553,7 @@ $ pyboard.py --device /dev/ttyACM0 -f cat boot.py
 </div>
 </section>
 <section id="using-the-pyboard-library">
-<h2 id="using-the-pyboard-library">Using the pyboard library<a class="headerlink" href="#using-the-pyboard-library" title="Permalink to this heading">¶</a></h2>
+<h2 id="using-the-pyboard-library">Using the pyboard library<a class="headerlink" href="#using-the-pyboard-library" title="此标题的永久链接">¶</a></h2>
 <p>You can also use <code class="docutils literal notranslate"><span class="pre">pyboard.py</span></code> as a library for scripting interactions with a
 MicroPython board.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pyboard</span>
@@ -614,10 +614,10 @@ MicroPython board.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

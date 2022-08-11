@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -61,7 +61,7 @@
     <link rel="index" title="索引" href="../genindex.html" />
     <link rel="search" title="搜索" href="../search.html" />
     <link rel="next" title="Porting MicroPython" href="porting.html" />
-    <link rel="prev" title="MicroPython external C modules" href="cmodules.html" />
+    <link rel="prev" title="MicroPython 外部 C 模块" href="cmodules.html" />
   
    
 
@@ -157,7 +157,7 @@
       <ul class="md-tabs__list">
           <li class="md-tabs__item"><a href="../index.html" class="md-tabs__link">MicroPython 1.18 文档</a></li>
           <li class="md-tabs__item"><a href="index.html" class="md-tabs__link">MicroPython 内部实现</a></li>
-          <li class="md-tabs__item"><a href="extendingmicropython.html" class="md-tabs__link">Extending MicroPython in C</a></li>
+          <li class="md-tabs__item"><a href="extendingmicropython.html" class="md-tabs__link">在 C 中扩展 MicroPython</a></li>
       </ul>
     </div>
   </nav>
@@ -273,12 +273,12 @@
     <li class="md-nav__item">
     
     
-      <a href="extendingmicropython.html" class="md-nav__link">Extending MicroPython in C</a>
+      <a href="extendingmicropython.html" class="md-nav__link">在 C 中扩展 MicroPython</a>
       <ul class="md-nav__list"> 
     <li class="md-nav__item">
     
     
-      <a href="cmodules.html" class="md-nav__link">MicroPython external C modules</a>
+      <a href="cmodules.html" class="md-nav__link">MicroPython 外部 C 模块</a>
       
     
     </li>
@@ -464,7 +464,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="native-machine-code-in-mpy-files">
-<span id="natmod"></span><h1 id="develop-natmod--page-root">Native machine code in .mpy files<a class="headerlink" href="#develop-natmod--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="natmod"></span><h1 id="develop-natmod--page-root">Native machine code in .mpy files<a class="headerlink" href="#develop-natmod--page-root" title="此标题的永久链接">¶</a></h1>
 <p>This section describes how to build and work with .mpy files that contain native
 machine code from a language other than Python.  This allows you to
 write code in a language like C, compile and link it into a .mpy file, and then
@@ -473,7 +473,7 @@ functionality which is performance critical, or for including an existing
 library written in another language.</p>
 <p>One of the main advantages of using native .mpy files is that native machine code
 can be imported by a script dynamically, without the need to rebuild the main
-MicroPython firmware.  This is in contrast to <a class="reference internal" href="cmodules.html#cmodules"><span class="std std-ref">MicroPython external C modules</span></a> which also allows
+MicroPython firmware.  This is in contrast to <a class="reference internal" href="cmodules.html#cmodules"><span class="std std-ref">MicroPython 外部 C 模块</span></a> which also allows
 defining custom modules in C but they must be compiled into the main firmware image.</p>
 <p>The focus here is on using C to build native modules, but in principle any
 language which can be compiled to stand-alone machine code can be put into a
@@ -483,7 +483,7 @@ language which can be compiled to stand-alone machine code can be put into a
 (.o files) and links them together to create a native .mpy files.  It requires
 CPython 3 and the library pyelftools v0.25 or greater.</p>
 <section id="supported-features-and-limitations">
-<h2 id="supported-features-and-limitations">Supported features and limitations<a class="headerlink" href="#supported-features-and-limitations" title="Permalink to this heading">¶</a></h2>
+<h2 id="supported-features-and-limitations">Supported features and limitations<a class="headerlink" href="#supported-features-and-limitations" title="此标题的永久链接">¶</a></h2>
 <p>A .mpy file can contain MicroPython bytecode and/or native machine code.  If it
 contains native machine code then the .mpy file has a specific architecture
 associated with it.  Current supported architectures are (these are the valid
@@ -534,7 +534,7 @@ function, a macro or stub should be added to <code class="docutils literal notra
 call the function.</p>
 </section>
 <section id="defining-a-native-module">
-<h2 id="defining-a-native-module">Defining a native module<a class="headerlink" href="#defining-a-native-module" title="Permalink to this heading">¶</a></h2>
+<h2 id="defining-a-native-module">Defining a native module<a class="headerlink" href="#defining-a-native-module" title="此标题的永久链接">¶</a></h2>
 <p>A native .mpy module is defined by a set of files that are used to build the .mpy.
 The filesystem layout consists of two main parts, the source files and the Makefile:</p>
 <ul>
@@ -558,7 +558,7 @@ and then include <code class="docutils literal notranslate"><span class="pre">py
 </ul>
 </section>
 <section id="minimal-example">
-<h2 id="minimal-example">Minimal example<a class="headerlink" href="#minimal-example" title="Permalink to this heading">¶</a></h2>
+<h2 id="minimal-example">Minimal example<a class="headerlink" href="#minimal-example" title="此标题的永久链接">¶</a></h2>
 <p>This section provides a fully working example of a simple module named <code class="docutils literal notranslate"><span class="pre">factorial</span></code>.
 This module provides a single function <code class="docutils literal notranslate"><span class="pre">factorial.factorial(x)</span></code> which computes the
 factorial of the input and returns the result.</p>
@@ -624,7 +624,7 @@ factorial of the input and returns the result.</p>
 </div>
 </section>
 <section id="compiling-the-module">
-<h2 id="compiling-the-module">Compiling the module<a class="headerlink" href="#compiling-the-module" title="Permalink to this heading">¶</a></h2>
+<h2 id="compiling-the-module">Compiling the module<a class="headerlink" href="#compiling-the-module" title="此标题的永久链接">¶</a></h2>
 <p>The prerequisite tools needed to build a native .mpy file are:</p>
 <ul class="simple">
 <li><p>The MicroPython repository (at least the <code class="docutils literal notranslate"><span class="pre">py/</span></code> and <code class="docutils literal notranslate"><span class="pre">tools/</span></code> directories).</p></li>
@@ -644,7 +644,7 @@ Then build with:</p>
 </div>
 </section>
 <section id="module-usage-in-micropython">
-<h2 id="module-usage-in-micropython">Module usage in MicroPython<a class="headerlink" href="#module-usage-in-micropython" title="Permalink to this heading">¶</a></h2>
+<h2 id="module-usage-in-micropython">Module usage in MicroPython<a class="headerlink" href="#module-usage-in-micropython" title="此标题的永久链接">¶</a></h2>
 <p>Once the module is built there should be a file called <code class="docutils literal notranslate"><span class="pre">factorial.mpy</span></code>.  Copy
 this so it is accessible on the filesystem of your MicroPython system and can be
 found in the import path.  The module can now be accessed in Python just like any
@@ -656,7 +656,7 @@ other module, for example:</p>
 </div>
 </section>
 <section id="further-examples">
-<h2 id="further-examples">Further examples<a class="headerlink" href="#further-examples" title="Permalink to this heading">¶</a></h2>
+<h2 id="further-examples">Further examples<a class="headerlink" href="#further-examples" title="此标题的永久链接">¶</a></h2>
 <p>See <code class="docutils literal notranslate"><span class="pre">examples/natmod/</span></code> for further examples which show many of the available
 features of native .mpy modules.  Such features include:</p>
 <ul class="simple">
@@ -681,7 +681,7 @@ features of native .mpy modules.  Such features include:</p>
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
           
-            <a href="cmodules.html" title="MicroPython external C modules"
+            <a href="cmodules.html" title="MicroPython 外部 C 模块"
                class="md-flex md-footer-nav__link md-footer-nav__link--prev"
                rel="prev">
               <div class="md-flex__cell md-flex__cell--shrink">
@@ -690,7 +690,7 @@ features of native .mpy modules.  Such features include:</p>
               <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
                 <span class="md-flex__ellipsis">
                   <span
-                      class="md-footer-nav__direction"> Previous </span> MicroPython external C modules </span>
+                      class="md-footer-nav__direction"> Previous </span> MicroPython 外部 C 模块 </span>
               </div>
             </a>
           
@@ -718,10 +718,10 @@ features of native .mpy modules.  Such features include:</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

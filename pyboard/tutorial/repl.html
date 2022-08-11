@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -593,7 +593,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="getting-a-micropython-repl-prompt">
-<h1 id="pyboard-tutorial-repl--page-root"><span class="section-number">3. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#pyboard-tutorial-repl--page-root" title="Permalink to this heading">¶</a></h1>
+<h1 id="pyboard-tutorial-repl--page-root"><span class="section-number">3. </span>Getting a MicroPython REPL prompt<a class="headerlink" href="#pyboard-tutorial-repl--page-root" title="此标题的永久链接">¶</a></h1>
 <p>REPL stands for Read Evaluate Print Loop, and is the name given to the
 interactive MicroPython prompt that you can access on the pyboard.  Using
 the REPL is by far the easiest way to test out your code and run commands.
@@ -601,7 +601,7 @@ You can use the REPL in addition to writing scripts in <code class="docutils lit
 <p>To use the REPL, you must connect to the serial USB device on the pyboard.
 How you do this depends on your operating system.</p>
 <section id="windows">
-<h2 id="windows"><span class="section-number">3.1. </span>Windows<a class="headerlink" href="#windows" title="Permalink to this heading">¶</a></h2>
+<h2 id="windows"><span class="section-number">3.1. </span>Windows<a class="headerlink" href="#windows" title="此标题的永久链接">¶</a></h2>
 <p>You need to install the pyboard driver to use the serial USB device.
 The driver is on the pyboard’s USB flash drive, and is called <code class="docutils literal notranslate"><span class="pre">pybcdc.inf</span></code>.</p>
 <p>To install this driver you need to go to Device Manager
@@ -624,7 +624,7 @@ the “Serial” radio button on the right, then enter you COM port (eg COM4) in
 “Serial Line” box.  Finally, click the “Open” button.</p>
 </section>
 <section id="mac-os-x">
-<h2 id="mac-os-x"><span class="section-number">3.2. </span>Mac OS X<a class="headerlink" href="#mac-os-x" title="Permalink to this heading">¶</a></h2>
+<h2 id="mac-os-x"><span class="section-number">3.2. </span>Mac OS X<a class="headerlink" href="#mac-os-x" title="此标题的永久链接">¶</a></h2>
 <p>Open a terminal and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">tty</span><span class="o">.</span><span class="n">usbmodem</span><span class="o">*</span>
 </pre></div>
@@ -632,7 +632,7 @@ the “Serial” radio button on the right, then enter you COM port (eg COM4) in
 <p>When you are finished and want to exit screen, type CTRL-A CTRL-\.</p>
 </section>
 <section id="linux">
-<h2 id="linux"><span class="section-number">3.3. </span>Linux<a class="headerlink" href="#linux" title="Permalink to this heading">¶</a></h2>
+<h2 id="linux"><span class="section-number">3.3. </span>Linux<a class="headerlink" href="#linux" title="此标题的永久链接">¶</a></h2>
 <p>Open a terminal and run:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">screen</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyACM0</span>
 </pre></div>
@@ -643,7 +643,7 @@ yourself the correct permissions to access this devices (eg group <code class="d
 or use sudo).</p>
 </section>
 <section id="using-the-repl-prompt">
-<h2 id="using-the-repl-prompt"><span class="section-number">3.4. </span>Using the REPL prompt<a class="headerlink" href="#using-the-repl-prompt" title="Permalink to this heading">¶</a></h2>
+<h2 id="using-the-repl-prompt"><span class="section-number">3.4. </span>Using the REPL prompt<a class="headerlink" href="#using-the-repl-prompt" title="此标题的永久链接">¶</a></h2>
 <p>Now let’s try running some MicroPython code directly on the pyboard.</p>
 <p>With your serial program open (PuTTY, screen, picocom, etc) you may see a blank
 screen with a flashing cursor.  Press Enter and you should be presented with a
@@ -672,7 +672,7 @@ see below.</p>
 </div>
 </section>
 <section id="resetting-the-board">
-<h2 id="resetting-the-board"><span class="section-number">3.5. </span>Resetting the board<a class="headerlink" href="#resetting-the-board" title="Permalink to this heading">¶</a></h2>
+<h2 id="resetting-the-board"><span class="section-number">3.5. </span>Resetting the board<a class="headerlink" href="#resetting-the-board" title="此标题的永久链接">¶</a></h2>
 <p>If something goes wrong, you can reset the board in two ways. The first is to press CTRL-D
 at the MicroPython prompt, which performs a soft reset.  You will see a message something like</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="go">&gt;&gt;&gt;</span>
@@ -738,10 +738,10 @@ the pyboard drive.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

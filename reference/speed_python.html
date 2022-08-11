@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -552,7 +552,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="maximising-micropython-speed">
-<span id="speed-python"></span><h1 id="reference-speed-python--page-root"><a class="toc-backref" href="#reference-speed-python--page-root" role="doc-backlink">最大化 MicroPython 速度</a><a class="headerlink" href="#reference-speed-python--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="speed-python"></span><h1 id="reference-speed-python--page-root"><a class="toc-backref" href="#reference-speed-python--page-root" role="doc-backlink">最大化 MicroPython 速度</a><a class="headerlink" href="#reference-speed-python--page-root" title="此标题的永久链接">¶</a></h1>
 <nav class="contents" id="id1">
 <p class="topic-title">目录</p>
 <ul class="simple">
@@ -597,29 +597,29 @@
 <li><p>使用特定硬件的优化手段。</p></li>
 </ul>
 <section id="designing-for-speed">
-<h2 id="designing-for-speed"><a class="toc-backref" href="#id3" role="doc-backlink">为速度而设计</a><a class="headerlink" href="#designing-for-speed" title="Permalink to this heading">¶</a></h2>
+<h2 id="designing-for-speed"><a class="toc-backref" href="#id3" role="doc-backlink">为速度而设计</a><a class="headerlink" href="#designing-for-speed" title="此标题的永久链接">¶</a></h2>
 <p>性能问题应该在开始阶段就虑。这需要考虑到哪些代码段是效率低下的，并着重注意其代码设计。在代码已经测试过之后，开始进行优化：但如果在开始时就是设计正确的，那么优化将会变得很简单，甚至是非必要的。</p>
 <section id="algorithms">
-<h3 id="algorithms"><a class="toc-backref" href="#id4" role="doc-backlink">算法 (Algorithms)</a><a class="headerlink" href="#algorithms" title="Permalink to this heading">¶</a></h3>
+<h3 id="algorithms"><a class="toc-backref" href="#id4" role="doc-backlink">算法 (Algorithms)</a><a class="headerlink" href="#algorithms" title="此标题的永久链接">¶</a></h3>
 <p>为性能而设计任何例程的最重要一点是，确保使用了当前场景下的最佳算法。这应当属于通用的教材内容而不是 MicroPython 指南的主题，通常情况下使用知名度高的算法可以使得效率获得显著的性能提升。</p>
 </section>
 <section id="ram-allocation">
-<h3 id="ram-allocation"><a class="toc-backref" href="#id5" role="doc-backlink">内存分配 (RAM allocation)</a><a class="headerlink" href="#ram-allocation" title="Permalink to this heading">¶</a></h3>
+<h3 id="ram-allocation"><a class="toc-backref" href="#id5" role="doc-backlink">内存分配 (RAM allocation)</a><a class="headerlink" href="#ram-allocation" title="此标题的永久链接">¶</a></h3>
 <p>为了设计有效的 MicroPython 代码，需要先了解解释器如何分配内存。当一个对象被创建或增长大小（例如，在列表中添加一项）时，解释器会从堆中分配内存。这需要一定的时间；这时会触发一次垃圾收集，可能会花费几毫秒钟的时间。</p>
 <p>因此，当一个对象只被创建一次，而且不允许增长大小，则可以提高函数或方法的性能。这意味着这个对象在其使用期间一直存在：通常它会在类构造器中被创建，并在各种方法中使用。</p>
 <p>这将在下文的 <a class="reference internal" href="#controlling-gc"><span class="std std-ref">控制垃圾收集</span></a> 中更详细地介绍。</p>
 </section>
 <section id="buffers">
-<h3 id="buffers"><a class="toc-backref" href="#id6" role="doc-backlink">缓冲区 (Buffers)</a><a class="headerlink" href="#buffers" title="Permalink to this heading">¶</a></h3>
+<h3 id="buffers"><a class="toc-backref" href="#id6" role="doc-backlink">缓冲区 (Buffers)</a><a class="headerlink" href="#buffers" title="此标题的永久链接">¶</a></h3>
 <p>上述例子是通常情况下需要使用缓冲区的一个场景，例如，在与设备通信时使用的缓冲区。一般情况下，一个驱动程序会在构造器中创建缓冲区，并在其 I/O 方法中使用它。</p>
 <p>MicroPython 库通常提供了对预分配缓冲区的支持。例如，支持流式接口（例如文件或 UART ）的对象，提供了 <code class="docutils literal notranslate"><span class="pre">read()</span></code> 方法，它会分配一个新的缓冲区用于读取数据，同时也提供了 <code class="docutils literal notranslate"><span class="pre">readinto()</span></code> 方法则可以将数据读入一个已存在的缓冲区。</p>
 </section>
 <section id="floating-point">
-<h3 id="floating-point"><a class="toc-backref" href="#id7" role="doc-backlink">浮点数 (Floating point)</a><a class="headerlink" href="#floating-point" title="Permalink to this heading">¶</a></h3>
+<h3 id="floating-point"><a class="toc-backref" href="#id7" role="doc-backlink">浮点数 (Floating point)</a><a class="headerlink" href="#floating-point" title="此标题的永久链接">¶</a></h3>
 <p>在一些 MicroPython 适配端上，浮点数在堆上分配。有些其他的适配端可能没有独立的浮点数处理器，并且在某些场景下进行算术运算时，在“软件”上以比整数更低的速度上进行运算。在性能很重要的地方，使用整数运算并将浮点的使用局限在性能不是最重要的代码部分中进行。例如，快速将 ADC 读数作为整数值捕获到数组中，然后才将它们转换为浮点数以进行信号处理。</p>
 </section>
 <section id="arrays">
-<h3 id="arrays"><a class="toc-backref" href="#id8" role="doc-backlink">数组 (Arrays)</a><a class="headerlink" href="#arrays" title="Permalink to this heading">¶</a></h3>
+<h3 id="arrays"><a class="toc-backref" href="#id8" role="doc-backlink">数组 (Arrays)</a><a class="headerlink" href="#arrays" title="此标题的永久链接">¶</a></h3>
 <p>考虑使用各种类型的数组类 ( array ) 作为代替列表 ( list )的替代。 <a class="reference internal" href="../library/array.html#module-array" title="array: efficient arrays of numeric data"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">array</span></code></a> 模块支持各种元素类型，其中 Python 的内建 <a class="reference internal" href="../library/builtins.html#bytes" title="bytes"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytes</span></code></a> 和 <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> 类用以支持 8 位元数据操作。这些数据结构都存储在连续的内存位置中。为了在关键代码中再次分配内存，这些数据应该预分配并作为参数传递或作为绑定对象。</p>
 <p>当传递诸如 <a class="reference internal" href="../library/builtins.html#bytearray" title="bytearray"><code class="xref any py py-class docutils literal notranslate"><span class="pre">bytearray</span></code></a> 实例之类的对象切片时， Python 会创建一个副本，其中涉及与切片大小成比例的大小分配。这可以通过使用 <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 对象来缓解。<a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 本身在堆上分配，但是不论切片的大小，它都是一个小且固定尺寸的对象。对 <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a> 进行切片会创建一个新的 <a class="reference internal" href="../library/builtins.html#memoryview" title="memoryview"><code class="xref any py py-class docutils literal notranslate"><span class="pre">memoryview</span></code></a>，因此不能在中断服务程序中进行。此外，切片语法 <code class="docutils literal notranslate"><span class="pre">a:b</span></code> 会导致通过实例化 <code class="docutils literal notranslate"><span class="pre">slice(a,</span> <span class="pre">b)</span></code> 对象进行分配。</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ba</span> <span class="o">=</span> <span class="nb">bytearray</span><span class="p">(</span><span class="mi">10000</span><span class="p">)</span>  <span class="c1"># big array</span>
@@ -633,7 +633,7 @@
 </section>
 </section>
 <section id="identifying-the-slowest-section-of-code">
-<h2 id="identifying-the-slowest-section-of-code"><a class="toc-backref" href="#id9" role="doc-backlink">识别代码中最慢的片段</a><a class="headerlink" href="#identifying-the-slowest-section-of-code" title="Permalink to this heading">¶</a></h2>
+<h2 id="identifying-the-slowest-section-of-code"><a class="toc-backref" href="#id9" role="doc-backlink">识别代码中最慢的片段</a><a class="headerlink" href="#identifying-the-slowest-section-of-code" title="此标题的永久链接">¶</a></h2>
 <p>这一过程我们称为分析，它在许多教材中都提及且（在标准 Python 中）受到各种软件工具的支持。对于小型的嵌入式应用程序，最慢的函数或方法通常可以通过合理的使用 <a class="reference internal" href="../library/time.html#module-time" title="time: time related functions"><code class="xref any py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> 的 <code class="docutils literal notranslate"><span class="pre">ticks</span></code> 函数来确定。代码执行时间可以用毫秒，微秒或 CPU 周期表示。</p>
 <p>下面的语句允许任何函数或方法被计时，通过添加一个 <code class="docutils literal notranslate"><span class="pre">@timed_function</span></code> 装饰器来实现:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">timed_function</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
@@ -649,13 +649,13 @@
 </div>
 </section>
 <section id="micropython-code-improvements">
-<h2 id="micropython-code-improvements"><a class="toc-backref" href="#id10" role="doc-backlink">MicroPython 代码改进</a><a class="headerlink" href="#micropython-code-improvements" title="Permalink to this heading">¶</a></h2>
+<h2 id="micropython-code-improvements"><a class="toc-backref" href="#id10" role="doc-backlink">MicroPython 代码改进</a><a class="headerlink" href="#micropython-code-improvements" title="此标题的永久链接">¶</a></h2>
 <section id="the-const-declaration">
-<h3 id="the-const-declaration"><a class="toc-backref" href="#id11" role="doc-backlink">const() 声明</a><a class="headerlink" href="#the-const-declaration" title="Permalink to this heading">¶</a></h3>
+<h3 id="the-const-declaration"><a class="toc-backref" href="#id11" role="doc-backlink">const() 声明</a><a class="headerlink" href="#the-const-declaration" title="此标题的永久链接">¶</a></h3>
 <p>MicroPython 提供了一个 <code class="docutils literal notranslate"><span class="pre">const()</span></code> 声明。这类似于 C 中的 <code class="docutils literal notranslate"><span class="pre">#define</span></code> ，当代码编译为字节码时，编译器会替换该标识符的数值。这样就避免了在运行时进行字典查找。<code class="docutils literal notranslate"><span class="pre">const()</span></code> 函数的参数可以是任何可在编译时计算为整数的值或表达式，例如 <code class="docutils literal notranslate"><span class="pre">0x100</span></code> 或 <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;&lt;</span> <span class="pre">8</span></code> 。</p>
 </section>
 <section id="caching-object-references">
-<span id="caching"></span><h3 id="caching-object-references"><a class="toc-backref" href="#id12" role="doc-backlink">缓存对象的引用</a><a class="headerlink" href="#caching-object-references" title="Permalink to this heading">¶</a></h3>
+<span id="caching"></span><h3 id="caching-object-references"><a class="toc-backref" href="#id12" role="doc-backlink">缓存对象的引用</a><a class="headerlink" href="#caching-object-references" title="此标题的永久链接">¶</a></h3>
 <p>当一个函数或方法频繁访问对象时，可以通过在局部变量中缓存对象来提高性能:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">foo</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
@@ -669,13 +669,13 @@
 <p>这样就可以避免在 <code class="docutils literal notranslate"><span class="pre">bar()</span></code> 函数中频繁查找 <code class="docutils literal notranslate"><span class="pre">self.ba</span></code> 和 <code class="docutils literal notranslate"><span class="pre">obj_display.framebuffer</span></code> 。</p>
 </section>
 <section id="controlling-garbage-collection">
-<span id="controlling-gc"></span><h3 id="controlling-garbage-collection"><a class="toc-backref" href="#id13" role="doc-backlink">控制垃圾回收</a><a class="headerlink" href="#controlling-garbage-collection" title="Permalink to this heading">¶</a></h3>
+<span id="controlling-gc"></span><h3 id="controlling-garbage-collection"><a class="toc-backref" href="#id13" role="doc-backlink">控制垃圾回收</a><a class="headerlink" href="#controlling-garbage-collection" title="此标题的永久链接">¶</a></h3>
 <p>当需要进行内存分配时， MicroPython 会先尝试定位一个适当大小的堆块。这可能会失败，通常由于堆中的对象没有被代码引用。如果发生了失败，则垃圾回收会被触发，释放这些冗余的对象占用的内存，然后再次尝试分配内存。 —— 这一过程可能需要几毫秒。</p>
 <p>一种有效的做法是，周期性地调用 <a class="reference internal" href="../library/gc.html#gc.collect" title="gc.collect"><code class="xref any py py-func docutils literal notranslate"><span class="pre">gc.collect()</span></code></a> 来预先进行垃圾回收。首先，如果在实际需要前进行垃圾回收是更快的，如果经常这么做的话通常只需 1ms 。第二，可以确定代码中进行垃圾回收的位置，而不是在随机的位置发生长时间的延迟。最后，周期性地进行垃圾回收可以减少堆中的内存分配的碎片化。内存分配碎片化过于严重时，可能导致不可恢复的内存分配失败。</p>
 </section>
 </section>
 <section id="the-native-code-emitter">
-<h2 id="the-native-code-emitter"><a class="toc-backref" href="#id14" role="doc-backlink">原生代码生成器</a><a class="headerlink" href="#the-native-code-emitter" title="Permalink to this heading">¶</a></h2>
+<h2 id="the-native-code-emitter"><a class="toc-backref" href="#id14" role="doc-backlink">原生代码生成器</a><a class="headerlink" href="#the-native-code-emitter" title="此标题的永久链接">¶</a></h2>
 <p>这使得 MicroPython 编译器生成原生的 CPU 指令代码，而不是字节码。它覆盖了大部分的 MicroPython 功能，因此大多数函数都不需要任何调整（但请参阅下面的内容）。它通过一个函数装饰器来调用:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython.native</span>
 <span class="k">def</span> <span class="nf">foo</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">arg</span><span class="p">):</span>
@@ -692,7 +692,7 @@
 <p>性能提升（大约是使用字节码的两倍）的代价是编译代码的大小的增加。</p>
 </section>
 <section id="the-viper-code-emitter">
-<h2 id="the-viper-code-emitter"><a class="toc-backref" href="#id15" role="doc-backlink">Viper 代码生成器</a><a class="headerlink" href="#the-viper-code-emitter" title="Permalink to this heading">¶</a></h2>
+<h2 id="the-viper-code-emitter"><a class="toc-backref" href="#id15" role="doc-backlink">Viper 代码生成器</a><a class="headerlink" href="#the-viper-code-emitter" title="此标题的永久链接">¶</a></h2>
 <p>上面提到的优化包括标准兼容的 Python 代码。Viper 代码生成器不是完全兼容的。它支持特殊的 Viper 原生数据类型，以便提高性能。因为它使用了机器字，整数处理是不兼容的：在 32 位硬件上进行算术运算时，是以 2**32 为模执行的。</p>
 <p>与原生代码生成器类似， Viper 生成了机器指令，但更进一步优化，大大提升了性能。特别是对整数算术和位操作的优化。它通过一个装饰器来调用:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython.viper</span>
@@ -747,7 +747,7 @@
 <p>这三个代码生成器的详细技术说明可以在 Kickstarter 的 <a class="reference external" href="https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers/posts/664832">Note 1</a> 和 <a class="reference external" href="https://www.kickstarter.com/projects/214379695/micro-python-python-for-microcontrollers/posts/665145">Note 2</a> 中找到。</p>
 </section>
 <section id="accessing-hardware-directly">
-<h2 id="accessing-hardware-directly"><a class="toc-backref" href="#id16" role="doc-backlink">直接访问硬件</a><a class="headerlink" href="#accessing-hardware-directly" title="Permalink to this heading">¶</a></h2>
+<h2 id="accessing-hardware-directly"><a class="toc-backref" href="#id16" role="doc-backlink">直接访问硬件</a><a class="headerlink" href="#accessing-hardware-directly" title="此标题的永久链接">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">备注</p>
 <p>本小节的代码示例是基于 Pyboard 提供的。但是这些技巧也可以应用到其他的 MicroPython 适配端上。</p>
@@ -814,10 +814,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

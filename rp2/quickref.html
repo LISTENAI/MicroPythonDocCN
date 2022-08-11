@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -517,7 +517,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="quick-reference-for-the-rp2">
-<span id="rp2-quickref"></span><h1 id="rp2-quickref--page-root">Quick reference for the RP2<a class="headerlink" href="#rp2-quickref--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="rp2-quickref"></span><h1 id="rp2-quickref--page-root">Quick reference for the RP2<a class="headerlink" href="#rp2-quickref--page-root" title="此标题的永久链接">¶</a></h1>
 <a class="reference internal image-reference" href="../_images/pico_pinout.png"><img alt="Raspberry Pi Pico" src="../_images/pico_pinout.png" style="width: 640px;"/></a>
 <p>The Raspberry Pi Pico Development Board (image attribution: Raspberry Pi Foundation).</p>
 <p>Below is a quick reference for Raspberry Pi RP2xxx boards.  If it is your first time
@@ -529,12 +529,12 @@ working with this board it may be useful to get an overview of the microcontroll
 </ul>
 </div>
 <section id="installing-micropython">
-<h2 id="installing-micropython">Installing MicroPython<a class="headerlink" href="#installing-micropython" title="Permalink to this heading">¶</a></h2>
+<h2 id="installing-micropython">Installing MicroPython<a class="headerlink" href="#installing-micropython" title="此标题的永久链接">¶</a></h2>
 <p>See the corresponding section of tutorial: <a class="reference internal" href="tutorial/intro.html#rp2-intro"><span class="std std-ref">Getting started with MicroPython on the RP2xxx</span></a>. It also includes
 a troubleshooting subsection.</p>
 </section>
 <section id="general-board-control">
-<h2 id="general-board-control">General board control<a class="headerlink" href="#general-board-control" title="Permalink to this heading">¶</a></h2>
+<h2 id="general-board-control">General board control<a class="headerlink" href="#general-board-control" title="此标题的永久链接">¶</a></h2>
 <p>The MicroPython REPL is accessed via the USB serial port. Tab-completion is useful to
 find out what methods an object has. Paste mode (ctrl-E) is useful to paste a
 large slab of Python code into the REPL.</p>
@@ -551,7 +551,7 @@ large slab of Python code into the REPL.</p>
 </div>
 </section>
 <section id="delay-and-timing">
-<h2 id="delay-and-timing">Delay and timing<a class="headerlink" href="#delay-and-timing" title="Permalink to this heading">¶</a></h2>
+<h2 id="delay-and-timing">Delay and timing<a class="headerlink" href="#delay-and-timing" title="此标题的永久链接">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/time.html#module-time" title="time: time related functions"><code class="xref py py-mod docutils literal notranslate"><span class="pre">time</span></code></a> module:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">time</span>
 
@@ -564,7 +564,7 @@ large slab of Python code into the REPL.</p>
 </div>
 </section>
 <section id="timers">
-<h2 id="timers">Timers<a class="headerlink" href="#timers" title="Permalink to this heading">¶</a></h2>
+<h2 id="timers">Timers<a class="headerlink" href="#timers" title="此标题的永久链接">¶</a></h2>
 <p>RP2040’s system timer peripheral provides a global microsecond timebase and
 generates interrupts for it.  The software timer is available currently,
 and there are unlimited number of them (memory permitting). There is no need
@@ -579,7 +579,7 @@ to this.</p>
 </div>
 </section>
 <section id="pins-and-gpio">
-<span id="rp2-pins-and-gpio"></span><h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="Permalink to this heading">¶</a></h2>
+<span id="rp2-pins-and-gpio"></span><h2 id="pins-and-gpio">Pins and GPIO<a class="headerlink" href="#pins-and-gpio" title="此标题的永久链接">¶</a></h2>
 <p>Use the <a class="reference internal" href="../library/machine.Pin.html#machine-pin"><span class="std std-ref">machine.Pin</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 
@@ -597,7 +597,7 @@ to this.</p>
 </div>
 </section>
 <section id="programmable-io-pio">
-<h2 id="programmable-io-pio">Programmable IO (PIO)<a class="headerlink" href="#programmable-io-pio" title="Permalink to this heading">¶</a></h2>
+<h2 id="programmable-io-pio">Programmable IO (PIO)<a class="headerlink" href="#programmable-io-pio" title="此标题的永久链接">¶</a></h2>
 <p>PIO is useful to build low-level IO interfaces from scratch.  See the <a class="reference internal" href="../library/rp2.html#module-rp2" title="rp2: functionality specific to the RP2"><code class="xref py py-mod docutils literal notranslate"><span class="pre">rp2</span></code></a> module
 for detailed explaination of the assembly instructions.</p>
 <p>Example using PIO to blink an LED at 1Hz:</p>
@@ -627,7 +627,7 @@ for detailed explaination of the assembly instructions.</p>
 </div>
 </section>
 <section id="uart-serial-bus">
-<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="uart-serial-bus">UART (serial bus)<a class="headerlink" href="#uart-serial-bus" title="此标题的永久链接">¶</a></h2>
 <p>There are two UARTs, UART0 and UART1. UART0 can be mapped to GPIO 0/1, 12/13
 and 16/17, and UART1 to GPIO 4/5 and 8/9.</p>
 <p>See <a class="reference internal" href="../library/machine.UART.html#machine-uart"><span class="std std-ref">machine.UART</span></a>.</p>
@@ -644,7 +644,7 @@ details on how to enable REPL over UART.</p>
 </div>
 </section>
 <section id="pwm-pulse-width-modulation">
-<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="Permalink to this heading">¶</a></h2>
+<h2 id="pwm-pulse-width-modulation">PWM (pulse width modulation)<a class="headerlink" href="#pwm-pulse-width-modulation" title="此标题的永久链接">¶</a></h2>
 <p>There are 8 independent channels each of which have 2 outputs making it 16
 PWM channels in total which can be clocked from 7Hz to 125Mhz.</p>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">machine.PWM</span></code> class:</p>
@@ -660,7 +660,7 @@ PWM channels in total which can be clocked from 7Hz to 125Mhz.</p>
 </div>
 </section>
 <section id="adc-analog-to-digital-conversion">
-<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="Permalink to this heading">¶</a></h2>
+<h2 id="adc-analog-to-digital-conversion">ADC (analog to digital conversion)<a class="headerlink" href="#adc-analog-to-digital-conversion" title="此标题的永久链接">¶</a></h2>
 <p>RP2040 has five ADC channels in total, four of which are 12-bit SAR based
 ADCs: GP26, GP27, GP28 and GP29. The input signal for ADC0, ADC1, ADC2 and
 ADC3 can be connected with GP26, GP27, GP28, GP29 respectively (On Pico board,
@@ -675,7 +675,7 @@ measuring the temperature.</p>
 </div>
 </section>
 <section id="software-spi-bus">
-<h2 id="software-spi-bus">Software SPI bus<a class="headerlink" href="#software-spi-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="software-spi-bus">Software SPI bus<a class="headerlink" href="#software-spi-bus" title="此标题的永久链接">¶</a></h2>
 <p>Software SPI (using bit-banging) works on all pins, and is accessed via the
 <a class="reference internal" href="../library/machine.SPI.html#machine-softspi"><span class="std std-ref">machine.SoftSPI</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">SoftSPI</span>
@@ -708,7 +708,7 @@ initialising Software SPI.</p>
 </div>
 </section>
 <section id="hardware-spi-bus">
-<h2 id="hardware-spi-bus">Hardware SPI bus<a class="headerlink" href="#hardware-spi-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="hardware-spi-bus">Hardware SPI bus<a class="headerlink" href="#hardware-spi-bus" title="此标题的永久链接">¶</a></h2>
 <p>The RP2040 has 2 hardware SPI buses which is accessed via the
 <a class="reference internal" href="../library/machine.SPI.html#machine-spi"><span class="std std-ref">machine.SPI</span></a> class and has the same methods as software
 SPI above:</p>
@@ -721,7 +721,7 @@ SPI above:</p>
 </div>
 </section>
 <section id="software-i2c-bus">
-<h2 id="software-i2c-bus">Software I2C bus<a class="headerlink" href="#software-i2c-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="software-i2c-bus">Software I2C bus<a class="headerlink" href="#software-i2c-bus" title="此标题的永久链接">¶</a></h2>
 <p>Software I2C (using bit-banging) works on all output-capable pins, and is
 accessed via the <a class="reference internal" href="../library/machine.I2C.html#machine-softi2c"><span class="std std-ref">machine.SoftI2C</span></a> class:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">SoftI2C</span>
@@ -739,7 +739,7 @@ accessed via the <a class="reference internal" href="../library/machine.I2C.html
 </div>
 </section>
 <section id="hardware-i2c-bus">
-<h2 id="hardware-i2c-bus">Hardware I2C bus<a class="headerlink" href="#hardware-i2c-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="hardware-i2c-bus">Hardware I2C bus<a class="headerlink" href="#hardware-i2c-bus" title="此标题的永久链接">¶</a></h2>
 <p>The driver is accessed via the <a class="reference internal" href="../library/machine.I2C.html#machine-i2c"><span class="std std-ref">machine.I2C</span></a> class and
 has the same methods as software I2C above:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span><span class="p">,</span> <span class="n">I2C</span>
@@ -750,7 +750,7 @@ has the same methods as software I2C above:</p>
 </div>
 </section>
 <section id="i2s-bus">
-<h2 id="i2s-bus">I2S bus<a class="headerlink" href="#i2s-bus" title="Permalink to this heading">¶</a></h2>
+<h2 id="i2s-bus">I2S bus<a class="headerlink" href="#i2s-bus" title="此标题的永久链接">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.I2S.html#machine-i2s"><span class="std std-ref">machine.I2S</span></a>.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">I2S</span><span class="p">,</span> <span class="n">Pin</span>
 
@@ -767,7 +767,7 @@ users is encouraged.  Based on this feedback, the I2S class API and implementati
 <p>Two I2S buses are supported with id=0 and id=1.</p>
 </section>
 <section id="real-time-clock-rtc">
-<h2 id="real-time-clock-rtc">Real time clock (RTC)<a class="headerlink" href="#real-time-clock-rtc" title="Permalink to this heading">¶</a></h2>
+<h2 id="real-time-clock-rtc">Real time clock (RTC)<a class="headerlink" href="#real-time-clock-rtc" title="此标题的永久链接">¶</a></h2>
 <p>See <a class="reference internal" href="../library/machine.RTC.html#machine-rtc"><span class="std std-ref">machine.RTC</span></a></p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">RTC</span>
 
@@ -779,7 +779,7 @@ users is encouraged.  Based on this feedback, the I2S class API and implementati
 </div>
 </section>
 <section id="wdt-watchdog-timer">
-<h2 id="wdt-watchdog-timer">WDT (Watchdog timer)<a class="headerlink" href="#wdt-watchdog-timer" title="Permalink to this heading">¶</a></h2>
+<h2 id="wdt-watchdog-timer">WDT (Watchdog timer)<a class="headerlink" href="#wdt-watchdog-timer" title="此标题的永久链接">¶</a></h2>
 <p>The RP2040 has a watchdog which is a countdown timer that can restart
 parts of the chip if it reaches zero.</p>
 <p>See <a class="reference internal" href="../library/machine.WDT.html#machine-wdt"><span class="std std-ref">machine.WDT</span></a>.</p>
@@ -792,7 +792,7 @@ parts of the chip if it reaches zero.</p>
 </div>
 </section>
 <section id="onewire-driver">
-<h2 id="onewire-driver">OneWire driver<a class="headerlink" href="#onewire-driver" title="Permalink to this heading">¶</a></h2>
+<h2 id="onewire-driver">OneWire driver<a class="headerlink" href="#onewire-driver" title="此标题的永久链接">¶</a></h2>
 <p>The OneWire driver is implemented in software and works on all pins:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="kn">import</span> <span class="nn">onewire</span>
@@ -821,7 +821,7 @@ the <code class="docutils literal notranslate"><span class="pre">convert_temp()<
 sample the temperature.</p>
 </section>
 <section id="neopixel-and-apa106-driver">
-<h2 id="neopixel-and-apa106-driver">NeoPixel and APA106 driver<a class="headerlink" href="#neopixel-and-apa106-driver" title="Permalink to this heading">¶</a></h2>
+<h2 id="neopixel-and-apa106-driver">NeoPixel and APA106 driver<a class="headerlink" href="#neopixel-and-apa106-driver" title="此标题的永久链接">¶</a></h2>
 <p>Use the <code class="docutils literal notranslate"><span class="pre">neopixel</span></code> and <code class="docutils literal notranslate"><span class="pre">apa106</span></code> modules:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">machine</span> <span class="k">import</span> <span class="n">Pin</span>
 <span class="kn">from</span> <span class="nn">neopixel</span> <span class="k">import</span> <span class="n">NeoPixel</span>
@@ -890,10 +890,10 @@ sample the temperature.</p>
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

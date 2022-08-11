@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -593,7 +593,7 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="inline-assembler">
-<span id="pyboard-tutorial-assembler"></span><h1 id="pyboard-tutorial-assembler--page-root"><span class="section-number">10. </span>Inline assembler<a class="headerlink" href="#pyboard-tutorial-assembler--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="pyboard-tutorial-assembler"></span><h1 id="pyboard-tutorial-assembler--page-root"><span class="section-number">10. </span>Inline assembler<a class="headerlink" href="#pyboard-tutorial-assembler--page-root" title="此标题的永久链接">¶</a></h1>
 <p>Here you will learn how to write inline assembler in MicroPython.</p>
 <p><strong>Note</strong>: this is an advanced tutorial, intended for those who already
 know a bit about microcontrollers and assembly language.</p>
@@ -601,7 +601,7 @@ know a bit about microcontrollers and assembly language.</p>
 assembly routines as a Python function, and you can call them as you would
 a normal Python function.</p>
 <section id="returning-a-value">
-<h2 id="returning-a-value"><span class="section-number">10.1. </span>Returning a value<a class="headerlink" href="#returning-a-value" title="Permalink to this heading">¶</a></h2>
+<h2 id="returning-a-value"><span class="section-number">10.1. </span>Returning a value<a class="headerlink" href="#returning-a-value" title="此标题的永久链接">¶</a></h2>
 <p>Inline assembler functions are denoted by a special function decorator.
 Let’s start with the simplest example:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython</span><span class="o">.</span><span class="n">asm_thumb</span>
@@ -617,7 +617,7 @@ integer object for the caller.</p>
 <p>If you run <code class="docutils literal notranslate"><span class="pre">print(fun())</span></code> you will see it print out 42.</p>
 </section>
 <section id="accessing-peripherals">
-<h2 id="accessing-peripherals"><span class="section-number">10.2. </span>Accessing peripherals<a class="headerlink" href="#accessing-peripherals" title="Permalink to this heading">¶</a></h2>
+<h2 id="accessing-peripherals"><span class="section-number">10.2. </span>Accessing peripherals<a class="headerlink" href="#accessing-peripherals" title="此标题的永久链接">¶</a></h2>
 <p>For something a bit more complicated, let’s turn on an LED:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@micropython</span><span class="o">.</span><span class="n">asm_thumb</span>
 <span class="k">def</span> <span class="nf">led_on</span><span class="p">():</span>
@@ -647,7 +647,7 @@ bit in <code class="docutils literal notranslate"><span class="pre">r0</span></c
 </div></blockquote>
 </section>
 <section id="accepting-arguments">
-<h2 id="accepting-arguments"><span class="section-number">10.3. </span>Accepting arguments<a class="headerlink" href="#accepting-arguments" title="Permalink to this heading">¶</a></h2>
+<h2 id="accepting-arguments"><span class="section-number">10.3. </span>Accepting arguments<a class="headerlink" href="#accepting-arguments" title="此标题的永久链接">¶</a></h2>
 <p>Inline assembler functions can accept up to 4 arguments.  If they are
 used, they must be named <code class="docutils literal notranslate"><span class="pre">r0</span></code>, <code class="docutils literal notranslate"><span class="pre">r1</span></code>, <code class="docutils literal notranslate"><span class="pre">r2</span></code> and <code class="docutils literal notranslate"><span class="pre">r3</span></code> to reflect the registers
 and the calling conventions.</p>
@@ -662,7 +662,7 @@ in <code class="docutils literal notranslate"><span class="pre">r0</span></code>
 3.</p>
 </section>
 <section id="loops">
-<h2 id="loops"><span class="section-number">10.4. </span>Loops<a class="headerlink" href="#loops" title="Permalink to this heading">¶</a></h2>
+<h2 id="loops"><span class="section-number">10.4. </span>Loops<a class="headerlink" href="#loops" title="此标题的永久链接">¶</a></h2>
 <p>We can assign labels with <code class="docutils literal notranslate"><span class="pre">label(my_label)</span></code>, and branch to them using
 <code class="docutils literal notranslate"><span class="pre">b(my_label)</span></code>, or a conditional branch like <code class="docutils literal notranslate"><span class="pre">bgt(my_label)</span></code>.</p>
 <p>The following example flashes the green LED.  It flashes it <code class="docutils literal notranslate"><span class="pre">r0</span></code> times.</p>
@@ -707,7 +707,7 @@ in <code class="docutils literal notranslate"><span class="pre">r0</span></code>
 </div>
 </section>
 <section id="further-reading">
-<h2 id="further-reading"><span class="section-number">10.5. </span>Further reading<a class="headerlink" href="#further-reading" title="Permalink to this heading">¶</a></h2>
+<h2 id="further-reading"><span class="section-number">10.5. </span>Further reading<a class="headerlink" href="#further-reading" title="此标题的永久链接">¶</a></h2>
 <p>For further information about supported instructions of the inline assembler,
 see the <a class="reference internal" href="../../reference/asm_thumb2_index.html#asm-thumb2-index"><span class="std std-ref">reference documentation</span></a>.</p>
 </section>
@@ -760,10 +760,10 @@ see the <a class="reference internal" href="../../reference/asm_thumb2_index.htm
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>

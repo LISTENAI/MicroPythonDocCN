@@ -4,7 +4,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -427,11 +427,11 @@
           <article class="md-content__inner md-typeset" role="main">
             
   <section id="filesystems-and-storage">
-<span id="storage-zephyr"></span><h1 id="zephyr-tutorial-storage--page-root"><span class="section-number">3. </span>文件系统与存储<a class="headerlink" href="#zephyr-tutorial-storage--page-root" title="Permalink to this heading">¶</a></h1>
+<span id="storage-zephyr"></span><h1 id="zephyr-tutorial-storage--page-root"><span class="section-number">3. </span>文件系统与存储<a class="headerlink" href="#zephyr-tutorial-storage--page-root" title="此标题的永久链接">¶</a></h1>
 <p>通过使用开发板支持的 Zephyr DiskAccess 或 FashArea (flash map) 接口，存储模块支持 FAT 与 littlefs 格式的虚拟文件系统。</p>
 <p>在 <a class="reference internal" href="../../library/os.html#module-os" title='os: basic "operating system" services'><code class="xref py py-mod docutils literal notranslate"><span class="pre">os</span> <span class="pre">挂载文件系统</span></code></a> 中查看。</p>
 <section id="disk-access">
-<h2 id="disk-access"><span class="section-number">3.1. </span>磁盘访问（Disk Access）<a class="headerlink" href="#disk-access" title="Permalink to this heading">¶</a></h2>
+<h2 id="disk-access"><span class="section-number">3.1. </span>磁盘访问（Disk Access）<a class="headerlink" href="#disk-access" title="此标题的永久链接">¶</a></h2>
 <p><a class="reference internal" href="../../library/zephyr.DiskAccess.html#zephyr-diskaccess"><span class="std std-ref">zephyr.DiskAccess</span></a> 类可用于访问存储设备，例如 SD 卡。它使用 <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/storage/disk/access.html">Zephyr Disk Access API</a> ，实现了 <a class="reference internal" href="../../library/os.html#os.AbstractBlockDev" title="os.AbstractBlockDev"><code class="xref any py py-class docutils literal notranslate"><span class="pre">os.AbstractBlockDev</span></code></a> 协议。</p>
 <p>与 SD 卡控制器一起使用时，SD 卡必须在启动时存在且不能移除；它们将在启动时由文件系统自动检测和初始化。 访问 SD 卡需要使用磁盘驱动程序接口和文件系统通过磁盘访问（见下文）。</p>
 <p>在 mimxrt1050_evk 开发板上访问一个 FatFS 的 SD 卡使用示例：</p>
@@ -447,7 +447,7 @@
 </div>
 </section>
 <section id="flash-area">
-<h2 id="flash-area"><span class="section-number">3.2. </span>闪存区（Flash Area）<a class="headerlink" href="#flash-area" title="Permalink to this heading">¶</a></h2>
+<h2 id="flash-area"><span class="section-number">3.2. </span>闪存区（Flash Area）<a class="headerlink" href="#flash-area" title="此标题的永久链接">¶</a></h2>
 <p><a class="reference internal" href="../../library/zephyr.FlashArea.html#zephyr-flasharea"><span class="std std-ref">zephyr.FlashArea</span></a> 类可用于实现低级存储系统或自定义文件系统配置。 要在设备上存储持久化数据，推荐使用更高级别的文件系统 API（见下文）。</p>
 <p>它使用 <a class="reference external" href="https://docs.zephyrproject.org/latest/reference/storage/flash_map/flash_map.html#">Zephyr Flash map API</a> ，实现了 <a class="reference internal" href="../../library/os.html#os.AbstractBlockDev" title="os.AbstractBlockDev"><code class="xref any py py-class docutils literal notranslate"><span class="pre">os.AbstractBlockDev</span></code></a> 协议。</p>
 <p>在 reel_board 或 rv32m1_vega_ri5cy 开发板上的访问内部闪存的使用示例：</p>
@@ -512,10 +512,10 @@
               
           </div>
             Last updated on
-              08 7月 2022.
+              11 8月 2022.
             <br/>
             Created using
-            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.0.2.
+            <a href="http://www.sphinx-doc.org/">Sphinx</a> 5.1.1.
              and
             <a href="https://github.com/bashtage/sphinx-material/">Material for
               Sphinx</a>
