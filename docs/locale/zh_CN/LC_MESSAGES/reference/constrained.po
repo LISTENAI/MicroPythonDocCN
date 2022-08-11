@@ -21,7 +21,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:4
 msgid "MicroPython on microcontrollers"
-msgstr ""
+msgstr "微处理器上的 MicroPython"
 
 #: ../../reference/constrained.rst:6
 msgid ""
@@ -34,10 +34,17 @@ msgid ""
 "methods presented are generic: in some cases it will be necessary to "
 "obtain detailed information from platform specific documentation."
 msgstr ""
+"MicroPython 旨在能够在微处理器上运行。"
+"这些处理器具有硬件限制，这对于更熟悉传统计算机的程序员来说可能是较为陌生的。"
+"特别是 RAM 和非易失性“磁盘”（闪存）存储的数量是有限的。"
+"本教程提供了充分利用有限资源的方法。"
+"因为 MicroPython 在基于各种架构的控制器上运行，"
+"所以提供的方法在大部分情况下是通用的："
+"但在某些情况下，需要从特定于平台的文档中获取详细信息。"
 
 #: ../../reference/constrained.rst:16
 msgid "Flash memory"
-msgstr ""
+msgstr "闪存（ Flash memory ）"
 
 #: ../../reference/constrained.rst:18
 msgid ""
@@ -52,6 +59,11 @@ msgid ""
 " incorporating user modules into a firmware build which is then flashed "
 "to the device."
 msgstr ""
+"在 Pyboard 上，解决容量有限的简单方法是安装 micro SD 卡。"
+"在某些情况下，这是不切实际的，要么是因为设备没有 SD 卡插槽，要么是出于成本或功耗的原因；因此必须使用板载 flash 。"
+"包含 MicroPython 子系统的固件存储在板载 flash 中。"
+"除固件外的剩余容量可供使用。由于与 flash 的物理架构有关的原因，此容量的一部分可能无法作为文件系统访问。"
+"在这种情况下，可以通过将用户模块合并到固件构建中来使用该空间，然后将其闪存到设备中。"
 
 #: ../../reference/constrained.rst:28
 msgid ""
@@ -61,6 +73,10 @@ msgid ""
 "stored with the firmware. In either case the module may be accessed with "
 "an import statement:"
 msgstr ""
+"有两种方法可以实现这一点：冻结模块和冻结字节码。"
+"冻结的模块将 Python 源代码与固件一起存储。"
+"冻结字节码使用交叉编译器将源代码转换为字节码，然后与固件一起存储。"
+"在上述任何一种方式中，都可以使用 import 语句访问模块："
 
 #: ../../reference/constrained.rst:37
 msgid ""
@@ -68,40 +84,46 @@ msgid ""
 "dependent; instructions for building the firmware can be found in the "
 "README files in the relevant part of the source tree."
 msgstr ""
+"生成冻结模块和字节码的过程取决于平台；"
+"可以在源代码树相关部分的 README 文件中找到构建固件的说明。"
 
 #: ../../reference/constrained.rst:41
 msgid "In general terms the steps are as follows:"
-msgstr ""
+msgstr "一般情况下，步骤如下："
 
 #: ../../reference/constrained.rst:43
 msgid ""
 "Clone the MicroPython `repository "
 "<https://github.com/micropython/micropython>`_."
 msgstr ""
+"克隆 MicroPython `代码仓库 "
+"<https://github.com/micropython/micropython>`_ 。"
 
 #: ../../reference/constrained.rst:44
 msgid "Acquire the (platform specific) toolchain to build the firmware."
-msgstr ""
+msgstr "获取（特定于平台的）工具链来构建固件。"
 
 #: ../../reference/constrained.rst:45
 msgid "Build the cross compiler."
-msgstr ""
+msgstr "构建交叉编译器。"
 
 #: ../../reference/constrained.rst:46
 msgid ""
 "Place the modules to be frozen in a specified directory (dependent on "
 "whether the module is to be frozen as source or as bytecode)."
 msgstr ""
+"将要冻结的模块放在指定的目录（取决于是将模块冻结为源代码，或字节码）。"
 
 #: ../../reference/constrained.rst:48
 msgid ""
 "Build the firmware. A specific command may be required to build frozen "
 "code of either type - see the platform documentation."
 msgstr ""
+"构建固件。构建任一类型的冻结代码可能需要特定命令 - 请参阅平台文档。"
 
 #: ../../reference/constrained.rst:50
 msgid "Flash the firmware to the device."
-msgstr ""
+msgstr "将固件刷入设备。"
 
 #: ../../reference/constrained.rst:53
 msgid "RAM"
@@ -115,10 +137,13 @@ msgid ""
 "repeated creation and destruction of objects. The reason for this is "
 "covered in the section covering the `heap`_."
 msgstr ""
+"要减少 RAM 使用时，需要考虑两个阶段：编译和执行。"
+"除了内存消耗之外，还有一个我们称之为堆碎片的问题。"
+"一般来说，最好尽量减少对象的重复创建和销毁。其原因在 `堆 <#heap>`_ 的部分中进行了介绍。"
 
 #: ../../reference/constrained.rst:62
 msgid "Compilation phase"
-msgstr ""
+msgstr "编译阶段"
 
 #: ../../reference/constrained.rst:64
 msgid ""
@@ -127,6 +152,8 @@ msgid ""
 "bytecode is stored in RAM. The compiler itself requires RAM, but this "
 "becomes available for use when the compilation has completed."
 msgstr ""
+"导入模块时， MicroPython 将代码编译为字节码，然后由 MicroPython 虚拟机 (VM) 执行。"
+"字节码存储在 RAM 中。编译器本身需要 RAM ，但在编译完成后即可使用。"
 
 #: ../../reference/constrained.rst:69
 msgid ""
@@ -134,6 +161,8 @@ msgid ""
 " where there is insufficient RAM to run the compiler. In this case the "
 "import statement will produce a memory exception."
 msgstr ""
+"如果已经导入了多个模块，则可能会出现 RAM 不足以运行编译器的情况。"
+"在这种情况下， import 语句将抛出内存异常。"
 
 #: ../../reference/constrained.rst:73
 msgid ""
@@ -144,6 +173,9 @@ msgid ""
 "the application after all modules have been imported. This maximises the "
 "RAM available to the compiler."
 msgstr ""
+"如果一个模块在导入时实例化全局对象，它将在导入时就消耗 RAM ，然后编译器无法在后续导入时使用这些 RAM 。"
+"一般来说，最好避免在导入时运行的代码；更好的方法是在导入所有模块后让应用程序运行初始化代码。"
+"这使编译器可用的 RAM 最大化。"
 
 #: ../../reference/constrained.rst:80
 msgid ""
@@ -156,22 +188,26 @@ msgid ""
 "saves even more RAM as the bytecode is run directly from flash rather "
 "than being stored in RAM."
 msgstr ""
+"如果 RAM 仍然不足以编译所有模块，一种解决方案是预编译模块。"
+" MicroPython 有一个交叉编译器，能够将 Python 模块编译为字节码（请参阅 mpy-cross 目录中的 README 文件）。"
+"生成的字节码文件具有 .mpy 扩展名；它可以被复制到文件系统并以一般形式导入（即 import 语句）。"
+"或者，部分或全部模块可以实现为冻结字节码：在大多数平台上，这可以节省更多 RAM ，因为字节码直接从闪存运行，而无需存储在 RAM 中。"
 
 #: ../../reference/constrained.rst:89
 msgid "Execution phase"
-msgstr ""
+msgstr "执行阶段"
 
 #: ../../reference/constrained.rst:91
 msgid "There are a number of coding techniques for reducing RAM usage."
-msgstr ""
+msgstr "有一些写代码的技巧可以减少 RAM 占用。"
 
 #: ../../reference/constrained.rst:93
 msgid "**Constants**"
-msgstr ""
+msgstr "**常量**"
 
 #: ../../reference/constrained.rst:95
 msgid "MicroPython provides a ``const`` keyword which may be used as follows:"
-msgstr ""
+msgstr "MicroPython 提供了 ``const`` 关键字，可以这样使用："
 
 #: ../../reference/constrained.rst:105
 msgid ""
@@ -185,6 +221,10 @@ msgid ""
 "``_COLS``: this symbol is not visible outside the module so will not "
 "occupy RAM."
 msgstr ""
+"在将常量分配给变量的两种情况下，编译器都会通过替换常量的字面值来避免对常量名称的查找进行编码。"
+"这可以节省字节码，从而节省 RAM 。然而， ``ROWS`` 值将占用至少两个机器字，分别用于全局字典中的键和值。"
+"它在字典中的存在是必要的，因为另一个模块可能会导入或使用它。"
+"可以通过在名称前加上下划线来保存此 RAM ，如上例中的 ``_COLS`` ：此符号在模块外部不可见，因此不会占用 RAM。"
 
 #: ../../reference/constrained.rst:114
 msgid ""
@@ -192,10 +232,12 @@ msgid ""
 "evaluates to an integer e.g. ``0x100`` or ``1 << 8``. It can even include"
 " other const symbols that have already been defined, e.g. ``1 << BIT``."
 msgstr ""
+"``const()`` 的参数可以是在编译​​时计算为整数的任何值，例如 ``0x100`` 或 ``1 << 8`` 。"
+"它甚至可以包含其他已定义的 const 符号，例如 ``1 << BIT`` 。"
 
 #: ../../reference/constrained.rst:118
 msgid "**Constant data structures**"
-msgstr ""
+msgstr "**常量数据结构**"
 
 #: ../../reference/constrained.rst:120
 msgid ""
@@ -207,6 +249,10 @@ msgid ""
 " than being copied to RAM. The `struct` module can assist in converting "
 "between `bytes` types and other Python built-in types."
 msgstr ""
+"在有大量常量数据且平台支持从 Flash 执行的情况下， RAM 可以按如下方式保存。"
+"数据应位于 Python 模块中并冻结为字节码。数据必须定义为 `bytes` 对象。"
+"编译器“知道” `bytes` 对象是不可变的，并确保对象保留在 Flash 中而不是被复制到 RAM 中。"
+" `struct` 模块有助于数据在 `bytes` 类型和其他 Python 内置类型之间进行转换。"
 
 #: ../../reference/constrained.rst:128
 msgid ""
@@ -214,6 +260,8 @@ msgid ""
 " strings, floats, bytes, integers and complex numbers are immutable. "
 "Accordingly these will be frozen into flash. Thus, in the line"
 msgstr ""
+"在考虑冻结字节码的影响时，请注意在 Python 字符串中，浮点数、字节、整数和复数是不可变的。"
+"因此，这些将被冻结到 flash 中。因此，在此行中"
 
 #: ../../reference/constrained.rst:136
 msgid ""
@@ -222,6 +270,9 @@ msgid ""
 "``mystring``. The reference occupies a single machine word. In principle "
 "a long integer could be used to store constant data:"
 msgstr ""
+"实际的字符串 \"The quick brown fox\" 将驻留在闪存中。"
+"在运行时，对字符串的引用被分配给 *变量* ``mystring`` 。"
+"该引用占用一个机器字。原则上长整数也可以作为常量数据存储："
 
 #: ../../reference/constrained.rst:145
 msgid ""
@@ -229,6 +280,8 @@ msgid ""
 " integer is assigned to the variable ``bar``. That reference occupies a "
 "single machine word."
 msgstr ""
+"与字符串示例一样，在运行时将任意大整数的引用分配给变量 ``bar`` 。"
+"该引用占用一个机器字。"
 
 #: ../../reference/constrained.rst:149
 msgid ""
@@ -236,16 +289,19 @@ msgid ""
 "purpose of storing constant data with minimal RAM use. With the current "
 "compiler this is ineffective (the code works, but RAM is not saved)."
 msgstr ""
+"据此，似乎可以预估整数元组能以最少的 RAM 占用作为常量数据存储。"
+"但对于当前的编译器，这是无效的（代码有效，但没有节省 RAM ）。"
 
 #: ../../reference/constrained.rst:157
 msgid ""
 "At runtime the tuple will be located in RAM. This may be subject to "
 "future improvement."
 msgstr ""
+"在运行时，元组将位于 RAM 中。这一行为可能会在未来改进。"
 
 #: ../../reference/constrained.rst:160
 msgid "**Needless object creation**"
-msgstr ""
+msgstr "**无需创建对象**"
 
 #: ../../reference/constrained.rst:162
 msgid ""
@@ -253,16 +309,19 @@ msgid ""
 " and destroyed. This can reduce the usability of RAM through "
 "fragmentation. The following sections discuss instances of this."
 msgstr ""
+"在许多情况下，对象可能会在不经意间被创建和销毁。"
+"这会导致碎片化，而后降低 RAM 的可用性。以下部分讨论了这方面的实例。"
 
 #: ../../reference/constrained.rst:166
 msgid "**String concatenation**"
-msgstr ""
+msgstr "**字符串连接**"
 
 #: ../../reference/constrained.rst:168
 msgid ""
 "Consider the following code fragments which aim to produce constant "
 "strings:"
 msgstr ""
+"假设以下代码片段，以生成常量字符串："
 
 #: ../../reference/constrained.rst:178
 msgid ""
@@ -271,6 +330,8 @@ msgid ""
 "producing the third. The others perform the concatenation at compile time"
 " which is more efficient, reducing fragmentation."
 msgstr ""
+"其中每一句的效果都相同，但是第一个在运行时不必要地创建了两个字符串对象，在产生结果之前导致分配更多的 RAM 用于连接。"
+"其他语句则在编译时执行连接，效率更高，减少了碎片化。"
 
 #: ../../reference/constrained.rst:183
 msgid ""
@@ -279,16 +340,19 @@ msgid ""
 "Rather than creating a large string object, create a substring and feed "
 "it to the stream before dealing with the next."
 msgstr ""
+"在将字符串输入到诸如文件之类的流之前，必须动态创建字符串，如果以逐个传入的方式完成，它将节省 RAM 。"
+"与其创建一个大字符串对象，不如创建一个子字符串并将其提供给流，然后再处理下一个。"
 
 #: ../../reference/constrained.rst:188
 msgid ""
 "The best way to create dynamic strings is by means of the string "
 "``format()`` method:"
 msgstr ""
+"创建动态字符串的最佳方法，是使用字符串 ``format()`` 方法："
 
 #: ../../reference/constrained.rst:195
 msgid "**Buffers**"
-msgstr ""
+msgstr "**缓冲区**"
 
 #: ../../reference/constrained.rst:197
 msgid ""
@@ -296,6 +360,8 @@ msgid ""
 " using pre-allocated buffers avoids the creation of needless objects. "
 "Consider these two loops:"
 msgstr ""
+"在访问 UART、I2C 和 SPI 接口之类的设备实例时，使用预分配缓冲区可避免创建不必要的对象。"
+"假设在这两个循环中："
 
 #: ../../reference/constrained.rst:212
 msgid ""
@@ -303,16 +369,19 @@ msgid ""
 "allocated buffer; this is both faster and more efficient in terms of "
 "memory fragmentation."
 msgstr ""
+"第一个在每次传递时创建一个缓冲区，而第二个重新使用预先分配的缓冲区；"
+"就考虑内存碎片问题而言，后者既更快又更高效。"
 
 #: ../../reference/constrained.rst:215
 msgid "**Bytes are smaller than ints**"
-msgstr ""
+msgstr "**字节比整数小**"
 
 #: ../../reference/constrained.rst:217
 msgid ""
 "On most platforms an integer consumes four bytes. Consider the two calls "
 "to the function ``foo()``:"
 msgstr ""
+"在大多数平台上，一个整数占用四个字节。假设在这两个 ``foo()`` 调用中："
 
 #: ../../reference/constrained.rst:228
 msgid ""
@@ -321,10 +390,13 @@ msgid ""
 " If the module were frozen as bytecode, the `bytes` object would reside "
 "in flash."
 msgstr ""
+"在第一个调用中，在 RAM 中创建了一个整数元组。"
+"第二个则有效地创建了一个消耗最少 RAM 的 `bytes` 对象。"
+"如果模块被冻结为字节码， `bytes` 对象将驻留在闪存中。"
 
 #: ../../reference/constrained.rst:232
 msgid "**Strings Versus Bytes**"
-msgstr ""
+msgstr "**字符串 VS 字节**"
 
 #: ../../reference/constrained.rst:234
 msgid ""
@@ -337,6 +409,11 @@ msgid ""
 ":meth:`str.strip()`) apply also to `bytes` instances so the process of "
 "eliminating Unicode can be painless."
 msgstr ""
+"Python3 引入了 Unicode 支持。"
+"这引入了字符串和字节数组之间的区别。"
+"只要 Unicode 字符串中的所有字符都是 ASCII 码（即值 < 126 ）， MicroPython 确保其字符串无需占用额外空间。"
+"如果需要完整 8 位范围内的值，则可以使用 `bytes` 和 `bytearray` 对象来确保不需要额外的空间。"
+"请注意，大多数字符串方法（例如 :meth:`str.strip()` ）也适用于 `bytes` 实例，因此消除 Unicode 的过程可以很轻松。"
 
 #: ../../reference/constrained.rst:247
 msgid ""
@@ -347,10 +424,15 @@ msgid ""
 "allocation to produce the result. In the second line below a new bytes "
 "object is allocated. This would also occur if ``foo`` were a string."
 msgstr ""
+"如果需要在字符串和 bytes 之间进行转换，可以使用 :meth:`str.encode()` 和 :meth:`bytes.decode()` 方法。"
+"请注意，字符串和 bytes 都是不可变的。"
+"任何将这样一个对象作为输入并产生另一个对象的操作，都意味着至少分配一个 RAM 来产生结果。"
+"在下面的第二行中，分配了一个新的字节对象。"
+"如果 ``foo`` 是一个字符串，也会发生这种情况。"
 
 #: ../../reference/constrained.rst:259
 msgid "**Runtime compiler execution**"
-msgstr ""
+msgstr "**运行时编译器执行**"
 
 #: ../../reference/constrained.rst:261
 msgid ""
@@ -359,10 +441,13 @@ msgid ""
 "library from `micropython-lib` employs `exec`. It may be more RAM "
 "efficient to use the `json` library for object serialisation."
 msgstr ""
+"Python 函数 `eval` 和 `exec` 在运行时调用编译器，这需要大量 RAM 。"
+"请注意，来自 `micropython-lib` 的 ``pickle`` 库使用 `exec` 。"
+"使用 `json` 库进行对象序列化可能会提高 RAM 效率。"
 
 #: ../../reference/constrained.rst:266
 msgid "**Storing strings in flash**"
-msgstr ""
+msgstr "**存储字符串到 flash 中**"
 
 #: ../../reference/constrained.rst:268
 msgid ""
@@ -373,10 +458,14 @@ msgid ""
 "procedure will work even if the modules have not been fully debugged, so "
 "long as they can be imported and run."
 msgstr ""
+"Python 字符串是不可变的，因此有可能存储在只读内存中。"
+"编译器可以放置在 Python 代码中定义的 flash 字符串中。"
+"与冻结模块一样，需要在 PC 上拥有源代码树的副本以及构建固件的工具链。"
+"即使模块尚未完全调试通过，该过程也将起作用，只要它们可以导入和运行。"
 
 #: ../../reference/constrained.rst:274
 msgid "After importing the modules, execute:"
-msgstr ""
+msgstr "导入模块后，执行："
 
 #: ../../reference/constrained.rst:280
 msgid ""
@@ -388,14 +477,20 @@ msgid ""
 "firmware. The outcome can be checked by importing the modules and again "
 "issuing:"
 msgstr ""
+"然后将所有 Q(xxx) 行复制并粘贴到文本编辑器中。"
+"检查并删除明显无效的行。"
+"打开文件 qstrdefsport.h ，该文件位于 ports/stm32 （或你所用架构的等效目录）中。"
+"将更正的行复制并粘贴到文件末尾。"
+"保存文件，重新构建并烧录固件。"
+"可以通过导入模块，然后再次执行函数检查结果："
 
 #: ../../reference/constrained.rst:291
 msgid "The Q(xxx) lines should be gone."
-msgstr ""
+msgstr "此时 Q(xxx) 对应的行应该被删除了。"
 
 #: ../../reference/constrained.rst:296
 msgid "The heap"
-msgstr ""
+msgstr "堆"
 
 #: ../../reference/constrained.rst:298
 msgid ""
@@ -407,16 +502,21 @@ msgid ""
 "runs automatically, however it can be invoked directly by issuing "
 "`gc.collect()`."
 msgstr ""
+"当正在运行的程序实例化一个对象时，必要的 RAM 是从固定大小的池中分配的，该池我们称之为堆。"
+"当超出对象的作用域（换句话说，代码无法访问）时，冗余对象被称为“垃圾”。"
+"一个称为“垃圾回收”（ GC ）的进程回收该内存，将这一内存返回到空闲堆。"
+"这个过程自动运行，但是它可以通过直接调用 `gc.collect()` 手动触发。"
 
 #: ../../reference/constrained.rst:305
 msgid ""
 "The discourse on this is somewhat involved. For a 'quick fix' issue the "
 "following periodically:"
 msgstr ""
+"这方面的论述有些复杂难懂。出于更“快速解决”问题的角度而言，请定期执行以下操作："
 
 #: ../../reference/constrained.rst:314
 msgid "Fragmentation"
-msgstr ""
+msgstr "碎片化"
 
 #: ../../reference/constrained.rst:316
 msgid ""
@@ -429,6 +529,12 @@ msgid ""
 "RAM available, there is insufficient contiguous space to allocate a "
 "particular object, and the program fails with a memory error."
 msgstr ""
+"假设一个程序创建了一个对象 ``foo`` ，然后创建了一个对象 ``bar`` 。"
+"随后 ``foo`` 超出作用域，但 ``bar`` 仍然存在。"
+"此时 ``foo`` 使用的 RAM 将被 GC 回收。"
+"然而，如果 ``bar`` 被分配到更高的地址，则从 ``foo`` 回收的 RAM 将仅适用于分配给不大于 ``foo`` 的对象。"
+"在复杂或长时间运行的程序中，堆可能会变得碎片化，这将导致："
+"尽管有大量可用 RAM ，但没有足够的连续空间来分配特定对象，并且程序会抛出内存错误而失败。"
 
 #: ../../reference/constrained.rst:325
 msgid ""
@@ -438,10 +544,13 @@ msgid ""
 " Further improvements may be made by monitoring the state of the heap and"
 " by controlling GC; these are outlined below."
 msgstr ""
+"上述技术旨在最大限度地减少这种情况。"
+"在需要大型永久缓冲区或其他对象的情况下，最好在程序执行过程的早期，即出现碎片化之前，实例化它们。"
+"可以通过监控堆的状态和控制 GC 来做进一步的改进；这些方式将在下文进行阐述。"
 
 #: ../../reference/constrained.rst:332
 msgid "Reporting"
-msgstr ""
+msgstr "报告"
 
 #: ../../reference/constrained.rst:334
 msgid ""
@@ -450,32 +559,37 @@ msgid ""
 "`micropython` modules. The following example may be pasted at the REPL "
 "(``ctrl e`` to enter paste mode, ``ctrl d`` to run it)."
 msgstr ""
+"MicroPython 中包含许多库函数可用于报告内存分配和控制 GC 。"
+"这些函数可以在 `gc` 和 `micropython` 模块中找到。"
+"以下示例可以粘贴到 REPL 中执行"
+"（先按下 ``ctrl e`` 进入粘贴模式，然后通过 ``ctrl d`` 运行它）。"
 
 #: ../../reference/constrained.rst:358
 msgid "Methods employed above:"
-msgstr ""
+msgstr "以上方法使用："
 
 #: ../../reference/constrained.rst:360
 msgid "`gc.collect()` Force a garbage collection. See footnote."
-msgstr ""
+msgstr "`gc.collect()` 强制触发一次垃圾回收。返回值可参阅注释"
 
 #: ../../reference/constrained.rst:361
 msgid "`micropython.mem_info()` Print a summary of RAM utilisation."
-msgstr ""
+msgstr "`micropython.mem_info()` 打印当前 RAM 利用率的概览"
 
 #: ../../reference/constrained.rst:362
 msgid "`gc.mem_free()` Return the free heap size in bytes."
-msgstr ""
+msgstr "`gc.mem_free()` 返回当前空闲堆大小（以字节为单位）"
 
 #: ../../reference/constrained.rst:363
 msgid "`gc.mem_alloc()` Return the number of bytes currently allocated."
-msgstr ""
+msgstr "`gc.mem_alloc()` 返回当前已分配的字节数"
 
 #: ../../reference/constrained.rst:364
 msgid ""
 "``micropython.mem_info(1)`` Print a table of heap utilisation (detailed "
 "below)."
 msgstr ""
+"`micropython.mem_info(1)` 打印堆利用率的详细信息表（详见下文）"
 
 #: ../../reference/constrained.rst:366
 msgid ""
@@ -486,20 +600,24 @@ msgid ""
 "garbage because it is out of scope and cannot be referenced. The final "
 "`gc.collect()` recovers that memory."
 msgstr ""
+"这里生成的数字取决于平台，但可以看出，声明函数使用了少量 RAM ，基于编译器发出的字节码形式（编译器使用的 RAM 已被回收）。"
+"运行该函数使用超过 10KiB 的内存，但在返回时 a 已经是垃圾，因为它超出作用并且无法引用。"
+"最后，调用 `gc.collect()` 恢复该内存。"
 
 #: ../../reference/constrained.rst:373
 msgid ""
 "The final output produced by ``micropython.mem_info(1)`` will vary in "
 "detail but may be interpreted as follows:"
 msgstr ""
+"``micropython.mem_info(1)`` 产生的最终输出可能在细节上有所不同，但基本如下："
 
 #: ../../reference/constrained.rst:377
 msgid "Symbol"
-msgstr ""
+msgstr "符号"
 
 #: ../../reference/constrained.rst:377
 msgid "Meaning"
-msgstr ""
+msgstr "含义"
 
 #: ../../reference/constrained.rst:379
 msgid "."
@@ -507,7 +625,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:379
 msgid "free block"
-msgstr ""
+msgstr "空闲块"
 
 #: ../../reference/constrained.rst:380
 msgid "h"
@@ -515,7 +633,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:380
 msgid "head block"
-msgstr ""
+msgstr "头部块"
 
 #: ../../reference/constrained.rst:381
 msgid "="
@@ -523,7 +641,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:381
 msgid "tail block"
-msgstr ""
+msgstr "尾部块"
 
 #: ../../reference/constrained.rst:382
 msgid "m"
@@ -531,7 +649,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:382
 msgid "marked head block"
-msgstr ""
+msgstr "标记的头部块"
 
 #: ../../reference/constrained.rst:383
 msgid "T"
@@ -539,7 +657,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:383
 msgid "tuple"
-msgstr ""
+msgstr "元组"
 
 #: ../../reference/constrained.rst:384
 msgid "L"
@@ -547,7 +665,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:384
 msgid "list"
-msgstr ""
+msgstr "列表"
 
 #: ../../reference/constrained.rst:385
 msgid "D"
@@ -555,7 +673,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:385
 msgid "dict"
-msgstr ""
+msgstr "字典"
 
 #: ../../reference/constrained.rst:386
 msgid "F"
@@ -563,7 +681,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:386
 msgid "float"
-msgstr ""
+msgstr "浮点"
 
 #: ../../reference/constrained.rst:387
 msgid "B"
@@ -571,7 +689,7 @@ msgstr ""
 
 #: ../../reference/constrained.rst:387
 msgid "byte code"
-msgstr ""
+msgstr "字节码"
 
 #: ../../reference/constrained.rst:388
 msgid "M"
@@ -579,17 +697,18 @@ msgstr ""
 
 #: ../../reference/constrained.rst:388
 msgid "module"
-msgstr ""
+msgstr "模块"
 
 #: ../../reference/constrained.rst:391
 msgid ""
 "Each letter represents a single block of memory, a block being 16 bytes. "
 "So each line of the heap dump represents 0x400 bytes or 1KiB of RAM."
 msgstr ""
+"每个字母代表一个内存块，一个块为 16 个字节。所以堆转储的每一行代表 0x400 字节或 1KiB 的 RAM 。"
 
 #: ../../reference/constrained.rst:395
 msgid "Control of garbage collection"
-msgstr ""
+msgstr "控制垃圾回收"
 
 #: ../../reference/constrained.rst:397
 msgid ""
@@ -600,6 +719,10 @@ msgid ""
 "explicit call can minimise that delay while ensuring it occurs at points "
 "in the program when it is acceptable."
 msgstr ""
+"可以通过发出 `gc.collect()` 随时触发 GC 。"
+"每隔一段时间这样做是有益的，首先是为了预防碎片化，其次是为了提高性能。"
+" GC 可能需要几毫秒，但在几乎没有工作要做的情况下会更快（在 Pyboard 上大约只需 1 毫秒）。"
+"显式调用垃圾回收可以最大限度地减少延迟，同时确保它在程序中可接受的时机发生。"
 
 #: ../../reference/constrained.rst:403
 msgid ""
@@ -609,6 +732,11 @@ msgid ""
 "GC will be triggered if the amount of free RAM falls below a threshold. "
 "This threshold can be adapted as execution progresses:"
 msgstr ""
+"在这些情况下会引发自动 GC ："
+"首先，当尝试分配失败时，将执行 GC 并重新尝试分配。"
+"仅当此操作失败时才会引发异常。"
+"其次，如果可用 RAM 量低于阈值，将触发自动 GC。"
+"这个阈值可以通过以下方式，在执行过程中进行调整："
 
 #: ../../reference/constrained.rst:414
 #, python-format
@@ -616,6 +744,7 @@ msgid ""
 "This will provoke a GC when more than 25% of the currently free heap "
 "becomes occupied."
 msgstr ""
+"这段代码表示，如果当前空闲堆的 25% 以上被占用，将引发 GC 。"
 
 #: ../../reference/constrained.rst:417
 msgid ""
@@ -625,10 +754,13 @@ msgid ""
 "subsequent modules are imported. If modules do instantiate data on import"
 " then `gc.collect()` issued after the import will ameliorate the problem."
 msgstr ""
+"一般来说，模块应该在运行时使用构造函数或其他初始化函数来实例化数据对象。"
+"原因是如果在初始化时发生这种情况，编译器可能会在导入后续模块时不够 RAM 。"
+"如果模块确实在导入时实例化数据，那么在导入后调用 `gc.collect()` 将改善此问题。"
 
 #: ../../reference/constrained.rst:424
 msgid "String operations"
-msgstr ""
+msgstr "字符串操作"
 
 #: ../../reference/constrained.rst:426
 msgid ""
@@ -640,6 +772,10 @@ msgid ""
 "instance will be located in RAM, but as described above, in modules "
 "frozen as bytecode it will be located in flash."
 msgstr ""
+"MicroPython 以高效的方式处理字符串，理解这一点有助于设计在微控制器上运行的应用程序。"
+"编译模块时，多次出现的字符串只存储一次，这个过程称为字符串驻留。"
+"在 MicroPython 中，驻留字符串称为 qstr 。"
+"在正常导入的模块中，单个实例将位于 RAM 中，但如上所述，在冻结为字节码的模块中，它将位于 flash 中。"
 
 #: ../../reference/constrained.rst:433
 msgid ""
@@ -648,6 +784,8 @@ msgid ""
 "integers may hence be small both in terms of performance and RAM usage - "
 "a fact which may come as a surprise to C programmers."
 msgstr ""
+"字符串比较也可以使用 hash 高效执行，而不是逐个字符对比。"
+"因此，在性能和 RAM 使用方面，使用字符串而不是整数的代价可能很小 —— 这可能会让 C 程序员感到惊讶。"
 
 #: ../../reference/constrained.rst:439
 msgid "Postscript"
@@ -659,6 +797,8 @@ msgid ""
 " A reference occupies a single machine word so these processes are "
 "efficient in RAM usage and speed."
 msgstr ""
+"MicroPython 通过 *引用* 传递、返回和（默认情况下）复制对象。"
+"一个引用只占用单个机器字，因此这些进程在 RAM 使用和速度方面非常有效。"
 
 #: ../../reference/constrained.rst:445
 msgid ""
@@ -667,10 +807,12 @@ msgid ""
 "efficiently and in performing conversions. See the `array`, `struct` and "
 "`uctypes` modules."
 msgstr ""
+"在需要大小既不是字节也不是机器字的变量的地方，有标准库可以帮助有效地存储这些变量并执行转换。"
+"请参阅 `array` 、 `struct` 和 `uctypes` 模块。"
 
 #: ../../reference/constrained.rst:451
 msgid "Footnote: gc.collect() return value"
-msgstr ""
+msgstr "注释： gc.collect() 返回值"
 
 #: ../../reference/constrained.rst:453
 msgid ""
@@ -680,4 +822,6 @@ msgid ""
 "were turned into frees). For efficiency reasons bare metal ports do not "
 "return this value."
 msgstr ""
-
+"在 Unix 和 Windows 平台上， `gc.collect()` 方法将返回一个整数，"
+"表示在集合中回收的不同内存区域的数量（更准确地说，是变成空闲的头部块数量）。"
+"由于效率影响，裸机适配端不返回此值。"
