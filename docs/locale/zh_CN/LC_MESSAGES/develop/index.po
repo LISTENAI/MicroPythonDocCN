@@ -30,6 +30,8 @@ msgid ""
 "resource on the implementation details of MicroPython for both novice and"
 " expert contributors."
 msgstr ""
+"本章节从开发者角度来介绍 MicroPython ，包括为 MicroPython 做出贡献。"
+"它为新手和专家贡献者提供了有关 MicroPython 实现细节的综合资源。"
 
 #: ../../develop/index.rst:8
 msgid ""
@@ -39,4 +41,6 @@ msgid ""
 "getting started guide, compiler internals, porting MicroPython to a new "
 "platform and implementing a core MicroPython library."
 msgstr ""
-
+"围绕 MicroPython 的开发通常涉及修改核心运行时、移植或维护新库。"
+"本指南深入介绍了 MicroPython 的实现细节，"
+"包括入门指南、编译器内部结构、将 MicroPython 移植到新平台以及实现核心 MicroPython 库。"
